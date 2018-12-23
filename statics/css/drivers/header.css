@@ -139,7 +139,7 @@
     overflow: hidden;
     position: absolute;
     left: -220px;
-    z-index: 999;
+    z-index: 9999;
     height: 170px;
     display: none;
 
