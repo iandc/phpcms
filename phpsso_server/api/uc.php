@@ -59,7 +59,7 @@ if (in_array($get['action'], array('test', 'deleteuser', 'renameuser', 'gettag',
 class uc_note
 {
 
-    private $member_db, $uc_db, $applist;
+    private $member_db, $uc_db, $applist, $uc_client_cache_path;
 
     function __construct()
     {
@@ -68,6 +68,7 @@ class uc_note
         $db_config = get_uc_database();
         $this->uc_db = new uc_model($db_config);
         $this->applist = getcache('applist', 'admin');
+        $this->uc_client_cache_path = PHPCMS_PATH . 'api/uc_client/data/cache';
     }
 
     //测试通信
@@ -187,7 +188,7 @@ class uc_note
                 $data['replace'][$k] = $v['replacement'];
             }
         }
-        $cachefile = PHPCMS_PATH . 'api/uc_client/data/cache/badwords.php';
+        $cachefile = $this->uc_client_cache_path. '/badwords.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
         $s .= '$_CACHE[\'badwords\'] = ' . var_export($data, TRUE) . ";\r\n";
@@ -203,7 +204,7 @@ class uc_note
             return API_RETURN_FORBIDDEN;
         }
 
-        $cachefile = PHPCMS_PATH . 'api/uc_client/data/cache/hosts.php';
+        $cachefile = $this->uc_client_cache_path. '/hosts.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
         $s .= '$_CACHE[\'hosts\'] = ' . var_export($post, TRUE) . ";\r\n";
@@ -219,7 +220,7 @@ class uc_note
             return API_RETURN_FORBIDDEN;
         }
 
-        $cachefile = PHPCMS_PATH . 'api/uc_client/data/cache/settings.php';
+        $cachefile = $this->uc_client_cache_path. '/settings.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
         $s .= '$_CACHE[\'settings\'] = ' . var_export($post, TRUE) . ";\r\n";
@@ -241,7 +242,7 @@ class uc_note
             unset($post['UC_API']);
         }
 
-        $cachefile = PHPCMS_PATH . 'api/uc_client/data/cache/apps.php';
+        $cachefile = $this->uc_client_cache_path. '/apps.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
         $s .= '$_CACHE[\'apps\'] = ' . var_export($post, TRUE) . ";\r\n";
