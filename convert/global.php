@@ -483,10 +483,11 @@ function member_chose_model($modelid = '')
     return false;
 }
 
-function  write_log($info) {
-    $fp = fopen(PATH."log/convert_log.txt","a");
-    flock($fp, LOCK_EX) ;
-    fwrite($fp, $info."\n");
+function write_log($info)
+{
+    $fp = fopen(PATH . "log/convert_log.txt", "a");
+    flock($fp, LOCK_EX);
+    fwrite($fp, $info . "\n");
     flock($fp, LOCK_UN);
     fclose($fp);
 }

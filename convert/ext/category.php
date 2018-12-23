@@ -1,7 +1,7 @@
 <?php
 $r = $db->query("SELECT * FROM phpcms_arctype");
 while ($s = $db->fetch_next()) {
-	$dede_cat[$s['id']] = $s;
+    $dede_cat[$s['id']] = $s;
 }
 
 $model_fieds = getcache('dede_model', 'conversion');
