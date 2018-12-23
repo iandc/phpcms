@@ -26,11 +26,11 @@ define('API_UPDATEBADWORDS', 1);
 define('API_UPDATEHOSTS', 1);
 define('API_UPDATEAPPS', 1);
 define('API_UPDATECLIENT', 1);
-define('API_UPDATECREDIT', 1);
-define('API_GETCREDIT', 1);
-define('API_GETCREDITSETTINGS', 1);
-define('API_UPDATECREDITSETTINGS', 1);
-define('API_ADDFEED', 1);
+define('API_UPDATECREDIT', 0);
+define('API_GETCREDIT', 0);
+define('API_GETCREDITSETTINGS', 0);
+define('API_UPDATECREDITSETTINGS', 0);
+define('API_ADDFEED', 0);
 
 $get = $post = array();
 
