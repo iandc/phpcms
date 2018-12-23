@@ -1,0 +1,145 @@
+{template "content", "header"}
+<div class="w100">
+    <div style="position: relative;">
+        <div class="content w1100">
+            {template "content", "hd_con"}
+            <div class="con_three clearfix">
+                <div class="con_three_l fl">
+                    {template "content", "nav"}
+                    <div class="post_tit">
+                        <h1>{$title}</h1>
+                        <span class="pt_info fs12">
+                            <span class="date">{$inputtime}</span>
+                            <span>来源：{$copyfrom}</span>
+                            评论：<span id="comment">0</span>
+                            点击：<span id="hits">0</span>
+                        </span>
+                    </div>
+                    <div class="banner">
+                        <div class="banner_img">
+                            <a href=""><img src="https://ubmcmm.baidustatic.com/media/v1/0f000aUOme6SOikRM1wfj0.jpg" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="post_con">
+                        {if $description}<div class="summary">{$description}</div>{/if}
+                        {if $allow_visitor == 1}
+                        {$content}
+                        <!--内容关联投票-->
+                        {if $voteid}<script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid={$voteid}&type=2"></script>{/if}
+                        {else}
+                        <a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}">阅读此信息需要您支付 <B><I>{$readpoint} {if $paytype}元{else}点{/if}</I></B>，点击这里支付</a>
+                        {/if}
+                    </div>
+                    <div class="relevant clearfix">
+                        <div class="tit clearfix">
+                            <div style="margin-bottom: 7px;">
+                                <span>
+                                    关键词：
+                                    {loop $keywords $keyword}
+                                    <a class="blue"
+                                       href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($keyword)}">{$keyword}</a>
+                                    {/loop}
+                                </span>
+                            </div>
+                            <h2>相关文章</h2>
+                        </div>
+                        <ul class="list_3 fl">
+                            <li>上一篇：<a href="{$previous_page['url']}">{str_cut($previous_page['title'], 30, '')}</a></li>
+                            <li>下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 30, '')}</a></li>
+                        </ul>
+                    </div>
+                    {pc:content action="relation" relation="$relation" catid="$catid" id="$id" keywords="$rs['keywords']" num="5" cache="0"}
+                    {if $data}
+                    <div class="see">
+                        <div class="see_con">
+                            <div class="tit clearfix mt15">
+                                <h2 class="fl">延伸阅读</h2>
+                            </div>
+                            <ul class="list_1">
+                                {loop $data $value}
+                                <li>
+                                    <a href="{$value['url']}" target="_blank">
+                                        <div>
+                                            <img src="$value['thumb']"
+                                                 alt="">
+                                        </div>
+                                        <div class="txt">{$value['title']}</div>
+                                    </a>
+                                </li>
+                                {/loop}
+                            </ul>
+                        </div>
+                    </div>
+                    {/if}
+                    {/pc}
+                    <div class="commList mt15">
+                        <h3>全部评论</h3>
+                        <ul class="list">
+                            {if $allow_comment && module_exists('comment')}
+                            <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0"
+                            scrolling="no"></iframe>
+                            {else}
+                            <p align="center">评论功能关闭</p>
+                            {/if}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="right_con">
+                {template "content","right"}
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<script type="text/javascript">
+    function show_ajax(obj) {
+        var keywords = $(obj).text();
+        var offset = $(obj).offset();
+        var jsonitem = '';
+        $.getJSON("{APP_PATH}index.php?m=content&c=index&a=json_list&type=keyword&modelid={$modelid}&id={$id}&keywords=" + encodeURIComponent(keywords),
+            function (data) {
+                var j = 1;
+                var string = "<div class='point key-float'><div style='position:relative'><div class='arro'></div>";
+                string += "<a href='JavaScript:;' onclick='$(this).parent().parent().remove();' hidefocus='true' class='close'><span>关闭</span></a><div class='contents f12'>";
+                if (data != 0) {
+                    $.each(data, function (i, item) {
+                        j = i + 1;
+                        jsonitem += "<a href='" + item.url + "' target='_blank'>" + j + "、" + item.title + "</a><BR>";
+
+                    });
+                    string += jsonitem;
+                } else {
+                    string += '没有找到相关的信息！';
+                }
+                string += "</div><span class='o1'></span><span class='o2'></span><span class='o3'></span><span class='o4'></span></div></div>";
+                $(obj).after(string);
+                $('.key-float').mouseover(
+                    function () {
+                        $(this).siblings().css({"z-index": 0})
+                        $(this).css({"z-index": 1001});
+                    }
+                )
+                $(obj).next().css({"left": +offset.left - 100, "top": +offset.top + $(obj).height() + 12});
+            });
+    }
+
+    function add_favorite(title) {
+        $.getJSON('{APP_PATH}api.php?op=add_favorite&title=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(location.href) + '&' + Math.random() + '&callback=?', function (data) {
+            if (data.status == 1) {
+                $("#favorite").html('收藏成功');
+            } else {
+                alert('请登录');
+            }
+        });
+    }
+
+    $(function () {
+        $('#Article .content img').LoadImage(true, 660, 660, '{IMG_PATH}s_nopic.gif');
+    })
+</script>
+
+<script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+
+{template "content","footer2"}

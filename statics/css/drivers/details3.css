@@ -1,0 +1,196 @@
+body{
+    font-size: 14px;
+}
+.content{
+    background-color: #fff;
+}
+.con_four{
+    padding: 20px 20px 0;
+    position: relative;
+    margin-bottom: 15px;
+}
+.con_four .con_four_con{
+    width: 760px;
+    height: auto;
+    float: left;
+    position: relative;
+}
+.con_four .con_fourL_top .lf{
+    width: 300px;
+}
+.con_four .con_fourL_top .lf .product{
+    position: relative;
+    margin-top: 0;
+    padding: 0;
+    width: 298px;
+    border: 1px solid #d6d3d4;
+    border-top: 2px solid #2975c4;
+}
+.con_four .con_fourL_top .lf .product .p_title{
+    position: relative;
+    width: 220px;
+    height: 58px;
+    color: #2975c4;
+    font-size: 1pc;
+    line-height: 58px;
+}
+.con_four .con_fourL_top .lf .product .p_title .border{
+    margin-top: 22px;
+    margin-left: 1pc;
+    padding-right: 13px;
+    height: 1pc;
+    border-left: 4px solid #2975c4;
+}
+.con_four .con_fourL_top .lf .product ul{
+    padding: 0 15px;
+}
+.con_four .con_fourL_top .lf .product ul li{
+    position: relative;
+    margin-bottom: 9pt;
+}
+.con_four .con_fourL_top .lf .product ul li img{
+    float: left;
+    width: 38px;
+    height: 38px;
+}
+.con_four .con_fourL_top .lf .product ul li .proName{
+    margin-bottom: 2px;
+    color: #272a30;
+    font-size: 15px;
+    line-height: 25px;
+    width: 280px;
+}
+.con_four .con_fourL_top .lf .banner2{
+    border: 1px solid #eee;
+}
+.con_four .con_fourL_top .lf .banner2 img{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.con_four .con_fourL_top .mf{
+    margin-left: 20px;
+    width: 428px;
+}
+.con_four .con_fourL_top .mf .mf_hd{
+    height: 30px;
+    border-bottom: 1px solid #d6d3d4;
+    line-height: 30px;
+}
+.con_four .con_fourL_top .mf .mf_hd .item{
+    padding: 0 20px;
+    background-color: #2975c4;
+    color: #fff;
+    font-size: 14px;
+}
+.con_four .con_fourL_top .mf .mf_hd .sx{
+    margin-left: 1pc;
+}
+.con_four .con_fourL_top .mf .mf_hd .sx img{
+    vertical-align: middle;
+}
+.con_four .con_fourL_top .mf .mf_con{
+    width: 428px;
+}
+.con_four .con_fourL_top .mf .mf_con .newList{
+    padding-top: 15px;
+    width: 428px;
+    font-size: 14px;
+}
+.con_four .con_fourL_top .mf .mf_con .newList ul{
+    float: left;
+    margin-right: 20px;
+    width: 349px;
+}
+.con_four .con_fourL_top .mf .mf_con .newList ul li{
+    width: 413px;
+    margin-bottom: 3px;
+    padding: 3px 0 3px 9pt;
+    min-width: 329px;
+    background: url(https://img.ithome.com/images/v2.1/new_list_icon.png) left 2px no-repeat;
+    background-size: 1pc 39px;
+}
+.con_four .con_fourL_top .mf .mf_con .newList ul li .date{
+    display: block;
+    color: #2975c4
+}
+.con_four .con_fourL_top .mf .mf_con .newList ul li.new{
+    background-position: left 4px;
+}
+.con_four .con_fourL_top .mf .mf_con .newList ul li.new:hover{
+    background-color: #eee;
+}
+.con_four .con_fourL_top .mf .mf_con .newList ul li span.tit{
+    width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+}
+
+.right{
+    position: absolute;
+}
+.con_four .con_fourL_bottom{
+    width: 728px;
+}
+.con_four .con_fourL_bottom .listBox{
+    float: left;
+    width: 364px;
+}
+.con_four .con_fourL_bottom .listBox h2{
+    height: 35px;
+    border-bottom: 2px solid #e5e5e5;
+    font-weight: 400;
+    font-size: 1pc;
+    line-height: 35px;
+}
+.con_four .con_fourL_bottom .listBox h2 .sp1{
+    float: left;
+    display: block;
+    border-bottom: 2px solid #2975c4;
+}
+.con_four .con_fourL_bottom .listBox h2 .sp2{
+    padding-left: 230px;
+    font-weight: 400;
+    font-size: 9pt;
+}
+.con_four .con_fourL_bottom .listBox ul{
+    padding: 15px 0 0;
+}
+.con_four .con_fourL_bottom .listBox ul li{
+    clear: both;
+    margin-bottom: 11px;
+    width: 353px;
+    background: url(https://img.ithome.com/images/v2.1/new_list_icon.png) left 0 no-repeat;
+    background-size: 1pc 34px;
+    color: #888;
+}
+.con_four .con_fourL_bottom .listBox ul li span{
+    float: left;
+    display: block;
+    padding-left: 10px;
+}
+.con_four .con_fourL_bottom .listBox ul li span.title{
+    width: 287px;
+    height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 20px;
+}
+.con_four .con_fourL_bottom .listBox ul li .date{
+    width: 46px;
+    font-size: 9pt;
+}
+.con_four .right .lb{
+    width: 300px;
+    height: 222px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.con_four .right .lb ul li img{
+    width: 300px;
+    height: 200px;
+}
+.container{
+    margin-bottom: 10px;
+}

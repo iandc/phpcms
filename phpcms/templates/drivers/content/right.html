@@ -1,0 +1,94 @@
+    <div class="w100">
+        <div class="w1100">
+            <div class="cm_four_r fr">
+                <div class="tabs" id="tab">
+                   <ul class="tab">
+                        <li class="tab-item active fl">最新资讯</li>
+                        <li class="tab-item fr">最热资讯</li>
+                    </ul>
+                    <div class="products">
+                        <div class="main selected">
+                            <span class="a list">
+                                <ul>
+                                    {pc:content  action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="12"}
+                                        {loop $data $key $value}
+                                        <li>
+                                            <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 40, '')}</a>
+                                        </li>
+                                        {/loop}
+                                    {/pc}
+                                </ul>
+                            </span>
+                        </div>
+                        <div class="main">
+                            <span class="a list">
+                                <ul>
+                                    {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="20"}
+                                        {php $i=0;}
+                                        {loop $data $key $value}
+                                        {if $i > 10}
+                                        <li>
+                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                        </li>
+                                        {/if}
+                                        {php $i++;}
+                                        {/loop}
+                                    {/pc}
+                                </ul>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="lb">
+                    <div class="img">
+                        <img src="https://t12.baidu.com/it/u=3624570032,3814852064&fm=76" alt="">
+                    </div>
+                </div>
+                <div class="hots">
+                    <div class="hot">
+                        <div class="hotList">
+                            <div class="hotList_tit">
+                                业界最热文章  
+                            </div>
+                            <div class="img">
+                                {pc:content action="hits" catid="$catid" num="2" order="monthviews DESC" cache="0"}
+                                    {loop $data $r}
+                                        <div class="fl imgs">
+                                            <a href="" class="image">
+                                                <img src="{$r['thumb']}" alt="">
+                                            </a>
+                                            <a href="{$r['url']}"{title_style($r[style])} class="title" title="{$r['title']}">{str_cut($r['title'],56,'...')}</a>
+                                        </div>
+                                    {/loop}
+                                {/pc}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lists clearfix">
+                        <ul class="clearfix" style="padding: 10px 0;">
+                            {pc:content action="hits" catid="$catid" num="12" order="monthviews DESC" cache="0"}
+                            {php $i = 0;}
+                                {loop $data $r}
+                                    {if $i >= 2}
+                                    <li>
+                                        <a href="{$r['url']}"{title_style($r[style])} class="title" title="{$r['title']}">{str_cut($r['title'],56,'...')}</a>
+                                    </li>
+                                    {/if}
+                                    {php $i++;}
+                                {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(function () {
+            $("#tab .tab .tab-item").click(function () {
+                $(this).addClass("active").siblings().removeClass("active");
+                $(".products .main").eq($(this).index()).show().siblings().hide();
+            })
+        })
+    </script>

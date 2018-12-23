@@ -1,0 +1,31 @@
+span.v{
+    display: inline-block;
+    overflow: hidden;
+    margin: 0 7px 0 8px;
+    width: 2px;
+    height: 13px;
+    background: url(https://img.ithome.com/images/v2.1/split.png) left top no-repeat;
+    color: #d5d5d5;
+    vertical-align: -2px;
+    text-indent: -75pt;
+}
+.ft_nav{
+    height: 43px;
+    background-color: #272a30;
+}
+.ft_nav a{
+    display: inline-block;
+    text-align: center;
+    color: #ccc;
+    font-size: 12px;
+    line-height: 43px;
+}
+.ft_nav .ft{
+    text-align: center;
+    padding: 30px 0;
+    background-color: #07a7e1;
+}
+.ft_nav .ft p{
+    font-size: 12px;
+    color: #333;
+}

@@ -1,0 +1,233 @@
+body{
+	font-size: 14px;
+}
+.bg_fff{
+    background-color: #fff;
+}
+
+/*内容部分----------------------*/
+.content{
+    height: auto;
+}
+.content .content_tow .content_tow_con{
+    padding-left: 16px;
+}
+.content .content_tow .content_tow_con img{
+    width: 1068px;
+    height: 90px;
+}
+
+.log{
+    margin: 10px 0;
+}
+.log .focus-title{
+    border-left: 3px solid #2975c4;
+}
+.log .focus-title ul li{
+    margin: 2px 0;
+}
+.log .focus-title a{
+    color: #2975c4;
+    margin-left: 10px;
+}
+.log .banner11{
+    display: inline-block;
+    width: 1100px;
+    height: 90px;
+}
+.log .banner11 img{
+    width: 100%;
+    height: 100%;
+}
+
+.new_hd ul li{
+    margin: 3px 0;
+}
+
+.whole{
+    height: auto;
+    padding: 10px 0 0;
+    overflow: hidden;
+}
+.whole ul li{
+    width:98px;
+    text-align: center;
+    margin: 2px 10px;
+}
+.whole ul .current{
+    background-color: #2975c4;
+    border-radius: 15px;
+}
+.whole ul .current a{
+    color: #fff;
+}
+.whole ul li:hover{
+    background-color: #2975c4;
+    border-radius: 15px;
+}
+.whole ul li:hover a{
+    color: white;
+}
+.whole ul li a{
+    line-height: 40px;
+}
+.whole .sub_ul{
+    width: 300px;
+    background-color: #2975c4;
+    position: absolute;
+    top: 40px;
+    left: -15px;
+    display: none;
+    padding: 10px;
+    z-index: 999;
+}
+.whole li.current:hover .sub_ul{
+    display: block;
+}
+.whole .sub_ul li{
+    width: 100px;
+}
+.whole .sub_ul li:hover{
+    background-color: #eee;
+    border-radius: 3px;
+}
+.whole .sub_ul li:hover a{
+    color: #666;
+}
+
+.content .content_min{
+    padding: 0 1pc;
+    width: 801pt;
+    padding-top: 5px;
+}
+.content .content_min .cm_four{
+    clear: both;
+}
+.content .content_min .cm_four .cm_four_l{
+    width: 728px;
+    padding-bottom: 20px;
+}
+
+.lists li{
+    border: 0 !important;
+}
+.content .content_min .cm_four .cm_four_l ul li{
+    padding: 13px 0 20px;
+    height: 80pt;
+    border-bottom: 1px dotted #d6d6d6;
+}
+.content .content_min .cm_four .cm_four_l ul li .img img{
+    float: left;
+    width: 90pt;
+    height: 90px;
+}
+.content .content_min .cm_four .cm_four_l ul li .block{
+    float: left;
+    padding-left: 20px;
+    width: 574px;
+    font-size: 12px;
+}
+.content .content_min .cm_four .cm_four_l ul li .block .time{
+    color: #666;
+    font-weight: 400;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.content .content_min .cm_four .cm_four_l ul li .block .date .lb{
+    color: #666; 
+    margin-right: 20px;
+}
+.content .content_min .cm_four .cm_four_l ul li .block .date .lb a{
+    color: #2975c4;
+    font-weight: 600;
+}
+.content .content_min .cm_four .cm_four_l ul li .block .date .time{
+    color: #666;
+    font-weight: 400;
+    font-size: 12px;
+    margin-left: 20px;
+    margin-top: 2px;
+}
+.content .content_min .cm_four .cm_four_l ul li .date{
+    height: 20pt;
+    margin-top: 8px;
+}
+.content .content_min .cm_four .cm_four_l ul li span.rt{
+    font-size: 13px;
+    font-weight: 600;
+}
+.content .content_min .cm_four .cm_four_l ul li .ydl{
+    height: 16px;
+    line-height: 16px;
+    vertical-align: middle;
+    display: inline-block;
+    zoom: 1;
+    margin-right: 20px;
+    font-size: 12px;
+    color: #999;
+    position: relative;
+}
+.content .content_min .cm_four .cm_four_l ul li .ydl .num{
+    padding-left: 20px;
+    background: url(http://skin.elecfans.com/images/tagimage/leftinfoimg.png) 0 -16px no-repeat;
+}
+.content .content_min .cm_four .cm_four_l ul li .block h2{
+    padding-bottom: 9pt;
+    font-size: 15px;
+    position: relative;
+    font-weight: 600;
+}
+.content .content_min .cm_four .cm_four_l ul li .block h2 .state{
+    float: right;
+    color: #888;    
+    font-size: 9pt;
+}
+.content .content_min .cm_four .cm_four_l ul li .block h2 .tody{
+    color: #2975c4;
+}
+.content .content_min .cm_four .cm_four_l ul li .block .time{
+    height: 16px;
+    line-height: 16px;
+    padding-left: 20px;
+    background: url(http://skin.elecfans.com/images/tagimage/leftinfoimg.png) 0 0 no-repeat;
+}
+.content .content_min .cm_four .cm_four_l ul li .block .txt{
+    display: block;
+    overflow: hidden;
+    padding-bottom: 5px;
+    height: 3pc;
+    color: #888;
+}
+.content .content_min .cm_four .cm_four_l ul li .block .tags,.content .content_min .cm_four .cm_four_l ul li .block .tags a{
+    color: #888;
+}
+.page_nav{
+    position: relative;
+    clear: both;
+}
+.page_nav .more{
+    width: 440px;
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+}
+.page_nav .more span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #eee;
+    text-align: center;
+    line-height: 30px;
+}
+.page_nav .more a{
+    margin: 0 5px;
+}
+.nav_item2:after{
+    display: inline-block;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+    background: url(https://img.ithome.com/images/v2.3/narrow.png) no-repeat 0 3px;
+    background-size: 64px 16px;
+    content: '';
+}

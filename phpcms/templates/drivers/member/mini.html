@@ -1,0 +1,99 @@
+{php $from = $_GET['from'];}
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body, html {
+        background: none;
+        height: {if $from == 'index'}80{else}40{/if}px;
+    }
+    .c_hhh{
+        color: #666;
+    }
+    .c_fff{
+        color: #fff;
+    }
+
+    .log {
+        line-height: 24px;
+        *line-height: 27px;
+        height: 24px;
+        float: right;
+        font-size: 12px
+    }
+
+    .log span {
+        color: #ced9e7
+    }
+
+    .log a {
+        color: #049;
+        text-decoration: none;
+    }
+
+    .log a:hover {
+        text-decoration: underline;
+    }
+
+    .log .snda {
+        position: relative;
+        bottom: -3px
+    }
+
+    .log .upv_btn {
+        height: 24px;
+        padding-left: 14px;
+        position: relative;
+        background: url({IMG_PATH}up_btn.gif) no-repeat 0px 0px;
+        margin-left: 0px;
+        margin-right: 10px;
+        *background-position: 0px 5px;
+    }
+
+    .log .r {
+        float: right;
+    }
+
+    .log .w27 {
+        *width: 320px;
+    }
+    .lr{
+        float: right;
+    }
+    li{
+        list-style: none;
+    }
+    li a{
+        font-size: 14px;
+        padding: 0 10px;
+        text-decoration: none;
+        line-height: {if $from == 'index'}80{else}40{/if}px;
+    }
+</style>
+
+<body style="background-color:transparent">
+    <div style="height:{if $from == 'index'}80{else}40{/if}px;">
+        {if $_username}
+            <ul class="clearfix">
+                <li class="register lr">
+                    <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top" class="{if $from == 'index'}c_hhh{else}c_fff{/if}">{L('logout')}</a>
+                </li>
+                <li class="login lr" style="width: 120px;">
+                    <a href="{APP_PATH}index.php?m=member&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}">{getNickName()}</a> &nbsp;&nbsp;
+                </li>
+            </ul>
+        {else}
+            <ul class="clearfix">
+                <li class="login lr">
+                    <a href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}">{L('login')}</a>
+                </li>
+                <li class="register lr">
+                    <a href="{APP_PATH}index.php?m=member&c=index&a=register&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}">{L('register')}</a>
+                </li>
+            </ul>
+        {/if}
+    </div>
+    
+
+</body>

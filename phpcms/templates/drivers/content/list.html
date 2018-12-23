@@ -1,0 +1,91 @@
+{template "content", "header"}
+
+<div class="wrap w100">
+    <div class="w1100">
+        <div class="log clearfix">
+            <div class="banner11 fl">
+                <a href="">
+                    <img src="https://ubmcmm.baidustatic.com/media/v1/0f0000RiksdnnD5ZAebS0s.jpg" alt="">
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="w1100 content bg_fff">
+        {template "content", "nav"}
+        <div class="whole">
+            <ul style="position: relative;">
+                <li {if $catid == 0}class="current"{/if}><a href="{APP_PATH}type-{$typeid}-1.html">全部</a></li>
+                {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20"}
+                    {loop $data $value}
+                        <li {if $catid == $value['catid']}class="current"{/if}>
+                            <a href="{APP_PATH}list-{$value['catid']}-{$typeid}-1.html">{$value['catname']}</a>
+                        </li>
+                    {/loop}
+                {/pc}
+            </ul>
+        </div>
+        <div class="content_min clearfix bg_fff">
+            <div class="cm_four clearfix bg_fff">
+                <div class="cm_four_l fl">
+                    <div class="cate_list">
+                        <ul>
+                            {if $catid}
+                                {if $typeid}
+                                    {php $where = "catid='$catid' AND typeid='$typeid'";}
+                                    {pc:content action="lists" catid="$catid" where="$where" order="id DESC" page="$page" num="10" cache="0"}
+                                {else}13
+                                    {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="10" cache="0"}
+                                {/if}
+                            {else}
+                                {if $typeid}
+                                    {pc:get sql="SELECT * FROM phpcms_news where typeid=$typeid ORDER BY id DESC" page="$page" num="10" cache="0"}
+                                {else}
+                                    {pc:get sql="SELECT * FROM phpcms_news ORDER BY id DESC" page="$page" num="10" cache="0"}
+                                {/if}
+                            {/if}
+                            {loop $data $value}
+                            <li>
+                                <a href="{$value['url']}" class="img">
+                                    <img src="{thumb($value['thumb'], 90, 60)}" width="90" height="60" alt="">
+                                </a>
+                                <div class="block">
+                                    <h2>
+                                        <a href="{$value['url']}" target="_blank" {title_style($value['style'])}>{str_cut($value['title'],
+                                        50, '')}</a>
+                                        {if $catid}
+                                            <span class="time fr">
+                                                {date('m-d', $value['inputtime'])}
+                                            </span>
+                                        {/if}
+                                        
+                                    </h2>
+                                    <div class="txt">
+                                        <p>{$value['description']}</p>
+                                    </div>
+                                    <div class="date">
+                                        {if !$catid}
+                                            <span class="lb fl">类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a></span>
+                                            <span class="time fl">
+                                            {date('Y-m-d', $value['inputtime'])}
+                                        </span>
+                                        {/if}
+                                    </div>
+                                </div>
+                            </li>
+                            {/loop}
+                            <div class="page_nav">
+                                <div class="more">
+                                    <div id="pages" class="text_c">{$pages}</div>
+                                </div>
+                            </div>
+                            {/pc}
+                        </ul>
+                    </div>
+                </div>
+                {template "content", "right"}
+            </div>
+        </div>
+    </div>
+    {template "content", "footer2"}
+</div>

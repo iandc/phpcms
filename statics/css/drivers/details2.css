@@ -1,0 +1,118 @@
+body{
+    font-size: 14px;
+}
+.content{
+    position: relative;
+}
+.fs12{
+    font-size: 12px;
+}
+.con_three{
+    height: auto;
+    padding: 20px;
+    background-color: #fff;
+}
+.con_three .con_three_l{
+    width: 728px;
+}
+.con_three .con_three_l .current_nav{
+    padding-bottom: 15px;
+    border-bottom: 3px solid #2975c4;
+    color: #888;
+    font-size: 14px;
+}
+.con_three .con_three_l .post_tit{
+    padding: 20px 0 0;
+    color: #333;
+    text-align: center;
+}
+.con_three .con_three_l .post_tit h1{
+    text-align: center;
+    font-weight: 500;
+    font-size: 26px;
+    font-family: Microsoft YaHei;
+    line-height: 1.5;
+}
+.con_three .con_three_l .post_tit  span{
+    padding: 0 5px;
+}
+.con_three .con_three_l .post_tit .pt_info{
+    display: block;
+    padding-top: 5px;
+    color: #888;
+}
+.con_three .con_three_l .post_tit .pt_info a{
+    color: #888;
+}
+.con_three .con_three_l .banner .banner_img{
+    margin: 20px 0 0;
+}c
+.con_three .con_three_l .post_con{
+    margin-top: 10px;
+    text-align: justify;
+}
+.con_three .con_three_l .relevant{
+    padding-top: 15px;
+}
+.con_three .con_three_l .relevant .tit{
+    border-bottom: 1px solid #e2e2e2;
+}
+.con_three .con_three_l .relevant ul li{
+    overflow: hidden;
+    margin-top: 10px;
+    padding-left: 10px;
+    width: 340px;
+    height: 20px;
+    background: url(https://img.ithome.com/images/v2.1/new_list_icon.png) no-repeat 0 -15px;
+    background-size: 1pc 34px;
+    list-style: none;
+    text-align: left;
+    text-overflow: ellipsis;
+}
+.con_three .con_three_l .see_con{
+    font-size: 13px;
+}
+.con_three .con_three_l .see_con .tit{
+    border-bottom: 1px solid #e2e2e2;
+}
+.con_three .con_three_l .see_con .tit h2{
+    padding: 0 2px 5px;
+    border-bottom: 1px solid #2975c4 ;
+    color: #2975c4 ;
+    font-weight: 700;
+    font-size: 1pc;
+}
+.con_three .con_three_l .see_con .tit span{
+    color: #2975c4 ;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.con_three .con_three_l .see_con .list_1{
+    margin-top: 15px;
+    margin-left: 3px;
+    overflow: hidden;
+}
+.con_three .con_three_l .see_con .list_1 li{
+    width: 136px;
+    margin: 0 5px 0 4px;
+}
+.con_three .con_three_l .see_con .list_1 li img{
+    width: 130px;
+    height: 100px;
+    border: 1px solid #cedbeb;
+}
+.con_three .con_three_l .see_con .list_1 li .txt{
+    line-height: 20px;
+    margin-top: 10px;
+    max-height: 40px;
+    overflow: hidden;
+}
+.con_three .con_three_l .relevant .list_3 li{
+    float: left;
+}
+
+.right_con{
+    position: absolute;
+    top: 20px;
+    left: 12px;
+}   

@@ -1,0 +1,550 @@
+{template "content", "header"}
+<body>
+<div class="w100">
+    <div class="w1100">
+        <div class="information mt15">
+            <div class="fl informationLeft h100">
+                <div id="box1">
+                    <div id="box_img">
+                        <ul id="sub_img">
+                            <!-- 86400 一天    3600：一小时     300:5分钟 -->
+                            {pc:content action="lists" catid="$newsid" order="updatetime DESC"
+                            num="4" cache="0"}
+                            {loop $data $value}
+                            <li>
+                                <a href="{$value['url']}"><img src="{$value['thumb']}" alt=""></a>
+                            </li>
+                            {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                    <ul id="uls">
+                        <li class="select">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                    <span id="shang" class="sp"> < </span>
+                    <span id="xia" class="sp"> > </span>
+                </div>
+            </div>
+            <div class="fr informationRight h100">
+                <div class="informationRightL fl">
+                    <div class="focus-title">
+                        焦点关注
+                    </div>
+                    <ul class="clearfix">
+                        {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="0"}
+                        {loop $data $value}
+                        <li>
+                            <a href="{$value['url']}"><img src="{$value['thumb']}" alt=""></a>
+                            <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'],
+                                100, '')}</a></h2>
+                            <p><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['description'], 100, '')}</a>
+                            </p>
+                        </li>
+                        {/loop}
+                        {/pc}
+                    </ul>
+                </div>
+                <div class="informationRightR fl">
+                    <div class="focus-title">
+                        最新活动
+                    </div>
+                    <ul class="clearfix">
+                        {pc:content action="position" posid="$posidList['newActivity']" order="listorder DESC" num="7" cache="0"}
+                        {php $i=0;}
+                        {loop $data $value}
+                        {if $i >= 2}
+                        <li>
+                            <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 36, '')}</a>
+                        </li>
+                        {/if}
+                        {php $i++;}
+                        {/loop}
+                        {/pc}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- {show_ad(1, 16)} -->
+        <div class="banner w100 mt15">
+            <img src="https://ubmcmm.baidustatic.com/media/v1/0f0000RiksdnnD5ZAebS0s.jpg" alt=""/>
+        </div>
+        
+        <div class="zixun mt15">
+            <div class="zixunCon clearfix">
+                <div class="zixunConLeft fl">
+                    <div class="zxLeft_title">
+                        <ul>
+                            <li style="float:left;">
+                                <span class="dib">
+                                    <a href="{APP_PATH}index.php?m=content&c=index&a=list&typeid={$typeidList['news']}"">资讯</a>
+                                </span>
+                            </li>
+                            <li>
+                                <a href="{APP_PATH}index.php?m=content&c=index&a=list&typeid={$typeidList['news']}"">
+                                    < 更多
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="zxLeft_con clearfix">
+                        <div class="zxLeft_conL fl w50">
+                            <ul style="margin-bottom: 10px;">
+                                {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16"
+                                cache="0"}
+                                {php $i=0;}
+                                {loop $data $value}
+                                {if $i < 8}
+                                <li>
+                                    <div class="lis fl">
+                                        <span class="tit">
+                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                        </span>
+                                    </div>
+                                     
+                                    <span class="t fr">{date('d日',$value['inputtime'])}</span>
+                                </li>
+                                {/if}
+                                {php $i++;}
+                                {/loop}
+                                {/pc}
+                            </ul>
+
+                            <ul>
+                                {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="0"}
+                                {php $i=0;}
+                                {loop $data $value}
+                                {if $i < 8}
+                                <li>
+                                    <div class="lis fl">
+                                        <span class="tit">
+                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                        </span>
+                                    </div>
+                                            
+                                    <span class="t fr">{date('d日',$value['inputtime'])}</span>
+                                </li>
+                                {/if}
+                                {php $i++;}
+                                {/loop}
+                                {/pc}
+                            </ul>
+                        </div>
+                        <div class="zxLeft_conR fr" style="width: 48%;">
+                            <ul style="margin-bottom: 10px;">
+                                {php $i=0;}
+                                {loop $data $value}
+                                {if $i >= 8}
+                                <li>
+                                    <div class="lis fl">
+                                        <span class="tit">
+                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                        </span>
+                                    </div>
+                                            
+                                    <span class="t">{date('d日',$value['inputtime'])}</span>
+                                </li>
+                                {/if}
+                                {php $i++;}
+                                {/loop}
+                            </ul>
+
+                            <ul>
+                                {php $i=0;}
+                                {loop $data $value}
+                                {if $i >= 8}
+                                <li>
+                                    <div class="lis fl">
+                                        <span class="tit">
+                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                        </span>
+                                    </div>
+                                            
+                                    <span class="t fr">{date('d日',$value['inputtime'])}</span>
+                                </li>
+                                {/if}
+                                {php $i++;}
+                                {/loop}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="zixunConRight fr">
+                    <div class="zxRight_title">
+                        <ul>
+                            <li class="fl">
+                                <span>推荐资讯</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="zxRight_con clearfix zxRight_conc">
+                        <ul class="ul1 clearfix">
+                            {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC"
+                            num="1" cache="0"}
+                            {loop $data $value}
+                            <li>
+                                <div class="lImg fl">
+                                    <a href=""><img src="{$value['thumb']}" alt=""></a>
+                                </div>
+                                <div class='rTxt fr'>
+                                    <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 60, '')}</a></span>
+
+                                    <a href="{$value['url']}" target="_blank" style="font-size: 12px;"><i></i>{str_cut($value['description'], 60,
+                                        '')}</a>
+                                </div>
+                            </li>
+                            {/loop}
+                            {/pc}
+                        </ul>
+                        <ul class="ul2 clearfix">
+                            {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC"
+                            num="13" cache="0"}
+                            {php $i = 0;}
+                            {loop $data $value}
+                            {if $i >= 1}
+                            <li>
+                                <div class="ls">
+                                    <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 50, '')}</a>
+                                </div>
+                            </li>
+                            {/if}
+                            {php $i++;}
+                            {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- banner1-->
+        <div class="banner w100 mt15">
+            <img src="https://ubmcmm.baidustatic.com/media/v1/0f000jtI4JDvKQLSyV6mG0.jpg" alt=""/>
+        </div>
+
+        <div class="curriculum mt15">
+            <div class="w1100 curriculumCon clearfix">
+                <ul class="ul">
+                    {pc:content action="lists" catid="$courseid" where="status=99" order="id DESC" num="4" cache="0"}
+                    {loop $data $value}
+                    <li style="border-left:none;">
+                        <div class="imgs">
+                            <img src="{thumb($value['thumb'], 230, 155)}" alt=""/>
+                        </div>
+                        <div class="text fs12">
+                            <a href="">{$value['description']}</a>
+                        </div>
+                    </li>
+                    {/loop}
+                    {/pc}
+                </ul>
+            </div>
+        </div>
+
+        <!-- 技术文章-->
+        <div class="article mt15">
+            <div class="Manufacturer mt15 clearfix">
+                <div class="ManufacturerCon clearfix">
+                    <div class="manuConLeft fl">
+                        <div class="manuConLeftL w49 fl">
+                            <div class="title1" style="width: 377px;">
+                                <a href="{APP_PATH}index.php?m=content&c=index&a=list&typeid={$typeidList['tec']}">技术文章</a>
+                            </div>
+                            <ul>
+                                {php $where = "typeid=$typeidList[tec]";}
+                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC"
+                                num="8" cache="0"}
+                                {php $i = 0;}
+                                {loop $data $value}
+                                {if $i < 4}
+                                <li>
+                                    <div class="centerCon">
+                                        <div class="centerCon_img fr">
+                                            <a href="">
+                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="centerCon_txt fl">
+                                            <h3><a href="{$value['url']}">{str_cut($value['title'], 37, '')}</h3>
+                                            <a href="{$value['url']}">{str_cut($value['description'], 100, '')}
+                                        </div>
+                                    </div>
+                                </li>
+                                {/if}
+                                {php $i++;}
+                                {/loop}
+                                {/pc}
+                            </ul>
+                        </div>
+                        <div class="manuConLeftR w49 fr">
+                            <div class="title1" style="text-align: right;">
+                                <a href="{APP_PATH}index.php?m=content&c=index&a=list&typeid={$typeidList['tec']}" style=" font-size: 12px; color: #333;"> < 更多</a>
+                            </div>
+                            <ul>
+                                {php $i = 0;}
+                                {loop $data $value}
+                                {if $i > 3}
+                                <li>
+                                    <div class="centerCon">
+                                        <div class="centerCon_img fr">
+                                            <a href="">
+                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="centerCon_txt fl">
+                                            <h3><a href="{$value['url']}">{str_cut($value['title'], 37, '')}</h3>
+                                            <a href="{$value['url']}">{str_cut($value['description'], 100, '')}
+                                        </div>
+                                    </div>
+                                </li>
+                                {/if}
+                                {php $i++;}
+                                {/loop}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="manuConRight fr">
+                        <div class="manuConRightT"> 
+                            <div class="title1" class="fl">
+                                <a href="">IT八卦</a>
+                            </div>
+                            <div class="more">
+                                <a href="" class="fr"> < 更多 </a>
+                            </div>
+                        </div>
+                        <div class="zxRight_con clearfix">
+                            <ul>
+                                {pc:content action="hits" catid="$newsid" order="weekviews DESC" num="4" cache="0"}
+                                {loop $data $value}
+                                <li>
+                                    <div class="right_txt fl">
+                                        <span><a href="{$value['url']}">{$value['title']}</a></span><br/>
+                                        <a href="{$value['url']}">{$value['description']}</a>
+                                    </div>
+                                    <div class="left_img fr">
+                                        <a href="{$value['url']}">
+                                            <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                        </a>
+                                    </div>
+                                </li>
+                                {/loop}
+                                {/pc}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- banner3-->
+        <div class="banner w100 mt15">
+            <img src="https://ws1.sinaimg.cn/large/5431d036ly1fy3uclaqkej20to02iabk.jpg" alt=""/>
+        </div>
+
+        <div class="forum clearfix">
+            <div class="zixun mt15">
+                <div class="zixunCon clearfix">
+                    <div class="zixunConLeft fl">
+                        <div class="zxLeft_title">
+                            <ul>
+                                <li style="float:left;">
+                                    <span>
+                                        <a href="{$blogurl}">博客</a>
+                                    </span>
+                                </li>
+                                <li>
+                                    <a href="{$blogurl}"> < 更多</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="zxLeft_con clearfix">
+                            <div class="zxLeft_conL fl w50 clearfix">
+                                <ul>
+                                    <script type="text/javascript" src="{$bbsJsUrl}109"></script>
+                                </ul>
+                            </div>
+                            <div class="zxLeft_conR fr w50">
+                                <ul>
+                                    <script type="text/javascript" src="{$bbsJsUrl}110"></script>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zixunConRight fr">
+                        <div class="zxRight_title">
+                            <ul>
+                                <li class="fl">
+                                    <span>空间之星</span>
+                                </li>
+                                <li>
+                                    <div class="more fr">
+                                        <a href="">
+                                            < 更多
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="manuConRight fr">
+                            <div class="manuConRightB">
+                                <ul>
+                                    <script type="text/javascript" src="{$bbsJsUrl}88"></script>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- banner2-->
+        <div class="banner w100 mt15">
+            <img src="https://ws1.sinaimg.cn/large/5431d036ly1fyanhlcgwwj20to02iwfm.jpg" alt=""/>
+        </div>
+
+        <!-- Manufacturer-->
+        <div class="Manufacturer mt15 clearfix">
+            <div class="ManufacturerCon clearfix">
+                <div class="manuConLeft fl">
+                    <div class="manuConLeftL w49 fl">
+                        <div class="title1">
+                            <a href="{$bbsurl}">论坛</a>
+                        </div>
+                        <ul>
+                            <script type="text/javascript" src="{$bbsJsUrl}68"></script>
+                        </ul>
+                    </div>
+                    <div class="manuConLeftR w49 fr">
+                        <div class="title1" style="text-align: right;">
+                            <a href="{$bbsurl}" style="color: #666;"> < 更多</a>
+                        </div>
+                        <ul>
+                            <script type="text/javascript" src="{$bbsJsUrl}68"></script>
+                        </ul>
+                    </div>
+                </div>
+                <div class="manuConRight fr">
+                    <div class="manuConRightT">
+                        <div class="title1">
+                            <a href="">十大资讯</a>
+                        </div>
+                        <div class="more">
+                            <a href=""> < 更多 </a>
+                        </div>
+                    </div>
+                    <div class="manuConRightB zxRight_con clearfix">
+                        <ul>
+                            {pc:content action="hits" catid="$newsid" order="weekviews DESC" num="4" cache="0"}
+                            {loop $data $value}
+                            <li>
+                                <div class="right_txt fl">
+                                    <span><a href="{$value['url']}">{$value['title']}</a></span><br/>
+                                    <a href="{$value['url']}">{$value['description']}</a>
+                                </div>
+                                <div class="left_img fr">
+                                    <a href="{$value['url']}">
+                                        <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                    </a>
+                                </div>
+                            </li>
+                            {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w100 mt15">
+    <div class="w1100 Footer">
+        <div class="footerTop">
+            <div class="ft_txt">
+                <ul>
+                    <li class="fl links"><span>友情链接</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerBottom clearfix">
+            <ul class="clearfix">
+                {pc:link action="lists" typeid="0" siteid="$siteid" linktype="0" order="desc"}
+                {loop $data $value}
+                <li class="fl"><a href="{$value['url']}" title="{$value['name']}" target="_blank">{$value['name']}</a></li>
+                {/loop}
+                {/pc}
+            </ul>
+        </div>
+    </div>
+    <div class="w1100 ftNav mt15">
+        <div class="links">
+            <a href="">ET创芯网(EETOP)-电子设计论坛、博客、超人气的电子工程师资料分享平台 </a>&nbsp;&nbsp;|
+            <a href="">论坛</a>&nbsp;&nbsp;|
+            <a href="">快捷面板</a>&nbsp;&nbsp;|
+            <a href="">站点地图</a>&nbsp;&nbsp;|
+            <a href="">空间列表</a>&nbsp;&nbsp;|
+            <a href="">站点存档</a>&nbsp;&nbsp;|
+            <a href="">关于我们</a>&nbsp;&nbsp;|
+            <a href="">联系我们</a>
+        </div>
+        <div  class="sj">@2003-2018 中国电子顶级开发网  </div>
+        <div class="copy">
+            <p class="copyTxt"><a href="">京ICP备:10050787号 京公网安备：110105001212</a></p>
+        </div>
+    </div>
+</div>
+    <script>
+    var timer = setInterval(active,2000);
+    var autoNum = 0;
+    function active(){
+        //进来先将动画清掉
+        $("#box_img").stop(true);
+        autoNum++;
+        autoNum%=4;
+        $("#box_img").animate({
+            "scrollLeft": 300*autoNum
+        },500);
+        changFn();
+    };
+    //点击下一张
+    $("#xia").on("click",active);
+    //点击上一张
+    $("#shang").on("click",function(){
+        $("#box_img").stop(true);
+        autoNum--;
+        if(autoNum<0){
+            autoNum=3;
+        }
+        $("#box_img").animate({
+            "scrollLeft": 300*autoNum
+        },200);
+        changFn();
+    });
+    
+    //修改4个li样式
+    function changFn(){
+        $("#uls li").eq(autoNum).addClass("select").siblings().removeClass("select");
+    }
+    //4个小按钮事件
+    $("#uls li").on("click",function(){
+        autoNum = $(this).index();
+        $("#box_img").animate({
+            "scrollLeft": 300*autoNum
+        },200);
+        changFn();
+    })
+    //鼠标移入
+    $("#box1").on("mouseenter",function(){
+        clearInterval(timer);
+    });
+    //鼠标离开
+    $("#box1").on("mouseleave",function(){
+        timer = setInterval(active,2000);
+    });
+</script>
+</body>
+</html>

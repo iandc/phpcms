@@ -1,0 +1,639 @@
+body{
+    font-size: 14px;
+}
+.dib{
+    display: inline-block;
+}
+
+.nav{
+    height: 42px;
+    background-color: #2975c4;
+}
+.nav .navCon ul li{
+    height: 42px;
+    line-height: 42px;
+    cursor: pointer;
+    position: relative;
+}
+.nav .navCon ul li:hover{
+    background-color: #fff;
+}
+.nav .navCon ul li.current{
+    background-color: #0483b0;
+}
+.nav .navCon ul li .lis_a{
+    display: inline-block;
+    color: #fff;
+    padding: 0 20px;
+}
+.nav .navCon ul .ind{
+    padding: 0 20px;
+}
+.nav .navCon ul li:hover .lis_a{
+    color: #666;
+}
+.nav .navCon ul .ind:hover .aa{
+    color: #666;
+}
+.nav .navConRight ul li .ico{
+    padding-left: 32px;
+}
+.ico{
+    background: url(../images/drivers/icons.png) no-repeat;
+}   
+.nav .navConRight .ico1{
+    background-position: 12px 12px;
+}
+.nav .navConRight .ico2{
+    background-position: 12px -19px;
+}
+.nav .navConRight .set{
+    padding: 10px 12px;
+}
+/*Ã‚Ã–Â²Â¥*/
+.information{
+    height: 222px;
+}
+.information a:hover{
+    color: #2975c4;
+}
+.informationLeft{
+    width: 300px;
+    background-color: darkcyan;
+}
+
+
+#box1{
+    width: 300px;
+    height: 222px;
+    position: relative;
+}
+#box_img{
+    width: 300px;
+    height: 222px;
+    overflow: hidden;
+}
+#sub_img{
+    width: 2000px;
+    height: 222px;
+}
+#sub_img li,#sub_img li a img{
+    width: 300px;
+    height:222px;
+}
+#uls{
+    position: absolute;
+    left: 50%;
+    bottom:10px;
+    margin-left: -55px;
+}
+#uls li{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+    line-height:15px;
+    margin-left: 10px;
+    background-color: #eee;
+    color: #000;
+    font-size: 12px;
+    cursor: pointer;
+}
+.sp{
+    background-color: #000;
+    opacity: .5;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    width: 20px;
+    height: 30px;
+    text-align: center;
+    line-height:30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+#uls .select{
+    background-color: #2975c4;
+    color: #fff;
+}
+#shang{
+    left: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 6px;
+}
+#xia{
+    right: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 6px;
+}
+
+.informationRight{
+    padding: 0 22px;
+    width: 740px;
+    background-color: #fff;
+}
+.informationRight .informationRightL{
+    margin-top: 15px;
+    width: 500px;
+}
+.informationRight .informationRightL .focus-title,.informationRight .informationRightR .focus-title{
+    height: 20px;
+    border-left: 4px solid #2975c4;
+    padding-left: 9pt;
+    color: #2975c4;
+    font-size: 1pc;
+    line-height: 20px;
+}
+.informationRight ul{
+    padding-top: 15px;
+}
+.informationRight .informationRightL ul li{
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 474px;
+    height: 62px;
+}
+.informationRight .informationRightL ul li img{
+    float: left;
+    width: 5pc;
+    height: 60px;
+    margin-top: 5px;
+}
+.informationRight .informationRightL ul li h2{
+    overflow: hidden;
+    padding: 0 0 5px 18px;
+    width: 358px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 16px;
+}
+.informationRight .informationRightL ul li h2 a{
+    font-weight: 600;
+    font-size: 13px;
+}
+.informationRight .informationRightL ul li p{
+    padding-left: 98px;
+    color: #888;
+    font-size: 12px;
+}
+
+.informationRight .informationRightR{
+    width: 240px;
+    margin-top: 15px;
+}
+.informationRight .informationRightR ul li{
+    height: 15px;
+    margin-bottom: 17px;
+    padding-left: 15px;
+    background: url(//icons.mydrivers.com/2018/www/icon.png) no-repeat -2px -658px;
+    -webkit-background-size: 5px 5px;
+    font-size: 12px;
+}
+
+
+/*资讯*/
+.zixun{
+    background-color: #fff;
+}
+.zixun .zixunConLeft,.Manufacturer .manuConLeft{
+    width: 735px;
+    padding: 12px 14px;
+}
+.zixun .zixunConLeft .zxLeft_title,.zixun .zixunConRight .zxRight_title{
+    border-bottom: #dcdbdb 1px solid;
+    height: 36px;
+    line-height: 36px;
+    padding-right: 3px;
+}
+.zixun .zixunConLeft .zxLeft_title ul li{
+    float: right;
+    font-size: 12px;
+    height: 25px;
+    line-height: 25px;
+    cursor: pointer;
+    padding-right: 15px;
+}
+.zixun .zixunConLeft .zxLeft_title ul li span{
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 26px;
+}
+.zixun .zixunConLeft .zxLeft_title ul li span a{
+    color: #09f;
+}
+.zixun .zixunConLeft .zxLeft_title ul li a{
+    display: inline-block;
+    color: #222;
+    font-weight: bold;
+}
+
+.zixun .zxLeft_con{
+    padding: 10px 0;
+    height: auto;
+}
+.zxLeft_con ul{
+    float: left;
+    width: 370px;
+    height: auto;
+}
+.zxLeft_con ul li{
+    height: 30px;
+    width: 353px;
+    overflow: hidden;
+    line-height: 30px;
+    padding: 1px 1px 1px 16px;
+    background: url(//icons.mydrivers.com/2018/www/icon.png) no-repeat -2px -658px;
+}
+.zxLeft_con ul li .lis:hover{
+    width: 280px;
+    height: 32px;
+    background-color: #eee;
+}
+.zxLeft_con ul li .tit{
+    display: block;
+    width: 275px;
+    overflow: hidden;
+    float: left;
+}
+.zxLeft_con ul li .t{
+    float: right;
+    color: #888;
+    padding-right: 15px;
+    width: 38px;
+    font-size: 12px;
+}
+.zixunConRight,.Manufacturer .manuConRight{
+    width: 314px;
+    float: right;
+    padding: 12px 6px 6px 6px;
+    border-left: #eee 2px solid;
+}
+.zixunConRight .zxRight_title{
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 10px;
+    position: relative;
+}
+.zixunConRight .zxRight_title span{
+    display: block;
+    font-size: 14px;
+    margin-top: -5px;
+    color: #09f;
+}
+.zxRight_con{
+    padding:0 22px 11px 4px;
+}
+.zxRight_con ul li{
+    height: 110px;
+}
+.zxRight_con .left_img{
+    padding: 14px 5px 5px 0;
+    width: 112px;
+    height: 80px;
+}
+.zxRight_con .left_img img{
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+}
+.zxRight_con .right_txt{
+    width: 155px;
+    height: 100px;
+    color: #9c9c9c;
+    line-height: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+     white-space: normal;
+     -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-left: 15px;
+}
+.zxRight_con .right_txt span{
+    display: inline-block;
+    width: 100%;
+    color: #C00;
+    overflow: hidden;
+    margin-top: 11px;
+    margin-bottom: 5px;
+    max-height: 40px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.zxRight_con .right_txt span a{
+    font-size: 12px;
+    font-weight: 600;
+}
+.zxRight_con .right_txt a{
+    color: #474747;
+    font-size: 12px;
+    display: inline-block;
+}
+.zxRight_conc{
+    height: auto!important;
+    min-height: 50px;
+    padding: 10px 8px 13px 10px;
+    font-size: 12px;
+}  
+.zxRight_conc .ul1 li{
+    border-bottom: #CCC 1px dotted;
+    padding-bottom: 15px;
+}
+.zxRight_conc ul li{
+    height: 100px;
+}
+.zxRight_conc .ul1 li img{
+    width: 100px;
+    height: 72px;
+}
+.zxRight_conc ul li .lImg{
+    padding: 14px 5px 5px 0;
+}
+.zxRight_conc ul li .rTxt{
+    width: 175px;
+    height: 90px;
+    color: #9c9c9c;
+    float: right;
+    line-height: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top: -3px;
+    margin-left: 12px;
+}
+.zxRight_conc ul li .rTxt span{
+    display: inline-block;
+    width: 100%;
+    color: #C00;
+    overflow: hidden;
+    margin-top: 11px;
+    margin-bottom: -2px;
+    max-height: 40px;
+    overflow: hidden;
+}
+.zxRight_conc ul li .rTxt span a{
+    font-weight: bold;
+}
+.zxRight_conc .ul2{
+    background: url(../images/icons.png) no-repeat;
+    background-position: 6px -304px;
+    margin-top: 15px;
+}
+.zxRight_conc .ul2 li{
+    width: 290px;
+    height: 33px;
+    line-height: 33px;
+    padding-top: -5px;
+    background: url(//icons.mydrivers.com/2018/www/icon.png) no-repeat -2px -658px;
+}
+.zxRight_conc .ul2 li .ls{
+    padding-left: 15px;
+}
+.zxRight_conc .ul2 li .ls:hover{
+    width: 290px;
+    height: 32px;
+    background-color: #eee;
+}
+.zxRight_conc .ul2 li a{
+    font-size: 14px;
+}
+
+.banner{
+    margin-bottom: 20px;
+}
+.banner img{
+    width: 100%;
+    height: 80px;
+}
+
+.curriculum .curriculumCon{
+    background-color: #fff;
+}
+.curriculum ul li{
+    width: 25%;
+    float: left;
+    border: 5px solid #eee;
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+}
+.curriculum ul li .imgs{
+    width: 230px;
+    height: 155px;
+    position: relative;
+}
+.curriculum ul li img{
+    width: 100%;
+    height: 100%;
+}
+.curriculum ul li .mask{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 5px 0;
+    background: url(../images/fdong_bg.png) repeat-x;
+    font-size: 12px;
+}
+.curriculum ul li .mask a{
+    padding: 0 10px;
+}
+.curriculum ul li .text{
+    width: 100%;
+    height: 63px;
+    overflow: hidden;
+    padding-top: 10px;
+    line-height: 22px;
+    border-bottom: #fff 1px solid;
+    cursor: pointer;
+}
+
+.article{
+    background-color: yellowgreen;
+}
+.article .centerCon_txt{
+    width: 230px;
+}
+.manuConRightB ol li cite{
+    font-size: 12px;
+    float: right;
+    color: #999;
+    text-align: right;
+}
+.manuConRightB ol li{
+    width: 300px;
+    height: 20px;
+    overflow: hidden;
+    padding-left: 0.8em;
+    background: url(../images/list_icon.gif) no-repeat 3px 0.68em;
+    margin: 10px 0;
+}
+.Manufacturer .manuConLeft .xNo .centerCon{
+    border-bottom: none;
+}
+
+.forum .zixunConRight ul li .more{
+    position: absolute;
+    right: 0;
+    top: -5px;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.Manufacturer{
+    background-color: #fff;
+}
+.Manufacturer .title1{
+    border-bottom: #dcdbdb 1px solid;
+    height: 33px;
+    line-height: 24px;
+    padding-left: 8px;
+}
+.Manufacturer .manuConLeft .title1 a{
+    font-size: 18px;
+    color: #09f;
+    font-weight: bold;
+}
+.Manufacturer .manuConLeft .manuConLeftL .title1{
+    width: 378px;
+}
+.Manufacturer .manuConLeft .manuConLeftR .title1 a{
+    font-size: 12px;
+    color: 666;
+}
+.Manufacturer .manuConLeft ul li{
+    overflow: hidden;
+    height: 110px;
+}
+.Manufacturer .manuConLeft .centerCon{
+    font-size: 12px;
+    overflow: hidden;
+    padding: 15px 10px 15px 0;
+    border-bottom: #999 1px dotted;
+}
+.Manufacturer .manuConLeft .centerCon .centerCon_img{
+    width: 97px;
+    /*padding: 3px;*/
+    text-align: center;
+}
+.Manufacturer .manuConLeft .centerCon .centerCon_txt h3{
+    font-weight: bold;
+    line-height: 18px;
+    padding-bottom: 5px;
+}
+.Manufacturer .manuConLeft .bottomCon{
+    font-size: 12px;
+    height: auto;
+    padding: 10px 0 5px 10px;
+}
+.Manufacturer .manuConLeft .zxLeft_con{
+    font-size: 14px;
+}
+.Manufacturer .manuConLeft .zxLeft_con ul{
+    margin-left: -10px;
+}
+.zixunConRight .manuConRight .title1 a{
+    font-weight: bold;
+    color: #09f;
+}
+.zixunConRight .manuConRight .manuConRightT,.Manufacturer .manuConRight .manuConRightT{
+    position: relative;
+}
+.article .manuConRight .manuConRightT .title1 a,.Manufacturer .manuConRight .manuConRightT .title1 a{
+    color: #09f;
+    font-weight: bold;
+}
+.article .manuConRight .more,.Manufacturer .manuConRight .more{
+    position: relative;
+}
+.article .manuConRight .more a,.Manufacturer .manuConRight .more a{
+    position: absolute;
+    right: 0;
+    top: -32px;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+}
+.zixunConRight .manuConRight .manuConRightB ul li{
+    width: 30%;
+    margin: 5px;
+    margin-top: 10px;
+}
+.zixunConRight .manuConRight .manuConRightB ul li img{
+    width: 75px;
+    height: 75px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+.zixunConRight .manuConRight .manuConRightB ul li p{
+    text-align: center;
+}
+
+
+
+.Footer{
+    height: auto;
+    background-color: #fff;
+}
+.Footer .footerTop{
+    padding: 6px 6px 0 13px;
+}
+.Footer .footerTop .ft_txt{
+    height: 33px;
+    line-height: 33px;
+    padding-right: 3px;
+}
+.Footer .footerTop .ft_txt ul li{
+    font-size: 12px;
+    height: 33px;
+    line-height: 33px;
+    cursor: pointer;
+    padding-right: 1px;
+    padding-left: 2px;
+}
+.Footer .footerTop .ft_txt ul .links span{
+    color: #09f;
+    font-weight: bold;
+}
+.Footer .footerBottom{
+    margin-left: 15px;
+}
+.Footer .footerBottom ul{
+    margin-bottom: 10;
+}
+.Footer .footerBottom ul li{
+    width: 120px;
+    line-height: 30px;
+    height: 30px;
+    font-size: 12px;
+}
+.Footer .footerBottom ul li a{
+    text-align: center;
+}
+.ftNav{
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+.ftNav,.copy{
+    padding: 5px 0;
+    text-align: center;
+}
+.ftNav .links a{
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 12px;
+    text-decoration: none;
+}
+.ftNav .sj{
+    color: red;
+    margin-top: 10px;
+}
+.copy{
+    margin: 10px 0;
+}
+.copy .copyTxt{
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 12px;
+}

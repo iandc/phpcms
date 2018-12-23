@@ -1,0 +1,38 @@
+
+{if $_GET['a'] == 'lists'}
+<!-- 列表页 -->
+<div class="crumbs" style="height: 30px; margin-top: 7px; border-bottom: 1px solid #dcdbdb; line-height: 30px; padding: 8px 20px;">
+     <ul class="lists">
+         <li>
+             <a href="">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;&nbsp;{/if} </a>
+         </li>
+         <li>
+             <a href="javascript:;">{if $catid == 0}&nbsp;&nbsp;全部&nbsp;&nbsp;{else}&nbsp;&nbsp;{$catname}&nbsp;{/if}</a>
+         </li>
+         <li>
+             <a href=""> > 列表</a>
+         </li>
+     </ul>
+</div>
+{elseif $_GET['a'] == 'category'}
+ <!-- 频道页 --> 
+<div class="w1100">
+    <div class="crumbs" style="height: 30px; margin-top: 7px; line-height: 30px; padding: 5px 20px; background: #fff;">
+        <ul>
+            <li>
+                <a href="{APP_PATH}index.php?m=content&c=index&a=category">频道首页&nbsp; > </a>
+            </li>
+            <li>
+                <a href="javascript:;">&nbsp;&nbsp;{$catname}</a>
+            </li>
+        </ul>
+    </div>
+</div>
+{elseif $_GET['a'] == 'show' || $_GET['a'] == 'view'}
+<!-- 内容页 -->
+<div class="current_nav">
+    <a href="#">资讯</a><span> &gt; </span>{$CATEGORYS[$catid]['catname']} <span> &gt; </span> 内容
+</div>
+{/if}
+
+

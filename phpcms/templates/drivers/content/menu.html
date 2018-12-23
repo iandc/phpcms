@@ -1,0 +1,34 @@
+{pc:content action="category" siteid="$siteid" catid="0" num="20" cache="0"}
+{loop $data $value}
+<li>
+    <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" href="{APP_PATH}type-{$typeidList['news']}-1.html" target="_blank">{$value['catname']}</a>
+    {if $value['catid'] == $newsid}
+    <ul class="sub_mune_ul">
+        <li><a href="{APP_PATH}type-{$typeidList['news']}-1.html">全部</a></li>
+        {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" return="d"}
+        {loop $d $v}
+        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['news']}-1.html">{$v['catname']}</a></li>
+        {/loop}
+        {/pc}
+    </ul>
+    {/if}
+</li>
+{/loop}
+{/pc}
+<li><a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}type-{$typeidList['tec']}-1.html"
+       target="_blank">技术文章</a>
+    <ul class="sub_mune_ul clearfix">
+        <li><a href="{APP_PATH}type-{$typeidList['tec']}-1.html">全部</a></li>
+        {loop $d $v}
+        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['tec']}-1.html">{$v['catname']}</a>
+        </li>
+        {/loop}
+    </ul>
+</li>
+<li><a class="hover_a lis_a nav_l c_f nav_q" href="#" target="_blank">频道</a>
+    <ul class="sub_mune_ul clearfix">
+        {loop $d $v}
+        <li><a href="{APP_PATH}category-{$v['catid']}.html">{$v['catname']}</a></li>
+        {/loop}
+    </ul>
+</li>

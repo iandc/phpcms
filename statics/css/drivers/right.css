@@ -1,0 +1,161 @@
+.cm_four_r{
+    width: 340px;
+}
+.cm_four_r .tabs .tab{
+    overflow: hidden;
+    width: 298px;
+    border-top: 3px solid #2975c4;
+}
+.cm_four_r .tab {
+     border: 1px solid #ddd;
+     border-bottom: 0;
+     height: 36px;
+     width: 320px;
+}
+
+.cm_four_r .tab li {
+    overflow: hidden;
+    padding: 0 10px;
+    height: 35px;
+    border-bottom: 1px #e5e5e5 solid;
+    cursor: pointer;
+    line-height: 35px;
+    width: 43%;
+    text-align: center;
+}
+
+.cm_four_r .tab span {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    background: #ddd;
+    width: 1px;
+    height: 14px;
+    overflow: hidden;
+}
+
+.cm_four_r .products {
+    width: 298px;
+    border: 1px solid #ddd;
+    height: 380px;
+}
+
+.cm_four_r .products .main {
+    float: left;
+    display: none;
+}
+
+.cm_four_r .products .main.selected {
+    display: block;
+}
+
+.cm_four_r .tab li.active {
+    border-bottom: 1px #2975c4 solid;
+    background: #fff;
+    color: #2975c4;
+}
+.cm_four_r .products ul li{
+    padding: 7px 0;
+    padding-left: 22px;
+    width: 258px;
+    font-size: 9pt;
+    line-height: 17px;
+    zoom: 1;
+}
+.cm_four_r .products ul li span{
+    float: left;
+    display: none;
+    padding: 0 9pt 0 7px;
+    color: black;
+}
+.cm_four_r .products ul li  a{
+    float: right;
+    overflow: hidden;
+    width: 258px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 17px;
+}
+.cm_four_r .products .list{
+    position: relative;
+    z-index: 1000;
+    float: left;
+    overflow: hidden;
+    margin-top: -1px;
+    padding: 0 10px;
+    padding-top: 5px;
+    background: url(//img.ithome.com/file/images/hot_title_bg.gif) 10px 13px no-repeat;
+}
+.cm_four_r .products .list ul li{
+    overflow: hidden;
+}
+.cm_four_r .lb{
+    width: 292px;
+    height: 248px;
+    padding: 3px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+.cm_four_r .hots{
+    position: relative;
+    clear: both;
+    width: 298px;
+    border: 1px solid #e8e8e8;
+    border-top: 0;
+    line-height: 17px;
+}
+.cm_four_r .hot{
+    width: 300px;
+    margin-top: 10px;
+}
+.cm_four_r .hot .hotList_tit{
+    position: relative;
+    clear: both;
+    width: 278px;
+    border-top: 0;
+    line-height: 17px;
+}
+.cm_four_r .hot .hotList .hotList_tit{
+    padding: 0 10px;
+    height: 31px;
+    border-top: 2px #2975c4 solid;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 31px;
+}
+.cm_four_r .hot .hotList .img .imgs{
+    float: left;
+    padding: 10px 6px 20px 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 137px;
+    height: 115px;
+    border-bottom: 1px #ddd dotted;
+    text-align: center;
+}
+.cm_four_r .hot .hotList .img .imgs .image{
+    padding-bottom: 10px;
+}
+.cm_four_r .hot .hotList .img a{
+    display: block;
+    padding: 0 0px;
+    font-size: 12px;
+}
+.cm_four_r .hot .hotList .img .imgs .image img{
+    width: 90pt;
+}
+.cm_four_r .lists ul li{
+    display: inline;
+    padding: 7px 10px;
+    width: 278px;
+    zoom: 1;
+}
+.cm_four_r .lists ul li a{
+    display: inline-block;
+    overflow: hidden;  
+    width: 270px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+}
