@@ -229,7 +229,6 @@ class uc_note
         return API_RETURN_SUCCEED;
     }
 
-    //当 UCenter 的应用程序列表变更时
     public function updateapps($get, $post)
     {
         if (!API_UPDATEAPPS) {
