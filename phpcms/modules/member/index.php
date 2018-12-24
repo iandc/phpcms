@@ -603,7 +603,7 @@ class index extends foreground {
 		}
 		
 		if(isset($_POST['dosubmit'])) {
-			/*if(empty($_SESSION['connectid'])) {
+			if(empty($_SESSION['connectid'])) {
 				//判断验证码
 				$code = isset($_POST['code']) && trim($_POST['code']) ? trim($_POST['code']) : showmessage(L('input_code'), HTTP_REFERER);
 				if ($_SESSION['code'] != strtolower($code)) {
@@ -611,7 +611,7 @@ class index extends foreground {
 					showmessage(L('code_error'), HTTP_REFERER);
 				}
 				$_SESSION['code'] = '';
-			}*/
+			}
 			
 			$username = isset($_POST['username']) && is_username($_POST['username']) ? trim($_POST['username']) : showmessage(L('username_empty'), HTTP_REFERER);
 			$password = isset($_POST['password']) && trim($_POST['password']) ? trim($_POST['password']) : showmessage(L('password_empty'), HTTP_REFERER);

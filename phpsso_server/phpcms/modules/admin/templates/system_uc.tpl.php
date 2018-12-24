@@ -78,11 +78,6 @@ include $this->admin_tpl('header');
 			<td>
 			<input type="text" class="input-text" name="data[uc_key]" id="uc_key" value="<?php if(isset($data['uc_key'])){echo $data['uc_key'];}?>" size="50"/></td>
 		</tr>
-            <tr>
-            <th><?php echo L('uc_dbconnect')?></th>
-            <td>
-                <input type="radio" name="data[uc_dbconnect]" value="1" <?php if(isset($data['uc_dbconnect']) && $data['uc_dbconnect']==1){echo 'checked';}?>/> <?php echo L('yes')?> <input type="radio" name="data[uc_dbconnect]" value="0" <?php if(!isset($data['uc_dbconnect']) || !$data['uc_dbconnect']){echo 'checked';}?> /> <?php echo L('no')?></td></td>
-        </tr>
 	</tbody>
 	</table>
     <div class="bk15"></div>
