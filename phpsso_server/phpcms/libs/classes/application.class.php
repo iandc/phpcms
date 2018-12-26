@@ -24,15 +24,16 @@ class application {
 	 */
 	private function init() {
 		$controller = $this->load_controller();
-		if (method_exists($controller, ROUTE_A)) {
+        if (method_exists($controller, ROUTE_A)) {
 			if (preg_match('/^[_]/i', ROUTE_A)) {
-				exit('You are visiting the action is to protect the private action');
+                exit('You are visiting the action is to protect the private action');
 			} else {
-				call_user_func(array($controller, ROUTE_A));
+                call_user_func(array($controller, ROUTE_A));
 			}
 		} else {
 			exit('Action does not exist.');
-		}
+
+        }
 	}
 	
 	/**

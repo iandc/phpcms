@@ -33,13 +33,7 @@ body{
     color: #2975c4;
     font-size: 1pc;
     line-height: 58px;
-}
-.con_four .con_fourL_top .lf .product .p_title .border{
-    margin-top: 22px;
-    margin-left: 1pc;
-    padding-right: 13px;
-    height: 1pc;
-    border-left: 4px solid #2975c4;
+    padding-left: 15px;
 }
 .con_four .con_fourL_top .lf .product ul{
     padding: 0 15px;
@@ -99,7 +93,7 @@ body{
 .con_four .con_fourL_top .mf .mf_con .newList ul{
     float: left;
     margin-right: 20px;
-    width: 349px;
+    /*width: 349px;*/
 }
 .con_four .con_fourL_top .mf .mf_con .newList ul li{
     width: 413px;
@@ -116,15 +110,15 @@ body{
 .con_four .con_fourL_top .mf .mf_con .newList ul li.new{
     background-position: left 4px;
 }
-.con_four .con_fourL_top .mf .mf_con .newList ul li.new:hover{
-    background-color: #eee;
-}
-.con_four .con_fourL_top .mf .mf_con .newList ul li span.tit{
+/*.con_four .con_fourL_top .mf .mf_con .newList ul li span.tit{
     width: 350px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     display: block;
+}*/
+.con_four .con_fourL_top .mf .mf_con .newList ul li span.tit:hover{
+    background-color: #eee;
 }
 
 .right{
@@ -150,9 +144,10 @@ body{
     border-bottom: 2px solid #2975c4;
 }
 .con_four .con_fourL_bottom .listBox h2 .sp2{
-    padding-left: 230px;
     font-weight: 400;
     font-size: 9pt;
+    float: right;
+    margin-right: 28px;
 }
 .con_four .con_fourL_bottom .listBox ul{
     padding: 15px 0 0;

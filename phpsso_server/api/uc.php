@@ -1,59 +1,68 @@
 <?php
 
-//error_log($uid, 3, CACHE_PATH.'uc_error_log.php');
+error_reporting(0);
 
-error_reporting(7);
-define('PHPCMS_PATH', dirname(__FILE__) . '/../');
-if (!defined('IN_PHPCMS')) include PHPCMS_PATH . '/phpcms/base.php';
-
-define('UC_KEY', pc_base::load_config('system', 'uc_key'));
-define('UCUSE', pc_base::load_config('system', 'ucuse'));
-if (UC_KEY == '' || UCUSE == 0) {
-    exit('please check uc config!');
-}
+define('UC_CLIENT_VERSION', '1.6.0');
+define('UC_CLIENT_RELEASE', '20170101');
 
 define('API_RETURN_SUCCEED', '1');
 define('API_RETURN_FAILED', '-1');
 define('API_RETURN_FORBIDDEN', '-2');
 
-define('API_DELETEUSER', 1);
-define('API_RENAMEUSER', 1);
-define('API_GETTAG', 1);
 define('API_SYNLOGIN', 1);
 define('API_SYNLOGOUT', 1);
+define('API_DELETEUSER', 1);
+define('API_RENAMEUSER', 1);
 define('API_UPDATEPW', 1);
 define('API_UPDATEBADWORDS', 1);
 define('API_UPDATEHOSTS', 1);
 define('API_UPDATEAPPS', 1);
 define('API_UPDATECLIENT', 1);
-define('API_UPDATECREDIT', 0);
-define('API_GETCREDIT', 0);
-define('API_GETCREDITSETTINGS', 0);
-define('API_UPDATECREDITSETTINGS', 0);
+define('API_UPDATECREDIT', 1);
+define('API_GETCREDIT', 1);
+define('API_GETCREDITSETTINGS', 1);
+define('API_UPDATECREDITSETTINGS', 1);
+define('API_GETTAG', 1);
 define('API_ADDFEED', 0);
 
-$get = $post = array();
-
-$code = @$_GET['code'];
-parse_str(authcode($code, 'DECODE', UC_KEY), $get);
-
-if (SYS_TIME - $get['time'] > 3600) exit('Authracation has expiried');
-if (empty($get)) exit('Invalid Request');
-
-include dirname(__FILE__) . '/uc_client/lib/xml.class.php';
-$post = xml_unserialize(file_get_contents('php://input'));
+define('IN_API', true);
+define('CURSCRIPT', 'api');
 
 
-$action = $get['action'];
+if (!defined('IN_UC')) {
 
-if (in_array($get['action'], array('test', 'deleteuser', 'renameuser', 'gettag', 'synlogin', 'synlogout', 'updatepw', 'updatebadwords', 'updatehosts', 'updateapps', 'updateclient', 'updatecredit', 'getcreditsettings', 'updatecreditsettings'))) {
-    $uc_note = new uc_note();
-    header('Content-type: text/html; charset=' . pc_base::load_config('system', 'charset'));
-    //echo $uc_note->$get['action']($get, $post); // php7.3不支持
-    echo call_user_func(array($uc_note, $get['action']), $get, $post);
-    exit();
+    define('PHPCMS_PATH', dirname(__FILE__) . '/../');
+
+    if (!defined('IN_PHPCMS')) include_once PHPCMS_PATH . 'phpcms/base.php';
+
+    define('UC_KEY', pc_base::load_config('system', 'uc_key'));
+    define('UCUSE', pc_base::load_config('system', 'ucuse'));
+
+    $get = $post = array();
+
+    $code = @$_GET['code'];
+    parse_str(authcode($code, 'DECODE', UC_KEY), $get);
+
+    if (time() - $get['time'] > 3600) {
+        exit('Authracation has expiried');
+    }
+    if (empty($get)) {
+        exit('Invalid Request');
+    }
+
+    include_once PHPCMS_PATH . 'api/uc_client/lib/xml.class.php';
+    $post = xml_unserialize(file_get_contents('php://input'));
+
+    if (in_array($get['action'], array('test', 'deleteuser', 'renameuser', 'gettag', 'synlogin', 'synlogout', 'updatepw', 'updatebadwords', 'updatehosts', 'updateapps', 'updateclient', 'updatecredit', 'getcredit', 'getcreditsettings', 'updatecreditsettings', 'addfeed'))) {
+        $uc_note = new uc_note();
+        //header('Content-type: text/html; charset=' . pc_base::load_config('system', 'charset'));
+        echo call_user_func(array($uc_note, $get['action']), $get, $post);
+        exit();
+    } else {
+        exit(API_RETURN_FAILED);
+    }
 } else {
-    exit(API_RETURN_FAILED);
+    exit;
 }
 
 class uc_note
@@ -61,8 +70,23 @@ class uc_note
 
     private $member_db, $uc_db, $applist, $uc_client_cache_path;
 
+    var $dbconfig = '';
+    var $db = '';
+    var $tablepre = '';
+    var $appdir = '';
+
+    function _serialize($arr, $htmlon = 0)
+    {
+        if (!function_exists('xml_serialize')) {
+            include_once PHPCMS_PATH . 'api/uc_client/lib/xml.class.php';
+        }
+        return xml_serialize($arr, $htmlon);
+    }
+
     function __construct()
     {
+        require_once PHPCMS_PATH . 'caches/configs/uc_config.php';
+        require_once PHPCMS_PATH . 'api/uc_client/client.php';
         $this->member_db = pc_base::load_model('member_model');
         pc_base::load_sys_class('uc_model', 'model', 0);
         $db_config = get_uc_database();
@@ -74,54 +98,17 @@ class uc_note
     //测试通信
     public function test()
     {
-        return API_RETURN_SUCCEED;
-    }
-
-    //删除用户
-    public function deleteuser($get, $post)
-    {
-        if (!API_DELETEUSER) {
-            return API_RETURN_FORBIDDEN;
-        }
-        pc_base::load_app_func('global', 'admin');
-        pc_base::load_app_class('messagequeue', 'admin', 0);
-        $ids = new_stripslashes($get['ids']);
-        $ids = array_map('intval', explode(',', $ids));
-        $ids = implode(',', $ids);
-        $s = $this->member_db->select("ucuserid in ($ids)", "uid");
-        $this->member_db->delete("ucuserid in ($ids)");
-        $noticedata['uids'] = array();
-        if ($s) {
-            foreach ($s as $key => $v) {
-                $noticedata['uids'][$key] = $v['uid'];
-            }
-        } else {
-            return API_RETURN_FAILED;
-        }
-        messagequeue::add('member_delete', $noticedata);
-        return API_RETURN_SUCCEED;
-    }
-
-    //更改用户密码
-    public function updatepw($get, $post)
-    {
-        $username = $get['username'];
-        $r = $this->uc_db->get_one(array('username' => $username));
-        if ($r) {
-            $this->member_db->update(array('password' => $r['password'], 'random' => $r['salt']), array('username' => $username));
-        }
-        return API_RETURN_SUCCEED;
-    }
-
-    //更改一个用户的用户名
-    public function renameuser($get, $post)
-    {
+        //$r = $this->uc_db->get_one(array('uid' => 3));
+        //error_log(var_export($r, true), 3, CACHE_PATH.'uc_error_log.php');
         return API_RETURN_SUCCEED;
     }
 
     //同步登录
     public function synlogin($get, $post)
     {
+        if (!API_SYNLOGIN) {
+            return API_RETURN_FORBIDDEN;
+        }
         header('P3P: CP="CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR"');
         $uid = intval($get['uid']);
         if (empty($uid)) return API_RETURN_FAILED;
@@ -161,6 +148,9 @@ class uc_note
     //同步退出登录
     public function synlogout($get, $post)
     {
+        if (!API_SYNLOGOUT) {
+            return API_RETURN_FORBIDDEN;
+        }
         $res = '';
         foreach ($this->applist as $v) {
             if ($v['appid'] != $this->appid) {
@@ -170,6 +160,52 @@ class uc_note
         }
         header("Content-type: text/javascript");
         return format_js($res);
+    }
+
+    public function deleteuser($get, $post)
+    {
+        if (!API_DELETEUSER) {
+            return API_RETURN_FORBIDDEN;
+        }
+        pc_base::load_app_func('global', 'admin');
+        pc_base::load_app_class('messagequeue', 'admin', 0);
+        $ids = new_stripslashes($get['ids']);
+        $ids = array_map('intval', explode(',', $ids));
+        $ids = implode(',', $ids);
+        $s = $this->member_db->select("ucuserid in ($ids)", "uid");
+        $this->member_db->delete("ucuserid in ($ids)");
+        $noticedata['uids'] = array();
+        if ($s) {
+            foreach ($s as $key => $v) {
+                $noticedata['uids'][$key] = $v['uid'];
+            }
+        } else {
+            return API_RETURN_FAILED;
+        }
+        messagequeue::add('member_delete', $noticedata);
+        return API_RETURN_SUCCEED;
+    }
+
+    public function renameuser($get, $post)
+    {
+        if (!API_RENAMEUSER) {
+            return API_RETURN_FORBIDDEN;
+        }
+        $this->member_db->update(array('username' => $get['newusername']), array('userid' => $get['uid']));
+        return API_RETURN_SUCCEED;
+    }
+
+    public function updatepw($get, $post)
+    {
+        if (!API_UPDATEPW) {
+            return API_RETURN_FORBIDDEN;
+        }
+        $username = $get['username'];
+        $r = $this->uc_db->get_one(array('username' => $username));
+        if ($r) {
+            $this->member_db->update(array('password' => $r['password'], 'random' => $r['salt']), array('username' => $username));
+        }
+        return API_RETURN_SUCCEED;
     }
 
     function updatebadwords($get, $post)
@@ -188,7 +224,7 @@ class uc_note
                 $data['replace'][$k] = $v['replacement'];
             }
         }
-        $cachefile = $this->uc_client_cache_path. '/badwords.php';
+        $cachefile = $this->uc_client_cache_path . '/badwords.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
         $s .= '$_CACHE[\'badwords\'] = ' . var_export($data, TRUE) . ";\r\n";
@@ -204,7 +240,7 @@ class uc_note
             return API_RETURN_FORBIDDEN;
         }
 
-        $cachefile = $this->uc_client_cache_path. '/hosts.php';
+        $cachefile = $this->uc_client_cache_path . '/hosts.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
         $s .= '$_CACHE[\'hosts\'] = ' . var_export($post, TRUE) . ";\r\n";
@@ -220,7 +256,7 @@ class uc_note
             return API_RETURN_FORBIDDEN;
         }
 
-        $cachefile = $this->uc_client_cache_path. '/settings.php';
+        $cachefile = $this->uc_client_cache_path . '/settings.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
         $s .= '$_CACHE[\'settings\'] = ' . var_export($post, TRUE) . ";\r\n";
@@ -242,7 +278,7 @@ class uc_note
             unset($post['UC_API']);
         }
 
-        $cachefile = $this->uc_client_cache_path. '/apps.php';
+        $cachefile = $this->uc_client_cache_path . '/apps.php';
         $fp = fopen($cachefile, 'w');
         $s = "<?php\r\n";
         $s .= '$_CACHE[\'apps\'] = ' . var_export($post, TRUE) . ";\r\n";
@@ -317,14 +353,3 @@ function authcode($string, $operation = 'DECODE', $key = '', $expiry = 0)
 
 }
 
-function uc_serialize($arr, $htmlon = 0)
-{
-    include_once UC_CLIENT_ROOT . './lib/xml.class.php';
-    return xml_serialize($arr, $htmlon);
-}
-
-function uc_unserialize($s)
-{
-    include_once UC_CLIENT_ROOT . './lib/xml.class.php';
-    return xml_unserialize($s);
-}

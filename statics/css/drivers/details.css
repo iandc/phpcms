@@ -56,14 +56,14 @@ body{
 }
 .whole ul .current{
     background-color: #2975c4;
-    border-radius: 15px;
+    border-radius: 25px;
 }
 .whole ul .current a{
     color: #fff;
 }
 .whole ul li:hover{
     background-color: #2975c4;
-    border-radius: 15px;
+    border-radius: 25px;
 }
 .whole ul li:hover a{
     color: white;
@@ -196,10 +196,10 @@ body{
     overflow: hidden;
     padding-bottom: 5px;
     height: 3pc;
-    color: #888;
+    color: #666;
 }
 .content .content_min .cm_four .cm_four_l ul li .block .tags,.content .content_min .cm_four .cm_four_l ul li .block .tags a{
-    color: #888;
+    color: #666;
 }
 .page_nav{
     position: relative;

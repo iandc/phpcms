@@ -9,14 +9,14 @@
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/global.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/index.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/header.css" />
-<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/header2.css" />
+<!-- <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/header2.css" /> -->
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/com_list.css" />
 
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/details.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/details2.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/details3.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/right.css"/>
-<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/footer2.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/footer.css"/>
 
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
 <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
@@ -32,7 +32,7 @@
                         <div class="hdBottomCon clearfix">
                             <div class="logo clearfix fl">
                                 <a title="{$mySite['name']}" href="{siteurl($siteid)}/">
-                                    <img src="{IMG_PATH}drivers/logo.gif" width="175" height="70" alt="">
+                                    <img src="{IMG_PATH}drivers/logo.gif" width="175" height="70" alt="" title="{$mySite['name']}" >
                                 </a>
                             </div>
                         </div>
@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="fl top_banner" style="width: 500px;">
-                    <a href=""><img src="https://ubmcmm.baidustatic.com/media/v1/0f0000RiksdnnD5ZAebS0s.jpg" alt="" /></a>
+                    <a href=""><img src="https://ubmcmm.baidustatic.com/media/v1/0f0000RiksdnnD5ZAebS0s.jpg" alt="" title="{$mySite['name']}" /></a>
                 </div>
 
                 <div class="search fr">
@@ -55,7 +55,7 @@
                     </div>
                     <div id="wrap">
                         <div id="tit">
-                            <span class="select more">社区</span>
+                            <span class="select more" style="margin-right:0;">社区</span>
                             <span>DataSheet</span>
                         </div>
                         <ul id="con " class="clearfix">
@@ -75,6 +75,11 @@
                             <li>
                                 <div class="hds">
                                     <form action="http://ic.eetop.cn/index/default_list" method="get" target="_blank" style="float :right ;" class="form2">
+                                        <input type="hidden" name="m" value="search"/>
+                                        <input type="hidden" name="c" value="index"/>
+                                        <input type="hidden" name="a" value="init"/>
+                                        <input type="hidden" name="typeid" value="1" id="typeid"/>
+                                        <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
                                         <input name="title" class="ss">
                                         <input type="submit" name="sub" value="搜索" class="btn1 c_f" style=" display: inline-block;">
                                     </form>
@@ -90,15 +95,15 @@
             <div class="w1100">
                 <div class="nav">
                     <div class="name fl">
-                        <a href="{siteurl($siteid)}" class="nav_item1 icon_home sel c_f" alt="电子，微电子，芯片">{$mySite['name']}</a>
+                        <a href="{siteurl($siteid)}" class="nav_item1 icon_home sel c_f name" alt="电子，微电子，芯片">{$mySite['name']}</a>
                     </div>
                     <ul class=" nav_list fl">
                         {template "content", "menu"}
                     </ul>
-                    <div class="fr">
+                    <div class="fr landr">
                         <div class="tb_item">
                             <ul>
-                                <script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&from=other&forward=' + encodeURIComponent(location.href) + '&siteid={get_siteid()}" allowTransparency="true" width="300" height="40" frameborder="0" scrolling="no"></iframe>')</script>
+                                <script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&from=other&forward=' + encodeURIComponent(location.href) + '&siteid={get_siteid()}" allowTransparency="true" width="205" height="131" frameborder="0" scrolling="no"></iframe>')</script>
                             </ul>
                         </div>
                     </div>

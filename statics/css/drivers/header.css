@@ -118,7 +118,7 @@
 .hd .nav .nav_l{
     display: block;
     padding: 0 25px;
-    height: 40px;
+    height: 42px;
     line-height: 40px;
 }
 
@@ -139,6 +139,7 @@
     overflow: hidden;
     position: absolute;
     left: -220px;
+    top: 42px;
     z-index: 9999;
     height: 170px;
     display: none;
@@ -173,6 +174,9 @@
     background-color: #fff;
     color: #888;
 }
+.hd .nav .name a:hover{
+    color: #fff;
+}
 .sub_mune_ul a{
     color: white;
 }
@@ -190,7 +194,7 @@
     line-height: 35px;
 }
 .hd .nav .landr{
-    padding: 0 20px;
+    /*padding: 0 20px;*/
     color: #fff;
 }
 .hd .nav .landr a{
@@ -229,6 +233,12 @@
 }
 #wrap ul li .ss{
     display: inline-block;
-    border: 1px solid #eee;
+    border: 1px solid #c4c4c4;
     background: url(http://skin.elecfans.com/images/icons.png) no-repeat -141px -134px;
+}
+.landr{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 99;
 }

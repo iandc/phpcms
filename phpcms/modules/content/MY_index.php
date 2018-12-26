@@ -78,6 +78,7 @@ class MY_index extends index
             $GLOBALS['URL_ARRAY']['categorydir'] = $categorydir;
             $GLOBALS['URL_ARRAY']['catdir'] = $catdir;
             $GLOBALS['URL_ARRAY']['catid'] = $catid;
+            $GLOBALS['URL_ARRAY']['typeid'] = $typeid;
             include template('content', $template);
         } else {
             //ตฅอ๘าณ

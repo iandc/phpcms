@@ -1,5 +1,5 @@
 .cm_four_r{
-    width: 340px;
+    /*width: 340px;*/
 }
 .cm_four_r .tabs .tab{
     overflow: hidden;
@@ -84,7 +84,7 @@
     margin-top: -1px;
     padding: 0 10px;
     padding-top: 5px;
-    background: url(//img.ithome.com/file/images/hot_title_bg.gif) 10px 13px no-repeat;
+    background: url(../../images/drivers/hot_title_bg.gif) 10px 13px no-repeat;
 }
 .cm_four_r .products .list ul li{
     overflow: hidden;
@@ -130,7 +130,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     width: 137px;
-    height: 115px;
+    height: 125px;
     border-bottom: 1px #ddd dotted;
     text-align: center;
 }

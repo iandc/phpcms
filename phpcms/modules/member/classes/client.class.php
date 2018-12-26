@@ -408,13 +408,13 @@ EOF;
 		@fclose($fp);
 		
 		//部分虚拟主机返回数值有误，暂不确定原因，过滤返回数据格式
-		$return_arr = explode("\n", $return);
+        $return_arr = explode("\n", $return);
 		if(isset($return_arr[1])) {
 			$return = trim($return_arr[1]);
 		}
 		unset($return_arr);
-		
-		return $return;
+
+        return $return;
 	}
 
 	/**

@@ -10,13 +10,13 @@ span.v{
     text-indent: -75pt;
 }
 .ft_nav{
-    height: 43px;
-    background-color: #272a30;
+    /*height: 43px;*/
+    /*background-color: #272a30;*/
 }
 .ft_nav a{
     display: inline-block;
     text-align: center;
-    color: #ccc;
+    color: #666;
     font-size: 12px;
     line-height: 43px;
 }

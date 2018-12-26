@@ -33,7 +33,7 @@ class phpsso {
 			parse_str(sys_auth($_POST['data'], 'DECODE', $this->applist[$this->appid]['authkey']), $this->data);
 					
 			if(empty($this->data) || !is_array($this->data)) {
-				exit('0');
+				//exit('0');// edit by seagle
 			}
 			if(!get_magic_quotes_gpc()) {
 				$this->data= new_addslashes($this->data);

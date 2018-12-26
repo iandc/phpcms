@@ -29,8 +29,9 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 
 /* 通用按钮 */
 .btn{ padding-left:6px}
-.btn,.btn input{background: url(../images/v9/button.png) no-repeat; height:24px; line-height:24px;width:auto;_width:0;overflow:visible !ie}
-     .btn input{background-position: right 0; border:0 none; color:#fff; padding-right:6px;_height:25px}
+.btn,.btn input{ line-height:24px;width:auto;_width:0;overflow:visible !ie}
+     .btn input{background-color: #2975c4 ;font-size: 12px;
+    padding-left: 6px;background-position: right 0; border:0 none; color:#fff; padding-right:6px;_height:25px}
 .submit{padding-left:3px}
 .submit,.submit input{ background: url(../images/member/but.png) no-repeat; height:29px;width:auto;_width:0;overflow:visible !ie}
 .submit input{background-position: right top; border:none; padding:0 10px 0 7px; font-size:14px}
@@ -392,5 +393,8 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .itemli li{padding:10px 0px;}
 .itemli li a{background:url(../images/bg_member_1.gif) no-repeat -5px -126px;font-weight:bold; padding-left:14px;color:#004499; font-size:13px;}
 .pd_b0{padding-bottom:0px;}
+.commList{
+    padding-bottom: 280px;
+}
 /*内容摘要*/
 .summary {background-color:#F6FAFD;border: 1px solid #DCDDDD;font-size: 14px;line-height: 23px;margin: 15px 0 0;padding: 12px 5px 6px;text-align: justify;text-indent: 2em;}

@@ -1,16 +1,18 @@
 {template "content", "header"}
 <div class="w100">
+    {template "content", "nav"}
     <div style="position: relative;">
         <div class="content w1100">
             {template "content", "hd_con"}
-            <div class="con_three clearfix">
+            <div class="con_three">
                 <div class="con_three_l fl">
-                    {template "content", "nav"}
                     <div class="post_tit">
                         <h1>{$title}</h1>
                         <span class="pt_info fs12">
                             <span class="date">{$inputtime}</span>
-                            <span>来源：{$copyfrom}</span>
+                            
+                            <span class="{if $copyfrom = ' '}dpn{/if}">来源：{$copyfrom}</span>
+                            
                             评论：<span id="comment">0</span>
                             点击：<span id="hits">0</span>
                         </span>
@@ -21,7 +23,7 @@
                         </div>
                     </div>
                     <div class="post_con">
-                        {if $description}<div class="summary">{$description}</div>{/if}
+                        {if $description}<div class="summary" style="margin-bottom: 20px;" >{$description}</div>{/if}
                         {if $allow_visitor == 1}
                         {$content}
                         <!--内容关联投票-->
@@ -32,8 +34,8 @@
                     </div>
                     <div class="relevant clearfix">
                         <div class="tit clearfix">
-                            <div style="margin-bottom: 7px;">
-                                <span>
+                            <div style="margin-bottom: 10px;">
+                                <span class="{if $keyword = ' '}dpn{/if}">
                                     关键词：
                                     {loop $keywords $keyword}
                                     <a class="blue"
@@ -41,7 +43,7 @@
                                     {/loop}
                                 </span>
                             </div>
-                            <h2>相关文章</h2>
+                            <h2 style="margin-bottom: 10px;">相关文章</h2>
                         </div>
                         <ul class="list_3 fl">
                             <li>上一篇：<a href="{$previous_page['url']}">{str_cut($previous_page['title'], 30, '')}</a></li>
@@ -61,7 +63,7 @@
                                     <a href="{$value['url']}" target="_blank">
                                         <div>
                                             <img src="$value['thumb']"
-                                                 alt="">
+                                                 title="{$value['title']}">
                                         </div>
                                         <div class="txt">{$value['title']}</div>
                                     </a>
@@ -73,7 +75,7 @@
                     {/if}
                     {/pc}
                     <div class="commList mt15">
-                        <h3>全部评论</h3>
+                        <h3 style="margin-bottom: 10px;">全部评论</h3>
                         <ul class="list">
                             {if $allow_comment && module_exists('comment')}
                             <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0"

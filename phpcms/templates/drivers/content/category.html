@@ -17,14 +17,14 @@
                                         {pc:content action="lists" catid="$newsid" order="id ASC" num="5" cache="0"}
                                         {loop $data $value}
                                         <li>
-                                            <p class="proName"><a href="{$value['url']}">{str_cut($value['title'], 65, '')}</a></p>
+                                            <p class="proName"><a href="{$value['url']}">{str_cut($value['title'], 45, '')}</a></p>
                                         </li>
                                         {/loop}
                                         {/pc}
                                     </ul>
                                 </div>
                                 <div class="banner2 mt15">
-                                    <a href=""><img src="https://f11.baidu.com/it/u=3488982034,1809226539&fm=76" alt=""></a>
+                                    <a href=""><img src="https://f11.baidu.com/it/u=3488982034,1809226539&fm=76" title="{str_cut($value['title'], 45, '')}"></a>
                                 </div>
                             </div>
                             <div class="mf fl">
@@ -47,7 +47,7 @@
                                                 <li class="new">
                                                     <span class="date fr">{date('m-d', $value['inputtime'])}</span>
                                                     <span class="tit">
-                                                        <a href="{$value['url']}">{$value['title']}</a>
+                                                        <a href="{$value['url']}">{str_cut($value['title'], 71, '')}</a>
                                                     </span>
                                                 </li>
                                                 {/loop}
@@ -67,7 +67,7 @@
                             <div class="listBox">
                                 <h2>
                                     <span class="sp1"><a href="">{$value['catname']}</a></span>
-                                    <span class="sp2"><a href="{$value['url']}">更多...</a></span>
+                                    <span class="sp2"><a href="{$value['url']}">更多</a></span>
                                 </h2>
                                 <ul class="fl">
                                     {pc:content action="lists" catid="$key" order="id DESC" num="5" cache="0" return="d"}
@@ -93,7 +93,6 @@
                         <div class="con_fourL_bottom mt15">
                             <div class="zixun mt15">
                                 <div class="zixunCon clearfix">
-                                    
                                     <div class="zixunConLeft fl" style="padding: 0;">
                                         <div class="zxLeft_title">
                                             <ul>
@@ -199,7 +198,7 @@
                                                         <div class="centerCon">
                                                             <div class="centerCon_img fr">
                                                                 <a href="">
-                                                                    <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                                                    <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                                                 </a>
                                                             </div>
                                                             <div class="centerCon_txt fl">
@@ -226,7 +225,7 @@
                                                         <div class="centerCon">
                                                             <div class="centerCon_img fr">
                                                                 <a href="">
-                                                                    <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                                                    <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                                                 </a>
                                                             </div>
                                                             <div class="centerCon_txt fl">
@@ -320,7 +319,7 @@
                         </div>
                     </div>
                 </div>  
-                <div style="width: 340px;">
+                <div>
                     {template "content", "right"}
                 </div>
             </div>

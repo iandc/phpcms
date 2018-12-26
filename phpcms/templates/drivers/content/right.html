@@ -1,5 +1,5 @@
-    <div class="w100">
-        <div class="w1100">
+    <div class="" style="height: 1200px;">
+        <div class="" style="height: 500px; background: #fff;">
             <div class="cm_four_r fr">
                 <div class="tabs" id="tab">
                    <ul class="tab">
@@ -13,7 +13,7 @@
                                     {pc:content  action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="12"}
                                         {loop $data $key $value}
                                         <li>
-                                            <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 40, '')}</a>
+                                            <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 60, '')}</a>
                                         </li>
                                         {/loop}
                                     {/pc}
@@ -55,9 +55,9 @@
                                     {loop $data $r}
                                         <div class="fl imgs">
                                             <a href="" class="image">
-                                                <img src="{$r['thumb']}" alt="">
+                                                <img src="{$r['thumb']}" title="{str_cut($r['title'],56,' ')}">
                                             </a>
-                                            <a href="{$r['url']}"{title_style($r[style])} class="title" title="{$r['title']}">{str_cut($r['title'],56,'...')}</a>
+                                            <a href="{$r['url']}"{title_style($r[style])} class="title" title="{$r['title']}">{str_cut($r['title'],56,' ')}</a>
                                         </div>
                                     {/loop}
                                 {/pc}
@@ -71,7 +71,7 @@
                                 {loop $data $r}
                                     {if $i >= 2}
                                     <li>
-                                        <a href="{$r['url']}"{title_style($r[style])} class="title" title="{$r['title']}">{str_cut($r['title'],56,'...')}</a>
+                                        <a href="{$r['url']}"{title_style($r[style])} class="title" title="{$r['title']}">{str_cut($r['title'],58,' ')}</a>
                                     </li>
                                     {/if}
                                     {php $i++;}

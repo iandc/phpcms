@@ -603,7 +603,7 @@ class index extends foreground {
 		}
 		
 		if(isset($_POST['dosubmit'])) {
-			if(empty($_SESSION['connectid'])) {
+			/*if(empty($_SESSION['connectid'])) {
 				//判断验证码
 				$code = isset($_POST['code']) && trim($_POST['code']) ? trim($_POST['code']) : showmessage(L('input_code'), HTTP_REFERER);
 				if ($_SESSION['code'] != strtolower($code)) {
@@ -611,7 +611,7 @@ class index extends foreground {
 					showmessage(L('code_error'), HTTP_REFERER);
 				}
 				$_SESSION['code'] = '';
-			}
+			}*/
 			
 			$username = isset($_POST['username']) && is_username($_POST['username']) ? trim($_POST['username']) : showmessage(L('username_empty'), HTTP_REFERER);
 			$password = isset($_POST['password']) && trim($_POST['password']) ? trim($_POST['password']) : showmessage(L('password_empty'), HTTP_REFERER);
@@ -623,7 +623,7 @@ class index extends foreground {
 				$this->_init_phpsso();
 				$status = $this->client->ps_member_login($username, $password);
 				$memberinfo = unserialize($status);
-				
+
 				if(isset($memberinfo['uid'])) {
 					//查询帐号
 					$r = $this->db->get_one(array('phpssouid'=>$memberinfo['uid']));
@@ -697,7 +697,7 @@ class index extends foreground {
 				}
 				$this->times_db->delete(array('username'=>$username));
 			}
-			
+
 			//如果用户被锁定
 			if($r['islock']) {
 				showmessage(L('user_is_lock'));
@@ -776,7 +776,7 @@ class index extends foreground {
 			$synlogoutstr = '';	//同步退出js代码
 			if(pc_base::load_config('system', 'phpsso')) {
 				$this->_init_phpsso();
-				$synlogoutstr = $this->client->ps_member_synlogout();			
+				$synlogoutstr = $this->client->ps_member_synlogout();
 			}
 			
 			param::set_cookie('auth', '');

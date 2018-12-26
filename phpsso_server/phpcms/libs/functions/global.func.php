@@ -889,7 +889,7 @@ function get_uc_database() {
 		'password' => $config['uc_dbpw'],
 		'tablepre' =>  $config['uc_dbtablepre'],
 		'charset' => $config['uc_dbcharset'],
-		'type' => 'mysql',
+		'type' => 'mysqli',//edit by seagle
 		'debug' => true,
 		'pconnect' => 0,
 		'autoconnect' => 0

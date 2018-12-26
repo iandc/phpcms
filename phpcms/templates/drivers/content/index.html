@@ -37,10 +37,9 @@
                         {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="0"}
                         {loop $data $value}
                         <li>
-                            <a href="{$value['url']}"><img src="{$value['thumb']}" alt=""></a>
-                            <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'],
-                                100, '')}</a></h2>
-                            <p><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['description'], 100, '')}</a>
+                            <a href="{$value['url']}"><img src="{thumb($value['thumb'], 80, 60)}" title="{$value['title']}"></a>
+                            <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 100, '')}</a></h2>
+                            <p><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['description'], 100, ' ')}</a>
                             </p>
                         </li>
                         {/loop}
@@ -57,7 +56,7 @@
                         {loop $data $value}
                         {if $i >= 2}
                         <li>
-                            <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 36, '')}</a>
+                            <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 50, '')}</a>
                         </li>
                         {/if}
                         {php $i++;}
@@ -80,11 +79,11 @@
                         <ul>
                             <li style="float:left;">
                                 <span class="dib">
-                                    <a href="{APP_PATH}index.php?m=content&c=index&a=list&typeid={$typeidList['news']}"">资讯</a>
+                                    <a href="{APP_PATH}type-{$typeidList['news']}-1.html"">资讯</a>
                                 </span>
                             </li>
                             <li>
-                                <a href="{APP_PATH}index.php?m=content&c=index&a=list&typeid={$typeidList['news']}"">
+                                <a href="{APP_PATH}type-{$typeidList['news']}-1.html">
                                     < 更多
                                 </a>
                             </li>
@@ -187,12 +186,12 @@
                             {loop $data $value}
                             <li>
                                 <div class="lImg fl">
-                                    <a href=""><img src="{$value['thumb']}" alt=""></a>
+                                    <a href=""><img src="{$value['thumb']}" title="{str_cut($value['title'], 36, '')}"></a>
                                 </div>
                                 <div class='rTxt fr'>
-                                    <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 60, '')}</a></span>
+                                    <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 36, '')}</a></span>
 
-                                    <a href="{$value['url']}" target="_blank" style="font-size: 12px;"><i></i>{str_cut($value['description'], 60,
+                                    <a href="{$value['url']}" target="_blank" style="font-size: 12px;"><i></i>{str_cut($value['description'], 36,
                                         '')}</a>
                                 </div>
                             </li>
@@ -232,7 +231,10 @@
                     {loop $data $value}
                     <li style="border-left:none;">
                         <div class="imgs">
-                            <img src="{thumb($value['thumb'], 230, 155)}" alt=""/>
+                            <a href="{$value['url']}">
+                                <img src="{thumb($value['thumb'], 230, 155)}" title="{$value['title']}"/>
+                            </a>
+                            
                         </div>
                         <div class="text fs12">
                             <a href="">{$value['description']}</a>
@@ -251,7 +253,7 @@
                     <div class="manuConLeft fl">
                         <div class="manuConLeftL w49 fl">
                             <div class="title1" style="width: 377px;">
-                                <a href="{APP_PATH}index.php?m=content&c=index&a=list&typeid={$typeidList['tec']}">技术文章</a>
+                                <a href="{APP_PATH}type-{$typeidList['tec']}-1.html">技术文章</a>
                             </div>
                             <ul>
                                 {php $where = "typeid=$typeidList[tec]";}
@@ -264,7 +266,7 @@
                                     <div class="centerCon">
                                         <div class="centerCon_img fr">
                                             <a href="">
-                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                             </a>
                                         </div>
                                         <div class="centerCon_txt fl">
@@ -281,7 +283,7 @@
                         </div>
                         <div class="manuConLeftR w49 fr">
                             <div class="title1" style="text-align: right;">
-                                <a href="{APP_PATH}index.php?m=content&c=index&a=list&typeid={$typeidList['tec']}" style=" font-size: 12px; color: #333;"> < 更多</a>
+                                <a href="{APP_PATH}type-{$typeidList['tec']}-1.html" style=" font-size: 12px; color: #333;"> < 更多</a>
                             </div>
                             <ul>
                                 {php $i = 0;}
@@ -291,7 +293,7 @@
                                     <div class="centerCon">
                                         <div class="centerCon_img fr">
                                             <a href="">
-                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                             </a>
                                         </div>
                                         <div class="centerCon_txt fl">
@@ -326,7 +328,7 @@
                                     </div>
                                     <div class="left_img fr">
                                         <a href="{$value['url']}">
-                                            <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                            <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{$value['title']}">
                                         </a>
                                     </div>
                                 </li>
@@ -446,8 +448,8 @@
                                     <a href="{$value['url']}">{$value['description']}</a>
                                 </div>
                                 <div class="left_img fr">
-                                    <a href="{$value['url']}">
-                                        <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" alt="">
+                                    <a href="{$value['url']}" >
+                                        <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{$value['title']}">
                                     </a>
                                 </div>
                             </li>

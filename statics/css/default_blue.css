@@ -364,14 +364,14 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .comment-form .posn{ padding:10px 0}
 .comment-title{ text-align:center; padding:5px 0 10px}
 .comment-title a:hover{	text-decoration: none;	color: #F60;}
-.comment{border:1px solid #C3D4E7;zoom:1;  padding:8px 15px}
+.comment{border:1px solid #C3D4E7;zoom:1;  padding:20px 15px}
 .comment h4{ border-bottom:1px solid #C3D4E7; padding-bottom:6px; margin-bottom:15px}
 
 .comment .title{ margin-bottom:5px}
 .comment .title span{ position:relative; top:-5px}
 .comment .content{ font-size:14px; background:#f6f9fb; border:1px solid #c4d5df; zoom:1; padding:8px 10px; margin:5px 0}
 .comment .content span{display:block;}
-.comment_button{margin-bottom:15px;}
+.comment_button{margin-bottom:15px;margin-top: 15px;}
 .comment_button a{padding:5px; border:solid 1px #C3D4E7; }
 .comment_button a.on{background:#4C7FB6; color:#fff;border:solid 1px #3E73A9}
 

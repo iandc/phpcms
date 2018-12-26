@@ -365,10 +365,10 @@ class index extends phpsso {
 	 */
 	public function synlogin() {
 		//判断本应用是否开启同步登陆
-		if($this->applist[$this->appid]['synlogin']) {
+        if($this->applist[$this->appid]['synlogin']) {
 			$this->uid = isset($this->data['uid']) ? $this->data['uid'] : '';
 			$this->password = isset($this->data['password']) ? $this->data['password'] : '';
-		
+
 			$res = '';
 			//ucenter登陆部份
 			if ($this->config['ucuse']) {
@@ -391,20 +391,23 @@ class index extends phpsso {
 		}
 	}
 
+
 	/**
 	 * 同步退出
 	 * @return string javascript用户同步退出js
 	 */
 	public function synlogout() {
-		if($this->applist[$this->appid]['synlogin']) {
+        error_log(var_export('synlogout', true), 3, '/home/www/pc_utf8/phpsso_server/caches/uc_error_log.php');
+        if($this->applist[$this->appid]['synlogin']) {
 			$res = '';
 			//ucenter登陆部份
 			if ($this->config['ucuse']) {
 				pc_base::load_config('uc_config');
 				require_once PHPCMS_PATH.'api/uc_client/client.php';
 				$res .= uc_user_synlogout();
-			}	
-			foreach($this->applist as $v) {
+			}
+
+            foreach($this->applist as $v) {
 				if (!$v['synlogin']) continue;
 				if($v['appid'] != $this->appid) {
 					$tmp_s = strstr($v['url'].$v['apifilename'], '?') ? '&' : '?';
