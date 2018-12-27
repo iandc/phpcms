@@ -55,18 +55,18 @@ body{
     margin: 2px 10px;
 }
 .whole ul .current{
-    background-color: #2975c4;
+    background-color: #eaf5ff;
     border-radius: 25px;
 }
 .whole ul .current a{
-    color: #fff;
+    color: #444854;
 }
 .whole ul li:hover{
-    background-color: #2975c4;
+    background-color: #eaf5ff;
     border-radius: 25px;
 }
 .whole ul li:hover a{
-    color: white;
+    color: #444854;
 }
 .whole ul li a{
     line-height: 40px;

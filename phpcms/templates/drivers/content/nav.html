@@ -1,10 +1,10 @@
 
 {if $_GET['a'] == 'lists'}
 <!-- 列表页 -->
-<div class="crumbs" style="height: 30px; margin-top: 7px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
+<div class="crumbs" style="height: 30px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
      <ul class="lists">
          <li>
-             <a href="">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>&nbsp;{/if} </a>
+             <a href="">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>{/if} </a>
          </li>
          <li>
              <a href="javascript:;">{if $catid == 0}&nbsp;&nbsp;全部&nbsp;&nbsp;{else}&nbsp;&nbsp;{$catname}&nbsp;{/if}</a>
