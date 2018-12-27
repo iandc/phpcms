@@ -16,7 +16,7 @@
         <div class="whole">
             <ul style="position: relative;">
                 <li {if $catid == 0}class="current"{/if}><a href="{APP_PATH}type-{$typeid}-1.html">全部</a></li>
-                {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20"}
+                {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="$cacheTimeList['five_minute']"}
                     {loop $data $value}
                         <li {if $catid == $value['catid']}class="current"{/if}>
                             <a href="{APP_PATH}list-{$value['catid']}-{$typeid}-1.html">{$value['catname']}</a>
@@ -33,15 +33,15 @@
                             {if $catid}
                                 {if $typeid}
                                     {php $where = "catid='$catid' AND typeid='$typeid'";}
-                                    {pc:content action="lists" catid="$catid" where="$where" order="id DESC" page="$page" num="10" cache="0"}
+                                    {pc:content action="lists" catid="$catid" where="$where" order="id DESC" page="$page" num="10" cache="$cacheTimeList['five_minute']"}
                                 {else}13
-                                    {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="10" cache="0"}
+                                    {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="10" cache="$cacheTimeList['five_minute']"}
                                 {/if}
                             {else}
                                 {if $typeid}
                                     {pc:get sql="SELECT * FROM phpcms_news where typeid=$typeid ORDER BY id DESC" page="$page" num="10" cache="0"}
                                 {else}
-                                    {pc:get sql="SELECT * FROM phpcms_news ORDER BY id DESC" page="$page" num="10" cache="0"}
+                                    {pc:get sql="SELECT * FROM phpcms_news ORDER BY id DESC" page="$page" num="10" cache="$cacheTimeList['five_minute']"}
                                 {/if}
                             {/if}
                             {loop $data $value}

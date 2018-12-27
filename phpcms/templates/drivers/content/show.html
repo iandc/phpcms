@@ -50,7 +50,7 @@
                             <li>下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 30, '')}</a></li>
                         </ul>
                     </div>
-                    {pc:content action="relation" relation="$relation" catid="$catid" id="$id" keywords="$rs['keywords']" num="5" cache="0"}
+                    {pc:content action="relation" relation="$relation" catid="$catid" id="$id" keywords="$rs['keywords']" num="5" cache="$cacheTimeList['five_minute']"}
                     {if $data}
                     <div class="see">
                         <div class="see_con">

@@ -186,7 +186,7 @@ body{
     margin-bottom: 17px;
     padding-left: 15px;
     background: url(//icons.mydrivers.com/2018/www/icon.png) no-repeat -2px -658px;
-    -webkit-background-size: 5px 5px;
+    background-size: 5px 5px;
     font-size: 12px;
 }
 
@@ -497,7 +497,7 @@ body{
 }
 .Manufacturer .manuConLeft .manuConLeftR .title1 a{
     font-size: 12px;
-    color: 666;
+    color: #666;
 }
 .Manufacturer .manuConLeft ul li{
     overflow: hidden;
@@ -597,7 +597,7 @@ body{
     margin-left: 15px;
 }
 .Footer .footerBottom ul{
-    margin-bottom: 10;
+    margin-bottom: 10px;
 }
 .Footer .footerBottom ul li{
     width: 120px;

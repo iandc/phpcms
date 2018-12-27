@@ -10,7 +10,7 @@ input.date,input.endDate{background: #fff url(../images/admin_img/input_date.png
 .pad-6{padding:6px; overflow:hidden}.pad-10{padding:10px; overflow:hidden}.pad_10,.pad-lr-10{padding:0 10px}.pad-lr-6{padding:0 6px}
 .hr{background: url(../images/uline.gif) repeat-x center center;}
 .hr hr{display:none}
-.ib, .ib-li li, .ib-a a, .ib-span span,.btn,.btn input,.photo-hot li,.Article-Tool a ,.photo-list li,.photo-channel .photo-slide .change i,.photo-channel .tool .auto,.photo-channel .tool .up,.photo-channel .tool .next,.photo-cat .content h5 span.blue a,.submit{display:inline-block;zoom:1;*display:inline;}
+.ib, .ib-li li, .ib-a a, .ib-span span,.btn,.btn input,.photo-hot li,.Article-Tool a ,.photo-list li,.photo-channel .photo-slide .change i,.photo-channel .tool .auto,.photo-channel .tool .up,.photo-channel .tool .next,.photo-cat .content h5 span.blue a,.submit{display:inline-block; *display:inline;}
 .body-top,.header,.header .logo{background: url(../images/v9/body-top.png) repeat-x left -115px;}
 .body-top{height:26px; background-color:#eee; vertical-align:middle}
 .body-top .login{ float:right}
@@ -29,7 +29,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 
 /* 通用按钮 */
 .btn{ padding-left:6px}
-.btn,.btn input{ line-height:24px;width:auto;_width:0;overflow:visible !ie}
+.btn,.btn input{ line-height:24px;width:auto;_width:0;}
      .btn input{background-color: #2975c4 ;font-size: 12px;
     padding-left: 6px;background-position: right 0; border:0 none; color:#fff; padding-right:6px;_height:25px}
 .submit{padding-left:3px}
@@ -75,7 +75,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .box h5.title-1,.box h6.title-1{background-position: right -52px}
 .box h5.title-2,.box h6.title-2{background-position: right -100px}
 .box h5.title-2 span.tab{float:right; padding-right:6px; color:#a4bcd6}
-.box h5.title-2 span.tab span{ color:#2064ae;cursor: hand;!important;cursor: pointer}
+.box h5.title-2 span.tab span{ color:#2064ae; cursor: pointer}
 .box a.more{ font-size:12px; font-family:"宋体"; margin-right:8px; font-weight:normal; position:absolute;top:0; *top:1px;_top:1px; right:0}
 .box .content{ padding:0 10px; overflow:auto}
 
@@ -196,7 +196,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 .special-channel .box-hots .content{ padding:10px}
 .special-channel .special-slide{position:relative}
 .special-channel .special-slide .change{ position:absolute; top:0px; right:0px;height:8px;font-size:0}
-.special-channel .special-slide .change i{background: url(../images/v9/special-slide.png) no-repeat top right; width:8px; height:8px; text-indent:-1000px; font-size:0; margin-left:6px; display: block; float:left;cursor: hand;!important;cursor: pointer}
+.special-channel .special-slide .change i{background: url(../images/v9/special-slide.png) no-repeat top right; width:8px; height:8px; text-indent:-1000px; font-size:0; margin-left:6px; display: block; float:left; cursor: pointer}
 .special-channel .special-slide .change i.cur{background-position: left top;}
 .special-channel .special-slide .changeDiv{ overflow: auto; padding:10px 0 0 10px}
 .special-channel .special-slide .changeDiv a{ position:absolute; width:660px; display:none}
@@ -308,7 +308,7 @@ body fieldset.blue legend{padding:3px 8px;font-weight:700;color:#347add; backgro
 #Article .list-pic .pre .img-wrap a,#Article .list-pic .next .img-wrap a{*font-size:53px;width:98px; height:72px; padding:0px 5px 0 4px;*padding:0px 5px 5px 0px }
 #Article .list-pic .pre .img-wrap a:hover,#Article .list-pic .next .img-wrap a:hover{ background:none}
 #Article .list-pic .next{ right:-8px; float:right;bottom:-2px}
-#Article .pre-bnt,#Article .next-bnt{margin-top:3px;cursor: hand;!important;cursor: pointer}
+#Article .pre-bnt,#Article .next-bnt{margin-top:3px; cursor: pointer}
 #Article .pre-bnt,#Article .next-bnt,#Article .pre-bnt span,#Article .next-bnt span{background: url(../images/v9/big-btn.png) no-repeat; display:block; width:17px; height:69px; float:left;}
 #Article .pre-bnt:hover, #Article .next-bnt:hover,#Article .pre-bnt-on,#Article .next-bnt-on{background-position: 0 -78px;}
 #Article .pre-bnt span{background-position: -30px top;}

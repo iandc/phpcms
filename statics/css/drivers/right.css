@@ -60,7 +60,6 @@
     width: 258px;
     font-size: 9pt;
     line-height: 17px;
-    zoom: 1;
 }
 .cm_four_r .products ul li span{
     float: left;
@@ -149,7 +148,6 @@
     display: inline;
     padding: 7px 10px;
     width: 278px;
-    zoom: 1;
 }
 .cm_four_r .lists ul li a{
     display: inline-block;
