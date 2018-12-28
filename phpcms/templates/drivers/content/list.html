@@ -34,7 +34,7 @@
                                 {if $typeid}
                                     {php $where = "catid='$catid' AND typeid='$typeid'";}
                                     {pc:content action="lists" catid="$catid" where="$where" order="id DESC" page="$page" num="10" cache="$cacheTimeList['five_minute']"}
-                                {else}13
+                                {else}
                                     {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="10" cache="$cacheTimeList['five_minute']"}
                                 {/if}
                             {else}
@@ -87,5 +87,5 @@
             </div>
         </div>
     </div>
-    {template "content", "footer2"}
+    {template "content", "footer"}
 </div>

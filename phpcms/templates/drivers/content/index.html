@@ -38,8 +38,8 @@
                         {loop $data $value}
                         <li>
                             <a href="{$value['url']}"><img src="{thumb($value['thumb'], 80, 60)}" title="{$value['title']}"></a>
-                            <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 100, '')}</a></h2>
-                            <p><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['description'], 100, ' ')}</a>
+                            <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 100, ' ')}</a></h2>
+                            <p><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['description'], 110, ' ')}</a>
                             </p>
                         </li>
                         {/loop}
@@ -187,10 +187,10 @@
                                     <a href=""><img src="{$value['thumb']}" title="{str_cut($value['title'], 36, '')}"></a>
                                 </div>
                                 <div class='rTxt fr'>
-                                    <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 36, '')}</a></span>
+                                    <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 36, ' ')}</a></span>
 
-                                    <a href="{$value['url']}" target="_blank" style="font-size: 12px;"><i></i>{str_cut($value['description'], 36,
-                                        '')}</a>
+                                    <a href="{$value['url']}" target="_blank" style="font-size: 12px;"><i></i>{str_cut($value['description'], 100,
+                                        ' ')}</a>
                                 </div>
                             </li>
                             {/loop}

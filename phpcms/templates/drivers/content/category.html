@@ -42,7 +42,7 @@
                                     <div class="newList">
                                         <div class="block">
                                             <ul>
-                                                {pc:content action="lists" catid="$newsid" order="id DESC" num="19" cache="$cacheTimeList['five_minute']"}
+                                                {pc:content action="lists" catid="$newsid" order="id DESC" num="15" cache="$cacheTimeList['five_minute']"}
                                                 {loop $data $value}
                                                 <li class="new">
                                                     <span class="date fr">{date('m-d', $value['inputtime'])}</span>
@@ -324,7 +324,7 @@
             </div>
         </div>
     </div>
-    {template "content", "footer2"}
+    {template "content", "footer"}
 
 
     <script>

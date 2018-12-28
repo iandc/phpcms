@@ -58,8 +58,7 @@ body{
     border: 1px solid #eee;
 }
 .con_four .con_fourL_top .lf .banner2 img{
-    margin-top: 10px;
-    margin-left: 10px;
+    margin: 10px 0 10px 10px;
 }
 .con_four .con_fourL_top .mf{
     margin-left: 20px;
