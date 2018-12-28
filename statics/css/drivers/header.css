@@ -2,19 +2,20 @@
     background-color: #fff;
 }
 .hdTop{
-    height: auto;
+    height: 100px;
     padding-top: 5px;
     border-bottom: 1px solid #eee;
     font-size: 12px;
+}
+.hdTopCon{
+    margin: 12px auto;
 }
 .hdTop .hdTxt{
     padding-top: 5px;
     margin: 0 11px 4px 4px;
 }
 .hdTop .search input{
-    /*margin-left: 190px;*/
     width: 250px;
-    /*padding: 6px;*/
     padding: 6px 5px 5px 20px;
 }
 .hdTop .search .btn1{

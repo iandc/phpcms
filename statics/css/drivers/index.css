@@ -4,64 +4,9 @@ body{
 .dib{
     display: inline-block;
 }
-
-.nav{
-    height: 42px;
-    background-color: #2975c4;
-}
-.nav .navCon ul li{
-    height: 42px;
-    line-height: 42px;
-    cursor: pointer;
-    position: relative;
-}
-.nav .navCon ul li:hover{
+.bgc_fff{
     background-color: #fff;
 }
-.nav .navCon ul li.current{
-    background-color: #0483b0;
-}
-.nav .navCon ul li .lis_a{
-    display: inline-block;
-    color: #fff;
-    padding: 0 20px;
-}
-.nav .navCon ul .ind{
-    padding: 0 20px;
-}
-.nav .navCon ul li:hover .lis_a{
-    color: #666;
-}
-.nav .navCon ul .ind:hover .aa{
-    color: #666;
-}
-.nav .navConRight ul li .ico{
-    padding-left: 32px;
-}
-.ico{
-    background: url(../images/drivers/icons.png) no-repeat;
-}   
-.nav .navConRight .ico1{
-    background-position: 12px 12px;
-}
-.nav .navConRight .ico2{
-    background-position: 12px -19px;
-}
-.nav .navConRight .set{
-    padding: 10px 12px;
-}
-/*Ã‚Ã–Â²Â¥*/
-.information{
-    height: 222px;
-}
-.information a:hover{
-    color: #2975c4;
-}
-.informationLeft{
-    width: 300px;
-    background-color: darkcyan;
-}
-
 
 #box1{
     width: 300px;
@@ -127,10 +72,19 @@ body{
     border-bottom-left-radius: 6px;
 }
 
+.information{
+    height: 222px;
+}
+.information a:hover{
+    color: #2975c4;
+}
+.informationLeft{
+    width: 300px;
+    background-color: darkcyan;
+}
 .informationRight{
     padding: 0 22px;
     width: 740px;
-    background-color: #fff;
 }
 .informationRight .informationRightL{
     margin-top: 15px;
@@ -190,11 +144,7 @@ body{
     font-size: 12px;
 }
 
-
 /*资讯*/
-.zixun{
-    background-color: #fff;
-}
 .zixun .zixunConLeft,.Manufacturer .manuConLeft{
     width: 735px;
     padding: 12px 14px;
@@ -405,9 +355,6 @@ body{
     height: 80px;
 }
 
-.curriculum .curriculumCon{
-    background-color: #fff;
-}
 .curriculum ul li{
     width: 25%;
     float: left;
@@ -478,9 +425,6 @@ body{
     font-size: 12px;
 }
 
-.Manufacturer{
-    background-color: #fff;
-}
 .Manufacturer .title1{
     border-bottom: #dcdbdb 1px solid;
     height: 33px;
@@ -501,7 +445,6 @@ body{
 }
 .Manufacturer .manuConLeft ul li{
     overflow: hidden;
-    /*height: 110px;*/
 }
 .Manufacturer .manuConLeft .centerCon{
     font-size: 12px;
@@ -511,7 +454,6 @@ body{
 }
 .Manufacturer .manuConLeft .centerCon .centerCon_img{
     width: 97px;
-    /*padding: 3px;*/
     text-align: center;
 }
 .Manufacturer .manuConLeft .centerCon .centerCon_txt h3{
@@ -569,19 +511,18 @@ body{
 
 
 
-.Footer{
+.footer{
     height: auto;
-    background-color: #fff;
 }
-.Footer .footerTop{
+.footer .footerTop{
     padding: 6px 6px 0 13px;
 }
-.Footer .footerTop .ft_txt{
+.footer .footerTop .ft_txt{
     height: 33px;
     line-height: 33px;
     padding-right: 3px;
 }
-.Footer .footerTop .ft_txt ul li{
+.footer .footerTop .ft_txt ul li{
     font-size: 12px;
     height: 33px;
     line-height: 33px;
@@ -589,27 +530,26 @@ body{
     padding-right: 1px;
     padding-left: 2px;
 }
-.Footer .footerTop .ft_txt ul .links span{
+.footer .footerTop .ft_txt ul .links span{
     color: #09f;
     font-weight: bold;
 }
-.Footer .footerBottom{
+.footer .footerBottom{
     margin-left: 15px;
 }
-.Footer .footerBottom ul{
+.footer .footerBottom ul{
     margin-bottom: 10px;
 }
-.Footer .footerBottom ul li{
+.footer .footerBottom ul li{
     width: 120px;
     line-height: 30px;
     height: 30px;
     font-size: 12px;
 }
-.Footer .footerBottom ul li a{
+.footer .footerBottom ul li a{
     text-align: center;
 }
 .ftNav{
-    background-color: #fff;
     margin-bottom: 15px;
 }
 .ftNav,.copy{
