@@ -358,7 +358,7 @@ body{
 .curriculum ul li{
     width: 25%;
     float: left;
-    border: 5px solid #eee;
+    border: 1px solid #eee;
     box-sizing: border-box;
     padding: 20px;
     position: relative;
@@ -393,9 +393,6 @@ body{
     cursor: pointer;
 }
 
-.article{
-    background-color: yellowgreen;
-}
 .article .centerCon_txt{
     width: 230px;
 }
@@ -404,6 +401,17 @@ body{
     float: right;
     color: #999;
     text-align: right;
+}
+.curriculumCon .title2{
+    padding: 10px 15px;
+}
+.curriculumCon .title2 a{
+    line-height: 25px;
+}
+.curriculumCon .title2 .a1{
+    font-size: 18px;
+    color: #09f;
+    font-weight: bold;
 }
 .manuConRightB ol li{
     width: 300px;

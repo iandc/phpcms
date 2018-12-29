@@ -7,12 +7,26 @@
              <a href="">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>{/if} </a>
          </li>
          <li>
-             <a href="javascript:;">{if $catid == 0}&nbsp;&nbsp;全部&nbsp;&nbsp;{else}&nbsp;&nbsp;{$catname}&nbsp;{/if}</a>
+             <a href="javascript:;">&nbsp;&nbsp;{$catname}</a>
          </li>
          <li>
              <a href=""> > 列表</a>
          </li>
      </ul>
+</div>
+{elseif $_GET['a'] == 'type'}
+<div class="crumbs" style="height: 30px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
+    <ul class="lists">
+        <li>
+            <a href="">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>{/if} </a>
+        </li>
+        <li>
+            <a href="javascript:;">&nbsp;全部&nbsp</a>
+        </li>
+        <li>
+            <a href=""> > 列表</a>
+        </li>
+    </ul>
 </div>
 {elseif $_GET['a'] == 'category'}
  <!-- 频道页 --> 

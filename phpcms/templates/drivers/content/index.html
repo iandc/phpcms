@@ -223,6 +223,10 @@
 
         <div class="curriculum mt15">
             <div class="w1100 curriculumCon bgc_fff clearfix">
+                <div class="title2" style="height: 25px;">
+                    <a href="{APP_PATH}type-{$typeidList['tec']}-1.html" class=" a1 fl">创新大讲堂</a>
+                    <a href="" class="a2 fr"> < 更多</a>
+                </div>
                 <ul class="ul">
                     {pc:content action="lists" catid="$courseid" where="status=99" order="id DESC" num="4" cache="$cacheTimeList['five_minute']"}
                     {loop $data $value}
