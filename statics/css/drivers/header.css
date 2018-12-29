@@ -123,10 +123,10 @@
     line-height: 40px;
 }
 
-.hd .nav .nav_list li:hover{
+.hd .nav .nav_list li.lis:hover{
     background-color: #fff;
 }
-.hd .nav .nav_list li:hover a{
+.hd .nav .nav_list li.lis:hover a{
     color: #666;
 }
 .hd .nav .nav_list li:hover .sub_mune_ul{

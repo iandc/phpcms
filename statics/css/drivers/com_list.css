@@ -1,6 +1,6 @@
 body{color:#888;background: #eee url(../images/v9/body-bg.png) repeat-y center}
 a{text-decoration:none; color:#444}
-a:hover{color:#1E50A2}
+/*a:hover{color:#1E50A2}*/
 .blue,blue a,.box h5 a,.box h6 a,.box a.more,.crumbs a{ color:#004499}
 .keylink,.keylink:link,.keylink:hover,.keylink:active {text-decoration:underline;width:26px; height:22px; line-height:22px; background:#fff; border:1px dotted #aaa;  text-align:center}
 textarea{border:1px solid #DCDDDD; background:#fff;clear:both;color:#555;font-size:14px;height:130px;padding:5px 0 0 5px;text-align:left;width:99%; margin-bottom:8px}

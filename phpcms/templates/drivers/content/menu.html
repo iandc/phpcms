@@ -1,6 +1,6 @@
 {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="{$cacheTimeList['one_hour']}"}
 {loop $data $value}
-<li>
+<li class="{if $value['modelid'] == 1}lis{/if}">
     <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" href="{if $value['modelid'] == 1}{APP_PATH}type-{$typeidList['news']}-1.html{else}{$value['url']}{/if}" target="_blank">{$value['catname']}</a>
     {if $value['catid'] == $newsid}
     <ul class="sub_mune_ul">
@@ -15,7 +15,7 @@
 </li>
 {/loop}
 {/pc}
-<li><a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}type-{$typeidList['tec']}-1.html"
+<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}type-{$typeidList['tec']}-1.html"
        target="_blank">技术文章</a>
     <ul class="sub_mune_ul clearfix">
         <li><a href="{APP_PATH}type-{$typeidList['tec']}-1.html">全部</a></li>
@@ -25,7 +25,7 @@
         {/loop}
     </ul>
 </li>
-<li><a class="hover_a lis_a nav_l c_f nav_q" href="category.html" target="_blank">频道</a>
+<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="category.html" target="_blank">频道</a>
     <ul class="sub_mune_ul clearfix">
         {loop $d $v}
         <li><a href="{APP_PATH}category-{$v['catid']}.html">{$v['catname']}</a></li>
