@@ -1,6 +1,6 @@
 <?php
 return [
-    'attachments' => [
+    /*'attachments' => [
         'attachment' => [
             'aid' => 'aid',
             'catid' => 'catid',
@@ -46,7 +46,7 @@ return [
         ],
     ],
 
-    'categories' => [ //×ª»»µ½×ÓÀ¸Ä¿
+    /*'categories' => [ //è½¬æ¢åˆ°å­æ ç›®
         'category' => [
             'catid' => 'catid',
             'name' => 'catname',
@@ -61,7 +61,7 @@ return [
             'child' => 0,
             'setting' => '{"workflowid":"","ishtml":"0","content_ishtml":"0","create_to_html_root":"1","template_list":"default","category_template":"category","list_template":"list","show_template":"show","meta_title":"","meta_keywords":"","meta_description":"","presentpoint":"1","defaultchargepoint":"0","paytype":"0","repeatchargedays":"1","category_ruleid":"6","show_ruleid":"16"}'
         ],
-    ],
+    ],*/
 
     'spaceitems' => [
         'news' => [
@@ -72,8 +72,9 @@ return [
             'dateline' => 'inputtime',
         ],
         'create' => [
-            'sysadd' => 1, //1 ºóÌ¨¹ÜÀíÔ±Ìí¼Ó
-            'status' => 99, // 0ÍË¸å£¬1~4ÉóºË×´Ì¬ 99Í¨¹ý
+            'typeid' => rand(54, 55),
+            'sysadd' => 1, //1 åŽå°ç®¡ç†å‘˜æ·»åŠ 
+            'status' => 99, // 0é€€ç¨¿ï¼Œ1~4å®¡æ ¸çŠ¶æ€ 99é€šè¿‡
             'description' => '',
             'updatetime' => 0,
         ],

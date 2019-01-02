@@ -20,4 +20,4 @@ foreach ($converts as $value) {
     $pcdb->query($sql);
 }
 
-ext_go('转换前的基本配置完成，下一步开始转换各个表', "filename=handle&table=$table");
+ext_go('杞崲鍓嶇殑鍩烘湰閰嶇疆瀹屾垚锛屼笅涓�姝ュ紑濮嬭浆鎹㈠悇涓〃', "filename=handle&table=$table");

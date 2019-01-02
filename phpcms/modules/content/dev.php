@@ -89,7 +89,7 @@ class dev
         //URLπÊ‘Ú
         $urlrules = getcache('urlrules', 'commons');
 
-        $urlrules = str_replace('|', '~', 'index.php?m=content&c=index&a=list&typeid={$typeid}|index.php?m=content&c=index&a=list&typeid={$typeid}&page={$page}');
+        $urlrules = str_replace('|', '~', 'type-{$typeid}.html|type-{$typeid}-{$page}.html');
         $tmp_urls = explode('~', $urlrules);
         $tmp_urls = isset($tmp_urls[1]) ? $tmp_urls[1] : $tmp_urls[0];
         preg_match_all('/{\$([a-z0-9_]+)}/i', $tmp_urls, $_urls);
@@ -102,6 +102,7 @@ class dev
         $GLOBALS['URL_ARRAY']['categorydir'] = $categorydir;
         $GLOBALS['URL_ARRAY']['catdir'] = $catdir;
         $GLOBALS['URL_ARRAY']['catid'] = $catid;
+        $GLOBALS['URL_ARRAY']['typeid'] = $typeid;
         $catid = 0;
         include template('content', $template);
     }

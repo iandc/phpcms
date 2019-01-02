@@ -1,8 +1,8 @@
 <?php
 /**
  *
- * SupeSiteÄÚÈİÄ£ĞÍÀ©Õ¹×Ö¶Î·ÖÎö¡£
- * @param $str ÄÚÈİÄ£ĞÍÀ©Õ¹×Ö¶ÎÅäÖÃĞÅÏ¢
+ * SupeSiteå†…å®¹æ¨¡å‹æ‰©å±•å­—æ®µåˆ†æã€‚
+ * @param $str å†…å®¹æ¨¡å‹æ‰©å±•å­—æ®µé…ç½®ä¿¡æ¯
  */
 function model_field($str)
 {
@@ -23,8 +23,8 @@ function model_field($str)
 
 /**
  *
- * SupeSiteÀàĞÍ×ª»»ÎªPHPCMS V9ÀàĞÍ
- * @param $type SupeSiteÀàĞÍ
+ * SupeSiteç±»å‹è½¬æ¢ä¸ºPHPCMS V9ç±»å‹
+ * @param $type SupeSiteç±»å‹
  */
 function field_type($type)
 {
@@ -79,8 +79,8 @@ function field_type($type)
 
 /**
  *
- * °´SupeSiteÀàĞÍ£¬ÉèÖÃPHPCMS V9ÀàĞÍÅäÖÃ¡£
- * @param $type  SupeSiteÀàĞÍ
+ * æŒ‰SupeSiteç±»å‹ï¼Œè®¾ç½®PHPCMS V9ç±»å‹é…ç½®ã€‚
+ * @param $type  SupeSiteç±»å‹
  */
 function field_setting($type)
 {
@@ -164,19 +164,19 @@ function field_setting($type)
 
 /**
  *
- * Ô­ÓĞ³ÌĞòÅäÖÃÎÄ¼ş´¦Àíº¯Êı
+ * åŸæœ‰ç¨‹åºé…ç½®æ–‡ä»¶å¤„ç†å‡½æ•°
  */
 function config()
 {
-    include PATH . 'config.bak.php';
+    include PATH . 'ssdb.config.php';
     return array(
-        'hostname' => $cfg_dbhost,
-        'database' => $cfg_dbname,
-        'username' => $cfg_dbuser,
-        'password' => $cfg_dbpwd,
-        'tablepre' => $cfg_dbprefix,
+        'hostname' => $cfg_db_host,
+        'database' => $cfg_db_name,
+        'username' => $cfg_db_user,
+        'password' => $cfg_db_pwd,
+        'tablepre' => $cfg_db_prefix,
         'charset' => $cfg_db_language,
-        'type' => 'mysql',
+        'type' => 'mysqli',
         'debug' => 0,
         'pconnect' => 0,
         'autoconnect' => 0
@@ -185,21 +185,24 @@ function config()
 
 /**
  *
- * ³ÌĞò·Ö²½ÖèÔËĞĞ
- * @param $msg ÌáÊ¾µ±Ç°µÄÔËĞĞ×´Ì¬
- * @param $url ÏÂÒ»²½ÒªÔËĞĞµÄ³ÌĞò
- * @param $status ÊÇ·ñÎª×îºóÒ»²½£¬ÉèÖÃÎª1¡£
+ * ç¨‹åºåˆ†æ­¥éª¤è¿è¡Œ
+ * @param $msg æç¤ºå½“å‰çš„è¿è¡ŒçŠ¶æ€
+ * @param $url ä¸‹ä¸€æ­¥è¦è¿è¡Œçš„ç¨‹åº
+ * @param $status æ˜¯å¦ä¸ºæœ€åä¸€æ­¥ï¼Œè®¾ç½®ä¸º1ã€‚
  */
-function ext_go($msg, $url = '', $status = 0)
+function ext_go($msg='', $url = '', $status = 0)
 {
-    $dbconfig = config();
-    $array = array('status' => $status, 'msg' => (strtolower($dbconfig['charset']) == 'gbk' ? iconv('gbk', 'utf-8', $msg) : $msg), 'url' => 'index.php?op=3&step=1&' . $url);
-    exit(json_encode($array));
+    $ret = [
+        'msg' => $msg,
+        'url' => '?op=3&step=1&' . $url,
+        'status' => $status,
+    ];
+    echo json_encode($ret);exit;
 }
 
 /**
  *
- * ¸üĞÂÖ¸¶¨Ä£ĞÍ×Ö¶Î»º´æ
+ * æ›´æ–°æŒ‡å®šæ¨¡å‹å­—æ®µç¼“å­˜
  * @param $modelid
  */
 function cache_field($modelid = 0)
@@ -218,9 +221,9 @@ function cache_field($modelid = 0)
 
 /**
  *
- * SupeSiteÀ¸Ä¿µİ¹é
- * @param $parentid  Ö¸¶¨À¸Ä¿ID
- * @param $v9_catid  V9ÖĞµÄÀ¸Ä¿IDºÅ
+ * SupeSiteæ ç›®é€’å½’
+ * @param $parentid  æŒ‡å®šæ ç›®ID
+ * @param $v9_catid  V9ä¸­çš„æ ç›®IDå·
  */
 function SupeSite_subcat($parentid = 0, $v9_catid = 0)
 {
@@ -249,7 +252,7 @@ function SupeSite_subcat($parentid = 0, $v9_catid = 0)
 
 /**
  *
- * Ìí¼ÓÀ¸Ä¿µ½v9Êı¾İ¿âÖĞ
+ * æ·»åŠ æ ç›®åˆ°v9æ•°æ®åº“ä¸­
  * @param $parentid
  * @param $v
  */
@@ -270,8 +273,8 @@ function add_cat($parentid = 0, $v)
 
 /**
  *
- * Ñ¡ÔñÊı¾İÄ£ĞÍ
- * @param $modelid Ä£ĞÍID {µ±ÉèÖÃÁËÄ£ĞÍIDµÄÊ±ºò£¬»áÑ¡Ôñ¸ÃÄ£ĞÍÖ®ºóµÄÒ»¸öÄ£ĞÍ}
+ * é€‰æ‹©æ•°æ®æ¨¡å‹
+ * @param $modelid æ¨¡å‹ID {å½“è®¾ç½®äº†æ¨¡å‹IDçš„æ—¶å€™ï¼Œä¼šé€‰æ‹©è¯¥æ¨¡å‹ä¹‹åçš„ä¸€ä¸ªæ¨¡å‹}
  */
 function chose_model($modelid = 0)
 {
@@ -295,8 +298,8 @@ function chose_model($modelid = 0)
 
 /**
  *
- * ¼ÆËãÊı¾İÄ£ĞÍ×ÜÊı
- * @param $modelid Ä£ĞÍID
+ * è®¡ç®—æ•°æ®æ¨¡å‹æ€»æ•°
+ * @param $modelid æ¨¡å‹ID
  */
 function count_model_total($modelid)
 {
@@ -308,9 +311,9 @@ function count_model_total($modelid)
 
 /**
  *
- * SupeSiteÄÚÈİÊı¾İ×ª»»ÎªPHPCMS V9Êı¾İ
- * @param $data     Êı¾İ
- * @param $modelid  Ä£ĞÍID
+ * SupeSiteå†…å®¹æ•°æ®è½¬æ¢ä¸ºPHPCMS V9æ•°æ®
+ * @param $data     æ•°æ®
+ * @param $modelid  æ¨¡å‹ID
  */
 function content_format_data($data, $modelid)
 {
@@ -365,8 +368,8 @@ function content_format_data($data, $modelid)
 
 /**
  *
- * ½«SupeSiteµÄÀ¸Ä¿ID×ª»»ÎªV9µÄÀ¸Ä¿ID
- * @param $catid SupeSiteµÄÀ¸Ä¿ID
+ * å°†SupeSiteçš„æ ç›®IDè½¬æ¢ä¸ºV9çš„æ ç›®ID
+ * @param $catid SupeSiteçš„æ ç›®ID
  */
 function format_catid($catid)
 {
@@ -383,8 +386,8 @@ function format_catid($catid)
 
 /**
  *
- * SupeSite»áÔ±Êı¾İ×ª»»ÎªPHPCMS V9»áÔ±Êı¾İ
- * @param $data SupeSite»áÔ±Êı¾İ
+ * SupeSiteä¼šå‘˜æ•°æ®è½¬æ¢ä¸ºPHPCMS V9ä¼šå‘˜æ•°æ®
+ * @param $data SupeSiteä¼šå‘˜æ•°æ®
  */
 function member_format_data($data)
 {
@@ -426,8 +429,8 @@ function member_format_data($data)
 
 /**
  *
- * »áÔ±×é×ª»»
- * @param $rank »áÔ±µÈ¼¶
+ * ä¼šå‘˜ç»„è½¬æ¢
+ * @param $rank ä¼šå‘˜ç­‰çº§
  */
 function member_groupid_id($rank)
 {
@@ -443,8 +446,8 @@ function member_groupid_id($rank)
 
 /**
  *
- * °´»áÔ±µÄÊı¾İÑ¡Ôñ»áÔ±Ä£ĞÍ
- * @param $modelid  Ä£ĞÍID
+ * æŒ‰ä¼šå‘˜çš„æ•°æ®é€‰æ‹©ä¼šå‘˜æ¨¡å‹
+ * @param $modelid  æ¨¡å‹ID
  */
 function member_model($modelid)
 {
@@ -461,8 +464,8 @@ function member_model($modelid)
 
 /**
  *
- * »áÔ±Ä£ĞÍÑ¡ÔñÄ£ĞÍ
- * @param $modelid Ä£ĞÍID
+ * ä¼šå‘˜æ¨¡å‹é€‰æ‹©æ¨¡å‹
+ * @param $modelid æ¨¡å‹ID
  */
 function member_chose_model($modelid = '')
 {

@@ -205,7 +205,7 @@ case 3:
 </table>
 <script type="text/javascript">
 $(function(){
-	install('程序开始进行转换，请不要停止浏览器', 'index.php?op=3&step=1&filename=index');
+	install('程序开始进行转换，请不要停止浏览器', '?op=3&step=1&filename=index');
 })
 
 function install(msg, url) {

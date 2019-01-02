@@ -1,28 +1,31 @@
 <?php
+
+error_reporting(7);
+
 define('PHPCMS_PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR . '../');
 define('PATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 include PHPCMS_PATH . '/phpcms/base.php';
 pc_base::load_sys_class('param', '', '', '0');
 
 if (!function_exists('json_encode')) {
-    showmessage('ÄúµÄ·þÎñÆ÷²»Ö§³Öjson£¬Çë°²×°jsonÀ©Õ¹¡£');
+    showmessage('æ‚¨çš„æœåŠ¡å™¨ä¸æ”¯æŒjsonï¼Œè¯·å®‰è£…jsonæ‰©å±•ã€‚');
 }
 
-//Éý¼¶³ÌÐòÅäÖÃ
+//å‡çº§ç¨‹åºé…ç½®
 $configs = include PATH . 'config.php';
 
 $converts = include PATH . 'db.php';
 
 $op = isset($_GET['op']) && trim($_GET['op']) ? trim($_GET['op']) : '1';
 
-//¼ì²éÔ­ÓÐÏµÍ³µÄÅäÖÃÎÄ¼þÊÇ·ñ´æÔÚ¡£
+//æ£€æŸ¥åŽŸæœ‰ç³»ç»Ÿçš„é…ç½®æ–‡ä»¶æ˜¯å¦å­˜åœ¨ã€‚
 if ($op != 1 && !file_exists(PATH . 'ssdb.config.php')) {
-    showmessage('ssdb.config.phpÎÄ¼þ²»´æÔÚ£¬ÇëÏÈÉèÖÃssdbÊý¾Ý¿âÅäÖÃ');
+    showmessage('ssdb.config.phpæ–‡ä»¶ä¸å­˜åœ¨ï¼Œè¯·å…ˆè®¾ç½®ssdbæ•°æ®åº“é…ç½®');
 }
 
 include PATH . 'global.php';
 
-//°æ±¾ÎÄ¼þµØÖ·
+//ç‰ˆæœ¬æ–‡ä»¶åœ°å€
 $version_filepath = CACHE_PATH . 'configs' . DIRECTORY_SEPARATOR . 'version.php';
 
 //echo "<pre>";print_r($converts);exit;
@@ -32,7 +35,7 @@ $now_version = pc_base::load_config('version', 'pc_version');
 $now_release = pc_base::load_config('version', 'pc_release');
 
 switch ($op) {
-    //×ª»»µÚÒ»²½
+    //è½¬æ¢ç¬¬ä¸€æ­¥
     case '1':
         $config_exists = 0;
         if (file_exists(PATH . 'ssdb.config.php')) {
@@ -40,12 +43,12 @@ switch ($op) {
         }
         break;
 
-    //×ª»»µÚ¶þ²½£¬ÅäÖÃ³ÌÐò
+    //è½¬æ¢ç¬¬äºŒæ­¥ï¼Œé…ç½®ç¨‹åº
     case '2':
         $old_config = config();
         break;
 
-    //×ª»»µÚÈý²½£¬½øÐÐÅäÖÃ³ÌÐòÉý¼¶
+    //è½¬æ¢ç¬¬ä¸‰æ­¥ï¼Œè¿›è¡Œé…ç½®ç¨‹åºå‡çº§
     case '3':
         if (isset($_GET['step'])) {
             $filename = isset($_GET['filename']) && trim($_GET['filename']) ? trim($_GET['filename']) : 'index';
@@ -57,13 +60,13 @@ switch ($op) {
                 $pcdb = new get_model();
                 include $ext_path;
             } else {
-                ext_go('³ÌÐòÔËÐÐ³öÏÖ´íÎó£¬ÎÞ·¨ÕÒµ½ÕýÈ·µÄÔËÐÐ³ÌÐò¡£', '', -1);
+                ext_go('ç¨‹åºè¿è¡Œå‡ºçŽ°é”™è¯¯ï¼Œæ— æ³•æ‰¾åˆ°æ­£ç¡®çš„è¿è¡Œç¨‹åº', '', -1);
             }
             exit;
         }
         break;
 
-    //×ª»»Íê³É
+    //è½¬æ¢å®Œæˆ
     case '4':
         $data = array('pc_version' => $configs['to_version'], 'pc_release' => $configs['to_release']);
         $version_update_success = 0;

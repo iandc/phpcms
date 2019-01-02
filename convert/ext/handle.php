@@ -5,13 +5,13 @@ $find = [
 ];
 
 $replace = [
-    'http://www.eetop.cn/uploadfile',
+    'http://www.eetop.wang/uploadfile',
 ];
 
 $sTableName = trim($_GET['table']);
 $tTableNmae = current(array_keys($converts[$sTableName]));
 
-$pageSize = 50;
+$pageSize = 500;
 
 $page = empty($_GET['page']) ? 1 : intval($_GET['page']);
 if ($page < 1) $page = 1;
@@ -146,9 +146,9 @@ if ($sTableName == 'attachments') {
         $firstCategory = [
             'siteid' => 1,
             'module' => 'content',
-            'type' => 0,//1 µ¥ÍøÒ³ 0 ÆÕÍ¨À¸Ä¿
+            'type' => 0,//1 å•ç½‘é¡µ 0 æ™®é€šæ ç›®
             'modelid' => 1,
-            'catname' => '×ÊÑ¶',
+            'catname' => 'èµ„è®¯',
             'catdir' => 'zixun',
             'child'  => 1,
             'parentid' => 0,
@@ -160,9 +160,9 @@ if ($sTableName == 'attachments') {
         /*$firstCategory = [
             'siteid' => 1,
             'module' => 'content',
-            'type' => 0,//1 µ¥ÍøÒ³ 0 ÆÕÍ¨À¸Ä¿
+            'type' => 0,//1 å•ç½‘é¡µ 0 æ™®é€šæ ç›®
             'modelid' => 2,
-            'catname' => 'ÏÂÔØ',
+            'catname' => 'ä¸‹è½½',
             'catdir' => 'xiazai',
             'child'  => 1,
             'parentid' => 0,
@@ -307,7 +307,15 @@ if ($sTableName == 'attachments') {
             $insert2 = $converts[$sTableName]['create'];
             foreach ($insert1 as $k => $v) {
                 if($k == 'content') {
-                    $insert1[$k] = new_addslashes(str_replace($find[0], $replace[0], new_stripslashes($value[$v])));
+                    $content = new_stripslashes($value[$v]);
+                    //$content = str_replace($find[0], $replace[0], new_stripslashes($value[$v]));
+                    $insert1[$k] = new_addslashes($content);
+                    $thumb = '';
+                    if(preg_match_all("/(src)=([\"|']?)([^ \"'>]+\.(gif|jpg|jpeg|bmp|png))\\2/i", $content, $matches)) {
+                        $auto_thumb_no = 1;//å–ç¬¬ä¸€å¼ å›¾ä¸ºç¼©ç•¥å›¾
+                        $thumb = $matches[3][$auto_thumb_no];
+                    }
+                    $description = new_addslashes(str_cut(str_replace(array("\r\n","\t",'[page]','[/page]','&ldquo;','&rdquo;','&nbsp;'), '', strip_tags($content)), 200, ''));
                 } else {
                     $insert1[$k] = $value[$v];
                 }
@@ -318,6 +326,8 @@ if ($sTableName == 'attachments') {
             $sql = "INSERT INTO " . $pcdb_pre . $tTableNmae . " SET " . to_sqls($insert, ',');
             $pcdb->query($sql);
             $id = $pcdb->insert_id();
+            $sql = "update {$pcdb_pre}news SET `description`='$description',thumb='$thumb' WHERE id={$insert['id']}";
+            $pcdb->query($sql);
         }
     }
 } else if ($sTableName == 'spacefiles') {
@@ -376,7 +386,7 @@ if ($sTableName == 'attachments') {
 
 if ($list) {
     $page++;
-    ext_go("×ª»» $sTableName ±íµÄµÚ " . ($page - 1) . " Ò³Êı¾İÍê³É", "filename=handle&table=$sTableName&page=$page");
+    ext_go("è½¬æ¢ $sTableName è¡¨çš„ç¬¬ " . ($page - 1) . " é¡µæ•°æ®å®Œæˆ", "filename=handle&table=$sTableName&page=$page");
 }
 
 $keys = array_keys($converts);
@@ -384,9 +394,11 @@ $table = $keys[array_search($sTableName, $keys) + 1];
 
 $status = 0;
 if (!$table) {
-    ext_go("×ª»»ËùÓĞ±íÍê³É£¬¼ÌĞøÏÂÒ»²½", '', 1);
+    ext_go("è½¬æ¢æ‰€æœ‰è¡¨å®Œæˆï¼Œç»§ç»­ä¸‹ä¸€æ­¥", '', 1);
 } else {
-    ext_go("×ª»» $sTableName ±íµ½ $tTableNmae Íê³É£¬¼ÌĞøÏÂÒ»¸ö±í", "filename=handle&table=$table", 0);
+    ext_go("è½¬æ¢ $sTableName è¡¨åˆ° $tTableNmae å®Œæˆï¼Œç»§ç»­ä¸‹ä¸€ä¸ªè¡¨", "filename=handle&table=$table", 0);
 }
+
+
 
 //write_log(print_r($pcdb, true));
