@@ -1,3 +1,4 @@
+/*2975c4*/
 body{
     font-size: 14px;
 }
@@ -24,13 +25,13 @@ body{
     padding: 0;
     width: 298px;
     border: 1px solid #d6d3d4;
-    border-top: 2px solid #2975c4;
+    border-top: 2px solid #29759B;
 }
 .con_four .con_fourL_top .lf .product .p_title{
     position: relative;
     width: 220px;
     height: 58px;
-    color: #2975c4;
+    color: #29759B;
     font-size: 1pc;
     line-height: 58px;
     padding-left: 15px;
@@ -71,7 +72,7 @@ body{
 }
 .con_four .con_fourL_top .mf .mf_hd .item{
     padding: 0 20px;
-    background-color: #2975c4;
+    background-color: #29759B;
     color: #fff;
     font-size: 14px;
 }
@@ -104,7 +105,7 @@ body{
 }
 .con_four .con_fourL_top .mf .mf_con .newList ul li .date{
     display: block;
-    color: #2975c4
+    color: #29759B
 }
 .con_four .con_fourL_top .mf .mf_con .newList ul li.new{
     background-position: left 4px;
@@ -140,7 +141,7 @@ body{
 .con_four .con_fourL_bottom .listBox h2 .sp1{
     float: left;
     display: block;
-    border-bottom: 2px solid #2975c4;
+    border-bottom: 2px solid #29759B;
 }
 .con_four .con_fourL_bottom .listBox h2 .sp2{
     font-weight: 400;

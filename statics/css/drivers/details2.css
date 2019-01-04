@@ -20,7 +20,7 @@ body{
 }
 .con_three .con_three_l .current_nav{
     padding-bottom: 15px;
-    border-bottom: 3px solid #2975c4;
+    border-bottom: 3px solid #29759B;
     color: #888;
     font-size: 14px;
 }
@@ -78,13 +78,13 @@ body{
 }
 .con_three .con_three_l .see_con .tit h2{
     padding: 0 2px 5px;
-    border-bottom: 1px solid #2975c4 ;
-    color: #2975c4 ;
+    border-bottom: 1px solid #29759B ;
+    color: #29759B ;
     font-weight: 700;
     font-size: 1pc;
 }
 .con_three .con_three_l .see_con .tit span{
-    color: #2975c4 ;
+    color: #29759B ;
     margin-right: 15px;
     cursor: pointer;
 }

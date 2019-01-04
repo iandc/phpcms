@@ -72,7 +72,8 @@ final class db_mysqli {
 	 * @return 查询资源句柄
 	 */
 	private function execute($sql) {
-		if(!is_object($this->link)) {
+        //file_put_contents(CACHE_PATH . 'sql_record_mysqli.php', strval($sql)."\n", FILE_APPEND);// edit by seagle
+        if(!is_object($this->link)) {
 			$this->connect();
 		}
 		$this->lastqueryid = $this->link->query($sql) or $this->halt($this->link->error, $sql);

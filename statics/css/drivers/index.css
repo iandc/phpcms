@@ -58,7 +58,7 @@ body{
     cursor: pointer;
 }
 #uls .select{
-    background-color: #2975c4;
+    background-color: #29759B;
     color: #fff;
 }
 #shang{
@@ -76,7 +76,7 @@ body{
     height: 222px;
 }
 .information a:hover{
-    color: #2975c4;
+    color: #29759B;
 }
 .informationLeft{
     width: 300px;
@@ -92,9 +92,9 @@ body{
 }
 .informationRight .informationRightL .focus-title,.informationRight .informationRightR .focus-title{
     height: 20px;
-    border-left: 4px solid #2975c4;
+    border-left: 4px solid #29759B;
     padding-left: 9pt;
-    color: #2975c4;
+    color: #29759B;
     font-size: 1pc;
     line-height: 20px;
 }
@@ -143,8 +143,14 @@ body{
     background-size: 5px 5px;
     font-size: 12px;
 }
+.informationRight .informationRightR ul li a{
+    cursor: pointer;
+}
 
 /*资讯*/
+.zxLeft_con ul li a, .zxRight_conc .ul2 li a{
+    font-size: 13px !important;
+}
 .zixun .zixunConLeft,.Manufacturer .manuConLeft{
     width: 735px;
     padding: 12px 14px;
@@ -170,7 +176,7 @@ body{
     line-height: 26px;
 }
 .zixun .zixunConLeft .zxLeft_title ul li span a{
-    color: #09f;
+    color: #29759B;
 }
 .zixun .zixunConLeft .zxLeft_title ul li a{
     display: inline-block;
@@ -195,6 +201,9 @@ body{
     padding: 1px 1px 1px 16px;
     background: url(//icons.mydrivers.com/2018/www/icon.png) no-repeat -2px -658px;
 }
+.zxLeft_con ul li a{
+    color: #29759B;
+}
 .zxLeft_con ul li .lis:hover{
     width: 280px;
     height: 32px;
@@ -208,7 +217,7 @@ body{
 }
 .zxLeft_con ul li .t{
     float: right;
-    color: #888;
+    color: #666;
     padding-right: 15px;
     width: 38px;
     font-size: 12px;
@@ -229,7 +238,7 @@ body{
     display: block;
     font-size: 14px;
     margin-top: -5px;
-    color: #09f;
+    color: #29759B;
 }
 .zxRight_con{
     padding:0 22px 11px 4px;
@@ -330,18 +339,17 @@ body{
 }
 .zxRight_conc .ul2 li{
     width: 290px;
-    height: 33px;
-    line-height: 33px;
-    padding-top: -5px;
-    background: url(//icons.mydrivers.com/2018/www/icon.png) no-repeat -2px -658px;
+    line-height: 25px;
+}
+.zxRight_conc .ul2 li {
+    height: auto;
+    padding: 10px 0;
+    margin-bottom: 5px;
+    /*border-top: 1px solid #eee;   */
+    border-bottom: 1px solid #eee; 
 }
 .zxRight_conc .ul2 li .ls{
     padding-left: 15px;
-}
-.zxRight_conc .ul2 li .ls:hover{
-    width: 290px;
-    height: 32px;
-    background-color: #eee;
 }
 .zxRight_conc .ul2 li a{
     font-size: 14px;
@@ -410,7 +418,7 @@ body{
 }
 .curriculumCon .title2 .a1{
     font-size: 18px;
-    color: #09f;
+    color: #29759B;
     font-weight: bold;
 }
 .manuConRightB ol li{
@@ -441,7 +449,7 @@ body{
 }
 .Manufacturer .manuConLeft .title1 a{
     font-size: 18px;
-    color: #09f;
+    color: #29759B;
     font-weight: bold;
 }
 .Manufacturer .manuConLeft .manuConLeftL .title1{
@@ -482,13 +490,13 @@ body{
 }
 .zixunConRight .manuConRight .title1 a{
     font-weight: bold;
-    color: #09f;
+    color: #29759B;
 }
 .zixunConRight .manuConRight .manuConRightT,.Manufacturer .manuConRight .manuConRightT{
     position: relative;
 }
 .article .manuConRight .manuConRightT .title1 a,.Manufacturer .manuConRight .manuConRightT .title1 a{
-    color: #09f;
+    color: #29759B;
     font-weight: bold;
 }
 .article .manuConRight .more,.Manufacturer .manuConRight .more{
@@ -539,7 +547,7 @@ body{
     padding-left: 2px;
 }
 .footer .footerTop .ft_txt ul .links span{
-    color: #09f;
+    color: #29759B;
     font-weight: bold;
 }
 .footer .footerBottom{

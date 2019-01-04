@@ -21,13 +21,13 @@ body{
     margin: 10px 0;
 }
 .log .focus-title{
-    border-left: 3px solid #2975c4;
+    border-left: 3px solid #29759B;
 }
 .log .focus-title ul li{
     margin: 2px 0;
 }
 .log .focus-title a{
-    color: #2975c4;
+    color: #29759B;
     margin-left: 10px;
 }
 .log .banner11{
@@ -73,7 +73,7 @@ body{
 }
 .whole .sub_ul{
     width: 300px;
-    background-color: #2975c4;
+    background-color: #29759B;
     position: absolute;
     top: 40px;
     left: -15px;
@@ -138,7 +138,7 @@ body{
     margin-right: 20px;
 }
 .content .content_min .cm_four .cm_four_l ul li .block .date .lb a{
-    color: #2975c4;
+    color: #29759B;
     font-weight: 600;
 }
 .content .content_min .cm_four .cm_four_l ul li .block .date .time{
@@ -182,7 +182,7 @@ body{
     font-size: 9pt;
 }
 .content .content_min .cm_four .cm_four_l ul li .block h2 .tody{
-    color: #2975c4;
+    color: #29759B;
 }
 .content .content_min .cm_four .cm_four_l ul li .block .time{
     height: 16px;

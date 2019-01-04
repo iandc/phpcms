@@ -7,7 +7,7 @@
         <li><a href="{APP_PATH}type-{$typeidList['news']}-1.html">全部</a></li>
         {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="{$cacheTimeList['one_hour']}" return="d"}
         {loop $d $v}
-        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['news']}-1.html">{$v['catname']}</a></li>
+        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['news']}-1.html" target="_blank">{$v['catname']}</a></li>
         {/loop}
         {/pc}
     </ul>
@@ -20,7 +20,7 @@
     <ul class="sub_mune_ul clearfix">
         <li><a href="{APP_PATH}type-{$typeidList['tec']}-1.html">全部</a></li>
         {loop $d $v}
-        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['tec']}-1.html">{$v['catname']}</a>
+        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['tec']}-1.html" target="_blank">{$v['catname']}</a>
         </li>
         {/loop}
     </ul>
@@ -28,7 +28,7 @@
 <li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="category.html" target="_blank">频道</a>
     <ul class="sub_mune_ul clearfix">
         {loop $d $v}
-        <li><a href="{APP_PATH}category-{$v['catid']}.html">{$v['catname']}</a></li>
+        <li><a href="{APP_PATH}category-{$v['catid']}.html" target="_blank">{$v['catname']}</a></li>
         {/loop}
     </ul>
 </li>

@@ -4,7 +4,7 @@
 .cm_four_r .tabs .tab{
     overflow: hidden;
     width: 298px;
-    border-top: 3px solid #2975c4;
+    border-top: 3px solid #29759B;
 }
 .cm_four_r .tab {
      border: 1px solid #ddd;
@@ -50,9 +50,9 @@
 }
 
 .cm_four_r .tab li.active {
-    border-bottom: 1px #2975c4 solid;
+    border-bottom: 1px #29759B solid;
     background: #fff;
-    color: #2975c4;
+    color: #29759B;
 }
 .cm_four_r .products ul li{
     padding: 7px 0;
@@ -117,7 +117,7 @@
 .cm_four_r .hot .hotList .hotList_tit{
     padding: 0 10px;
     height: 31px;
-    border-top: 2px #2975c4 solid;
+    border-top: 2px #29759B solid;
     text-decoration: none;
     font-weight: 700;
     font-size: 14px;
