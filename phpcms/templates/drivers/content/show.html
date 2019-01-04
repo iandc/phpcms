@@ -10,9 +10,9 @@
                         <h1>{$title}</h1>
                         <span class="pt_info fs12">
                             <span class="date">{$inputtime}</span>
-                            
-                            <span class="{if $copyfrom = ' '}dpn{/if}">来源：{$copyfrom}</span>
-                            
+
+                            <span class="{if $copyfrom == ' '}dpn{/if}">来源：{$copyfrom}</span>
+
                             评论：<span id="comment">0</span>
                             点击：<span id="hits">0</span>
                         </span>
@@ -35,7 +35,7 @@
                     <div class="relevant clearfix">
                         <div class="tit clearfix">
                             <div style="margin-bottom: 10px;">
-                                <span class="{if $keyword = ' '}dpn{/if}">
+                                <span class="{if $keyword == ' '}dpn{/if}">
                                     关键词：
                                     {loop $keywords $keyword}
                                     <a class="blue"
@@ -50,7 +50,7 @@
                             <li>下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 30, '')}</a></li>
                         </ul>
                     </div>
-                    {pc:content action="relation" relation="$relation" catid="$catid" id="$id" keywords="$rs['keywords']" num="5" cache="$cacheTimeList['five_minute']"}
+                    {pc:content action="relation" relation="$relation" catid="$catid" id="$id" keywords="$rs['keywords']" num="5" cache="600"}
                     {if $data}
                     <div class="see">
                         <div class="see_con">

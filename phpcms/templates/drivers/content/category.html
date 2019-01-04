@@ -14,7 +14,7 @@
                                         热门资讯
                                     </div>
                                     <ul>
-                                        {pc:content action="lists" catid="$newsid" order="id ASC" num="5" cache="$cacheTimeList['five_minute']"}
+                                        {pc:content action="lists" catid="$newsid" order="id ASC" num="5" cache="300"}
                                         {loop $data $value}
                                         <li>
                                             <p class="proName"><a href="{$value['url']}">{str_cut($value['title'], 45, '')}</a></p>
@@ -42,7 +42,7 @@
                                     <div class="newList">
                                         <div class="block">
                                             <ul>
-                                                {pc:content action="lists" catid="$newsid" order="id DESC" num="15" cache="$cacheTimeList['five_minute']"}
+                                                {pc:content action="lists" catid="$newsid" order="id DESC" num="15" cache="300"}
                                                 {loop $data $value}
                                                 <li class="new">
                                                     <span class="date fr">{date('m-d', $value['inputtime'])}</span>
@@ -62,7 +62,7 @@
                             <div class="banner">
                                 <a href=""><img src="https://tpc.googlesyndication.com/daca_images/simgad/11250355926562476033" alt=""></a>
                             </div>
-                            {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="50" cache="$cacheTimeList['five_minute']"}
+                            {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="50" cache="300"}
                             {loop $data $key $value}
                             <div class="listBox">
                                 <h2>
@@ -70,7 +70,7 @@
                                     <span class="sp2"><a href="{$value['url']}">更多</a></span>
                                 </h2>
                                 <ul class="fl">
-                                    {pc:content action="lists" catid="$key" order="id DESC" num="5" cache="$cacheTimeList['five_minute']" return="d"}
+                                    {pc:content action="lists" catid="$key" order="id DESC" num="5" cache="300" return="d"}
                                     {loop $d $k $v}
                                     <li>
                                         <span class="title">
@@ -109,7 +109,7 @@
                                         <div class="zxLeft_con clearfix" style="margin-top: -20px;">
                                             <div class="zxLeft_conL fl w50">
                                                 <ul style="margin-bottom: 10px; margin-top: 10px;">
-                                                    {pc:content action="lists" catid="$catid" order="id DESC" num="32" cache="$cacheTimeList['five_minute']"}
+                                                    {pc:content action="lists" catid="$catid" order="id DESC" num="32" cache="300"}
                                                     {php $i=0;}
                                                     {loop $data $value}
                                                     {if $i <= 7}
@@ -189,7 +189,7 @@
                                                 <ul>
                                                     {php $where = "typeid=$typeidList[tec]";}
                                                     {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC"
-                                                    num="8" cache="$cacheTimeList['five_minute']"}
+                                                    num="8" cache="300"}
                                                     {php $i = 0;}
                                                     {loop $data $value}
                                                     {if $i < 4}
@@ -294,7 +294,7 @@
                             <div id="box_img">
                                 <ul id="sub_img">
                                     {pc:content action="lists" catid="$newsid" order="updatetime DESC"
-                                    num="4" cache="$cacheTimeList['five_minute']"}
+                                    num="4" cache="300"}
                                     {loop $data $value}
                                     <li>
                                         <a href=""><img src="{$value['thumb']}" alt=""></a>

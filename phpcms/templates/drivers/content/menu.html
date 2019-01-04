@@ -1,11 +1,11 @@
-{pc:content action="category" siteid="$siteid" catid="0" num="20" cache="{$cacheTimeList['one_hour']}"}
+{pc:content action="category" siteid="$siteid" catid="0" num="20" cache="600"}
 {loop $data $value}
 <li class="{if $value['modelid'] == 1}lis{/if}">
     <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" href="{if $value['modelid'] == 1}{APP_PATH}type-{$typeidList['news']}-1.html{else}{$value['url']}{/if}" target="_blank">{$value['catname']}</a>
     {if $value['catid'] == $newsid}
     <ul class="sub_mune_ul">
         <li><a href="{APP_PATH}type-{$typeidList['news']}-1.html">全部</a></li>
-        {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="{$cacheTimeList['one_hour']}" return="d"}
+        {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="600" return="d"}
         {loop $d $v}
         <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['news']}-1.html" target="_blank">{$v['catname']}</a></li>
         {/loop}
