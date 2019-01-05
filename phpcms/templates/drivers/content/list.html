@@ -1,4 +1,4 @@
-{template "content", "header"}
+{template 'content', 'header'}
 
 <div class="wrap w100">
     <div class="w1100">
@@ -12,7 +12,7 @@
     </div>
     
     <div class="w1100 content bg_fff">
-        {template "content", "nav"}
+        {template 'content', 'nav'}
         <div class="whole">
             <ul style="position: relative;">
                 <li {if $catid == 0}class="current"{/if}><a href="{APP_PATH}type-{$typeid}-1.html">全部</a></li>
@@ -51,7 +51,7 @@
                                 </a>
                                 <div class="block">
                                     <h2>
-                                        <a href="{$value['url']}" target="_blank" {title_style($value['style'])}>{str_cut($value['title'],
+                                        <a href="{$value['url']}" {title_style($value['style'])}>{str_cut($value['title'],
                                         82, '')}</a>
                                         {if $catid}
                                             <span class="time fr">
@@ -84,9 +84,9 @@
                         </ul>
                     </div>
                 </div>
-                {template "content", "right"}
+                {template 'content', 'right'}
             </div>
         </div>
     </div>
-    {template "content", "footer"}
+    {template 'content', 'footer'}
 </div>

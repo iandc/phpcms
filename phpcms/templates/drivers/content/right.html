@@ -51,7 +51,7 @@
                                 业界最热文章
                             </div>
                             <div class="img">
-                                {pc:content action="hits" catid="$catid" num="2" order="monthviews DESC" cache="600"}
+                                {pc:content action="hits" catid="$catid" num="2" order="monthviews DESC" cache="3600"}
                                     {loop $data $r}
                                         <div class="fl imgs">
                                             <a href="{$r['url']}" class="image">
@@ -66,7 +66,7 @@
                     </div>
                     <div class="lists clearfix">
                         <ul class="clearfix" style="padding: 10px 0;">
-                            {pc:content action="hits" catid="$catid" num="12" order="monthviews DESC" cache="600"}
+                            {pc:content action="hits" catid="$catid" num="12" order="monthviews DESC" cache="3600"}
                             {php $i = 0;}
                                 {loop $data $r}
                                     {if $i >= 2}

@@ -1,13 +1,13 @@
-{pc:content action="category" siteid="$siteid" catid="0" num="20" cache="600"}
+{pc:content action="category" siteid="$siteid" catid="0" num="20" cache="86400"}
 {loop $data $value}
 <li class="{if $value['modelid'] == 1}lis{/if}">
-    <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" href="{if $value['modelid'] == 1}{APP_PATH}type-{$typeidList['news']}-1.html{else}{$value['url']}{/if}" target="_blank">{$value['catname']}</a>
+    <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" href="{if $value['modelid'] == 1}{APP_PATH}type-{$typeidList['news']}-1.html{else}{$value['url']}{/if}">{$value['catname']}</a>
     {if $value['catid'] == $newsid}
     <ul class="sub_mune_ul">
         <li><a href="{APP_PATH}type-{$typeidList['news']}-1.html">全部</a></li>
-        {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="600" return="d"}
+        {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="86400" return="d"}
         {loop $d $v}
-        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['news']}-1.html" target="_blank">{$v['catname']}</a></li>
+        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['news']}-1.html">{$v['catname']}</a></li>
         {/loop}
         {/pc}
     </ul>
@@ -15,20 +15,20 @@
 </li>
 {/loop}
 {/pc}
-<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}type-{$typeidList['tec']}-1.html"
-       target="_blank">技术文章</a>
+<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}type-{$typeidList['tec']}-1.html">技术文章</a>
     <ul class="sub_mune_ul clearfix">
         <li><a href="{APP_PATH}type-{$typeidList['tec']}-1.html">全部</a></li>
         {loop $d $v}
-        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['tec']}-1.html" target="_blank">{$v['catname']}</a>
+        <li><a href="{APP_PATH}list-{$v['catid']}-{$typeidList['tec']}-1.html">{$v['catname']}</a>
         </li>
         {/loop}
     </ul>
 </li>
-<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="category.html" target="_blank">频道</a>
+<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="category.html">频道</a>
     <ul class="sub_mune_ul clearfix">
+        <li><a href="category.html">全部</a></li>
         {loop $d $v}
-        <li><a href="{APP_PATH}category-{$v['catid']}.html" target="_blank">{$v['catname']}</a></li>
+        <li><a href="{APP_PATH}category-{$v['catid']}.html">{$v['catname']}</a></li>
         {/loop}
     </ul>
 </li>

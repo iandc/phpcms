@@ -3,15 +3,14 @@
     	<div class="sr_main">
         	<div class="sr_head">
             	<div class="l" id="search">
-				{php $j=0}
+				{php $j = 0;}
 				{loop $search_model $k=>$v}
-				{php $j++;}
+					{php $j++;}
 					<a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this),{$siteid}, '{$q}');" {if $v['typeid']==$typeid} class="on"{/if}>{$v['name']}</a>{if $j != count($search_model)} - {/if}
 				{/loop}
 				</div>
             	<div class="r"><script type="text/javascript">document.write('<iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&forward='+encodeURIComponent(location.href)+'&siteid={get_siteid()}" allowTransparency="true"  width="300" height="24" frameborder="0" scrolling="no"></iframe>')</script></div>
             </div>
-
             <div class="wrap sr_logo">
             	<a href="index.php?m=search&siteid={$siteid}" class="l"><img src="{IMG_PATH}drivers/logo.gif" width="200" height="140" style="margin-top: 10px; margin-right: 20px;"/></a>
                 <div class="l">
@@ -38,10 +37,11 @@
                 	<div>
                     	<span>网页结果</span>
                         <ul>
-				{loop $search_model $k=>$v}
-						<li><a href="?m=search&c=index&a=init&typeid={$v['typeid']}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}" {if $v['typeid']==$typeid} class="ac"{/if}>{$v['name']}</a>
-						</li>
-				{/loop}
+							{loop $search_model $k=>$v}
+							<li>
+								<a href="?m=search&c=index&a=init&typeid={$v['typeid']}&q={urlencode($search_q)}&siteid={$siteid}&time={$time}" {if $v['typeid']==$typeid} class="ac"{/if}>{$v['name']}</a>
+							</li>
+							{/loop}
                          </ul>
                     </div>
                     <div>
@@ -65,11 +65,11 @@
 						{loop $data $i $r}
 						<li class="wrap">
 							<div>
-								{if $r['thumb']}<a href="{$r[url]}"><img src="{$r[thumb]}" width="60" height="60" /></a>{/if}
-								<h5><a href="{$r[url]}">{$r[title]}</a>{if $r['posids']}<img src="{IMG_PATH}icon/small_elite.gif">{/if}</h5>
-								<p>{$r[description]}</p>
+								{if $r['thumb']}<a href="{$r['url']}"><img src="{$r['thumb']}" width="60" height="60" /></a>{/if}
+								<h5><a href="{$r['url']}">{$r['title']}</a>{if $r['posids']}<img src="{IMG_PATH}icon/small_elite.gif">{/if}</h5>
+								<p>{$r['description']}</p>
 							</div>
-							<div class="adds">发布时间：{format::date($r[inputtime], 1)}</div>
+							<div class="adds">发布时间：{format::date($r['inputtime'], 1)}</div>
 						</li>
 						{/loop}
 						{if empty($data)}未找到结果{/if}

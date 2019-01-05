@@ -1,7 +1,7 @@
-    {template "content","header"}
-        {template "content", "nav"}
+    {template 'content', 'header'}
+        {template 'content', 'nav'}
         <div class="content w1100 clearfix">
-            {template "content", "hd_con"}
+            {template 'content', 'hd_con'}
             <div class="con_four clearfix">
                 <div class="con_four_con"> 
                     {if $catid == $newsid}
@@ -115,7 +115,7 @@
                                                     {if $i <= 7}
                                                     <li>
                                                         <span class="tit">
-                                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>      
+                                                            <a href="{$value['url']}"><i></i>{$value['title']}</a>
                                                         </span>
                                                         <span class="t">{date('d日', $value['inputtime'])}</span>
                                                     </li>
@@ -130,7 +130,7 @@
                                                     {if $i > 7 && $i <= 15}
                                                     <li>
                                                         <span class="tit">
-                                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                                            <a href="{$value['url']}"><i></i>{$value['title']}</a>
                                                                 </span>
                                                         <span class="t">{date('d日', $value['inputtime'])}</span>
                                                     </li>
@@ -146,7 +146,7 @@
                                                     {if $i > 15 && $i <= 23}
                                                     <li>
                                                         <span class="tit">
-                                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                                            <a href="{$value['url']}"><i></i>{$value['title']}</a>
                                                         </span>
                                                         <span class="t">{date('d日', $value['inputtime'])}</span>
                                                     </li>
@@ -160,7 +160,7 @@
                                                     {if $i > 23}
                                                     <li>
                                                         <span class="tit">
-                                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                                            <a href="{$value['url']}"><i></i>{$value['title']}</a>
                                                         </span>
                                                         <span class="t">{date('d日', $value['inputtime'])}</span>
                                                     </li>
@@ -188,15 +188,14 @@
                                                 </div>
                                                 <ul>
                                                     {php $where = 'typeid='.$typeidList['tec'];}
-                                                    {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC"
-                                                    num="8" cache="600"}
+                                                    {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="8" cache="600"}
                                                     {php $i = 0;}
                                                     {loop $data $value}
                                                     {if $i < 4}
                                                     <li>
                                                         <div class="centerCon">
                                                             <div class="centerCon_img fr">
-                                                                <a href="">
+                                                                <a href="{$value['url']}">
                                                                     <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                                                 </a>
                                                             </div>
@@ -223,7 +222,7 @@
                                                     <li>
                                                         <div class="centerCon">
                                                             <div class="centerCon_img fr">
-                                                                <a href="">
+                                                                <a href="{$value['url']}">
                                                                     <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                                                 </a>
                                                             </div>
@@ -293,11 +292,10 @@
                         <div id="box1">
                             <div id="box_img">
                                 <ul id="sub_img">
-                                    {pc:content action="lists" catid="$newsid" order="updatetime DESC"
-                                    num="4" cache="600"}
+                                    {pc:content action="lists" catid="$newsid" order="updatetime DESC" num="4" cache="600"}
                                     {loop $data $value}
                                     <li>
-                                        <a href=""><img src="{$value['thumb']}" alt=""></a>
+                                        <a href="{$value['url']}"><img src="{$value['thumb']}" alt=""></a>
                                     </li>
                                     {/loop}
                                     {/pc}
@@ -315,12 +313,12 @@
                     </div>
                 </div>  
                 <div>
-                    {template "content", "right"}
+                    {template 'content', 'right'}
                 </div>
             </div>
         </div>
     </div>
-    {template "content", "footer"}
+    {template 'content', 'footer'}
 
 
     <script>

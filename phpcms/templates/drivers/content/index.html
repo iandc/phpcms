@@ -1,4 +1,4 @@
-{template "content", "header"}
+{template 'content', 'header'}
 <body>
 <div class="w100">
     <div class="w1100">
@@ -7,7 +7,6 @@
                 <div id="box1">
                     <div id="box_img">
                         <ul id="sub_img">
-                            <!-- 86400 一天    3600：一小时     300:5分钟 -->
                             {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="600"}
                             {loop $data $value}
                             <li>
@@ -37,8 +36,8 @@
                         {loop $data $value}
                         <li>
                             <a href="{$value['url']}"><img src="{thumb($value['thumb'], 80, 60)}" title="{$value['title']}"></a>
-                            <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 100, ' ')}</a></h2>
-                            <p><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['description'], 110, ' ')}</a>
+                            <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 100, '')}</a></h2>
+                            <p><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['description'], 110, '')}</a>
                             </p>
                         </li>
                         {/loop}
@@ -51,11 +50,11 @@
                     </div>
                     <ul class="clearfix">
                         {pc:content action="position" posid="$posidList['newActivity']" order="listorder DESC" num="7" cache="600"}
-                        {php $i=0;}
+                        {php $i = 0;}
                         {loop $data $value}
                         {if $i >= 2}
                         <li>
-                            <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 50, ' ')}</a>
+                            <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 50, '')}</a>
                         </li>
                         {/if}
                         {php $i++;}
@@ -89,7 +88,7 @@
                         <div class="zxLeft_conL fl w50">
                             <ul style="margin-bottom: 10px;">
                                 {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="600"}
-                                {php $i=0;}
+                                {php $i = 0;}
                                 {loop $data $value}
                                 {if $i < 8}
                                 <li>
@@ -99,7 +98,7 @@
                                         </span>
                                     </div>
                                      
-                                    <span class="t fr">{date('d日',$value['inputtime'])}</span>
+                                    <span class="t fr">{date('d日', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -109,7 +108,7 @@
 
                             <ul>
                                 {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="600"}
-                                {php $i=0;}
+                                {php $i = 0;}
                                 {loop $data $value}
                                 {if $i < 8}
                                 <li>
@@ -119,7 +118,7 @@
                                         </span>
                                     </div>
                                             
-                                    <span class="t fr">{date('d日',$value['inputtime'])}</span>
+                                    <span class="t fr">{date('d日', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -129,7 +128,7 @@
                         </div>
                         <div class="zxLeft_conR fr" style="width: 48%;">
                             <ul style="margin-bottom: 10px;">
-                                {php $i=0;}
+                                {php $i = 0;}
                                 {loop $data $value}
                                 {if $i >= 8}
                                 <li>
@@ -139,7 +138,7 @@
                                         </span>
                                     </div>
                                             
-                                    <span class="t">{date('d日',$value['inputtime'])}</span>
+                                    <span class="t">{date('d日', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -147,7 +146,7 @@
                             </ul>
 
                             <ul>
-                                {php $i=0;}
+                                {php $i = 0;}
                                 {loop $data $value}
                                 {if $i >= 8}
                                 <li>
@@ -157,7 +156,7 @@
                                         </span>
                                     </div>
                                             
-                                    <span class="t fr">{date('d日',$value['inputtime'])}</span>
+                                    <span class="t fr">{date('d日', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -183,10 +182,10 @@
                                     <a href=""><img src="{thumb($value['thumb'], 100, 80)}" title="{str_cut($value['title'], 36, '')}"></a>
                                 </div>
                                 <div class='rTxt fr'>
-                                    <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 36, ' ')}</a></span>
+                                    <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 36, '')}</a></span>
 
                                     <a href="{$value['url']}" target="_blank" style="font-size: 12px;"><i></i>{str_cut($value['description'], 100,
-                                        ' ')}</a>
+                                        '')}</a>
                                 </div>
                             </li>
                             {/loop}
@@ -200,7 +199,7 @@
                             <li>
                                 <div class="ls">
                                     <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 57, '')}</a>
-                                    <p>{str_cut($value['description'], 100, ' ')}</p>
+                                    <p>{str_cut($value['description'], 100, '')}</p>
                                 </div>
                             </li>
                             {/if}
@@ -252,7 +251,7 @@
                                 <a href="{APP_PATH}type-{$typeidList['tec']}-1.html" target="_blank">技术文章</a>
                             </div>
                             <ul>
-                                {php $where = "typeid=$typeidList[tec]";}
+                                {php $where = 'typeid='.$typeidList['tec'];}
                                 {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="8" cache="600"}
                                 {php $i = 0;}
                                 {loop $data $value}
@@ -375,7 +374,6 @@
                                     <a href="" target="_blank">
                                         <span>空间之星</span>
                                     </a>
-                                    
                                 </li>
                                 <li>
                                     <div class="more fr">
@@ -468,7 +466,7 @@
         </div>
         <div class="footerBottom clearfix">
             <ul class="clearfix">
-                {pc:link action="lists" typeid="0" siteid="$siteid" linktype="0" order="desc" cache="600"}
+                {pc:link action="lists" typeid="0" siteid="$siteid" linktype="0" order="desc" cache="86400"}
                 {loop $data $value}
                 <li class="fl"><a href="{$value['url']}" title="{$value['name']}" target="_blank">{$value['name']}</a></li>
                 {/loop}

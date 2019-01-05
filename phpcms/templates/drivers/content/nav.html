@@ -2,13 +2,13 @@
 <div class="crumbs" style="height: 30px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
      <ul class="lists">
          <li>
-             <a href="">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>{/if} </a>
+             <a href="category.html">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>{/if} </a>
          </li>
          <li>
              <a href="javascript:;">&nbsp;&nbsp;{$catname}</a>
          </li>
          <li>
-             <a href=""> > 列表</a>
+             <a href="javascript:;"> > 列表</a>
          </li>
      </ul>
 </div>
@@ -16,13 +16,13 @@
 <div class="crumbs" style="height: 30px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
     <ul class="lists">
         <li>
-            <a href="">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>{/if} </a>
+            <a href="category.html">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>{/if} </a>
         </li>
         <li>
             <a href="javascript:;">&nbsp;全部&nbsp</a>
         </li>
         <li>
-            <a href=""> > 列表</a>
+            <a href="javascript:;"> > 列表</a>
         </li>
     </ul>
 </div>
@@ -43,7 +43,7 @@
 <div class="w1100">
     <div class="crumbs" style="height: 30px; margin-top: 7px; line-height: 30px; padding: 5px 20px; background: #fff;">
         <div class="current_nav">
-            <a href="#">资讯</a><span> &gt; </span>{$CATEGORYS[$catid]['catname']} <span> &gt; </span> 内容
+            <a href="category.html">资讯</a><span> &gt; </span>{$CATEGORYS[$catid]['catname']} <span> &gt; </span> 内容
         </div>
     </div>    
 </div>
