@@ -54,10 +54,10 @@
                                 {pc:content action="hits" catid="$catid" num="2" order="monthviews DESC" cache="600"}
                                     {loop $data $r}
                                         <div class="fl imgs">
-                                            <a href="" class="image">
-                                                <img src="{$r['thumb']}" title="{str_cut($r['title'],56,' ')}">
+                                            <a href="{$r['url']}" class="image">
+                                                <img src="{$r['thumb']}" title="{str_cut($r['title'], 56, '')}">
                                             </a>
-                                            <a href="{$r['url']}"{title_style($r[style])} class="title" title="{$r['title']}">{str_cut($r['title'],56,' ')}</a>
+                                            <a href="{$r['url']}" {title_style($r['style'])} class="title" title="{$r['title']}">{str_cut($r['title'], 56, '')}</a>
                                         </div>
                                     {/loop}
                                 {/pc}
@@ -71,7 +71,7 @@
                                 {loop $data $r}
                                     {if $i >= 2}
                                     <li>
-                                        <a href="{$r['url']}"{title_style($r[style])} class="title" title="{$r['title']}">{str_cut($r['title'],58,' ')}</a>
+                                        <a href="{$r['url']}" {title_style($r['style'])} class="title" title="{$r['title']}">{str_cut($r['title'], 58, '')}</a>
                                     </li>
                                     {/if}
                                     {php $i++;}

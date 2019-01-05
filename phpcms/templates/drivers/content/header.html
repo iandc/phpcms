@@ -23,7 +23,7 @@
 <script type="text/javascript" src="{JS_PATH}search_common.js"></script>
 </head>
 <body>
-    {template "content","config"}
+    {template "content", "config"}
     <div class="Header w100">
         <div class="hdTop clearfix">
             <div class="hdTopCon w1100 clearfix">
@@ -60,12 +60,12 @@
                             <li class="show">
                                 <div class="hds">
                                     <form action="{APP_PATH}index.php" method="get" target="_blank" class="form">
-                                        <input type="hidden" name="m" value="search"/>
-                                        <input type="hidden" name="c" value="index"/>
-                                        <input type="hidden" name="a" value="init"/>
-                                        <input type="hidden" name="typeid" value="1" id="typeid"/>
-                                        <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
-                                        <input type="text" class="ss" name="q" id="q"/>
+                                        <input type="hidden" name="m" value="search" />
+                                        <input type="hidden" name="c" value="index" />
+                                        <input type="hidden" name="a" value="init" />
+                                        <input type="hidden" name="typeid" id="typeid" value="1" />
+                                        <input type="hidden" name="siteid" id="siteid" value="{$siteid}" />
+                                        <input type="text" name="q" id="q" class="ss" />
                                         <input type="submit" value="搜索" class="btn1 c_f" />
                                     </form>
                                 </div>
@@ -73,11 +73,6 @@
                             <li>
                                 <div class="hds">
                                     <form action="http://ic.eetop.cn/index/default_list" method="get" target="_blank" style="float :right ;" class="form2">
-                                        <input type="hidden" name="m" value="search"/>
-                                        <input type="hidden" name="c" value="index"/>
-                                        <input type="hidden" name="a" value="init"/>
-                                        <input type="hidden" name="typeid" value="1" id="typeid"/>
-                                        <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
                                         <input name="title" class="ss">
                                         <input type="submit" name="sub" value="搜索" class="btn1 c_f" style=" display: inline-block;">
                                     </form>
@@ -93,7 +88,7 @@
             <div class="w1100">
                 <div class="nav">
                     <div class="name fl">
-                        <a href="{siteurl($siteid)}" class="nav_item1 icon_home sel c_f name" alt="电子，微电子，芯片">{$mySite['name']}</a>
+                        <a href="{siteurl($siteid)}" class="nav_item1 icon_home sel c_f name" title="电子，微电子，芯片">{$mySite['name']}</a>
                     </div>
                     <ul class=" nav_list fl">
                         {template "content", "menu"}

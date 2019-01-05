@@ -58,17 +58,18 @@
                                                 {date('m-d', $value['inputtime'])}
                                             </span>
                                         {/if}
-                                        
                                     </h2>
                                     <div class="txt">
                                         <p>{$value['description']}</p>
                                     </div>
                                     <div class="date">
                                         {if !$catid}
-                                            <span class="lb fl">类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a></span>
+                                            <span class="lb fl">
+                                                类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                            </span>
                                             <span class="time fl">
-                                            {date('Y-m-d', $value['inputtime'])}
-                                        </span>
+                                                {date('Y-m-d', $value['inputtime'])}
+                                            </span>
                                         {/if}
                                     </div>
                                 </div>

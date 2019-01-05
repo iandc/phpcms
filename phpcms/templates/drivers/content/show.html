@@ -10,9 +10,7 @@
                         <h1>{$title}</h1>
                         <span class="pt_info fs12">
                             <span class="date">{$inputtime}</span>
-
-                            <span class="{if $copyfrom == ' '}dpn{/if}">来源：{$copyfrom}</span>
-
+                            {if $copyfrom}<span>来源：{$copyfrom}</span>{/if}
                             评论：<span id="comment">0</span>
                             点击：<span id="hits">0</span>
                         </span>
@@ -78,7 +76,7 @@
                         <h3 style="margin-bottom: 10px;">全部评论</h3>
                         <ul class="list">
                             {if $allow_comment && module_exists('comment')}
-                            <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid",$id,$siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0"
+                            <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid", $id, $siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0"
                             scrolling="no"></iframe>
                             {else}
                             <p align="center">评论功能关闭</p>

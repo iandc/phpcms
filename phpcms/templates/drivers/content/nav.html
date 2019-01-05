@@ -1,6 +1,4 @@
-
-{if $_GET['a'] == 'lists'}
-<!-- 列表页 -->
+{if $_GET['a'] == 'lists'} <!-- 列表页 -->
 <div class="crumbs" style="height: 30px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
      <ul class="lists">
          <li>
@@ -28,13 +26,12 @@
         </li>
     </ul>
 </div>
-{elseif $_GET['a'] == 'category'}
- <!-- 频道页 --> 
+{elseif $_GET['a'] == 'category'} <!-- 频道页 -->
 <div class="w1100">
     <div class="crumbs" style="height: 30px; margin-top: 7px; line-height: 30px; padding: 5px 20px; background: #fff;">
         <ul>
             <li>
-                <a href="{APP_PATH}index.php?m=content&c=index&a=category">频道首页&nbsp; > </a>
+                <a href="category.html">频道首页&nbsp; > </a>
             </li>
             <li>
                 <a href="javascript:;">&nbsp;&nbsp;{$catname}</a>
@@ -42,8 +39,7 @@
         </ul>
     </div>
 </div>
-{elseif $_GET['a'] == 'show' || $_GET['a'] == 'view'}
-<!-- 内容页 -->
+{elseif $_GET['a'] == 'show' || $_GET['a'] == 'view'} <!-- 内容页 -->
 <div class="w1100">
     <div class="crumbs" style="height: 30px; margin-top: 7px; line-height: 30px; padding: 5px 20px; background: #fff;">
         <div class="current_nav">
@@ -51,7 +47,6 @@
         </div>
     </div>    
 </div>
-
 {/if}
 
 
