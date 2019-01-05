@@ -23,7 +23,6 @@
                         {if $description}<div class="summary" style="margin-bottom: 20px;" >{$description}</div>{/if}
                         {if $allow_visitor == 1}
                         {$content}
-                        <!--内容关联投票-->
                         {if $voteid}<script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid={$voteid}&type=2"></script>{/if}
                         {else}
                         <a href="{APP_PATH}index.php?m=content&c=readpoint&allow_visitor={$allow_visitor}">阅读此信息需要您支付 <B><I>{$readpoint} {if $paytype}元{else}点{/if}</I></B>，点击这里支付</a>

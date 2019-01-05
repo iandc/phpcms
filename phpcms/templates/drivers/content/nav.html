@@ -2,13 +2,21 @@
 <div class="crumbs" style="height: 30px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
      <ul class="lists">
          <li>
-             <a href="category.html">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>{/if} </a>
+             {if $typeid == $typeidList['news']}
+                <a href="{APP_PATH}type-{$typeidList['news']}-1.html">资讯</a> &nbsp; >&nbsp;
+             {elseif $typeid == $typeidList['tec']}
+                <a href="{APP_PATH}type-{$typeidList['tec']}-1.html">技术</a>&nbsp;>&nbsp;
+             {/if}
          </li>
          <li>
-             <a href="javascript:;">&nbsp;&nbsp;{$catname}</a>
+             {if $typeid == $typeidList['news']}
+             <a href="{APP_PATH}list-{$catid}-{$typeidList['news']}-1.html">{$catname}</a> &nbsp; >&nbsp;
+             {elseif $typeid == $typeidList['tec']}
+             <a href="{APP_PATH}list-{$catid}-{$typeidList['tec']}-1.html">{$catname}</a>&nbsp; >&nbsp;
+             {/if}
          </li>
          <li>
-             <a href="javascript:;"> > 列表</a>
+             列表
          </li>
      </ul>
 </div>
@@ -16,13 +24,17 @@
 <div class="crumbs" style="height: 30px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
     <ul class="lists">
         <li>
-            <a href="category.html">{if $typeid == $typeidList['news']}资讯 &nbsp; >{elseif $typeid == $typeidList['tec']}技术&nbsp;>{/if} </a>
+            {if $typeid == $typeidList['news']}
+                <a href="{APP_PATH}type-{$typeidList['news']}-1.html">资讯 &nbsp; >  </a>
+            {elseif $typeid == $typeidList['tec']}
+                <a href="{APP_PATH}type-{$typeidList['tec']}-1.html">技术 &nbsp; >  </a>
+            {/if}
         </li>
         <li>
-            <a href="javascript:;">&nbsp;全部&nbsp</a>
+            &nbsp;全部&nbsp;>&nbsp;
         </li>
         <li>
-            <a href="javascript:;"> > 列表</a>
+            列表
         </li>
     </ul>
 </div>
@@ -34,7 +46,11 @@
                 <a href="category.html">频道首页&nbsp; > </a>
             </li>
             <li>
-                <a href="javascript:;">&nbsp;&nbsp;{$catname}</a>
+                {if $catid == $newsid}
+                    <a href="category-{$catid}.html">&nbsp;&nbsp;全部</a>
+                {else}
+                    <a href="category-{$catid}.html">&nbsp;&nbsp;{$catname}</a>
+                {/if}
             </li>
         </ul>
     </div>
@@ -43,7 +59,7 @@
 <div class="w1100">
     <div class="crumbs" style="height: 30px; margin-top: 7px; line-height: 30px; padding: 5px 20px; background: #fff;">
         <div class="current_nav">
-            <a href="category.html">资讯</a><span> &gt; </span>{$CATEGORYS[$catid]['catname']} <span> &gt; </span> 内容
+            <a href="category.html">频道首页</a><span> &gt; </span><a href="category-{$catid}.html">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> <span> &gt; </span> 内容
         </div>
     </div>    
 </div>
