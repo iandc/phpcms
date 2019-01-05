@@ -3,16 +3,15 @@
     {template 'content', 'nav'}
     <div style="position: relative;">
         <div class="content w1100">
-            {template "content", "hd_con"}
             <div class="con_three">
                 <div class="con_three_l fl">
                     <div class="post_tit">
                         <h1>{$title}</h1>
                         <span class="pt_info fs12">
                             <span class="date">{$inputtime}</span>
-                            {if $copyfrom}<span>来源：{$copyfrom}</span>{/if}
-                            评论：<span id="comment">0</span>
-                            点击：<span id="hits">0</span>
+                            来源：<span>{if $copyfrom}{$copyfrom}{else}未知{/if}</span>
+                            评论：<span id="comment"></span>
+                            点击：<span id="hits"></span>
                         </span>
                     </div>
                     <div class="banner">
@@ -48,7 +47,7 @@
                             <li>下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 30, '')}</a></li>
                         </ul>
                     </div>
-                    {pc:content action="relation" relation="$relation" catid="$catid" id="$id" keywords="$rs['keywords']" num="5" cache="600"}
+                    {pc:content action="relation" relation="$relation" catid="$catid" id="$id" keywords="$rs['keywords']" num="5" cache="3600"}
                     {if $data}
                     <div class="see">
                         <div class="see_con">

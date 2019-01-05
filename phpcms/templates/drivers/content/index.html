@@ -7,7 +7,7 @@
                 <div id="box1">
                     <div id="box_img">
                         <ul id="sub_img">
-                            {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="600"}
+                            {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="3600"}
                             {loop $data $value}
                             <li>
                                 <a href="{$value['url']}"><img src="{thumb($value['thumb'], 300, 222)}" title="{$value['title']}"></a>
@@ -32,7 +32,7 @@
                         焦点关注
                     </div>
                     <ul class="clearfix">
-                        {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="600"}
+                        {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="3600"}
                         {loop $data $value}
                         <li>
                             <a href="{$value['url']}"><img src="{thumb($value['thumb'], 80, 60)}" title="{$value['title']}"></a>
@@ -49,7 +49,7 @@
                         最新活动
                     </div>
                     <ul class="clearfix">
-                        {pc:content action="position" posid="$posidList['newActivity']" order="listorder DESC" num="7" cache="600"}
+                        {pc:content action="position" posid="$posidList['newActivity']" order="listorder DESC" num="7" cache="3600"}
                         {php $i = 0;}
                         {loop $data $value}
                         {if $i >= 2}
@@ -87,7 +87,7 @@
                     <div class="zxLeft_con clearfix">
                         <div class="zxLeft_conL fl w50">
                             <ul style="margin-bottom: 10px;">
-                                {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="600"}
+                                {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="3600"}
                                 {php $i = 0;}
                                 {loop $data $value}
                                 {if $i < 8}
@@ -107,7 +107,7 @@
                             </ul>
 
                             <ul>
-                                {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="600"}
+                                {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="3600"}
                                 {php $i = 0;}
                                 {loop $data $value}
                                 {if $i < 8}
@@ -175,7 +175,7 @@
                     </div>
                     <div class="zxRight_con clearfix zxRight_conc">
                         <ul class="ul1 clearfix">
-                            {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="1" cache="600"}
+                            {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="1" cache="3600"}
                             {loop $data $value}
                             <li>
                                 <div class="lImg fl">
@@ -192,7 +192,7 @@
                             {/pc}
                         </ul>
                         <ul class="ul2 clearfix">
-                            {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="5" cache="600"}
+                            {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="5" cache="3600"}
                             {php $i = 0;}
                             {loop $data $value}
                             {if $i >= 1}
@@ -222,7 +222,7 @@
                     <a href="" class="a2 fr"> < 更多</a>
                 </div>
                 <ul class="ul">
-                    {pc:content action="lists" catid="$courseid" where="status=99" order="id DESC" num="4" cache="600"}
+                    {pc:content action="lists" catid="$courseid" where="status=99" order="id DESC" num="4" cache="3600"}
                     {loop $data $value}
                     <li style="border-left:none;">
                         <div class="imgs">
@@ -252,7 +252,7 @@
                             </div>
                             <ul>
                                 {php $where = 'typeid='.$typeidList['tec'];}
-                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="8" cache="600"}
+                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="8" cache="3600"}
                                 {php $i = 0;}
                                 {loop $data $value}
                                 {if $i < 4}
@@ -313,7 +313,7 @@
                         </div>
                         <div class="zxRight_con clearfix">
                             <ul>
-                                {pc:content action="hits" catid="$newsid" order="weekviews DESC" num="4" cache="600"}
+                                {pc:content action="hits" catid="$newsid" order="weekviews DESC" num="4" cache="3600"}
                                 {loop $data $value}
                                 <li>
                                     <div class="right_txt fl">
@@ -432,7 +432,7 @@
                     </div>
                     <div class="manuConRightB zxRight_con clearfix">
                         <ul>
-                            {pc:content action="hits" catid="$newsid" order="weekviews DESC" num="4" cache="600"}
+                            {pc:content action="hits" catid="$newsid" order="weekviews DESC" num="4" cache="3600"}
                             {loop $data $value}
                             <li>
                                 <div class="right_txt fl">

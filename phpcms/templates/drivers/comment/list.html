@@ -1,5 +1,5 @@
 {template "content", "header"}
-{pc:comment action="get_comment" commentid="$commentid" return="comment" cache="600"}{/pc}
+{pc:comment action="get_comment" commentid="$commentid" return="comment" cache="3600"}{/pc}
 <div class="w100">
     <div class="main w1100" style="margin: 0 auto; padding-top: 10px;">
         <h2 class="comment-title blue">
@@ -22,7 +22,7 @@
                             评论列表
                             <span class="f12 fn">（{if $comment['total']}{$comment['total']}{else}0{/if} 条）以下网友评论只代表网友个人观点，不代表本站观点。</span>
                         </h4>
-                        {pc:comment action="lists" commentid="$commentid" siteid="$siteid" page="$_GET['page']" hot="$hot" num="20" cache="600"}
+                        {pc:comment action="lists" commentid="$commentid" siteid="$siteid" page="$_GET['page']" hot="$hot" num="20" cache="3600"}
                         {loop $data $r}
                             <h5 class="title fn">
                                 {direction($r['direction'])}

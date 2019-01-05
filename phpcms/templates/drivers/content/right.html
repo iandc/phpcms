@@ -10,7 +10,7 @@
                         <div class="main selected">
                             <span class="a list">
                                 <ul>
-                                    {pc:content  action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="12" cache="600"}
+                                    {pc:content  action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="12" cache="3600"}
                                         {loop $data $key $value}
                                         <li>
                                             <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 60, '')}</a>
@@ -23,7 +23,7 @@
                         <div class="main">
                             <span class="a list">
                                 <ul>
-                                    {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="20" cache="600"}
+                                    {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="20" cache="3600"}
                                         {php $i=0;}
                                         {loop $data $key $value}
                                         {if $i > 10}
