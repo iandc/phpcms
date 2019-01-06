@@ -74,7 +74,7 @@
                         <ul>
                             <li style="float:left;">
                                 <span class="dib">
-                                    <a href="{APP_PATH}type-{$typeidList['news']}-1.html"">资讯</a>
+                                    <a href="{APP_PATH}type-{$typeidList['news']}-1.html">最新资讯</a>
                                 </span>
                             </li>
                             <li>
@@ -98,7 +98,7 @@
                                         </span>
                                     </div>
                                      
-                                    <span class="t fr">{date('d日', $value['inputtime'])}</span>
+                                    <span class="t fr">{date('n-j', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -118,7 +118,7 @@
                                         </span>
                                     </div>
                                             
-                                    <span class="t fr">{date('d日', $value['inputtime'])}</span>
+                                    <span class="t fr">{date('n-j', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -138,7 +138,7 @@
                                         </span>
                                     </div>
                                             
-                                    <span class="t">{date('d日', $value['inputtime'])}</span>
+                                    <span class="t">{date('n-j', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -156,7 +156,7 @@
                                         </span>
                                     </div>
                                             
-                                    <span class="t fr">{date('d日', $value['inputtime'])}</span>
+                                    <span class="t fr">{date('n-j', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -346,7 +346,7 @@
                             <ul>
                                 <li style="float:left;">
                                     <span>
-                                        <a href="{$blogurl}" target="_blank">博客</a>
+                                        <a href="{$blogurl}" target="_blank">推荐日志</a>
                                     </span>
                                 </li>
                                 <li>
@@ -406,7 +406,7 @@
                 <div class="manuConLeft fl">
                     <div class="manuConLeftL w49 fl">
                         <div class="title1">
-                            <a href="{$bbsurl}" target="_blank">论坛</a>
+                            <a href="{$bbsurl}" target="_blank">推荐帖子</a>
                         </div>
                         <ul>
                             <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread'][0]}"></script>
