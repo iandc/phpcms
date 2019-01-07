@@ -1,20 +1,12 @@
 {template 'content', 'header'}
 
 <div class="wrap w100">
-    <div class="w1100">
-        <div class="log clearfix">
-            <div class="banner11 fl">
-                <a href="">
-                    <img src="https://ubmcmm.baidustatic.com/media/v1/0f0000RiksdnnD5ZAebS0s.jpg" alt="">
-                </a>
-            </div>
-        </div>
-    </div>
+    {show_ad(1, 25)}
     
     <div class="w1100 content bg_fff">
         {template 'content', 'nav'}
         <div class="whole">
-            <ul style="position: relative;">
+            <ul>
                 <li {if $catid == 0}class="current"{/if}><a href="{APP_PATH}type-{$typeid}-1.html">全部</a></li>
                 {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="3600"}
                     {loop $data $value}

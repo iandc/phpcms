@@ -1,5 +1,5 @@
 {if $_GET['a'] == 'lists'} <!-- 列表页 -->
-<div class="crumbs" style="height: 30px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
+<div class="crumbs nav_css">
      <ul class="lists">
          <li>
              {if $typeid == $typeidList['news']}
@@ -21,7 +21,7 @@
      </ul>
 </div>
 {elseif $_GET['a'] == 'type'}
-<div class="crumbs" style="height: 30px; border-bottom: 10px solid #eee; line-height: 30px; padding: 8px 20px;">
+<div class="crumbs nav_css">
     <ul class="lists">
         <li>
             {if $typeid == $typeidList['news']}
@@ -40,7 +40,7 @@
 </div>
 {elseif $_GET['a'] == 'category'} <!-- 频道页 -->
 <div class="w1100">
-    <div class="crumbs" style="height: 30px; margin-top: 7px; line-height: 30px; padding: 5px 20px; background: #fff;">
+    <div class="crumbs nav_css2">
         <ul>
             <li>
                 <a href="category.html">频道首页&nbsp; > </a>
@@ -57,7 +57,7 @@
 </div>
 {elseif $_GET['a'] == 'show' || $_GET['a'] == 'view'} <!-- 内容页 -->
 <div class="w1100">
-    <div class="crumbs" style="height: 30px; margin-top: 7px; line-height: 30px; padding: 5px 20px; background: #fff;">
+    <div class="crumbs nav_css2">
         <div class="current_nav">
             <a href="category.html">频道首页</a><span> &gt; </span><a href="category-{$catid}.html">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> <span> &gt; </span> 内容
         </div>

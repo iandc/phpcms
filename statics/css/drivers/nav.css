@@ -1,0 +1,12 @@
+.nav_css{
+    height: 30px;
+    border-bottom: 10px solid #eee;
+    line-height: 30px;
+    padding: 8px 20px;
+}
+.nav_css2{
+    height: 30px;
+    margin-top: 7px; line-height: 30px;
+    padding: 5px 20px;
+    background: #fff;
+}

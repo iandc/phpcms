@@ -152,7 +152,7 @@ body{
     height: 15px;
     margin-bottom: 17px;
     padding-left: 15px;
-    background: url(//icons.mydrivers.com/2018/www/icon.png) no-repeat -2px -658px;
+    background: url(../../../statics/images/drivers/icon.png) no-repeat -2px -658px;
     background-size: 5px 5px;
     font-size: 12px;
 }
@@ -212,7 +212,7 @@ body{
     overflow: hidden;
     line-height: 30px;
     padding: 1px 1px 1px 16px;
-    background: url(//icons.mydrivers.com/2018/www/icon.png) no-repeat -2px -658px;
+    background: url(../../../statics/images/drivers/icon.png) no-repeat -2px -658px;
 }
 .zxLeft_con ul li a{
     color: #29759B;
@@ -346,8 +346,6 @@ body{
     font-weight: bold;
 }
 .zxRight_conc .ul2{
-    background: url(../images/icons.png) no-repeat;
-    background-position: 6px -304px;
     margin-top: 15px;
 }
 .zxRight_conc .ul2 li{
