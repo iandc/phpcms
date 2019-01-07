@@ -2,10 +2,6 @@
     margin: 0;
     padding: 0;
 }
-body, html {
-    background: none;
-    height: {if $from == 'index'}80{else}40{/if}px;
-}
 .c_hhh{
     color: #666;
 }
@@ -43,7 +39,7 @@ body, html {
     height: 24px;
     padding-left: 14px;
     position: relative;
-    background: url({IMG_PATH}up_btn.gif) no-repeat 0px 0px;
+    background: url(../../../statics/images/drivers/up_btn.gif) no-repeat 0px 0px;
     margin-left: 0px;
     margin-right: 10px;
     *background-position: 0px 5px;
@@ -73,7 +69,6 @@ li a{
     font-size: 14px;
     padding: 0 10px;
     text-decoration: none;
-    /*line-height: {if $from == 'index'}80{else}40{/if}px;*/
 }
 .xlk{
     width: 200px;
