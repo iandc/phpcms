@@ -168,7 +168,7 @@ body{
 }
 .content .content_min .cm_four .cm_four_l ul li .ydl .num{
     padding-left: 20px;
-    background: url(http://skin.elecfans.com/images/tagimage/leftinfoimg.png) 0 -16px no-repeat;
+    background: url(../../../statics/images/drivers/leftinfoimg.png) 0 -16px no-repeat;
 }
 .content .content_min .cm_four .cm_four_l ul li .block h2{
     padding-bottom: 9pt;
@@ -188,7 +188,7 @@ body{
     height: 16px;
     line-height: 16px;
     padding-left: 20px;
-    background: url(http://skin.elecfans.com/images/tagimage/leftinfoimg.png) 0 0 no-repeat;
+    background: url(../../../statics/images/drivers/leftinfoimg.png) 0 0 no-repeat;
 }
 .content .content_min .cm_four .cm_four_l ul li .block .txt{
     display: block;
@@ -220,13 +220,4 @@ body{
 }
 .page_nav .more a{
     margin: 0 5px;
-}
-.nav_item2:after{
-    display: inline-block;
-    margin-left: 5px;
-    width: 16px;
-    height: 16px;
-    background: url(https://img.ithome.com/images/v2.3/narrow.png) no-repeat 0 3px;
-    background-size: 64px 16px;
-    content: '';
 }

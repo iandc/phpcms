@@ -64,7 +64,7 @@ body{
     padding-left: 10px;
     width: 340px;
     height: 20px;
-    background: url(https://img.ithome.com/images/v2.1/new_list_icon.png) no-repeat 0 -15px;
+    background: url(../../../statics/images/drivers/new_list_icon.png) no-repeat 0 -15px;
     background-size: 1pc 34px;
     list-style: none;
     text-align: left;
