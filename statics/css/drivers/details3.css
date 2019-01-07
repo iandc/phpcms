@@ -99,14 +99,13 @@ body{
 .con_four .con_fourL_top .mf .mf_con .newList ul{
     float: left;
     margin-right: 20px;
-    /*width: 349px;*/
 }
 .con_four .con_fourL_top .mf .mf_con .newList ul li{
     width: 413px;
     margin-bottom: 3px;
     padding: 3px 0 3px 9pt;
     min-width: 329px;
-    background: url(https://img.ithome.com/images/v2.1/new_list_icon.png) left 2px no-repeat;
+    background: url(../../../statics/images/drivers/new_list_icon.png) left 2px no-repeat;
     background-size: 1pc 39px;
 }
 .con_four .con_fourL_top .mf .mf_con .newList ul li .date{
@@ -116,13 +115,6 @@ body{
 .con_four .con_fourL_top .mf .mf_con .newList ul li.new{
     background-position: left 4px;
 }
-/*.con_four .con_fourL_top .mf .mf_con .newList ul li span.tit{
-    width: 350px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    display: block;
-}*/
 .con_four .con_fourL_top .mf .mf_con .newList ul li span.tit:hover{
     background-color: #eee;
 }
@@ -162,7 +154,7 @@ body{
     clear: both;
     margin-bottom: 11px;
     width: 353px;
-    background: url(https://img.ithome.com/images/v2.1/new_list_icon.png) left 0 no-repeat;
+    background: url(../../../statics/images/drivers/new_list_icon.png) left 0 no-repeat;
     background-size: 1pc 34px;
     color: #888;
 }
