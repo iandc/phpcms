@@ -2,6 +2,12 @@
 body{
     font-size: 14px;
 }
+.mb10{
+    margin-bottom: 10px;
+}
+.mt10{
+    margin-top: 10px;
+}
 .content{
     background-color: #fff;
 }
@@ -195,4 +201,10 @@ body{
 }
 .category_confourcon{
     margin: -20px -20px 0 -20px;
+}
+.category_zixunConLeft{
+    padding: 0;
+}
+.category_zxLeftcon{
+    margin-top: -20px;
 }

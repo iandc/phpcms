@@ -88,7 +88,7 @@
                         <div class="con_fourL_bottom mt15">
                             <div class="zixun mt15">
                                 <div class="zixunCon clearfix">
-                                    <div class="zixunConLeft fl">
+                                    <div class="zixunConLeft fl" style="padding: 0;">
                                         <div class="zxLeft_title">
                                             <ul>
                                                 <li class="fl">
@@ -101,9 +101,9 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="zxLeft_con clearfix" style="margin-top: -20px;">
+                                        <div class="zxLeft_con clearfix category_zxLeftcon">
                                             <div class="zxLeft_conL fl w50">
-                                                <ul style="margin-bottom: 10px; margin-top: 10px;">
+                                                <ul class="mb10 mt20">
                                                     {pc:content action="lists" catid="$catid" order="id DESC" num="32" cache="3600"}
                                                     {php $i = 0;}
                                                     {loop $data $value}
@@ -135,7 +135,7 @@
                                                 </ul>
                                             </div>
                                             <div class="zxLeft_conR fr" style="width: 48%;">
-                                                <ul style="margin-bottom: 10px; margin-top: 10px;">
+                                                <ul class="mb10 mt10">
                                                     {php $i = 0;}
                                                     {loop $data $value}
                                                     {if $i > 15 && $i <= 23}
@@ -176,7 +176,7 @@
                                     <div class="ManufacturerCon clearfix">
                                         <div class="manuConLeft fl" style="padding-left: 0;">
                                             <div class="manuConLeftL w49 fl">
-                                                <div class="title1" style="width: 377px;">
+                                                <div class="title1">
                                                     <a href="">技术文章</a>
                                                 </div>
                                                 <ul>
@@ -205,8 +205,8 @@
                                                 </ul>
                                             </div>
                                             <div class="manuConLeftR w49 fr">
-                                                <div class="title1" style="text-align: right;">
-                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}" style="font-size: 12px; color: #333; margin-right: 10px;"> < 更多</a>
+                                                <div class="title1 tar">
+                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}" class="fs12"> < 更多</a>
                                                 </div>
                                                 <ul>
                                                     {php $i = 0;}

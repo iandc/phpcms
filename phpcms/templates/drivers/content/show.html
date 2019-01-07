@@ -1,7 +1,7 @@
 {template 'content', 'header'}
 <div class="w100">
     {template 'content', 'nav'}
-    <div style="position: relative;">
+    <div>
         <div class="content w1100">
             <div class="con_three">
                 <div class="con_three_l fl">
@@ -14,13 +14,9 @@
                             点击：<span id="hits"></span>
                         </span>
                     </div>
-                    <div class="banner">
-                        <div class="banner_img">
-                            <a href=""><img src="https://ubmcmm.baidustatic.com/media/v1/0f000aUOme6SOikRM1wfj0.jpg" alt=""></a>
-                        </div>
-                    </div>
+                    {show_ad(1, 26)}
                     <div class="post_con">
-                        {if $description}<div class="summary" style="margin-bottom: 20px;" >{$description}</div>{/if}
+                        {if $description}<div class="summary">{$description}</div>{/if}
                         {if $allow_visitor == 1}
                         {$content}
                         {if $voteid}<script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid={$voteid}&type=2"></script>{/if}
