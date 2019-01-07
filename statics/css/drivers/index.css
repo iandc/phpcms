@@ -7,6 +7,13 @@ body{
 .fs12{
     font-size: 12px;
 }
+.tar{
+    text-align: right;
+    padding-right: 15px;
+}
+.tar a{
+    color: #333;
+}
 .dib{
     display: inline-block;
 }
@@ -186,7 +193,7 @@ body{
 }
 .zixun .zixunConLeft .zxLeft_title ul li a{
     display: inline-block;
-    color: #222;
+    color: #666;
     font-weight: bold;
 }
 

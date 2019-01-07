@@ -22,9 +22,7 @@
                                         {/pc}
                                     </ul>
                                 </div>
-                                <div class="banner2 mt15">
-                                    <a href=""><img src="https://f11.baidu.com/it/u=3488982034,1809226539&fm=76"></a>
-                                </div>
+                                {show_ad(1, 28)}
                             </div>
                             <div class="mf fl">
                                 <div class="mf_hd">
@@ -58,9 +56,7 @@
                             </div>
                         </div>
                         <div class="con_fourL_bottom mt15">
-                            <div class="banner">
-                                <a href=""><img src="https://tpc.googlesyndication.com/daca_images/simgad/11250355926562476033" alt=""></a>
-                            </div>
+                            {show_ad(1, 29)}
                             {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="50" cache="3600"}
                             {loop $data $key $value}
                             <div class="listBox">
@@ -86,21 +82,21 @@
                         </div>
                     </div>
                     {else}
-                    <div class="con_four clearfix" style="padding-top: 0;">
-                        <div class="con_four_con" style="margin: -20px -20px 0 -20px;">
+                    <div class="con_four clearfix category_confour">
+                        <div class="con_four_con category_confourcon">
                             <div class="con_fourL con">
                         <div class="con_fourL_bottom mt15">
                             <div class="zixun mt15">
                                 <div class="zixunCon clearfix">
-                                    <div class="zixunConLeft fl" style="padding: 0;">
+                                    <div class="zixunConLeft fl">
                                         <div class="zxLeft_title">
                                             <ul>
-                                                <li style="float:left;">
+                                                <li class="fl">
                                                     <span class="dib">
                                                         <a href="">资讯</a>
                                                     </span>
                                                 </li>
-                                                <li>
+                                                <li class="fr">
                                                     <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}"> < 更多</a>
                                                 </li>
                                             </ul>
@@ -173,9 +169,7 @@
                                 </div>
                             </div>
                             
-                            <div class="banner">
-                                <a href=""><img src="https://ubmcmm.baidustatic.com/media/v1/0f000Dd294er0mqZGHXm_6.jpg" alt=""></a>
-                            </div>
+                            {show_ad(1, 30)}
 
                             <div class="article mt15">
                                 <div class="Manufacturer mt15 clearfix">
@@ -241,9 +235,7 @@
                                 </div>
                             </div>
 
-                            <div class="banner">
-                                <a href=""><img src="https://ubmcmm.baidustatic.com/media/v1/0f000Dd294er0mqZGHXm_6.jpg" alt=""></a>
-                            </div>
+                            {show_ad(1, 31)}
 
                             <div class="forum clearfix">
                                 <div class="zixun mt15">
@@ -251,12 +243,12 @@
                                         <div class="zixunConLeft fl" style="padding-left: 0;">
                                             <div class="zxLeft_title">
                                                 <ul>
-                                                    <li style="float:left;">
+                                                    <li class="fl">
                                                     <span>
                                                         <a href="">论坛</a>
                                                     </span>
                                                     </li>
-                                                    <li >
+                                                    <li class="fr">
                                                         <a href=""> < 更多</a>
                                                     </li>
                                                 </ul>
