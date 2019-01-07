@@ -1,6 +1,12 @@
 body{
     font-size: 14px;
 }
+.mb10{
+    margin-bottom: 10px;
+}
+.fs12{
+    font-size: 12px;
+}
 .dib{
     display: inline-block;
 }
@@ -162,7 +168,7 @@ body{
     padding-right: 3px;
 }
 .zixun .zixunConLeft .zxLeft_title ul li{
-    float: right;
+    /*float: right;*/
     font-size: 12px;
     height: 25px;
     line-height: 25px;
@@ -367,6 +373,7 @@ body{
     width: 25%;
     float: left;
     border: 1px solid #eee;
+    border-left: none;
     box-sizing: border-box;
     padding: 20px;
     position: relative;
@@ -412,6 +419,8 @@ body{
 }
 .curriculumCon .title2{
     padding: 10px 15px;
+    height: auto;
+    overflow: hidden;
 }
 .curriculumCon .title2 a{
     line-height: 25px;
@@ -453,7 +462,7 @@ body{
     font-weight: bold;
 }
 .Manufacturer .manuConLeft .manuConLeftL .title1{
-    width: 378px;
+    width: 377px;
 }
 .Manufacturer .manuConLeft .manuConLeftR .title1 a{
     font-size: 12px;

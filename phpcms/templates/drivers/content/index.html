@@ -71,13 +71,13 @@
             <div class="zixunCon clearfix">
                 <div class="zixunConLeft fl">
                     <div class="zxLeft_title">
-                        <ul>
-                            <li style="float:left;">
+                        <ul class="clearfix">
+                            <li class="fl">
                                 <span class="dib">
                                     <a href="{APP_PATH}type-{$typeidList['news']}-1.html">最新资讯</a>
                                 </span>
                             </li>
-                            <li>
+                            <li class="fr">
                                 <a href="{APP_PATH}type-{$typeidList['news']}-1.html">
                                     < 更多
                                 </a>
@@ -86,7 +86,7 @@
                     </div>
                     <div class="zxLeft_con clearfix">
                         <div class="zxLeft_conL fl w50">
-                            <ul style="margin-bottom: 10px;">
+                            <ul class="mb10">
                                 {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="3600"}
                                 {php $i = 0;}
                                 {loop $data $value}
@@ -127,7 +127,7 @@
                             </ul>
                         </div>
                         <div class="zxLeft_conR fr" style="width: 48%;">
-                            <ul style="margin-bottom: 10px;">
+                            <ul class="mb10">
                                 {php $i = 0;}
                                 {loop $data $value}
                                 {if $i >= 8}
@@ -184,7 +184,7 @@
                                 <div class='rTxt fr'>
                                     <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 36, '')}</a></span>
 
-                                    <a href="{$value['url']}" target="_blank" style="font-size: 12px;"><i></i>{str_cut($value['description'], 100,
+                                    <a href="{$value['url']}" target="_blank" class="fs12"><i></i>{str_cut($value['description'], 100,
                                         '')}</a>
                                 </div>
                             </li>
@@ -217,14 +217,14 @@
 
         <div class="curriculum mt15">
             <div class="w1100 curriculumCon bgc_fff clearfix">
-                <div class="title2" style="height: 25px;">
+                <div class="title2">
                     <a href="{APP_PATH}type-{$typeidList['tec']}-1.html" class=" a1 fl">创新大讲堂</a>
                     <a href="" class="a2 fr"> < 更多</a>
                 </div>
                 <ul class="ul">
                     {pc:content action="lists" catid="$courseid" where="status=99" order="id DESC" num="4" cache="3600"}
                     {loop $data $value}
-                    <li style="border-left:none;">
+                    <li>
                         <div class="imgs">
                             <a href="{$value['url']}">
                                 <img src="{thumb($value['thumb'], 230, 155)}" title="{$value['title']}"/>
@@ -247,7 +247,7 @@
                 <div class="ManufacturerCon clearfix">
                     <div class="manuConLeft fl">
                         <div class="manuConLeftL w49 fl">
-                            <div class="title1" style="width: 377px;">
+                            <div class="title1">
                                 <a href="{APP_PATH}type-{$typeidList['tec']}-1.html" target="_blank">技术文章</a>
                             </div>
                             <ul>
@@ -344,12 +344,12 @@
                     <div class="zixunConLeft fl">
                         <div class="zxLeft_title">
                             <ul>
-                                <li style="float:left;">
+                                <li class="fl">
                                     <span>
                                         <a href="{$blogurl}" target="_blank">推荐日志</a>
                                     </span>
                                 </li>
-                                <li>
+                                <li class="fr">
                                     <a href="{$blogurl}" target="_blank"> < 更多</a>
                                 </li>
                             </ul>
