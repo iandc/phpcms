@@ -75,7 +75,6 @@ li a{
     height: 110px;
     background-color: #fff;
     display: none;
-    z-index: 99999;
     position: absolute;
     top: 40px;
     right: -1px;
@@ -103,6 +102,8 @@ li a{
 }
 .login:hover .xlk{
     display: block;
+    position: absolute;
+    z-index: 99999999;
 }
 .nav_item:after{
     display: inline-block;
