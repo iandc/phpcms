@@ -72,7 +72,7 @@ li a{
 }
 .xlk{
     width: 200px;
-    height: 90px;
+    height: 110px;
     background-color: #fff;
     display: none;
     z-index: 99999;
@@ -87,7 +87,8 @@ li a{
 .xlk li.h50{
     float: left;
     width: 50%;
-    height: 30px;
+    height: 15px;
+    margin: 10px 0;
 }
 .xlk li a:hover{
     color: #2975c4;

@@ -4,7 +4,7 @@ tfoot, thead, tr, th, td ,textarea,input { margin:0; padding:0;  }
 address,cite,dfn,em,var, i {font-style:normal;}
 body {font-size: 16px; line-height: 1.5; font-family:'Microsoft Yahei','simsun','arial','tahoma';  color: #888; background: #eee; }
 table { border-collapse:collapse; border-spacing:0; }
-h1, h2, h3, h4, h5, h6, th { font-size: 100%; font-weight: normal; }
+h1, h2, h3, h4, h5, h6, th { font-weight: normal; }
 button,select,textarea{font-size:100%;}
 fieldset,img{border:0;}
 a { text-decoration: none; color: #666; background: none }

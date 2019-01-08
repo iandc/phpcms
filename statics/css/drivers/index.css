@@ -71,7 +71,7 @@ body{
     cursor: pointer;
 }
 #uls .select{
-    background-color: #29759B;
+    background-color: #0b68a9;
     color: #fff;
 }
 #shang{
@@ -89,7 +89,7 @@ body{
     height: 222px;
 }
 .information a:hover{
-    color: #29759B;
+    color: #0b68a9;
 }
 .informationLeft{
     width: 300px;
@@ -105,9 +105,9 @@ body{
 }
 .informationRight .informationRightL .focus-title,.informationRight .informationRightR .focus-title{
     height: 20px;
-    border-left: 4px solid #29759B;
+    border-left: 4px solid #0b68a9;
     padding-left: 9pt;
-    color: #29759B;
+    color: #0b68a9;
     font-size: 1pc;
     line-height: 20px;
 }
@@ -154,7 +154,7 @@ body{
     padding-left: 15px;
     background: url(../../../statics/images/drivers/icon.png) no-repeat -2px -658px;
     background-size: 5px 5px;
-    font-size: 12px;
+    font-size: 13px;
 }
 .informationRight .informationRightR ul li a{
     cursor: pointer;
@@ -162,7 +162,7 @@ body{
 
 /*资讯*/
 .zxLeft_con ul li a, .zxRight_conc .ul2 li a{
-    font-size: 13px !important;
+    font-size: 14px !important;
 }
 .zixun .zixunConLeft,.Manufacturer .manuConLeft{
     width: 735px;
@@ -189,7 +189,7 @@ body{
     line-height: 26px;
 }
 .zixun .zixunConLeft .zxLeft_title ul li span a{
-    color: #29759B;
+    color: #0b68a9;
 }
 .zixun .zixunConLeft .zxLeft_title ul li a{
     display: inline-block;
@@ -215,7 +215,7 @@ body{
     background: url(../../../statics/images/drivers/icon.png) no-repeat -2px -658px;
 }
 .zxLeft_con ul li a{
-    color: #29759B;
+    color: #0b68a9;
 }
 .zxLeft_con ul li .lis:hover{
     width: 280px;
@@ -251,7 +251,7 @@ body{
     display: block;
     font-size: 14px;
     margin-top: -5px;
-    color: #29759B;
+    color: #0b68a9;
 }
 .zxRight_con{
     padding:0 22px 11px 4px;
@@ -419,7 +419,7 @@ body{
 }
 .curriculumCon .title2 .a1{
     font-size: 18px;
-    color: #29759B;
+    color: #0b68a9;
     font-weight: bold;
 }
 .Manufacturer .manuConLeft .xNo .centerCon{
@@ -442,7 +442,7 @@ body{
 }
 .Manufacturer .manuConLeft .title1 a{
     font-size: 18px;
-    color: #29759B;
+    color: #0b68a9;
     font-weight: bold;
 }
 .Manufacturer .manuConLeft .manuConLeftL .title1{
@@ -483,13 +483,13 @@ body{
 }
 .zixunConRight .manuConRight .title1 a{
     font-weight: bold;
-    color: #29759B;
+    color: #0b68a9;
 }
 .zixunConRight .manuConRight .manuConRightT,.Manufacturer .manuConRight .manuConRightT{
     position: relative;
 }
 .article .manuConRight .manuConRightT .title1 a,.Manufacturer .manuConRight .manuConRightT .title1 a{
-    color: #29759B;
+    color: #0b68a9;
     font-weight: bold;
 }
 .article .manuConRight .more,.Manufacturer .manuConRight .more{
@@ -540,7 +540,7 @@ body{
     padding-left: 2px;
 }
 .footer .footerTop .ft_txt ul .links span{
-    color: #29759B;
+    color: #0b68a9;
     font-weight: bold;
 }
 .footer .footerBottom{

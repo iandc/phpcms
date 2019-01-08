@@ -113,18 +113,23 @@ body{
 }
 .content .content_min .cm_four .cm_four_l ul li{
     padding: 13px 0 20px;
-    height: 80pt;
+    /*width: 738px;*/
+    height: 82pt;
     border-bottom: 1px dotted #d6d6d6;
 }
-.content .content_min .cm_four .cm_four_l ul li .img img{
+.content .content_min .cm_four .cm_four_l ul li .block .img{
+    overflow: hidden;
+}
+.content .content_min .cm_four .cm_four_l ul li .block .img img{
     float: left;
-    width: 90pt;
+    width: 120px;
     height: 90px;
+    margin-right: 15px;
 }
 .content .content_min .cm_four .cm_four_l ul li .block{
     float: left;
     padding-left: 20px;
-    width: 574px;
+    /*width: 574px;*/
     font-size: 12px;
 }
 .content .content_min .cm_four .cm_four_l ul li .block .time{
@@ -196,6 +201,7 @@ body{
     padding-bottom: 5px;
     height: 3pc;
     color: #666;
+    /*padding-left: 20px;*/
 }
 .content .content_min .cm_four .cm_four_l ul li .block .tags,.content .content_min .cm_four .cm_four_l ul li .block .tags a{
     color: #666;

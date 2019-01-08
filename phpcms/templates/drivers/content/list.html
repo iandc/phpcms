@@ -38,32 +38,57 @@
                             {/if}
                             {loop $data $value}
                             <li>
-                                <a href="{$value['url']}" class="img">
-                                    <img src="{thumb($value['thumb'], 90, 60)}" width="90" height="60" title="{str_cut($value['title'], 50, '')}">
-                                </a>
                                 <div class="block">
                                     <h2>
                                         <a href="{$value['url']}" {title_style($value['style'])}>{str_cut($value['title'],
-                                        82, '')}</a>
+                                        100, '')}</a>
                                         {if $catid}
                                             <span class="time fr">
                                                 {date('m-d', $value['inputtime'])}
                                             </span>
                                         {/if}
                                     </h2>
-                                    <div class="txt">
-                                        <p>{$value['description']}</p>
-                                    </div>
-                                    <div class="date">
-                                        {if !$catid}
-                                            <span class="lb fl">
-                                                类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a>
-                                            </span>
-                                            <span class="time fl">
-                                                {date('Y-m-d', $value['inputtime'])}
-                                            </span>
+
+                                    <div>
+                                        {if $value['thumb'] == ""}
+                                        <div class="box_txt">
+                                            <div class="txt">
+                                                <p>{str_cut($value['description'], 400,'')}</p>
+                                            </div>
+                                            <div class="date">
+                                                {if !$catid}
+                                                    <span class="lb fl">
+                                                        类 别：<a href=""{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                                    </span>
+                                                    <span class="time fl">
+                                                        {date('Y-m-d', $value['inputtime'])}
+                                                    </span>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                        {else}
+
+                                        <a href="{$value['url']}" class="img fl">
+                                            <img src="{$value['thumb']}">
+                                        </a>
+                                        <div class="box_txt">
+                                            <div class="txt">
+                                                <p>{$value['description']}</p>
+                                            </div>
+                                            <div class="date">
+                                                {if !$catid}
+                                                    <span class="lb fl">
+                                                        类 别：<a href=""{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                                    </span>
+                                                    <span class="time fl">
+                                                        {date('Y-m-d', $value['inputtime'])}
+                                                    </span>
+                                                {/if}
+                                            </div>
+                                        </div>
                                         {/if}
                                     </div>
+                                    
                                 </div>
                             </li>
                             {/loop}

@@ -21,7 +21,7 @@
 .hdTop .search .btn1{
     padding: 6px 10px;
     border-radius: 3px;
-    background-color: #29759B;
+    background-color: #0b68a9;
     border: none;
     margin-left:0;
     width: 50px !important;
@@ -36,7 +36,7 @@
     display: inline-block;
 }
 .hdTop .login a{
-    background-color: #29759B;
+    background-color: #0b68a9;
 }
 .hdTop .register a{
     font-weight: 800;
@@ -73,7 +73,7 @@
 
 .hd{
     height: 42px;
-    background-color: #29759B !important;
+    background-color: #0b68a9 !important;
     margin-bottom: 10px;
 }
 .hd .nav{
@@ -156,7 +156,7 @@
     border-radius: 3px;
 }
 .hd .nav .nav_list li .sub_mune_ul li:hover a{
-    color: #29759B ;
+    color: #0b68a9 ;
 }
 .hd .nav .nav_list li{
     position: relative;
@@ -167,7 +167,7 @@
 .sub_mune_ul{
     width: 600px;
     height: auto;
-    background-color: #29759B;
+    background-color: #0b68a9;
     padding: 0 10px;
 }
 .sub_mune_ul:hover .hd .nav .nav_l{
