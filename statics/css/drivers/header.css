@@ -195,6 +195,10 @@
 }
 .hd .nav .landr{
     color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
 }
 .hd .nav .landr a{
     margin-left: 12px;
@@ -234,10 +238,4 @@
     display: inline-block;
     border: 1px solid #c4c4c4;
     background: url(../../../statics/images/drivers/icons.png) no-repeat -141px -134px;
-}
-.landr{
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 99;
 }
