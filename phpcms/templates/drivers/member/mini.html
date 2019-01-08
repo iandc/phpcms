@@ -1,8 +1,5 @@
 {php $from = $_GET['from'];}
-<head>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/mini.css"/>
-</head>
-<!-- <body style="background-color:transparent"> -->
     <div>
         {if $_username}
             <ul class="clearfix">
@@ -24,7 +21,7 @@
                         <li class="h50">
                             <a href="{APP_PATH}index.php?m=pay&c=deposit&a=pay" class="c_fff h50" target="_blank">我的资产</a>
                         </li>
-                        <li class="">
+                        <li class="h50">
                             <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top" class="{if $from == 'index'}c_hhh{else}c_fff{/if}">{L('logout')}</a>
                         </li>
                     </ul>
@@ -41,5 +38,4 @@
             </ul>
         {/if}
     </div>
-<!-- </body> -->
 

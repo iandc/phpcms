@@ -71,10 +71,12 @@ li a{
     text-decoration: none;
 }
 .xlk{
-    width: 200px;
-    height: 110px;
+    width: 229px;
+    height: auto;
+    overflow: hidden;
     background-color: #fff;
     display: none;
+    z-index: 99999;
     position: absolute;
     top: 40px;
     right: -1px;
@@ -85,9 +87,9 @@ li a{
 }
 .xlk li.h50{
     float: left;
-    width: 50%;
-    height: 15px;
-    margin: 10px 0;
+    width: 33.3%;
+    /*height: 15px;*/
+    /*margin: 10px 0;*/
 }
 .xlk li a:hover{
     color: #2975c4;
@@ -102,8 +104,6 @@ li a{
 }
 .login:hover .xlk{
     display: block;
-    position: absolute;
-    z-index: 99999999;
 }
 .nav_item:after{
     display: inline-block;
