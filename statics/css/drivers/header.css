@@ -284,7 +284,7 @@ li a{
     line-height: 30px;
     border-bottom: 1px solid #999;
     text-align: right;
-    z-index: 999;
+    z-index: 99999;
 }
 .login:hover{
     width: auto;
@@ -297,11 +297,16 @@ li a{
     color: #666;
 }
 .login:hover .xlk{
-    width: 105px !important;
+    width: auto !important;
     display: block;
+}
+.login .xlk li {
+    display: block;
+    clear: both;
 }
 .login .xlk li a:hover{
     color: #0b68a9;
+    text-align: center;
 }
 .nav_item:after{
     display: inline-block;

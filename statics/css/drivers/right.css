@@ -1,5 +1,6 @@
 .cm_four_r{
     /*width: 340px;*/
+    z-index: 1;
 }
 .cm_four_r .tabs .tab{
     overflow: hidden;
@@ -44,6 +45,9 @@
     float: left;
     display: none;
 }
+.cm_four_r .products ul li a{
+    font-size: 13px;
+}
 
 .cm_four_r .products .main.selected {
     display: block;
@@ -76,7 +80,6 @@
 }
 .cm_four_r .products .list{
     position: relative;
-    z-index: 1000;
     float: left;
     overflow: hidden;
     margin-top: -1px;
