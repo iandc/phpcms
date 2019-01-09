@@ -39,7 +39,7 @@ body{
 }
 .con_three .con_three_l .post_tit .pt_info{
     display: block;
-    padding-top: 5px;
+    padding: 5px;
     color: #888;
 }
 .con_three .con_three_l .post_tit .pt_info a{
@@ -47,7 +47,7 @@ body{
 }
 .con_three .con_three_l .banner .banner_img{
     margin: 20px 0 0;
-}c
+}
 .con_three .con_three_l .post_con{
     margin-top: 10px;
     text-align: justify;

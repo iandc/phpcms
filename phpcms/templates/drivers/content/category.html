@@ -39,7 +39,7 @@
                                     <div class="newList">
                                         <div class="block">
                                             <ul>
-                                                {pc:content action="lists" catid="$newsid" order="id DESC" num="15" cache="3600"}
+                                                {pc:content action="lists" catid="$newsid" order="id DESC" num="8" cache="3600"}
                                                 {loop $data $value}
                                                 <li class="new">
                                                     <span class="date fr">{date('m-d', $value['inputtime'])}</span>
@@ -103,7 +103,7 @@
                                         </div>
                                         <div class="zxLeft_con clearfix category_zxLeftcon">
                                             <div class="zxLeft_conL fl w50">
-                                                <ul class="mb10 mt20">
+                                                <ul class="mb10 mt10">
                                                     {pc:content action="lists" catid="$catid" order="id DESC" num="32" cache="3600"}
                                                     {php $i = 0;}
                                                     {loop $data $value}

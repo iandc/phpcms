@@ -94,9 +94,45 @@
                     </ul>
                     <div class="fr landr">
                         <div class="tb_item">
-                            <ul>
-                                <script type="text/javascript">document.write('<div style="position: relative; z-index: 1;"><iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&from=other&forward=' + encodeURIComponent(location.href) + '&siteid={get_siteid()}" allowTransparency="true" width="205" height="135" frameborder="0" scrolling="no"></iframe></div>')</script>
-                            </ul>
+                                <!-- <script type="text/javascript">document.write('<div id="iframe" style="position: relative; z-index: 1;"><iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&from=other&forward=' + encodeURIComponent(location.href) + '&siteid={get_siteid()}" allowTransparency="true" width="205" height="150" frameborder="0" scrolling="no"></iframe></div>')</script> -->
+                                <div>
+                                    {if $_username}
+                                        <ul class="clearfix">
+                                            <!-- <li class="register lr">
+                                                <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top" class="{if $from == 'index'}c_hhh{else}c_fff{/if}">{L('logout')}</a>
+                                            </li> -->
+                                            <li class="login lr">
+                                                <a href="{APP_PATH}index.php?m=member&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if} nav_item" style="line-height: 40px;">{getNickName()}</a> &nbsp;&nbsp;
+                                                <ul class="xlk clearfix" id="xlk">
+                                                    <li class="h50">
+                                                        <a href=" {APP_PATH}index.php?m=member&siteid={$siteid}" class="h50" target="_blank">个人资料</a>
+                                                    </li>
+                                                    <li class="h50">
+                                                        <a href=" {APP_PATH}index.php?m=member&c=index&a=account_manage_avatar&t=1" class="h50" target="_blank">修改头像</a>
+                                                    </li>
+                                                    <li class="h50">
+                                                        <a href="{APP_PATH}index.php?m=member&c=content&a=published" class="h50" target="_blank">我的投稿</a>
+                                                    </li>
+                                                    <li class="h50">
+                                                        <a href="{APP_PATH}index.php?m=pay&c=deposit&a=pay" class="h50" target="_blank">我的资产</a>
+                                                    </li>
+                                                    <li class="h50">
+                                                        <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">{L('logout')}</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    {else}
+                                        <ul class="clearfix">
+                                            <li class="login lr">
+                                                <a href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">{L('login')}</a>
+                                            </li>
+                                            <li class="register lr">
+                                                <a href="{APP_PATH}index.php?m=member&c=index&a=register&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">{L('register')}</a>
+                                            </li>
+                                        </ul>
+                                    {/if}
+                                </div>
                         </div>
                     </div>
                 </div>

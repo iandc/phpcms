@@ -202,6 +202,7 @@
 }
 .hd .nav .landr a{
     margin-left: 12px;
+    text-align: right;
 }
 
 #wrap{
@@ -238,4 +239,85 @@
     display: inline-block;
     border: 1px solid #c4c4c4;
     background: url(../../../statics/images/drivers/icons.png) no-repeat -141px -134px;
+}
+
+
+.c_hhh{
+    color: #666;
+}
+.c_fff{
+    color: #fff;
+}
+
+.log .r {
+    float: right;
+}
+
+.log .w27 {
+    *width: 320px;
+}
+.lr{
+    float: right;
+}
+.login {
+    height: auto;
+    position: relative;
+}
+.login a{
+    text-align: right;
+}
+li{
+    list-style: none;
+}
+li a{
+    font-size: 14px;
+    padding: 0 10px;
+    text-decoration: none;
+}
+.xlk{
+    /*width: 200px;*/
+    height: auto;
+    overflow: hidden;
+    background-color: #fff;
+    display: none;
+    text-align: center;
+    line-height: 30px;
+    border-bottom: 1px solid #999;
+    text-align: right;
+    z-index: 999;
+}
+.login:hover{
+    width: auto;
+    background-color: #fff;
+    border: 1px solid #999;
+    border-bottom: none;
+    text-align: right;
+}
+.login:hover a{
+    color: #666;
+}
+.login:hover .xlk{
+    width: 105px !important;
+    display: block;
+}
+.login .xlk li a:hover{
+    color: #0b68a9;
+}
+.nav_item:after{
+    display: inline-block;
+    margin-left: 5px;
+    width: 16px;
+    height: 16px;
+    background: url(../../../../statics/images/drivers/narrow.png) no-repeat 0 3px;
+    background-size: 64px 16px;
+    content: '';
+}
+.login:hover .nav_item:after{
+    display: inline-block;
+    margin-left: 5px;
+    width: 16px;  
+    height: 16px;
+    background: url(../../../../statics/images/v9/narrow.png) no-repeat -16px 3px;
+    background-size: 64px 16px;
+    content: '';
 }

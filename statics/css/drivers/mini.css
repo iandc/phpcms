@@ -71,7 +71,7 @@ li a{
     text-decoration: none;
 }
 .xlk{
-    width: 229px;
+    width: 200px;
     height: auto;
     overflow: hidden;
     background-color: #fff;
@@ -87,7 +87,7 @@ li a{
 }
 .xlk li.h50{
     float: left;
-    width: 33.3%;
+    width: 50%;
     /*height: 15px;*/
     /*margin: 10px 0;*/
 }
@@ -104,6 +104,8 @@ li a{
 }
 .login:hover .xlk{
     display: block;
+    position: absolute !important;
+    z-index: 99 !important;
 }
 .nav_item:after{
     display: inline-block;
