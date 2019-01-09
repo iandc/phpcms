@@ -55,29 +55,32 @@
                             <span class="select more" style="margin-right:0; border-right: 0;">社区</span>
                             <span>DataSheet</span>
                         </div>
-                        <ul id="con " class="clearfix">
+                        <form action="">
+                            <ul id="con " class="clearfix">
                             <li class="show">
                                 <div class="hds">
-                                    <form action="{APP_PATH}index.php" method="get" target="_blank" class="form">
+                                    <!-- <form action="{APP_PATH}index.php" method="get" target="_blank" class="form"> -->
                                         <input type="hidden" name="m" value="search" />
                                         <input type="hidden" name="c" value="index" />
                                         <input type="hidden" name="a" value="init" />
                                         <input type="hidden" name="typeid" id="typeid" value="1" />
                                         <input type="hidden" name="siteid" id="siteid" value="{$siteid}" />
                                         <input type="text" name="q" id="q" class="ss" />
-                                        <input type="submit" value="搜索" class="btn1 c_f" />
-                                    </form>
+                                        <input type="submit" value="搜索" class="btn1 c_f"  onclick="javascript:this.form.action='{APP_PATH}index.php';"/>
+                                    <!-- </form> -->
                                 </div>
                             </li>
                             <li>
                                 <div class="hds">
-                                    <form action="http://ic.eetop.cn/index/default_list" method="get" target="_blank" style="float :right ;" class="form2">
+                                    <!-- <form action="http://ic.eetop.cn/index/default_list" method="get" target="_blank" style="float :right ;" class="form2"> -->
                                         <input name="title" class="ss">
-                                        <input type="submit" name="sub" value="搜索" class="btn1 c_f" style=" display: inline-block;">
-                                    </form>
+                                        <input type="submit" name="sub" value="搜索" class="btn1 c_f" style=" display: inline-block;" onclick="javascript:this.form.action='http://ic.eetop.cn/index/default_list';">
+                                    <!-- </form> -->
                                 </div>
                             </li>
                         </ul>
+                        </form>
+                        
                     </div>
                 </div>
             </div>
@@ -117,7 +120,7 @@
                                                         <a href="{APP_PATH}index.php?m=pay&c=deposit&a=pay" class="h50" target="_blank">我的资产</a>
                                                     </li>
                                                     <li class="h50">
-                                                        <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">{L('logout')}</a>
+                                                        <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">退出</a>
                                                     </li>
                                                 </ul>
                                             </li>
@@ -125,10 +128,10 @@
                                     {else}
                                         <ul class="clearfix">
                                             <li class="login lr">
-                                                <a href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">{L('login')}</a>
+                                                <a href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">登录</a>
                                             </li>
                                             <li class="register lr">
-                                                <a href="{APP_PATH}index.php?m=member&c=index&a=register&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">{L('register')}</a>
+                                                <a href="{APP_PATH}index.php?m=member&c=index&a=register&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">注册</a>
                                             </li>
                                         </ul>
                                     {/if}
