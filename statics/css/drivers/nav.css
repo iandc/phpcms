@@ -3,6 +3,7 @@
     border-bottom: 10px solid #eee;
     line-height: 30px;
     padding: 8px 20px;
+    color: #333;
 }
 .nav_css2{
     height: 30px;
@@ -11,4 +12,5 @@
     padding: 5px 20px;
     background: #fff;
     border-bottom: 10px solid #eaeaea;
+    color: #333;
 }

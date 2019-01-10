@@ -7,7 +7,7 @@
                 <div id="box1">
                     <div id="box_img">
                         <ul id="sub_img">
-                            {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="3600"}
+                            {pc:content action="lists" catid="$courseid" where="status=99" order="id DESC" num="4" cache="3600"}
                             {loop $data $value}
                             <li>
                                 <a href="{$value['url']}"><img src="{thumb($value['thumb'], 300, 222)}" title="{$value['title']}"></a>

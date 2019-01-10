@@ -3,15 +3,16 @@
      <ul class="lists">
          <li>
              {if $typeid == $typeidList['news']}
-                <a href="{APP_PATH}type-{$typeidList['news']}-1.html">资讯</a> &nbsp; >&nbsp;
+                <a href="{APP_PATH}type-{$typeidList['news']}-1.html">资讯</a> >&nbsp;
              {elseif $typeid == $typeidList['tec']}
                 <a href="{APP_PATH}type-{$typeidList['tec']}-1.html">技术</a>&nbsp;>&nbsp;
              {/if}
          </li>
          <li>
              {if $typeid == $typeidList['news']}
-             <a href="{APP_PATH}list-{$catid}-{$typeidList['news']}-1.html">{$catname}</a> &nbsp; >&nbsp;
+             <a href="{APP_PATH}list-{$catid}-{$typeidList['news']}-1.html">{$catname}</a> >&nbsp;
              {elseif $typeid == $typeidList['tec']}
+<div class="crumbs nav_css">
              <a href="{APP_PATH}list-{$catid}-{$typeidList['tec']}-1.html">{$catname}</a>&nbsp; >&nbsp;
              {/if}
          </li>
@@ -21,7 +22,6 @@
      </ul>
 </div>
 {elseif $_GET['a'] == 'type'}
-<div class="crumbs nav_css">
     <ul class="lists">
         <li>
             {if $typeid == $typeidList['news']}

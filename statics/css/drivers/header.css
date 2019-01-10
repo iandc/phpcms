@@ -14,6 +14,10 @@
     padding-top: 5px;
     margin: 0 11px 4px 4px;
 }
+.hdTop .search{
+    margin-left: 38px;
+    overflow: hidden;
+}
 .hdTop .search input{
     width: 250px;
     padding: 6px 5px 5px 20px;
@@ -26,6 +30,42 @@
     margin-left:0;
     width: 50px !important;
 }
+#wrap{
+    margin-top: 10px;
+}
+#wrap #tit span{
+    float: left;
+    padding: 0 10px;
+    margin: 0 5px -2px 0;
+    height: 21px;
+    line-height: 22px;
+    border: 1px solid #c4c4c4;
+    background-color: #efefef;
+    border-bottom: 0px;
+    cursor: pointer;
+    border-radius: 2px 2px 0 0;
+    overflow: hidden;
+}
+#wrap #tit span.select{
+    background-color: #fff;
+    height: 22px;
+    position: relative;
+    z-index: 999 !important;
+}
+#wrap ul li{
+    display: none;
+}
+#wrap ul li.show{
+    display: block;
+}
+#wrap ul li .ss{
+    display: inline-block;
+    border: 1px solid #c4c4c4;
+    background: url(../../../statics/images/drivers/icons.png) no-repeat -141px -134px;
+}
+
+
+
 .hdTop .lr a{
     width: 24px;
     height: 16px;
@@ -201,44 +241,8 @@
     z-index: 9;
 }
 .hd .nav .landr a{
-    margin-left: 12px;
-    text-align: right;
-}
-
-#wrap{
-    margin-top: 10px;
-}
-#wrap #tit span{
-    float: left;
-    padding: 0 10px;
-    margin: 0 5px -2px 0;
-    height: 21px;
-    line-height: 22px;
-    border: 1px solid #c4c4c4;
-    background-color: #efefef;
-    border-bottom: 0px;
-    cursor: pointer;
-    border-radius: 2px 2px 0 0;
-    overflow: hidden;
-}
-#wrap #tit span.select{
-    background-color: #fff;
-    height: 22px;
-    position: relative;
-    z-index: 10;
-}
-#wrap ul li{
-    display: none;
-    z-index: 8;
-}
-#wrap ul li.show{
-    position: relative;
-    display: block;
-}
-#wrap ul li .ss{
-    display: inline-block;
-    border: 1px solid #c4c4c4;
-    background: url(../../../statics/images/drivers/icons.png) no-repeat -141px -134px;
+    /*margin-left: 12px;*/
+    /*text-align: right;*/
 }
 
 
@@ -269,10 +273,11 @@
 li{
     list-style: none;
 }
-li a{
+.tb_item ul li a{
     font-size: 14px;
     padding: 0 10px;
     text-decoration: none;
+    text-align: center;
 }
 .xlk{
     /*width: 200px;*/
@@ -285,6 +290,10 @@ li a{
     border-bottom: 1px solid #999;
     text-align: right;
     z-index: 99999;
+}
+.xlk li a{
+    display: block;
+    margin-left: 15px;
 }
 .login:hover{
     width: auto;

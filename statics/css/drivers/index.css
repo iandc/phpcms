@@ -216,7 +216,7 @@ body{
     width: 353px;
     overflow: hidden;
     line-height: 30px;
-    padding: 1px 1px 1px 16px;
+    padding: 3px 1px 1px 16px;
     background: url(../../../statics/images/drivers/icon.png) no-repeat -2px -658px;
 }
 .zxLeft_con ul li a{
@@ -358,7 +358,7 @@ body{
 }
 .zxRight_conc .ul2 li {
     height: auto;
-    padding: 10px 0;
+    padding: 10px 0 17px;
     margin-bottom: 5px;
     border-bottom: 1px solid #eee; 
 }

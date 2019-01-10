@@ -39,19 +39,20 @@
                             {loop $data $value}
                             <li>
                                 <div class="block">
-                                    <h2>
-                                        <a href="{$value['url']}" {title_style($value['style'])}>{str_cut($value['title'],
-                                        100, '')}</a>
-                                        {if $catid}
-                                            <span class="time fr">
-                                                {date('m-d', $value['inputtime'])}
-                                            </span>
-                                        {/if}
-                                    </h2>
-
                                     <div>
                                         {if $value['thumb'] == ""}
                                         <div class="box_txt">
+
+                                            <h2>
+                                                <a href="{$value['url']}" {title_style($value['style'])}>{str_cut($value['title'],
+                                                100, '')}</a>
+                                                {if $catid}
+                                                    <span class="time fr">
+                                                        {date('m-d', $value['inputtime'])}
+                                                    </span>
+                                                {/if}
+                                            </h2>
+
                                             <div class="txt">
                                                 <p>{str_cut($value['description'], 400,'')}</p>
                                             </div>
@@ -67,23 +68,34 @@
                                             </div>
                                         </div>
                                         {else}
-
+                                        
                                         <a href="{$value['url']}" class="img fl">
                                             <img src="{$value['thumb']}">
                                         </a>
                                         <div class="box_txt">
-                                            <div class="txt">
-                                                <p>{$value['description']}</p>
-                                            </div>
-                                            <div class="date">
-                                                {if !$catid}
-                                                    <span class="lb fl">
-                                                        类 别：<a href=""{getCatNameByCatId($value['catid'], $siteid)}</a>
-                                                    </span>
-                                                    <span class="time fl">
-                                                        {date('Y-m-d', $value['inputtime'])}
+
+                                            <h2>
+                                                <a href="{$value['url']}" {title_style($value['style'])}>{str_cut($value['title'],
+                                                100, '')}</a>
+                                                {if $catid}
+                                                    <span class="time fr">
+                                                        {date('m-d', $value['inputtime'])}
                                                     </span>
                                                 {/if}
+                                            </h2>
+
+                                            <div class="txt">
+                                                <p>{$value['description']}</p>
+                                                <div class="date clearfix">
+                                                    {if !$catid}
+                                                        <span class="lb fl">
+                                                            类 别：<a href=""{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                                        </span>
+                                                        <span class="time fl">
+                                                            {date('Y-m-d', $value['inputtime'])}
+                                                        </span>
+                                                    {/if}
+                                                </div>
                                             </div>
                                         </div>
                                         {/if}
