@@ -22,9 +22,9 @@ body{background:none;}
 <input type="hidden" name="url" value="{urlencode(($comment['url'] ? $comment['url'] : $url))}">
       <div class="comment-form">
       	<h5>
-            <strong>我来说两句</strong>
+            <strong>我要评论</strong>
             <span class="fn rt blue">
-                已有 {if $comment['total']}{$comment['total']}{else}0{/if}</font>条评论，<a href="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={$commentid}" target="_blank">点击全部查看</a>
+                已有 {if $comment['total']}{$comment['total']}{else}0{/if}</font>条评论</a>
             </span>
         </h5>
         <div class="posn">

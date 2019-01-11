@@ -97,24 +97,6 @@
                     </div>
                 </div>
             </div>
-
-            <div class="fr" style="width: 30%;">
-                <div class="col-auto fr" style="margin-top: 15px; margin-right: 10px;">
-                    <div class="box" style="position: relative; height: auto; width: 310px;">
-                        <h5 class="title-2">评论排行</h5>
-                        {pc:comment action="bang" cache="3600"}
-                        <ul class="content list f12 lh22">
-                            {loop $data $value}
-                            <li class="clearfix">
-                                <a href="{$value['url']}" title="{$value['title']}">{str_cut($value['title'], 26, '')} ({$value['total']})</a>
-                            </li>
-                            {/loop}
-                        </ul>
-                        {/pc}
-                    </div>
-                    <div class="bk10"></div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
