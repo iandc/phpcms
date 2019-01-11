@@ -156,7 +156,7 @@ body{
     line-height: 15px;
     margin-bottom: 17px;
     padding-left: 15px;
-    background: url(../../../statics/images/drivers/icon.png) no-repeat -2px -666px;
+    background: url(../../images/drivers/icon.png) no-repeat -2px -666px;
     font-size: 13px;
 }
 .informationRight .informationRightR ul li a{
@@ -217,7 +217,7 @@ body{
     overflow: hidden;
     line-height: 30px;
     padding: 3px 1px 1px 16px;
-    background: url(../../../statics/images/drivers/icon.png) no-repeat -2px -658px;
+    background: url(../../images/drivers/icon.png) no-repeat -2px -658px;
 }
 .zxLeft_con ul li a{
     color: #0b68a9;

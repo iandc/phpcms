@@ -39,7 +39,7 @@
     height: 24px;
     padding-left: 14px;
     position: relative;
-    background: url(../../../statics/images/drivers/up_btn.gif) no-repeat 0px 0px;
+    background: url(../../images/drivers/up_btn.gif) no-repeat 0px 0px;
     margin-left: 0px;
     margin-right: 10px;
     *background-position: 0px 5px;
@@ -112,7 +112,7 @@ li a{
     margin-left: 5px;
     width: 16px;
     height: 16px;
-    background: url(../../../../statics/images/drivers/narrow.png) no-repeat 0 3px;
+    background: url(../../images/drivers/narrow.png) no-repeat 0 3px;
     background-size: 64px 16px;
     content: '';
 }
@@ -121,7 +121,7 @@ li a{
     margin-left: 5px;
     width: 16px;  
     height: 16px;
-    background: url(../../../../statics/images/v9/narrow.png) no-repeat -16px 3px;
+    background: url(../../images/v9/narrow.png) no-repeat -16px 3px;
     background-size: 64px 16px;
     content: '';
 }

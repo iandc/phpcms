@@ -132,7 +132,7 @@
     margin-right: 5px;
     width: 16px;
     height: 16px;
-    background: url(../../../statics/images/drivers/home.png) no-repeat -16px 3px;
+    background: url(../../images/drivers/home.png) no-repeat -16px 3px;
     background-size: 32px 16px;
     content: '';
 }
@@ -141,7 +141,7 @@
     margin-left: 5px;
     width: 16px;
     height: 16px;
-    background: url(../../../statics/images/drivers/narrow.png) no-repeat 0 3px;
+    background: url(../../images/drivers/narrow.png) no-repeat 0 3px;
     background-size: 64px 16px;
     content: '';
 }
@@ -322,7 +322,7 @@ li{
     margin-left: 5px;
     width: 16px;
     height: 16px;
-    background: url(../../../../statics/images/drivers/narrow.png) no-repeat 0 3px;
+    background: url(../../images/drivers/narrow.png) no-repeat 0 3px;
     background-size: 64px 16px;
     content: '';
 }
@@ -331,7 +331,7 @@ li{
     margin-left: 5px;
     width: 16px;  
     height: 16px;
-    background: url(../../../../statics/images/v9/narrow.png) no-repeat -16px 3px;
+    background: url(../../images/v9/narrow.png) no-repeat -16px 3px;
     background-size: 64px 16px;
     content: '';
 }

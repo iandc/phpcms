@@ -181,17 +181,31 @@
                                                     {loop $data $value}
                                                     {if $i < 4}
                                                     <li>
+                                                        {if $value['thumb'] == ""}
+                                                        <div class="centerCon">
+                                                            <!-- <div class="centerCon_img fr">
+                                                                <a href="{$value['url']}" target="_blank">
+                                                                    <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
+                                                                </a>
+                                                            </div> -->
+                                                            <div class="centerCon_txt fl">
+                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
+                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
+                                                            </div>
+                                                        </div>
+                                                        {else}
                                                         <div class="centerCon">
                                                             <div class="centerCon_img fr">
-                                                                <a href="{$value['url']}">
+                                                                <a href="{$value['url']}" target="_blank">
                                                                     <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                                                 </a>
                                                             </div>
-                                                            <div class="centerCon_txt fl">
-                                                                <h3><a href="{$value['url']}">{str_cut($value['title'], 37, '')}</h3>
-                                                                <a href="{$value['url']}">{str_cut($value['description'], 100, '')}
+                                                            <div class="centerCon_txt fl" style="width: 245px;">
+                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
+                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
                                                             </div>
                                                         </div>
+                                                        {/if}
                                                     </li>
                                                     {/if}
                                                     {php $i++;}
@@ -208,17 +222,31 @@
                                                     {loop $data $value}
                                                     {if $i > 3}
                                                     <li>
+                                                        {if $value['thumb'] == ""}
+                                                        <div class="centerCon">
+                                                            <!-- <div class="centerCon_img fr">
+                                                                <a href="{$value['url']}" target="_blank">
+                                                                    <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
+                                                                </a>
+                                                            </div> -->
+                                                            <div class="centerCon_txt fl">
+                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
+                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
+                                                            </div>
+                                                        </div>
+                                                        {else}
                                                         <div class="centerCon">
                                                             <div class="centerCon_img fr">
-                                                                <a href="{$value['url']}">
+                                                                <a href="{$value['url']}" target="_blank">
                                                                     <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                                                 </a>
                                                             </div>
-                                                            <div class="centerCon_txt fl">
-                                                                <h3><a href="{$value['url']}">{str_cut($value['title'], 37, '')}</h3>
-                                                                <a href="{$value['url']}">{str_cut($value['description'], 100, '')}
+                                                            <div class="centerCon_txt fl" style="width: 245px;">
+                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
+                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
                                                             </div>
                                                         </div>
+                                                        {/if}
                                                     </li>
                                                     {/if}
                                                     {php $i++;}
@@ -251,12 +279,12 @@
                                             <div class="zxLeft_con clearfix">
                                                 <div class="zxLeft_conL fl w50">
                                                     <ul>
-                                                        <script type="text/javascript" src="{$bbsJsUrl}{$catid2bidList[$catid][0]}"></script>
+                                                        <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread'][0]}"></script>
                                                     </ul>
                                                 </div>
                                                 <div class="zxLeft_conR fr w50">
                                                     <ul>
-                                                        <script type="text/javascript" src="{$bbsJsUrl}{$catid2bidList[$catid][1]}"></script>
+                                                        <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread'][1]}"></script>
                                                     </ul>
                                                 </div>
                                             </div>

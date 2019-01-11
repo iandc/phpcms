@@ -5,6 +5,10 @@
     padding: 8px 20px;
     color: #333;
 }
+.nav_css_no{
+    padding: 0;
+    border-bottom: 0;
+}
 .nav_css2{
     height: 30px;
     margin-top: 7px;
