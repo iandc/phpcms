@@ -12,7 +12,7 @@
              {if $typeid == $typeidList['news']}
              <a href="{APP_PATH}list-{$catid}-{$typeidList['news']}-1.html">{$catname}</a> >&nbsp;
              {elseif $typeid == $typeidList['tec']}
-<div class="crumbs">
+<div class="crumbs nav_css">
              <a href="{APP_PATH}list-{$catid}-{$typeidList['tec']}-1.html">{$catname}</a>&nbsp; >&nbsp;
              {/if}
          </li>
@@ -22,6 +22,7 @@
      </ul>
 </div>
 {elseif $_GET['a'] == 'type'}
+<div class="crumbs nav_css">
     <ul class="lists">
         <li>
             {if $typeid == $typeidList['news']}
@@ -31,10 +32,10 @@
             {/if}
         </li>
         <li>
-            &nbsp;全部&nbsp;>&nbsp;
+            &nbsp;&nbsp;全部&nbsp;&nbsp;>&nbsp;
         </li>
         <li>
-            列表
+            &nbsp;列表
         </li>
     </ul>
 </div>
