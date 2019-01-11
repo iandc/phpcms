@@ -98,7 +98,7 @@
                                         </span>
                                     </div>
                                      
-                                    <span class="t fr">{date('n-j', $value['inputtime'])}</span>
+                                    <span class="t fr">{date('m-d', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -118,7 +118,7 @@
                                         </span>
                                     </div>
                                             
-                                    <span class="t fr">{date('n-j', $value['inputtime'])}</span>
+                                    <span class="t fr">{date('m-d', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -138,7 +138,7 @@
                                         </span>
                                     </div>
                                             
-                                    <span class="t">{date('n-j', $value['inputtime'])}</span>
+                                    <span class="t">{date('m-d', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -156,7 +156,7 @@
                                         </span>
                                     </div>
                                             
-                                    <span class="t fr">{date('n-j', $value['inputtime'])}</span>
+                                    <span class="t fr">{date('m-d', $value['inputtime'])}</span>
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -257,17 +257,31 @@
                                 {loop $data $value}
                                 {if $i < 4}
                                 <li>
+                                    {if $value['thumb'] == ""}
+                                    <div class="centerCon">
+                                        <!-- <div class="centerCon_img fr">
+                                            <a href="{$value['url']}" target="_blank">
+                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
+                                            </a>
+                                        </div> -->
+                                        <div class="centerCon_txt fl">
+                                            <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
+                                            <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
+                                        </div>
+                                    </div>
+                                    {else}
                                     <div class="centerCon">
                                         <div class="centerCon_img fr">
                                             <a href="{$value['url']}" target="_blank">
                                                 <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                             </a>
                                         </div>
-                                        <div class="centerCon_txt fl">
+                                        <div class="centerCon_txt fl" style="width: 245px;">
                                             <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
                                             <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
                                         </div>
                                     </div>
+                                    {/if}
                                 </li>
                                 {/if}
                                 {php $i++;}
@@ -284,17 +298,32 @@
                                 {loop $data $value}
                                 {if $i > 3}
                                 <li>
+                                    {if $value['thumb'] == ""}
+                                    <div class="centerCon">
+                                        <!-- <div class="centerCon_img fr">
+                                            <a href="{$value['url']}" target="_blank">
+                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
+                                            </a>
+                                        </div> -->
+                                        <div class="centerCon_txt fl">
+                                            <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 41, '')}</h3>
+                                            <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
+                                        </div>
+                                    </div>
+                                    {else}
                                     <div class="centerCon">
                                         <div class="centerCon_img fr">
                                             <a href="{$value['url']}" target="_blank">
                                                 <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
                                             </a>
                                         </div>
-                                        <div class="centerCon_txt fl">
+                                        <div class="centerCon_txt fl" style="width: 245px">
                                             <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 41, '')}</h3>
                                             <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
                                         </div>
                                     </div>
+                                    {/if}
+                                    
                                 </li>
                                 {/if}
                                 {php $i++;}

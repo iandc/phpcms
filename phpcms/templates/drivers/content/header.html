@@ -19,7 +19,6 @@
 
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
 <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
-<script type="text/javascript" src="{JS_PATH}search_common.js"></script>
 </head>
 <body>
     {template "content", "config"}
@@ -30,7 +29,7 @@
                     <div class="hdBottom">
                         <div class="hdBottomCon clearfix">
                             <div class="logo clearfix fl">
-                                <a title="{$mySite['name']}" href="{siteurl($siteid)}/">
+                                <a title="{$mySite['name']}" target="_blank" href="{siteurl($siteid)}/">
                                     <img src="{IMG_PATH}drivers/logo.gif" width="175" height="70" alt="" title="{$mySite['name']}" >
                                 </a>
                             </div>
@@ -58,7 +57,7 @@
                             <ul id="con" class="clearfix">
                                 <li class="show">
                                     <div class="hds">
-                                        <form action="{APP_PATH}index.php" target="_blank" class="form" method="get">
+                                        <form action="{APP_PATH}index.php" target="_blank" class="form" method="get" name="a">
                                             <input type="hidden" name="m" value="search" />
                                             <input type="hidden" name="c" value="index" />
                                             <input type="hidden" name="a" value="init" />
@@ -71,7 +70,7 @@
                                 </li>
                                 <li>
                                     <div class="hds">
-                                        <form action="http://ic.eetop.cn/index/default_list" target="_blank" class="form2" method="get">
+                                        <form action="http://ic.eetop.cn/index/default_list" target="_blank" class="form2" method="get" name="a">
                                             <input name="title" class="ss" />
                                             <input type="submit" name="sub" value="搜索" class="btn1 c_f"/>
                                         </form>
