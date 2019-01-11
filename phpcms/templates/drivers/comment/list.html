@@ -15,8 +15,8 @@
             <a href="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={$commentid}&title={urlencode(($comment['title'] ? $comment['title'] : $title))}&url={urlencode(($comment['url'] ? $comment['url'] : $url))}&hot=1"{if $hot} class="on"{/if}>最热</a>
         </div>
         <div class="w1100" style="height: auto;">
-            <div class="fl">
-                <div class="col-left" style="position: relative; margin-top: 15px; margin-left: 10px;">
+            <div class="fl" style="width: 70%;">
+                <div class="col-left" style="position: relative; margin-top: 15px;>
                     <div class="comment">
                         <h4 class="f14">
                             评论列表
@@ -96,7 +96,7 @@
                 </div>
             </div>
 
-            <div class="fr">
+            <div class="fr" style="width: 30%;">
                 <div class="col-auto fr" style="margin-top: 15px; margin-right: 10px;">
                     <div class="box" style="position: relative; height: auto; width: 310px;">
                         <h5 class="title-2">评论排行</h5>
@@ -118,7 +118,7 @@
 </div>
 
 <div style="margin-top: 15px 0;">
-    {template "content", "footer2"}
+    {template "content", "footer"}
 </div>
 
 <script type="text/javascript">
