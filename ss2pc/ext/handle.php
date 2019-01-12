@@ -46,10 +46,10 @@ if ($sTableName == 'attachments') {
             }
 
             foreach ($insert2 as $k => $v) {
-                if($k == 'authcode') {
+                if ($k == 'authcode') {
                     $insert2[$k] = md5($value['filepath']);
-                } else if($k == 'status') {
-                    $insert2[$k] = pc_base::load_config('system','attachment_stat') ? 0 : 1;
+                } else if ($k == 'status') {
+                    $insert2[$k] = pc_base::load_config('system', 'attachment_stat') ? 0 : 1;
                 }
             }
 
@@ -60,10 +60,10 @@ if ($sTableName == 'attachments') {
             $id = $pcdb->insert_id();
 
             $insert3 = [
-                'keyid' => 'c-'.$insert['catid'].'-'.$insert['aid'],
+                'keyid' => 'c-' . $insert['catid'] . '-' . $insert['aid'],
                 'aid' => $insert['aid'],
             ];
-            $sql = "INSERT INTO  ". $pcdb_pre. "attachment_index SET " . to_sqls($insert3, ',');
+            $sql = "INSERT INTO  " . $pcdb_pre . "attachment_index SET " . to_sqls($insert3, ',');
             $pcdb->query($sql);
         }
     }
@@ -87,9 +87,9 @@ if ($sTableName == 'attachments') {
             }
 
             foreach ($insert2 as $k => $v) {
-                if($k == 'pinyin') {
+                if ($k == 'pinyin') {
                     $word = safe_replace(addslashes($value['tagname']));
-                    $word = str_replace(array('//','#','.'),' ',$word);
+                    $word = str_replace(array('//', '#', '.'), ' ', $word);
                     $letters = gbk_to_pinyin($word);
                     $letter = strtolower(implode('', $letters));
                     $insert2[$k] = $letter;
@@ -121,7 +121,7 @@ if ($sTableName == 'attachments') {
 
             }
             foreach ($insert2 as $k => $v) {
-                if($k == 'contentid') {
+                if ($k == 'contentid') {
                     $insert2[$k] = $value['itemid'] . '-1';
                 }
             }
@@ -150,7 +150,7 @@ if ($sTableName == 'attachments') {
             'modelid' => 1,
             'catname' => '资讯',
             'catdir' => 'zixun',
-            'child'  => 1,
+            'child' => 1,
             'parentid' => 0,
             'setting' => new_addslashes($converts[$sTableName]['create']['setting']),
         ];
@@ -190,17 +190,17 @@ if ($sTableName == 'attachments') {
                 $insert1[$k1] = $value[$v1];
             }
             foreach ($insert2 as $k2 => $v2) {
-                if($value['type'] == 'news') {
+                if ($value['type'] == 'news') {
                     $pid = $pid1;
                 } else {
                     $pid = $pid2;
                 }
                 if ($k2 == 'parentid') {
                     $insert2[$k2] = $pid;
-                } else if($k2 == 'catdir') {
+                } else if ($k2 == 'catdir') {
                     $insert2[$k2] = 'category_' . $value['catid'];
-                } else if($k2 == 'setting') {
-                    if($value['type'] == 'file') {
+                } else if ($k2 == 'setting') {
+                    if ($value['type'] == 'file') {
                         $insert2['setting'] = new_addslashes($download_setting);
                     } else {
                         $insert2[$k2] = new_addslashes($v2);
@@ -244,7 +244,7 @@ if ($sTableName == 'attachments') {
 
             foreach ($insert2 as $k2 => $v2) {
                 if ($k2 == 'updatetime') {
-                    $insert2[$k2] = $value['lastpost'] ? $value['lastpost']:$value['dateline'];
+                    $insert2[$k2] = $value['lastpost'] ? $value['lastpost'] : $value['dateline'];
                 }
             }
 
@@ -258,7 +258,7 @@ if ($sTableName == 'attachments') {
                 'hitsid' => "c-{$siteid}-{$value['itemid']}",
                 'catid' => $value['catid'],
                 'views' => $value['viewnum'],
-                'updatetime' => $value['lastpost'] ? $value['lastpost']:$value['dateline'] ,
+                'updatetime' => $value['lastpost'] ? $value['lastpost'] : $value['dateline'],
             ];
 
             $sql = "INSERT INTO " . $pcdb_pre . "hits  SET " . to_sqls($hits, ',');
@@ -306,16 +306,20 @@ if ($sTableName == 'attachments') {
             $insert1 = array_flip($converts[$sTableName][$tTableNmae]);
             $insert2 = $converts[$sTableName]['create'];
             foreach ($insert1 as $k => $v) {
-                if($k == 'content') {
+                //ss message为空取newsurl 对应pc的islink=1 和 url
+                if ($k == 'url' && $value[$v]) {
+                    $insert1['islink'] = 1;
+                }
+                if ($k == 'content') {
                     $content = new_stripslashes($value[$v]);
                     //$content = str_replace($find[0], $replace[0], new_stripslashes($value[$v]));
                     $insert1[$k] = new_addslashes($content);
                     $thumb = '';
-                    if(preg_match_all("/(src)=([\"|']?)([^ \"'>]+\.(gif|jpg|jpeg|bmp|png))\\2/i", $content, $matches)) {
+                    if (preg_match_all("/(src)=([\"|']?)([^ \"'>]+\.(gif|jpg|jpeg|bmp|png))\\2/i", $content, $matches)) {
                         $auto_thumb_no = 1;//取第一张图为缩略图
                         $thumb = $matches[3][$auto_thumb_no];
                     }
-                    $description = new_addslashes(str_cut(str_replace(array("\r\n","\t",'[page]','[/page]','&ldquo;','&rdquo;','&nbsp;'), '', strip_tags($content)), 200, ''));
+                    $description = new_addslashes(str_cut(str_replace(array("\r\n", "\t", '[page]', '[/page]', '&ldquo;', '&rdquo;', '&nbsp;'), '', strip_tags($content)), 200, ''));
                 } else {
                     $insert1[$k] = $value[$v];
                 }
@@ -359,7 +363,7 @@ if ($sTableName == 'attachments') {
 
             foreach ($insert2 as $k2 => $v2) {
                 if ($k2 == 'updatetime') {
-                    $insert2[$k2] = $value['lastpost'] ? $value['lastpost']:$value['dateline'];
+                    $insert2[$k2] = $value['lastpost'] ? $value['lastpost'] : $value['dateline'];
                 }
             }
 
