@@ -63,7 +63,7 @@ return [
         ],
     ],*/
 
-    'spaceitems' => [
+    /*'spaceitems' => [
         'news' => [
             'itemid' => 'id',
             'catid' => 'catid',
@@ -78,13 +78,14 @@ return [
             'description' => '',
             'updatetime' => 0,
         ],
-    ],
+    ],*/
 
     'spacenews' => [
         'news_data' => [
             'itemid' => 'id',
             'newsfrom' => 'copyfrom',
             'message' => 'content',
+            'newsurl' => 'url',
         ],
         'create' => [
             'allow_comment' => 1,
