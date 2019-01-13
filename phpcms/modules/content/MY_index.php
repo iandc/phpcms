@@ -100,8 +100,22 @@ class MY_index extends index
     //聚合页
     public function category()
     {
-        $catid = $_GET['catid'] = intval($_GET['catid']);
-        if(empty($catid)) $catid = getNewsModelItemId();
+        if(is_int($_GET['catid'])) {
+            $catid = $_GET['catid'] = intval($_GET['catid']);
+        } else if(is_string($_GET['catdir'])) {
+            $siteid = 1;//先强制设置为1
+            $CATEGORYS = getcache('category_content_' . $siteid, 'commons');
+            foreach ($CATEGORYS as $value) {
+                if($value['catdir'] == trim($_GET['catdir'])) {
+                    $catid = $value['catid'];
+                    break;
+                }
+            }
+            $catdir = $_GET['catid'] = strval($_GET['catid']);
+        } else if(empty($catid)) {
+            $catid = getNewsModelItemId();
+        }
+
         $_priv_data = $this->_category_priv($catid);
         if ($_priv_data == '-1') {
             $forward = urlencode(get_url());

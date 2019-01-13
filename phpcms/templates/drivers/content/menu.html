@@ -24,11 +24,11 @@
         {/loop}
     </ul>
 </li>
-<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="category.html" target="_blank">频道</a>
+<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="channel.html" target="_blank">频道</a>
     <ul class="sub_mune_ul clearfix">
-        <li><a href="category.html" target="_blank">全部</a></li>
+        <li><a href="channel.html" target="_blank">全部</a></li>
         {loop $d $v}
-        <li><a href="{APP_PATH}category-{$v['catid']}.html" target="_blank">{$v['catname']}</a></li>
+        <li><a href="{APP_PATH}channel/{$v['catdir']}" target="_blank">{$v['catname']}</a></li>
         {/loop}
     </ul>
 </li>
