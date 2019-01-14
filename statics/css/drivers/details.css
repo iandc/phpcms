@@ -128,6 +128,7 @@ body{
     width: 125px;
     height: 100px;
     margin-right: 15px;
+    border-radius: 10px;
 }
 .content .content_min .cm_four .cm_four_l ul li .block{
     float: left;
@@ -179,7 +180,7 @@ body{
 }
 .content .content_min .cm_four .cm_four_l ul li .block h2{
     padding-bottom: 9pt;
-    font-size: 15px;
+    font-size: 16px;
     position: relative;
     font-weight: 600;
 }
@@ -204,7 +205,7 @@ body{
     display: block;
     overflow: hidden;
     color: #666;
-    font-size: 13px;
+    font-size: 14px;
 }
 .content .content_min .cm_four .cm_four_l ul li .block .tags,.content .content_min .cm_four .cm_four_l ul li .block .tags a{
     color: #666;
