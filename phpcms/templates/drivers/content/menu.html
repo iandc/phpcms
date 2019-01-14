@@ -28,7 +28,7 @@
     <ul class="sub_mune_ul clearfix">
         <li><a href="channel.html" target="_blank">全部</a></li>
         {loop $d $v}
-        <li><a href="{APP_PATH}channel/{$v['catdir']}" target="_blank">{$v['catname']}</a></li>
+        <li><a href="{APP_PATH}{$v['catdir']}" target="_blank">{$v['catname']}</a></li>
         {/loop}
     </ul>
 </li>
