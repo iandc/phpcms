@@ -64,8 +64,6 @@
     background: url(../../images/drivers/icons.png) no-repeat -141px -134px;
 }
 
-
-
 .hdTop .lr a{
     width: 24px;
     height: 16px;
@@ -293,7 +291,6 @@ li{
 }
 .xlk li a{
     display: block;
-    margin-left: 15px;
 }
 .login:hover{
     width: auto;

@@ -59,7 +59,7 @@
                                             <div class="date">
                                                 {if !$catid}
                                                     <span class="lb fl">
-                                                        类 别：<a href=""{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                                        类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a>
                                                     </span>
                                                     <span class="time fl">
                                                         {date('Y-m-d', $value['inputtime'])}
@@ -89,9 +89,9 @@
                                                 <div class="date clearfix">
                                                     {if !$catid}
                                                         <span class="lb fl">
-                                                            类 别：<a href=""{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                                            类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a>
                                                         </span>
-                                                        <span class="time fl">
+                                                        <span class="time fl" style="margin-top:6px;">
                                                             {date('Y-m-d', $value['inputtime'])}
                                                         </span>
                                                     {/if}
