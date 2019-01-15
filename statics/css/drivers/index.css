@@ -471,6 +471,9 @@ body{
     width: 97px;
     text-align: center;
 }
+.Manufacturer .manuConLeft .centerCon .centerCon_img img{
+    border-radius: 10px;
+}
 .Manufacturer .manuConLeft .centerCon .centerCon_txt h3{
     font-weight: bold;
     line-height: 18px;
@@ -523,8 +526,6 @@ body{
 .zixunConRight .manuConRight .manuConRightB ul li p{
     text-align: center;
 }
-
-
 
 .footer{
     height: auto;

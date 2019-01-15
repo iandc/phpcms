@@ -10,7 +10,7 @@
                             {pc:content action="lists" catid="$courseid" where="status=99" order="id DESC" num="4" cache="3600"}
                             {loop $data $value}
                             <li>
-                                <a href="{$value['url']}"><img src="{thumb($value['thumb'], 300, 222)}" title="{$value['title']}"></a>
+                                <a href="{$value['url']}" target="_blank"><img src="{thumb($value['thumb'], 300, 222)}" title="{$value['title']}"></a>
                             </li>
                             {/loop}
                             {/pc}
@@ -226,7 +226,7 @@
                     {loop $data $value}
                     <li>
                         <div class="imgs">
-                            <a href="{$value['url']}">
+                            <a href="{$value['url']}" target="_blank">
                                 <img src="{thumb($value['thumb'], 230, 155)}" title="{$value['title']}"/>
                             </a>
                             
