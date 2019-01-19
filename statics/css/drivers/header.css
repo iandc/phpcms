@@ -174,7 +174,7 @@
     display: block;
     padding: 10px;
 }
-.hd .nav .nav_list li .sub_mune_ul{
+.sub_mune_ul{
     overflow: hidden;
     position: absolute;
     left: -220px;
@@ -331,4 +331,8 @@ li{
     background: url(../../images/v9/narrow.png) no-repeat -16px 3px;
     background-size: 64px 16px;
     content: '';
+}
+.link{
+    line-height: 21px;
+    padding: 0 3px;
 }

@@ -154,7 +154,6 @@ body{
     color: rgb(205, 36, 56);
     font-weight: 400;
     font-size: 13px;
-    margin-left: 20px;
     margin-top: 2px;
 }
 .content .content_min .cm_four .cm_four_l ul li .date{
@@ -199,9 +198,14 @@ body{
 .content .content_min .cm_four .cm_four_l ul li .block .time{
     height: 16px;
     line-height: 16px;
-    padding-left: 20px;
-    background: url(../../../statics/images/drivers/leftinfoimg.png) 0 0 no-repeat;
-    color: rgb(205, 36, 56);
+    padding-left: 5px;
+    /*background: url(../../../statics/images/drivers/time.png) 0 0 no-repeat;*/
+    color: #0f75bd;
+}
+.content .time_img img{
+    width: 16px;
+    height: 16px;
+    margin-top: 2px;
 }
 .content .content_min .cm_four .cm_four_l ul li .block .txt{
     display: block;

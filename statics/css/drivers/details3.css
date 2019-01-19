@@ -10,10 +10,11 @@ body{
 }
 .content{
     background-color: #fff;
+    margin-top: 20px;
 }
 .con_four{
     padding:20px;
-    position: relative;
+    /*position: relative;*/
     margin-bottom: 15px;
 }
 .con_four .con_four_con{
@@ -199,4 +200,40 @@ body{
 }
 .category_zxLeftcon{
     margin-top: -20px;
+}
+
+.category_nav{
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+.category_nav .lis{
+    padding:0 10px;
+}
+.category_nav .nav_list li .xl{
+    width: 300px;
+    height: auto;
+    background-color: #0b68a9;
+    padding: 10px;
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 99;
+    display: none;
+}
+.category_nav .lis:hover .xl{
+    display: block;
+}
+.category_nav .nav_list li .xl li{
+    width: 33.3%;
+    text-align: center;
+}
+.category_nav .nav_list li .xl li a{
+    color: #fff;
+}
+.category_nav .nav_list li:hover{
+    background-color: #0b68a9;
+}
+.category_nav .nav_list li:hover a{
+    color: #fff;
 }

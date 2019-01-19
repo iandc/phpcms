@@ -51,9 +51,11 @@
                     </div> -->
                     <div id="wrap">
                         <div id="tit">
-                            <span class="select more" style="margin-right:0; border-right: 0;">社区</span>
+                            <span class="select more" style="margin-right:0; border-right: 0;">文章</span>
                             <span>DataSheet</span>
                         </div>
+                            <a href="http://bbs.eetop.wang/search.php?mod=blog" class="link"><span>日志</span></a>
+                            <a href="http://bbs.eetop.wang/search.php?mod=forum" class="link"><span>帖子</span></a>
                             <ul id="con" class="clearfix">
                                 <li class="show">
                                     <div class="hds">
@@ -141,13 +143,6 @@
     </div>
 
     <script>
-        // $('#tit span').click(function() {
-        //     var i = $(this).index();
-        //     console.log(i)
-        //     $(this).addClass('select').siblings().removeClass('select');
-        //     $('#con li').eq(i).show().siblings().hide();
-        // });
-
         $(function () {
             $("#tit span").click(function () {
                 $(this).addClass("select").siblings().removeClass("select");

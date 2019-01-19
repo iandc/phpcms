@@ -40,30 +40,35 @@
     </ul>
 </div>
 {elseif $_GET['a'] == 'category'} <!-- 频道页 -->
-<div class="w1100">
-    <div class="crumbs nav_css2">
-        <ul>
-            <li>
-                <a href="channel.html">频道首页&nbsp; > </a>
-            </li>
-            <li>
-                {if $catid == $newsid}
-                    <a href="category-{$catid}.html">&nbsp;&nbsp;全部</a>
-                {else}
-                    <a href="category-{$catid}.html">&nbsp;&nbsp;{$catname}</a>
-                {/if}
-            </li>
-        </ul>
-    </div>
-</div>
+<li class="lis">
+    <a href="#" class="hover_list" id="hover_list">频道&nbsp; </a>
+    <ul class="clearfix xl" id="xl">
+        {loop $d $v}
+        <li><a href="{APP_PATH}{$v['catdir']}" target="_blank">{$v['catname']}</a></li>
+        {/loop}
+    </ul>
+</li>
+<li>
+     > <a href="category-{$catid}.html">&nbsp;&nbsp;{$catname}</a>
+</li>
 {elseif $_GET['a'] == 'show' || $_GET['a'] == 'view'} <!-- 内容页 -->
 <div class="w1100">
     <div class="crumbs nav_css2">
         <div class="current_nav">
-            <a href="channel.html">频道首页</a><span> &gt; </span><a href="category-{$catid}.html">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> <span> &gt; </span> 内容
+            <a href="channel.html">频道</a><span> &gt; </span><a href="category-{$catid}.html">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> <span> &gt; </span> 内容
         </div>
     </div>    
 </div>
 {/if}
+
+<script>
+        // $("#xl").hide();
+        // $("#hover_list").mouseover(function () {
+        //     $("#xl").show();
+        // });
+        // $("#hover_list").mouseout(function () {
+        //     $("#xl").hide();
+        // });
+</script>
 
 

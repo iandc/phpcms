@@ -42,13 +42,14 @@
                                         {if $value['thumb'] == ""}
                                         <div class="box_txt">
 
-                                            <h2>
-                                                <a href="{$value['url']}" {title_style($value['style'])}>{str_cut($value['title'],
+                                            <h2 class="clearfix">
+                                                <a href="{$value['url']}" {title_style($value['style'])} class="fl">{str_cut($value['title'],
                                                 100, '')}</a>
                                                 {if $catid}
                                                     <span class="time fr">
                                                         {date('m-d', $value['inputtime'])}
                                                     </span>
+                                                    <span class="time_img fr"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
                                                 {/if}
                                             </h2>
 
@@ -60,6 +61,7 @@
                                                     <span class="lb fl">
                                                         类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a>
                                                     </span>
+                                                    <span class="time_img fl"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
                                                     <span class="time fl">
                                                         {date('Y-m-d', $value['inputtime'])}
                                                     </span>
@@ -67,10 +69,12 @@
                                             </div>
                                         </div>
                                         {else}
+                                        <div>
+                                            <a href="{$value['url']}" class="img fl">
+                                                <img src="{$value['thumb']}">
+                                            </a>
+                                        </div>
                                         
-                                        <a href="{$value['url']}" class="img fl">
-                                            <img src="{$value['thumb']}">
-                                        </a>
                                         <div class="box_txt">
 
                                             <h2>
@@ -81,7 +85,9 @@
                                                         {date('m-d', $value['inputtime'])}
                                                     </span>
                                                 {/if}
+                                                <span class="time_img fr"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
                                             </h2>
+                                                    
 
                                             <div class="txt">
                                                 <p>{$value['description']}</p>
@@ -90,6 +96,7 @@
                                                         <span class="lb fl">
                                                             类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a>
                                                         </span>
+                                                        <span class="time_img fl"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
                                                         <span class="time fl" style="margin-top:6px;">
                                                             {date('Y-m-d', $value['inputtime'])}
                                                         </span>

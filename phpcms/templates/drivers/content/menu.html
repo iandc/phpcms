@@ -15,7 +15,8 @@
 </li>
 {/loop}
 {/pc}
-<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}type-{$typeidList['tec']}-1.html" target="_blank">技术文章</a>
+<li class="lis">
+    <a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}type-{$typeidList['tec']}-1.html" target="_blank">技术文章</a>
     <ul class="sub_mune_ul clearfix">
         <li><a href="{APP_PATH}type-{$typeidList['tec']}-1.html" target="_blank">全部</a></li>
         {loop $d $v}
@@ -26,7 +27,7 @@
 </li>
 <li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="channel.html" target="_blank">频道</a> 
     <ul class="sub_mune_ul clearfix">
-        <li><a href="channel.html" target="_blank">全部</a></li>
+        <!-- <li><a href="channel.html" target="_blank">全部</a></li> -->
         {loop $d $v}
         <li><a href="{APP_PATH}{$v['catdir']}" target="_blank">{$v['catname']}</a></li>
         {/loop}
