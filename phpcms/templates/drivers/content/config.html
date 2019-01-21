@@ -4,14 +4,14 @@
 
 {php $typeidList = ['tec' => 54, 'news' => 55, 'activity' => 56, 'course' => 57, 'other' => 58];}
 
-{php $indexBidList = ['user' => 88, 'blog' => [109, 110], 'thread' => [68, 69]];}
+{php $indexBidList = ['user' => 88, 'blog' => [109, 110], 'thread' => [68, 69], 'hot' => 43, 'job' => 3];}
 
 <!--{ 频道页调用论坛的bid信息 98为频道id，即catid}-->
 {php $catid2bidList = [98 => [68, 69], 100 => [68, 69]];}
 
-{php $bbsurl = 'http://bbs.eetop.wang';}
+{php $bbsurl = str_replace('www', 'bbs', siteurl($siteid));}
 
-{php $blogurl = $bbsurl . '/home.php?mod=space&do=blog';}
+{php $blogurl = $bbsurl . 'blog.php';}
 
 {php $bbsJsUrl = $bbsurl. '/api.php?mod=js&bid=';}
 
