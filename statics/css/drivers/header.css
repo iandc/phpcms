@@ -48,7 +48,7 @@
 }
 #wrap #tit span.select{
     background-color: #fff;
-    height: 22px;
+    height: 23px;
     position: relative;
     z-index: 999 !important;
 }
@@ -333,6 +333,10 @@ li{
     content: '';
 }
 .link{
+    display: inline-block;
     line-height: 21px;
-    padding: 0 3px;
+    padding: 0 5px;
+    background-color: #efefef;
+    border: 1px solid #c4c4c4;
+    border-bottom: none;
 }

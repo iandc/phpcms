@@ -10,11 +10,9 @@ body{
 }
 .content{
     background-color: #fff;
-    margin-top: 20px;
 }
 .con_four{
     padding:20px;
-    /*position: relative;*/
     margin-bottom: 15px;
 }
 .con_four .con_four_con{
