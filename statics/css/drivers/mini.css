@@ -88,8 +88,6 @@ li a{
 .xlk li.h50{
     float: left;
     width: 50%;
-    /*height: 15px;*/
-    /*margin: 10px 0;*/
 }
 .xlk li a:hover{
     color: #2975c4;

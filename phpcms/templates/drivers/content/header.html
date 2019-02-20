@@ -36,50 +36,38 @@
                         </div>
                     </div>
                 </div>
-
                 {show_ad(1, 20)}
-
                 <div class="search fl">
-                    <!-- <div class="tab" id="search">
-                        {php $j = 0;}
-                        {php $search_model = getcache('search_model_'.$siteid, 'search');}
-                        {loop $search_model $v}
-                        {php $j++;}
-                            <a id="search_a_{$value['typeid']}" href="javascript:;" onclick="setmodel({$v['typeid']}, $(this));" style="outline:medium none;" hidefocus="true" {if $i == 1 && $typeid = $v['typeid']} class="on" {/if}>{$v['name']}</a>{if $i != count($search_model)}<span> | </span>{/if}
-                        {/loop}
-                        <script type="text/javascript">$("#search_a_1").click();</script>
-                    </div> -->
                     <div id="wrap">
                         <div id="tit">
                             <span class="select more" style="margin-right:0; border-right: 0;">文章</span>
                             <span>DataSheet</span>
                         </div>
-                            <a href="http://bbs.eetop.wang/search.php?mod=blog" class="link"><span>日志</span></a>
-                            <a href="http://bbs.eetop.wang/search.php?mod=forum" class="link"><span>帖子</span></a>
-                            <ul id="con" class="clearfix">
-                                <li class="show">
-                                    <div class="hds">
-                                        <form action="{APP_PATH}index.php" target="_blank" class="form" method="get" name="a">
-                                            <input type="hidden" name="m" value="search" />
-                                            <input type="hidden" name="c" value="index" />
-                                            <input type="hidden" name="a" value="init" />
-                                            <input type="hidden" name="typeid" id="typeid" value="1" />
-                                            <input type="hidden" name="siteid" id="siteid" value="{$siteid}" />
-                                            <input type="text" name="q" id="q" class="ss" />
-                                            <input type="submit" name="sub" value="搜索" class="btn1 c_f"/>
-                                        </form>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hds">
-                                        <form action="http://ic.eetop.cn/index/default_list" target="_blank" class="form2" method="get" name="b">
-                                            <input name="title" class="ss" />
-                                            <input type="submit" name="sub" value="搜索" class="btn1 c_f"/>
-                                        </form>
-                                    </div>
-                                </li>
-                            </ul>
-
+                        <a href="http://bbs.eetop.wang/search.php?mod=blog" class="link"><span>日志</span></a>
+                        <a href="http://bbs.eetop.wang/search.php?mod=forum" class="link"><span>帖子</span></a>
+                        <ul id="con" class="clearfix">
+                            <li class="show">
+                                <div class="hds">
+                                    <form action="{APP_PATH}index.php" target="_blank" class="form" method="get" name="a">
+                                        <input type="hidden" name="m" value="search" />
+                                        <input type="hidden" name="c" value="index" />
+                                        <input type="hidden" name="a" value="init" />
+                                        <input type="hidden" name="typeid" id="typeid" value="1" />
+                                        <input type="hidden" name="siteid" id="siteid" value="{$siteid}" />
+                                        <input type="text" name="q" id="q" class="ss" />
+                                        <input type="submit" name="sub" value="搜索" class="btn1 c_f"/>
+                                    </form>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="hds">
+                                    <form action="http://ic.eetop.cn/index/default_list" target="_blank" class="form2" method="get" name="b">
+                                        <input name="title" class="ss" />
+                                        <input type="submit" name="sub" value="搜索" class="btn1 c_f"/>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -96,52 +84,48 @@
                     </ul>
                     <div class="fr landr">
                         <div class="tb_item">
-                                <!-- <script type="text/javascript">document.write('<div id="iframe" style="position: relative; z-index: 1;"><iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&from=other&forward=' + encodeURIComponent(location.href) + '&siteid={get_siteid()}" allowTransparency="true" width="205" height="150" frameborder="0" scrolling="no"></iframe></div>')</script> -->
-                                <div>
-                                    {if $_username}
-                                        <ul class="clearfix">
-                                            <!-- <li class="register lr">
-                                                <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top" class="{if $from == 'index'}c_hhh{else}c_fff{/if}">{L('logout')}</a>
-                                            </li> -->
-                                            <li class="login lr">
-                                                <a href="{APP_PATH}index.php?m=member&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if} nav_item" style="line-height: 40px;">{getNickName()}</a> &nbsp;&nbsp;
-                                                <ul class="xlk clearfix" id="xlk">
-                                                    <li class="h50">
-                                                        <a href=" {APP_PATH}index.php?m=member&siteid={$siteid}" class="h50" target="_blank">个人资料</a>
-                                                    </li>
-                                                    <li class="h50">
-                                                        <a href=" {APP_PATH}index.php?m=member&c=index&a=account_manage_avatar&t=1" class="h50" target="_blank">修改头像</a>
-                                                    </li>
-                                                    <li class="h50">
-                                                        <a href="{APP_PATH}index.php?m=member&c=content&a=published" class="h50" target="_blank">我的投稿</a>
-                                                    </li>
-                                                    <li class="h50">
-                                                        <a href="{APP_PATH}index.php?m=pay&c=deposit&a=pay" class="h50" target="_blank">我的资产</a>
-                                                    </li>
-                                                    <li class="h50">
-                                                        <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">退出</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    {else}
-                                        <ul class="clearfix">
-                                            <li class="login lr">
-                                                <a href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">登录</a>
-                                            </li>
-                                            <li class="register lr">
-                                                <a href="{$bbsurl}/member.php?mod=register" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">注册</a>
-                                            </li>
-                                        </ul>
-                                    {/if}
-                                </div>
+                            <!-- <script type="text/javascript">document.write('<div id="iframe" style="position: relative; z-index: 1;"><iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&from=other&forward=' + encodeURIComponent(location.href) + '&siteid={get_siteid()}" allowTransparency="true" width="205" height="150" frameborder="0" scrolling="no"></iframe></div>')</script> -->
+                            <div>
+                                {if $_username}
+                                    <ul class="clearfix">
+                                        <li class="login lr">
+                                            <a href="{APP_PATH}index.php?m=member&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if} nav_item" style="line-height: 40px;">{getNickName()}</a> &nbsp;&nbsp;
+                                            <ul class="xlk clearfix" id="xlk">
+                                                <li class="h50">
+                                                    <a href=" {APP_PATH}index.php?m=member&siteid={$siteid}" class="h50" target="_blank">个人资料</a>
+                                                </li>
+                                                <li class="h50">
+                                                    <a href=" {APP_PATH}index.php?m=member&c=index&a=account_manage_avatar&t=1" class="h50" target="_blank">修改头像</a>
+                                                </li>
+                                                <li class="h50">
+                                                    <a href="{APP_PATH}index.php?m=member&c=content&a=published" class="h50" target="_blank">我的投稿</a>
+                                                </li>
+                                                <li class="h50">
+                                                    <a href="{APP_PATH}index.php?m=pay&c=deposit&a=pay" class="h50" target="_blank">我的资产</a>
+                                                </li>
+                                                <li class="h50">
+                                                    <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">退出</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                {else}
+                                    <ul class="clearfix">
+                                        <li class="login lr">
+                                            <a href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">登录</a>
+                                        </li>
+                                        <li class="register lr">
+                                            <a href="{$bbsurl}/member.php?mod=register" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">注册</a>
+                                        </li>
+                                    </ul>
+                                {/if}
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
     <script>
         $(function () {
             $("#tit span").click(function () {

@@ -259,11 +259,6 @@
                                 <li>
                                     {if $value['thumb'] == ""}
                                     <div class="centerCon">
-                                        <!-- <div class="centerCon_img fr">
-                                            <a href="{$value['url']}" target="_blank">
-                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
-                                            </a>
-                                        </div> -->
                                         <div class="centerCon_txt fl">
                                             <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
                                             <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
@@ -300,11 +295,6 @@
                                 <li>
                                     {if $value['thumb'] == ""}
                                     <div class="centerCon">
-                                        <!-- <div class="centerCon_img fr">
-                                            <a href="{$value['url']}" target="_blank">
-                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
-                                            </a>
-                                        </div> -->
                                         <div class="centerCon_txt fl">
                                             <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 41, '')}</h3>
                                             <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
@@ -341,22 +331,7 @@
                             </div>
                         </div>
                         <div class="zxRight_con clearfix">
-                            <ul>
-                                <!-- {pc:content action="hits" catid="$newsid" order="weekviews DESC" num="4" cache="3600"}
-                                {loop $data $value}
-                                <li>
-                                    <div class="right_txt fl">
-                                        <span><a href="{$value['url']}" target="_blank">{$value['title']}</a></span><br/>
-                                        <a href="{$value['url']}" target="_blank">{$value['description']}</a>
-                                    </div>
-                                    <div class="left_img fr">
-                                        <a href="{$value['url']}" target="_blank">
-                                            <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{$value['title']}">
-                                        </a>
-                                    </div>
-                                </li>
-                                {/loop}
-                                {/pc} -->
+                            <ul
                                 <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['job']}"></script>
                             </ul>
                         </div>
@@ -364,10 +339,8 @@
                 </div>
             </div>
         </div>
-
         <!-- banner3-->
         {show_ad(1, 23)}
-
         <div class="forum clearfix">
             <div class="zixun bgc_fff mt15">
                 <div class="zixunCon clearfix">
@@ -414,7 +387,6 @@
                                 </li>
                             </ul>
                         </div>
-
                         <div class="manuConRight fr">
                             <div class="manuConRightB">
                                 <ul>
@@ -426,10 +398,8 @@
                 </div>
             </div>
         </div>
-
         <!-- banner4-->
         {show_ad(1, 24)}
-
         <!-- Manufacturer-->
         <div class="Manufacturer bgc_fff mt15 clearfix">
             <div class="ManufacturerCon clearfix">
@@ -462,21 +432,6 @@
                     </div>
                     <div class="manuConRightB zxRight_con clearfix">
                         <ul>
-                            <!-- {pc:content action="hits" catid="$newsid" order="weekviews DESC" num="4" cache="3600"}
-                            {loop $data $value}
-                            <li>
-                                <div class="right_txt fl">
-                                    <span><a href="{$value['url']}" target="_blank">{$value['title']}</a></span><br/>
-                                    <a href="{$value['url']}" target="_blank">{$value['description']}</a>
-                                </div>
-                                <div class="left_img fr">
-                                    <a href="{$value['url']}" target="_blank">
-                                        <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{$value['title']}">
-                                    </a>
-                                </div>
-                            </li>
-                            {/loop}
-                            {/pc} -->
                             <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['hot']}"></script>
                         </ul>
                     </div>
