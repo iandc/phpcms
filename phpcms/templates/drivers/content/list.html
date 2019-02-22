@@ -53,7 +53,7 @@
                                             </h2>
 
                                             <div class="txt">
-                                                <p>{str_cut($value['description'], 400,'')}</p>
+                                                <p>{str_cut($value['description'], 2000,'')}</p>
                                             </div>
                                             <div class="date">
                                                 {if !$catid}
@@ -87,7 +87,7 @@
                                                 <span class="time_img fr"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
                                             </h2>
                                             <div class="txt">
-                                                <p>{$value['description']}</p>
+                                                <p>{str_cut($value['description'], 2000,'')}</p>
                                                 <div class="date clearfix">
                                                     {if !$catid}
                                                         <span class="lb fl">

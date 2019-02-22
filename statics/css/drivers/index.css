@@ -305,7 +305,7 @@ body{
 .zxRight_conc{
     height: auto!important;
     min-height: 50px;
-    padding: 10px 8px 13px 10px;
+    padding: 10px 8px 47px 10px;
     font-size: 12px;
 }  
 .zxRight_conc .ul1 li{
@@ -346,9 +346,9 @@ body{
 .zxRight_conc ul li .rTxt span a{
     font-weight: bold;
 }
-.zxRight_conc .ul2{
+/*.zxRight_conc .ul2{
     margin-top: 15px;
-}
+}*/
 .zxRight_conc .ul2 li{
     width: 290px;
     line-height: 25px;
@@ -356,7 +356,7 @@ body{
 .zxRight_conc .ul2 li {
     height: auto;
     padding: 10px 0 17px;
-    margin-bottom: 5px;
+    /*margin-bottom: 5px;*/
     border-bottom: 1px solid #eee; 
 }
 .zxRight_conc .ul2 li .ls{
