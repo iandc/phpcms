@@ -415,11 +415,15 @@ body{
 }
 .curriculumCon .title2 a{
     line-height: 25px;
+    font-weight: 600;
 }
 .curriculumCon .title2 .a1{
     font-size: 18px;
     color: #0b68a9;
     font-weight: bold;
+}
+.curriculumCon .title2 .a2{
+    font-size: 12px;
 }
 .Manufacturer .manuConLeft .xNo .centerCon{
     border-bottom: none;
@@ -575,9 +579,6 @@ body{
 .ftNav .sj{
     color: red;
     margin-top: 10px;
-}
-.copy{
-    margin: 10px 0;
 }
 .copy .copyTxt{
     padding-bottom: 10px;

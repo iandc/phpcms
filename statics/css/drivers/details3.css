@@ -20,6 +20,7 @@ body{
     height: auto;
     float: left;
     position: relative;
+    padding-top: 5px;
 }
 .con_four .con_fourL_top .lf{
     width: 300px;
@@ -201,8 +202,8 @@ body{
 }
 
 .category_nav{
-    height: 30px;
-    line-height: 30px;
+    height: 50px;
+    line-height: 50px;
     position: relative;
 }
 .category_nav .lis{
@@ -211,7 +212,7 @@ body{
 .category_nav .nav_list li .xl{
     width: 300px;
     height: auto;
-    background-color: #0b68a9;
+    background-color: #0b89a9;
     padding: 10px;
     position: absolute;
     top: 35px;
@@ -229,9 +230,9 @@ body{
 .category_nav .nav_list li .xl li a{
     color: #fff;
 }
-.category_nav .nav_list li:hover{
-    background-color: #0b68a9;
+.category_nav .nav_list li.lis:hover{
+    background-color: #0b89a9;
 }
-.category_nav .nav_list li:hover a{
+.category_nav .nav_list li.lis:hover a{
     color: #fff;
 }
