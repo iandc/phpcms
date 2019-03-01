@@ -305,7 +305,7 @@ body{
 .zxRight_conc{
     height: auto!important;
     min-height: 50px;
-    padding: 10px 8px 47px 10px;
+    padding: 10px 8px 23px 10px;
     font-size: 12px;
 }  
 .zxRight_conc .ul1 li{
@@ -355,7 +355,7 @@ body{
 }
 .zxRight_conc .ul2 li {
     height: auto;
-    padding: 10px 0 17px;
+    padding: 16px 0 17px;
     /*margin-bottom: 5px;*/
     border-bottom: 1px solid #eee; 
 }
@@ -458,6 +458,26 @@ body{
 .Manufacturer .manuConLeft ul li{
     overflow: hidden;
 }
+
+.Manufacturer .manuConLeft .zxtz ul li{
+    height: 30px;
+    width: 353px;
+    overflow: hidden;
+    line-height: 30px;
+    padding: 3px 1px 1px 16px;
+    background: url(../../images/drivers/icon.png) no-repeat -2px -658px;
+}
+.Manufacturer .manuConLeft .zxtz ul li a{
+    font-size: 14px;
+    color: #0b68a9;
+}
+.Manufacturer .manuConLeft .zxtz ul li span{
+    font-size: 12px;
+    display: inline-block;
+    float: right;
+    margin-right: 18px;
+}
+
 .Manufacturer .manuConLeft .centerCon{
     height: 60px;
     font-size: 12px;
@@ -516,14 +536,31 @@ body{
     margin-top: 10px;
 }
 .zixunConRight .manuConRight .manuConRightB ul li img{
-    width: 75px;
-    height: 75px;
+    width: 73px;
+    height: 73px;
     margin-left: 10px;
     border-radius: 50%;
 }
 .zixunConRight .manuConRight .manuConRightB ul li p{
     text-align: center;
 }
+
+.zxLeft_con ol{
+    width: 96%;
+}
+.zxLeft_con ol li{
+    border-bottom: 1px solid #eee;
+    padding: 18px 0;
+}
+.zxLeft_con ol li .tjrz_title{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.zxLeft_con ol li .tjrz_dec{
+    font-size: 12px;
+}
+
 
 .footer{
     height: auto;

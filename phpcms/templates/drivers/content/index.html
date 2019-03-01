@@ -341,6 +341,48 @@
         </div>
         <!-- banner3-->
         {show_ad(1, 23)}
+        
+        <!-- 最新帖子-->
+        <div class="Manufacturer bgc_fff mt15 clearfix">
+            <div class="ManufacturerCon clearfix">
+                <div class="manuConLeft fl">
+                    <div class="manuConLeftL w49 fl zxtz"> 
+                        <div class="title1">
+                            <a href="{$bbsurl}" target="_blank">最新帖子</a>
+                        </div>
+                        <ul class="clearfix" style="margin-top: 10px;">
+                            <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread'][0]}"></script>
+                        </ul>
+                    </div>
+                    <div class="manuConLeftR w49 fr zxtz">
+                        <div class="title1 tar">
+                            <a href="{$bbsurl}" target="_blank"> < 更多</a>
+                        </div>
+                        <ul class="clearfix" style="margin-top: 10px;">
+                            <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread'][1]}"></script>
+                        </ul>
+                    </div>
+                </div>
+                <div class="manuConRight fr">
+                    <div class="manuConRightT">
+                        <div class="title1">
+                            <a href="" target="_blank">月度十大热门</a>
+                        </div>
+                        <div class="more">
+                            <a href="" target="_blank"> < 更多 </a>
+                        </div>
+                    </div>
+                    <div class="manuConRightB zxRight_con clearfix">
+                        <ul>
+                            <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['hot']}"></script>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner4-->
+        {show_ad(1, 24)}
+        <!-- 推荐日志 -->
         <div class="forum clearfix">
             <div class="zixun bgc_fff mt15">
                 <div class="zixunCon clearfix">
@@ -359,14 +401,14 @@
                         </div>
                         <div class="zxLeft_con clearfix">
                             <div class="zxLeft_conL fl w50 clearfix">
-                                <ul>
+                                <ol>
                                     <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['blog'][0]}"></script>
-                                </ul>
+                                </ol>
                             </div>
                             <div class="zxLeft_conR fr w50">
-                                <ul>
+                                <ol class="fr">
                                     <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['blog'][1]}"></script>
-                                </ul>
+                                </ol>
                             </div>
                         </div>
                     </div>
@@ -394,46 +436,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- banner4-->
-        {show_ad(1, 24)}
-        <!-- Manufacturer-->
-        <div class="Manufacturer bgc_fff mt15 clearfix">
-            <div class="ManufacturerCon clearfix">
-                <div class="manuConLeft fl">
-                    <div class="manuConLeftL w49 fl">
-                        <div class="title1">
-                            <a href="{$bbsurl}" target="_blank">推荐帖子</a>
-                        </div>
-                        <ul class="clearfix">
-                            <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread'][0]}"></script>
-                        </ul>
-                    </div>
-                    <div class="manuConLeftR w49 fr">
-                        <div class="title1 tar">
-                            <a href="{$bbsurl}" target="_blank"> < 更多</a>
-                        </div>
-                        <ul class="clearfix">
-                            <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread'][1]}"></script>
-                        </ul>
-                    </div>
-                </div>
-                <div class="manuConRight fr">
-                    <div class="manuConRightT">
-                        <div class="title1">
-                            <a href="" target="_blank">月度十大热门</a>
-                        </div>
-                        <div class="more">
-                            <a href="" target="_blank"> < 更多 </a>
-                        </div>
-                    </div>
-                    <div class="manuConRightB zxRight_con clearfix">
-                        <ul>
-                            <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['hot']}"></script>
-                        </ul>
                     </div>
                 </div>
             </div>
