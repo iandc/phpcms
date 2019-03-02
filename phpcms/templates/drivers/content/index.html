@@ -192,14 +192,16 @@
                             {/pc}
                         </ul>
                         <ul class="ul2 clearfix">
-                            {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="5" cache="3600"}
+                            {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="6" cache="3600"}
                             {php $i = 0;}
                             {loop $data $value}
                             {if $i >= 1}
                             <li>
                                 <div class="ls">
                                     <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 57, '')}</a>
-                                    <p>{str_cut($value['description'], 100, '')}</p>
+                                    <p>
+                                        <a href="{$value['url']}">{str_cut($value['description'], 100, '')}</a>
+                                    </p>
                                 </div>
                             </li>
                             {/if}

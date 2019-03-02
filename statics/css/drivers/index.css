@@ -165,12 +165,10 @@ body{
 }
 
 /*资讯*/
-.zxLeft_con ul li a, .zxRight_conc .ul2 li a{
-    font-size: 14px !important;
-}
 .zixun .zixunConLeft,.Manufacturer .manuConLeft{
     width: 735px;
-    padding: 12px 14px;
+    padding: 12px 14px 0 12px;
+
 }
 .zixun .zixunConLeft .zxLeft_title,.zixun .zixunConRight .zxRight_title{
     border-bottom: #dcdbdb 1px solid;
@@ -203,6 +201,7 @@ body{
 .zixun .zxLeft_con{
     padding: 10px 0;
     height: auto;
+    padding: 10px 0 5px 0;
 }
 .zxLeft_con ul{
     float: left;
@@ -241,7 +240,7 @@ body{
 .zixunConRight,.Manufacturer .manuConRight{
     width: 314px;
     float: right;
-    padding: 12px 6px 6px 6px;
+    padding: 12px 6px 0px 6px;
     border-left: #eee 2px solid;
 }
 .zixunConRight .zxRight_title{
@@ -305,7 +304,7 @@ body{
 .zxRight_conc{
     height: auto!important;
     min-height: 50px;
-    padding: 10px 8px 23px 10px;
+    padding: 10px 8px 5px 10px;
     font-size: 12px;
 }  
 .zxRight_conc .ul1 li{
@@ -355,12 +354,15 @@ body{
 }
 .zxRight_conc .ul2 li {
     height: auto;
-    padding: 16px 0 17px;
+    padding: 6px 0 7px;
     /*margin-bottom: 5px;*/
     border-bottom: 1px solid #eee; 
 }
 .zxRight_conc .ul2 li .ls{
     padding-left: 15px;
+}
+.zxRight_conc .ul2 li p a{
+    font-size: 12px;
 }
 .zxRight_conc .ul2 li a{
     font-size: 14px;
