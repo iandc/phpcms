@@ -1,6 +1,6 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
-//Ä£ĞÍ»º´æÂ·¾¶
+
 define('CACHE_MODEL_PATH', CACHE_PATH . 'caches_model' . DIRECTORY_SEPARATOR . 'caches_data' . DIRECTORY_SEPARATOR);
 pc_base::load_app_func('util', 'content');
 
@@ -16,7 +16,7 @@ class dev
         $this->_groupid = param::get_cookie('_groupid');
     }
 
-    //Ê×Ò³
+    //é¦–é¡µ
     public function init()
     {
         if (isset($_GET['siteid'])) {
@@ -43,7 +43,20 @@ class dev
     }
 
     public function type() {
-        $typeid = isset($_GET['typeid']) ? intval($_GET['typeid']) : 0;
+        if(is_int($_GET['typeid'])) {
+            $typeid = $_GET['typeid'] = intval($_GET['typeid']);
+        } else if(is_string($_GET['catid'])) {
+            $siteid = 1;//å…ˆå¼ºåˆ¶è®¾ç½®ä¸º1
+            $typeList = getcache('type_content_'.$siteid, 'commons');
+            foreach ($typeList as $value) {
+                if($value['description'] == $_GET['typeid']) {
+                    $typeid = $value['typeid'];
+                    break;
+                }
+            }
+        } else {
+            $typeid = 0;
+        }
         $catid = getNewsModelItemId();
         $_priv_data = $this->_category_priv($catid);
         if ($_priv_data == '-1') {
@@ -63,6 +76,7 @@ class dev
         if (!isset($CATEGORYS[$catid])) showmessage(L('category_not_exists'), 'blank');
         $CAT = $CATEGORYS[$catid];
         $siteid = $GLOBALS['siteid'] = $CAT['siteid'];
+
         extract($CAT);
         $setting = string2array($setting);
         //SEO
@@ -79,17 +93,18 @@ class dev
         $top_parentid = $arrparentid[1] ? $arrparentid[1] : $catid;
         $array_child = array();
         $self_array = explode(',', $arrchildid);
-        //»ñÈ¡Ò»¼¶À¸Ä¿ids
+        //è·å–ä¸€çº§æ ç›®ids
         foreach ($self_array as $arr) {
             if ($arr != $catid && $CATEGORYS[$arr]['parentid'] == $catid) {
                 $array_child[] = $arr;
             }
         }
         $arrchildid = implode(',', $array_child);
-        //URL¹æÔò
+        //URLè§„åˆ™
         $urlrules = getcache('urlrules', 'commons');
 
-        $urlrules = str_replace('|', '~', 'type-{$typeid}.html|type-{$typeid}-{$page}.html');
+        //$urlrules = str_replace('|', '~', 'type-{$typeid}.html|type-{$typeid}-{$page}.html');
+        $urlrules = str_replace('|', '~', '{$page}');
         $tmp_urls = explode('~', $urlrules);
         $tmp_urls = isset($tmp_urls[1]) ? $tmp_urls[1] : $tmp_urls[0];
         preg_match_all('/{\$([a-z0-9_]+)}/i', $tmp_urls, $_urls);
@@ -132,7 +147,7 @@ class dev
         $r2 = $this->db->get_one(array('id'=>$id));
         $rs = $r2 ? array_merge($r,$r2) : $r;
 
-        //ÔÙ´ÎÖØĞÂ¸³Öµ£¬ÒÔÊı¾İ¿âÎª×¼
+        //å†æ¬¡é‡æ–°èµ‹å€¼ï¼Œä»¥æ•°æ®åº“ä¸ºå‡†
         $catid = $CATEGORYS[$r['catid']]['catid'];
         $modelid = $CATEGORYS[$catid]['modelid'];
 
@@ -146,7 +161,7 @@ class dev
         $data = $content_output->get($rs);
         extract($data);
 
-        //¼ì²éÎÄÕÂ»áÔ±×éÈ¨ÏŞ
+        //æ£€æŸ¥æ–‡ç« ä¼šå‘˜ç»„æƒé™
         if($groupids_view && is_array($groupids_view)) {
             $_groupid = param::get_cookie('_groupid');
             $_groupid = intval($_groupid);
@@ -156,7 +171,7 @@ class dev
             }
             if(!in_array($_groupid,$groupids_view)) showmessage(L('no_priv'));
         } else {
-            //¸ù¾İÀ¸Ä¿·ÃÎÊÈ¨ÏŞÅĞ¶ÏÈ¨ÏŞ
+            //æ ¹æ®æ ç›®è®¿é—®æƒé™åˆ¤æ–­æƒé™
             $_priv_data = $this->_category_priv($catid);
             if($_priv_data=='-1') {
                 $forward = urlencode(get_url());
@@ -170,7 +185,7 @@ class dev
         } else {
             $allow_comment = 0;
         }
-        //ÔÄ¶ÁÊÕ·Ñ ÀàĞÍ
+        //é˜…è¯»æ”¶è´¹ ç±»å‹
         $paytype = $rs['paytype'];
         $readpoint = $rs['readpoint'];
         $allow_visitor = 1;
@@ -180,7 +195,7 @@ class dev
                 $paytype = $this->category_setting['paytype'];
             }
 
-            //¼ì²éÊÇ·ñÖ§¸¶¹ı
+            //æ£€æŸ¥æ˜¯å¦æ”¯ä»˜è¿‡
             $allow_visitor = self::_check_payment($catid.'_'.$id,$paytype);
             if(!$allow_visitor) {
                 $http_referer = urlencode(get_url());
@@ -189,7 +204,7 @@ class dev
                 $allow_visitor = 1;
             }
         }
-        //×î¶¥¼¶À¸Ä¿ID
+        //æœ€é¡¶çº§æ ç›®ID
         $arrparentid = explode(',', $CAT['arrparentid']);
         $top_parentid = $arrparentid[1] ? $arrparentid[1] : $catid;
 
@@ -207,13 +222,13 @@ class dev
         }
         $pages = $titles = '';
         if($rs['paginationtype']==1) {
-            //×Ô¶¯·ÖÒ³
+            //è‡ªåŠ¨åˆ†é¡µ
             if($maxcharperpage < 10) $maxcharperpage = 500;
             $contentpage = pc_base::load_app_class('contentpage');
             $content = $contentpage->get_data($content,$maxcharperpage);
         }
         if($rs['paginationtype']!=0) {
-            //ÊÖ¶¯·ÖÒ³
+            //æ‰‹åŠ¨åˆ†é¡µ
             $CONTENT_POS = strpos($content, '[page]');
             if($CONTENT_POS !== false) {
                 $this->url = pc_base::load_app_class('url', 'content');
@@ -238,9 +253,9 @@ class dev
                         }
                     }
                 }
-                //µ±²»´æÔÚ [/page]Ê±£¬ÔòÊ¹ÓÃÏÂÃæ·ÖÒ³
+                //å½“ä¸å­˜åœ¨ [/page]æ—¶ï¼Œåˆ™ä½¿ç”¨ä¸‹é¢åˆ†é¡µ
                 $pages = content_pages($pagenumber,$page, $pageurls);
-                //ÅĞ¶Ï[page]³öÏÖµÄÎ»ÖÃÊÇ·ñÔÚµÚÒ»Î»
+                //åˆ¤æ–­[page]å‡ºç°çš„ä½ç½®æ˜¯å¦åœ¨ç¬¬ä¸€ä½
                 if($CONTENT_POS<7) {
                     $content = $contents[$page];
                 } else {
@@ -263,9 +278,9 @@ class dev
             }
         }
         $this->db->table_name = $tablename;
-        //ÉÏÒ»Ò³
+        //ä¸Šä¸€é¡µ
         $previous_page = $this->db->get_one("`catid` = '$catid' AND `id`<'$id' AND `status`=99",'*','id DESC');
-        //ÏÂÒ»Ò³
+        //ä¸‹ä¸€é¡µ
         $next_page = $this->db->get_one("`catid`= '$catid' AND `id`>'$id' AND `status`=99",'*','id ASC');
 
         if(empty($previous_page)) {
@@ -279,7 +294,7 @@ class dev
     }
 
     /**
-     * ¼ì²éÔÄ¶ÁÈ¨ÏŞ
+     * æ£€æŸ¥é˜…è¯»æƒé™
      *
      */
     protected function _category_priv($catid)

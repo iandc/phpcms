@@ -19,8 +19,39 @@ class MY_index extends index
 
     public function lists()
     {
-        $catid = $_GET['catid'] = intval($_GET['catid']);
-        $typeid = isset($_GET['typeid']) ? intval($_GET['typeid']) : 0;
+        if(is_int($_GET['catid'])) {
+            $catid = $_GET['catid'] = intval($_GET['catid']);
+        } else if(is_string($_GET['catid'])) {
+            $catid = 0;
+            $siteid = 1;//先强制设置为1
+            $CATEGORYS = getcache('category_content_' . $siteid, 'commons');
+            foreach ($CATEGORYS as $value) {
+                if($value['catdir'] && $value['catdir'] == trim($_GET['catid'])) {
+                    $catid = $value['catid'];
+                    $catdir = $value['catdir'];
+                    break;
+                }
+            }
+        } else if(empty($catid)) {
+            $catid = getNewsModelItemId();
+        }
+
+        if(is_int($_GET['typeid'])) {
+            $typeid = $_GET['typeid'] = intval($_GET['typeid']);
+        } else if(is_string($_GET['typeid'])) {
+            $siteid = 1;//先强制设置为1
+            $typeList = getcache('type_content_'.$siteid, 'commons');
+            foreach ($typeList as $value) {
+                if($_GET['typeid'] == $value['description']) {
+                    $typeid = $value['typeid'];
+                    $typename = $value['description'];
+                    break;
+                }
+            }
+        } else {
+            $typeid = 0;
+        }
+
         $_priv_data = $this->_category_priv($catid);
         if ($_priv_data == '-1') {
             $forward = urlencode(get_url());
@@ -66,9 +97,12 @@ class MY_index extends index
             //URL规则
             $urlrules = getcache('urlrules', 'commons');
             $urlrules = str_replace('|', '~', $urlrules[$category_ruleid]);
+
+            $urlrules = '{$page}';//上面获取到的url规则，会重复追加旧参数，所以写死在这里了
             $tmp_urls = explode('~', $urlrules);
             $tmp_urls = isset($tmp_urls[1]) ? $tmp_urls[1] : $tmp_urls[0];
             preg_match_all('/{\$([a-z0-9_]+)}/i', $tmp_urls, $_urls);
+
             if (!empty($_urls[1])) {
                 foreach ($_urls[1] as $_v) {
                     $GLOBALS['URL_ARRAY'][$_v] = $_GET[$_v];
@@ -79,6 +113,7 @@ class MY_index extends index
             $GLOBALS['URL_ARRAY']['catdir'] = $catdir;
             $GLOBALS['URL_ARRAY']['catid'] = $catid;
             $GLOBALS['URL_ARRAY']['typeid'] = $typeid;
+            $GLOBALS['URL_ARRAY']['typename'] = $typename;
             include template('content', $template);
         } else {
             //单网页
@@ -106,7 +141,7 @@ class MY_index extends index
             $siteid = 1;//先强制设置为1
             $CATEGORYS = getcache('category_content_' . $siteid, 'commons');
             foreach ($CATEGORYS as $value) {
-                if($value['catdir'] == trim($_GET['catdir'])) {
+                if($value['catdir'] && $value['catdir'] == trim($_GET['catdir'])) {
                     $catid = $value['catid'];
                     break;
                 }
