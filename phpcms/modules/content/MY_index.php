@@ -19,7 +19,7 @@ class MY_index extends index
 
     public function lists()
     {
-        if(is_int($_GET['catid'])) {
+        if(is_numeric($_GET['catid'])) {
             $catid = $_GET['catid'] = intval($_GET['catid']);
         } else if(is_string($_GET['catid'])) {
             $catid = 0;
@@ -36,7 +36,7 @@ class MY_index extends index
             $catid = getNewsModelItemId();
         }
 
-        if(is_int($_GET['typeid'])) {
+        if(is_numeric($_GET['typeid'])) {
             $typeid = $_GET['typeid'] = intval($_GET['typeid']);
         } else if(is_string($_GET['typeid'])) {
             $siteid = 1;//先强制设置为1
