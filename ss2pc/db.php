@@ -1,6 +1,6 @@
 <?php
 return [
-    /*'attachments' => [
+    'attachments' => [
         'attachment' => [
             'aid' => 'aid',
             'catid' => 'catid',
@@ -23,7 +23,7 @@ return [
         ],
     ],
 
-    'tags' => [
+    /*'tags' => [
         'keyword' => [
             'tagid' => 'id',
             'tagname' => 'keyword',
@@ -44,9 +44,9 @@ return [
             'siteid' => 1,
             'contentid' => '', //contentid-modelid
         ],
-    ],
+    ],*/
 
-    /*'categories' => [ //转换到子栏目
+    'categories' => [ //转换到子栏目
         'category' => [
             'catid' => 'catid',
             'name' => 'catname',
@@ -59,11 +59,12 @@ return [
             'parentid' => 0,
             'catdir' => '',
             'child' => 0,
-            'setting' => '{"workflowid":"","ishtml":"0","content_ishtml":"0","create_to_html_root":"1","template_list":"default","category_template":"category","list_template":"list","show_template":"show","meta_title":"","meta_keywords":"","meta_description":"","presentpoint":"1","defaultchargepoint":"0","paytype":"0","repeatchargedays":"1","category_ruleid":"6","show_ruleid":"16"}'
+            'usable_type' => ',57,54,55,',
+            'setting' => '{"workflowid":"","ishtml":"0","content_ishtml":"0","create_to_html_root":"0","template_list":"drivers","category_template":"category","list_template":"list","show_template":"show","meta_title":"","meta_keywords":"","meta_description":"","presentpoint":"1","defaultchargepoint":"0","paytype":"0","repeatchargedays":"1","category_ruleid":"33","show_ruleid":"32"}',
         ],
-    ],*/
+    ],
 
-    /*'spaceitems' => [
+    'spaceitems' => [
         'news' => [
             'itemid' => 'id',
             'catid' => 'catid',
@@ -77,15 +78,15 @@ return [
             'status' => 99, // 0退稿，1~4审核状态 99通过
             'description' => '',
             'updatetime' => 0,
+
         ],
-    ],*/
+    ],
 
     'spacenews' => [
         'news_data' => [
             'itemid' => 'id',
             'newsfrom' => 'copyfrom',
             'message' => 'content',
-            'newsurl' => 'url',
         ],
         'create' => [
             'allow_comment' => 1,

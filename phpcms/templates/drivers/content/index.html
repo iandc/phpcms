@@ -88,10 +88,10 @@
                         <div class="zxLeft_conL fl w50">
                             <ul class="mb10">
                                 {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="3600"}
-                                {php $i = 0;}
+                                {php $i = 0;} 
                                 {loop $data $value}
-                                {if $i < 8}
-                                <li>
+                                {if $i < 16}
+                                <li class="{if $i == 8}mt15{/if}">
                                     <div class="lis fl">
                                         <span class="tit">
                                             <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
@@ -105,33 +105,14 @@
                                 {/loop}
                                 {/pc}
                             </ul>
-
-                            <ul>
-                                {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="16" cache="3600"}
-                                {php $i = 0;}
-                                {loop $data $value}
-                                {if $i < 8}
-                                <li>
-                                    <div class="lis fl">
-                                        <span class="tit">
-                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
-                                        </span>
-                                    </div>
-                                            
-                                    <span class="t fr">{date('m-d', $value['inputtime'])}</span>
-                                </li>
-                                {/if}
-                                {php $i++;}
-                                {/loop}
-                                {/pc}
-                            </ul>
                         </div>
                         <div class="zxLeft_conR fr" style="width: 48%;">
                             <ul class="mb10">
+                                {pc:content action="lists" catid="$newsid" where="status=99" order="id DESC" num="32" cache="3600"}
                                 {php $i = 0;}
                                 {loop $data $value}
-                                {if $i >= 8}
-                                <li>
+                                {if $i >= 16}
+                                <li class="{if $i == 24}mt15{/if}">
                                     <div class="lis fl">
                                         <span class="tit">
                                             <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
@@ -143,24 +124,7 @@
                                 {/if}
                                 {php $i++;}
                                 {/loop}
-                            </ul>
-
-                            <ul>
-                                {php $i = 0;}
-                                {loop $data $value}
-                                {if $i >= 8}
-                                <li>
-                                    <div class="lis fl">
-                                        <span class="tit">
-                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
-                                        </span>
-                                    </div>
-                                            
-                                    <span class="t fr">{date('m-d', $value['inputtime'])}</span>
-                                </li>
-                                {/if}
-                                {php $i++;}
-                                {/loop}
+                                {/pc}
                             </ul>
                         </div>
                     </div>

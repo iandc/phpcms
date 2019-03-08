@@ -2,10 +2,11 @@
     /*width: 340px;*/
     z-index: 1;
 }
-.cm_four_r .tabs .tab{
-    overflow: hidden;
-    width: 298px;
+.cm_four_r .tabs{
     border-top: 3px solid #29759B;
+}
+.cm_four_r .tabs .tab{
+    width: 298px;
 }
 .cm_four_r .tab {
      border: 1px solid #ddd;
@@ -54,7 +55,7 @@
 }
 
 .cm_four_r .tab li.active {
-    border-bottom: 2px #29759B solid;
+    border-bottom: 1.5px #29759B solid;
     background: #fff;
     color: #29759B;
 }

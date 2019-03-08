@@ -1,11 +1,12 @@
 <?php
 
+
 $find = [
     'http://www.eetop.cn/blog/attachments',
 ];
 
 $replace = [
-    'http://www.eetop.wang/uploadfile',
+    'http://www.eetop.cn/uploadfile',
 ];
 
 $sTableName = trim($_GET['table']);
@@ -38,6 +39,7 @@ if ($sTableName == 'attachments') {
 
     if ($list) {
         foreach ($list as $key => $value) {
+            $value = new_stripslashes($value);
             $value = new_addslashes($value);
             $insert1 = array_flip($converts[$sTableName][$tTableNmae]);
             $insert2 = $converts[$sTableName]['create'];
@@ -79,6 +81,7 @@ if ($sTableName == 'attachments') {
 
     if ($list) {
         foreach ($list as $key => $value) {
+            $value = new_stripslashes($value);
             $value = new_addslashes($value);
             $insert1 = array_flip($converts[$sTableName][$tTableNmae]);
             $insert2 = $converts[$sTableName]['create'];
@@ -113,6 +116,7 @@ if ($sTableName == 'attachments') {
 
     if ($list) {
         foreach ($list as $key => $value) {
+            $value = new_stripslashes($value);
             $value = new_addslashes($value);
             $insert1 = array_flip($converts[$sTableName][$tTableNmae]);
             $insert2 = $converts[$sTableName]['create'];
@@ -134,15 +138,8 @@ if ($sTableName == 'attachments') {
         }
     }
 } else if ($sTableName == 'categories') {
-    $download_setting = '{"workflowid":"","ishtml":"0","content_ishtml":"0","create_to_html_root":"0","template_list":"default","category_template":"category_download","list_template":"list_download","show_template":"show_download","meta_title":"","meta_keywords":"","meta_description":"","presentpoint":"1","defaultchargepoint":"0","paytype":"0","repeatchargedays":"1","category_ruleid":"6","show_ruleid":"16"}';
+    $download_setting = '{"workflowid":"","ishtml":"0","content_ishtml":"0","create_to_html_root":"0","template_list":"drivers","category_template":"category","list_template":"list","show_template":"show","meta_title":"","meta_keywords":"","meta_description":"","presentpoint":"1","defaultchargepoint":"0","paytype":"0","repeatchargedays":"1","category_ruleid":"33","show_ruleid":"32"}';
     if ($page == 1) {
-        $sql = "delete from {$pcdb_pre}category where catid > 5";
-        $pcdb->query($sql);
-        $sql = "OPTIMIZE table {$pcdb_pre}category";
-        $pcdb->query($sql);
-        $sql = "REPAIR table {$pcdb_pre}category";
-        $pcdb->query($sql);
-
         $firstCategory = [
             'siteid' => 1,
             'module' => 'content',
@@ -182,6 +179,7 @@ if ($sTableName == 'attachments') {
 
     if ($list) {
         foreach ($list as $key => $value) {
+            $value = new_stripslashes($value);
             $value = new_addslashes($value);
             $insert1 = array_flip($converts[$sTableName][$tTableNmae]);
             $insert2 = $converts[$sTableName]['create'];
@@ -198,7 +196,11 @@ if ($sTableName == 'attachments') {
                 if ($k2 == 'parentid') {
                     $insert2[$k2] = $pid;
                 } else if ($k2 == 'catdir') {
-                    $insert2[$k2] = 'category_' . $value['catid'];
+                    $catDir = getCatDirName($value['name']);
+                    if(!$catDir) {
+                        $catDir = 'category_' . $value['catid'];
+                    }
+                    $insert2[$k2] = $catDir;
                 } else if ($k2 == 'setting') {
                     if ($value['type'] == 'file') {
                         $insert2['setting'] = new_addslashes($download_setting);
@@ -218,14 +220,9 @@ if ($sTableName == 'attachments') {
     }
 } else if ($sTableName == 'spaceitems') {
     if ($page == 1) {
-        /*$sql = "truncate table {$pcdb_pre}comment";
-        $pcdb->query($sql);
-        $sql = "truncate table {$pcdb_pre}comment_data_1";
-        $pcdb->query($sql);*/
         $sql = "truncate table {$pcdb_pre}hits";
         $pcdb->query($sql);
     }
-
     $sql = "SELECT * FROM " . $ssdb_pre . $sTableName . " WHERE `type`='news' LIMIT $start, $pageSize";
 
     $r = $ssdb->query($sql);
@@ -235,6 +232,7 @@ if ($sTableName == 'attachments') {
 
     if ($list) {
         foreach ($list as $key => $value) {
+            $value = new_stripslashes($value);
             $value = new_addslashes($value);
             $insert1 = array_flip($converts[$sTableName][$tTableNmae]);
             $insert2 = $converts[$sTableName]['create'];
@@ -293,7 +291,7 @@ if ($sTableName == 'attachments') {
 } else if ($sTableName == 'spacenews') {
     $keys = array_keys($converts);
     $pTableName = $keys[array_search($sTableName, $keys) - 1];
-    $sql = "SELECT $ssdb_pre$sTableName.* FROM  $ssdb_pre$sTableName LEFT JOIN $ssdb_pre$pTableName on $ssdb_pre$sTableName.itemid=$ssdb_pre$pTableName.itemid WHERE $ssdb_pre$pTableName.`type`='news' LIMIT $start, $pageSize";
+    $sql = "SELECT {$ssdb_pre}{$sTableName}.* FROM  {$ssdb_pre}{$sTableName} LEFT JOIN {$ssdb_pre}{$pTableName} on {$ssdb_pre}{$sTableName}.itemid={$ssdb_pre}{$pTableName}.itemid WHERE {$ssdb_pre}{$pTableName}.`type`='news' LIMIT $start, $pageSize";
 
     $r = $ssdb->query($sql);
     $list = $ssdb->fetch_array();
@@ -302,6 +300,7 @@ if ($sTableName == 'attachments') {
 
     if ($list) {
         foreach ($list as $key => $value) {
+            $value = new_stripslashes($value);
             $value = new_addslashes($value);
             $insert1 = array_flip($converts[$sTableName][$tTableNmae]);
             $insert2 = $converts[$sTableName]['create'];
@@ -309,10 +308,11 @@ if ($sTableName == 'attachments') {
                 //ss message为空取newsurl 对应pc的islink=1 和 url
                 if ($k == 'url' && $value[$v]) {
                     $insert1['islink'] = 1;
+                    $url = new_addslashes($value[$v]);
                 }
                 if ($k == 'content') {
                     $content = new_stripslashes($value[$v]);
-                    //$content = str_replace($find[0], $replace[0], new_stripslashes($value[$v]));
+                    $content = str_replace($find[0], $replace[0], new_stripslashes($value[$v]));
                     $insert1[$k] = new_addslashes($content);
                     $thumb = '';
                     if (preg_match_all("/(src)=([\"|']?)([^ \"'>]+\.(gif|jpg|jpeg|bmp|png))\\2/i", $content, $matches)) {
@@ -328,9 +328,10 @@ if ($sTableName == 'attachments') {
             $insert = $insert1 + $insert2;
 
             $sql = "INSERT INTO " . $pcdb_pre . $tTableNmae . " SET " . to_sqls($insert, ',');
+
             $pcdb->query($sql);
             $id = $pcdb->insert_id();
-            $sql = "update {$pcdb_pre}news SET `description`='$description',thumb='$thumb' WHERE id={$insert['id']}";
+            $sql = "update {$pcdb_pre}news SET `url`='$url',`description`='$description',thumb='$thumb' WHERE id={$insert['id']}";
             $pcdb->query($sql);
         }
     }
@@ -401,6 +402,38 @@ if (!$table) {
     ext_go("转换所有表完成，继续下一步", '', 1);
 } else {
     ext_go("转换 $sTableName 表到 $tTableNmae 完成，继续下一个表", "filename=handle&table=$table", 0);
+}
+
+
+function getCatDirName($catName = '')
+{
+    $catDirNameList = [
+        'semi' => '半导体/EDA',
+        'fpga' => '可编程逻辑',
+        'eda-pcb' => 'EDA/PCB',
+        'cpu-soc' => '处理器',
+        'analog-power' => '模拟/电源',
+        'rf' => '射频微波',
+        'embedded' => '嵌入式',
+        'measurement' => '测试测量',
+        'sensor' => '传感器',
+        'communication' => '通信/手机',
+        'ai' => '人工智能',
+        'iot' => '物联网',
+        'auto' => '汽车电子',
+        'medical' => '医疗电子',
+        'industrial' => '工业电子',
+        'consumer' => '综合电子',
+        'Wearable' => '可穿戴',
+        'robot' => '飞行/机器人',
+        'othertech' => '其他科技',
+    ];
+    foreach ($catDirNameList as $key => $value) {
+        if ($value == trim($catName)) {
+            return $key;
+        }
+    }
+    return '';
 }
 
 

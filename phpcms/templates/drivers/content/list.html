@@ -9,7 +9,7 @@
                 {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="3600"}
                     {loop $data $value}
                         <li {if $catid == $value['catid']}class="current"{/if}>
-                            <a href="{APP_PATH}list-{$value['catid']}-{$typeid}-1.html">{$value['catname']}</a>
+                            <a href="{APP_PATH}{$value['catdir']}/tech/1">{$value['catname']}</a>
                         </li>
                     {/loop}
                 {/pc}
