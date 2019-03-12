@@ -1,15 +1,22 @@
 {template 'content', 'header'}
+
+{if $typeid == $typeidList['news']}
+    {php $typeName = 'news';}
+{else}
+    {php $typeName = 'tech';}
+{/if}
+
 <div class="wrap w100">
     {show_ad(1, 25)}
     <div class="w1100 content bg_fff">
         {template 'content', 'nav'}
         <div class="whole">
             <ul>
-                <li {if $catid == 0}class="current"{/if}><a href="{APP_PATH}type-{$typeid}-1.html">全部</a></li>
+                <li {if $catid == 0}class="current"{/if}><a href="{APP_PATH}{$typeName}/1">全部</a></li>
                 {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="3600"}
                     {loop $data $value}
                         <li {if $catid == $value['catid']}class="current"{/if}>
-                            <a href="{APP_PATH}{$value['catdir']}/tech/1">{$value['catname']}</a>
+                            <a href="{APP_PATH}{$value['catdir']}/{$typeName}/1">{$value['catname']}</a>
                         </li>
                     {/loop}
                 {/pc}
@@ -19,6 +26,7 @@
             <div class="cm_four clearfix bg_fff">
                 <div class="cm_four_l fl">
                     <div class="cate_list">
+                        {show_ad(1, 35)}
                         <ul class="clearfix">
                             {if $catid}
                                 {if $typeid}

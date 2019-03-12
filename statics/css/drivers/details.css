@@ -16,6 +16,11 @@ body{
     width: 1068px;
     height: 90px;
 }
+.cate_list .GoogleActiveViewClass a img{
+    width: 730px;
+    margin-top: 10px;
+}
+
 
 .log{
     margin: 10px 0;

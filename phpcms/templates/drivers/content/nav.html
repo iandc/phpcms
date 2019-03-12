@@ -4,16 +4,16 @@
          <li>
              {if $typeid == $typeidList['news']}
                 <a href="{APP_PATH}type-{$typeidList['news']}-1.html">资讯</a> >&nbsp;
-             {elseif $typeid == $typeidList['tec']}
-                <a href="{APP_PATH}type-{$typeidList['tec']}-1.html">技术</a>&nbsp;>&nbsp;
+             {elseif $typeid == $typeidList['tech']}
+                <a href="{APP_PATH}type-{$typeidList['tech']}-1.html">技术</a>&nbsp;>&nbsp;
              {/if}
          </li>
          <li>
              {if $typeid == $typeidList['news']}
              <a href="{APP_PATH}list-{$catid}-{$typeidList['news']}-1.html">{$catname}</a> >&nbsp;
-             {elseif $typeid == $typeidList['tec']}
+             {elseif $typeid == $typeidList['tech']}
 <div class="crumbs nav_css nav_css_no">
-             <a href="{APP_PATH}list-{$catid}-{$typeidList['tec']}-1.html">{$catname}</a>&nbsp; >&nbsp;
+             <a href="{APP_PATH}list-{$catid}-{$typeidList['tech']}-1.html">{$catname}</a>&nbsp; >&nbsp;
              {/if}
          </li>
          <li>
@@ -27,8 +27,8 @@
         <li>
             {if $typeid == $typeidList['news']}
                 <a href="{APP_PATH}type-{$typeidList['news']}-1.html">资讯 &nbsp; >  </a>
-            {elseif $typeid == $typeidList['tec']}
-                <a href="{APP_PATH}type-{$typeidList['tec']}-1.html">技术 &nbsp; >  </a>
+            {elseif $typeid == $typeidList['tech']}
+                <a href="{APP_PATH}type-{$typeidList['tech']}-1.html">技术 &nbsp; >  </a>
             {/if}
         </li>
         <li>

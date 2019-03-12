@@ -184,7 +184,7 @@
         <div class="curriculum mt15">
             <div class="w1100 curriculumCon bgc_fff clearfix">
                 <div class="title2">
-                    <a href="{APP_PATH}type-{$typeidList['tec']}-1.html" class=" a1 fl">创新大讲堂</a>
+                    <a href="{APP_PATH}type-{$typeidList['tech']}-1.html" class=" a1 fl">创新大讲堂</a>
                     <a href="" class="a2 fr"> < 更多</a>
                 </div>
                 <ul class="ul">
@@ -214,10 +214,10 @@
                     <div class="manuConLeft fl">
                         <div class="manuConLeftL w49 fl">
                             <div class="title1">
-                                <a href="{APP_PATH}type-{$typeidList['tec']}-1.html" target="_blank">技术文章</a>
+                                <a href="{APP_PATH}type-{$typeidList['tech']}-1.html" target="_blank">技术文章</a>
                             </div>
                             <ul>
-                                {php $where = 'typeid='.$typeidList['tec'];}
+                                {php $where = 'typeid='.$typeidList['tech'];}
                                 {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="8" cache="3600"}
                                 {php $i = 0;}
                                 {loop $data $value}
@@ -252,7 +252,7 @@
                         </div>
                         <div class="manuConLeftR w49 fr">
                             <div class="title1 tar">
-                                <a href="{APP_PATH}type-{$typeidList['tec']}-1.html" class="fs12" target="_blank"> < 更多</a>
+                                <a href="{APP_PATH}type-{$typeidList['tech']}-1.html" class="fs12" target="_blank"> < 更多</a>
                             </div>
                             <ul>
                                 {php $i = 0;}
@@ -444,6 +444,7 @@
             <p class="copyTxt"><a href="" target="_blank">京ICP备:10050787号 京公网安备：110105001212</a></p>
         </div>
     </div>
+    {show_ad(1, 33)}
 </div>
     <script>
     var timer = setInterval(active,2000);
