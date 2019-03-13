@@ -1,7 +1,7 @@
 {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="86400"}
 {loop $data $value}
 <li class="{if $value['modelid'] == 1}lis{/if}">
-    <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" target="_blank" href="{APP_PATH}news/1">{$value['catname']}</a>
+    <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" target="_blank" href="{if $value['type'] == 2}{$value['url']}{else}{APP_PATH}news/1{/if}">{$value['catname']}</a>
     {if $value['catid'] == $newsid}
     <ul class="sub_mune_ul">
         <li><a href="{APP_PATH}news/1" target="_blank">全部</a></li>
@@ -16,7 +16,7 @@
 {/loop}
 {/pc}
 <li class="lis">
-    <a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}type-{$typeidList['tech']}-1.html" target="_blank">技术文章</a>
+    <a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}tech/1" target="_blank">技术文章</a>
     <ul class="sub_mune_ul clearfix">
         <li><a href="{APP_PATH}tech/1" target="_blank">全部</a></li>
         {loop $d $v}
