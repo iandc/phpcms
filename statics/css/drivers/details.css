@@ -21,6 +21,13 @@ body{
     margin-top: 10px;
 }
 
+.all_banner{
+    width: 728px;
+    height: auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #efefef;
+}
+
 
 .log{
     margin: 10px 0;

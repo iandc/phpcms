@@ -34,7 +34,7 @@ body{
 .con_three .con_three_l .post_tit h1{
     text-align: center;
     font-weight: 500;
-    font-size: 26px;
+    font-size: 20px;
     line-height: 1.5;
 }
 .con_three .con_three_l .post_tit  span{
@@ -114,6 +114,14 @@ body{
 }
 .con_three .con_three_l .relevant .list_3 li{
     float: left;
+}
+
+.all_banner_show{
+    width: 728px;
+    height: auto;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #efefef;
 }
 
 .right_con{
