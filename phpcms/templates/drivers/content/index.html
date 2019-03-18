@@ -49,7 +49,7 @@
                         最新活动
                     </div>
                     <ul class="clearfix">
-                        {pc:content action="position" posid="$posidList['newActivity']" order="listorder DESC" num="7" cache="3600"}
+                        {pc:content action="position" posid="$posidList['newActivity']" order="listorder DESC" num="5" cache="3600"}
                         {loop $data $value}
                         <li>
                             <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 45, '')}</a>
