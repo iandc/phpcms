@@ -57,4 +57,3 @@ function hits($hitsid) {
 }
 
 ?>
-$('#hits').html('<?php echo $views?>');

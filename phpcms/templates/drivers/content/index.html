@@ -353,11 +353,11 @@
                             <ul>
                                 <li class="fl">
                                     <span>
-                                        <a href="{$blogurl}" target="_blank">推荐日志</a>
+                                        <a href="http://bbs.eetop.cn/home.php?mod=space&do=blog&view=all&order=hot" target="_blank">推荐日志</a>
                                     </span>
                                 </li>
                                 <li class="fr">
-                                    <a href="{$blogurl}" target="_blank"> < 更多</a>
+                                    <a href="http://bbs.eetop.cn/home.php?mod=space&do=blog&view=all" target="_blank"> < 更多</a>
                                 </li>
                             </ul>
                         </div>
@@ -416,7 +416,7 @@
         </div>
         <div class="footerBottom clearfix">
             <ul class="clearfix">
-                {pc:link action="lists" typeid="0" siteid="$siteid" linktype="0" order="desc" cache="86400"}
+                {pc:link action="lists" typeid="0" siteid="$siteid" linktype="0" num="100" order="desc" cache="86400"}
                 {loop $data $value}
                 <li class="fl"><a href="{$value['url']}" title="{$value['name']}" target="_blank">{$value['name']}</a></li>
                 {/loop}
