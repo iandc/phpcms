@@ -240,7 +240,7 @@ body{
 .zixunConRight,.Manufacturer .manuConRight{
     width: 314px;
     float: right;
-    padding: 12px 6px 0px 6px;
+    padding: 12px 6px 10px 6px;
     border-left: #eee 2px solid;
 }
 .zixunConRight .zxRight_title{
@@ -253,10 +253,19 @@ body{
     display: block;
     font-size: 14px;
     margin-top: -5px;
-    color: #0b68a9;
+    color: #F36F60;
 }
-.zxRight_con{
-    padding:0 22px 11px 4px;
+.zxRight_con2{
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin-top: 7px;
+    padding-top: 5px;
+    background: url(../../images/drivers/hot_title_bg.gif) 0 14px no-repeat;
+}
+.zxRight_con2 ul li{
+    height: auto !important;
+    padding: 5.5px;
 }
 .zxRight_con ul li{
     height: 40px;
@@ -279,21 +288,21 @@ body{
      white-space: normal;
      -webkit-box-orient: vertical;
     overflow: hidden;
-    margin-left: 15px;
+    margin-left: 20px;
 }
 .zxRight_con .right_txt span{
     display: inline-block;
     width: 100%;
     color: #C00;
     overflow: hidden;
-    margin-top: 11px;
-    margin-bottom: 5px;
     max-height: 40px;
     font-size: 12px;
-    font-weight: bold;
 }
 .zxRight_con .right_txt span a{
     font-size: 13px;
+}
+.zxRight_con .right_txt span a:hover{
+    color: #0b68a9;
 }
 .zxRight_con .right_txt a{
     color: #474747;
@@ -472,6 +481,9 @@ body{
     font-size: 14px;
     color: #0b68a9;
 }
+.Manufacturer .manuConLeft .zxtz ul li a:hover{
+    color: #F36F60;
+}
 .Manufacturer .manuConLeft .zxtz ul li span{
     font-size: 12px;
     display: inline-block;
@@ -498,6 +510,9 @@ body{
     line-height: 18px;
     padding-bottom: 5px;
 }
+.Manufacturer .manuConLeft .centerCon .centerCon_txt h3 a:hover{
+    color: #0b68a9;
+}
 .Manufacturer .manuConLeft .bottomCon{
     font-size: 12px;
     height: auto;
@@ -517,7 +532,7 @@ body{
     position: relative;
 }
 .article .manuConRight .manuConRightT .title1 a,.Manufacturer .manuConRight .manuConRightT .title1 a{
-    color: #0b68a9;
+    color: #F36F60;
     font-weight: bold;
 }
 .article .manuConRight .more,.Manufacturer .manuConRight .more{
@@ -558,8 +573,14 @@ body{
     font-weight: bold;
     margin-bottom: 10px;
 }
+.zxLeft_con ol li .tjrz_title a:hover{
+    color:#0b68a9;
+}
 .zxLeft_con ol li .tjrz_dec{
     font-size: 12px;
+}
+.username a:hover{
+    color: #0b68a9;
 }
 
 
@@ -600,6 +621,10 @@ body{
 }
 .footer .footerBottom ul li a{
     text-align: center;
+}
+.footer .footerBottom ul li a:hover{
+    text-decoration: underline;
+    color: #0b68a9;
 }
 .ftNav{
     margin-bottom: 15px;

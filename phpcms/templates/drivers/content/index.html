@@ -214,10 +214,10 @@
                             </div>
                             <ul>
                                 {php $where = 'typeid='.$typeidList['tech'];}
-                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="8" cache="3600"}
+                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="10" cache="3600"}
                                 {php $i = 0;}
                                 {loop $data $value}
-                                {if $i < 4}
+                                {if $i < 5}
                                 <li>
                                     {if $value['thumb'] == ""}
                                     <div class="centerCon">
@@ -253,7 +253,7 @@
                             <ul>
                                 {php $i = 0;}
                                 {loop $data $value}
-                                {if $i > 3}
+                                {if $i > 4}
                                 <li>
                                     {if $value['thumb'] == ""}
                                     <div class="centerCon">
@@ -293,7 +293,7 @@
                             </div>
                         </div>
                         <div class="zxRight_con clearfix">
-                            <ul>
+                            <ul class="clearfix">
                                 <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['job']}"></script>
                             </ul>
                         </div>
@@ -328,14 +328,11 @@
                 <div class="manuConRight fr">
                     <div class="manuConRightT">
                         <div class="title1">
-                            <a href="" target="_blank">月度十大热门</a>
-                        </div>
-                        <div class="more">
-                            <a href="" target="_blank"> < 更多 </a>
+                            <a href="" target="_blank">月度热门</a>
                         </div>
                     </div>
-                    <div class="manuConRightB zxRight_con clearfix">
-                        <ul>
+                    <div class="manuConRightB zxRight_con zxRight_con2 clearfix">
+                        <ul class="clearfix">
                             <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['hot']}"></script>
                         </ul>
                     </div>
@@ -435,7 +432,7 @@
             <a href="" target="_blank">关于我们</a>&nbsp;&nbsp;|
             <a href="" target="_blank">联系我们</a>
         </div>
-        <div  class="sj">@2003-2018 中国电子顶级开发网  </div>
+        <div  class="sj">@2003-2019 EETOP  </div>
         <div class="copy">
             <p class="copyTxt"><a href="" target="_blank">京ICP备:10050787号 京公网安备：110105001212</a></p>
         </div>
