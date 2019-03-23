@@ -30,7 +30,7 @@ function create_password($password='', $random='') {
  */
 function is_password($password) {
 	$strlen = strlen($password);
-	if($strlen >= 6 && $strlen <= 20) return true;
+	if($strlen >= 6 && $strlen <= 32) return true;
 	return false;
 }
 

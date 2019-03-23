@@ -17,7 +17,7 @@
 $(function(){
 	$.formValidator.initConfig({autotip:true,formid:"myform",onerror:function(msg){}});
 	$("#username").formValidator({onshow:"{L('input').L('username')}",onfocus:"{L('between_2_to_20')}"}).inputValidator({min:2,max:20,onerror:"{L('between_2_to_20')}"}).regexValidator({regexp:"ps_username",datatype:"enum",onerror:"{L('username').L('format_incorrect')}"});
-	$("#password").formValidator({onshow:"{L('input').L('password')}",onfocus:"{L('password').L('between_2_to_20')}"}).inputValidator({min:2,max:20,onerror:"{L('password').L('between_2_to_20')}"});
+	$("#password").formValidator({onshow:"{L('input').L('password')}",onfocus:"{L('password').L('between_2_to_32')}"}).inputValidator({min:2,max:32,onerror:"{L('password').L('between_2_to_32')}"});
 
 });
 //-->

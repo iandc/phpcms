@@ -76,7 +76,7 @@ class member extends admin {
 			} elseif ($this->db->get_one(array('email'=>$email))) {
 				showmessage(L('email_already_exist'), HTTP_REFERER);
 			} else {
-				if (strlen($password) > 20 || strlen($password) < 6) {
+				if (strlen($password) > 32 || strlen($password) < 6) {
 					showmessage(L('password_len_error'), HTTP_REFERER);
 				}
 				$old_password = $password;
@@ -130,7 +130,7 @@ class member extends admin {
 			
 			$updateinfo['random'] = '';
 			if (!empty($password)) {
-				if (strlen($password) > 20 || strlen($password) < 6) {
+				if (strlen($password) > 32 || strlen($password) < 6) {
 					showmessage(L('password_len_error'), HTTP_REFERER);
 				} else {
 					$passwordarr = creat_password($password);
