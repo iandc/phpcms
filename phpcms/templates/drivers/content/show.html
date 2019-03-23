@@ -19,7 +19,7 @@
                     </div>
                     {show_ad(1, 26)}
                     <div class="post_con">
-                        {if $description}<div class="summary">{$description}</div>{/if}
+                        <!-- {if $description}<div class="summary">{$description}</div>{/if} -->
                         {if $allow_visitor == 1}
                         {$content}
                         {if $voteid}<script language="javascript" src="{APP_PATH}index.php?m=vote&c=index&a=show&action=js&subjectid={$voteid}&type=2"></script>{/if}
