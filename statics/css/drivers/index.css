@@ -24,7 +24,9 @@ body{
     width: 960px;
     margin: 10px auto 0;
 }
-
+.zxRight_con {
+    margin-top: 15px;
+}
 .zxLeft_con ul li a:hover{
     color: red;
 }
@@ -112,9 +114,9 @@ body{
 }
 .informationRight .informationRightL .focus-title,.informationRight .informationRightR .focus-title{
     height: 20px;
-    border-left: 4px solid #0b68a9;
+    border-left: 4px solid #F36F60;
     padding-left: 9pt;
-    color: #0b68a9;
+    color: #F36F60;
     font-size: 1pc;
     line-height: 20px;
 }
