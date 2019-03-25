@@ -3,6 +3,7 @@
 }
 .login:hover .yhm{
     color: #666;
+    text-align: center;
 }
 .hdTop{
     height: auto;
@@ -262,6 +263,8 @@
 .login {
     height: auto;
     position: relative;
+    width: auto;
+    padding: 0 10px;
 }
 .login a{
     text-align: right;

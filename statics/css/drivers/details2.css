@@ -56,6 +56,9 @@ body{
     text-align: justify;
     color: #333;
 }
+.con_three .con_three_l .post_con p a img{
+    width: 100%;
+}
 .con_three .con_three_l .relevant{
     padding-top: 15px;
 }

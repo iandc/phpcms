@@ -103,7 +103,7 @@ body{
 .informationLeft{
     width: 300px;
     background-color: darkcyan;
-}
+}.curriculum ul li img
 .informationRight{
     padding: 0 22px;
     width: 740px;
@@ -571,6 +571,7 @@ body{
     width: 96%;
 }
 .zxLeft_con ol li{
+    width: 352.8px;
     border-bottom: 1px solid #eee;
     padding: 18px 0;
 }

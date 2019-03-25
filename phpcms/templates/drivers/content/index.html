@@ -185,17 +185,17 @@
                     <a href="" class="a2 fr"> < 更多</a>
                 </div>
                 <ul class="ul">
-                    {pc:content action="lists" catid="$courseid" where="status=99" order="id DESC" num="4" cache="3600"}
+                    {php $courseWhere = 'typeid='.$typeidList['course'];}
+                    {pc:content action="lists" catid="$newsid" where="$courseWhere" order="id DESC" num="4" cache="3600"}
                     {loop $data $value}
                     <li>
                         <div class="imgs">
                             <a href="{$value['url']}" target="_blank">
                                 <img src="{thumb($value['thumb'], 230, 155)}" title="{$value['title']}"/>
                             </a>
-                            
                         </div>
                         <div class="text fs12">
-                            <a href="">{$value['description']}</a>
+                            <a href="{$value['url']}">{$value['description']}</a>
                         </div>
                     </li>
                     {/loop}
@@ -351,7 +351,7 @@
                             <ul>
                                 <li class="fl">
                                     <span>
-                                        <a href="http://bbs.eetop.cn/home.php?mod=space&do=blog&view=all&order=hot" target="_blank">推荐日志</a>
+                                        <a href="home.php?mod=space&do=blog&view=all&order=hot" target="_blank">推荐日志</a>
                                     </span>
                                 </li>
                                 <li class="fr">
