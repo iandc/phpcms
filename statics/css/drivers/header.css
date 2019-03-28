@@ -7,7 +7,6 @@
 }
 .hdTop{
     height: auto;
-    padding-top: 5px;
     border-bottom: 1px solid #eee;
     font-size: 12px;
 }
@@ -286,7 +285,6 @@ li{
     display: none;
     text-align: center;
     line-height: 30px;
-    border-bottom: 1px solid #999;
     text-align: right;
     z-index: 99999;
 }
@@ -297,7 +295,6 @@ li{
     width: auto;
     background-color: #fff;
     border: 1px solid #999;
-    border-bottom: none;
     text-align: right;
 }
 .login:hover a{

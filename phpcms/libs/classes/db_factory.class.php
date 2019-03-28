@@ -77,8 +77,8 @@ final class db_factory {
 				$object = pc_base::load_sys_class('db_access');
 				break;
 			default :
-				pc_base::load_sys_class('mysql', '', 0);
-				$object = new mysql();
+                pc_base::load_sys_class('db_mysqli', '', 0);
+                $object = new db_mysqli();
 		}
 		$object->open($this->db_config[$db_name]);
 		return $object;

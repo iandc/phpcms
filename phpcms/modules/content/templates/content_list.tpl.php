@@ -139,6 +139,7 @@ include $this->admin_tpl('header','admin');?>
 		</div>
 		<?php }}?>
 		<input type="button" class="button" value="<?php echo L('remove');?>" onclick="myform.action='?m=content&c=content&a=remove&catid=<?php echo $catid;?>';myform.submit();"/>
+        <input type="button" class="button" value="<?php echo L('moveType');?>" onclick="moveType();"/>
 		<?php echo runhook('admin_content_init')?>
 	</div>
     <div id="pages"><?php echo $pages;?></div>
@@ -165,6 +166,24 @@ function push() {
 	window.top.art.dialog({id:'push'}).close();
 	window.top.art.dialog({title:'<?php echo L('push');?>：',id:'push',iframe:'?m=content&c=push&action=position_list&catid=<?php echo $catid?>&modelid=<?php echo $modelid?>&id='+id,width:'800',height:'500'}, function(){var d = window.top.art.dialog({id:'push'}).data.iframe;// 使用内置接口获取iframe对象
 	var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'push'}).close()});
+}
+function moveType() {
+    var str = 0;
+    var id = tag = '';
+    $("input[name='ids[]']").each(function() {
+        if($(this).attr('checked')=='checked') {
+            str = 1;
+            id += tag+$(this).val();
+            tag = '|';
+        }
+    });
+    if(str==0) {
+        alert('<?php echo L('you_do_not_check');?>');
+        return false;
+    }
+    window.top.art.dialog({id:'moveType'}).close();
+    window.top.art.dialog({title:'<?php echo L('moveType');?>：',id:'moveType',iframe:'?m=content&c=moveType&action=move_type_list&catid=<?php echo $catid?>&modelid=<?php echo $modelid?>&id='+id,width:'800',height:'500'}, function(){var d = window.top.art.dialog({id:'moveType'}).data.iframe;// 使用内置接口获取iframe对象
+        var form = d.document.getElementById('dosubmit');form.click();return false;}, function(){window.top.art.dialog({id:'type'}).close()});
 }
 function confirm_delete(){
 	if(confirm('<?php echo L('confirm_delete', array('message' => L('selected')));?>')) $('#myform').submit();

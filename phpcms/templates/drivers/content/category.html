@@ -1,93 +1,95 @@
-    {template 'content', 'header'}
-        <div class="w100">
-            <div class="category_nav w1100">
-                <div class="crumbs nav_css2 clearfix">
-                    <ul class="nav_list clearfix">
-                        {template 'content', 'nav'}
-                    </ul>
-                </div>
-            </div>
+{template 'content', 'header'}
+<div class="w100">
+    <div class="category_nav w1100">
+        <div class="crumbs nav_css2 clearfix">
+            <ul class="nav_list clearfix">
+                {template 'content', 'nav'}
+            </ul>
         </div>
-        <div class="content w1100 clearfix">
-            <div class="con_four clearfix">
-                <div class="con_four_con"> 
-                    {if $catid == $newsid}
-                    <div class="con_fourL con">
-                        <div class="con_fourL_top clearfix">
-                            <div class="lf fl">
-                                <div class="product clearfix">
-                                    <div class="p_title">
-                                        <div class="border fl"></div>
-                                        热门资讯
-                                    </div>
+    </div>
+</div>
+<div class="content w1100 clearfix">
+    <div class="con_four clearfix">
+        <div class="con_four_con">
+            {if $catid == $newsid}
+            <div class="con_fourL con">
+                <div class="con_fourL_top clearfix">
+                    <div class="lf fl">
+                        <div class="product clearfix">
+                            <div class="p_title">
+                                <div class="border fl"></div>
+                                热门资讯
+                            </div>
+                            <ul>
+                                {pc:content action="lists" catid="$newsid" order="id ASC" num="5" cache="3600"}
+                                {loop $data $value}
+                                <li>
+                                    <p class="proName"><a href="{$value['url']}">{str_cut($value['title'], 45, '')}</a>
+                                    </p>
+                                </li>
+                                {/loop}
+                                {/pc}
+                            </ul>
+                        </div>
+                        {show_ad(1, 28)}
+                    </div>
+                    <div class="mf fl">
+                        <div class="mf_hd">
+                            <div class="item fl">
+                                推荐文章
+                            </div>
+                        </div>
+                        <div class="mf_con">
+                            <div class="newList">
+                                <div class="block">
                                     <ul>
-                                        {pc:content action="lists" catid="$newsid" order="id ASC" num="5" cache="3600"}
+                                        {pc:content action="lists" catid="$newsid" order="id DESC" num="8" cache="3600"}
                                         {loop $data $value}
-                                        <li>
-                                            <p class="proName"><a href="{$value['url']}">{str_cut($value['title'], 45, '')}</a></p>
+                                        <li class="new">
+                                            <span class="date fr">{date('m-d', $value['inputtime'])}</span>
+                                            <span class="tit">
+                                                        <a href="{$value['url']}">{str_cut($value['title'], 71, '')}</a>
+                                                    </span>
                                         </li>
                                         {/loop}
                                         {/pc}
                                     </ul>
                                 </div>
-                                {show_ad(1, 28)}
-                            </div>
-                            <div class="mf fl">
-                                <div class="mf_hd">
-                                    <div class="item fl">
-                                        推荐文章
-                                    </div>
-                                </div>
-                                <div class="mf_con">
-                                    <div class="newList">
-                                        <div class="block">
-                                            <ul>
-                                                {pc:content action="lists" catid="$newsid" order="id DESC" num="8" cache="3600"}
-                                                {loop $data $value}
-                                                <li class="new">
-                                                    <span class="date fr">{date('m-d', $value['inputtime'])}</span>
-                                                    <span class="tit">
-                                                        <a href="{$value['url']}">{str_cut($value['title'], 71, '')}</a>
-                                                    </span>
-                                                </li>
-                                                {/loop}
-                                                {/pc}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                        <div class="con_fourL_bottom mt15">
-                            {show_ad(1, 29)}
-                            {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="50" cache="3600"}
-                            {loop $data $key $value}
-                            <div class="listBox">
-                                <h2>
-                                    <span class="sp1"><a href="{APP_PATH}{$value['catdir']}">{$value['catname']}</a></span>
-                                    <span class="sp2"><a href="">更多</a></span>
-                                </h2>
-                                <ul class="fl">
-                                    {pc:content action="lists" catid="$key" order="id DESC" num="5" cache="3600" return="d"}
-                                    {loop $d $k $v}
-                                    <li>
+                    </div>
+                </div>
+                <div class="con_fourL_bottom mt15">
+                    {show_ad(1, 29)}
+                    {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="50"
+                    cache="3600"}
+                    {loop $data $key $value}
+                    <div class="listBox">
+                        <h2>
+                            <span class="sp1"><a href="{APP_PATH}{$value['catdir']}">{$value['catname']}</a></span>
+                            <span class="sp2"><a href="">更多</a></span>
+                        </h2>
+                        <ul class="fl">
+                            {pc:content action="lists" catid="$key" order="id DESC" num="5" cache="3600" return="d"}
+                            {loop $d $k $v}
+                            <li>
                                         <span class="title">
                                             <a href="{$v['url']}">{$v['title']}</a>
                                         </span>
-                                        <span class="date">{date('m-d', $v['inputtime'])}</span>
-                                    </li>
-                                    {/loop}
-                                    {/pc}
-                                </ul>
-                            </div>
+                                <span class="date">{date('m-d', $v['inputtime'])}</span>
+                            </li>
                             {/loop}
                             {/pc}
-                        </div>
+                        </ul>
                     </div>
-                    {else}
-                    <div class="con_four clearfix category_confour">
-                        <div class="con_four_con category_confourcon">
-                            <div class="con_fourL con">
+                    {/loop}
+                    {/pc}
+                </div>
+            </div>
+            {else}
+            <div class="con_four clearfix category_confour">
+                <div class="con_four_con category_confourcon">
+                    <div class="con_fourL con">
                         <div class="con_fourL_bottom mt15">
                             <div class="zixun mt15">
                                 <div class="zixunCon clearfix">
@@ -100,14 +102,16 @@
                                                     </span>
                                                 </li>
                                                 <li class="fr">
-                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}"> < 更多</a>
+                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}">
+                                                        < 更多</a>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="zxLeft_con clearfix category_zxLeftcon">
                                             <div class="zxLeft_conL fl w50">
                                                 <ul class="mb10 mt10">
-                                                    {pc:content action="lists" catid="$catid" order="id DESC" num="32" cache="3600"}
+                                                    {pc:content action="lists" catid="$catid" order="id DESC" num="32"
+                                                    cache="3600"}
                                                     {php $i = 0;}
                                                     {loop $data $value}
                                                     {if $i <= 7}
@@ -182,7 +186,8 @@
                                                 </div>
                                                 <ul>
                                                     {php $where = 'typeid='.$typeidList['tech'];}
-                                                    {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="8" cache="3600"}
+                                                    {pc:content action="lists" catid="$newsid" thumb="1" where="$where"
+                                                    order="id DESC" num="8" cache="3600"}
                                                     {php $i = 0;}
                                                     {loop $data $value}
                                                     {if $i < 4}
@@ -190,20 +195,26 @@
                                                         {if $value['thumb'] == ""}
                                                         <div class="centerCon">
                                                             <div class="centerCon_txt fl">
-                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
-                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
+                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
+                                                                    50, '')}</h3>
+                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'],
+                                                                    100, '')}
                                                             </div>
                                                         </div>
                                                         {else}
                                                         <div class="centerCon">
                                                             <div class="centerCon_img fr">
                                                                 <a href="{$value['url']}" target="_blank">
-                                                                    <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
+                                                                    <img src="{thumb($value['thumb'], 96, 70)}"
+                                                                         width="96" height="70"
+                                                                         title="{str_cut($value['title'], 37, '')}">
                                                                 </a>
                                                             </div>
                                                             <div class="centerCon_txt fl" style="width: 245px;">
-                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
-                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
+                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
+                                                                    50, '')}</h3>
+                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'],
+                                                                    100, '')}
                                                             </div>
                                                         </div>
                                                         {/if}
@@ -216,7 +227,8 @@
                                             </div>
                                             <div class="manuConLeftR w49 fr">
                                                 <div class="title1 tar">
-                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}" class="fs12"> < 更多</a>
+                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}"
+                                                       class="fs12"> < 更多</a>
                                                 </div>
                                                 <ul>
                                                     {php $i = 0;}
@@ -226,20 +238,26 @@
                                                         {if $value['thumb'] == ""}
                                                         <div class="centerCon">
                                                             <div class="centerCon_txt fl">
-                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
-                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
+                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
+                                                                    50, '')}</h3>
+                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'],
+                                                                    100, '')}
                                                             </div>
                                                         </div>
                                                         {else}
                                                         <div class="centerCon">
                                                             <div class="centerCon_img fr">
                                                                 <a href="{$value['url']}" target="_blank">
-                                                                    <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
+                                                                    <img src="{thumb($value['thumb'], 96, 70)}"
+                                                                         width="96" height="70"
+                                                                         title="{str_cut($value['title'], 37, '')}">
                                                                 </a>
                                                             </div>
                                                             <div class="centerCon_txt fl" style="width: 245px;">
-                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
-                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
+                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
+                                                                    50, '')}</h3>
+                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'],
+                                                                    100, '')}
                                                             </div>
                                                         </div>
                                                         {/if}
@@ -264,7 +282,7 @@
                                                 <ul>
                                                     <li class="fl">
                                                     <span>
-                                                        <a href="">论坛</a>
+                                                        <a href="{$bbsurl}">论坛</a>
                                                     </span>
                                                     </li>
                                                     <li class="fr">
@@ -273,15 +291,46 @@
                                                 </ul>
                                             </div>
                                             <div class="zxLeft_con clearfix">
-                                                <div class="zxLeft_conL fl w50">
+                                                {if isset($catid2fidList[$catid]) && $catid2fidList[$catid]}
+                                                {php $where = 'fid IN ('.implode(',', $catid2fidList[$catid]).')';}
+                                                {pc:get sql="SELECT * FROM pre_forum_thread WHERE $where ORDER BY
+                                                lastpost DESC" num="20" cache="0" dbsource="dx"}
+                                                {else}
+                                                {php $data = [];}
+                                                {/if}
+                                                <div class="zxLeft_conL fl">
+                                                    {php $i = 0;}
+                                                    {loop $data $value}
+                                                    {if $i < 10}
                                                     <ul>
-                                                        <script type="text/javascript" src="{$bbsJsUrl}{$catid2bidList[$catid][0]}"></script>
+                                                        <li>
+                                                            <div class="right_txt fl">
+                                                                <span><a
+                                                                        href="{$bbsurl}/thread-{$value['tid']}-1-1.html"
+                                                                        target="_blank">{$value['subject']}</a></span>
+                                                            </div>
+                                                        </li>
                                                     </ul>
+                                                    {/if}
+                                                    {php $i++;}
+                                                    {/loop}
                                                 </div>
-                                                <div class="zxLeft_conR fr w50">
+                                                <div class="zxLeft_conL fr">
+                                                    {php $i = 0;}
+                                                    {loop $data $value}
+                                                    {if $i >= 10}
                                                     <ul>
-                                                        <script type="text/javascript" src="{$bbsJsUrl}{$catid2bidList[$catid][1]}"></script>
+                                                        <li>
+                                                            <div class="right_txt fl">
+                                                                <span><a
+                                                                        href="{$bbsurl}/thread-{$value['tid']}-1-1.html"
+                                                                        target="_blank">{$value['subject']}</a></span>
+                                                            </div>
+                                                        </li>
                                                     </ul>
+                                                    {/if}
+                                                    {php $i++;}
+                                                    {/loop}
                                                 </div>
                                             </div>
                                         </div>
@@ -289,94 +338,98 @@
                                 </div>
                             </div>
                         </div>
-                            </div>
-                        </div>
                     </div>
-                    {/if}
                 </div>
+            </div>
+            {/if}
+        </div>
 
-                <div>
-                    <div class="lb fr container">
-                        <div id="box1">
-                            <div id="box_img">
-                                <ul id="sub_img">
-                                    {pc:content action="position" posid="$posidList['slide']" order="listorder DESC" num="4" cache="3600"}
-                                    {loop $data $value}
-                                    <li>
-                                        <a href="{$value['url']}" target="_blank"><img src="{thumb($value['thumb'], 300, 222)}" title="{$value['title']}"></a>
-                                    </li>
-                                    {/loop}
-                                    {/pc}
-                                </ul>
-                            </div>
-                            <ul id="uls">
-                                <li class="select">1</li>
-                                <li>2</li>
-                                <li>3</li>
-                                <li>4</li>
-                            </ul>
-                            <span id="shang" class="sp"> < </span>
-                            <span id="xia" class="sp"> > </span>
-                        </div>
+        <div>
+            <div class="lb fr container">
+                <div id="box1">
+                    <div id="box_img">
+                        <ul id="sub_img">
+                            {pc:content action="position" posid="$posidList['slide']" order="listorder DESC" num="4"
+                            cache="3600"}
+                            {loop $data $value}
+                            <li>
+                                <a href="{$value['url']}" target="_blank"><img src="{thumb($value['thumb'], 300, 222)}"
+                                                                               title="{$value['title']}"></a>
+                            </li>
+                            {/loop}
+                            {/pc}
+                        </ul>
                     </div>
-                </div>  
-                <div>
-                    {template 'content', 'right'}
+                    <ul id="uls">
+                        <li class="select">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                    <span id="shang" class="sp"> < </span>
+                    <span id="xia" class="sp"> > </span>
                 </div>
             </div>
         </div>
+        <div>
+            {template 'content', 'right'}
+        </div>
     </div>
-    {template 'content', 'footer'}
+</div>
+</div>
+{template 'content', 'footer'}
 
 
-    <script>
-        var timer = setInterval(active,2000);
-        var autoNum = 0;
-        function active(){
-            //进来先将动画清掉
-            $("#box_img").stop(true);
-            autoNum++;
-            autoNum%=4;
-            $("#box_img").animate({
-                "scrollLeft": 300*autoNum
-            },500);
-            changFn();
-        };
-        //点击下一张
-        $("#xia").on("click",active);
-        //点击上一张
-        $("#shang").on("click",function(){
-            $("#box_img").stop(true);
-            autoNum--;
-            if(autoNum<0){
-                autoNum=3;
-            }
-            $("#box_img").animate({
-                "scrollLeft": 300*autoNum
-            },200);
-            changFn();
-        });
-        
-        //修改4个li样式
-        function changFn(){
-            $("#uls li").eq(autoNum).addClass("select").siblings().removeClass("select");
+<script>
+    var timer = setInterval(active, 2000);
+    var autoNum = 0;
+
+    function active() {
+        //进来先将动画清掉
+        $("#box_img").stop(true);
+        autoNum++;
+        autoNum %= 4;
+        $("#box_img").animate({
+            "scrollLeft": 300 * autoNum
+        }, 500);
+        changFn();
+    };
+    //点击下一张
+    $("#xia").on("click", active);
+    //点击上一张
+    $("#shang").on("click", function () {
+        $("#box_img").stop(true);
+        autoNum--;
+        if (autoNum < 0) {
+            autoNum = 3;
         }
-        //4个小按钮事件
-        $("#uls li").on("click",function(){
-            autoNum = $(this).index();
-            $("#box_img").animate({
-                "scrollLeft": 300*autoNum
-            },200);
-            changFn();
-        })
-        //鼠标移入
-        $("#box1").on("mouseenter",function(){
-            clearInterval(timer);
-        });
-        //鼠标离开
-        $("#box1").on("mouseleave",function(){
-            timer = setInterval(active,2000);
-        });
-    </script>
+        $("#box_img").animate({
+            "scrollLeft": 300 * autoNum
+        }, 200);
+        changFn();
+    });
+
+    //修改4个li样式
+    function changFn() {
+        $("#uls li").eq(autoNum).addClass("select").siblings().removeClass("select");
+    }
+
+    //4个小按钮事件
+    $("#uls li").on("click", function () {
+        autoNum = $(this).index();
+        $("#box_img").animate({
+            "scrollLeft": 300 * autoNum
+        }, 200);
+        changFn();
+    })
+    //鼠标移入
+    $("#box1").on("mouseenter", function () {
+        clearInterval(timer);
+    });
+    //鼠标离开
+    $("#box1").on("mouseleave", function () {
+        timer = setInterval(active, 2000);
+    });
+</script>
 </body>
 </html>

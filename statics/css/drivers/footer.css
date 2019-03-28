@@ -8,12 +8,8 @@ span.v{
     vertical-align: -2px;
     text-indent: -75pt;
 }
-.ft_nav{
-    height: 130px;
-}
 .ft_nav a{
     display: inline-block;
-    text-align: center;
     font-size: 12px;
     line-height: 43px;
 }
