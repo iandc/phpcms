@@ -91,6 +91,23 @@ body{
     border-bottom-left-radius: 6px;
 }
 
+
+#box{
+  height:150px;
+  overflow:hidden;
+  padding-bottom:20px;
+  margin-top: 15px;
+}
+#box li{
+  color:#333;
+  padding: 3px 0;
+}
+#box ul{
+  margin:0;
+  padding:0;
+}
+
+
 .information{
     height: 222px;
 }
@@ -119,7 +136,7 @@ body{
     line-height: 20px;
 }
 .informationRight ul{
-    padding-top: 15px;
+    margin-top: 15px;
 }
 .informationRight .informationRightL ul li{
     overflow: hidden;
@@ -156,11 +173,11 @@ body{
     margin-top: 15px;
 }
 .informationRight .informationRightR ul li{
-    height: 15px;
-    line-height: 15px;
-    margin-bottom: 17px;
+    height: 22px;
+    line-height: 22px;
+    margin-bottom: 12px;
     padding-left: 15px;
-    background: url(../../images/drivers/icon.png) no-repeat -2px -666px;
+    background: url(../../images/drivers/icon.png) no-repeat -2px -663px;
     font-size: 13px;
 }
 .informationRight .informationRightR ul li a{
@@ -371,9 +388,9 @@ body{
 }
 .zxRight_conc .ul2 li {
     height: auto;
-    padding: 6px 0 7px;
-    /*margin-bottom: 5px;*/
-    border-bottom: 1px solid #eee; 
+    padding: 6px 0 0px;
+    /* margin-bottom: 5px; */
+    border-bottom: 1px solid #eee;
 }
 .zxRight_conc .ul2 li .ls{
     padding-left: 15px;
@@ -437,7 +454,7 @@ body{
     line-height: 25px;
     font-weight: 600;
 }
-.curriculumCon .title2 .a1{
+.curriculumCon .title2 .a1,.title1 .jswz{
     font-size: 18px;
     color: #0b68a9;
     font-weight: bold;
@@ -550,7 +567,7 @@ body{
 }
 .article .manuConRight .more a,.Manufacturer .manuConRight .more a{
     position: absolute;
-    right: 0;
+    right: 10px;
     top: -32px;
     display: inline-block;
     font-size: 12px;

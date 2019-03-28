@@ -281,9 +281,9 @@
                                             <div class="zxLeft_title">
                                                 <ul>
                                                     <li class="fl">
-                                                    <span>
-                                                        <a href="{$bbsurl}">论坛</a>
-                                                    </span>
+                                                        <span>
+                                                            <a href="{$bbsurl}">论坛</a>
+                                                        </span>
                                                     </li>
                                                     <li class="fr">
                                                         <a href=""> < 更多</a>
@@ -299,27 +299,27 @@
                                                 {php $data = [];}
                                                 {/if}
                                                 <div class="zxLeft_conL fl">
-                                                    {php $i = 0;}
-                                                    {loop $data $value}
-                                                    {if $i < 10}
                                                     <ul>
-                                                        <li>
-                                                            <div class="right_txt fl">
-                                                                <span><a
-                                                                        href="{$bbsurl}/thread-{$value['tid']}-1-1.html"
-                                                                        target="_blank">{$value['subject']}</a></span>
-                                                            </div>
-                                                        </li>
+                                                        {php $i = 0;}
+                                                        {loop $data $value}
+                                                        {if $i < 10}
+                                                            <li>
+                                                                <div class="right_txt fl">
+                                                                    <span><a
+                                                                            href="{$bbsurl}/thread-{$value['tid']}-1-1.html"
+                                                                            target="_blank">{$value['subject']}</a></span>
+                                                                </div>
+                                                            </li>
+                                                        {/if}
+                                                        {php $i++;}
+                                                        {/loop}
                                                     </ul>
-                                                    {/if}
-                                                    {php $i++;}
-                                                    {/loop}
                                                 </div>
                                                 <div class="zxLeft_conL fr">
+                                                    <ul>
                                                     {php $i = 0;}
                                                     {loop $data $value}
                                                     {if $i >= 10}
-                                                    <ul>
                                                         <li>
                                                             <div class="right_txt fl">
                                                                 <span><a
@@ -327,10 +327,10 @@
                                                                         target="_blank">{$value['subject']}</a></span>
                                                             </div>
                                                         </li>
-                                                    </ul>
                                                     {/if}
                                                     {php $i++;}
                                                     {/loop}
+                                                    </ul>
                                                 </div>
                                             </div>
                                         </div>
