@@ -185,10 +185,9 @@
                                                     <a href="" class="jswz">技术文章</a>
                                                     <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}" class="fs12 gd"> < 更多</a>
                                                 </div>
-                                                
                                                 <ul>
                                                     {php $where = 'catid='.$catid.' AND typeid='.$typeidList['tech'];}
-                                                    {pc:content action="lists" catid="$catid" thumb="0" where="$where"
+                                                    {pc:content action="lists" catid="$catid" thumb="1" where="$where"
                                                     order="id DESC" num="8" cache="3600"}
                                                     {php $i = 0;}
                                                     {loop $data $value}

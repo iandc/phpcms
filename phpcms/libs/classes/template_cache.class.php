@@ -107,7 +107,7 @@ final class template_cache {
 		return str_replace ( "\\\"", "\"", preg_replace ( "/\[([a-zA-Z0-9_\-\.\x7f-\xff]+)\]/s", "['\\1']", $var ) );
 	}
 	public static function pc_tag_callback($matches) {
-		return self::pc_tag($matches[1],$matches[2], $matches[0]);;
+		return self::pc_tag($matches[1],$matches[2], $matches[0]);
 	}	
 	/**
 	 * 解析PC标签
@@ -240,7 +240,7 @@ final class template_cache {
 					if (strpos($val, '$')===0) {
 						$str .= "'$key'=>$val,";
 					} else {
-						$str .= "'$key'=>'".new_addslashes($val)."',";
+						$str .= "'$key'=>\"".new_addslashes($val)."\",";
 					}
 				}
 			}
