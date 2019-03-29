@@ -261,7 +261,7 @@ body{
 .zixunConRight,.Manufacturer .manuConRight{
     width: 314px;
     float: right;
-    padding: 12px 6px 0 15px;
+    padding: 12px 6px 13px 15px;
     border-left: #eee 2px solid;
 }
 .zixunConRight .zxRight_title{

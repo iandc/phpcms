@@ -180,18 +180,19 @@
                                 <div class="Manufacturer mt15 clearfix">
                                     <div class="ManufacturerCon clearfix">
                                         <div class="manuConLeft fl" style="padding-left: 0;">
-                                            <div class="manuConLeftL w49 fl">
+                                            <div class="manuConLeftL fl">
                                                 <div class="title1">
-                                                    <a href="">技术文章</a>
+                                                    <a href="" class="jswz">技术文章</a>
+                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}" class="fs12 gd"> < 更多</a>
                                                 </div>
+                                                
                                                 <ul>
-                                                    {php $where = 'typeid='.$typeidList['tech'];}
-                                                    {pc:content action="lists" catid="$newsid" thumb="1" where="$where"
+                                                    {php $where = 'catid='.$catid.' AND typeid='.$typeidList['tech'];}
+                                                    {pc:content action="lists" catid="$catid" thumb="0" where="$where"
                                                     order="id DESC" num="8" cache="3600"}
                                                     {php $i = 0;}
                                                     {loop $data $value}
-                                                    {if $i < 4}
-                                                    <li>
+                                                    <li class="w49">
                                                         {if $value['thumb'] == ""}
                                                         <div class="centerCon">
                                                             <div class="centerCon_txt fl">
@@ -219,52 +220,8 @@
                                                         </div>
                                                         {/if}
                                                     </li>
-                                                    {/if}
-                                                    {php $i++;}
                                                     {/loop}
                                                     {/pc}
-                                                </ul>
-                                            </div>
-                                            <div class="manuConLeftR w49 fr">
-                                                <div class="title1 tar">
-                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}"
-                                                       class="fs12"> < 更多</a>
-                                                </div>
-                                                <ul>
-                                                    {php $i = 0;}
-                                                    {loop $data $value}
-                                                    {if $i > 3}
-                                                    <li>
-                                                        {if $value['thumb'] == ""}
-                                                        <div class="centerCon">
-                                                            <div class="centerCon_txt fl">
-                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
-                                                                    50, '')}</h3>
-                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'],
-                                                                    100, '')}
-                                                            </div>
-                                                        </div>
-                                                        {else}
-                                                        <div class="centerCon">
-                                                            <div class="centerCon_img fr">
-                                                                <a href="{$value['url']}" target="_blank">
-                                                                    <img src="{thumb($value['thumb'], 96, 70)}"
-                                                                         width="96" height="70"
-                                                                         title="{str_cut($value['title'], 37, '')}">
-                                                                </a>
-                                                            </div>
-                                                            <div class="centerCon_txt fl" style="width: 245px;">
-                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
-                                                                    50, '')}</h3>
-                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'],
-                                                                    100, '')}
-                                                            </div>
-                                                        </div>
-                                                        {/if}
-                                                    </li>
-                                                    {/if}
-                                                    {php $i++;}
-                                                    {/loop}
                                                 </ul>
                                             </div>
                                         </div>
@@ -286,7 +243,7 @@
                                                         </span>
                                                     </li>
                                                     <li class="fr">
-                                                        <a href=""> < 更多</a>
+                                                        <a href="{$bbsurl}/forum-{$catid2fidList[$catid][0]}-1.html"> < 更多</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -294,7 +251,7 @@
                                                 {if isset($catid2fidList[$catid]) && $catid2fidList[$catid]}
                                                 {php $where = 'fid IN ('.implode(',', $catid2fidList[$catid]).')';}
                                                 {pc:get sql="SELECT * FROM pre_forum_thread WHERE $where ORDER BY
-                                                lastpost DESC" num="20" cache="0" dbsource="dx"}
+                                                lastpost DESC" num="20" cache="3600" dbsource="dx"}
                                                 {else}
                                                 {php $data = [];}
                                                 {/if}
@@ -307,7 +264,7 @@
                                                                 <div class="right_txt fl">
                                                                     <span><a
                                                                             href="{$bbsurl}/thread-{$value['tid']}-1-1.html"
-                                                                            target="_blank">{$value['subject']}</a></span>
+                                                                            target="_blank">{str_cut($value['subject'], 80, '')}</a></span>
                                                                 </div>
                                                             </li>
                                                         {/if}
@@ -322,9 +279,10 @@
                                                     {if $i >= 10}
                                                         <li>
                                                             <div class="right_txt fl">
-                                                                <span><a
-                                                                        href="{$bbsurl}/thread-{$value['tid']}-1-1.html"
-                                                                        target="_blank">{$value['subject']}</a></span>
+                                                                <span>
+                                                                    <a href="{$bbsurl}/thread-{$value['tid']}-1-1.html"
+                                                                        target="_blank">{str_cut($value['subject'], 80, '')}</a>
+                                                                </span>
                                                             </div>
                                                         </li>
                                                     {/if}

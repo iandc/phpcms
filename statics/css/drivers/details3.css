@@ -169,6 +169,13 @@ body{
     text-overflow: ellipsis;
     line-height: 20px;
 }
+.title1{
+    position: relative;
+}
+.title1 .gd{
+    position: absolute;
+    right: 15px;   
+}
 .con_four .con_fourL_bottom .listBox ul li .date{
     width: 46px;
     font-size: 9pt;

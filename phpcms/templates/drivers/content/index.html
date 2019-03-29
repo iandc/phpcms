@@ -212,17 +212,17 @@
             <div class="Manufacturer bgc_fff mt15 clearfix">
                 <div class="ManufacturerCon clearfix">
                     <div class="manuConLeft fl">
-                        <div class="manuConLeftL w49 fl">
+                        <div class="manuConLeftL fl">
                             <div class="title1">
                                 <a class="jswz" href="{APP_PATH}type-{$typeidList['tech']}-1.html" target="_blank">技术文章</a>
+                                <a href="{APP_PATH}type-{$typeidList['tech']}-1.html" class="fs12 gd" target="_blank"> < 更多</a>
                             </div>
                             <ul>
                                 {php $where = 'typeid='.$typeidList['tech'];}
                                 {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="10" cache="3600"}
                                 {php $i = 0;}
                                 {loop $data $value}
-                                {if $i < 5}
-                                <li>
+                                <li class="w49">
                                     {if $value['thumb'] == ""}
                                     <div class="centerCon">
                                         <div class="centerCon_txt fl">
@@ -244,46 +244,9 @@
                                     </div>
                                     {/if}
                                 </li>
-                                {/if}
                                 {php $i++;}
                                 {/loop}
                                 {/pc}
-                            </ul>
-                        </div>
-                        <div class="manuConLeftR w49 fr">
-                            <div class="title1 tar">
-                                <a href="{APP_PATH}type-{$typeidList['tech']}-1.html" class="fs12" target="_blank"> < 更多</a>
-                            </div>
-                            <ul>
-                                {php $i = 0;}
-                                {loop $data $value}
-                                {if $i > 4}
-                                <li>
-                                    {if $value['thumb'] == ""}
-                                    <div class="centerCon">
-                                        <div class="centerCon_txt fl">
-                                            <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 41, '')}</h3>
-                                            <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
-                                        </div>
-                                    </div>
-                                    {else}
-                                    <div class="centerCon">
-                                        <div class="centerCon_img fr">
-                                            <a href="{$value['url']}" target="_blank">
-                                                <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
-                                            </a>
-                                        </div>
-                                        <div class="centerCon_txt fl" style="width: 245px">
-                                            <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 41, '')}</h3>
-                                            <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
-                                        </div>
-                                    </div>
-                                    {/if}
-                                    
-                                </li>
-                                {/if}
-                                {php $i++;}
-                                {/loop}
                             </ul>
                         </div>
                     </div>
