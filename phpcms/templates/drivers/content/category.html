@@ -248,7 +248,7 @@
                                             </div>
                                             <div class="zxLeft_con clearfix">
                                                 {if isset($catid2fidList[$catid]) && $catid2fidList[$catid]}
-                                                {php $where = 'fid IN ('.implode(',', $catid2fidList[$catid]).')';}
+                                                {php $where = 'fid IN ('.implode(',', $catid2fidList[$catid]).') AND moderated=0';}
                                                 {pc:get sql="SELECT * FROM pre_forum_thread WHERE $where ORDER BY
                                                 lastpost DESC" num="20" cache="3600" dbsource="dx"}
                                                 {else}
