@@ -197,7 +197,10 @@
                             </a>
                         </div>
                         <div class="text fs12">
-                            <a href="{$value['url']}">{$value['title']}</a>
+                            <p class="curriculum_tit">
+                                <a href="{$value['url']}">{str_cut($value['title'], 45, '')}</a>
+                            </p>
+                            
                             <a href="{$value['url']}">{$value['description']}</a>
                         </div>
                     </li>

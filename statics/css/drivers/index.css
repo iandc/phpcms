@@ -416,6 +416,13 @@ body{
     padding: 20px;
     position: relative;
 }
+.curriculum .curriculum_tit a{
+    font-size: 14px;
+    font-weight: 600;
+}
+.curriculum .curriculum_tit a:hover{
+    text-decoration: underline;
+}
 .curriculum ul li .imgs{
     width: 230px;
     height: 155px;
