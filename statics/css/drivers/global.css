@@ -22,7 +22,6 @@ li{float: left;}
 .mt15{margin-top: 10px;}
 .fs12{font-size: 12px;}
 .w50{width:50%;}
-.w49{width: 48%;}
+.w49{width: 48%; padding: 0 7px;}
 .por{position: relative;}
 .poa{position: absolute;}
-
