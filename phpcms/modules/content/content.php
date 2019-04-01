@@ -146,7 +146,7 @@ class content extends admin
             $data = ['typeid' => $typeid];
             $where = "id IN (" . implode(',', $ids) . ")";
             $update = $this->db->update($data, $where);
-            if ($update > 0) {
+            if ($update) {
                 $ret = [
                     'status' => 1,
                     'msg' => "移动分类成功",

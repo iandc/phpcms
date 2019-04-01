@@ -251,7 +251,7 @@ include $this->admin_tpl('header', 'admin'); ?>
         url += hash;
         $.getJSON(url, function (data) {
             if (data.status == 1) {
-                alert(data.msg)
+                alert(data.msg);
             } else {
                 alert(data.msg);
             }
