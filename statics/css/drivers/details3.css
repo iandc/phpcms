@@ -216,12 +216,12 @@ body{
     padding:0 10px;
 }
 .category_nav .nav_list li .xl{
-    width: 300px;
+    width: 400px;
     height: auto;
     background-color: #0b89a9;
     padding: 10px;
     position: absolute;
-    top: 35px;
+    top: 34px;
     left: 0;
     z-index: 99;
     display: none;
