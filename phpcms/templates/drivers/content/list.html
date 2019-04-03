@@ -34,15 +34,15 @@
                             {if $catid}
                                 {if $typeid}
                                     {php $where = "catid='$catid' AND typeid='$typeid'";}
-                                    {pc:content action="lists" catid="$catid" where="$where" order="id DESC" page="$page" num="10" cache="3600"}
+                                    {pc:content action="lists" catid="$catid" where="$where" order="id DESC" page="$page" num="8" cache="3600"}
                                 {else}
-                                    {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="10" cache="3600"}
+                                    {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="8" cache="3600"}
                                 {/if}
                             {else}
                                 {if $typeid}
-                                    {pc:get sql="SELECT * FROM phpcms_news where typeid='$typeid' ORDER BY id DESC" page="$page" num="10" cache="3600"}
+                                    {pc:get sql="SELECT * FROM phpcms_news where typeid='$typeid' ORDER BY id DESC" page="$page" num="8" cache="3600"}
                                 {else}
-                                    {pc:get sql="SELECT * FROM phpcms_news ORDER BY id DESC" page="$page" num="10" cache="3600"}
+                                    {pc:get sql="SELECT * FROM phpcms_news ORDER BY id DESC" page="$page" num="8" cache="3600"}
                                 {/if}
                             {/if}
                             {loop $data $value}

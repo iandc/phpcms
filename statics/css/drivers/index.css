@@ -196,7 +196,7 @@ body{
 /*资讯*/
 .zixun .zixunConLeft,.Manufacturer .manuConLeft{
     width: 735px;
-    padding: 12px 14px 0 12px;
+    padding: 12px 14px 12px 12px;
 
 }
 .zixun .zixunConLeft .zxLeft_title,.zixun .zixunConRight .zxRight_title{
@@ -230,7 +230,7 @@ body{
 .zixun .zxLeft_con{
     padding: 10px 0;
     height: auto;
-    padding: 10px 0 5px 0;
+    padding: 10px 0 0 0;
 }
 .zxLeft_con ul{
     float: left;
@@ -681,7 +681,6 @@ body{
     margin-bottom: 15px;
 }
 .ftNav,.copy{
-    padding: 5px 0;
     text-align: center;
 }
 .ftNav .links a{
@@ -692,7 +691,7 @@ body{
 }
 .ftNav .sj{
     color: red;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 .copy .copyTxt{
     padding-bottom: 10px;

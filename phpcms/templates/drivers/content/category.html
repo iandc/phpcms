@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                             <div class="mt15">
-                                <a href=""><img style="width: 100%; height: 80px;" src="../../../statics/images/drivers/w728.png" alt=""></a>
+                                <a href="http://bbs.eetop.cn/thread-853647-1-1.html"><img style="width: 100%; height: 80px;" src="../../../statics/images/drivers/w728.png" alt=""></a>
                             </div>
                             <div class="article mt15">
                                 <div class="Manufacturer mt15 clearfix">
@@ -191,11 +191,11 @@
                                                     {php $where = 'catid='.$catid.' AND typeid='.$typeidList['tech'];}
                                                     {pc:content action="lists" catid="$catid" thumb="1" where="$where"
                                                     order="id DESC" num="8" cache="3600"}
-                                                    {php $i = 0;}
+                                                    {php $i = 0; $total=count($data);}
                                                     {loop $data $value}
                                                     <li class="w49">
                                                         {if $value['thumb'] == ""}
-                                                        <div class="centerCon">
+                                                        <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
                                                             <div class="centerCon_txt fl">
                                                                 <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
                                                                     50, '')}</h3>
@@ -221,6 +221,7 @@
                                                         </div>
                                                         {/if}
                                                     </li>
+                                                    {php $i++;}
                                                     {/loop}
                                                     {/pc}
                                                 </ul>
@@ -229,9 +230,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="clearfix"> 
                               {show_ad(1, 35)}
-                            </div>
                             
 
                             <div class="forum clearfix">

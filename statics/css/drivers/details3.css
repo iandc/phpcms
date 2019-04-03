@@ -13,6 +13,10 @@ body{
 }
 .con_four{
     padding:20px;
+    padding-bottom: 0;
+}
+.dcmads {
+    height: auto !important;
 }
 .con_four .con_four_con{
     width: 760px;
