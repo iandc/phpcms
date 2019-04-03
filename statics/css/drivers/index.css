@@ -185,6 +185,14 @@ body{
     padding: 0;
 }
 
+.index_banner1 img{
+    margin-top: 10px;
+}
+.shouye_banner a img{
+    width: 430px;
+    height: 60px;
+}
+
 /*资讯*/
 .zixun .zixunConLeft,.Manufacturer .manuConLeft{
     width: 735px;
@@ -216,6 +224,7 @@ body{
     display: inline-block;
     color: #666;
     font-weight: bold;
+
 }
 
 .zixun .zxLeft_con{
@@ -416,9 +425,13 @@ body{
     padding: 20px;
     position: relative;
 }
+.curriculum .curriculum_tit{
+    width: 100%;
+}
 .curriculum .curriculum_tit a{
     font-size: 14px;
     font-weight: 600;
+    color: #0b68a9;
 }
 .curriculum .curriculum_tit a:hover{
     text-decoration: underline;
