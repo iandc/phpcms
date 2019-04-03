@@ -454,6 +454,7 @@ body{
     line-height: 22px;
     border-bottom: #fff 1px solid;
     cursor: pointer;
+    text-align: center;
 }
 
 .article .centerCon_txt{

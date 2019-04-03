@@ -81,7 +81,11 @@
                                         {else}
                                         <div>
                                             <a href="{$value['url']}" class="img fl">
-                                                <img src="{$value['thumb']}">
+                                                {if !$catid}
+                                                    <img src="{$value['thumb']}">
+                                                {else}
+                                                <img src="{$value['thumb']}" style="width: 130px; height: 95px;">
+                                                {/if}
                                             </a>
                                         </div>
                                         
