@@ -1,7 +1,7 @@
 <?php return array(
     'name' => 'drivers模板',
-    'author' => 'YANG JIE',
-    'dirname' => 'default',
+    'author' => 'suoxiayu',
+    'dirname' => 'drivers',
     'homepage' => 'http://www.eetop.cn/',
     'version' => '1.0',
     'disable' => 0,
