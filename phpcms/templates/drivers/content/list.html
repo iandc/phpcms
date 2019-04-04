@@ -45,8 +45,9 @@
                                     {pc:get sql="SELECT * FROM phpcms_news ORDER BY id DESC" page="$page" num="8" cache="3600"}
                                 {/if}
                             {/if}
+                            {php $i = 0; $total=count($data);}
                             {loop $data $value}
-                            <li>
+                            <li style="{if $i >= $total-1}border-bottom: 0;{/if}">
                                 <div class="block">
                                     <div>
                                         {if $value['thumb'] == ""}
@@ -120,6 +121,7 @@
                                     </div>
                                 </div>
                             </li>
+                            {php $i++;}
                             {/loop}
                             <div class="page_nav">
                                 <div class="more">

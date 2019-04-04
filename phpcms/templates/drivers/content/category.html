@@ -204,7 +204,7 @@
                                                             </div>
                                                         </div>
                                                         {else}
-                                                        <div class="centerCon">
+                                                        <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
                                                             <div class="centerCon_img fr">
                                                                 <a href="{$value['url']}" target="_blank">
                                                                     <img src="{thumb($value['thumb'], 96, 70)}"
@@ -230,7 +230,10 @@
                                     </div>
                                 </div>
                             </div>
-                              {show_ad(1, 35)}
+                            <div class="category_banner">
+                                {show_ad(1, 35)}
+                            </div>
+                              
                             
 
                             <div class="forum clearfix">

@@ -231,7 +231,7 @@ body{
 .page_nav{
     position: relative;
     clear: both;
-    height: 130px
+    height: 100px
 }
 .page_nav .more
     margin: auto;

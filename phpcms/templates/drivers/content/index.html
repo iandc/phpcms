@@ -180,7 +180,7 @@
         <div class="index_banner1 clearfix">
             {show_ad(1, 35)}
             <div class="shouye_banner fr" style="display: inline;">
-                <a href="http://bbs.eetop.cn/thread-853647-1-1.html"><img src="../../../statics/images/drivers/shouye_banner.png" alt=""></a>
+                <a target="_blank" href="http://bbs.eetop.cn/thread-853647-1-1.html"><img src="../../../statics/images/drivers/shouye_banner.png" alt=""></a>
             </div>
         </div>
         
@@ -228,18 +228,18 @@
                             <ul>
                                 {php $where = 'typeid='.$typeidList['tech'];}
                                 {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="10" cache="3600"}
-                                {php $i = 0;}
+                                {php $i = 0; $total=count($data);}
                                 {loop $data $value}
                                 <li class="w49">
                                     {if $value['thumb'] == ""}
-                                    <div class="centerCon">
+                                    <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
                                         <div class="centerCon_txt fl">
                                             <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</h3>
                                             <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
                                         </div>
                                     </div>
                                     {else}
-                                    <div class="centerCon">
+                                    <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
                                         <div class="centerCon_img fr">
                                             <a href="{$value['url']}" target="_blank">
                                                 <img src="{thumb($value['thumb'], 96, 70)}" width="96" height="70" title="{str_cut($value['title'], 37, '')}">
@@ -386,8 +386,8 @@
     </div>
     <div class="w1100 ftNav bgc_fff mt15">
         <div class="links">
-            <a href="" target="_blank">ET创芯网(EETOP)-电子设计论坛、博客、超人气的电子工程师资料分享平台 </a>&nbsp;&nbsp;|
-            <a href="" target="_blank">论坛</a>&nbsp;&nbsp;|
+            <a href="http://www.eetop.cn/">ET创芯网(EETOP)-电子设计论坛、博客、超人气的电子工程师资料分享平台 </a>&nbsp;&nbsp;|
+            <a href="http://bbs.eetop.cn/" target="_blank">论坛</a>&nbsp;&nbsp;|
             <a href="" target="_blank">快捷面板</a>&nbsp;&nbsp;|
             <a href="" target="_blank">站点地图</a>&nbsp;&nbsp;|
             <a href="" target="_blank">空间列表</a>&nbsp;&nbsp;|

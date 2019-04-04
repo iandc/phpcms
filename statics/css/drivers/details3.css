@@ -18,6 +18,10 @@ body{
 .dcmads {
     height: auto !important;
 }
+.category_banner{
+    width: 650px;
+    margin: 0 auto;
+}
 .con_four .con_four_con{
     width: 760px;
     height: auto;
