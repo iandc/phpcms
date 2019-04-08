@@ -1,6 +1,6 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
-//模型缓存路径
+//模锟酵伙拷锟斤拷路锟斤拷
 define('CACHE_MODEL_PATH', CACHE_PATH . 'caches_model' . DIRECTORY_SEPARATOR . 'caches_data' . DIRECTORY_SEPARATOR);
 pc_base::load_app_func('util', 'content');
 
@@ -23,7 +23,7 @@ class MY_index extends index
             $catid = $_GET['catid'] = intval($_GET['catid']);
         } else if(is_string($_GET['catid'])) {
             $catid = 0;
-            $siteid = 1;//先强制设置为1
+            $siteid = 1;
             $CATEGORYS = getcache('category_content_' . $siteid, 'commons');
             foreach ($CATEGORYS as $value) {
                 if($value['catdir'] && $value['catdir'] == trim($_GET['catid'])) {
@@ -36,10 +36,11 @@ class MY_index extends index
             $catid = getNewsModelItemId();
         }
 
+        $typeid = 0;
         if(is_numeric($_GET['typeid'])) {
             $typeid = $_GET['typeid'] = intval($_GET['typeid']);
         } else if(is_string($_GET['typeid'])) {
-            $siteid = 1;//先强制设置为1
+            $siteid = 1;
             $typeList = getcache('type_content_'.$siteid, 'commons');
             foreach ($typeList as $value) {
                 if($_GET['typeid'] == $value['description']) {
@@ -87,18 +88,17 @@ class MY_index extends index
             $top_parentid = $arrparentid[1] ? $arrparentid[1] : $catid;
             $array_child = array();
             $self_array = explode(',', $arrchildid);
-            //获取一级栏目ids
             foreach ($self_array as $arr) {
                 if ($arr != $catid && $CATEGORYS[$arr]['parentid'] == $catid) {
                     $array_child[] = $arr;
                 }
             }
             $arrchildid = implode(',', $array_child);
-            //URL规则
+            //URL
             $urlrules = getcache('urlrules', 'commons');
             $urlrules = str_replace('|', '~', $urlrules[$category_ruleid]);
 
-            $urlrules = '{$page}';//上面获取到的url规则，会重复追加旧参数，所以写死在这里了
+            $urlrules = '{$page}';
             $tmp_urls = explode('~', $urlrules);
             $tmp_urls = isset($tmp_urls[1]) ? $tmp_urls[1] : $tmp_urls[0];
             preg_match_all('/{\$([a-z0-9_]+)}/i', $tmp_urls, $_urls);
@@ -116,7 +116,6 @@ class MY_index extends index
             $GLOBALS['URL_ARRAY']['typename'] = $typename;
             include template('content', $template);
         } else {
-            //单网页
             $this->page_db = pc_base::load_model('page_model');
             $r = $this->page_db->get_one(array('catid' => $catid));
             if ($r) extract($r);
@@ -132,13 +131,12 @@ class MY_index extends index
     }
 
 
-    //聚合页
     public function category()
     {
         if(is_int($_GET['catid'])) {
             $catid = $_GET['catid'] = intval($_GET['catid']);
         } else if(is_string($_GET['catdir'])) {
-            $siteid = 1;//先强制设置为1
+            $siteid = 1;
             $CATEGORYS = getcache('category_content_' . $siteid, 'commons');
             foreach ($CATEGORYS as $value) {
                 if($value['catdir'] && $value['catdir'] == trim($_GET['catdir'])) {
@@ -186,14 +184,13 @@ class MY_index extends index
             $top_parentid = $arrparentid[1] ? $arrparentid[1] : $catid;
             $array_child = array();
             $self_array = explode(',', $arrchildid);
-            //获取一级栏目ids
             foreach ($self_array as $arr) {
                 if ($arr != $catid && $CATEGORYS[$arr]['parentid'] == $catid) {
                     $array_child[] = $arr;
                 }
             }
             $arrchildid = implode(',', $array_child);
-            //URL规则
+            //URL
             $urlrules = getcache('urlrules', 'commons');
             $urlrules = str_replace('|', '~', $urlrules[$category_ruleid]);
             $tmp_urls = explode('~', $urlrules);

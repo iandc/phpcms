@@ -45,7 +45,7 @@ class dev
     public function type() {
         if(is_int($_GET['typeid'])) {
             $typeid = $_GET['typeid'] = intval($_GET['typeid']);
-        } else if(is_string($_GET['catid'])) {
+        } else if(is_string($_GET['typeid'])) {
             $siteid = 1;//先强制设置为1
             $typeList = getcache('type_content_'.$siteid, 'commons');
             foreach ($typeList as $value) {
