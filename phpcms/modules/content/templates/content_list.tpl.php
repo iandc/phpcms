@@ -73,6 +73,7 @@ include $this->admin_tpl('header', 'admin'); ?>
                     <th width="37"><?php echo L('listorder'); ?></th>
                     <th width="40">ID</th>
                     <th><?php echo L('title'); ?></th>
+                    <th width="30"><?php echo L('type'); ?></th>
                     <th width="40"><?php echo L('hits'); ?></th>
                     <th width="70"><?php echo L('publish_user'); ?></th>
                     <th width="118"><?php echo L('updatetime'); ?></th>
@@ -119,6 +120,7 @@ include $this->admin_tpl('header', 'admin'); ?>
                                 if ($r['islink']) {
                                     echo ' <img src="' . IMG_PATH . 'icon/link.png" title="' . L('islink_url') . '">';
                                 } ?></td>
+                            <td align="center"><?php echo $typeList[$r['typeid']]['name'];?></td>
                             <td align='center'
                                 title="<?php echo L('today_hits'); ?>：<?php echo $hits_r['dayviews']; ?>&#10;<?php echo L('yestoday_hits'); ?>：<?php echo $hits_r['yesterdayviews']; ?>&#10;<?php echo L('week_hits'); ?>：<?php echo $hits_r['weekviews']; ?>&#10;<?php echo L('month_hits'); ?>：<?php echo $hits_r['monthviews']; ?>"><?php echo $hits_r['views']; ?></td>
                             <td align='center'>
@@ -255,6 +257,7 @@ include $this->admin_tpl('header', 'admin'); ?>
             } else {
                 alert(data.msg);
             }
+            window.location.reload();
         });
         //console.log(data);
     }
