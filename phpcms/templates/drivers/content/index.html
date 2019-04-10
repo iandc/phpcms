@@ -227,7 +227,7 @@
                             </div>
                             <ul>
                                 {php $where = 'typeid='.$typeidList['tech'];}
-                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="10" cache="3600"}
+                                {pc:content action="lists" catid="$newsid" where="$where" order="id DESC" num="10" cache="3600"}
                                 {php $i = 0; $total=count($data);}
                                 {loop $data $value}
                                 <li class="w49">

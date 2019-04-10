@@ -98,8 +98,12 @@ class image {
 			$createwidth = $maxwidth;
 			$createheight = $maxheight;
 		}
+
 		$createfun = 'imagecreatefrom'.($type=='jpg' ? 'jpeg' : $type);
-		$srcimg = $createfun($image);
+        if(!function_exists($createfun)) {
+            return '';
+        }
+        $srcimg = $createfun($image);
 		if($type != 'gif' && function_exists('imagecreatetruecolor'))
 			$thumbimg = imagecreatetruecolor($createwidth, $createheight); 
 		else
