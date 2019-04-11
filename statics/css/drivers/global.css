@@ -17,7 +17,7 @@ ul, ol { list-style: none; }
 .w100{width: 100%;}
 .h100{height:100%;}
 .w1100{width: 1100px; margin: 0 auto;}
-li{float: left;}
+ul li{float: left;}
 .c_f{color: #fff;}
 .mt15{margin-top: 10px;}
 .fs12{font-size: 12px;}

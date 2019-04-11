@@ -87,7 +87,7 @@
     float: left;
     overflow: hidden;
     margin-top: -1px;
-    padding: 0 10px;
+    padding: 0 6px;
     padding-top: 5px;
     background: url(../../images/drivers/hot_title_bg.gif) 10px 13px no-repeat;
 }
@@ -149,6 +149,7 @@
 }
 .cm_four_r .hot .hotList .img .imgs .image img{
     width: 90pt;
+    height: 117px;
 }
 .cm_four_r .lists ul li{
     display: inline;

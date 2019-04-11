@@ -71,11 +71,11 @@
                         <ul class="clearfix">
                             <li class="fl">
                                 <span class="dib">
-                                    <a href="{APP_PATH}type-{$typeidList['news']}-1.html">最新资讯</a>
+                                    <a href="{APP_PATH}/news/1" target="_blank">最新资讯</a>
                                 </span>
                             </li>
                             <li class="fr">
-                                <a href="{APP_PATH}type-{$typeidList['news']}-1.html">
+                                <a href="{APP_PATH}/news/1" target="_blank">
                                     < 更多
                                 </a>
                             </li>
@@ -131,7 +131,7 @@
                     <div class="zxRight_title">
                         <ul>
                             <li class="fl">
-                                <span>推荐资讯</span>
+                                <a href="{APP_PATH}/news/1"><span>推荐资讯</span></a>
                             </li>
                         </ul>
                     </div>
@@ -180,7 +180,7 @@
         <div class="index_banner1 clearfix">
             {show_ad(1, 35)}
             <div class="shouye_banner fr" style="display: inline;">
-                <a target="_blank" href="http://bbs.eetop.cn/thread-853647-1-1.html"><img src="../../../statics/images/drivers/shouye_banner.png" alt=""></a>
+                <a target="_blank" href="{$bbsurl}/thread-853647-1-1.html"><img src="../../../statics/images/drivers/shouye_banner.png" alt=""></a>
             </div>
         </div>
         
@@ -188,8 +188,8 @@
         <div class="curriculum mt15">
             <div class="w1100 curriculumCon bgc_fff clearfix">
                 <div class="title2">
-                    <a href="{APP_PATH}type-{$typeidList['tech']}-1.html" class=" a1 fl">创新大讲堂</a>
-                    <a href="" class="a2 fr"> < 更多</a>
+                    <a href="{APP_PATH}course/1" target="_blank" class=" a1 fl">创新大讲堂</a>
+                    <a href="{APP_PATH}course/1" target="_blank" class="a2 fr"> < 更多</a>
                 </div>
                 <ul class="ul">
                     {php $courseWhere = 'typeid='.$typeidList['course'];}
@@ -222,12 +222,12 @@
                     <div class="manuConLeft fl">
                         <div class="manuConLeftL fl">
                             <div class="title1">
-                                <a class="jswz" href="{APP_PATH}type-{$typeidList['tech']}-1.html" target="_blank">技术文章</a>
-                                <a href="{APP_PATH}type-{$typeidList['tech']}-1.html" class="fs12 gd" target="_blank"> < 更多</a>
+                                <a class="jswz" href="{APP_PATH}tech/1" target="_blank">技术文章</a>
+                                <a href="{APP_PATH}tech/1" class="fs12 gd" target="_blank"> < 更多</a>
                             </div>
                             <ul>
                                 {php $where = 'typeid='.$typeidList['tech'];}
-                                {pc:content action="lists" catid="$newsid" where="$where" order="id DESC" num="10" cache="3600"}
+                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="10" cache="3600"}
                                 {php $i = 0; $total=count($data);}
                                 {loop $data $value}
                                 <li class="w49">
@@ -261,10 +261,10 @@
                     <div class="manuConRight fr">
                         <div class="manuConRightT"> 
                             <div class="title1" class="fl">
-                                <a href="" target="_blank">最新招聘</a>
+                                <a href="{$bbsurl}/forum-97-1.html" target="_blank">最新招聘</a>
                             </div>
                             <div class="more">
-                                <a href="" class="fr" target="_blank"> < 更多 </a>
+                                <a href="{$bbsurl}/forum-97-1.html" class="fr" target="_blank"> < 更多 </a>
                             </div>
                         </div>
                         <div class="zxRight_con clearfix">
@@ -285,8 +285,8 @@
                 <div class="manuConLeft fl">
                     <div class="manuConLeftL w100 fl zxtz"> 
                         <div class="title1">
-                            <span class="sp1"><a href="{$bbsurl}" target="_blank">最新帖子</a></span>
-                            <span class="sp2"><a href="{$bbsurl}" target="_blank"> < 更多</a></span>
+                            <span class="sp1"><a href="{$bbsurl}/forum.php?mod=guide&view=new" target="_blank">最新帖子</a></span>
+                            <span class="sp2"><a href="{$bbsurl}/forum.php?mod=guide&view=new" target="_blank"> < 更多</a></span>
                         </div>
                         <ul class="clearfix" style="margin-top: 10px;">
                             <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread']}"></script>
@@ -296,7 +296,7 @@
                 <div class="manuConRight fr">
                     <div class="manuConRightT">
                         <div class="title1">
-                            <a href="" target="_blank">月度热门</a>
+                            <a href="{$bbsurl}/forum.php?mod=guide&view=hot" target="_blank">月度热门</a>
                         </div>
                     </div>
                     <div class="manuConRightB zxRight_con zxRight_con2 clearfix">
@@ -318,11 +318,11 @@
                             <ul>
                                 <li class="fl">
                                     <span>
-                                        <a href="home.php?mod=space&do=blog&view=all&order=hot" target="_blank">推荐日志</a>
+                                        <a href="{$blogurl}/blog.php?mod=space&do=blog&view=all&order=hot" target="_blank">推荐日志</a>
                                     </span>
                                 </li>
                                 <li class="fr">
-                                    <a href="http://bbs.eetop.cn/home.php?mod=space&do=blog&view=all" target="_blank"> < 更多</a>
+                                    <a href="{$blogurl}/blog.php?mod=space&do=blog&view=all&order=hot" target="_blank"> < 更多</a>
                                 </li>
                             </ul>
                         </div>
@@ -338,13 +338,13 @@
                         <div class="zxRight_title">
                             <ul>
                                 <li class="fl">
-                                    <a href="" target="_blank">
+                                    <a href="{$bbsurl}/misc.php?mod=ranklist&type=member" target="_blank">
                                         <span>空间之星</span>
                                     </a>
                                 </li>
                                 <li>
                                     <div class="more fr">
-                                        <a href="" target="_blank">
+                                        <a href="{$bbsurl}/misc.php?mod=ranklist&type=member" target="_blank">
                                             < 更多
                                         </a>
                                     </div>
@@ -386,8 +386,8 @@
     </div>
     <div class="w1100 ftNav bgc_fff mt15">
         <div class="links">
-            <a href="http://www.eetop.cn/">ET创芯网(EETOP)-电子设计论坛、博客、超人气的电子工程师资料分享平台 </a>&nbsp;&nbsp;|
-            <a href="http://bbs.eetop.cn/" target="_blank">论坛</a>&nbsp;&nbsp;|
+            <a href="{APP_PATH}">ET创芯网(EETOP)-电子设计论坛、博客、超人气的电子工程师资料分享平台 </a>&nbsp;&nbsp;|
+            <a href="{$bbsurl}" target="_blank">论坛</a>&nbsp;&nbsp;|
             <a href="" target="_blank">快捷面板</a>&nbsp;&nbsp;|
             <a href="" target="_blank">站点地图</a>&nbsp;&nbsp;|
             <a href="" target="_blank">空间列表</a>&nbsp;&nbsp;|

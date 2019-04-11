@@ -98,11 +98,11 @@
                                             <ul>
                                                 <li class="fl">
                                                     <span class="dib">
-                                                        <a href="">资讯</a>
+                                                        <a href="{APP_PATH}news/1">资讯</a>
                                                     </span>
                                                 </li>
                                                 <li class="fr">
-                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}">
+                                                    <a href="{APP_PATH}news/1">
                                                         < 更多</a>
                                                 </li>
                                             </ul>
@@ -176,7 +176,7 @@
                                 </div>
                             </div>
                             <div class="mt15">
-                                <a href="http://bbs.eetop.cn/thread-853647-1-1.html"><img style="width: 100%; height: 80px;" src="../../../statics/images/drivers/w728.png" alt=""></a>
+                                <a href="{$bbsurl}/thread-853647-1-1.html"><img style="width: 100%; height: 80px;" src="../../../statics/images/drivers/w728.png" alt=""></a>
                             </div>
                             <div class="article mt15">
                                 <div class="Manufacturer mt15 clearfix">
@@ -184,8 +184,8 @@
                                         <div class="manuConLeft fl" style="padding-left: 0;">
                                             <div class="manuConLeftL fl">
                                                 <div class="title1">
-                                                    <a href="" class="jswz">技术文章</a>
-                                                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}" class="fs12 gd"> < 更多</a>
+                                                    <a href="{APP_PATH}tech/1" class="jswz">技术文章</a>
+                                                    <a href="{APP_PATH}tech/1" class="fs12 gd"> < 更多</a>
                                                 </div>
                                                 <ul>
                                                     {php $where = 'catid='.$catid.' AND typeid='.$typeidList['tech'];}
