@@ -617,6 +617,7 @@ body{
     border-bottom: 1px solid #eee;
     padding: 18px 0;
     height: 70px;
+    float: left;
 }
 .zxLeft_con ol li .tjrz_title{
     font-size: 14px;
