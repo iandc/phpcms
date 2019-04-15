@@ -1,0 +1,39 @@
+{template 'content', 'header'}
+<div class="main w1100 clearfix main1">
+    <div class="main2">
+        <div class="col-left">
+            <div class="crumbs">
+                <a href="{siteurl($siteid)}">首页</a>
+                <span> > </span>{catpos($catid)} 标签：
+                {$tag} 总共有 {$total} 条记录
+            </div>
+            <ol class="list lh24 f14 clearfix">
+                {loop $tagList $value}
+                <li class="clearfix">
+                    <span class="rt">{date('Y-m-d H:i:s',$value['inputtime'])}</span>·<a href="{$value['url']}" target="_blank" {title_style($value['style'])}>{$value['title']}</a>
+                </li>
+                {if $n%5==0}
+                <li class="bk20 hr clearfix"></li>
+                {/if}
+                {/loop}
+            </ol>
+            <div id="pages" class="text-c">{$pages}</div>
+        </div>
+        <div class="col-auto">
+            <div class="box">
+                <h5 class="title-2">最新资讯</h5>
+                {php $newsWhere = 'typeid='.$typeidList['news'];}
+                {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="10" cache="0"}
+                <ol class="content digg">
+                    {loop $data $value}
+                    <li class="clearfix"><span>·</span><a href="{$r[url]}" target="_blank">{str_cut($value['title'], 62, '')}</a></li>
+                    {/loop}
+                </ol>
+                {/pc}
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{template 'content', 'footer'}

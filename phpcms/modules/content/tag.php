@@ -26,7 +26,7 @@ class tag {
 	 * 按照模型搜索
 	 */
 	public function lists() {
-		
+		$siteid = 1;
 		$tag = safe_replace(addslashes($_GET['tag']));
 		$keyword_data_db = pc_base::load_model('keyword_data_model');
 		//获取标签id
@@ -41,14 +41,14 @@ class tag {
 		$pages = $keyword_data_db->pages;
 		$total = $keyword_data_db->number;
 		if (is_array($infos)) {
-			$datas = array();
+			$tagList = array();
 			foreach ($infos as $info) {
 				list($contentid, $modelid) = explode('-', $info['contentid']);
 				$this->db->set_model($modelid);
 				$res = $this->db->get_one(array('id'=>$contentid), 'title, description, url, inputtime, style');
 				$res['title'] = str_replace($tag, '<font color="#f00">'.$tag.'</font>', $res['title']);
 				$res['description'] = str_replace($tag, '<font color="#f00">'.$tag.'</font>', $res['description']);
-				$datas[] = $res;
+                $tagList[] = $res;
 			}
 		}
 

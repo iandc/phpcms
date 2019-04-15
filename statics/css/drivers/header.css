@@ -278,7 +278,7 @@ li{
     text-align: center;
 }
 .xlk{
-    /*width: 200px;*/
+    width: auto;
     height: auto;
     overflow: hidden;
     background-color: #fff;
@@ -307,6 +307,7 @@ li{
 .login .xlk li {
     display: block;
     clear: both;
+    width: 100%;
 }
 .login .xlk li a:hover{
     color: #0b68a9;

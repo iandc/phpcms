@@ -1,0 +1,123 @@
+.main{
+    background-color: #fff;
+    display: block;
+}
+.main1{
+    padding: 10px 0;
+}
+.main2{
+    padding: 0 10px;
+}
+.main li{
+    clear: both;
+}
+.main .col-left{
+    width: 710px;
+    margin-right: 10px;
+}
+.main .crumbs{
+    background: url(../../images/drivers/icon1.png) no-repeat left -35px;
+    padding: 3px 0 3px 18px;
+    font-family: "宋体";
+    border-bottom: 1px solid #c3d4e7;
+    margin-bottom: 10px;
+}
+.col-left {
+    float: left;
+}
+.list{
+    font-family: "宋体";
+    color: #888;
+}
+.lh24 {
+    line-height: 24px;
+}
+.list li span {
+    font-size: 12px;
+    padding: 0 6px;
+}
+.rt {
+    float: right;
+}
+.hr {
+    background: url(../../images/drivers/uline.gif) repeat-x center center;
+}
+.bk, .bk3, .bk6, .bk8, .bk10, .bk15, .bk20, .bk30 {
+    clear: both;
+    font-size: 1px;
+    height: 0;
+    line-height: 1px;
+}
+.bk20 {
+    height: 20px;
+    overflow: hidden;
+}
+#pages {
+    padding: 14px 0 10px;
+    font-family: 宋体;
+}
+.text-c {
+    text-align: center;
+}
+.col-auto {
+    overflow: hidden;
+}
+.box {
+    background-color: #fff;
+    border: 1px solid #c3d4e7;
+    zoom: 1;
+    overflow: auto;
+    padding-bottom: 10px;
+    width: 310px;
+    float: right;
+}
+.box h5.title-2, .box h6.title-2 {
+    background-position: right -100px;
+}
+.box h5, .box h6 {
+    background: url(../../images/drivers/title.png) no-repeat right top;
+    color: #1e50a2;
+    height: 26px;
+    margin-bottom: 10px;
+    line-height: 26px;
+    padding-left: 10px;
+    border-bottom: 1px solid #dce7f3;
+    position: relative;
+}
+h5 {
+    font-size: 14px;
+}
+.digg li{
+    font-size: 13px;
+    padding: 8px 5px;
+    display: inline-block;
+}
+.digg li span{
+    padding: 0 5px 0 0;
+}
+
+#pages a {
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    background: #fff;
+    border: 1px solid #e3e3e3;
+    text-align: center;
+    color: #333;
+    padding: 0 10px;
+}
+#pages a.a1 {
+    background: url(../../images/drivers/pages.png) no-repeat 0 5px;
+    width: 56px;
+    padding: 0;
+}
+#pages span {
+    display: inline-block;
+    height: 22px;
+    line-height: 22px;
+    background: #5a85b2;
+    border: 1px solid #5a85b2;
+    color: #fff;
+    text-align: center;
+    padding: 0 10px;
+}

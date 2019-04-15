@@ -137,6 +137,7 @@ body{
 }
 .informationRight ul{
     margin-top: 15px;
+    height: 170px;
 }
 .informationRight .informationRightL ul li{
     overflow: hidden;
@@ -196,7 +197,7 @@ body{
 /*资讯*/
 .zixun .zixunConLeft,.Manufacturer .manuConLeft{
     width: 735px;
-    padding: 12px 14px 12px 12px;
+    padding: 12px 14px 0 12px;
 
 }
 .zixun .zixunConLeft .zxLeft_title,.zixun .zixunConRight .zxRight_title{
@@ -397,7 +398,7 @@ body{
 }
 .zxRight_conc .ul2 li {
     height: auto;
-    padding: 6px 0 0px;
+    padding: 13px 0 0px;
     /* margin-bottom: 5px; */
     border-bottom: 1px solid #eee;
 }
@@ -511,6 +512,7 @@ body{
     font-size: 12px;
     position: absolute;
     right: 15px;
+    font-weight: 600;
 }
 .Manufacturer .manuConLeft ul li{
     overflow: hidden;
@@ -692,7 +694,7 @@ body{
 }
 .ftNav .sj{
     color: red;
-    margin-top: 5px;
+    margin: 10px;
 }
 .copy .copyTxt{
     padding-bottom: 10px;
