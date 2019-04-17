@@ -233,11 +233,10 @@
                             <div class="category_banner">
                                 {show_ad(1, 35)}
                             </div>
-                              
-                            
 
                             <div class="forum clearfix">
                                 <div class="zixun mt15">
+                                    {if $bbsShowStatus['isOpen'] == 1 && $bbsShowStatus['channelThread'] == 1}
                                     <div class="zixunCon clearfix">
                                         <div class="zixunConLeft fl" style="padding-left: 0;">
                                             <div class="zxLeft_title">
@@ -298,6 +297,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                    {/if}
                                 </div>
                             </div>
                         </div>

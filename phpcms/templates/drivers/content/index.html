@@ -257,10 +257,11 @@
                         </div>
                     </div>
                     <div class="manuConRight fr">
+                        {if $bbsShowStatus['isOpen'] == 1 && $bbsShowStatus['newJobThread'] == 1}
                         <div class="manuConRightT"> 
                             <div class="title1" class="fl">
                                 <a href="{$bbsurl}/forum-97-1.html" target="_blank">最新招聘</a>
-                            </div>
+                            </div>          
                             <div class="more">
                                 <a href="{$bbsurl}/forum-97-1.html" class="fr" target="_blank"> < 更多 </a>
                             </div>
@@ -270,6 +271,7 @@
                                 <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['job']}"></script>
                             </ul>
                         </div>
+                        {/if}
                     </div>
                 </div>
             </div>
@@ -281,6 +283,7 @@
         <div class="Manufacturer bgc_fff mt15 clearfix">
             <div class="ManufacturerCon clearfix">
                 <div class="manuConLeft fl">
+                    {if $bbsShowStatus['isOpen'] == 1 && $bbsShowStatus['newThread'] == 1}
                     <div class="manuConLeftL w100 fl zxtz"> 
                         <div class="title1">
                             <span class="sp1"><a href="{$bbsurl}/forum.php?mod=guide&view=new" target="_blank">最新帖子</a></span>
@@ -290,8 +293,10 @@
                             <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread']}"></script>
                         </ul>
                     </div>
+                    {/if}
                 </div>
                 <div class="manuConRight fr">
+                    {if $bbsShowStatus['isOpen'] == 1 && $bbsShowStatus['monthHotThread'] == 1}
                     <div class="manuConRightT">
                         <div class="title1">
                             <a href="{$bbsurl}/forum.php?mod=guide&view=hot" target="_blank">月度热门</a>
@@ -302,6 +307,7 @@
                             <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['hot']}"></script>
                         </ul>
                     </div>
+                    {/if}
                 </div>
             </div>
         </div>
@@ -340,13 +346,13 @@
                                         <span>空间之星</span>
                                     </a>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <div class="more fr">
                                         <a href="{$bbsurl}/misc.php?mod=ranklist&type=member" target="_blank">
                                             < 更多
                                         </a>
                                     </div>
-                                </li>
+                                </li> -->
                             </ul>
                         </div>
                         <div class="manuConRight fr">
