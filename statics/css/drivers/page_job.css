@@ -1,0 +1,47 @@
+.recruit{
+
+}
+.recruit .recruitCon{
+    display: inline-block;
+}
+.recruit .recruit_l{
+    width: 42%;
+    height: auto;
+    padding: 20px 35px; 
+}
+.recruit .recruit_r{
+    width: 42%;
+    height: auto;
+    padding: 20px 35px; 
+}
+.recruit ul li{
+    width: 100%;
+    border-top: 1px solid #cdcdcd;
+    padding: 20px 0;
+}
+.recruit ul li:last-child{
+    border-bottom: 1px solid #cdcdcd; 
+}
+.recruit ul li:hover{
+    transition: all .3s ease;
+    background-color: #fff;
+    border-top: 1px solid #fff;
+}
+.recruit ul li .tit_img img{
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-left: 40px;
+}
+.recruit ul li .tit_con{
+    margin-left: 50px;
+}
+.recruit ul li .tit_con h3{
+    font-size: 25px;
+    font-weight: bold;
+}
+.recruit ul li .tit_con .info span{
+    display: inline-block;
+    font-size: 18px;
+    margin-top: 10px;
+}

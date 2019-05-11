@@ -1,0 +1,433 @@
+.bgimg::before{
+    /*background: url(../../images/drivers/timg.png) no-repeat;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;*/
+    
+}
+
+.bg[_ngcontent-sc22]::before{
+  /*  background-color: #f8fafc;
+    content: '';
+    width: 1100px;
+    height: 450px;
+    margin: 0 auto;*/
+    /*z-index: -1000;*/
+    /*background: linear-gradient(160deg, #02ccba, #aa7ecd);*/
+    /*background:linear-gradient(15deg,transparent 290px, #58a 0,#aa7ecd);
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    position: absolute;
+    top: 0;*/
+    /*left: 0;*/
+    /*border-bottom-right-radius: 550px;*/
+    /*border-top-left-radius: 170px;*/
+    /*border-bottom-left-radius: 550px;*/
+    /*border-top-right-radius: 170px;*/
+    /*-webkit-transform: skew(0deg, -15deg);*/
+    /*transform: skew(0deg, -15deg);*/
+}
+
+.bgimg_list{
+    z-index: 99;
+    position: relative;
+    width: 645px;
+    margin-top: 20px;
+}
+
+.bgimg .bgimg_list li{
+    margin: 20px 0;
+    margin-left: 30px;
+    border-radius: 10px;
+    margin-bottom: 0;
+    width: 45%;
+    float: left;
+}
+.bgimg .bgimg_list li span{
+    font-size: 14px;
+    font-weight: 600;
+}
+.bgimg .bgimg_list li p{
+    font-size: 15px;
+    width: 150px;
+    line-height: 28px;
+}
+.bgimg .bgimg_list li img{
+    height: 100px;
+    width: 120px;
+}
+
+/*轮播部分--------------------------------*/
+#lunbobox {
+    width:450px;
+    height:250px;
+    position:relative;
+    margin: 30px 0 0;
+    
+}
+.lunbo {
+    width:450px;
+    height:250px;
+    position: relative;
+}
+.lunbo img {
+    width:450px;
+    height:250px;
+    position:absolute;
+    top:0;
+    right:0;
+    border-radius: 10px;
+}
+#lunbobox ul {
+    width:285px;
+    position:absolute;
+    bottom:30px;
+    left: 50%;
+    margin-left: -60px;
+    z-index:5;
+}
+#lunbobox ul li {
+    cursor:pointer;
+    width:30px;
+    height:6px;
+    border:1px solid #cccccc;
+    float:left;
+    list-style:none;
+    background:#cccccc;
+    text-align:center;
+    margin:0px 5px 0px 0px;
+}
+#toleft {
+    display:none;
+    width:30px;
+    height:100px;
+    font-size:40px;
+    line-height:100px;
+    text-align:center;
+    color:#f4f4f4;
+    background:#cccccc;
+    position:absolute;
+    top:80px;
+    left:10px;
+    cursor:pointer;
+    z-index:9;
+    opacity:0.4;
+}
+#toright {
+    display:none;
+    width:30px;
+    height:100px;
+    font-size:40px;
+    line-height:100px;
+    text-align:center;
+    color:#f4f4f4;
+    background:#cccccc;
+    position:absolute;
+    top:80px;
+    right:10px;
+    cursor:pointer;
+    z-index:9;
+    opacity:0.4;
+}
+
+/*课程导航部分------------------------*/
+.course_nav{
+
+}
+
+/*厂商专区 部分-----------------------*/
+.vendor_area{
+    padding: 10px;
+}
+.vendor_area h3{
+    font-weight: 600;
+    padding-left: 10px;
+}
+.vendor_area ul li{
+    width: 18%;
+    padding: 10px;
+}
+.vendor_area ul li img{
+    width: 450px;
+    box-shadow: -5px 5px 5px #eee;
+}
+
+/*课程内容部分-----------------------*/
+.course_content{
+
+}
+.titles{
+    /*display: inline-block;*/
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0 5px 10px;
+    margin-bottom: 15px;
+    /*border-bottom: 2px solid #bcbccc;*/
+    color: #333;
+    text-align: center;
+}
+.titles span{
+    display: inline-block;
+    padding: 0 20px;
+    /*border-left: 4px solid #0b68a9;*/
+}
+.titles i{
+    display: inline-block;
+    font-weight: 600;
+    color: #0b68a9;
+}
+
+.conts{
+    margin-top: 15px;
+}
+
+/*马上要开始的课程*/
+.course_content .newest_curriculum .nc_l{
+    width: 240px;
+    height: 400px;
+    border: 1px solid #cdcdcd;
+}
+/*.course_content .newest_curriculum .zxkc{
+    background: url(https://images.ctfassets.net/2y9b3o528xhq/2ZIxbxaYScqQcWYIMyoE6y/8ca50afbec033a566237ac1dcf0cee0c/module-nlp1_2x.png);
+}
+.course_content .newest_curriculum .zxkc1{
+    background: url(https://images.ctfassets.net/2y9b3o528xhq/5nhsVrn2KIcyEleY8KFKOE/0bbd4132a53f2c2bfa146cdda52494e7/nd213_side_promo.jpg);
+}*/
+.course_content .newest_curriculum .zxkc h1{
+    font-size: 30px;
+    color: #fff;
+}
+.course_content .newest_curriculum .zxkc h1.ha{
+    margin-left: 40px;
+    margin-top: 50px;
+}
+.course_content .newest_curriculum .zxkc h1.hb{
+    text-align: center;
+    font-size: 40px;
+}
+.course_content .newest_curriculum .zxkc h1.hc{
+    margin-left: 100px;
+}
+.course_content .newest_curriculum .nc_l h3{
+    text-align: center;
+    font-size: 30px;
+    color: #ba60f3;
+}
+.course_content .newest_curriculum .nc_r{
+    /*width: 858px;*/
+    height: auto;
+} 
+.course_content .newest_curriculum .nc_r dl{
+    float: left;
+    margin: 0 34px 30px 0;
+    width: 248px;
+    height: auto;
+    /*background: #FFF;*/
+    overflow: hidden;
+    /*box-shadow:5px 6px 6px #cdcdcd;*/
+    border-radius: 10px;
+    padding-bottom: 10px;
+}
+.course_content .newest_curriculum .nc_r dl:nth-last-child(1),.course_content .newest_curriculum .nc_r dl:nth-last-child(5){
+    margin-right: 0;
+}
+.course_content .newest_curriculum .nc_r dl dt{
+    height: 128px;
+}
+.course_content .newest_curriculum .nc_r dl dt:hover img{
+    transform: scale(1.05, 1.05);
+}
+.course_content .newest_curriculum .nc_r dl dt img{
+    width: 100%;
+    height: 128px;
+    transition: all 0.4s;  
+    border-radius: 10px;
+}
+.course_content .newest_curriculum .nc_r dl p{
+    padding-left: 5px;
+    margin-top: 10px;
+    /*text-align: center;*/
+    font-size: 14px;
+}
+.userNum i{
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background: url(../../images/drivers/user.png) no-repeat 5px 8px;
+}
+.userNum span{
+    font-size: 12px;
+    line-height: 28px;
+    font-weight: 600;
+}
+.userNum small{
+    color: #0b68a9;
+}
+.sc span{
+    font-size: 12px;
+}
+.sc{
+    padding: 0 5px;
+}
+.sc i{
+    display: inline-block;
+    width: 2px;
+    height: 13px;
+    background-color: #cdcdcd;
+    margin: 0 2px;
+    position: relative;
+    top: 2px;
+}
+.zy{
+    height: 35px;
+    font-size: 12px;
+    padding:0 5px 5px;
+    line-height: 20px;
+}
+
+/*课程专题-------------------------------------------*/
+/*.course_content .course_topics{
+    margin: 50px 0;
+}*/
+.course_content .course_topics .ct_l{
+    width: 206px;
+    height: 172px;
+    border: 1px solid #cdcdcd;
+    background: -webkit-linear-gradient(top,#368196,#0089ff,#7bd2ef);
+    border-radius: 8px;
+}
+.course_content .course_topics .ct_l h3{
+    font-size: 25px;
+    color: #fff;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.course_content .course_topics .ct_r dl{
+    float: left;
+    margin: 0 0 0 14px;
+    background: #FFF;
+    height: 172px;
+    width: 209px;
+    overflow: hidden;
+    background: url(../../images/drivers/0.jpg);
+    border-radius: 8px;
+}
+.course_content .course_topics .ct_r dl dt .ct_r_tit{
+    top: 0;
+    color: #FFF;
+    font-size: 16px;
+    height: 70px;
+    width: 209px;
+    text-align: center;
+}
+.course_content .course_topics .ct_r dl dt .ct_r_tit div{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    height: 120px;
+    width: 209px;
+    line-height: 20px;
+    padding: 0 10px;
+}
+.course_content .course_topics .ct_r dl dd{
+    padding: 48px 10px 0;
+    line-height: 20px;
+    font-size: 12px;
+    z-index: 10;
+}
+.course_content .course_topics .ct_r dl dd a{
+    color: #fff;
+    line-height: 25px;
+}
+.course_content .course_topics .ct_r dl img{
+    width: 209px;
+    height: 174px;
+}
+
+/*明星讲师-------------------------------------------------*/
+.lecturer .ct_r ul li{
+    float: left;
+    margin: 0 0 0 14px;
+    width: 200px;
+    height: 400px;
+    background: -webkit-linear-gradient(top,white,lightblue,skyblue);
+    overflow: hidden;
+    box-shadow: -5px 5px 5px #cdcdcd;
+    border-radius: 10px;
+}
+.lecturer .ct_r ul li .lecturer_head{
+    padding: 25px 0 15px;
+    text-align: center;
+}
+.lecturer .ct_r ul li .lecturer_head img{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    transition: all 0.4s;  
+}
+.lecturer .ct_r ul li .lecturer_head:hover img{
+    transform: scale(1.05, 1.05);
+}
+.lecturer .ct_r ul li .lecturer_name{
+    text-align: center;
+}
+.lecturer .ct_r ul li .lecturer_album{
+    text-align: center;
+    margin: 10px 0 0;
+}
+.lecturer .ct_r ul li p{
+    text-align: left;
+    padding: 15px 20px 0;
+    line-height: 24px;
+    color: #666;
+    font-size: 13px;
+}
+
+
+.course_show{
+    padding-bottom: 15px;
+}
+.course_show ul li{
+    width: 27.5%;
+    height: auto;
+    margin: 10px 30px;
+    box-shadow: 0px 0px 10px 5px #eee;
+}
+.course_show ul li .bg{
+    width: 100%;
+    height: 120px;
+    background-color: blue;
+    opacity: .3;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    z-index: -1;
+}
+.course_show ul li .bg h3{
+    color: #fff;
+    font-size: 25px;
+    line-height: 120px;
+    padding-left: 30px;
+}
+.course_show ul li .bg_txt{
+    height: 170px;
+    padding: 20px 30px;
+    font-size: 16px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+.course_show ul li .bg_txt p{
+    line-height: 30px;
+}
+.course_show ul li .bg_txt .btn{
+    text-align: center;
+}
+.course_show ul li .bg_txt button{
+    width: 120px;
+    padding: 10px 0;
+    text-align: center;
+    background-color: #02b3e4;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    margin-top: 15px;
+}

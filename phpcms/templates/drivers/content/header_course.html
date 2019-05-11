@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/global.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/category_course.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/header_course.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/footer_course.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/list_course.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/show_course.css"/>
+
+    <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+    <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+</head>
+{template "content", "config"}
+<body>
+    <div class="w100" style="border-bottom: 1px solid #eee;">
+        <div class="w100">
+            <div class="hd_course w1100 clearfix">
+                <div class="fl hd_c_logo">
+                    <a title="{$mySite['name']}" href="{siteurl($siteid)}/">
+                        <img style="margin-top: -5px;" src="{IMG_PATH}drivers/logo_course.png" width="175" height="70" alt="" title="{$mySite['name']}" >
+                    </a>
+                </div>
+                <div class="fr hd_c_lg">
+                    <span>|</span>
+                    <a href="" class="lg">免费注册 | 登录</a>
+                </div>
+                <div class="fr hd_c_list">
+                    <ul>
+                        <li>
+                            <a href="">选课指南</a>
+                        </li>
+                        <li>
+                            <a href="">纳米学位</a>
+                        </li>
+                        <li>
+                            <a href="">所有课程</a>
+                        </li>
+                        <li>    
+                            <a href="">企业业务</a>
+                        </li>
+                        <li>
+                            <a href="">邀请红包</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div id="nav_course" class="w100">
+            <div class="nav_course w1100">
+                <ul class="clearfix">
+                    <li><a href="">首页</a></li>
+                    {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="5" cache="3600"}
+                        {loop $data $value}
+                            <li>
+                                <a class="xl_con_tit" href="">{$value['catname']}</a><i></i>
+                                <div class="xl">
+                                    <div class="xl_con">
+                                        <a href=""><span>·</span>摄影基础</a>
+                                        <a href=""><span>·</span>人像摄影</a>
+                                        <a href=""><span>·</span>风光摄影</a>
+                                        <a href=""><span>·</span>商业摄影</a>
+                                        <a href=""><span>·</span>后期技术</a>
+                                        <a href=""><span>·</span>摄影讲座分享</a>
+                                        <a href=""><span>·</span>手机摄影</a>
+                                    </div>
+                                </div>
+                            </li>
+                        {/loop}
+                    {/pc}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+ $(function(){
+ 
+    // var titleTop = $('#nav_course').offset().top;
+    
+    $(document).on('scroll',function(){
+      if($(document).scrollTop() > 180){
+         $('#nav_course').css({
+             "position":"fixed",
+             "top":0,
+             "background":"#fff",
+             "z-index":999,
+             "border-bottom":"1px solid #eee"
+     })
+    }else{
+ 
+       $('#nav_course').css({
+           "position":"static",
+           "border-bottom":"none"
+       })
+    }
+  })
+})
+    </script>
+
+</body>
+</html>

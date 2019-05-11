@@ -67,7 +67,7 @@
                     <div class="listBox">
                         <h2>
                             <span class="sp1"><a href="{APP_PATH}{$value['catdir']}">{$value['catname']}</a></span>
-                            <span class="sp2"><a href="">更多</a></span>
+                            <span class="sp2"><a href="{APP_PATH}{$value['catdir']}">更多</a></span>
                         </h2>
                         <ul class="fl">
                             {pc:content action="lists" catid="$key" order="id DESC" num="5" cache="3600" return="d"}
@@ -255,7 +255,7 @@
                                                 {if isset($catid2fidList[$catid]) && $catid2fidList[$catid]}
                                                 {php $where = 'fid IN ('.implode(',', $catid2fidList[$catid]).') AND moderated=0';}
                                                 {pc:get sql="SELECT * FROM pre_forum_thread WHERE $where ORDER BY
-                                                lastpost DESC" num="20" cache="3600" dbsource="dx"}
+                                                lastpost DESC" num="20" cache="600" dbsource="dx"}
                                                 {else}
                                                 {php $data = [];}
                                                 {/if}

@@ -12,7 +12,7 @@
         {template 'content', 'nav'}
         <div class="whole">
             <ul>
-                <li {if $catid == 0}class="current"{/if}><a href="{APP_PATH}{$typeName}/1">全部</a></li>
+                <li class="{if $catid == 0}current{/if}"><a href="{APP_PATH}{$typeName}/1">全部</a></li>
                 {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="3600"}
                     {loop $data $value}
                         <li {if $catid == $value['catid']}class="current"{/if}>

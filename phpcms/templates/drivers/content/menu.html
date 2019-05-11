@@ -1,5 +1,8 @@
 {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="86400"}
 {loop $data $value}
+<!-- {php echo $value['modelid'];} -->
+
+{php if($value['type']==1)continue;} 
 <li class="{if $value['modelid'] == 1}lis{/if}">
     <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" target="_blank" href="{if $value['type'] == 2}{$value['url']}{else}{APP_PATH}news/1{/if}">{$value['catname']}</a>
     {if $value['catid'] == $newsid}

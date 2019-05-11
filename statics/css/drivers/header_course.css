@@ -1,0 +1,95 @@
+body{
+    background-color: #fff;
+}
+.hd_course{
+    height: 70px;
+    padding: 10px 0;
+}
+.hd_course .hd_c_list ul li{
+    padding: 0 25px;
+    height: auto;
+}
+.hd_course .hd_c_list ul li a{
+    line-height: 70px;
+}
+.hd_course .hd_c_lg .lg{
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #0b68a9;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 13px;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.nav_course{
+    position: relative;
+}
+#nav_course{
+    padding: 10px 0 0;
+    margin: 0 auto;
+}
+#nav_course ul{
+    /*width: 70%;*/
+    margin: 0 auto;
+}
+#nav_course ul li{
+    margin: 0 30px;
+    height: 30px;
+    border-bottom: 2px solid #fff;
+    line-height: 30px;
+    padding: 0 3px;
+}
+#nav_course ul li:hover .xl{
+    display: block;
+}
+#nav_course ul li:hover .xl_con_tit{
+    color: #0b68a9;
+}
+#nav_course ul li a{
+    font-weight: 600;
+}
+#nav_course ul li:hover{
+    border-bottom: 2px solid #0b68a9;
+}
+#nav_course ul li:hover i{
+    background: url(../../images/drivers/sj2.png) no-repeat;
+}
+#nav_course ul li i{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: url(../../images/drivers/sj.png) no-repeat;
+    -webkit-background-size: 8px 8px;
+    background-size: 8px 8px;
+    margin-left: 10px;
+}
+
+#nav_course .xl{
+    width: 1100px;
+    height: auto;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    top: 33px;
+    z-index: 999;
+    border: 1px solid #cdcdcd;
+    border-top: 0;
+    padding: 0 0 10px;
+    overflow: hidden;
+    display: none;
+    transition: all 0.4s; 
+}
+#nav_course .xl .xl_con{
+    /*width: 70%;*/
+    margin: 0 auto;
+}
+#nav_course .xl .xl_con a{
+    font-weight: 400;
+    padding: 5px 20px;
+    display: inline-block;
+}
+#nav_course .xl .xl_con a span{
+    font-size: 20px;
+    margin-right: 10px;
+}

@@ -1,0 +1,92 @@
+{template 'content', 'header_course'}
+
+<section>
+    <div class="list_course w100 clearfix">
+        <div class="w1100">
+            <div class="lcL fl">
+                <dl>
+                    <dt class="lcL_all"><a href="">全部</a></dt>
+                    <dd class="icon">
+                        <a href="">嵌入式开发</a>
+                    </dd>
+                    <dd class="icon">
+                        <a href="">创客秀</a>
+                    </dd>
+                    <dd class="icon">
+                        <a href="">热门应用</a>
+                    </dd>
+                    <dd class="icon">
+                        <a href="">电路基础</a>
+                    </dd>
+                    <dd class="icon">
+                        <a href="">编程语言</a>
+                    </dd>
+                    <dd class="icon">
+                        <a href="">直播频道</a>
+                    </dd>
+                    <dd class="icon">
+                        <a href="">电源技术</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="lcR fr">
+                <div class="search">
+                    <form action="">
+                        <input class="inp" type="text" placeholder="搜索视频、课程及专题">
+                        <input class="sub" type="submit">
+                        <span>
+                            大家都在搜：
+                            <a href="">电源 |</a> 
+                            <a href="">电子技术史话 |</a>
+                            <a href="">树莓派 |</a>
+                            <a href="">FPGA |</a>
+                            <a href="">sensortile </a>
+                        </span>
+                    </form>
+                </div>
+                <div class="course_list">
+                    <div class="course_list_name">
+                        <h3>
+                            <span class="rank_course fr" style="display: inline-block;">
+                                <a href="">最热课程</a> | 
+                                <a href="">最新课程</a>
+                            </span>
+                            <a href="" class="name">大学堂</a>
+                        </h3>
+                    </div>
+                    <ul class="show_list clearfix">
+                        {php $courseWhere = 'typeid='.$typeidList['course'];}
+                        {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="8" cache="0" page="$page" moreinfo="1"}
+                        {loop $data $value}
+                        <li>
+                            <div class="show_list_img fl">
+                                <a href=""><img src="{thumb($value['thumb'], 228, 145)}" alt=""></a>
+                            </div>
+                            <div class="show_list_main fr">
+                                <h2><a href="">{$value['title']}</a></h2>
+                                <h6>
+                                    <span><a href="">TI</a></span>
+                                    <span><a href="">超声</a></span>
+                                    <span><a href="">流量计</a></span>
+                                    <span><a href="">FR6043</a></span>
+                                </h6>
+                                <p class="desc">
+                                    {$value['description']}
+                                </p>
+                                <p class="time">
+                                    <span>{$value['class_hour']}</span>
+                                    <em>{$value['duration']}</em>
+                                </p>
+                            </div>
+                        </li>
+                        {/loop}
+                        {/pc}
+                    </ul>
+                    <div id="pages" class="text-c">{$pages}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{template 'content', 'footer_course'}

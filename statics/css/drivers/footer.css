@@ -8,11 +8,17 @@ span.v{
     vertical-align: -2px;
     text-indent: -75pt;
 }
-.ft_nav a{
+.ft_nav  .links a{
     display: inline-block;
     font-size: 12px;
-    line-height: 43px;
+    line-height: 20px;
+    padding-right: 10px;
+    border-right: 1.5px solid #cdcdcd;
 }
 .ft_nav{
     text-align: center;
+    padding-top: 10px;
+}
+.ft_nav .links a:last-child{
+    border-right: 0;
 }

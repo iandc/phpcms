@@ -1,0 +1,505 @@
+{template 'content', 'header_course'}
+
+<div style="position: relative; background: #f8fafc;">
+    <section>
+    <div style="position: relative;">
+        <div class="course w1100">
+            <div class="mb10 bgimg clearfix bg" _ngcontent-sc22>
+            <div class="w1100 clearfix">
+                <div class="fr" class="">
+                    <ul class="clearfix bgimg_list">
+                        <li>
+                            <div class="fl">
+                                <a href="">
+                                    <img src="https://images.ctfassets.net/2y9b3o528xhq/wQbCpoywrAyyMyGCeCUYM/f269101a6df0a73be7b9f40bb4977bd9/module-nd124.png" alt="">
+                                </a>
+                            </div>
+                            <div class="fr" style="padding:10px 10px; background: #f2f6ef;">
+                                <span>口碑课程</span>
+                                <p>一站式掌握数据分析技能</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fl">
+                                <a href="">
+                                    <img src="https://images.ctfassets.net/2y9b3o528xhq/4hSpwePiBqYWKUamEscmCs/c91bd19b66b08ef29384ed19e798e070/deep-learning_promo_2x.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="fr" style="padding:10px 10px; background: #f2f6ef;">
+                                <span>口碑课程</span>
+                                <p>一站式掌握数据分析技能</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fl">
+                                <a href="">
+                                    <img src="https://images.ctfassets.net/2y9b3o528xhq/19NgUw9l3MGaq2a0cY0OSO/69b9f3e4f31f9e957619c0730553a450/module-nd100_2x.png" alt="">
+                                </a>
+                            </div>
+                            <div class="fr" style="padding:10px 10px; background: #f2f6ef;">
+                                <span>口碑课程</span>
+                                <p>一站式掌握数据分析技能</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="fl">
+                                <a href="">
+                                    <img src="https://images.ctfassets.net/2y9b3o528xhq/wQbCpoywrAyyMyGCeCUYM/f269101a6df0a73be7b9f40bb4977bd9/module-nd124.png" alt="">
+                                </a>
+                            </div>
+                            <div class="fr" style="padding:10px 10px; background: #f2f6ef;">
+                                <span>口碑课程</span>
+                                <p>一站式掌握数据分析技能</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="fl" class="course_lb">
+                    <div id="lunbobox">
+                        <div id="toleft">&lt;</div>
+                        <div class="lunbo">
+                            {pc:content action="position" posid="$posidList['course_focus']" order="listorder DESC" num="4" cache="0"}
+                            {loop $data $value}
+                                <a href="#"><img src="{thumb($value['thumb'], 1100, 300)}"></a>
+                            {/loop}
+                            {/pc}
+                        </div>
+                        <div id="toright">&gt;</div>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <span></span>
+                    </div>
+                </div>
+            </div>   
+            </div>
+        <div class="w1100">
+        <!-- 轮播部分 -->
+        <div class="mb10 clearfix">
+            
+            <div class="middle_right">
+                <!-- 课程导航部分 -->
+                <div class="course_nav">
+                    
+                </div>
+                <!-- 厂商专区 部分 -->
+                <!-- <div class="vendor_area mb10 bgc_fff">
+                    <h3>厂商专区</h3>
+                    <ul class="clearfix">
+                        <li><a href=""><img src="http://training.eeworld.com.cn/assets/style2017/images/1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="http://training.eeworld.com.cn/assets/style2017/images/1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="http://training.eeworld.com.cn/assets/style2017/images/1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="http://training.eeworld.com.cn/assets/style2017/images/1.jpg" alt=""></a></li>
+                        <li><a href=""><img src="http://training.eeworld.com.cn/assets/style2017/images/1.jpg" alt=""></a></li>
+                    </ul>
+                </div> -->
+                <!-- 课程内容部分 -->
+                <div class="course_content mb10 clearfix">
+                    <!-- 马上要开始的课程 -->
+                    <div class="conts">
+                        <h3 class="titles"><i>↓</i><span>热门课程</span></h3>
+                        <div class="newest_curriculum mb10 clearfix">
+                            <!-- <div class="nc_l fl zxkc"> -->
+                                <!-- <h3>马上要开始的课程</h3> -->
+                                <!-- <img style="width: 240px; height: 400px;" src="http://www.eecourse.com/files/course/2017/10-18/11495536f5a9963397.jpg" alt=""> -->
+                                <!-- <h1 class="ha">IC设计</h1>
+                                <h1 class="hb">&</h1>
+                                <h1 class="hc">验证</h1> -->
+                            <!-- </div> -->
+                            <div class="nc_r fr">
+                                {php $courseWhere = 'typeid='.$typeidList['course'];}
+                                {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="8" cache="0" moreinfo="1"}
+                                {loop $data $value}
+                                <dl>
+                                    <dt>
+                                        <a href="{$value['course_link']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                    </dt>
+                                    <div>
+                                        <p><a href="{$value['course_link']}" target="_blank">{$value['title']}</a></p>
+                                        <div class="userNum clearfix">
+                                            <span class="fl">
+                                                <i></i>
+                                                313
+                                            </span>
+                                            <span class="fr" style="margin-right: 10px; font-size: 14px;">
+                                                ￥<small>219</small>
+                                            </span>
+                                        </div>
+                                        <div class="zy">
+                                            <a href="">{str_cut($value['description'], 75,
+                                            '')}</a>
+                                        </div>
+                                        <div class="sc">
+                                            <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
+                                        </div>
+                                    </div>
+                                    
+                                </dl>
+                                {/loop}
+                                {/pc}
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <!-- 电源设计 -->
+                    <div class="course_topics clearfix" style="margin-bottom: 40px;">
+                        <div class="ct_l fl">
+                            <h3>
+                                电源设计
+                            </h3>
+                        </div>
+                        <div class="ct_r fr">
+                            {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="4" cache="0"}
+                            {loop $data $value}
+                                <dl>
+                                    <dt>
+                                        <a href="{$value['url']}">
+                                            <div class="ct_r_tit">
+                                                <div>
+                                                    {$value['title']}
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </dt>
+                                    <dd>
+                                        <a href="">{str_cut($value['description'], 100,
+                                        '')}</a>
+                                    </dd>
+                                </dl>
+                            {/loop}
+                            {/pc}
+                        </div>
+                    </div>
+
+                    <!-- 正在进行的课程 -->
+                    <div class="conts">
+                        <h3 class="titles"><i>↓</i><span>免费公开课</span></h3>
+                        <div class="newest_curriculum mb10 clearfix">
+                            <!-- <div class="nc_l fl zxkc zxkc1"> -->
+                                <!-- <h3>正在进行的课程</h3> -->
+                                <!-- <img style="width: 240px; height: 400px;" src="https://image.gogoup.com/course/20171011/1507714742683.jpg?x-oss-process=image/resize,w_448,h_248,limit_0,m_fill" alt=""> -->
+                                <!-- <h1 class="ha">IC制造</h1>
+                                <h1 class="hb">&</h1>
+                                <h1 class="hc">测试</h1> -->
+                            <!-- </div> -->
+                            <div class="nc_r fr">
+                                {php $courseWhere = 'typeid='.$typeidList['course'];}
+                                {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="8" cache="0"}
+                                {loop $data $value}
+                                <dl>
+                                    <dt>
+                                        <a href="{$value['url']}"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                    </dt>
+                                    <p><a href="{$value['url']}">{$value['title']}</a></p>
+                                    <div class="userNum clearfix">
+                                        <span class="fl">
+                                            <i></i>
+                                            313
+                                        </span>
+                                        <span class="fr" style="margin-right: 10px; font-size: 14px;">
+                                            ￥<small>219</small>
+                                        </span>
+                                    </div>
+                                    <div class="zy">
+                                        <a href="">{str_cut($value['description'], 75,
+                                        '')}</a>
+                                    </div>
+                                    <div class="sc">
+                                        <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
+                                    </div>
+                                </dl>
+                                {/loop}
+                                {/pc}
+                            </div>
+                        </div>
+                    </div>
+                    
+
+                    <!-- 已经结束的课程 -->
+                    <div class="newest_curriculum mb10 clearfix">
+                        <!-- <div class="nc_l fl zxkc"> -->
+                            <!-- <h3>已经结束的课程</h3> -->
+                            <!-- <img style="width: 240px; height: 400px;" src="https://images.ctfassets.net/2y9b3o528xhq/2ZIxbxaYScqQcWYIMyoE6y/8ca50afbec033a566237ac1dcf0cee0c/module-nlp1_2x.png" alt=""> -->
+                            <!-- <h1 class="ha">嵌入式设计</h1> -->
+                        <!-- </div> -->
+                        <div class="nc_r fr">
+                            {php $courseWhere = 'typeid='.$typeidList['course'];}
+                            {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="8" cache="0"}
+                            {loop $data $value}
+                            <dl>
+                                <dt>
+                                    <a href="{$value['url']}"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                </dt>
+                                <p><a href="{$value['url']}">{$value['title']}</a></p>
+                            </dl>
+                            {/loop}
+                            {/pc}
+                        </div>
+                    </div>
+
+                    <!-- 明星讲师 -->
+                    <div class="conts">
+                        <h3 class="titles"><i>↓</i><span>明星讲师</span></h3>
+                        <div class="newest_curriculum clearfix lecturer">
+                            <div class="nc_l fl">
+                                <!-- <h3>明星讲师</h3> -->
+                                <img style="width: 240px; height: 400px;" src="https://images.ctfassets.net/2y9b3o528xhq/19NgUw9l3MGaq2a0cY0OSO/69b9f3e4f31f9e957619c0730553a450/module-nd100_2x.png" alt="">
+                            </div>
+                            <div class="ct_r fr">
+                                <ul>
+                                    {pc:content action="lists" catid="$teacherid" where="$where" num="4" order="id DESC"}
+                                    <!-- {php echo $catid;} -->
+                                    {loop $data $value}
+                                        <li>
+                                            <div class="lecturer_head">
+                                                <a href=""><img src="{$value['thumb']}" alt=""></a>
+                                            </div>
+                                            <div class="lecturer_name">
+                                                <a href="">{$value['title']}</a>
+                                            </div>
+                                            <!-- <div class="lecturer_album">
+                                                <a href="">课程专辑</a>
+                                            </div> -->
+                                            <p>
+                                                {$value['description']}
+                                            </p>
+                                        </li>
+                                    {/loop}
+                                    {/pc}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- 测试 -->
+                <div class="course_show clearfix">
+                    <ul>
+                        <li>
+                            <div class="bg">
+                                <h3>数据分析师</h3>
+                            </div>
+                            <div class="bgc_fff bg_txt">
+                                <p>
+                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
+                                </p>
+                                <div class="btn">
+                                    <button>立即加入</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg">
+                                <h3>机器学习工程师</h3>
+                            </div>
+                            <div class="bgc_fff bg_txt">
+                                <p>
+                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
+                                </p>
+                                <div class="btn">
+                                    <button>立即加入</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg">
+                                <h3>商业数据分析</h3>
+                            </div>
+                            <div class="bgc_fff bg_txt">
+                                <p>
+                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
+                                </p>
+                                <div class="btn">
+                                    <button>立即加入</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg">
+                                <h3>phthon人工智能入门</h3>
+                            </div>
+                            <div class="bgc_fff bg_txt">
+                                <p>
+                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
+                                </p>
+                                <div class="btn">
+                                    <button>立即加入</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg">
+                                <h3>无人驾驶入门</h3>
+                            </div>
+                            <div class="bgc_fff bg_txt">
+                                <p>
+                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
+                                </p>
+                                <div class="btn">
+                                    <button>立即加入</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="bg">
+                                <h3>AI求职直通班</h3>
+                            </div>
+                            <div class="bgc_fff bg_txt">
+                                <p>
+                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
+                                </p>
+                                <div class="btn">
+                                    <button>立即加入</button>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+</div>
+
+
+{template 'content', 'footer_course'}
+
+<script>
+    ///轮播
+    $(function() {
+        //$("#toright").hide();
+        //$("#toleft").hide();
+        $('#toright').hover(function() {
+            $("#toleft").hide()
+        }, function() {
+            $("#toleft").show()
+        })
+        $('#toleft').hover(function() {
+            $("#toright").hide()
+        }, function() {
+            $("#toright").show()
+        })
+    })
+    
+    var t;
+    var index = 0;
+    /////自动播放
+    t = setInterval(play, 3000)
+    
+    function play() {
+        index++;
+        if (index > 4) {
+            index = 0
+        }
+        // console.log(index)
+        $("#lunbobox ul li").eq(index).css({
+            "background": "#999",
+            "border": "1px solid #ffffff"
+        }).siblings().css({
+            "background": "#cccccc",
+            "border": ""
+        })
+    
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+    };
+    
+    ///点击鼠标 图片切换
+    $("#lunbobox ul li").click(function() {
+    
+        //添加 移除样式
+        //$(this).addClass("lito").siblings().removeClass("lito");  //给当前鼠标移动到的li增加样式 且其余兄弟元素移除样式   可以在样式中   用hover 来对li 实现
+        $(this).css({
+            "background": "#999",
+            "border": "1px solid #ffffff"
+        }).siblings().css({
+            "background": "#cccccc"
+        })
+        var index = $(this).index(); //获取索引     图片索引与按钮的索引是一一对应的
+        // console.log(index);
+    
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); //   siblings  找到 兄弟节点(不包括自己）
+    });
+    
+    /////////////上一张、下一张切换
+    $("#toleft").click(function() {
+        index--;
+        if (index <= 0) //判断index<0的情况为：开始点击#toright  index=0时      再点击 #toleft 为负数了 会出错
+        {
+            index = 4
+        }
+        console.log(index);
+        $("#lunbobox ul li").eq(index).css({
+            "background": "#999",
+            "border": "1px solid #ffffff"
+        }).siblings().css({
+            "background": "#cccccc"
+        })
+    
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); //   siblings  找到 兄弟节点(不包括自己）必须要写
+    }); // $("#imgbox a ")获取到的是一个数组集合 。所以可以用index来控制切换
+    
+    $("#toright").click(function() {
+        index++;
+        if (index > 4) {
+            index = 0
+        }
+        console.log(index);
+        $(this).css({
+            "opacity": "0.5"
+        })
+        $("#lunbobox ul li").eq(index).css({
+            "background": "#999",
+            "border": "1px solid #ffffff"
+        }).siblings().css({
+            "background": "#cccccc"
+        })
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); //   siblings  找到 兄弟节点(不包括自己）
+    });
+    $("#toleft,#toright").hover(function() {
+            $(this).css({
+                "color": "black"
+            })
+        },
+        function() {
+            $(this).css({
+                "opacity": "0.3",
+                "color": ""
+            })
+        })
+    ///
+
+    ///////鼠标移进  移出
+    $("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(
+    ////////鼠标移进
+    function() {
+        $('#toright,#toleft').show()
+        clearInterval(t);
+
+    },
+    ///////鼠标移开
+    function() {
+        //$('#toright,#toleft').hide()
+        //alert('aaa')
+        t = setInterval(play, 3000)
+
+        function play() {
+            index++;
+            if (index > 4) {
+                index = 0
+            }
+            $("#lunbobox ul li").eq(index).css({
+                "background": "#999",
+                "border": "1px solid #ffffff"
+            }).siblings().css({
+                "background": "#cccccc"
+            })
+            $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+        }
+    })
+</script>

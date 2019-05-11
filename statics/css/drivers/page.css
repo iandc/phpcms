@@ -1,0 +1,65 @@
+.about_us{
+    margin-bottom: 10px;
+}
+.about_us .au_l{
+    width: 21%;
+    height: auto;
+    background-color: #fff;
+}
+.about_us .au_l ul li{
+    width: 100%;
+    padding: 15px 0;
+    cursor: pointer;    
+    border-bottom: 1px solid #eee;
+}
+.about_us .au_l ul li a{
+    font-size: 16px;
+    padding-left: 50px;
+}
+.about_us .au_l ul li.more{
+    background-color: #0b68a9;
+    position: relative;
+}
+.about_us .au_l ul li.more a{
+    color: #fff;
+}
+.about_us .au_l ul li .jt{
+    width: 9px;
+    height: 15px;
+    display: inline-block;
+    position: absolute;
+    right: 50px;
+    top: 20px;
+    background: url(https://static.gogoup.com/plugin/common/images/sprite-icon.png) no-repeat -85px -25px;
+}
+.about_us .au_r{
+    width: 77%;
+    height: auto;
+    background-color: #fff;
+}
+.about_us .au_r .au_r_t{
+    border-bottom: 1px solid #cdcdcd;
+    padding: 15px 20px;
+}
+.about_us .au_r .au_r_t p{
+    font-size: 17px;
+}
+.about_us .au_r .au_r_b{
+    padding: 0px 20px 15px;
+}
+.about_us .au_r .au_r_b p{
+    margin: 30px 0;
+    line-height: 30px;
+}
+.about_us .au_r .au_r_b .tit{
+    font-size: 16px;
+}
+.about_us .au_r #con li{
+    float: left;
+    display: none;
+    overflow: hidden;
+    width: 100%;
+}
+.about_us .au_r #con li.show{
+    display: block;
+}

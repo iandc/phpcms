@@ -1,0 +1,66 @@
+.footer_course{
+    height: auto;
+    background-color: #0b68a9;
+    padding: 20px 0;
+}
+.footer_course .ft_t{
+    border-bottom: 1px solid #9b9b9b;
+    padding-bottom: 10px;
+}
+.footer_course .ft_c_l ul {
+    width: 200px;
+}
+.footer_course .ft_c_l ul li{
+    width: 100px;
+    margin-bottom: 8px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+}
+.footer_course .ft_c_l ul li a{
+    color: #fff;
+}
+
+.footer_course .ft_c_z{
+    margin-left: 290px;
+}
+.footer_course .ft_c_z ul li {
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.footer_course .ft_c_z ul li .icon{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+}
+.footer_course .ft_c_z ul li .i1{
+    background: url(https://static.gogoup.com/plugin/iconpic/iconpic-footer-gogoup.png) no-repeat center;
+    background-size: 13px auto;
+}
+.footer_course .ft_c_z ul li .i2{
+    background: url(https://static.gogoup.com/plugin/iconpic/iconpic-footer-weixin.png) no-repeat center;
+    background-size: 24px auto;
+}
+.footer_course .ft_c_z ul li .i3{
+    background: url(https://static.gogoup.com/plugin/iconpic/iconpic-footer-weibo.png) no-repeat center;
+    background-size: 24px auto;
+}
+.footer_course .ft_c_r{
+    width: 230px;
+}
+.footer_course .ft_c_r ul li span,.footer_course .ft_c_r ul li a{
+    font-size: 14px;
+    color: #fff;
+}
+
+.footer_course .ft_b{
+    margin-top: 20px;
+}
+.footer_course .ft_b p{
+    text-align: center;
+    color: #fff;
+}

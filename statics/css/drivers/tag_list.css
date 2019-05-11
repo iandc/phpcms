@@ -1,4 +1,4 @@
-.main{
+.mains{
     background-color: #fff;
     display: block;
 }
@@ -8,14 +8,19 @@
 .main2{
     padding: 0 10px;
 }
-.main li{
+.main2 li{
+    /*width: 570px;*/
+    height: 26px;
+    line-height: 26px;
+}
+.mains li{
     clear: both;
 }
-.main .col-left{
+.mains .col-left{
     width: 710px;
     margin-right: 10px;
 }
-.main .crumbs{
+.mains .crumbs{
     background: url(../../images/drivers/icon1.png) no-repeat left -35px;
     padding: 3px 0 3px 18px;
     font-family: "宋体";
@@ -62,7 +67,7 @@
 .col-auto {
     overflow: hidden;
 }
-.box {
+.col-auto .box {
     background-color: #fff;
     border: 1px solid #c3d4e7;
     zoom: 1;

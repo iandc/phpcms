@@ -149,5 +149,6 @@ openClose.click(
 		}
 	}
 )
+$("#typeid").val(55);
 //-->
 </script>

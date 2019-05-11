@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
 <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
-<meta name="keywords" content="{$SEO['keyword']}">
+<meta name="keywords" content="{$SEO['keywords']}">
 <meta name="description" content="{$SEO['description']}">
 <meta name=”renderer” content=”webkit|ie-comp|ie-stand”>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/global.css"/>
@@ -18,12 +18,18 @@
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/footer.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/nav.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/tag_list.css"" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/category_course.css"" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/list_course.css"" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/show_course.css"" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/page.css"" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/page_job.css"" />
 
 <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
 <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
 </head>
 <body>
     {template "content", "config"}
+    {show_ad(1, 40)}
     <div class="Header w100">
         <div class="hdTop clearfix">
             <div class="hdTopCon w1100 clearfix">

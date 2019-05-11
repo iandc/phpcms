@@ -31,6 +31,7 @@ body{
     float: left;
     position: relative;
     padding-top: 5px;
+    padding-bottom: 10px;
 }
 .con_four .con_fourL_top .lf{
     width: 300px;

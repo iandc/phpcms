@@ -1,5 +1,6 @@
 {template 'content', 'header'}
-<div class="main w1100 clearfix main1">
+
+<div class="mains w1100 clearfix main1">
     <div class="main2">
         <div class="col-left">
             <div class="crumbs">
@@ -10,7 +11,7 @@
             <ol class="list lh24 f14 clearfix">
                 {loop $tagList $value}
                 <li class="clearfix">
-                    <span class="rt">{date('Y-m-d H:i:s',$value['inputtime'])}</span>·<a href="{$value['url']}" target="_blank" {title_style($value['style'])}>{$value['title']}</a>
+                    <span class="rt">{date('Y-m-d H:i:s',$value['inputtime'])}</span>·<a href="{$value['url']}" target="_blank" {title_style($value['style'])}>{str_cut($value['title'], 120, '')}</a>
                 </li>
                 {if $n%5==0}
                 <li class="bk20 hr clearfix"></li>
@@ -34,6 +35,6 @@
 
         </div>
     </div>
-
 </div>
+
 {template 'content', 'footer'}

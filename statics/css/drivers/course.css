@@ -1,0 +1,17 @@
+.carousel-wrap{
+    position: relative;overflow: hidden;height: 454px;
+    width: 1200px;
+    margin: 100px auto;
+  }
+  .carousel{width: 8400px;z-index: 9;position: absolute;left: -1200px;top: 0;}
+  .carousel li {float: left;width: 1200px;}
+  .carousel img{width: 100%;}
+  .arrow{z-index: 10;position: absolute;width: 30px;height: 50px;text-align: center;line-height: 50px;
+    top: 50%;margin-top: -25px;text-decoration: none;color: #333;
+    font-family: '宋体';font-size: 30px;background: rgba(0,0,0,.2);font-weight: 600;
+  }
+  .arrow-left{left: 0;}
+  .arrow-right{right: 0}
+  .indicators{z-index: 10;position: absolute;right: 10px;bottom: 10px;}
+  .indicator{float: left;margin-right: 10px;width: 8px;height: 8px;border-radius: 50%; background: #ccc;}
+  .indicator.active{background: #333;}
