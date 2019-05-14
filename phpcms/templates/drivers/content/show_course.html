@@ -127,56 +127,21 @@
                 </div>
                 <ul class="clearfix hyp2">
                     <li class="w1100" class="">
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="http://training.eeworld.com.cn/files/course/2015/08-13/151300c8edd4373818.jpg?28" alt="">
-                                </a>
-                            </div>
-                            <div class="tit">
-                                <a href="">PSoC3中的ECC空间存储数据方法</a>
-                            </div>
-                        </div>
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="http://training.eeworld.com.cn/files/course/2015/08-13/151300c8edd4373818.jpg?28" alt="">
-                                </a>
-                            </div>
-                            <div class="tit">
-                                <a href="">PSoC3中的ECC空间存储数据方法</a>
-                            </div>
-                        </div>
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="http://training.eeworld.com.cn/files/course/2015/08-13/151300c8edd4373818.jpg?28" alt="">
-                                </a>
-                            </div>
-                            <div class="tit">
-                                <a href="">PSoC3中的ECC空间存储数据方法</a>
-                            </div>
-                        </div>
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="http://training.eeworld.com.cn/files/course/2015/08-13/151300c8edd4373818.jpg?28" alt="">
-                                </a>
-                            </div>
-                            <div class="tit">
-                                <a href="">PSoC3中的ECC空间存储数据方法</a>
-                            </div>
-                        </div>
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="http://training.eeworld.com.cn/files/course/2015/08-13/151300c8edd4373818.jpg?28" alt="">
-                                </a>
-                            </div>
-                            <div class="tit">
-                                <a href="">PSoC3中的ECC空间存储数据方法</a>
-                            </div>
-                        </div>
+                        {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="5" cache="0"}
+                            {loop $data $value}
+                                <div class="list4">
+                                    <div class="img">
+                                        <a href="">
+                                            <img src="{thumb($value['thumb'], 209, 116)}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="tit">
+                                        <a href="">{$value['title']}</a>
+                                    </div>
+                                </div>
+                            {/loop}
+                        {/pc}
+                        
                     </li>
                 </ul>
                 <ul class="clearfix hyp2" style="display: none;">

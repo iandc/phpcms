@@ -54,7 +54,7 @@
                                         <div class="box_txt">
 
                                             <h2 class="clearfix">
-                                                <a href="{$value['url']}" {title_style($value['style'])} class="fl">{str_cut($value['title'],
+                                                <a href="{$value['url']}" {title_style($value['style'])} class="fl" target="_blank">{str_cut($value['title'],
                                                 100, '')}</a>
                                                 {if $catid}
                                                     <span class="time fr">
@@ -70,9 +70,9 @@
                                             <div class="date">
                                                 {if !$catid}
                                                     <span class="lb fl">
-                                                        类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                                        类 别：<a href="" target="_blank">{getCatNameByCatId($value['catid'], $siteid)}</a>
                                                     </span>
-                                                    <span class="time_img fl"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
+                                                    <span class="time_img fl"><img style="margin-top: 2px;" src="../../../../statics/images/drivers/time.png" alt=""></span>
                                                     <span class="time fl">
                                                         {date('Y-m-d', $value['inputtime'])}
                                                     </span>
@@ -81,7 +81,7 @@
                                         </div>
                                         {else}
                                         <div>
-                                            <a href="{$value['url']}" class="img fl">
+                                            <a href="{$value['url']}" class="img fl" target="_blank">
                                                 {if !$catid}
                                                     <img src="{$value['thumb']}">
                                                 {else}
@@ -91,28 +91,30 @@
                                         </div>
                                         
                                         <div class="box_txt">
-
                                             <h2>
-                                                <a href="{$value['url']}" {title_style($value['style'])}>{str_cut($value['title'],
+                                                <a href="{$value['url']}" {title_style($value['style'])} target="_blank">{str_cut($value['title'],
                                                 100, '')}</a>
                                                 {if $catid}
                                                     <span class="time fr">
                                                         {date('m-d', $value['inputtime'])}
                                                     </span>
                                                 {/if}
-                                                <span class="time_img fr"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
+                                                <span class="time_img fr"><img style="margin-top: 2px;" src="../../../../statics/images/drivers/time.png" alt=""></span>
                                             </h2>
                                             <div class="txt">
                                                 <p>{str_cut($value['description'], 2000,'')}</p>
                                                 <div class="date clearfix">
                                                     {if !$catid}
                                                         <span class="lb fl">
-                                                            类 别：<a href="">{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                                            类 别：<a href="" target="_blank">{getCatNameByCatId($value['catid'], $siteid)}</a>
                                                         </span>
-                                                        <span class="time_img fl"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
-                                                        <span class="time fl" style="margin-top:6px;">
-                                                            {date('Y-m-d', $value['inputtime'])}
-                                                        </span>
+                                                        <div style="margin-top: 3px;">
+                                                            <span class="time_img fl"><img style="margin-top:2px;" src="../../../../statics/images/drivers/time.png" alt=""></span>
+                                                            <span class="time fl">
+                                                                {date('Y-m-d', $value['inputtime'])}
+                                                            </span>
+                                                        </div>
+                                                        
                                                     {/if}
                                                 </div>
                                             </div>

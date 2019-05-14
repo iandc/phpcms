@@ -6,27 +6,15 @@
             <div class="lcL fl">
                 <dl>
                     <dt class="lcL_all"><a href="">全部</a></dt>
-                    <dd class="icon">
-                        <a href="">嵌入式开发</a>
-                    </dd>
-                    <dd class="icon">
-                        <a href="">创客秀</a>
-                    </dd>
-                    <dd class="icon">
-                        <a href="">热门应用</a>
-                    </dd>
-                    <dd class="icon">
-                        <a href="">电路基础</a>
-                    </dd>
-                    <dd class="icon">
-                        <a href="">编程语言</a>
-                    </dd>
-                    <dd class="icon">
-                        <a href="">直播频道</a>
-                    </dd>
-                    <dd class="icon">
-                        <a href="">电源技术</a>
-                    </dd>
+                    <?php $TYPE = getcache('type_content','commons');?>
+                    {pc:content action="lists" catid="$TYPE" num="5" order="id DESC"}
+                    <!-- <?php print_r($TYPE) ;?> -->
+                        {loop $data $value}
+                            <dd>  <!-- class="icon" -->
+                                <a href="">{$TYPE[$value[typeid]][name]}</a>
+                            </dd>
+                        {/loop}
+                    {/pc}
                 </dl>
             </div>
             <div class="lcR fr">
@@ -36,7 +24,7 @@
                         <input class="sub" type="submit">
                         <span>
                             大家都在搜：
-                            <a href="">电源 |</a> 
+                            <a href="">电源 |</a>
                             <a href="">电子技术史话 |</a>
                             <a href="">树莓派 |</a>
                             <a href="">FPGA |</a>
@@ -75,14 +63,20 @@
                                 </p>
                                 <p class="time">
                                     <span>{$value['class_hour']}</span>
-                                    <em>{$value['duration']}</em>
+                                    <span>{$value['duration']}</span>
+                                    <span>{$value['laoshi']}</span>
+                                    <span>{date('Y-m-d', $value['inputtime'])}</span>
                                 </p>
                             </div>
                         </li>
                         {/loop}
+                    <div class="page_nav">
+                                <div class="more">
+                                    <div id="pages" class="text_c">{$pages}</div>
+                                </div>
+                            </div>
                         {/pc}
                     </ul>
-                    <div id="pages" class="text-c">{$pages}</div>
                 </div>
             </div>
         </div>

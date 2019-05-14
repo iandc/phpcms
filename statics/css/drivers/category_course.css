@@ -252,7 +252,7 @@
     width: 20px;
     height: 20px;
     display: inline-block;
-    background: url(../../images/drivers/user.png) no-repeat 5px 8px;
+    background: url(../../images/drivers/user.png) no-repeat 5px 10px;
 }
 .userNum span{
     font-size: 12px;

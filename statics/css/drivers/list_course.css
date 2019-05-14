@@ -103,7 +103,7 @@ input{
 }
 .list_course .lcR .course_list .show_list li .show_list_main h6{
     font-size: 12px;
-    margin: 15px 0 15px;
+    margin: 15px 0 13px;
 }
 .list_course .lcR .course_list .show_list li .show_list_main h6 span a{
     margin: 0 5px 0 0;
@@ -120,8 +120,13 @@ input{
     height: 40px;
     text-overflow: ellipsis;
     overflow: hidden;
+    font-size: 14px;
 }
 .list_course .lcR .course_list .show_list li .show_list_main .time{
     color: #767676;
     font-size: 12px;
+    margin-top: 7px;
+}
+.list_course .lcR .course_list .show_list li .show_list_main .time span{
+    padding-right: 5px;
 }
