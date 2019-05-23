@@ -4,54 +4,26 @@
     <section>
     <div style="position: relative;">
         <div class="course w1100">
-            <div class="mb10 bgimg clearfix bg" _ngcontent-sc22>
+            <div class="bgimg clearfix bg" style="margin-bottom: 20px;" _ngcontent-sc22>
             <div class="w1100 clearfix">
                 <div class="fr" class="">
                     <ul class="clearfix bgimg_list">
-                        <li>
-                            <div class="fl">
-                                <a href="">
-                                    <img src="https://images.ctfassets.net/2y9b3o528xhq/wQbCpoywrAyyMyGCeCUYM/f269101a6df0a73be7b9f40bb4977bd9/module-nd124.png" alt="">
-                                </a>
-                            </div>
-                            <div class="fr" style="padding:10px 10px; background: #f2f6ef;">
-                                <span>口碑课程</span>
-                                <p>一站式掌握数据分析技能</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fl">
-                                <a href="">
-                                    <img src="https://images.ctfassets.net/2y9b3o528xhq/4hSpwePiBqYWKUamEscmCs/c91bd19b66b08ef29384ed19e798e070/deep-learning_promo_2x.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="fr" style="padding:10px 10px; background: #f2f6ef;">
-                                <span>口碑课程</span>
-                                <p>一站式掌握数据分析技能</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fl">
-                                <a href="">
-                                    <img src="https://images.ctfassets.net/2y9b3o528xhq/19NgUw9l3MGaq2a0cY0OSO/69b9f3e4f31f9e957619c0730553a450/module-nd100_2x.png" alt="">
-                                </a>
-                            </div>
-                            <div class="fr" style="padding:10px 10px; background: #f2f6ef;">
-                                <span>口碑课程</span>
-                                <p>一站式掌握数据分析技能</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="fl">
-                                <a href="">
-                                    <img src="https://images.ctfassets.net/2y9b3o528xhq/wQbCpoywrAyyMyGCeCUYM/f269101a6df0a73be7b9f40bb4977bd9/module-nd124.png" alt="">
-                                </a>
-                            </div>
-                            <div class="fr" style="padding:10px 10px; background: #f2f6ef;">
-                                <span>口碑课程</span>
-                                <p>一站式掌握数据分析技能</p>
-                            </div>
-                        </li>
+                        {php $courseWhere = 'typeid='.$typeidList['course'];}
+                        {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="2" cache="0" moreinfo="1"}
+                            {loop $data $value}
+                                <li class="clearfix">
+                                    <div class="fl">
+                                        <a href="{$value['url']}">
+                                            <img src="{thumb($value['thumb'], 120, 100)}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="fr" style="padding:15px 30px; background: #f2f6ef; height: 80px; width: 330px;">
+                                        <a href="{$value['url']}"><span>口碑课程</span></a>
+                                        <a href="{$value['url']}"><p>{$value['title']}</p></a>
+                                    </div>
+                                </li>
+                            {/loop}
+                        {/pc}
                     </ul>
                 </div>
                 <div class="fl" class="course_lb">
@@ -60,7 +32,7 @@
                         <div class="lunbo">
                             {pc:content action="position" posid="$posidList['course_focus']" order="listorder DESC" num="4" cache="0"}
                             {loop $data $value}
-                                <a href="#"><img src="{thumb($value['thumb'], 1100, 300)}"></a>
+                                <a href="{$value['url']}"><img src="{thumb($value['thumb'], 1100, 300)}"></a>
                             {/loop}
                             {/pc}
                         </div>
@@ -100,7 +72,7 @@
                 <div class="course_content mb10 clearfix">
                     <!-- 马上要开始的课程 -->
                     <div class="conts">
-                        <h3 class="titles"><i>↓</i><span>热门课程</span></h3>
+                        <h3 class="titles"><i>↓</i><span>热门课程</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
                         <div class="newest_curriculum mb10 clearfix">
                             <!-- <div class="nc_l fl zxkc"> -->
                                 <!-- <h3>马上要开始的课程</h3> -->
@@ -115,26 +87,27 @@
                                 {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{$value['course_link']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{$value['url']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                     </dt>
                                     <div>
-                                        <p><a href="{$value['course_link']}" target="_blank">{$value['title']}</a></p>
-                                        <div class="userNum clearfix">
-                                            <span class="fl">
-                                                <i></i>
-                                                313
-                                            </span>
-                                            <span class="fr" style="margin-right: 10px; font-size: 14px;">
-                                                ￥<small>219</small>
-                                            </span>
-                                        </div>
+                                        <p>
+                                            <a href="{$value['url']}" target="_blank">{$value['title']}</a></p>
                                         <div class="zy">
                                             <a href="">{str_cut($value['description'], 75,
                                             '')}</a>
                                         </div>
-                                        <div class="sc">
-                                            <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
+                                        <div class="userNum clearfix">
+                                            <span class="fl">
+                                                <i></i>
+                                                {$value['user_num']}
+                                            </span>
+                                            <span class="fr" style="margin-right: 10px; font-size: 14px;">
+                                                ￥<small>{$value['price']}</small>
+                                            </span>
                                         </div>
+                                        <!-- <div class="sc">
+                                            <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
+                                        </div> -->
                                     </div>
                                     
                                 </dl>
@@ -153,7 +126,7 @@
                             </h3>
                         </div>
                         <div class="ct_r fr">
-                            {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="4" cache="0"}
+                            {pc:content action="position" posid="$posidList['course_focus']" order="listorder DESC" num="4" cache="0"}
                             {loop $data $value}
                                 <dl>
                                     <dt>
@@ -177,7 +150,7 @@
 
                     <!-- 正在进行的课程 -->
                     <div class="conts">
-                        <h3 class="titles"><i>↓</i><span>免费公开课</span></h3>
+                        <h3 class="titles"><i>↓</i><span>免费公开课</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
                         <div class="newest_curriculum mb10 clearfix">
                             <!-- <div class="nc_l fl zxkc zxkc1"> -->
                                 <!-- <h3>正在进行的课程</h3> -->
@@ -195,6 +168,10 @@
                                         <a href="{$value['url']}"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                     </dt>
                                     <p><a href="{$value['url']}">{$value['title']}</a></p>
+                                    <div class="zy">
+                                        <a href="">{str_cut($value['description'], 75,
+                                        '')}</a>
+                                    </div>
                                     <div class="userNum clearfix">
                                         <span class="fl">
                                             <i></i>
@@ -204,13 +181,9 @@
                                             ￥<small>219</small>
                                         </span>
                                     </div>
-                                    <div class="zy">
-                                        <a href="">{str_cut($value['description'], 75,
-                                        '')}</a>
-                                    </div>
-                                    <div class="sc">
+                                    <!-- <div class="sc">
                                         <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
-                                    </div>
+                                    </div> -->
                                 </dl>
                                 {/loop}
                                 {/pc}
@@ -242,12 +215,12 @@
                     </div>
 
                     <!-- 明星讲师 -->
-                    <div class="conts">
-                        <h3 class="titles"><i>↓</i><span>明星讲师</span></h3>
+                    <div class="conts" style="height: 365px;">
+                        <h3 class="titles"><i>↓</i><span>明星讲师</span><!--  <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> --></h3>
                         <div class="newest_curriculum clearfix lecturer">
                             <div class="nc_l fl">
                                 <!-- <h3>明星讲师</h3> -->
-                                <img style="width: 240px; height: 400px;" src="https://images.ctfassets.net/2y9b3o528xhq/19NgUw9l3MGaq2a0cY0OSO/69b9f3e4f31f9e957619c0730553a450/module-nd100_2x.png" alt="">
+                                <img style="width: 240px; height: 305px;" src="https://images.ctfassets.net/2y9b3o528xhq/19NgUw9l3MGaq2a0cY0OSO/69b9f3e4f31f9e957619c0730553a450/module-nd100_2x.png" alt="">
                             </div>
                             <div class="ct_r fr">
                                 <ul>

@@ -48,15 +48,12 @@
                         {loop $data $value}
                         <li>
                             <div class="show_list_img fl">
-                                <a href=""><img src="{thumb($value['thumb'], 228, 145)}" alt=""></a>
+                                <a href="{$value['url']}"><img src="{thumb($value['thumb'], 228, 145)}" alt=""></a>
                             </div>
                             <div class="show_list_main fr">
-                                <h2><a href="">{$value['title']}</a></h2>
+                                <h2><a href="{$value['url']}">{$value['title']}</a></h2>
                                 <h6>
-                                    <span><a href="">TI</a></span>
-                                    <span><a href="">超声</a></span>
-                                    <span><a href="">流量计</a></span>
-                                    <span><a href="">FR6043</a></span>
+                                    <span><a href="">{$value['keywords']}</a></span>
                                 </h6>
                                 <p class="desc">
                                     {$value['description']}

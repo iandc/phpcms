@@ -6,9 +6,9 @@
             <div class="show_course_tit">
                 <h4>
                     您的位置：
-                    <a href="">EEWORLD大学堂 | </a>
-                    <a href="">直播频道 | </a>
-                    <a href="">直播回放：TI 超声气体流量计量创新方案</a>
+                    <a href="http://www.eetop.wang/index.php?m=content&c=index&a=lists&catid=159">课程首页 > </a>
+                    <a href="">{$CATEGORYS[$catid][catname]} > </a>
+                    <a href="">{$title}</a>
                 </h4>
             </div>
             <div class="show_main clearfix">
@@ -22,29 +22,12 @@
                         </div>
                         <div class="content2">
                            <div class="div_show">
-                               <img style="width: 100%;" src="http://open-image.ws.126.net/c9f03dc4474c4bc3959ad01121b70717.jpg?_t=1555403271604" alt="">
+                                {$content}
                            </div>
                            <div class="mulu clearfix">
                                <ul>
                                    <li>
-                                       <i></i>
-                                       <a href="">课时1：MCU芯片架构</a>
-                                   </li>
-                                   <li>
-                                       <i></i>
-                                       <a href="">课时2：MCU芯片架构</a>
-                                   </li>
-                                   <li>
-                                       <i></i>
-                                       <a href="">课时3：MCU芯片架构</a>
-                                   </li>
-                                   <li>
-                                       <i></i>
-                                       <a href="">课时4：MCU芯片架构</a>
-                                   </li>
-                                   <li>
-                                       <i></i>
-                                       <a href="">课时5：MCU芯片架构</a>
+                                       {$catalog}
                                    </li>
                                </ul>
                            </div>
@@ -60,10 +43,10 @@
                         <div class="lecturer_con">
                             <div class="lecturer_con_tit">
                                 <div class="titImg">
-                                    <a href=""><img src="https://image.gogoup.com/teacher/1548917181580.jpg" alt=""></a>
+                                    <a href=""><img src="{$titleImg}" alt=""></a>
                                 </div>
                                 <div class="name">
-                                    <a href="">嗡嗡</a>
+                                    <a href="">{$laoshi}</a>
                                 </div>
                                 <p>资深设计手绘讲师</p>
                             </div>
@@ -82,7 +65,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="lecturer">
+                    <!-- 相关课程 -->
+                    <!-- <div class="lecturer">
                         <div class="lecturer_tit lecturer_tit1">
                             <i class="line"></i>
                             <h3>相关课程</h3>
@@ -113,7 +97,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="maybelike">
@@ -131,7 +115,7 @@
                             {loop $data $value}
                                 <div class="list4">
                                     <div class="img">
-                                        <a href="">
+                                        <a href="{$value['url']}">
                                             <img src="{thumb($value['thumb'], 209, 116)}" alt="">
                                         </a>
                                     </div>
@@ -146,56 +130,21 @@
                 </ul>
                 <ul class="clearfix hyp2" style="display: none;">
                     <li class="w1100">
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="https://open-image.nosdn.127.net/e0baba1745524ad2acd049de076ef964.png?imageView&thumbnail=540y300&enlarge=1&quality=85" alt="">
-                                </a>
+                        {php $courseWhere = 'typeid='.$typeidList['course'];}
+                        {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="5" cache="0"}
+                        {loop $data $value}
+                            <div class="list4">
+                                <div class="img">
+                                    <a href="{$value['url']}">
+                                        <img src="{thumb($value['thumb'], 209, 116)}" alt="">
+                                    </a>
+                                </div>
+                                <div class="tit">
+                                    <a href="">{$value['title']}</a>
+                                </div>
                             </div>
-                            <div class="tit">
-                                <a href="">附近饿哦勾结哦该机构我问过曲儿个</a>
-                            </div>
-                        </div>
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="https://open-image.nosdn.127.net/e0baba1745524ad2acd049de076ef964.png?imageView&thumbnail=540y300&enlarge=1&quality=85" alt="">
-                                </a>
-                            </div>
-                            <div class="tit">
-                                <a href="">附近饿哦勾结哦该机构我问过曲儿个</a>
-                            </div>
-                        </div>
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="https://open-image.nosdn.127.net/e0baba1745524ad2acd049de076ef964.png?imageView&thumbnail=540y300&enlarge=1&quality=85" alt="">
-                                </a>
-                            </div>
-                            <div class="tit">
-                                <a href="">附近饿哦勾结哦该机构我问过曲儿个</a>
-                            </div>
-                        </div>
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="https://open-image.nosdn.127.net/e0baba1745524ad2acd049de076ef964.png?imageView&thumbnail=540y300&enlarge=1&quality=85" alt="">
-                                </a>
-                            </div>
-                            <div class="tit">
-                                <a href="">附近饿哦勾结哦该机构我问过曲儿个</a>
-                            </div>
-                        </div>
-                        <div class="list4">
-                            <div class="img">
-                                <a href="">
-                                    <img src="https://open-image.nosdn.127.net/e0baba1745524ad2acd049de076ef964.png?imageView&thumbnail=540y300&enlarge=1&quality=85" alt="">
-                                </a>
-                            </div>
-                            <div class="tit">
-                                <a href="">附近饿哦勾结哦该机构我问过曲儿个</a>
-                            </div>
-                        </div>
+                        {/loop}
+                        {/pc}
                     </li>
                 </ul>
             </div>

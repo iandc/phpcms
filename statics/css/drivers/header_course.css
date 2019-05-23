@@ -3,11 +3,11 @@ body{
 }
 .hd_course{
     height: 70px;
-    padding: 10px 0 25px;
+    padding: 10px 0 20px;
 }
 .hd_course .hd_c_list .search{
     margin-top: 17px;
-    margin-right: 15px;
+    /*margin-right: 15px;*/
 }
 .hd_course .hd_c_list .search .inp1{
     width: 400px;
@@ -31,7 +31,7 @@ body{
 }
 .hd_course .hd_c_list ul li i{
     display: inline-block;
-    margin: 0 -5px 0 5px;
+    margin: 0 0 0 8px;
     width: 2px;
     height: 14px;
     background-color: #efefef;
@@ -79,7 +79,7 @@ body{
 #nav_course ul li:hover{
     border-bottom: 2px solid #0b68a9;
 }
-#nav_course ul li:hover i{
+/*#nav_course ul li:hover i{
     background: url(../../images/drivers/sj.png) no-repeat;
     -webkit-background-size: 6px 6px;
     background-size: 6px 6px;
@@ -88,11 +88,11 @@ body{
     display: inline-block;
     width: 10px;
     height: 10px;
-    background: url(../../images/drivers/sj2.png) no-repeat;
+    background: url(../../images/drivers/sj2.png) no-repeat 0;
     -webkit-background-size: 6px 6px;
     background-size: 6px 6px;
     margin-left: 10px;
-}
+}*/
 
 #nav_course .xl{
     width: 1100px;
@@ -122,3 +122,4 @@ body{
     font-size: 20px;
     margin-right: 10px;
 }
+

@@ -6,11 +6,12 @@
     margin-bottom: 10px;
 }
 .show_course .show_course_tit h4{
-    color: #0b68a9;
+    /*color: #0b68a9;*/
     padding: 5px 0;
+    font-size: 13px;
 }
 .show_course .show_course_tit h4 a{
-    color: #0b68a9;
+    /*color: #0b68a9;*/
 }
 .show_course .show_main{
 
@@ -36,6 +37,10 @@
 }
 .show_course .show_main .smL .course_show1 .mulu ul li i:before{
     content: "o";
+}
+.show_course .show_main .smL .course_show1 .mulu ul li a{
+    display: inline-block;
+    padding: 5px 0;
 }
 
 .show_course .show_main .smR{

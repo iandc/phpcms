@@ -2,7 +2,7 @@
 
 }
 .list_course .lcL{
-    width: 23%;
+    width: 15%;
     height: auto;
     background-color: #fff;
     margin-top: 30px;
@@ -27,7 +27,7 @@
     background: url(../../images/drivers/train_channelarrow.png) 200px 23px no-repeat;
 }
 .list_course .lcR{
-    width: 74%;
+    width: 82%;
     height: auto;
     border-left: 1px solid #cdcdcd;
     text-align: left;
@@ -66,7 +66,7 @@ input{
     color: #0b68a9 ;
 }
 .list_course .lcR .course_list .course_list_name{
-    margin: 20px 0 30px 0;
+    margin: 20px 0;
 }
 .list_course .lcR .course_list .course_list_name h3 span a{
     color: #0b68a9;
@@ -107,7 +107,7 @@ input{
 }
 .list_course .lcR .course_list .show_list li .show_list_main h6 span a{
     margin: 0 5px 0 0;
-    background: #0b68a9;
+    background: #bbb6b6;
     color: #FFF;
     padding: 3px 12px;
     border: 0;

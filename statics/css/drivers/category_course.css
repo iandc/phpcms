@@ -1,45 +1,16 @@
-.bgimg::before{
-    /*background: url(../../images/drivers/timg.png) no-repeat;
-    -webkit-background-size: 100% 100%;
-    background-size: 100% 100%;*/
-    
-}
-
-.bg[_ngcontent-sc22]::before{
-  /*  background-color: #f8fafc;
-    content: '';
-    width: 1100px;
-    height: 450px;
-    margin: 0 auto;*/
-    /*z-index: -1000;*/
-    /*background: linear-gradient(160deg, #02ccba, #aa7ecd);*/
-    /*background:linear-gradient(15deg,transparent 290px, #58a 0,#aa7ecd);
-    -webkit-transform-origin: left bottom;
-    transform-origin: left bottom;
-    position: absolute;
-    top: 0;*/
-    /*left: 0;*/
-    /*border-bottom-right-radius: 550px;*/
-    /*border-top-left-radius: 170px;*/
-    /*border-bottom-left-radius: 550px;*/
-    /*border-top-right-radius: 170px;*/
-    /*-webkit-transform: skew(0deg, -15deg);*/
-    /*transform: skew(0deg, -15deg);*/
-}
-
 .bgimg_list{
     z-index: 99;
     position: relative;
-    width: 645px;
+    /*width: 645px;*/
     margin-top: 20px;
 }
 
 .bgimg .bgimg_list li{
-    margin: 20px 0;
+    margin: 15px 0;
     margin-left: 30px;
     border-radius: 10px;
     margin-bottom: 0;
-    width: 45%;
+    /*width: 45%;*/
     float: left;
 }
 .bgimg .bgimg_list li span{
@@ -48,12 +19,12 @@
 }
 .bgimg .bgimg_list li p{
     font-size: 15px;
-    width: 150px;
+    /*width: 150px;*/
     line-height: 28px;
 }
 .bgimg .bgimg_list li img{
-    height: 100px;
-    width: 120px;
+    height: 110px;
+    width: 180px;
 }
 
 /*轮播部分--------------------------------*/
@@ -80,7 +51,7 @@
 #lunbobox ul {
     width:285px;
     position:absolute;
-    bottom:30px;
+    bottom:15px;
     left: 50%;
     margin-left: -60px;
     z-index:5;
@@ -164,6 +135,15 @@
     /*border-bottom: 2px solid #bcbccc;*/
     color: #333;
     text-align: center;
+    position: relative;
+}
+.titles a.more{
+    font-size: 13px;
+    display: inline-block;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-weight: 600;
 }
 .titles span{
     display: inline-block;
@@ -183,15 +163,9 @@
 /*马上要开始的课程*/
 .course_content .newest_curriculum .nc_l{
     width: 240px;
-    height: 400px;
+    height: 305px;
     border: 1px solid #cdcdcd;
 }
-/*.course_content .newest_curriculum .zxkc{
-    background: url(https://images.ctfassets.net/2y9b3o528xhq/2ZIxbxaYScqQcWYIMyoE6y/8ca50afbec033a566237ac1dcf0cee0c/module-nlp1_2x.png);
-}
-.course_content .newest_curriculum .zxkc1{
-    background: url(https://images.ctfassets.net/2y9b3o528xhq/5nhsVrn2KIcyEleY8KFKOE/0bbd4132a53f2c2bfa146cdda52494e7/nd213_side_promo.jpg);
-}*/
 .course_content .newest_curriculum .zxkc h1{
     font-size: 30px;
     color: #fff;
@@ -244,9 +218,14 @@
 }
 .course_content .newest_curriculum .nc_r dl p{
     padding-left: 5px;
-    margin-top: 10px;
+    margin: 10px 0 5px;
     /*text-align: center;*/
     font-size: 14px;
+    /*overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;*/
+    font-weight: 600;
+    height: 42px;
 }
 .userNum i{
     width: 20px;
@@ -348,7 +327,7 @@
     float: left;
     margin: 0 0 0 14px;
     width: 200px;
-    height: 400px;
+    height: 300px;
     background: -webkit-linear-gradient(top,white,lightblue,skyblue);
     overflow: hidden;
     box-shadow: -5px 5px 5px #cdcdcd;
