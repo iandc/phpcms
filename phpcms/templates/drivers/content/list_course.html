@@ -3,6 +3,13 @@
 <section>
     <div class="list_course w100 clearfix">
         <div class="w1100">
+            <div class="show_course_tit" style="margin-top: 10px; margin-bottom: 0;">
+                <h4>
+                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=159" class="bz"></a>
+                    <a href="">课程首页 &nbsp;&nbsp;> &nbsp;</a>
+                    <a href=""> {$catname}</a>
+                </h4>
+            </div>
             <div class="lcL fl">
                 <dl>
                     <dt class="lcL_all"><a href="">全部</a></dt>
@@ -18,20 +25,6 @@
                 </dl>
             </div>
             <div class="lcR fr">
-                <div class="search">
-                    <form action="">
-                        <input class="inp" type="text" placeholder="搜索视频、课程及专题">
-                        <input class="sub" type="submit">
-                        <span>
-                            大家都在搜：
-                            <a href="">电源 |</a>
-                            <a href="">电子技术史话 |</a>
-                            <a href="">树莓派 |</a>
-                            <a href="">FPGA |</a>
-                            <a href="">sensortile </a>
-                        </span>
-                    </form>
-                </div>
                 <div class="course_list">
                     <div class="course_list_name">
                         <h3>
@@ -43,29 +36,44 @@
                         </h3>
                     </div>
                     <ul class="show_list clearfix">
-                        {php $courseWhere = 'typeid='.$typeidList['course'];}
-                        {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="8" cache="0" page="$page" moreinfo="1"}
+                        <!-- {php $courseWhere = 'typeid='.$typeidList['course'];} -->
+                        <!-- {pc:content action="lists" catid="162"  order="id DESC" num="8" cache="0" page="$page" moreinfo="1"} -->
+                        {if $catid}
+                            {if $typeid}
+                                {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="8" cache="0" moreinfo="1"}
+                            {else}
+                                {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="8" cache="0" moreinfo="1"}
+                            {/if}
+                        {else}
+                            {if $typeid}
+                                {pc:get sql="SELECT * FROM phpcms_news where typeid='$typeid' ORDER BY id DESC" page="$page" num="8" cache="0" moreinfo="1"}
+                            {else}
+                                {pc:get sql="SELECT * FROM phpcms_news ORDER BY id DESC" page="$page" num="8" cache="0" moreinfo="1"}
+                            {/if}
+                        {/if}
+                        {php $i = 0;}
                         {loop $data $value}
                         <li>
                             <div class="show_list_img fl">
-                                <a href="{$value['url']}"><img src="{thumb($value['thumb'], 228, 145)}" alt=""></a>
+                                <a href="{$value['course_link']}"><img src="{thumb($value['thumb'], 228, 145)}" alt=""></a>
                             </div>
                             <div class="show_list_main fr">
-                                <h2><a href="{$value['url']}">{$value['title']}</a></h2>
+                                <h2><a href="{$value['course_link']}">{$value['title']}</a></h2>
                                 <h6>
-                                    <span><a href="">{$value['keywords']}</a></span>
+                                    关键词：<span style="{if $value['keywords'] == ""}display: none;{/if}"><a href="">{$value['keywords']}</a></span>
                                 </h6>
                                 <p class="desc">
                                     {$value['description']}
                                 </p>
-                                <p class="time">
-                                    <span>{$value['class_hour']}</span>
-                                    <span>{$value['duration']}</span>
-                                    <span>{$value['laoshi']}</span>
-                                    <span>{date('Y-m-d', $value['inputtime'])}</span>
+                                <p class="time clearfix">
+                                        <span>课时：{$value['class_hour']}</span>
+                                        <span>讲师：{$value['teacher']}</span>
+                                        <span>时长：{$value['duration']}</span>
+                                        <span class="fr">{date('Y-m-d', $value['inputtime'])}</span>
                                 </p>
                             </div>
                         </li>
+                        {php $i++;}
                         {/loop}
                     <div class="page_nav">
                                 <div class="more">

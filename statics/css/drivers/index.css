@@ -349,7 +349,7 @@ body{
 .zxRight_conc{
     height: auto!important;
     min-height: 50px;
-    padding: 5px 8px 5px 10px;
+    padding: 5px 8px 5px 0;
     font-size: 12px;
 }  
 .zxRight_conc .ul1 li{
@@ -400,9 +400,11 @@ body{
 }
 .zxRight_conc .ul2 li{
     height: auto;
-    padding: 13px 0 0px;
+    padding: 7px 0;
     /* margin-bottom: 5px; */
     border-bottom: 1px solid #eee;
+    height: 73px;
+
 }
 .zxRight_conc .ul2 li:last-child{
     border-bottom: 0;

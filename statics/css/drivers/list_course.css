@@ -5,23 +5,25 @@
     width: 15%;
     height: auto;
     background-color: #fff;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 .list_course .lcL dl{
-    padding: 30px 20px 10px;
+    padding: 0 20px 10px;
     text-align: left;
     font-size: 16px;
 }
 .list_course .lcL dl .lcL_all{
     font-weight: bold;
     height: 40px;
-    line-height: 40px;
+    line-height: 55px;
     overflow: hidden;
-    margin: 0 0 10px 0;
+    /*margin: 0 0 10px 0;*/
+    text-align: center;
 }
 .list_course .lcL dl dd{
     padding: 16px 0;
     border-bottom: 1px solid #eceff5;
+    text-align: center;
 }
 .list_course .lcL dl dd.icon{
     background: url(../../images/drivers/train_channelarrow.png) 200px 23px no-repeat;
@@ -29,44 +31,46 @@
 .list_course .lcR{
     width: 82%;
     height: auto;
-    border-left: 1px solid #cdcdcd;
+    /*border-left: 1px solid #cdcdcd;*/
     text-align: left;
-    padding: 0 0 0 25px;
+    padding: 0 0 30px 25px;
+    margin-top: 5px;
 }
-.list_course .lcR .search{
-    border-top: 1px solid #eceff5;
+.search1{
+    /*border-top: 1px solid #eceff5;
     border-bottom: 1px solid #eceff5;
-    background: #f9f9f9;
+    background: #f9f9f9;*/
     height: 35px;
+    line-height: 35px;
     margin-top: 20px;
 }
 input{
     font: normal 14px "Microsoft yahei";
 }
-.list_course .lcR .search .inp{
+.search1 .inp{
     border: 1px solid #CCC;
     font-size: 12px;
     padding: 5px 5px;
     margin: 3px 0 0 10px;
 }
-.list_course .lcR .search .sub{
+.search1 .sub{
     border: 1px solid #CCC;
     font-size: 12px;
     background: #f4f4f4;
     padding: 5px 10px;
     cursor: pointer;
 }
-.list_course .lcR .search span{
+.search1 span{
     color: #0b68a9;
     padding: 0 0 0 10px;
     font-size: 12px;
 }
-.list_course .lcR .search span a{
-    padding: 0 5px;
+.search1 span a{
+    padding: 0 2px;
     color: #0b68a9 ;
 }
 .list_course .lcR .course_list .course_list_name{
-    margin: 20px 0;
+    margin: 0 0 20px;
 }
 .list_course .lcR .course_list .course_list_name h3 span a{
     color: #0b68a9;
@@ -74,7 +78,7 @@ input{
 }
 .list_course .lcR .course_list .course_list_name h3 .name{
     color: #333;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 600;
 }
 .list_course .lcR .course_list .show_list li{
@@ -85,6 +89,7 @@ input{
 }
 .list_course .lcR .course_list .show_list li:last-child{
     border-bottom: 0;
+    margin-bottom: 0;
 }
 .list_course .lcR .course_list .show_list li .show_list_img{
     width: 28%;
@@ -128,5 +133,5 @@ input{
     margin-top: 7px;
 }
 .list_course .lcR .course_list .show_list li .show_list_main .time span{
-    padding-right: 5px;
+    padding-right: 20px;
 }

@@ -26,3 +26,11 @@ ul li{float: left;}
 .por{position: relative;}
 .poa{position: absolute;}
 .mb10{margin-bottom: 10px;}
+.bz{
+    display: inline-block;
+    width: 16px;
+    height: 21px;
+    background: url(../../images/drivers/search1.png) no-repeat 0 0;
+    position: relative;
+    top: 1px;
+}

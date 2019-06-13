@@ -5,11 +5,43 @@
         <div class="show_course w1100">
             <div class="show_course_tit">
                 <h4>
-                    您的位置：
-                    <a href="http://www.eetop.wang/index.php?m=content&c=index&a=lists&catid=159">课程首页 > </a>
+                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$courseid}" class="bz"></a>
+                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}">课程首页 > </a>
                     <a href="">{$CATEGORYS[$catid][catname]} > </a>
                     <a href="">{$title}</a>
                 </h4>
+            </div>
+            <div class="course_all w1100 mb10 clearfix">
+                <div style="padding: 10px;" class="clearfix">
+                    <div class="fl bigImg">
+                        <a href="{$course_link}">
+                            <img src="{$thumb}" alt="">
+                        </a>
+                    </div>
+                    <div class="fr all_list">
+                        <h3 class="gy">{$title}</h3>
+                        <div class="view_line">
+                            <div class="right_tags fl">课程分类 :</div>
+                            <div class="top-right-member fl">{$CATEGORYS[$catid][catname]}</div>
+                        </div>
+                        <div class="view_line">
+                            <div class="right_tags fl">时长 :</div>
+                            <div class="top-right-member fl">{$duration}</div>
+                        </div>
+                        <div class="view_line">
+                            <div class="right_tags fl">报名人数 :</div>
+                            <div class="top-right-member fl">{$user_num}人已报名</div>
+                        </div>
+                        <div class="view_line price">
+                            <span class="{if $present_price == 0 }small{/if}">￥{$present_price}</span>
+                            <del style="margin-left: 0;" class="{if $present_price == 0}del{/if}">{if $present_price == 0 }￥{$price}{else}{$price}{/if}</del>
+                        </div>
+                        <div class="view_line gk">
+                            <a href="{$course_link}" target="_blank">前往学习</a>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
             <div class="show_main clearfix">
                 <div class="smL fl">
@@ -18,53 +50,41 @@
                             <ul>
                                 <li class="tab1">课程介绍</li>
                                 <li>课程目录</li>
+                                <li>授课老师</li>
                             </ul>
                         </div>
                         <div class="content2">
-                           <div class="div_show">
+                           <div class="div_show div1">
                                 {$content}
                            </div>
-                           <div class="mulu clearfix">
-                               <ul>
-                                   <li>
-                                       {$catalog}
-                                   </li>
-                               </ul>
+                           <div class="mulu clearfix div1">
+                                {$catalog}
+                           </div>
+                           <div class="clearfix div1">
+                               <div class="lecturer">
+                                    <!-- <div class="lecturer_tit">
+                                        <i class="line"></i>
+                                        <h3>授课老师</h3>
+                                    </div> -->
+                                    <div class="lecturer_con">
+                                        <div class="lecturer_con_tit">
+                                            <div class="titImg">
+                                                <a href=""><img src="{$avatar}" alt=""></a>
+                                            </div>
+                                            <div class="name">
+                                                <a href="">{$teacher}</a><span>{$school}</span>
+                                            </div>
+                                            <p>{$brief_introduction}</p>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
                            </div>
                        </div>
                     </div>
                 </div>
-                <div class="smR fr">
-                    <div class="lecturer">
-                        <div class="lecturer_tit">
-                            <i class="line"></i>
-                            <h3>授课老师</h3>
-                        </div>
-                        <div class="lecturer_con">
-                            <div class="lecturer_con_tit">
-                                <div class="titImg">
-                                    <a href=""><img src="{$titleImg}" alt=""></a>
-                                </div>
-                                <div class="name">
-                                    <a href="">{$laoshi}</a>
-                                </div>
-                                <p>资深设计手绘讲师</p>
-                            </div>
-                            <div class="lecturer_con_bot">
-                                <h3>主讲的其他课程：</h3>
-                                <ul class="clearfix">    
-                                    <li>
-                                        <a href=""><img src="https://image.gogoup.com/course/20190131/1548924458452.gif?x-oss-process=image/resize,m_fill,h_138,w_244" alt=""></a>
-                                        <div class="txt"><span>工业设计手绘之...</span></div>
-                                    </li>
-                                    <li>
-                                        <a href=""><img src="https://image.gogoup.com/course/20190131/1548924458452.gif?x-oss-process=image/resize,m_fill,h_138,w_244" alt=""></a>
-                                        <div class="txt"><span>工业设计手绘之...</span></div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+                <!-- <div class="smR fr"> -->
+                    
                     <!-- 相关课程 -->
                     <!-- <div class="lecturer">
                         <div class="lecturer_tit lecturer_tit1">
@@ -98,19 +118,39 @@
                             </div>
                         </div>
                     </div> -->
-                </div>
+                <!-- </div> -->
+            </div>
+            <div class="clearfix" style="margin-top: 10px;">
+                <ul class="list_3 list_3_course clearfix">
+                    <li class="fl">上一个课程：<a href="{$previous_page['url']}">{str_cut($previous_page['title'], 250, '')}</a></li>
+                    <li class="fr" style="margin-left: 100px;">下一个课程：<a href="{$next_page['url']}">{str_cut($next_page['title'], 250, '')}</a></li>
+                </ul>
+            </div>
+            <div class="lecturer_con_bot">
+                <h3>主讲的其他课程：</h3>
+                <ul class="clearfix" style="background: #fff;">
+                    {php $courseWhere = "teacher='$teacher' and id <> $id";}
+                    {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="5" cache="0" moreinfo=1}
+                    {loop $data $value}
+                    <li>
+                        <a href=""><img src="{thumb($value['thumb'], 209, 116)}" alt=""></a>
+                        <div class="txt"><span>{$value['title']}</span></div>
+                    </li>
+                    {/loop}
+                    {/pc}
+                </ul>
             </div>
             <div class="maybelike">
                 <div class="m_like">
                     <h6>
-                        <span id="button">
+                        <!-- <span id="button">
                             <a href="javascript:;">换一批</a>
-                        </span>
+                        </span> -->
                         猜你喜欢
                     </h6>
                 </div>
-                <ul class="clearfix hyp2">
-                    <li class="w1100" class="">
+                <!-- <ul class="clearfix hyp2">
+                    <li class="w1100" class="" style="display: none;">
                         {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="5" cache="0"}
                             {loop $data $value}
                                 <div class="list4">
@@ -127,8 +167,8 @@
                         {/pc}
                         
                     </li>
-                </ul>
-                <ul class="clearfix hyp2" style="display: none;">
+                </ul> -->
+                <ul class="clearfix hyp2">
                     <li class="w1100">
                         {php $courseWhere = 'typeid='.$typeidList['course'];}
                         {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="5" cache="0"}
@@ -151,29 +191,31 @@
         </div>
     </div>
 </section>
+<div id="div1"><a href="JavaScript:;">回到顶部</a></div>
 
 {template 'content', 'footer_course'}
 
 <script>
+    $(function(){
+        $("#nav ul li").off("click").on("click",function(){
+           var index = $(this).index();
+           $(this).addClass("tab1").siblings().removeClass("tab1");
+           $(".content2>div").eq(index).addClass("div_show").siblings().removeClass("div_show");
+         });
+    });
+
     $(function () {
-        $("#tab .tab .tab-item").click(function () {
-            $(this).addClass("active").siblings().removeClass("active");
-            $(".products .main").eq($(this).index()).show().siblings().hide();
+        $("#div1").hide();
+        $(window).scroll(function () {
+            var top = $(this).scrollTop();
+            if(top>=$(this).height()){
+                $("#div1").fadeIn();
+            }else{
+                $("#div1").fadeOut();
+            }
+            $("#div1").click(function () {
+                window.scrollTo(0,0);    //  设置内容滚动到指定的坐标
+            })
         })
     })
-    $('#nav ul li').click(function(event) {
-        $(this).addClass('tab1');
-        $(this).siblings().removeClass('tab1');
- 
-        $('.content2 div').eq($(this).index()).addClass('div_show');
-        $('.content2 div').eq($(this).index()).siblings().removeClass('div_show');
-    })
-    
-    var i=0;
-    document.getElementById('button').onclick=function(){
-        var a=document.getElementsByClassName('hyp2'),l=a.length;
-        a[i++].style.display='none';
-        if(i>=l)i=0;
-        a[i].style.display='block';
-    }
 </script>

@@ -115,7 +115,7 @@ body{
     max-height: 40px;
     overflow: hidden;
 }
-.con_three .con_three_l .relevant .list_3 li{
+.list_3 li{
     float: left;
 }
 

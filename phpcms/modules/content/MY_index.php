@@ -109,6 +109,7 @@ class MY_index extends index
                 }
             }
             define('URLRULE', $urlrules);
+
             $GLOBALS['URL_ARRAY']['categorydir'] = $categorydir;
             $GLOBALS['URL_ARRAY']['catdir'] = $catdir;
             $GLOBALS['URL_ARRAY']['catid'] = $catid;

@@ -8,7 +8,7 @@
 .bgimg .bgimg_list li{
     margin: 15px 0;
     margin-left: 30px;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     margin-bottom: 0;
     /*width: 45%;*/
     float: left;
@@ -25,6 +25,7 @@
 .bgimg .bgimg_list li img{
     height: 110px;
     width: 180px;
+    border-radius: 10px;
 }
 
 /*轮播部分--------------------------------*/
@@ -234,12 +235,20 @@
     background: url(../../images/drivers/user.png) no-repeat 5px 10px;
 }
 .userNum span{
-    font-size: 12px;
+    font-size: 13px;
     line-height: 28px;
     font-weight: 600;
 }
+.userNum span span{
+    font-size: 12px;
+    font-weight: 400;
+}
 .userNum small{
     color: #0b68a9;
+    font-size: 14px;
+}
+.small{
+    display: none;
 }
 .sc span{
     font-size: 12px;
@@ -261,6 +270,16 @@
     font-size: 12px;
     padding:0 5px 5px;
     line-height: 20px;
+}
+
+del{
+    font-size: 14px;
+    color: red;
+}
+del.del{
+    text-decoration: none;
+    font-size: 14px;
+    color: #0b68a9;
 }
 
 /*课程专题-------------------------------------------*/
@@ -323,7 +342,7 @@
 }
 
 /*明星讲师-------------------------------------------------*/
-.lecturer .ct_r ul li{
+.lecturer1 .ct_r ul li{
     float: left;
     margin: 0 0 0 14px;
     width: 200px;
@@ -333,27 +352,27 @@
     box-shadow: -5px 5px 5px #cdcdcd;
     border-radius: 10px;
 }
-.lecturer .ct_r ul li .lecturer_head{
+.lecturer1 .ct_r ul li .lecturer_head{
     padding: 25px 0 15px;
     text-align: center;
 }
-.lecturer .ct_r ul li .lecturer_head img{
+.lecturer1 .ct_r ul li .lecturer_head img{
     width: 90px;
     height: 90px;
     border-radius: 50%;
     transition: all 0.4s;  
 }
-.lecturer .ct_r ul li .lecturer_head:hover img{
+.lecturer1 .ct_r ul li .lecturer_head:hover img{
     transform: scale(1.05, 1.05);
 }
-.lecturer .ct_r ul li .lecturer_name{
+.lecturer1 .ct_r ul li .lecturer_name{
     text-align: center;
 }
-.lecturer .ct_r ul li .lecturer_album{
+.lecturer1 .ct_r ul li .lecturer_album{
     text-align: center;
     margin: 10px 0 0;
 }
-.lecturer .ct_r ul li p{
+.lecturer1 .ct_r ul li p{
     text-align: left;
     padding: 15px 20px 0;
     line-height: 24px;

@@ -1,28 +1,28 @@
 .footer_course{
     height: auto;
-    background-color: #0b68a9;
+    background-color: #efefef;/*EFF0FF*/
     padding: 20px 0;
 }
 .footer_course .ft_t{
-    border-bottom: 1px solid #9b9b9b;
+    /*border-bottom: 1px solid #9b9b9b;*/
     padding-bottom: 10px;
 }
-.footer_course .ft_c_l ul {
-    width: 200px;
+.footer_course .ft_c_l{
+    margin-top: 15px;
 }
 .footer_course .ft_c_l ul li{
-    width: 100px;
     margin-bottom: 8px;
     height: 20px;
     line-height: 20px;
-    text-align: center;
+    margin-right: 20px;
 }
 .footer_course .ft_c_l ul li a{
-    color: #fff;
+    /*color: #fff;*/
 }
 
 .footer_course .ft_c_z{
-    margin-left: 290px;
+    margin-left: 50px;
+    margin-top: 30px;
 }
 .footer_course .ft_c_z ul li {
     width: 24px;
@@ -54,13 +54,28 @@
 }
 .footer_course .ft_c_r ul li span,.footer_course .ft_c_r ul li a{
     font-size: 14px;
-    color: #fff;
+    /*color: #fff;*/
 }
 
-.footer_course .ft_b{
-    margin-top: 20px;
-}
 .footer_course .ft_b p{
+    margin-top: 10px;
+}
+
+.ewm{
+    margin-left: 140px;
+    margin-top: 10px;
+}
+.ewm a{
+    display: inline-block;
+    width: 70px;
+    height: auto;
+    margin: 0 20px;
     text-align: center;
-    color: #fff;
+}
+.ewm span{ 
+    font-size: 12px;
+}
+.ewm img{
+    width: 60px;
+    height: 60px;
 }

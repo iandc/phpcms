@@ -1,11 +1,4 @@
 <?php
-/**
- *  extention.func.php 用户自定义函数库
- *
- * @copyright            (C) 2005-2010 PHPCMS
- * @license                http://www.phpcms.cn/license/
- * @lastmodify            2010-10-27
- */
 
 function getNickName($userid = '', $field = '')
 {
@@ -44,6 +37,16 @@ function getCourseModelItemId($siteid = 1)
     $CATEGORYS = getcache('category_content_' . $siteid, 'commons');
     foreach ($CATEGORYS as $key => $value) {
         if ($value['siteid'] == $siteid && $value['modelid'] == 14 && $value['parentid'] == 0) {
+            return $key;
+        }
+    }
+    return 0;
+}
+
+function getTeacherModelItemId($siteid=1) {
+    $CATEGORYS = getcache('category_content_' . $siteid, 'commons');
+    foreach ($CATEGORYS as $key => $value) {
+        if ($value['siteid'] == $siteid && $value['modelid'] == 15 && $value['parentid'] == 0) {
             return $key;
         }
     }

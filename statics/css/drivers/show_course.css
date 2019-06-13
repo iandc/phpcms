@@ -1,27 +1,91 @@
-
+body{
+    background-color: #f9f9f9;
+}
 .show_course{
     padding: 10px 0 30px;
 }
-.show_course .show_course_tit{
+.show_course_tit{
     margin-bottom: 10px;
 }
-.show_course .show_course_tit h4{
+.show_course_tit h4{
     /*color: #0b68a9;*/
-    padding: 5px 0;
+    padding: 5px 10px 10px 0;
     font-size: 13px;
+    background-color: #f9f9f9;
+    line-height: 25px;
 }
-.show_course .show_course_tit h4 a{
+.show_course_tit h4 a{
     /*color: #0b68a9;*/
 }
+
+.course_all{
+    height: auto;
+    background-color: #fff;
+}
+.course_all .bigImg{
+    width: 43%;
+    height: 270px;
+}
+.course_all .bigImg img{
+    width: 100%;
+    height: 100%;
+}
+.course_all .all_list{
+    width: 54%;
+}
+.course_all .all_list .gy{
+    font-size: 18px;
+    height: 50px;
+    overflow: hidden;
+    line-height: 50px;
+    color: #333;
+}
+.course_all .all_list .view_line{
+    overflow: hidden;
+    margin-bottom: 11px;
+}
+.course_all .all_list .right_tags{
+    margin-bottom: 0;
+    margin-right: 10px;
+    height: 34px;
+    line-height: 34px;
+    color: #999;
+    font-size: 14px;
+}
+.course_all .all_list .top-right-member{
+    font-size: 14px;
+    color: #9b9b9b;
+    margin-bottom: 0;
+    height: 34px;
+    line-height: 34px;
+}
+.course_all .all_list .price span{
+    color: #0b68a9;
+    font-size: 20px;
+}
+.course_all .all_list .gk{
+    width: 80px;
+    text-align: center;
+    padding: 5px 10px;
+    background-color: #0b68a9;
+    border-radius: 5px;
+}
+.course_all .all_list .gk a{
+    color: #fff;
+    font-size: 14px;
+}
+
 .show_course .show_main{
 
 }
 .show_course .show_main .smL{
-    width: 74%;
+    width: 100%;
     height: auto;
+    background: #fff;
+    padding-bottom: 20px;
 }
 .show_course .show_main .smL .course_show1{
-    background-color: #d9e9e5;
+    background-color: #fff;
     padding: 10px 20px;
     border-radius: 3px;
 }
@@ -32,34 +96,34 @@
 .show_course .show_main .smL .course_show1 .mulu ul li{
     width: 100%;
     padding: 10px;
-    margin: 5px 0 ;
+    margin: 5px 0;
     background-color: #f5f5f5;
 }
 .show_course .show_main .smL .course_show1 .mulu ul li i:before{
     content: "o";
 }
 .show_course .show_main .smL .course_show1 .mulu ul li a{
-    display: inline-block;
+    /*display: inline-block;*/
     padding: 5px 0;
 }
 
-.show_course .show_main .smR{
-    width: 25%;
+.show_course .show_main{
+    /*width: 25%;*/
     background-color: #fff;
 }
-.show_course .show_main .smR .lecturer{
+.lecturer{
     padding: 0 20px 15px;
-    background-color: #d9e9e5;
+    background-color: #f9f9f9;
     margin-bottom: 15px;
     border-radius: 3px;
 }
-.show_course .show_main .smR .lecturer .lecturer_tit,.show_course .show_main .smR .lecturer .lecturer_con .lecturer_con_tit{
+.lecturer .lecturer_tit,.lecturer .lecturer_con .lecturer_con_tit{
     border-bottom: 1px solid #fff;
 }
-.show_course .show_main .smR .lecturer .lecturer_tit1{
+.lecturer .lecturer_tit1{
     border-bottom: 0;
 }
-.show_course .show_main .smR .lecturer .lecturer_tit .line{
+.lecturer .lecturer_tit .line{
     display: inline-block;
     width: 4px;
     height: 20px;
@@ -67,62 +131,66 @@
     position: relative;
     top: 4px;
 }
-.show_course .show_main .smR .lecturer .lecturer_tit h3{
+.lecturer .lecturer_tit h3{
     display: inline-block;
     height: 56px;   
     line-height: 56px;
     padding-left: 10px;
 }
-.show_course .show_main .smR .lecturer .lecturer_con .lecturer_con_tit{
+.lecturer .lecturer_con .lecturer_con_tit{
     padding-bottom: 15px;
 }
-.show_course .show_main .smR .lecturer .lecturer_con .titImg {
+.lecturer .lecturer_con .titImg {
     width: 120px;
     height: 120px;
     border-radius: 50%;
     overflow: hidden;
     margin: 15px auto;
 }
-.show_course .show_main .smR .lecturer .lecturer_con .titImg img{
+.lecturer .lecturer_con .titImg img{
     width: 120px;
     height: 120px;
     border-radius: 50%;
 }
-.show_course .show_main .smR .lecturer .lecturer_con .name{
+.lecturer .lecturer_con .name{
     text-align: center;
     font-weight: 600;
 }
-.show_course .show_main .smR .lecturer .lecturer_con p{
-    text-align: center; 
+.lecturer .lecturer_con .name span{
     font-size: 13px;
 }
-.show_course .show_main .smR .lecturer .lecturer_con .lecturer_con_bot h3{
+.lecturer .lecturer_con p{
     font-size: 13px;
+}
+.lecturer_con_bot h3{
+    font-size: 22px;
     padding-top: 15px;
+    margin-bottom: 10px;
 }
-.show_course .show_main .smR .lecturer .lecturer_con .lecturer_con_bot ul li{
+.lecturer_con_bot ul li{
     float: left;
-    width: 45%;
+    width: 12%;
     padding: 5px;
     padding-bottom: 10px;
 }
-.show_course .show_main .smR .lecturer .lecturer_con .lecturer_con_bot ul li img{
+.lecturer_con_bot ul li img{
     width: 110px;
     height: 60px;
 }
-.show_course .show_main .smR .lecturer .lecturer_con .lecturer_con_bot ul li .txt span{
+.lecturer_con_bot ul li .txt span{
     font-size: 12px;
 }
 
 #nav{
     width: 100%;
-    padding-bottom: 10px;
+    /*padding-bottom: 10px;*/
+    border-bottom: 1px solid #eee;
 }
 #nav ul li{
     width: 100px;
     text-align: center;
     float: left;
-    font-size: 24px;
+    font-size: 18px;
     color: #333;
     cursor: pointer;
     margin: 0;
@@ -136,11 +204,12 @@
     height: auto;
     margin: 0 auto;
 }
-.content2 div{
+.content2 .div1{
     display: none;
 }
 .content2 .div_show{
     display: block;
+    margin-top: 15px;
 }
 
 .show_course .maybelike{
@@ -148,7 +217,7 @@
 }
 .show_course .maybelike .m_like{
     margin: 13px 0 9px;
-    border-bottom: 1px solid #cdcdcd;
+    /*border-bottom: 1px solid #cdcdcd;*/
 }
 .show_course .maybelike .m_like h6{
     font-size: 24px;
@@ -166,7 +235,7 @@
 .show_course .maybelike ul li .list4{
     width: 19%;
     float: left;
-    border: 1px solid #cdcdcd;
+    /*border: 1px solid #cdcdcd;*/
     margin: 0 4.5px;
 }
 .show_course .maybelike ul li>div .img img{
@@ -182,3 +251,45 @@
     text-align: center;
 }
 
+.list_3_course{
+    padding: 15px 0 5px;
+}
+
+#div1{
+    position: fixed;
+    bottom: 150px;
+    right: 100px;
+}
+
+.keshi{
+    width: auto;
+    overflow: hidden;
+    padding: 10px 5px;
+    font-size: 14px;
+}
+.keshi:hover{
+    background-color: #efefef;
+}
+.keshi:hover .gm{
+    display: block;
+    color: #0b68a9;
+}
+.keshi:hover .shic{
+    display: none;
+}
+.gm{
+    display: none;
+    /*margin-right: 30px;*/
+    font-size: 12px;
+    text-align: right;
+}
+.shic{
+    /*margin-right: 30px;*/
+    font-size: 12px;
+
+    text-align: right;
+}
+.view_line del{
+    font-size: 16px;
+    margin-left: 10px;
+}
