@@ -8,8 +8,7 @@
             <div class="w1100 clearfix">
                 <div class="fr" class="">
                     <ul class="clearfix bgimg_list">
-                        {php $courseWhere = 'typeid='.$typeidList['course'];}
-                        {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="2" cache="0" moreinfo="1"}
+                        {pc:content action="position" posid="$posidList['present_price']" order="listorder DESC" num="2" cache="3600"}
                             {loop $data $value}
                                 <li class="clearfix">
                                     <div class="fl">
@@ -30,7 +29,8 @@
                     <div id="lunbobox">
                         <div id="toleft">&lt;</div>
                         <div class="lunbo">
-                            {pc:content action="position" posid="$posidList['course_focus']" order="listorder DESC" num="4" cache="0"}
+                            {php $courseWhere = 'typeid='.$typeidList['course'];}
+                            {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="0"}
                             {loop $data $value}
                                 <a href="{$value['course_link']}"><img src="{thumb($value['thumb'], 1100, 300)}"></a>
                             {/loop}
@@ -74,16 +74,9 @@
                     <div class="conts">
                         <h3 class="titles"><i>↓</i><span>热门课程</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
                         <div class="newest_curriculum mb10 clearfix">
-                            <!-- <div class="nc_l fl zxkc"> -->
-                                <!-- <h3>马上要开始的课程</h3> -->
-                                <!-- <img style="width: 240px; height: 400px;" src="http://www.eecourse.com/files/course/2017/10-18/11495536f5a9963397.jpg" alt=""> -->
-                                <!-- <h1 class="ha">IC设计</h1>
-                                <h1 class="hb">&</h1>
-                                <h1 class="hc">验证</h1> -->
-                            <!-- </div> -->
                             <div class="nc_r fr">
                                 {php $courseWhere = 'typeid='.$typeidList['course'];}
-                                {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="8" cache="0" moreinfo="1"}
+                                {pc:content action="lists" catid="$courseid" order="user_num DESC" num="8" cache="0" moreinfo="1"}
                                 {loop $data $value}
                                 <dl>
                                     <dt>
@@ -103,7 +96,7 @@
                                             </span>
                                             <span class="fr" style="margin-right: 10px; font-size: 14px;">
                                                 <small class="{if $value['present_price'] == 0 }small{/if}">￥{$value['present_price']}</small>
-                                                <del class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
                                             </span>
                                         </div>
                                         <!-- <div class="sc">
@@ -120,14 +113,15 @@
                     
 
                     <!-- 电源设计 -->
-                    <div class="course_topics clearfix" style="margin-bottom: 40px;">
+                    <!-- <div class="course_topics clearfix" style="margin-bottom: 40px;">
                         <div class="ct_l fl">
                             <h3>
-                                电源设计
+                                免费公开课
                             </h3>
                         </div>
                         <div class="ct_r fr">
-                            {pc:content action="position" posid="$posidList['course_focus']" order="listorder DESC" num="4" cache="0"}
+                            {php $courseWhere = "price=0";}
+                            {pc:content action="lists" catid="$courseid" where="$courseWhere" order="user_num DESC" num="4" cache="0"}
                             {loop $data $value}
                                 <dl>
                                     <dt>
@@ -147,22 +141,16 @@
                             {/loop}
                             {/pc}
                         </div>
-                    </div>
+                    </div> -->
 
                     <!-- 正在进行的课程 -->
                     <div class="conts">
-                        <h3 class="titles"><i>↓</i><span>免费公开课</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
+                        <h3 class="titles"><i>↓</i><span>最新课程</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
                         <div class="newest_curriculum mb10 clearfix">
-                            <!-- <div class="nc_l fl zxkc zxkc1"> -->
-                                <!-- <h3>正在进行的课程</h3> -->
-                                <!-- <img style="width: 240px; height: 400px;" src="https://image.gogoup.com/course/20171011/1507714742683.jpg?x-oss-process=image/resize,w_448,h_248,limit_0,m_fill" alt=""> -->
-                                <!-- <h1 class="ha">IC制造</h1>
-                                <h1 class="hb">&</h1>
-                                <h1 class="hc">测试</h1> -->
                             <!-- </div> -->
                             <div class="nc_r fr">
                                 {php $courseWhere = 'typeid='.$typeidList['course'];}
-                                {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="8" cache="0"}
+                                {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="0"}
                                 {loop $data $value}
                                 <dl>
                                     <dt>
@@ -192,17 +180,49 @@
                         </div>
                     </div>
                     
-
-                    <!-- 已经结束的课程 -->
                     <div class="newest_curriculum mb10 clearfix">
-                        <!-- <div class="nc_l fl zxkc"> -->
-                            <!-- <h3>已经结束的课程</h3> -->
-                            <!-- <img style="width: 240px; height: 400px;" src="https://images.ctfassets.net/2y9b3o528xhq/2ZIxbxaYScqQcWYIMyoE6y/8ca50afbec033a566237ac1dcf0cee0c/module-nlp1_2x.png" alt=""> -->
-                            <!-- <h1 class="ha">嵌入式设计</h1> -->
-                        <!-- </div> -->
+                        <h3 class="titles"><i>↓</i><span>收费课程</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
                         <div class="nc_r fr">
-                            {php $courseWhere = 'typeid='.$typeidList['course'];}
-                            {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="8" cache="0"}
+                            {php $courseWhere = "present_price>0";}
+                                {pc:content action="lists" catid="$courseid" where="$courseWhere" order="present_price DESC" num="8" cache="0" moreinfo="1"}
+                                {loop $data $value}
+                                <dl>
+                                    <dt>
+                                        <a href="{$value['course_link']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                    </dt>
+                                    <div>
+                                        <p>
+                                            <a href="{$value['course_link']}" target="_blank">{$value['title']}</a></p>
+                                        <div class="zy">
+                                            <a href="">{str_cut($value['description'], 75,
+                                            '')}</a>
+                                        </div>
+                                        <div class="userNum clearfix">
+                                            <span class="fl">
+                                                <i></i>
+                                                {$value['user_num']} <span>人已购买</span> 
+                                            </span>
+                                            <span class="fr" style="margin-right: 10px; font-size: 14px;">
+                                                <small class="{if $value['present_price'] == 0 }small{/if}">￥{$value['present_price']}</small>
+                                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                                            </span>
+                                        </div>
+                                        <!-- <div class="sc">
+                                            <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
+                                        </div> -->
+                                    </div>
+                                    
+                                </dl>
+                                {/loop}
+                                {/pc}
+                        </div>
+                    </div>
+
+                    <div class="newest_curriculum mb10 clearfix">
+                        <h3 class="titles"><i>↓</i><span>免费公开课</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
+                        <div class="nc_r fr">
+                            {php $courseWhere = "present_price=0";}
+                            {pc:content action="lists" catid="$courseid" where="$courseWhere" order="user_num DESC" num="8" cache="0"}
                             {loop $data $value}
                             <dl>
                                 <dt>
@@ -215,13 +235,14 @@
                         </div>
                     </div>
 
+
                     <!-- 明星讲师 -->
                     <div class="conts" style="height: 365px;">
                         <h3 class="titles"><i>↓</i><span>明星讲师</span><!--  <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> --></h3>
                         <div class="newest_curriculum clearfix lecturer1">
                             <div class="nc_l fl">
                                 <!-- <h3>明星讲师</h3> -->
-                                <img style="width: 240px; height: 305px;" src="https://images.ctfassets.net/2y9b3o528xhq/19NgUw9l3MGaq2a0cY0OSO/69b9f3e4f31f9e957619c0730553a450/module-nd100_2x.png" alt="">
+                                <img style="width: 190px; height: 305px;" src="https://images.ctfassets.net/2y9b3o528xhq/19NgUw9l3MGaq2a0cY0OSO/69b9f3e4f31f9e957619c0730553a450/module-nd100_2x.png" alt="">
                             </div>
                             <div class="ct_r fr">
                                 <ul>

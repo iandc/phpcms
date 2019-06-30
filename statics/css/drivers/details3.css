@@ -12,7 +12,7 @@ body{
     background-color: #fff;
 }
 .con_four{
-    padding: 15px 20px 20px 20px;
+    padding: 15px 10px 20px;
     padding-bottom: 0;
 }
 .shouyebanner .dcmads{
@@ -26,7 +26,7 @@ body{
     margin: 0 auto;
 }
 .con_four .con_four_con{
-    width: 760px;
+    width: 675px;
     height: auto;
     float: left;
     position: relative;
@@ -34,13 +34,13 @@ body{
     padding-bottom: 10px;
 }
 .con_four .con_fourL_top .lf{
-    width: 300px;
+    width: 250px;
 }
 .con_four .con_fourL_top .lf .product{
     position: relative;
     margin-top: 0;
     padding: 0;
-    width: 298px;
+    width: 250px;
     border: 1px solid #d6d3d4;
     border-top: 2px solid #29759B;
 }
@@ -51,10 +51,10 @@ body{
     color: #29759B;
     font-size: 1pc;
     line-height: 58px;
-    padding-left: 15px;
+    padding-left: 6px;
 }
 .con_four .con_fourL_top .lf .product ul{
-    padding: 0 15px;
+    padding: 0 6px;
 }
 .con_four .con_fourL_top .lf .product ul li{
     position: relative;
@@ -70,7 +70,7 @@ body{
     color: #272a30;
     font-size: 15px;
     line-height: 25px;
-    width: 280px;
+    width: 250px;
 }
 .con_four .con_fourL_top .lf .banner2{
     border: 1px solid #eee;
@@ -80,7 +80,7 @@ body{
 }
 .con_four .con_fourL_top .mf{
     margin-left: 20px;
-    width: 428px;
+    width: 405px;
 }
 .con_four .con_fourL_top .mf .mf_hd{
     height: 30px;
@@ -109,10 +109,9 @@ body{
 }
 .con_four .con_fourL_top .mf .mf_con .newList ul{
     float: left;
-    margin-right: 20px;
 }
 .con_four .con_fourL_top .mf .mf_con .newList ul li{
-    width: 413px;
+    width: 390px;
     margin-bottom: 3px;
     padding: 3px 0 3px 9pt;
     min-width: 329px;
@@ -134,11 +133,11 @@ body{
     position: absolute;
 }
 .con_four .con_fourL_bottom{
-    width: 728px;
+    width: 675px;
 }
 .con_four .con_fourL_bottom .listBox{
     float: left;
-    width: 364px;
+    width: 337px;
 }
 .con_four .con_fourL_bottom .listBox h2{
     height: 35px;
@@ -254,4 +253,27 @@ body{
 }
 .category_nav .nav_list li.lis:hover a{
     color: #fff;
+}
+.pindao .zixun .zixunConLeft,.pindao .Manufacturer .manuConLef{
+    width: auto !important;
+}
+.pindao .zixun .zixunConLeft .zxLeft_title ul li span a{
+    padding-left: 10px;
+}
+.pindao .zixun .zxLeft_con{
+    padding: 10px 0 0 10px;
+}
+.pindao .zxLeft_con ul{
+    width: 325px;
+}
+.pindao .Manufacturer .manuConLeft .centerCon{
+    padding: 20px 10px 20px 4px;
+}
+.pindao #sub_img{
+    width: 300px;
+}
+.con_four .con_fourL_bottom .listBox ul li span.date{
+    padding-left: -10px;
+    position: relative;
+    left: -10px;
 }

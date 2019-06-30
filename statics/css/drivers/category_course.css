@@ -30,19 +30,19 @@
 
 /*轮播部分--------------------------------*/
 #lunbobox {
-    width:450px;
+    width:400px;
     height:250px;
     position:relative;
     margin: 30px 0 0;
     
 }
 .lunbo {
-    width:450px;
+    width:400px;
     height:250px;
     position: relative;
 }
 .lunbo img {
-    width:450px;
+    width:400px;
     height:250px;
     position:absolute;
     top:0;
@@ -119,7 +119,7 @@
     padding: 10px;
 }
 .vendor_area ul li img{
-    width: 450px;
+    width: 400px;
     box-shadow: -5px 5px 5px #eee;
 }
 
@@ -163,7 +163,7 @@
 
 /*马上要开始的课程*/
 .course_content .newest_curriculum .nc_l{
-    width: 240px;
+    width: 190px;
     height: 305px;
     border: 1px solid #cdcdcd;
 }
@@ -194,7 +194,7 @@
 .course_content .newest_curriculum .nc_r dl{
     float: left;
     margin: 0 34px 30px 0;
-    width: 248px;
+    width: 227px;
     height: auto;
     /*background: #FFF;*/
     overflow: hidden;
@@ -277,9 +277,7 @@ del{
     color: red;
 }
 del.del{
-    text-decoration: none;
-    font-size: 14px;
-    color: #0b68a9;
+    display: none;
 }
 
 /*课程专题-------------------------------------------*/
@@ -345,7 +343,7 @@ del.del{
 .lecturer1 .ct_r ul li{
     float: left;
     margin: 0 0 0 14px;
-    width: 200px;
+    width: 190px;
     height: 300px;
     background: -webkit-linear-gradient(top,white,lightblue,skyblue);
     overflow: hidden;

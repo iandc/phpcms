@@ -11,18 +11,19 @@ a { text-decoration: none; color: #666; background: none }
 ul, ol { list-style: none; }
 :focus{ outline:none;}
 .clearfix{ clear: both; content: ""; display: block; overflow: hidden }
+.clearfix1{ clear: both; content: ""; display: block;}
 .clear{clear: both;}
 .fl{ float: left; }
 .fr{float: right;}
 .w100{width: 100%;}
 .h100{height:100%;}
-.w1100{width: 1100px; margin: 0 auto;}
+.w1100{width: 1010px; margin: 0 auto;}
 ul li{float: left;}
 .c_f{color: #fff;}
 .mt15{margin-top: 10px;}
 .fs12{font-size: 12px;}
 .w50{width:50%;}
-.w49{width: 48%; padding: 0 7px;}
+.w49{width: 48%; padding: 0 6px;}
 .por{position: relative;}
 .poa{position: absolute;}
 .mb10{margin-bottom: 10px;}

@@ -8,7 +8,7 @@
         </div>
     </div>
 </div>
-<div class="content w1100 clearfix">
+<div class="content w1100 clearfix pindao">
     <div class="con_four clearfix">
         <div class="con_four_con">
             {if $catid == $newsid}
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="con_fourL_bottom mt15">
+                <div class="con_fourL_bottom mt15 clearfix">
                     {show_ad(1, 29)}
                     {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="50"
                     cache="3600"}
@@ -74,7 +74,7 @@
                             {loop $d $k $v}
                             <li>
                                         <span class="title">
-                                            <a href="{$v['url']}">{$v['title']}</a>
+                                            <a href="{$v['url']}">{str_cut($v['title'], 55, '')}</a>
                                         </span>
                                 <span class="date">{date('m-d', $v['inputtime'])}</span>
                             </li>
@@ -90,7 +90,7 @@
             <div class="con_four clearfix category_confour">
                 <div class="con_four_con category_confourcon">
                     <div class="con_fourL con">
-                        <div class="con_fourL_bottom mt15">
+                        <div class="con_fourL_bottom mt15 clearfix">
                             <div class="zixun mt15">
                                 <div class="zixunCon clearfix">
                                     <div class="zixunConLeft fl" style="padding: 0;">
@@ -176,12 +176,12 @@
                                 </div>
                             </div>
                             <div class="mt15">
-                                <a href="{$bbsurl}/thread-853647-1-1.html"><img style="width: 100%; height: 80px;" src="../../../statics/images/drivers/w728.png" alt=""></a>
+                                <a href="{$bbsurl}/thread-853647-1-1.html"><img style="height: 80px;" src="../../../statics/images/drivers/w728.png" alt=""></a>
                             </div>
                             <div class="article mt15">
                                 <div class="Manufacturer mt15 clearfix">
                                     <div class="ManufacturerCon clearfix">
-                                        <div class="manuConLeft fl" style="padding-left: 0;">
+                                        <div class="manuConLeft fl" style="width: 100%; padding-left: 5px;">
                                             <div class="manuConLeftL fl">
                                                 <div class="title1">
                                                     <a href="{APP_PATH}tech/1" class="jswz">技术文章</a>
@@ -207,8 +207,8 @@
                                                         <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
                                                             <div class="centerCon_img fr">
                                                                 <a href="{$value['url']}" target="_blank">
-                                                                    <img src="{thumb($value['thumb'], 96, 70)}"
-                                                                         width="96" height="70"
+                                                                    <img src="{thumb($value['thumb'], 75, 55)}"
+                                                                         width="75" height="55" style="margin-top: 3px;"
                                                                          title="{str_cut($value['title'], 37, '')}">
                                                                 </a>
                                                             </div>
@@ -238,7 +238,7 @@
                                 <div class="zixun mt15">
                                     {if $bbsShowStatus['isOpen'] == 1 && $bbsShowStatus['channelThread'] == 1}
                                     <div class="zixunCon clearfix">
-                                        <div class="zixunConLeft fl" style="padding-left: 0;">
+                                        <div class="zixunConLeft fl">
                                             <div class="zxLeft_title">
                                                 <ul>
                                                     <li class="fl">
@@ -259,7 +259,7 @@
                                                 {else}
                                                 {php $data = [];}
                                                 {/if}
-                                                <div class="zxLeft_conL fl">
+                                                <div class="zxLeft_conL fl" style="width: 40%;">
                                                     <ul>
                                                         {php $i = 0;}
                                                         {loop $data $value}
@@ -268,7 +268,7 @@
                                                                 <div class="right_txt fl">
                                                                     <span><a
                                                                             href="{$bbsurl}/thread-{$value['tid']}-1-1.html"
-                                                                            target="_blank">{str_cut($value['subject'], 80, '')}</a></span>
+                                                                            target="_blank">{str_cut($value['subject'], 60, '')}</a></span>
                                                                 </div>
                                                             </li>
                                                         {/if}
@@ -276,7 +276,7 @@
                                                         {/loop}
                                                     </ul>
                                                 </div>
-                                                <div class="zxLeft_conL fr">
+                                                <div class="zxLeft_conL fr" style="width: 50%;">
                                                     <ul>
                                                     {php $i = 0;}
                                                     {loop $data $value}
@@ -285,7 +285,7 @@
                                                             <div class="right_txt fl">
                                                                 <span>
                                                                     <a href="{$bbsurl}/thread-{$value['tid']}-1-1.html"
-                                                                        target="_blank">{str_cut($value['subject'], 80, '')}</a>
+                                                                        target="_blank">{str_cut($value['subject'], 60, '')}</a>
                                                                 </span>
                                                             </div>
                                                         </li>
@@ -307,17 +307,15 @@
             {/if}
         </div>
 
-        <div>
+        <div style="width: 300px;" class="fr">
             <div class="lb fr container">
                 <div id="box1">
                     <div id="box_img">
                         <ul id="sub_img">
-                            {pc:content action="position" posid="$posidList['slide']" order="listorder DESC" num="4"
-                            cache="3600"}
+                            {pc:content action="position" posid="$posidList['slide']" order="listorder DESC" num="4" cache="3600"}
                             {loop $data $value}
                             <li>
-                                <a href="{$value['url']}" target="_blank"><img src="{thumb($value['thumb'], 300, 222)}"
-                                                                               title="{$value['title']}"></a>
+                                <a href="{$value['url']}" target="_blank"><img src="{thumb($value['thumb'], 300, 222)}" title="{$value['title']}"></a>
                             </li>
                             {/loop}
                             {/pc}

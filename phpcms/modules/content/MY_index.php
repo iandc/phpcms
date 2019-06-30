@@ -115,6 +115,7 @@ class MY_index extends index
             $GLOBALS['URL_ARRAY']['catid'] = $catid;
             $GLOBALS['URL_ARRAY']['typeid'] = $typeid;
             $GLOBALS['URL_ARRAY']['typename'] = $typename;
+
             include template('content', $template);
         } else {
             $this->page_db = pc_base::load_model('page_model');

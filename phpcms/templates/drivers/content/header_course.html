@@ -13,7 +13,9 @@
     <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
     <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
 </head>
+
 {template "content", "config"}
+
 <body>
     <div class="w100" style="border-bottom: 1px solid #eee; padding-bottom: 10px; background: #fff;">
         <div class="w100">
@@ -32,7 +34,7 @@
                         {php $search_model = getcache('search_model_'.$siteid, 'search');}
                         {loop $search_model $k=>$v}
                         {php $j++;}
-                            <a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this));" style="outline:medium none;" hidefocus="true" {if $j==1 && $typeid=$v['typeid']} class="on" {/if}>{$v['name']}</a>{if $j != count($search_model)}<span> | </span>{/if}
+                            <a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this));" style="outline:medium none;" hidefocus="true" {if $j==1 && $typeid==$v['typeid']} class="on" {/if}>{$v['name']}</a>{if $j != count($search_model)}<span> | </span>{/if}
                         {/loop}
                     {php unset($j);} -->
                     <!-- <form action="">
@@ -42,6 +44,7 @@
                         </div>
 
                     </form> -->
+
                     <div class="search1">
                         <form action="{APP_PATH}index.php" method="get" target="_blank">
                             <input type="hidden" name="m" value="search"/>
