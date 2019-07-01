@@ -35,3 +35,7 @@ ul li{float: left;}
     position: relative;
     top: 1px;
 }
+body {
+    overflow-x:hidden;
+    width:100%;
+}
