@@ -32,7 +32,8 @@
 <body>
     {template "content", "config"}
     <div class="Header w100">
-        <div class="hdTop clearfix">
+        
+        <div class="hdTop clearfix" style="width: 1010px; margin: 0 auto;">
             <div class="hdTopCon w1100 clearfix">
                 <div class="fl hdTxt">
                     <div class="hdBottom">
@@ -51,10 +52,8 @@
                             <span class="select more" style="">文章</span>
                             <span>DataSheet</span>
                         </div>
-                        <a href="{$bbsurl}/
-search.php?mod=blog" class="link" target="_blank"><span>日志</span></a>
-                        <a href="{$bbsurl}/
-search.php?mod=forum" class="link" style="margin-left: 1px;" target="_blank"><span>帖子</span></a>
+                        <a href="{$bbsurl}/search.php?mod=blog" class="link" target="_blank"><span>日志</span></a>
+                        <a href="{$bbsurl}/search.php?mod=forum" class="link" style="margin-left: 1px;" target="_blank"><span>帖子</span></a>
                         <ul id="con" class="clearfix">
                             <li class="show">
                                 <div class="hds">
@@ -84,7 +83,7 @@ search.php?mod=forum" class="link" style="margin-left: 1px;" target="_blank"><sp
         </div>
         
         <div class="hd w100" id="hd">
-            <div class="w1100">
+            <div class="w1100" style="height:40px;">
                 <div class="nav">
                     <div class="name fl">
                         <a href="{siteurl($siteid)}" class="nav_item1 icon_home sel c_f name" title="电子，微电子，芯片">首页</a>

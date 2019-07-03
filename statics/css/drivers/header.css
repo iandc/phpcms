@@ -129,7 +129,7 @@
 }
 .hd .nav{
     position: relative;
-    width: 1100px;
+    width: 1010px;
     line-height: 42px;
 }
 .hd .nav .name a{
@@ -247,7 +247,7 @@
 .hd .nav .landr{
     color: #fff;
     position: absolute;
-    right: 75px;
+    right: 0;
     top: 0;
     z-index: 9;
 }

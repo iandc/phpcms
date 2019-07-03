@@ -43,7 +43,7 @@ body{
     height: 222px;
 }
 #sub_img li,#sub_img li a img{
-    width: 100%;
+    width: 288px;
     height:222px;
 }
 #uls{
@@ -125,14 +125,14 @@ body{
 }
 .informationRight .informationRightL{
     margin-top: 15px;
-    width: 500px;
+    width: 470px;
 }
 .informationRight .informationRightL .focus-title,.informationRight .informationRightR .focus-title{
     height: 20px;
     border-left: 4px solid #F36F60;
     padding-left: 9pt;
     color: #F36F60;
-    font-size: 1pc;
+    font-size: 18px;
     line-height: 20px;
 }
 .informationRight ul{
@@ -142,7 +142,7 @@ body{
 .informationRight .informationRightL ul li{
     overflow: hidden;
     margin-bottom: 20px;
-    width: 474px;
+    width: 440px;
     height: 62px;
 }
 .informationRight .informationRightL ul li img{
@@ -168,7 +168,7 @@ body{
 }
 
 .informationRight .informationRightR{
-    width: 210px;
+    width: 245px;
     margin-top: 15px;
 }
 .informationRight .informationRightR ul li{
@@ -190,6 +190,11 @@ body{
 .shouye_banner a img{
     width: 355px;
     height: 60px;
+}
+
+
+.lookBack-item a{
+    font-size: 13px;
 }
 
 /*资讯*/
@@ -218,6 +223,8 @@ body{
 }
 .zixun .zixunConLeft .zxLeft_title ul li span a{
     color: #0b68a9;
+    font-size: 18px;
+    font-weight: 600;
 }
 .zixun .zixunConLeft .zxLeft_title ul li a{
     display: inline-block;
@@ -280,9 +287,10 @@ body{
 }
 .zixunConRight .zxRight_title span{
     display: block;
-    font-size: 14px;
+    font-size: 18px;
     margin-top: -5px;
     color: #F36F60;
+    font-weight: 600;
 }
 .zxRight_con2{
     position: relative;
@@ -449,12 +457,11 @@ body{
 }
 .curriculumCon .title2 a{
     line-height: 25px;
-    font-weight: 600;
 }
 .curriculumCon .title2 .a1,.title1 .jswz{
     font-size: 18px;
     color: #0b68a9;
-    font-weight: bold;
+    font-weight: 600;
 }
 .curriculumCon .title2 .a2{
     font-size: 12px;
@@ -558,6 +565,7 @@ body{
 }
 .article .manuConRight .manuConRightT .title1 a,.Manufacturer .manuConRight .manuConRightT .title1 a{
     color: #F36F60;
+    font-size: 18px;
     font-weight: bold;
 }
 .article .manuConRight .more,.Manufacturer .manuConRight .more{
@@ -632,7 +640,7 @@ body{
     border-bottom: 1px solid #e3d5d5;
 }
 .footer .footerTop .ft_txt ul li{
-    font-size: 12px;
+    font-size: 18px;
     height: 33px;
     line-height: 33px;
     cursor: pointer;
@@ -721,7 +729,8 @@ body{
 .qiehuan p{
     text-align: center;
     font-weight: 600;
-    margin-top: 10px;
+    margin: 10px 0 5px;
+    font-size: 13px;
 }
 .qiehuan .rq{
     display: block;
