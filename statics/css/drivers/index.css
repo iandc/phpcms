@@ -359,14 +359,14 @@ body{
 }  
 .zxRight_conc .ul1 li{
     border-bottom: #CCC 1px dotted;
-    height: 110px;
+    height: 76px;
 }
 .zxRight_conc .ul1 li img{
     width: 90px;
     height: 60px;
 }
 .zxRight_conc ul li .lImg{
-    padding: 20px 5px 5px 0;
+    padding: 0 5px 5px 0;
 }
 .zxRight_conc ul li .rTxt{
     width: 175px;
@@ -387,7 +387,7 @@ body{
     width: 100%;
     color: #C00;
     overflow: hidden;
-    margin-top: 14px;
+    margin-top: 5px;
     margin-bottom: -2px;
     max-height: 40px;
     overflow: hidden;
@@ -402,13 +402,16 @@ body{
 .zxRight_conc .ul2 li{
     /*width: 290px;*/
     line-height: 25px;
+    padding: 8px 0;
 }
-.zxRight_conc .ul2 li{
+.zxRight_conc .ul2 li.liss{
+    height: 78px !important;
+}
+.zxRight_conc .ul2{
     height: auto;
-    padding: 7px 0;
+    padding-bottom: 10px;
     /* margin-bottom: 5px; */
-    border-bottom: 1px solid #eee;
-    height: 73px;
+    /*height: 73px;*/
 
 }
 .zxRight_conc .ul2 li:last-child{
@@ -417,8 +420,16 @@ body{
 .zxRight_conc .ul2 li .ls{
     padding-left: 5px;
 }
+.zxRight_conc .ul2 li .ls .as{
+    width: 275px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 .zxRight_conc .ul2 li p a{
     font-size: 12px;
+    overflow: hidden;
 }
 .zxRight_conc .ul2 li a{
     font-size: 14px;
@@ -531,7 +542,7 @@ body{
     border-bottom: #999 1px dotted;
 }
 .Manufacturer .manuConLeft .centerCon .centerCon_img{
-    width: 65px;
+    width: 85px;
     text-align: center;
 }
 .Manufacturer .manuConLeft .centerCon .centerCon_img img{

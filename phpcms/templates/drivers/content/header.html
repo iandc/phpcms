@@ -143,5 +143,41 @@
             })
         })
     </script>
+
+    <script>
+        $(function(){
+ 
+            var titleTop = $('#hd').offset().top;
+            var scroH = $(document).scrollTop();
+            $(document).on('scroll',function(){
+              if($(document).scrollTop() > 180){
+                 $('#hd').css({
+                     "position":"fixed",
+                     "top":0,
+                     "background":"#fff",
+                     "z-index":999,
+                     "border-bottom":"1px solid #eee"
+             })
+            }else{
+         
+               $('#hd').css({
+                   "position":"static",
+                   "border-bottom":"none"
+               })
+            }
+          })
+
+
+            if (scroH <= top) {
+                $("#alert_windows").css("top","50px");
+                $("#alert_windows4").css("top","50px");
+            }else{
+                $("#alert_windows").css("top","150px");
+                $("#alert_windows4").css("top","150px");
+            }
+        })
+        
+        
+    </script>
 </body>
 </html>

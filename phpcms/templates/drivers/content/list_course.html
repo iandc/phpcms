@@ -54,10 +54,10 @@
                         {loop $data $value}
                         <li>
                             <div class="show_list_img fl">
-                                <a href="{$value['course_link']}"><img src="{thumb($value['thumb'], 228, 145)}" alt=""></a>
+                                <a href="{$value['islink']}"><img src="{thumb($value['thumb'], 228, 145)}" alt=""></a>
                             </div>
                             <div class="show_list_main fr">
-                                <h2><a href="{$value['course_link']}">{$value['title']}</a></h2>
+                                <h2><a href="{$value['islink']}">{$value['title']}</a></h2>
                                 <h6>
                                     关键词：<span style="{if $value['keywords'] == ""}display: none;{/if}"><a href="">{$value['keywords']}</a></span>
                                 </h6>

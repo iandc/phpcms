@@ -96,28 +96,28 @@
 
     <script>
         
- $(function(){
- 
-    // var titleTop = $('#nav_course').offset().top;
-    
-    $(document).on('scroll',function(){
-      if($(document).scrollTop() > 180){
-         $('#nav_course').css({
-             "position":"fixed",
-             "top":0,
-             "background":"#fff",
-             "z-index":999,
-             "border-bottom":"1px solid #eee"
-     })
-    }else{
- 
-       $('#nav_course').css({
-           "position":"static",
-           "border-bottom":"none"
-       })
-    }
-  })
-})
+         $(function(){
+         
+            // var titleTop = $('#nav_course').offset().top;
+            
+            $(document).on('scroll',function(){
+              if($(document).scrollTop() > 180){
+                 $('#nav_course').css({
+                     "position":"fixed",
+                     "top":0,
+                     "background":"#fff",
+                     "z-index":999,
+                     "border-bottom":"1px solid #eee"
+             })
+            }else{
+         
+               $('#nav_course').css({
+                   "position":"static",
+                   "border-bottom":"none"
+               })
+            }
+          })
+        })
     </script>
 
 </body>

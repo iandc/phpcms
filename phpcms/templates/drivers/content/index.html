@@ -93,7 +93,7 @@
                                 <li class="{if $i == 8}mt15{/if}">
                                     <div class="lis fl">
                                         <span class="tit">
-                                            <a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                            <a href="{$value['url']}" {title_style($value['style'])} target="_blank"><i></i>{$value['title']}</a>
                                         </span>
                                     </div>
                                      
@@ -137,36 +137,33 @@
                         </ul>
                     </div>
                     <div class="zxRight_con clearfix zxRight_conc">
-                        <ul class="ul1 clearfix">
-                            {pc:content action="position" posid="$posidList['right_tj']" order="listorder DESC" num="1" cache="3600"}
+                       
+                        <ul class="ul2 ul1 clearfix">
+                            {pc:content action="position" posid="$posidList['right_tj']" order="id DESC" num="6" cache="3600"}
+                            {php $i = 0; $total=count($data);}
                             {loop $data $value}
-                            <li>
-                                <div class="lImg fl">
-                                    <a href=""><img src="{thumb($value['thumb'], 100, 80)}" title="{str_cut($value['title'], 36, '')}"></a>
-                                </div>
-                                <div class='rTxt fr'>
-                                    <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 32, '')}</a></span>
+                            {if $i == 0}
+                                <li class="liis" style="padding-bottom: 0;">
+                                    <div class="lImg fl">
+                                        <a href=""><img src="{thumb($value['thumb'], 100, 80)}" title="{str_cut($value['title'], 38, '')}"></a>
+                                    </div>
+                                    <div class='rTxt fr'>
+                                        <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 32, '')}</a></span>
 
-                                    <a href="{$value['url']}" target="_blank" class="fs12"><i></i>{str_cut($value['description'], 100, '')}</a>
-                                </div>
-                            </li>
-                            {/loop}
-                            {/pc}
-                        </ul>
-                        <ul class="ul2 clearfix">
-                            {pc:content action="position" posid="$posidList['right_tj']" order="listorder DESC" num="6" cache="3600"}
-                            {php $i = 0;}
-                            {loop $data $value}
-                            {if $i >= 1}
-                            <li>
-                                <div class="ls">
-                                    <a style="font-size: 13px; font-weight: 600;" href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 50, '')}</a>
-                                    <p>
-                                        <a href="{$value['url']}">{str_cut($value['description'], 130, '')}</a>
-                                    </p>
-                                </div>
-                            </li>
+                                        <a href="{$value['url']}" target="_blank" class="fs12"><i></i>{str_cut($value['description'], 65, '')}</a>
+                                    </div>
+                                </li>
+                            {else}
+                                <li>
+                                    <div class="ls">
+                                        <a class="as" style="font-size: 13px; font-weight: 600;" href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                        <p>
+                                            <a href="{$value['url']}">{str_cut($value['description'], 130, '')}</a>
+                                        </p>
+                                    </div>
+                                </li>
                             {/if}
+
                             {php $i++;}
                             {/loop}
                             {/pc}
@@ -270,12 +267,12 @@
                                     <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
                                         <div class="centerCon_img fr">
                                             <a href="{$value['url']}" target="_blank">
-                                                <img src="{thumb($value['thumb'], 75, 60)}" width="75" height="60" title="{str_cut($value['title'], 37, '')}">
+                                                <img src="{thumb($value['thumb'], 75, 60)}" width="90" height="70" title="{str_cut($value['title'], 37, '')}">
                                             </a>
                                         </div>
-                                        <div class="centerCon_txt fl" style="width: 245px;">
+                                        <div class="centerCon_txt fl" style="width: 228px;">
                                             <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 45, '')}</h3>
-                                            <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 100, '')}
+                                            <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 85, '')}
                                         </div>
                                     </div>
                                     {/if}

@@ -112,8 +112,8 @@ input{
 }
 .list_course .lcR .course_list .show_list li .show_list_main h6 span a{
     margin: 0 5px 0 0;
-    background: #bbb6b6;
-    color: #FFF;
+    /*background: #bbb6b6;
+    color: #FFF;*/
     padding: 3px 12px;
     border: 0;
     border-radius: 5px;

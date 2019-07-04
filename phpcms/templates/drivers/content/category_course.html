@@ -32,7 +32,7 @@
                             {php $courseWhere = 'typeid='.$typeidList['course'];}
                             {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="0"}
                             {loop $data $value}
-                                <a href="{$value['course_link']}"><img src="{thumb($value['thumb'], 1100, 300)}"></a>
+                                <a href="{$value['islink']}"><img src="{thumb($value['thumb'], 1100, 300)}"></a>
                             {/loop}
                             {/pc}
                         </div>
@@ -80,11 +80,11 @@
                                 {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{$value['course_link']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{$value['islink']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                     </dt>
                                     <div>
                                         <p>
-                                            <a href="{$value['course_link']}" target="_blank">{$value['title']}</a></p>
+                                            <a href="{$value['islink']}" target="_blank">{$value['title']}</a></p>
                                         <div class="zy">
                                             <a href="">{str_cut($value['description'], 75,
                                             '')}</a>
@@ -125,7 +125,7 @@
                             {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{$value['course_link']}">
+                                        <a href="{$value['islink']}">
                                             <div class="ct_r_tit">
                                                 <div>
                                                     {$value['title']}
@@ -154,9 +154,9 @@
                                 {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{$value['course_link']}"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{$value['islink']}"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                     </dt>
-                                    <p><a href="{$value['course_link']}">{$value['title']}</a></p>
+                                    <p><a href="{$value['islink']}">{$value['title']}</a></p>
                                     <div class="zy">
                                         <a href="">{str_cut($value['description'], 75,
                                         '')}</a>
@@ -188,11 +188,11 @@
                                 {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{$value['course_link']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{$value['islink']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                     </dt>
                                     <div>
                                         <p>
-                                            <a href="{$value['course_link']}" target="_blank">{$value['title']}</a></p>
+                                            <a href="{$value['islink']}" target="_blank">{$value['title']}</a></p>
                                         <div class="zy">
                                             <a href="">{str_cut($value['description'], 75,
                                             '')}</a>
@@ -226,9 +226,9 @@
                             {loop $data $value}
                             <dl>
                                 <dt>
-                                    <a href="{$value['course_link']}"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                    <a href="{$value['islink']}"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                 </dt>
-                                <p><a href="{$value['course_link']}">{$value['title']}</a></p>
+                                <p><a href="{$value['islink']}">{$value['title']}</a></p>
                             </dl>
                             {/loop}
                             {/pc}
