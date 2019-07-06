@@ -17,8 +17,8 @@
                                         </a>
                                     </div>
                                     <div class="fr" style="padding:15px 30px; background: #f2f6ef; height: 80px; width: 330px;">
-                                        <a href="{$value['url']}" target="_blank"><span>口碑课程</span></a>
-                                        <a href="{$value['url']}" target="_blank"><p>{$value['title']}</p></a>
+                                        <a href="{$value['url']}" target="_blank"><span>{str_cut($value['title'], 65,'')}</span></a>
+                                        <a href="{$value['url']}" target="_blank"><p>{str_cut($value['description'], 100,'')}</p></a>
                                     </div>
                                 </li>
                             {/loop}

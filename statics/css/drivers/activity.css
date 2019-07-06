@@ -1,0 +1,61 @@
+.activity_con{
+    height: auto;
+    background-color: #fff;
+    padding-bottom: 15px;
+}
+.activity_con .actv_img{
+    height: 80px;
+    padding: 15px 10px;
+}
+.activity_con .actv_img .actv_banner{
+    width: 65%;
+    height: 80px;
+    background-color: red;
+}
+.activity_con .actv_img .actv_txt{
+    width: 30%;
+    height: 80px;
+    background-color: blue;
+}
+
+.activity_con .actv_tit{
+    width: 100%;
+    border: 1px solid #eee;
+    padding: 10px;
+}
+.activity_con .actv_tit a{
+    font-size: 13px;
+}
+.activity_con .actv_conL{
+    width: 65%;
+    height: auto  ;
+}
+.activity_con .actv_conL ul li{
+    width: 98%;
+    height: 100px;
+    border: 1px solid #ddd;
+    margin: 15px 10px;
+}
+.activity_con .actv_conR{
+    width: 30%;
+    height: auto;
+    border-left: 1px solid #ddd;
+}
+.activity_con .actv_conR .actv_conRa{
+    border-bottom: 1px solid #ddd;
+}
+.activity_con .actv_conR .actv_conRa .tit{
+    border-bottom: 1px solid #ddd;
+    padding: 10px 15px;
+    font-size: 13px;
+}
+.activity_con .actv_conR .actv_conRa .tit h3{
+    border-left: 3px solid #0b68a9;
+    padding-left: 6px;
+}
+.activity_con .actv_conR .actv_conRa ul li{
+    padding: 5px 10px 5px 20px;
+}
+.activity_con .actv_conR .actv_conRa ul li a{
+    font-size: 13px;
+}
