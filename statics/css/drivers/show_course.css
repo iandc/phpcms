@@ -42,7 +42,7 @@ body{
 }
 .course_all .all_list .view_line{
     overflow: hidden;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
 }
 .course_all .all_list .right_tags{
     margin-bottom: 0;
@@ -65,13 +65,12 @@ body{
 }
 .course_all .all_list .gk{
     display: inline-block;
-    width: 60px;
-    line-height: 25px;
+    /*width: 60px;*/
+    line-height: 20px;
     text-align: center;
     padding: 5px 10px;
     background-color: #0b68a9;
     border-radius: 5px;
-    margin-left: 15px;
 }
 .course_all .all_list .gk a{
     color: #fff;
@@ -166,21 +165,25 @@ body{
     font-size: 13px;
 }
 .lecturer_con_bot h3{
-    font-size: 18px;
+    font-size: 22px;
     padding-top: 15px;
     margin-bottom: 10px;
 }
 .lecturer_con_bot ul li{
     float: left;
-    width: 12%;
+    width: 15%;
     padding: 5px;
     padding-bottom: 10px;
 }
 .lecturer_con_bot ul li img{
     width: 110px;
     height: 60px;
+    margin-left: 15px;
 }
-.lecturer_con_bot ul li .txt span{
+.lecturer_con_bot ul li .txt{
+    margin-top: 8px;
+}
+.lecturer_con_bot ul li .txt a{
     font-size: 12px;
 }
 
@@ -223,7 +226,7 @@ body{
     /*border-bottom: 1px solid #cdcdcd;*/
 }
 .show_course .maybelike .m_like h6{
-    font-size: 18px;
+    font-size: 24px;
     padding-bottom: 10px;
 }
 .show_course .maybelike .m_like h6 span{
@@ -261,7 +264,7 @@ body{
 #div1{
     position: fixed;
     bottom: 150px;
-    right: 55px;
+    right: 52px;
 }
 
 .keshi{
@@ -289,10 +292,12 @@ body{
 .shic{
     /*margin-right: 30px;*/
     font-size: 12px;
-
     text-align: right;
 }
 .view_line del{
-    font-size: 18px;
+    font-size: 16px;
     margin-left: 10px;
+}
+.dpn{
+    display: none;
 }

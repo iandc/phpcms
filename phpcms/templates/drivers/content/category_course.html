@@ -72,7 +72,9 @@
                 <div class="course_content mb10 clearfix">
                     <!-- 马上要开始的课程 -->
                     <div class="conts">
-                        <h3 class="titles"><i>↓</i><span>热门课程</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
+                        <h3 class="titles"><i>↓</i><span>热门课程</span> 
+                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                        </h3>
                         <div class="newest_curriculum mb10 clearfix">
                             <div class="nc_r fr">
                                 {php $courseWhere = 'typeid='.$typeidList['course'];}
@@ -109,6 +111,8 @@
                             </div>
                         </div>
                     </div>
+
+                    {show_ad(2, 45)}
                     
 
                     <!-- 电源设计 -->
@@ -144,7 +148,9 @@
 
                     <!-- 正在进行的课程 -->
                     <div class="conts">
-                        <h3 class="titles"><i>↓</i><span>最新课程</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
+                        <h3 class="titles"><i>↓</i><span>最新课程</span> 
+                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                        </h3>
                         <div class="newest_curriculum mb10 clearfix">
                             <!-- </div> -->
                             <div class="nc_r fr">
@@ -183,7 +189,9 @@
                     </div>
                     
                     <div class="newest_curriculum mb10 clearfix">
-                        <h3 class="titles"><i>↓</i><span>收费课程</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
+                        <h3 class="titles"><i>↓</i><span>收费课程</span> 
+                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                        </h3>
                         <div class="nc_r fr">
                             {php $courseWhere = "present_price>0";}
                                 {pc:content action="lists" catid="$courseid" where="$courseWhere" order="present_price DESC" num="8" cache="3600" moreinfo="1"}
@@ -220,7 +228,9 @@
                     </div>
 
                     <div class="newest_curriculum mb10 clearfix">
-                        <h3 class="titles"><i>↓</i><span>免费公开课</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
+                        <h3 class="titles"><i>↓</i><span>免费公开课</span> 
+                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                        </h3>
                         <div class="nc_r fr">
                             {php $courseWhere == "present_price=0";}
                             {pc:content action="lists" catid="$courseid" where="$courseWhere" order="user_num DESC" num="8" cache="3600"}
@@ -252,10 +262,10 @@
                                     {loop $data $value}
                                         <li>
                                             <div class="lecturer_head">
-                                                <a href=""><img src="{$value['thumb']}" alt=""></a>
+                                                <a href="javascript:;"><img src="{$value['thumb']}" alt=""></a>
                                             </div>
                                             <div class="lecturer_name">
-                                                <a href="">{$value['title']}</a>
+                                                <a href="javascript:;">{$value['title']}</a>
                                             </div>
                                             <!-- <div class="lecturer_album">
                                                 <a href="">课程专辑</a>

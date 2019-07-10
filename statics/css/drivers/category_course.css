@@ -259,7 +259,7 @@
     font-weight: 400;
 }
 .userNum small{
-    color: #0b68a9;
+    color: red;
     font-size: 14px;
 }
 .small{
@@ -294,8 +294,8 @@
 }
 
 del{
-    font-size: 14px;
-    color: red;
+    font-size: 13px;
+    color: #666;
 }
 del.del{
     display: none;

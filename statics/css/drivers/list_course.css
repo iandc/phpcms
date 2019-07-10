@@ -134,12 +134,20 @@ input{
     padding-right: 20px;
 }
 .list_course .lcR .course_list .show_list li .show_list_main .time span small{
-    color: #0b68a9;
+    color: red;
     font-weight: bold;
     font-size: 14px;
 }
 .jg{
     font-size: 14px;
+    font-weight: 600;
+}
+
+.text_c a,.text_c span{
+    border: 1px solid #cfcfcf;
+    padding: 0 10px;
+}
+.text_c span{
     font-weight: 600;
 }
 

@@ -1,3 +1,4 @@
+
 {template 'content', 'header'}
 <body>
     {show_ad(1, 44)}
@@ -259,7 +260,7 @@
                                     {if $value['thumb'] == ""}
                                     <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
                                         <div class="centerCon_txt fl">
-                                            <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 45, '')}</h3>
+                                            <h3><a href="{$value['url']}" {title_style($value['style'])} target="_blank">{str_cut($value['title'], 45, '')}</h3>
                                             <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 150, '')}
                                         </div>
                                     </div>
@@ -271,7 +272,7 @@
                                             </a>
                                         </div>
                                         <div class="centerCon_txt fl" style="width: 228px;">
-                                            <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'], 45, '')}</h3>
+                                            <h3><a href="{$value['url']}" {title_style($value['style'])} target="_blank">{str_cut($value['title'], 45, '')}</h3>
                                             <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 85, '')}
                                         </div>
                                     </div>

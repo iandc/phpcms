@@ -5,7 +5,7 @@
         <div class="show_course w1100">
             <div class="show_course_tit">
                 <h4>
-                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$courseid}" class="bz"></a>
+                    <a href="{$newsurl}" class="bz"></a>
                     <a href="{$eduurl}">课程首页 > </a>
                     <a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}">{$CATEGORYS[$catid][catname]} > </a>
                     <a href="">{$title}</a>
@@ -127,19 +127,19 @@
             </div>
             <div class="clearfix" style="margin-top: 10px;">
                 <ul class="list_3 list_3_course clearfix">
-                    <li class="fl">上一个课程：<a href="{$previous_page['url']}">{str_cut($previous_page['title'], 250, '')}</a></li>
-                    <li class="fr" style="margin-left: 100px;">下一个课程：<a href="{$next_page['url']}">{str_cut($next_page['title'], 250, '')}</a></li>
+                    <li class="fl">上一个课程：<a href="{replaceUrl4course($previous_page['url'])}">{str_cut($previous_page['title'], 250, '')}</a></li>
+                    <li class="fr" style="margin-left: 100px;">下一个课程：<a href="{replaceUrl4course($next_page['url'])}">{str_cut($next_page['title'], 250, '')}</a></li>
                 </ul>
             </div>
             <div class="lecturer_con_bot">
-                <h3>主讲的其他课程：</h3>
+                <h3>其他课程：</h3>
                 <ul class="clearfix" style="background: #fff;">
                     {php $courseWhere = "teacher='$teacher' and id <> $id";}
                     {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="5" cache="0" moreinfo=1}
                     {loop $data $value}
                     <li>
-                        <a href=""><img src="{thumb($value['thumb'], 209, 116)}" alt=""></a>
-                        <div class="txt"><span>{str_cut($value['title'], 50, '')}</span></div>
+                        <a href="{replaceUrl4course($value['url'])}"><img src="{thumb($value['thumb'], 209, 116)}" alt=""></a>
+                        <div class="txt"><a href="{replaceUrl4course($value['url'])}">{str_cut($value['title'], 50, '')}</a></div>
                     </li>
                     {/loop}
                     {/pc}
@@ -151,7 +151,7 @@
                         <!-- <span id="button">
                             <a href="javascript:;">换一批</a>
                         </span> -->
-                        猜你喜欢
+                        猜你喜欢：
                     </h6>
                 </div>
                 <!-- <ul class="clearfix hyp2">
@@ -180,12 +180,12 @@
                         {loop $data $value}
                             <div class="list4">
                                 <div class="img">
-                                    <a href="{$value['url']}">
+                                    <a href="{replaceUrl4course($value['url'])}">
                                         <img src="{thumb($value['thumb'], 209, 116)}" alt="">
                                     </a>
                                 </div>
                                 <div class="tit">
-                                    <a href="">{$value['title']}</a>
+                                    <a href="{replaceUrl4course($value['url'])}">{$value['title']}</a>
                                 </div>
                             </div>
                         {/loop}
