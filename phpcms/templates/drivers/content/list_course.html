@@ -3,7 +3,7 @@
 <?php
 $courseType = array_filter(explode(',', $CAT['usable_type']));
 
-$TYPE = getcache('type_content', 'commons');
+$typeList = getcache('type_content_'.$siteid, 'commons');
 
 if($_GET['sort'] == 'hot') {
     $sort = 'user_num';
@@ -40,7 +40,7 @@ if(in_array($_GET['sort'], ['hot', 'price', 'time'])) {
 
 $sortBy = $sort . ' ' . $by;
 
-//echo "<pre>";print_r($CAT);
+//echo "<pre>";print_r($typeList);
 
 ?>
 
@@ -57,9 +57,9 @@ $sortBy = $sort . ' ' . $by;
             <div class="lcL fl">
                 <dl>
                     <dt class="lcL_all {if empty($typeid)}jc{/if}"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}">全部</a></dt>
-                    {loop $courseType $value}
+                    {loop $courseType $tid}
                         <dd>
-                            <a {if $typeid == $TYPE[$value]['typeid']}class="jc"{/if} href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&typeid={$TYPE[$value]['typeid']}">{$TYPE[$value][name]}</a>
+                            <a {if $typeid == $typeList[$tid]['typeid']} class="jc"{/if} href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&typeid={$typeList[$tid]['typeid']}">{$typeList[$tid]['name']}</a>
                         </dd>
                     {/loop}
                 </dl>

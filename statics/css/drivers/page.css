@@ -63,3 +63,34 @@
 .about_us .au_r #con li.show{
     display: block;
 }
+
+.au_r_b1{
+    padding-top: 15px !important;
+}
+.ull{
+    width: 100%;
+}
+.recruit1 h3{
+    color: #000;
+    margin-bottom: 5px;
+}
+.recruit1 .liss{
+    padding-left: 30px;
+}
+.recruit1 span{
+    display: block;
+    line-height: 25px;
+    font-size: 13px;
+}
+.recruit1 span small{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: #999;
+    margin-bottom: 3px;
+    margin-right: 5px;
+}
+.recruit1 p{
+    margin-top: 10px !important;
+}

@@ -1,32 +1,73 @@
-{php $posid = 18;}
+<?php
 
-{php $posidList = ['slide' => 1 ,'focus' => 2, 'newActivity' => 19, 'course_focus' => 20 ,'present_price' => 25 ,'right_tj' => 23 ,'highliht' => 24];}
+$posid = 18;
 
-{php $typeidList = ['tech' => 54, 'news' => 55, 'activity' => 56, 'course' => 57, 'other' => 58, 'teacher' => 62];}
+$posidList = [
+    'slide' => 1,
+    'focus' => 2,
+    'newActivity' => 19,
+    'course_focus' => 20,
+    'present_price' => 25,
+    'right_tj' => 23,
+    'highliht' => 24
+];
 
-{php $bbsShowStatus = ['isOpen' => 1, 'newThread' => 1, 'newJobThread' => 1, 'monthHotThread' => 1, 'channelThread' => 1];}
+$typeidList = [
+    'tech' => 54,
+    'news' => 55,
+    'activity' => 56,
+    'course' => 57,
+    'other' => 58,
+    'teacher' => 62
+];
 
-{php $indexBidList = ['user' => 88, 'blog' => 109, 'thread' => 3, 'hot' => 43, 'job' => 5];}
+$bbsShowStatus = [
+    'isOpen' => 1,
+    'newThread' => 1,
+    'newJobThread' => 1,
+    'monthHotThread' => 1,
+    'channelThread' => 1
+];
 
-<!--{ 频道页调用论坛的fid信息 98为频道id，即catid,fid为板块id}-->
-{php $catid2fidList = [98 => [207, 7, 271, 151, 152, 6, 48], 100 => [3, 75], 103 => [38], 104 => [326, 69, 5, 295, 208, 41, 77, 78, 58, 154, 320, 321, 110, 111, 218, 219, 165, 166, 202, 201, 210, 211, 186, 185, 245, 244, 262, 270, 296], 105 => [333, 139, 36, 221, 257, 284], 106 => [116, 117], 107 => [69, 5, 295, 208], 110 => [10, 83, 239, 240, 18, 188, 71, 14, 141, 79, 143, 162, 163, 55, 35, 175, 177, 12], 144 => [124], 146 => [259], 147 => [37, 156], 148 => [283], 152 => [282], 153 => [280, 281], 154 => [], 156 => [218, 219], 157 => [106, 107, 215, 216, 199, 198, 291, 290, 289, 288, 287], 158 => [318]];}
+$indexBidList = ['user' => 88, 'blog' => 109, 'thread' => 3, 'hot' => 43, 'job' => 5];
 
-{php $bbsurl = str_replace('www', 'bbs', siteurl($siteid));}
+$catid2fidList = [
+    98 => [207, 7, 271, 151, 152, 6, 48],
+    100 => [3, 75],
+    103 => [38],
+    104 => [326, 69, 5, 295, 208, 41, 77, 78, 58, 154, 320, 321, 110, 111, 218, 219, 165, 166, 202, 201, 210, 211, 186, 185, 245, 244, 262, 270, 296],
+    105 => [333, 139, 36, 221, 257, 284],
+    106 => [116, 117],
+    107 => [69, 5, 295, 208],
+    110 => [10, 83, 239, 240, 18, 188, 71, 14, 141, 79, 143, 162, 163, 55, 35, 175, 177, 12],
+    144 => [124],
+    146 => [259],
+    147 => [37, 156],
+    148 => [283],
+    152 => [282],
+    153 => [280, 281],
+    154 => [],
+    156 => [218, 219],
+    157 => [106, 107, 215, 216, 199, 198, 291, 290, 289, 288, 287],
+    158 => [318]
+];
 
-{php $blogurl = str_replace('www', 'blog', siteurl($siteid));}
+$bbsurl = str_replace('www', 'bbs', siteurl($siteid));
 
-{php $newsurl = siteurl(1);}
+$blogurl = str_replace('www', 'blog', siteurl($siteid));
 
-{php $eduurl = siteurl(2);}
+$newsurl = siteurl(1);
 
-{php $acturl = siteurl(3);}
+$eduurl = siteurl(2);
 
-{php $bbsJsUrl = $bbsurl. '/api.php?mod=js&bid=';}
-  
-{php $newsid = getNewsModelItemId($siteid);}
+$bbsJsUrl = $bbsurl. '/api.php?mod=js&bid=';
 
-{php $courseid = getCourseModelItemId($siteid);}
+$newsid = getNewsModelItemId($siteid);
 
-{php $teacherid = getTeacherModelItemId($siteid);}
+$courseid = getCourseModelItemId($siteid);
 
-{php $mySite = siteinfo($siteid);}
+$teacherid = getTeacherModelItemId($siteid);
+
+$mySite = siteinfo($siteid);
+
+?>

@@ -165,7 +165,7 @@ body{
     font-size: 13px;
 }
 .lecturer_con_bot h3{
-    font-size: 22px;
+    font-size: 18px;
     padding-top: 15px;
     margin-bottom: 10px;
 }
@@ -226,7 +226,7 @@ body{
     /*border-bottom: 1px solid #cdcdcd;*/
 }
 .show_course .maybelike .m_like h6{
-    font-size: 24px;
+    font-size: 18px;
     padding-bottom: 10px;
 }
 .show_course .maybelike .m_like h6 span{
@@ -264,7 +264,7 @@ body{
 #div1{
     position: fixed;
     bottom: 150px;
-    right: 52px;
+    right: 55px;
 }
 
 .keshi{
