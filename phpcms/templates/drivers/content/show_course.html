@@ -6,8 +6,8 @@
             <div class="show_course_tit">
                 <h4>
                     <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$courseid}" class="bz"></a>
-                    <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid={$catid}">课程首页 > </a>
-                    <a href="">{$CATEGORYS[$catid][catname]} > </a>
+                    <a href="{$eduurl}">课程首页 > </a>
+                    <a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}">{$CATEGORYS[$catid][catname]} > </a>
                     <a href="">{$title}</a>
                 </h4>
             </div>
@@ -38,12 +38,12 @@
                         </div>
                         <div class="view_line price">
                             <span class="{if $present_price == 0 }small{/if}">￥{$present_price}</span>
-                            <del style="margin-left: 0;" class="{if $present_price == 0}del{/if}">{if $present_price == 0 }￥{$price}{else}{$price}{/if}</del>
+                            <del {if $price == 0}class="dpn"{/if} style="margin-left: 0;" class="{if $present_price == 0}del{/if}">{if $present_price == 0 }￥{$price}{else}{$price}{/if}</del>
+                        </div>
+                        <div class="view_line gk">
+                            
                             <span class="gk"><a href="{$course_link}" target="_blank">前往学习</a></span> 
                         </div>
-                        <!-- <div class="view_line gk">
-                            
-                        </div> -->
                     </div>
                 </div>
                 

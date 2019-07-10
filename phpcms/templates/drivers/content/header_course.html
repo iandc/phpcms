@@ -1,91 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+    <meta name="keywords" content="{$SEO['keyword']}">
+    <meta name="description" content="{$SEO['description']}">
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/global.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/category_course.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/header_course.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/footer_course.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/list_course.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/show_course.css"/>
-
     <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
     <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
 </head>
 
 {template "content", "config"}
 
+<?php
+$search_model = getcache('search_model_'.$siteid, 'search');
+foreach($search_model as $v) {
+    if(strpos($v['name'], '课程') !== false) {
+        $searchtypeid = $v['typeid'];
+        break;
+    }
+}
+?>
+
 <body>
     <div class="w100" style="border-bottom: 1px solid #eee; padding-bottom: 10px; background: #fff;">
         <div class="w100">
             <div class="hd_course w1100 clearfix">
                 <div class="fl hd_c_logo">
-                    <a title="{$mySite['name']}" href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=159">
+                    <a title="{$mySite['name']}" href="{$eduurl}">
                         <img style="margin-top: 10px; margin-left: -6px;" src="{IMG_PATH}drivers/logo_course.png" width="175" height="70" alt="" title="{$mySite['name']}" >
                     </a>
                 </div>
                 <div class="fl hd_c_lg">
-                    <!-- <a href="" class="lg">免费注册 | 登录</a> -->
                     {show_ad(1, 41)}
                 </div>
                 <div class="fr hd_c_list" id="search">
-                    <!-- {php $j=0}
-                        {php $search_model = getcache('search_model_'.$siteid, 'search');}
-                        {loop $search_model $k=>$v}
-                        {php $j++;}
-                            <a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this));" style="outline:medium none;" hidefocus="true" {if $j==1 && $typeid==$v['typeid']} class="on" {/if}>{$v['name']}</a>{if $j != count($search_model)}<span> | </span>{/if}
-                        {/loop}
-                    {php unset($j);} -->
-                    <!-- <form action="">
-                        <div class="search">
-                            <input type="text" placeholder="搜索课程、视频、公开课策划" class="inp1">
-                            <input type="submit" class="inp2" value="搜索">
-                        </div>
-
-                    </form> -->
-
                     <div class="search1">
-                        <form action="{APP_PATH}index.php" method="get" target="_blank">
+                        <form action="{$eduurl}/index.php" method="get" target="_blank">
                             <input type="hidden" name="m" value="search"/>
                             <input type="hidden" name="c" value="index"/>
                             <input type="hidden" name="a" value="init"/>
-                            <input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+                            <input type="hidden" name="typeid" value="{$searchtypeid}" id="typeid"/>
                             <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
-                            <input type="text" class="text inp1" value="TI 电池管理深度解析系列" name="q" id="q"/>
+                            <input type="text" class="text inp1" placeholder="请输入要搜索的课程" name="q" id="q"/>
                             <input type="submit" value="搜 索" class="button inp2" />
                         </form>
                     </div>
-                    <!-- <ul>
-                        <li><a href="">课程</a></li>
-                        <li><a href="">课程</a></li>
-                        <li><a href="">课程</a></li>
-                        <li><a href="">课程</a></li>
-                        <li><a href="">课程</a></li>
-                    </ul> -->
                 </div>
             </div>
         </div>
-        
+
         <div id="nav_course" class="w100">
             <div class="nav_course w1100">
                 <ul class="clearfix">
-                    <li class="{if $catid == $courseid}nav_more{/if}"><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=159">首页</a></li>
+                    <li class="{if $catid == $courseid}nav_more{/if}"><a href="{$eduurl}">首页</a></li>
                     {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="5" cache="3600"}
                         {loop $data $value}
                             <li class="{if $catid == $value['catid']}nav_more{/if}">
-                                <a class="xl_con_tit" href="{$value['url']}">{$value['catname']}</a><i></i>
-                                <!-- <div class="xl">
-                                    <div class="xl_con">
-                                        <a href=""><span>·</span>摄影基础</a>
-                                        <a href=""><span>·</span>人像摄影</a>
-                                        <a href=""><span>·</span>风光摄影</a>
-                                        <a href=""><span>·</span>商业摄影</a>
-                                        <a href=""><span>·</span>后期技术</a>
-                                        <a href=""><span>·</span>摄影讲座分享</a>
-                                        <a href=""><span>·</span>手机摄影</a>
-                                    </div>
-                                </div> -->
+                                <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}">{$value['catname']}</a><i></i>
                             </li>
                         {/loop}
                     {/pc}
@@ -95,11 +73,11 @@
     </div>
 
     <script>
-        
+
          $(function(){
-         
+
             // var titleTop = $('#nav_course').offset().top;
-            
+
             $(document).on('scroll',function(){
               if($(document).scrollTop() > 180){
                  $('#nav_course').css({
@@ -110,7 +88,6 @@
                      "border-bottom":"1px solid #eee"
              })
             }else{
-         
                $('#nav_course').css({
                    "position":"static",
                    "border-bottom":"none"
@@ -120,5 +97,3 @@
         })
     </script>
 
-</body>
-</html>

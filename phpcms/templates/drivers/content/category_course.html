@@ -11,14 +11,14 @@
                         {pc:content action="position" posid="$posidList['present_price']" order="listorder DESC" num="2" cache="3600"}
                             {loop $data $value}
                                 <li class="clearfix">
-                                    <div class="fl">
-                                        <a href="{$value['url']}" target="_blank">
-                                            <img src="{thumb($value['thumb'], 120, 100)}" alt="">
+                                    <div class="fl flw">
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank">
+                                            <img src="{thumb($value['thumb'], 160, 110)}" alt="">
                                         </a>
                                     </div>
-                                    <div class="fr" style="padding:15px 30px; background: #f2f6ef; height: 80px; width: 330px;">
-                                        <a href="{$value['url']}" target="_blank"><span>{str_cut($value['title'], 65,'')}</span></a>
-                                        <a href="{$value['url']}" target="_blank"><p>{str_cut($value['description'], 100,'')}</p></a>
+                                    <div class="fr" style="padding:15px 30px; background: #f2f6ef; height: 80px; width: 300px;">
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><span>{str_cut($value['title'], 65,'')}</span></a>
+                                        <a class="text2" href="{replaceUrl4course($value['url'])}"" target="_blank"><p>{$value['description']}</p></a>
                                     </div>
                                 </li>
                             {/loop}
@@ -30,9 +30,9 @@
                         <div id="toleft">&lt;</div>
                         <div class="lunbo">
                             {php $courseWhere = 'typeid='.$typeidList['course'];}
-                            {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="0"}
+                            {pc:content action="lists" catid="$courseid" order="id DESC" num="4" cache="3600"}
                             {loop $data $value}
-                                <a href="{$value['islink']}"><img src="{thumb($value['thumb'], 1100, 300)}"></a>
+                                <a href="{replaceUrl4course($value['url'])}"><img src="{thumb($value['thumb'], 460, 250)}"></a>
                             {/loop}
                             {/pc}
                         </div>
@@ -76,18 +76,17 @@
                         <div class="newest_curriculum mb10 clearfix">
                             <div class="nc_r fr">
                                 {php $courseWhere = 'typeid='.$typeidList['course'];}
-                                {pc:content action="lists" catid="$courseid" order="user_num DESC" num="8" cache="0" moreinfo="1"}
+                                {pc:content action="lists" catid="$courseid" order="user_num DESC" num="8" cache="3600" moreinfo="1"}
                                 {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{$value['islink']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                     </dt>
                                     <div>
-                                        <p>
-                                            <a href="{$value['islink']}" target="_blank">{$value['title']}</a></p>
+                                        <p class="txt1">
+                                            <a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></p>
                                         <div class="zy">
-                                            <a href="">{str_cut($value['description'], 75,
-                                            '')}</a>
+                                            <span>{$value['description']}</span>
                                         </div>
                                         <div class="userNum clearfix">
                                             <span class="fl">
@@ -121,11 +120,11 @@
                         </div>
                         <div class="ct_r fr">
                             {php $courseWhere = "price=0";}
-                            {pc:content action="lists" catid="$courseid" where="$courseWhere" order="user_num DESC" num="4" cache="0"}
+                            {pc:content action="lists" catid="$courseid" where="$courseWhere" order="user_num DESC" num="4" cache="3600"}
                             {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{$value['islink']}">
+                                        <a href="{replaceUrl4course($value['url'])}">
                                             <div class="ct_r_tit">
                                                 <div>
                                                     {$value['title']}
@@ -150,29 +149,32 @@
                             <!-- </div> -->
                             <div class="nc_r fr">
                                 {php $courseWhere = 'typeid='.$typeidList['course'];}
-                                {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="0"}
+                                {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="3600"}
                                 {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{$value['islink']}"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                     </dt>
-                                    <p><a href="{$value['islink']}">{$value['title']}</a></p>
-                                    <div class="zy">
-                                        <a href="">{str_cut($value['description'], 75,
-                                        '')}</a>
+                                    <div>
+                                        <p class="txt1">
+                                            <a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></p>
+                                        <div class="zy">
+                                            <span>{$value['description']}</span>
+                                        </div>
+                                        <div class="userNum clearfix">
+                                            <span class="fl">
+                                                <i></i>
+                                                {$value['user_num']} <span>人已购买</span> 
+                                            </span>
+                                            <span class="fr" style="margin-right: 10px; font-size: 14px;">
+                                                <small class="{if $value['present_price'] == 0 }small{/if}">￥{$value['present_price']}</small>
+                                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                                            </span>
+                                        </div>
+                                        <!-- <div class="sc">
+                                            <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
+                                        </div> -->
                                     </div>
-                                    <div class="userNum clearfix">
-                                        <span class="fl">
-                                            <i></i>
-                                            313 <span>人已购买</span> 
-                                        </span>
-                                        <span class="fr" style="margin-right: 10px; font-size: 14px;">
-                                            ￥<small>219</small>
-                                        </span>
-                                    </div>
-                                    <!-- <div class="sc">
-                                        <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
-                                    </div> -->
                                 </dl>
                                 {/loop}
                                 {/pc}
@@ -184,18 +186,17 @@
                         <h3 class="titles"><i>↓</i><span>收费课程</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
                         <div class="nc_r fr">
                             {php $courseWhere = "present_price>0";}
-                                {pc:content action="lists" catid="$courseid" where="$courseWhere" order="present_price DESC" num="8" cache="0" moreinfo="1"}
+                                {pc:content action="lists" catid="$courseid" where="$courseWhere" order="present_price DESC" num="8" cache="3600" moreinfo="1"}
                                 {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{$value['islink']}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                     </dt>
                                     <div>
-                                        <p>
-                                            <a href="{$value['islink']}" target="_blank">{$value['title']}</a></p>
+                                        <p class="txt1">
+                                            <a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></p>
                                         <div class="zy">
-                                            <a href="">{str_cut($value['description'], 75,
-                                            '')}</a>
+                                            <span>{$value['description']}</span>
                                         </div>
                                         <div class="userNum clearfix">
                                             <span class="fl">
@@ -221,14 +222,14 @@
                     <div class="newest_curriculum mb10 clearfix">
                         <h3 class="titles"><i>↓</i><span>免费公开课</span> <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a></h3>
                         <div class="nc_r fr">
-                            {php $courseWhere = "present_price=0";}
-                            {pc:content action="lists" catid="$courseid" where="$courseWhere" order="user_num DESC" num="8" cache="0"}
+                            {php $courseWhere == "present_price=0";}
+                            {pc:content action="lists" catid="$courseid" where="$courseWhere" order="user_num DESC" num="8" cache="3600"}
                             {loop $data $value}
                             <dl>
                                 <dt>
-                                    <a href="{$value['islink']}"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                    <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
                                 </dt>
-                                <p><a href="{$value['islink']}">{$value['title']}</a></p>
+                                <p><a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></p>
                             </dl>
                             {/loop}
                             {/pc}
@@ -260,7 +261,7 @@
                                                 <a href="">课程专辑</a>
                                             </div> -->
                                             <p>
-                                                {$value['description']}
+                                                {str_cut($value['description'], 160, '')}
                                             </p>
                                         </li>
                                     {/loop}
@@ -389,8 +390,8 @@
     
     function play() {
         index++;
-        if (index > 4) {
-            index = 0
+        if (index >= 4) {
+            index = 0;
         }
         // console.log(index)
         $("#lunbobox ul li").eq(index).css({
@@ -441,7 +442,7 @@
     
     $("#toright").click(function() {
         index++;
-        if (index > 4) {
+        if (index >= 4) {
             index = 0
         }
         console.log(index);

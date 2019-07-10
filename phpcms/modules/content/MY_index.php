@@ -98,7 +98,10 @@ class MY_index extends index
             $urlrules = getcache('urlrules', 'commons');
             $urlrules = str_replace('|', '~', $urlrules[$category_ruleid]);
 
-            $urlrules = '{$page}';
+            if($siteid == 1) {
+                $urlrules = '{$page}';
+            }
+
             $tmp_urls = explode('~', $urlrules);
             $tmp_urls = isset($tmp_urls[1]) ? $tmp_urls[1] : $tmp_urls[0];
             preg_match_all('/{\$([a-z0-9_]+)}/i', $tmp_urls, $_urls);

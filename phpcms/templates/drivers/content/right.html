@@ -1,3 +1,9 @@
+{if $catid}
+    {php $newCatid = $catid;}
+{else}
+    {php $newCatid = $newsid;}
+{/if}
+
     <div class="" style="height: 1200px;">
         <div class="" style="height: 500px; background: #fff;">
             <div class="cm_four_r fr">
@@ -10,7 +16,7 @@
                         <div class="main selected">
                             <span class="a list">
                                 <ul>
-                                    {pc:content  action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="12" cache="3600"}
+                                    {pc:content  action="lists" catid="$newCatid" where="`status`=99" order="updatetime DESC" num="12" cache="3600"}
                                         {loop $data $key $value}
                                         <li>
                                             <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 60, '')}</a>
@@ -23,7 +29,7 @@
                         <div class="main">
                             <span class="a list">
                                 <ul>
-                                    {pc:content action="lists" catid="$newsid" where="`status`=99" order="updatetime DESC" num="20" cache="3600"}
+                                    {pc:content action="lists" catid="$newCatid" where="`status`=99" order="updatetime DESC" num="20" cache="3600"}
                                         {php $i=0;}
                                         {loop $data $key $value}
                                         {if $i > 10}
@@ -47,7 +53,7 @@
                                 业界最热文章
                             </div>
                             <div class="img">
-                                {pc:content action="hits" catid="$catid" num="2" order="monthviews DESC" cache="3600"}
+                                {pc:content action="hits" catid="$newCatid" num="2" order="monthviews DESC" cache="3600"}
                                     {loop $data $r}
                                         <div class="fl imgs">
                                             <a href="{$r['url']}" class="image">
@@ -62,7 +68,7 @@
                     </div>
                     <div class="lists clearfix">
                         <ul class="clearfix1" style="padding: 10px 0;">
-                            {pc:content action="hits" catid="$catid" num="20" order="monthviews DESC" cache="3600"}
+                            {pc:content action="hits" catid="$newCatid" num="20" order="monthviews DESC" cache="3600"}
                             {php $i = 0;}
                                 {loop $data $r}
                                     {if $i >= 2}

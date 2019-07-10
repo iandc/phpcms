@@ -39,4 +39,5 @@ ul li{float: left;}
     background: url(../../images/drivers/search1.png) no-repeat 0 0;
     position: relative;
     top: 1px;
+    margin-right: 5px;
 }

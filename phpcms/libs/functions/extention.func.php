@@ -84,5 +84,19 @@ function getCatNameByCatId($catid, $siteid = 1)
     return '';
 }
 
+function replaceUrl4course($url) {
+    $findUrl = siteurl(1);
+    $replaceUrl = siteurl(2);
+    $courseUrl = str_replace($findUrl, $replaceUrl, $url);
+    return $courseUrl;
+}
+
+function replaceUrl4activity($url) {
+    $findUrl = siteurl(1);
+    $replaceUrl = siteurl(3);
+    $courseUrl = str_replace($findUrl, $replaceUrl, $url);
+    return $courseUrl;
+}
+
 
 ?>

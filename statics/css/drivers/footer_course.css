@@ -78,3 +78,11 @@
     width: 60px;
     height: 60px;
 }
+
+.text_c a,.text_c span{
+    padding: 0 10px;
+    border: 1px solid #cfcfcf;
+}
+.text_c span{
+    font-weight: bold;
+}

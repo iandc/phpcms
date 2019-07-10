@@ -13,9 +13,9 @@
     font-size: 16px;
 }
 .list_course .lcL dl .lcL_all{
-    font-weight: bold;
+    /*font-weight: bold;*/
     height: 40px;
-    line-height: 55px;
+    line-height: 50px;
     overflow: hidden;
     /*margin: 0 0 10px 0;*/
     text-align: center;
@@ -97,7 +97,6 @@ input{
 .list_course .lcR .course_list .show_list li .show_list_img img{
     width: 100%;
     height: 145px;
-    border-radius: 8px;
 }
 .list_course .lcR .course_list .show_list li .show_list_main{
     width: 70%;
@@ -112,9 +111,8 @@ input{
 }
 .list_course .lcR .course_list .show_list li .show_list_main h6 span a{
     margin: 0 5px 0 0;
-    /*background: #bbb6b6;
-    color: #FFF;*/
-    padding: 3px 12px;
+    /*background: #bbb6b6;*/
+    color: #666;
     border: 0;
     border-radius: 5px;
 }
@@ -125,7 +123,7 @@ input{
     height: 40px;
     text-overflow: ellipsis;
     overflow: hidden;
-    font-size: 14px;
+    font-size: 13px;
 }
 .list_course .lcR .course_list .show_list li .show_list_main .time{
     color: #767676;
@@ -134,4 +132,49 @@ input{
 }
 .list_course .lcR .course_list .show_list li .show_list_main .time span{
     padding-right: 20px;
+}
+.list_course .lcR .course_list .show_list li .show_list_main .time span small{
+    color: #0b68a9;
+    font-weight: bold;
+    font-size: 14px;
+}
+.jg{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.divw{
+    width: 90px;
+    display: inline-block;
+}
+.aa2,.aa2{
+    position: relative;
+}
+.sjx{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    font-size: 0;
+    line-height: 0;
+    cursor: pointer;
+}
+.sjx_s{
+    border-top: 5px solid #a6a7ac; 
+}
+.sjx_x{
+    border-bottom: 5px solid #a6a7ac; 
+    position: absolute;
+    top: 8px;
+    right: 0;
+}
+.ons{
+    border-color: blue;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+.jc{
+    font-weight: bold;
 }

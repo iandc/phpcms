@@ -263,8 +263,12 @@ body{
 .zxLeft_con ul li .tit{
     display: block;
     width: 265px;
-    overflow: hidden;
     float: left;
+}
+.zxLeft_con ul li .tit{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
 }
 .zxLeft_con ul li .t{
     float: right;
@@ -377,11 +381,6 @@ body{
     color: #9c9c9c;
     float: right;
     line-height: 20px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    white-space: normal;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
     margin-top: -3px;
     margin-left: 12px;
 }
@@ -393,11 +392,18 @@ body{
     margin-top: 5px;
     margin-bottom: -2px;
     max-height: 40px;
-    overflow: hidden;
 }
 .zxRight_conc ul li .rTxt span a{
     font-weight: 600;
     font-size: 14px;
+}
+.zxRight_conc ul li .rTxt>a{
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 /*.zxRight_conc .ul2{
     margin-top: 15px;

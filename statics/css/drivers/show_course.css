@@ -166,20 +166,19 @@ body{
     font-size: 13px;
 }
 .lecturer_con_bot h3{
-    font-size: 22px;
+    font-size: 18px;
     padding-top: 15px;
     margin-bottom: 10px;
 }
 .lecturer_con_bot ul li{
     float: left;
-    width: 15%;
+    width: 12%;
     padding: 5px;
     padding-bottom: 10px;
 }
 .lecturer_con_bot ul li img{
     width: 110px;
     height: 60px;
-    margin-left: 15px;
 }
 .lecturer_con_bot ul li .txt span{
     font-size: 12px;
@@ -224,7 +223,7 @@ body{
     /*border-bottom: 1px solid #cdcdcd;*/
 }
 .show_course .maybelike .m_like h6{
-    font-size: 24px;
+    font-size: 18px;
     padding-bottom: 10px;
 }
 .show_course .maybelike .m_like h6 span{
@@ -262,7 +261,7 @@ body{
 #div1{
     position: fixed;
     bottom: 150px;
-    right: 100px;
+    right: 55px;
 }
 
 .keshi{
@@ -294,6 +293,6 @@ body{
     text-align: right;
 }
 .view_line del{
-    font-size: 16px;
+    font-size: 18px;
     margin-left: 10px;
 }
