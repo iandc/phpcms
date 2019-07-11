@@ -29,7 +29,13 @@ $bbsShowStatus = [
     'channelThread' => 1
 ];
 
-$indexBidList = ['user' => 88, 'blog' => 109, 'thread' => 3, 'hot' => 43, 'job' => 5];
+$indexBidList = [
+    'user' => 88,
+    'blog' => 109,
+    'thread' => 3,
+    'hot' => 43,
+    'job' => 5
+];
 
 $catid2fidList = [
     98 => [207, 7, 271, 151, 152, 6, 48],
@@ -52,9 +58,9 @@ $catid2fidList = [
     158 => [318]
 ];
 
-$bbsurl = str_replace('www', 'bbs', siteurl($siteid));
+$bbsurl = str_replace('www', 'bbs', siteurl(1));
 
-$blogurl = str_replace('www', 'blog', siteurl($siteid));
+$blogurl = str_replace('www', 'blog', siteurl(1));
 
 $newsurl = siteurl(1);
 
@@ -62,12 +68,12 @@ $eduurl = siteurl(2);
 
 $bbsJsUrl = $bbsurl. '/api.php?mod=js&bid=';
 
-$newsid = getNewsModelItemId($siteid);
+$newsid = getNewsModelItemId(1);
 
-$courseid = getCourseModelItemId($siteid);
+$courseid = getCourseModelItemId(2);
 
-$teacherid = getTeacherModelItemId($siteid);
+$teacherid = getTeacherModelItemId(2);
 
-$mySite = siteinfo($siteid);
+$mySite = siteinfo(1);
 
 ?>

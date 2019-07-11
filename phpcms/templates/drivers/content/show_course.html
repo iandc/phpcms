@@ -21,6 +21,10 @@
                     <div class="fr all_list">
                         <h3 class="gy">{$title}</h3>
                         <div class="view_line">
+                            <div class="right_tags fl">发布时间：</div>
+                            <div class="top-right-member fl">{$inputtime}</div>
+                        </div>
+                        <div class="view_line">
                             <div class="right_tags fl">课程分类 :</div>
                             <div class="top-right-member fl">{$CATEGORYS[$catid][catname]}</div>
                         </div>
@@ -132,7 +136,7 @@
                 </ul>
             </div>
             <div class="lecturer_con_bot">
-                <h3>其他课程：</h3>
+                <h3>其他课程</h3>
                 <ul class="clearfix" style="background: #fff;">
                     {php $courseWhere = "teacher='$teacher' and id <> $id";}
                     {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="5" cache="0" moreinfo=1}
@@ -151,7 +155,7 @@
                         <!-- <span id="button">
                             <a href="javascript:;">换一批</a>
                         </span> -->
-                        猜你喜欢：
+                        猜你喜欢
                     </h6>
                 </div>
                 <!-- <ul class="clearfix hyp2">

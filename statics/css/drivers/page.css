@@ -94,3 +94,7 @@
 .recruit1 p{
     margin-top: 10px !important;
 }
+.recruit_img img{
+    width: 100%;
+    height: 100%;
+}

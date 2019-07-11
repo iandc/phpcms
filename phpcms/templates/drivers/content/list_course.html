@@ -85,8 +85,8 @@ $sortBy = $sort . ' ' . $by;
                                     按热度排序
                                     </a>
                                     <span class="aa1 aa2">
-                                        <span class="sjx_s sjx {$active['hot_asc']}"></span>
-                                        <span class="sjx_x sjx {$active['hot_desc']}"></span>
+                                        <span class="sjx_x sjx {$active['hot_asc']}"></span>
+                                        <span class="sjx_s sjx {$active['hot_desc']}"></span>
                                     </span>
                                 </div>
                                 
@@ -96,13 +96,13 @@ $sortBy = $sort . ' ' . $by;
                                     按价格排序
                                     </a>
                                     <span class="aa2">
-                                        <span class="sjx_s sjx {$active['price_asc']}"></span>
-                                       <span class="sjx_x sjx {$active['price_desc']}"></span>
+                                        <span class="sjx_x sjx {$active['price_asc']}"></span>
+                                       <span class="sjx_s sjx {$active['price_desc']}"></span>
                                     </span>
                                  </div>
                                 
                             </span>
-                            <a href="{$eduurl}" class="name">大学堂</a>
+                            <a href="{$eduurl}" class="name" style="color: #f9f9f9;">1</a>
                         </h3>
                     </div>
                     <ul class="show_list clearfix">
@@ -139,7 +139,7 @@ $sortBy = $sort . ' ' . $by;
                                         <span>讲师：{$value['teacher']}</span>
                                         <span>时长：{$value['duration']}</span> -->
                                         <span class="jg">价格：<small>{if $value['present_price'] == 0}免费{else}{$value['present_price']}&nbsp;元{/if}</small>   </span>
-                                        <span class="fr">{date('Y-m-d', $value['inputtime'])}</span>
+                                        <span class="fr">{date('Y-m-d H:i:s', $value['inputtime'])}</span>
                                 </p>
                             </div>
                         </li>

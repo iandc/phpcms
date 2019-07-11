@@ -72,6 +72,52 @@
                 
                     {show_ad(2, 45)}
                 <div class="course_content mb10 clearfix">
+
+                    <!-- 正在进行的课程 -->
+                    <div class="conts">
+                        <h3 class="titles"><i>↓</i><span>最新课程</span> 
+                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                        </h3>
+                        <div class="newest_curriculum mb10 clearfix">
+                            <!-- </div> -->
+                            <div class="nc_r fr">
+                                {php $courseWhere = 'typeid='.$typeidList['course'];}
+                                {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="3600"}
+                                {loop $data $value}
+                                <dl>
+                                    <dt>
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                    </dt>
+                                    <div>
+                                        <p class="txt1">
+                                            <a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></p>
+                                        <div class="zy">
+                                            <span>{$value['description']}</span>
+                                        </div>
+                                        <div class="userNum clearfix">
+                                            <span class="fl">
+                                                <i></i>
+                                                {$value['user_num']} <span>人已购买</span> 
+                                            </span>
+                                            <span class="fr" style="margin-right: 10px; font-size: 14px;">
+                                                <small class="{if $value['present_price'] == 0 }small{/if}">￥{$value['present_price']}</small>
+                                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                                            </span>
+                                        </div>
+                                        <!-- <div class="sc">
+                                            <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
+                                        </div> -->
+                                    </div>
+                                </dl>
+                                {/loop}
+                                {/pc}
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                     <!-- 马上要开始的课程 -->
                     <div class="conts">
                         <h3 class="titles"><i>↓</i><span>热门课程</span> 
@@ -147,47 +193,7 @@
                         </div>
                     </div> -->
 
-                    <!-- 正在进行的课程 -->
-                    <div class="conts">
-                        <h3 class="titles"><i>↓</i><span>最新课程</span> 
-                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
-                        </h3>
-                        <div class="newest_curriculum mb10 clearfix">
-                            <!-- </div> -->
-                            <div class="nc_r fr">
-                                {php $courseWhere = 'typeid='.$typeidList['course'];}
-                                {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="3600"}
-                                {loop $data $value}
-                                <dl>
-                                    <dt>
-                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
-                                    </dt>
-                                    <div>
-                                        <p class="txt1">
-                                            <a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></p>
-                                        <div class="zy">
-                                            <span>{$value['description']}</span>
-                                        </div>
-                                        <div class="userNum clearfix">
-                                            <span class="fl">
-                                                <i></i>
-                                                {$value['user_num']} <span>人已购买</span> 
-                                            </span>
-                                            <span class="fr" style="margin-right: 10px; font-size: 14px;">
-                                                <small class="{if $value['present_price'] == 0 }small{/if}">￥{$value['present_price']}</small>
-                                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
-                                            </span>
-                                        </div>
-                                        <!-- <div class="sc">
-                                            <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
-                                        </div> -->
-                                    </div>
-                                </dl>
-                                {/loop}
-                                {/pc}
-                            </div>
-                        </div>
-                    </div>
+                    
                     
                     <div class="newest_curriculum mb10 clearfix">
                         <h3 class="titles"><i>↓</i><span>收费课程</span> 
@@ -281,7 +287,6 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
 
                 <!-- 测试 -->

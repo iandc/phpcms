@@ -47,8 +47,8 @@ body{
 .course_all .all_list .right_tags{
     margin-bottom: 0;
     margin-right: 10px;
-    height: 34px;
-    line-height: 34px;
+    height: 30px;
+    line-height: 30px;
     color: #999;
     font-size: 14px;
 }
@@ -56,8 +56,8 @@ body{
     font-size: 14px;
     color: #9b9b9b;
     margin-bottom: 0;
-    height: 34px;
-    line-height: 34px;
+    height: 30px;
+    line-height: 30px;
 }
 .course_all .all_list .price span{
     color: #0b68a9;
@@ -68,7 +68,7 @@ body{
     /*width: 60px;*/
     line-height: 20px;
     text-align: center;
-    padding: 5px 10px;
+    padding: 3px 5px;
     background-color: #0b68a9;
     border-radius: 5px;
 }

@@ -17,7 +17,7 @@
     margin-right: 20px;
 }
 .footer_course .ft_c_l ul li a{
-    /*color: #fff;*/
+    font-size: 14px;
 }
 
 .footer_course .ft_c_z{
@@ -58,7 +58,7 @@
 }
 
 .footer_course .ft_b p{
-    margin-top: 10px;
+    font-size: 14px;
 }
 
 .ewm{
