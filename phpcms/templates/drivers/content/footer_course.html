@@ -4,12 +4,15 @@
             <div class="ft_t clearfix">
                 <div class="fl ft_c_l">
                     <ul class="clearfix">
-                        <li><a href="{$newsurl}">网站首页</a></li>
-                        <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=171">关于我们</a></li>
-                        <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=172">联系我们</a></li>
-                        <li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=184">招募讲师</a></li>
-                        <li><a href="{$bbsurl}">论坛</a></li>
-                        <li><a href="{$blogurl}">博客</a></li>
+                        <li><a href="{$newsurl}" target="_blank">网站首页</a></li>
+                        <li><a href="{$bbsurl}" target="_blank">论坛</a></li>
+                        <li><a href="{$blogurl}" target="_blank">博客</a></li>
+                        {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="86400"}
+                            {loop $data $value}
+                                {php if($value['type']== 0)continue;} 
+                                <li><a href="{$value['url']}" target="_blank">{$value['catname']}</a>&nbsp;&nbsp;</li>
+                            {/loop}
+                        {/pc}
                     </ul>
                     <div class="ft_b">
                         

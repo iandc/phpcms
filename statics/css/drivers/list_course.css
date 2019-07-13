@@ -96,7 +96,7 @@ input{
 }
 .list_course .lcR .course_list .show_list li .show_list_img img{
     width: 100%;
-    height: 145px;
+    height: 100%;
 }
 .list_course .lcR .course_list .show_list li .show_list_main{
     width: 70%;

@@ -80,7 +80,7 @@
                         </h3>
                         <div class="newest_curriculum mb10 clearfix">
                             <!-- </div> -->
-                            <div class="nc_r fr">
+                            <div class="nc_r">
                                 {php $courseWhere = 'typeid='.$typeidList['course'];}
                                 {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="3600"}
                                 {loop $data $value}
@@ -124,7 +124,7 @@
                             <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
                         </h3>
                         <div class="newest_curriculum mb10 clearfix">
-                            <div class="nc_r fr">
+                            <div class="nc_r">
                                 {php $courseWhere = 'typeid='.$typeidList['course'];}
                                 {pc:content action="lists" catid="$courseid" order="user_num DESC" num="8" cache="3600" moreinfo="1"}
                                 {loop $data $value}
@@ -199,7 +199,7 @@
                         <h3 class="titles"><i>↓</i><span>收费课程</span> 
                             <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
                         </h3>
-                        <div class="nc_r fr">
+                        <div class="nc_r">
                             {php $courseWhere = "present_price>0";}
                                 {pc:content action="lists" catid="$courseid" where="$courseWhere" order="present_price DESC" num="8" cache="3600" moreinfo="1"}
                                 {loop $data $value}
@@ -238,8 +238,8 @@
                         <h3 class="titles"><i>↓</i><span>免费公开课</span> 
                             <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
                         </h3>
-                        <div class="nc_r fr">
-                            {php $courseWhere == "present_price=0";}
+                        <div class="nc_r">
+                            {php $courseWhere = "present_price=0";}
                             {pc:content action="lists" catid="$courseid" where="$courseWhere" order="user_num DESC" num="8" cache="3600"}
                             {loop $data $value}
                             <dl>
@@ -254,39 +254,43 @@
                     </div>
 
 
+                        <!-- {php echo $typeidList['teacher'];} -->
                     <!-- 明星讲师 -->
-                    <div class="conts" style="height: 365px;">
-                        <h3 class="titles"><i>↓</i><span>明星讲师</span><!--  <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> --></h3>
-                        <div class="newest_curriculum clearfix lecturer1">
-                            <div class="nc_l fl">
-                                <!-- <h3>明星讲师</h3> -->
-                                <img style="width: 190px; height: 305px;" src="https://images.ctfassets.net/2y9b3o528xhq/19NgUw9l3MGaq2a0cY0OSO/69b9f3e4f31f9e957619c0730553a450/module-nd100_2x.png" alt="">
-                            </div>
-                            <div class="ct_r fr">
-                                <ul>
-                                    {pc:content action="lists" catid="$teacherid" where="$where" num="4" order="id DESC"}
-                                    <!-- {php echo $catid;} -->
-                                    {loop $data $value}
-                                        <li>
-                                            <div class="lecturer_head">
-                                                <a href="javascript:;"><img src="{$value['thumb']}" alt=""></a>
-                                            </div>
-                                            <div class="lecturer_name">
-                                                <a href="javascript:;">{$value['title']}</a>
-                                            </div>
-                                            <!-- <div class="lecturer_album">
-                                                <a href="">课程专辑</a>
-                                            </div> -->
-                                            <p>
-                                                {str_cut($value['description'], 160, '')}
-                                            </p>
-                                        </li>
-                                    {/loop}
-                                    {/pc}
-                                </ul>
+                    {pc:content action="lists" catid="$teacherid" where="$where" num="5" order="id DESC"}
+                    {if $data}
+                        <div class="conts" style="height: 365px;">
+                            <h3 class="titles"><i>↓</i><span>明星讲师</span><!--  <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> --></h3>
+                            <div class="newest_curriculum clearfix lecturer1">
+                                <!-- <div class="nc_l fl"> -->
+                                    <!-- <h3>明星讲师</h3> -->
+                                   <!--  <img style="width: 190px; height: 305px;" src="https://images.ctfassets.net/2y9b3o528xhq/19NgUw9l3MGaq2a0cY0OSO/69b9f3e4f31f9e957619c0730553a450/module-nd100_2x.png" alt="">
+                                </div> -->
+                                <div class="ct_r fl">
+                                    <ul>
+                                        {loop $data $value}
+                                            <li>
+                                                <div class="lecturer_head">
+                                                    <a href="javascript:;"><img src="{$value['thumb']}" alt=""></a>
+                                                </div>
+                                                <div class="lecturer_name">
+                                                    <a href="javascript:;">{$value['title']}</a>
+                                                </div>
+                                                <!-- <div class="lecturer_album">
+                                                    <a href="">课程专辑</a>
+                                                </div> -->
+                                                <p>
+                                                    {str_cut($value['description'], 160, '')}
+                                                </p>
+                                            </li>
+                                            
+                                        {/loop}
+                                    </ul>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    {else}
+                    {/if}
+                    {/pc}
                 </div>
 
                 <!-- 测试 -->
@@ -441,9 +445,8 @@
     /////////////上一张、下一张切换
     $("#toleft").click(function() {
         index--;
-        if (index <= 0) //判断index<0的情况为：开始点击#toright  index=0时      再点击 #toleft 为负数了 会出错
-        {
-            index = 4
+        if (index < 0){ //判断index<0的情况为：开始点击#toright  index=0时      再点击 #toleft 为负数了 会出错
+            index = 4;
         }
         console.log(index);
         $("#lunbobox ul li").eq(index).css({
@@ -459,7 +462,7 @@
     $("#toright").click(function() {
         index++;
         if (index >= 4) {
-            index = 0
+            index = 0;
         }
         console.log(index);
         $(this).css({

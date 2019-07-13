@@ -38,7 +38,7 @@ foreach($search_model as $v) {
                     </a>
                 </div>
                 <div class="fl hd_c_lg">
-                    {show_ad(1, 41)}
+                    {show_ad(2, 48)}
                 </div>
                 <div class="fr hd_c_list" id="search">
                     <div class="search1">
@@ -60,7 +60,8 @@ foreach($search_model as $v) {
             <div class="nav_course w1100">
                 <ul class="clearfix">
                     <li class="{if $catid == $courseid}nav_more{/if}"><a href="{$eduurl}">首页</a></li>
-                    {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="5" cache="3600"}
+                    {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="3600"}
+                    <!-- {php echo $courseid;} -->
                         {loop $data $value}
                             <li class="{if $catid == $value['catid']}nav_more{/if}">
                                 <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}">{$value['catname']}</a><i></i>
