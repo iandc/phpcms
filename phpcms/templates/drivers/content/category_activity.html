@@ -9,22 +9,58 @@
                     
                 </div>
             </div>
-            <div class="actv_tit">
-                <a href="">精彩活动 / </a>
-                <a href="">全部</a>
+            <div class="actv_tit clearfix">
+                <div class="actv_tit_con" id="actv_tit_con">
+                    <a href="javascript:;" class="main">正在进行的活动 </a> / 
+                    <a href="javascript:;">已经结束的活动</a>
+                </div>
+                
             </div>
             <div class="actv_con clearfix">
-                <div class="actv_conL fl">
-                    <ul>
-                        <li>
-                            
-                        </li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                <div class="actv_conL fl" id="actv_conL">
+                    <ul class="ull1">
+                        {php $nowTime=time();}
+                        {php echo $nowTime;}
+                        {pc:content action="lists" catid="$activityid" order="id DESC" num="8" cache="0" moreinfo="1"}
+                            {loop $data $value}
+                            {if $nowTime < $value['endTime']}
+                            <!-- {php echo $value['startTime'];} -->
+                                <li>
+                                    <div class="actv_conL_img fl">
+                                        <a href=""><img src="{$value['thumb']}" alt=""></a>
+                                    </div>
+                                    <div class="actv_conL_txt fr">
+                                        <p class="p_tit">{$value['title']}</p>
+                                        <p class="p_dec">
+                                            {$value['description']}
+                                            <!-- {str_cut($value['description'], 130, '')} -->
+                                        </p>
+                                    </div>
+                                </li>
+                            {/if}
+                            {/loop}
+                        {/pc}        
+                    </ul>
+                    <ul class="ull1" style="display: none;">
+                        {pc:content action="lists" catid="$activityid" order="id DESC" num="8" cache="0" moreinfo="1"}
+                            {loop $data $value}
+                            {if $nowTime > $value['endTime']}
+                            <!-- {php echo $value['startTime'];} -->
+                                <li>
+                                    <div class="actv_conL_img fl">
+                                        <a href=""><img src="{$value['thumb']}" alt=""></a>
+                                    </div>
+                                    <div class="actv_conL_txt fr">
+                                        <p class="p_tit">{$value['title']}</p>
+                                        <p class="p_dec">
+                                            {$value['description']}
+                                            <!-- {str_cut($value['description'], 130, '')} -->
+                                        </p>
+                                    </div>
+                                </li>
+                            {/if}
+                            {/loop}
+                        {/pc}       
                     </ul>
                 </div>
                 <div class="actv_conR fr">
@@ -33,12 +69,11 @@
                             <h3>推荐资讯</h3>
                         </div>
                         <ul class="clearfix">
-                            <li><a href="">机构称5G手机数量四后超年4G手后超</a></li>
-                            <li><a href="">半导体产业快被日本整“瘫痪”后超</a> </li>
-                            <li><a href="">智能手表OLED屏出货量2019年后超</a></li>
-                            <li><a href="">滴滴成立充电桩合资公司布局后超</a></li>
-                            <li><a href="">苹果中国发布报告已在中国提后超</a></li>
-                            <li><a href="">三星论文揭秘Exynos 9820 NP后超</a></li>
+                            {pc:content action="position" posid="$posidList['right_tj']" order="id DESC" num="6" cache="0"}
+                                {loop $data $value}
+                                    <li><a href="">{str_cut($value['title'], 60, '')}</a></li>
+                                {/loop}
+                            {/pc}
                         </ul>
                     </div>
                     <div class="actv_conRa actv_teizi">
@@ -46,25 +81,7 @@
                             <h3>热门帖子</h3>
                         </div>
                         <ul class="clearfix">
-                            <li><a href="">机构称5G手机数量四后超年4G手后超</a></li>
-                            <li><a href="">半导体产业快被日本整“瘫痪”后超</a> </li>
-                            <li><a href="">智能手表OLED屏出货量2019年后超</a></li>
-                            <li><a href="">滴滴成立充电桩合资公司布局后超</a></li>
-                            <li><a href="">苹果中国发布报告已在中国提后超</a></li>
-                            <li><a href="">三星论文揭秘Exynos 9820 NP后超</a></li>
-                        </ul>
-                    </div>
-                    <div class="actv_conRa actv_xiazai">
-                        <div class="tit">
-                            <h3>资料下载</h3>
-                        </div>
-                        <ul class="clearfix">
-                            <li><a href="">机构称5G手机数量四后超年4G手后超</a></li>
-                            <li><a href="">半导体产业快被日本整“瘫痪”后超</a> </li>
-                            <li><a href="">智能手表OLED屏出货量2019年后超</a></li>
-                            <li><a href="">滴滴成立充电桩合资公司布局后超</a></li>
-                            <li><a href="">苹果中国发布报告已在中国提后超</a></li>
-                            <li><a href="">三星论文揭秘Exynos 9820 NP后超</a></li>
+                            <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread_hot']}"></script>
                         </ul>
                     </div>
                     <div class="actv_conRa actv_kecheng">
@@ -72,16 +89,26 @@
                             <h3>推荐课程</h3>
                         </div>
                         <ul class="clearfix">
-                            <li><a href="">机构称5G手机数量四后超年4G手后超</a></li>
-                            <li><a href="">半导体产业快被日本整“瘫痪”后超</a> </li>
-                            <li><a href="">智能手表OLED屏出货量2019年后超</a></li>
-                            <li><a href="">滴滴成立充电桩合资公司布局后超</a></li>
-                            <li><a href="">苹果中国发布报告已在中国提后超</a></li>
-                            <li><a href="">三星论文揭秘Exynos 9820 NP后超</a></li>
+                            {pc:content action="lists" catid="$courseid" order="user_num DESC" num="5" cache="3600" moreinfo="1"}
+                                {loop $data $value}
+                                    <li><a href="">{$value['title']}</a></li>
+                                {/loop}
+                            {/pc}
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <script>
+        $(function() {
+            $("#actv_tit_con a").each(function(index) {
+                $(this).click(function(e) {
+                    $(this).addClass("main").siblings().removeClass("main");
+                    $("#actv_conL .ull1").eq(index).show().siblings("#actv_conL .ull1").hide();
+                })
+            });
+        })
+    </script>
 {template 'content', 'footer'}

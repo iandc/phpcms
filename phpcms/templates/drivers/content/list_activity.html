@@ -1,0 +1,128 @@
+{template 'content', 'header'}
+
+<?php
+$courseType = array_filter(explode(',', $CAT['usable_type']));
+
+$typeList = getcache('type_content_'.$siteid, 'commons');
+
+$nowTime=time();
+
+if($_GET['type'] == 'online') {
+    $timeWhere = "endTime > $nowTime";
+    $actives[$_GET['type']] = ' class="main"';
+} else if($_GET['type'] == 'over') {
+    $timeWhere = "endTime < $nowTime";
+    $actives[$_GET['type']] = ' class="main"';
+} else {
+    $timeWhere = "endTime > $nowTime";
+    $actives['online'] = ' class="main"';
+}
+
+if($_GET['by'] == 'desc') {
+    $by = 'desc';
+    $byStr = 'asc';
+} else if($_GET['by'] == 'asc') {
+    $by = 'asc';
+    $byStr = 'desc';
+} else {
+    $by = 'desc';
+    $byStr = 'asc';
+}
+
+$sortBy = $sort . ' ' . $by;
+
+//echo "<pre>";print_r($typeList);
+
+?>
+
+<div class="activity w100">
+    <div class="activity_con w1100">
+        {show_ad(1, 49)}
+        <div class="activity_nav">
+            <a href="{APP_PATH}">首页</a>  >
+            <a href="javascript:;">活动</a>  >
+            <a href="javascript:;">列表</a>
+        </div>
+        <div class="actv_con clearfix">
+            <div class="actv_conL fl" id="actv_conL">
+                <div class="actv_tit clearfix">
+                    <div class="actv_tit_con" id="actv_tit_con">
+                        <a href="index.php?m=content&c=index&a=lists&catid={$catid}&type=online" {$actives['online']}>进行中 </a>
+                        <a href="index.php?m=content&c=index&a=lists&catid={$catid}&type=over" {$actives['over']}>已结束</a>
+                    </div>
+                </div>
+                <ul class="ull1">
+                    {pc:content action="lists" catid="$catid" where="$timeWhere" order="id DESC" num="10" page="$page" cache="3600" moreinfo="1"}
+                    {loop $data $value}
+                    <li>
+                        <div class="actv_conL_img fl">
+                            <a href="{$value['url']}" target="_blank"><img src="{$value['thumb']}" alt=""></a>
+                        </div>
+                        <div class="actv_conL_txt fr">
+                            <p class="p_tit p12"><a href="{$value['url']}" target="_blank">{$value['title']}</a></p>
+                            <p class="p_dec dec_3">
+                                {$value['description']}
+                            </p>
+                        </div>
+                    </li>
+                    {/loop}
+                    {/pc}
+                </ul>
+                <div class="page_nav">
+                    <div class="more">
+                        <div id="pages" style="margin-left: 5px;" class="text_c">{$pages}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="actv_conR fr">
+                <div class="actv_conRa actv_zixun">
+                    <div class="tit">
+                        <h3>推荐资讯</h3>
+                    </div>
+                    <ul class="clearfix">
+                        {pc:content action="position" posid="$posidList['right_tj']" order="id DESC" num="10" cache="3600"}
+                        {loop $data $value}
+                        <li><a class="p12" href="{$value['url']}" target="_blank">{str_cut($value['title'], 60, '')}</a></li>
+                        {/loop}
+                        {/pc}
+                    </ul>
+                </div>
+                <div class="actv_conRa actv_teizi">
+                    <div class="tit">
+                        <h3>热门帖子</h3>
+                    </div>
+                    <ul class="clearfix">
+                        <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread_hot']}"></script>
+                    </ul>
+                </div>
+                <div class="actv_conRa actv_kecheng">
+                    <div class="tit">
+                        <h3>推荐课程</h3>
+                    </div>
+                    <ul class="clearfix">
+                        {pc:content action="lists" catid="$courseid" order="user_num DESC" num="7" cache="3600"
+                        moreinfo="1"}
+                        {loop $data $value}
+                        <li><a class="p12" href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></li>
+                        {/loop}
+                        {/pc}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    {
+
+<script>
+    $(function () {
+        $("#actv_tit_con a").each(function (index) {
+            $(this).click(function (e) {
+                $(this).addClass("main").siblings().removeClass("main");
+                $("#actv_conL .ull1").eq(index).show().siblings("#actv_conL .ull1").hide();
+            })
+        });
+    })
+</script>
+{template 'content', 'footer'}

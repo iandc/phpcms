@@ -26,9 +26,9 @@
     <ul class="lists">
         <li>
             {if $typeid == $typeidList['news']}
-                <a href="{APP_PATH}/news/1">资讯 &nbsp; >  </a>
+                <a href="{APP_PATH}news/1">资讯 &nbsp; >  </a>
             {elseif $typeid == $typeidList['tech']}
-                <a href="{APP_PATH}/tech/1">技术 &nbsp; >  </a>
+                <a href="{APP_PATH}tech/1">技术 &nbsp; >  </a>
             {/if}
         </li>
         <li>
@@ -55,7 +55,15 @@
 <div class="w1100">
     <div class="crumbs nav_css2">
         <div class="current_nav">
-            <a href="{APP_PATH}channel.html">频道</a><span> &gt; </span><a href="{APP_PATH}{$v['catdir']}">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> <span> &gt; </span> 内容
+            {if $typeid == $typeidList['news']}
+                <a href="{APP_PATH}news/1">资讯</a>&nbsp;
+             {elseif $typeid == $typeidList['tech']}
+                <a href="{APP_PATH}tech/1">技术</a>
+             {/if}
+            <span> &gt; </span>
+            <a href="{APP_PATH}{$v['catdir']}">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> 
+            <span> &gt; </span>
+             内容
         </div>
     </div>    
 </div>

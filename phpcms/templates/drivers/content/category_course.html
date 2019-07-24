@@ -13,7 +13,7 @@
                                 <li class="clearfix">
                                     <div class="fl flw">
                                         <a href="{replaceUrl4course($value['url'])}" target="_blank">
-                                            <img src="{thumb($value['thumb'], 160, 110)}" alt="">
+                                            <img src="{$value['thumb']}" alt="">
                                         </a>
                                     </div>
                                     <div class="fr" style="padding:15px 30px; background: #f2f6ef; height: 80px; width: 300px;">
@@ -29,10 +29,9 @@
                     <div id="lunbobox">
                         <div id="toleft">&lt;</div>
                         <div class="lunbo">
-                            {php $courseWhere = 'typeid='.$typeidList['course'];}
-                            {pc:content action="lists" catid="$courseid" order="id DESC" num="4" cache="3600"}
+                            {pc:content action="position" posid="$posidList['course_jdt']" order="listorder DESC" num="4" cache="3600"}
                             {loop $data $value}
-                                <a href="{replaceUrl4course($value['url'])}"><img src="{thumb($value['thumb'], 460, 250)}"></a>
+                                <a href="{replaceUrl4course($value['url'])}"><img src="{$value['thumb']}"></a>
                             {/loop}
                             {/pc}
                         </div>
@@ -86,7 +85,7 @@
                                 {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{$value['thumb']}" alt=""></a>
                                     </dt>
                                     <div>
                                         <p class="txt1">
@@ -100,7 +99,7 @@
                                                 {$value['user_num']} <span>人已购买</span> 
                                             </span>
                                             <span class="fr" style="margin-right: 10px; font-size: 14px;">
-                                                <small class="{if $value['present_price'] == 0 }small{/if}">￥{$value['present_price']}</small>
+                                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{/if}">￥{$value['present_price']}</small>
                                                 <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
                                             </span>
                                         </div>
@@ -124,13 +123,21 @@
                             <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
                         </h3>
                         <div class="newest_curriculum mb10 clearfix">
-                            <div class="nc_r">
-                                {php $courseWhere = 'typeid='.$typeidList['course'];}
+                            <div class="nc_r" id="dll">
                                 {pc:content action="lists" catid="$courseid" order="user_num DESC" num="8" cache="3600" moreinfo="1"}
+                                {loop $data $key $value}
+                                {if $value['present_price'] == 0}
+                                {php $freeData[] = $value; unset($data[$key]);}
+                                {/if}
+                                {/loop}
+                                {php $data = array_values($data);}
+                                {loop $freeData $v}
+                                {php $data[] = $v;}
+                                {/loop}
                                 {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{$value['thumb']}" alt=""></a>
                                     </dt>
                                     <div>
                                         <p class="txt1">
@@ -144,7 +151,7 @@
                                                 {$value['user_num']} <span>人已购买</span> 
                                             </span>
                                             <span class="fr" style="margin-right: 10px; font-size: 14px;">
-                                                <small class="{if $value['present_price'] == 0 }small{/if}">￥{$value['present_price']}</small>
+                                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{/if}">￥{$value['present_price']}</small>
                                                 <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
                                             </span>
                                         </div>
@@ -203,9 +210,9 @@
                             {php $courseWhere = "present_price>0";}
                                 {pc:content action="lists" catid="$courseid" where="$courseWhere" order="present_price DESC" num="8" cache="3600" moreinfo="1"}
                                 {loop $data $value}
-                                <dl>
+                                <dl class="{if $value['present_price'] == 0 }dl_last{/if}">
                                     <dt>
-                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{$value['thumb']}" alt=""></a>
                                     </dt>
                                     <div>
                                         <p class="txt1">
@@ -219,7 +226,7 @@
                                                 {$value['user_num']} <span>人已购买</span> 
                                             </span>
                                             <span class="fr" style="margin-right: 10px; font-size: 14px;">
-                                                <small class="{if $value['present_price'] == 0 }small{/if}">￥{$value['present_price']}</small>
+                                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{/if}">￥{$value['present_price']}</small>
                                                 <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
                                             </span>
                                         </div>
@@ -244,7 +251,7 @@
                             {loop $data $value}
                             <dl>
                                 <dt>
-                                    <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{thumb($value['thumb'], 209, 128)}" alt=""></a>
+                                    <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{$value['thumb']}" alt=""></a>
                                 </dt>
                                 <p><a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></p>
                             </dl>

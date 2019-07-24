@@ -53,6 +53,16 @@ function getTeacherModelItemId($siteid=1) {
     return 0;
 }
 
+function getActivityModelItemId($siteid=1) {
+    $CATEGORYS = getcache('category_content_' . $siteid, 'commons');
+    foreach ($CATEGORYS as $key => $value) {
+        if ($value['siteid'] == $siteid && $value['modelid'] == 17 && $value['parentid'] == 0) {
+            return $key;
+        }
+    }
+    return 0;
+}
+
 function getAllTypeBySiteId($siteid = 1)
 {
     $type_data = getcache('type_content_' . $siteid, 'commons');

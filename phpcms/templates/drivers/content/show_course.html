@@ -142,7 +142,7 @@
                     {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="5" cache="0" moreinfo=1}
                     {loop $data $value}
                     <li>
-                        <a href="{replaceUrl4course($value['url'])}"><img src="{thumb($value['thumb'], 209, 116)}" alt=""></a>
+                        <a href="{replaceUrl4course($value['url'])}"><img src="{$value['thumb']}" alt=""></a>
                         <div class="txt"><a href="{replaceUrl4course($value['url'])}">{str_cut($value['title'], 50, '')}</a></div>
                     </li>
                     {/loop}
@@ -185,7 +185,7 @@
                             <div class="list4">
                                 <div class="img">
                                     <a href="{replaceUrl4course($value['url'])}">
-                                        <img src="{thumb($value['thumb'], 209, 116)}" alt="">
+                                        <img src="{$value['thumb']}" alt="">
                                     </a>
                                 </div>
                                 <div class="tit">

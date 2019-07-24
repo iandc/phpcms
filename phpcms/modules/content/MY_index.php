@@ -98,7 +98,7 @@ class MY_index extends index
             $urlrules = getcache('urlrules', 'commons');
             $urlrules = str_replace('|', '~', $urlrules[$category_ruleid]);
 
-            if($siteid == 1) {
+            if($modelid == 1) {
                 $urlrules = '{$page}';
             }
 

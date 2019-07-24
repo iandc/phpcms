@@ -305,19 +305,16 @@ body{
     overflow: hidden;
     margin-top: 7px;
     padding-top: 5px;
-    background: url(../../images/drivers/hot_title_bg.gif) 0 14px no-repeat;
-}
-.zxRight_con2 ul li{
-    height: auto !important;
-    padding: 5.5px;
+    background: url(../../images/drivers/hot_title_bg.gif) 0 7px no-repeat;
 }
 
 .zxRight_con{
     margin-top: 10px;
 }
 .zxRight_con ul li{
-    height: 40px;
-    line-height: 40px;
+    height: 31px;
+    line-height: 31px;
+    padding-left: 6px;
 }
 .zxRight_con .left_img{
     padding: 14px 5px 5px 0;
@@ -485,6 +482,7 @@ body{
 }
 .curriculumCon .title2 .a2{
     font-size: 12px;
+    font-weight: 600;
 }
 .Manufacturer .manuConLeft .xNo .centerCon{
     border-bottom: none;
@@ -735,8 +733,8 @@ body{
     padding: 10px 0 !important;
 }
 .bx-wrapper img{
-    width: 210px !important;
-    height: 150px !important;
+    width: 100% !important;
+    height: 100% !important;
     margin-left: 20px;  
     border: 1px solid #dcdbdb !important;
 }
@@ -757,4 +755,16 @@ body{
     margin-top: 5px;
     width: 85%;
     margin: auto;
+}
+
+.xs .xs_img{
+    width: 210px;
+    height: 150px;
+}
+.p11{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

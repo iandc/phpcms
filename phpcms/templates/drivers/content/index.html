@@ -39,7 +39,7 @@
                         <li>
                             <a href="{$value['url']}"><img src="{thumb($value['thumb'], 80, 60)}" title="{$value['title']}"></a>
                             <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 75, '')}</a></h2>
-                            <p><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['description'], 170, '')}</a>
+                            <p><a class="p11" href="{$value['url']}" target="_blank"><i></i>{$value['description']}</a>
                             </p>
                         </li>
                         {/loop}
@@ -158,8 +158,8 @@
                                 <li>
                                     <div class="ls">
                                         <a class="as" style="font-size: 13px; font-weight: 600;" href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
-                                        <p>
-                                            <a href="{$value['url']}">{str_cut($value['description'], 130, '')}</a>
+                                        <p class="p11">
+                                            <a href="{$value['url']}">{$value['description']}</a>
                                         </p>
                                     </div>
                                 </li>
@@ -177,9 +177,7 @@
         <!-- banner1-->
         <div class="index_banner1 clearfix">
             {show_ad(1, 40)}
-            <div class="shouye_banner fr" style="display: inline;">
-                <a target="_blank" href="{$bbsurl}/thread-853647-1-1.html"><img src="../../../statics/images/drivers/shouye_banner.png" alt=""></a>
-            </div>
+            
         </div>
         
 
@@ -187,7 +185,7 @@
             <div class="w1100 curriculumCon bgc_fff clearfix djdzs">
                 <div class="title2">
                     <a href="{APP_PATH}course/1" target="_blank" class="a1 fl"> 创芯大讲堂</a>
-                    <a href="{APP_PATH}course/1" target="_blank" class="a2 fr"> < 更多</a>
+                    <a href="{$eduurl}" target="_blank" class="a2 fr"> < 更多</a>
                 </div>
                 <!-- <div class="djdzs-b">
                     <div class="img_4" id="box2">
@@ -218,23 +216,25 @@
 
                 <div class="qiehuan">
                     <ul class="bxslider" >
-                        {php $courseWhere = 'typeid='.$typeidList['course'];}
-                                {pc:content action="lists" catid="$newsid" where="$courseWhere" order="id DESC" num="8" cache="3600"}
-                                {loop $data $value}
-                                <li class="xs">
-                                    <a href="{$value['url']}">
-                                        <img src="{thumb($value['thumb'], 230, 155)}" style="margin-left: 20px;" title="{$value['title']}">
+                        {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="3600"}
+                            {loop $data $value}
+                            <li class="xs">
+                                <div class="xs_img">
+                                    <a href="{replaceUrl4course($value['url'])}">
+                                        <img src="{$value['thumb']}" style="margin-left: 20px;" title="{$value['title']}">
                                     </a>
-                                    <div>
-                                        <a href="{$value['url']}">
-                                            <p>{str_cut($value['title'], 45, '')}</p>
-                                        </a>
-                                        <a href="{$value['url']}"></a><small class="rq">{str_cut($value['description'], 130, '')}</small>
+                                </div>
+                                
+                                <div>
+                                    <a href="{replaceUrl4course($value['url'])}">
+                                        <p>{str_cut($value['title'], 45, '')}</p>
+                                    </a>
+                                    <a href="{replaceUrl4course($value['url'])}" class="p11"><small class="rq p11">{$value['description']}</small></a>
 
-                                    </div>
-                                </li>
-                                {/loop}
-                                {/pc}
+                                </div>
+                            </li>
+                            {/loop}
+                        {/pc}
                     </ul>
                 </div>
                 
@@ -253,7 +253,7 @@
                             </div>
                             <ul>
                                 {php $where = 'typeid='.$typeidList['tech'];}
-                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="10" cache="3600"}
+                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="8" cache="3600"}
                                 {php $i = 0; $total=count($data);}
                                 {loop $data $value}
                                 <li class="w49">
@@ -261,7 +261,7 @@
                                     <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
                                         <div class="centerCon_txt fl">
                                             <h3><a href="{$value['url']}" {title_style($value['style'])} target="_blank">{str_cut($value['title'], 45, '')}</h3>
-                                            <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 150, '')}
+                                            <a class="p11" href="{$value['url']}" target="_blank">{$value['description']}
                                         </div>
                                     </div>
                                     {else}
@@ -273,7 +273,7 @@
                                         </div>
                                         <div class="centerCon_txt fl" style="width: 228px;">
                                             <h3><a href="{$value['url']}" {title_style($value['style'])} target="_blank">{str_cut($value['title'], 45, '')}</h3>
-                                            <a href="{$value['url']}" target="_blank">{str_cut($value['description'], 105, '')}
+                                            <a class="p11" href="{$value['url']}" target="_blank">{$value['description']}
                                         </div>
                                     </div>
                                     {/if}
