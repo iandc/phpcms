@@ -104,6 +104,9 @@
 }
 .activity_con .actv_conR .actv_conRa ul li{
     padding: 5px 10px 5px 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .activity_con .actv_conR .actv_conRa ul li a{
     font-size: 13px;

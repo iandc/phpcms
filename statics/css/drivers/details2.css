@@ -41,7 +41,7 @@ body{
     padding: 0 5px;
 }
 .con_three .con_three_l .post_tit .pt_info{
-    display: block;
+    display: inline-block;
     padding: 5px;
     color: #888;
 }
@@ -142,4 +142,9 @@ body{
 .con_three .GoogleActiveViewClass a img{
     width: 675px;
     margin-top: 0 !important;
+}
+.bshare-custom {
+    font-size: 13px;
+    line-height: 16px !important;
+    display: inline-block;
 }

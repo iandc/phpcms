@@ -597,20 +597,20 @@ body{
     font-size: 12px;
     font-weight: bold;
 }
-.zixunConRight .manuConRight .manuConRightB ul li{
-    width: 29%;
+/*.zixunConRight .manuConRight .manuConRightB ul li{
+    width:100%;
     margin: 5px;
     margin-top: 10px;
-}
-.zixunConRight .manuConRight .manuConRightB ul li img{
+}*/
+/*.zixunConRight .manuConRight .manuConRightB ul li img{
     width: 73px;
     height: 73px;
     margin-left: 10px;
     border-radius: 50%;
-}
-.zixunConRight .manuConRight .manuConRightB ul li p{
+}*/
+/*.zixunConRight .manuConRight .manuConRightB ul li p{
     text-align: center;
-}
+}*/
 
 .zxLeft_con ol{
     width: 96%;
@@ -767,4 +767,39 @@ body{
     white-space: normal;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.manuConRightB1 ul li .kjzx_t{
+    height: auto;
+}
+
+.manuConRightB1 ul li{
+    width: 275px;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    padding: 7px;
+    border: 1px solid #eee;
+}
+.manuConRightB1 ul li img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.manuConRightB1 ul li .tit_img{
+    margin-right: 10px;
+}
+.manuConRightB1 ul li .user{
+    display: inline-block;
+    line-height: 25px;
+}
+.manuConRightB1 ul li .num{
+    margin-right: 10px;
+    line-height: 50px;
+}
+.manuConRightB1 ul li .kjzx_b{
+    margin-top: 5px;
+    margin-left: 3px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
