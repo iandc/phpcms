@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/index.css">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/global.css">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/header.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
+</head>
+    {template "content", "config"}
+<body>
+<section id="wrap">
+    <!-- header头部 --------------------------->
+    <header class="header">
+        <div class="hd_con">
+            <h3 class="fl">
+                <a href="" class="logo">
+                    <img src="{IMG_PATH}drivers/logo.png" alt="">
+                </a>
+            </h3>
+            <ul class="top_icon fr">
+                <li>
+                    <a href="javaScript:;" class="search_link"><img  src="{IMG_PATH}drivers/member_ico.png" alt=""></a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <!-- 导航 --------------------------------->
+    <section class="nav">
+        <ul class="clearfix">
+            {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="0"}
+            {loop $data $value}
+                <li>
+                    <a href="{$value['url']}">{$value['catname']}</a>
+                </li>
+            {/loop}
+            {/pc}
+            <!-- <li class="more">
+                <a href="nav.html">更多</a>
+            </li>     -->
+        </ul>
+    </section>
+    <!-- 轮播图-------------------------------->
+    <section class="carousel">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                {pc:content action="position" posid="$posidList['slide']" order="listorder DESC" num="3" cache="0"}
+                {loop $data $value}
+                <div class="swiper-slide">
+                    <a href="{$value['url']}"><img src="{$value['thumb']}" alt=""></a>
+                </div>
+                {/loop}
+                {/pc}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <!-- contsent内容----------------------------->
+    <section class="content">
+        <div class="title list_tit">
+            资讯
+        </div>
+        <div class="con_wrap">
+            <ul class="con_list clearfix">
+                {php $newsWhere = 'typeid='.$typeidList['news'];}
+                {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="6" cache="0"}
+                {loop $data $value}
+                    <li class="list" style="{if $value['thumb'] == ''} padding: 15px 0;{/if}">
+                        <div class="img fr" style="{if $value['thumb'] == ''}display: none; padding: 10px 0;{/if}">
+                            <a href="{$value['url']}">
+                                <img src="{$value['thumb']}" alt="">
+                            </a>
+                        </div>
+                        <div class="info fl" style="{if $value['thumb'] == ''}width:100% ;{/if}">
+                            <div class="tit">
+                                <a href="{$value['url']}">{$value['title']}</a>
+                            </div>
+                            <!-- <p>{$value['description']}</p> -->
+                        </div>
+                    </li>
+                {/loop}
+                {/pc}
+            </ul>
+            <div class="see_more">
+                <a href="{APP_PATH}news/1">点击查看更多</a>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="title list_tit">
+            技术文章
+        </div>
+        <div class="con_wrap">
+            <ul class="con_list clearfix">
+                {php $where = 'typeid='.$typeidList['tech'];}
+                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="6" cache="3600"}
+                {loop $data $value}
+                <li class="list" style="{if $value['thumb'] == ''} padding: 15px 0;{/if}">
+                    <div class="img fr" style="{if $value['thumb'] == ''}display: none;{/if}">
+                        <a href="{$value['url']}">
+                            <img src="{$value['thumb']}" alt="">
+                        </a>
+                    </div>
+                    <div class="info fl" style="{if $value['thumb'] == ''}width:100% ;{/if}">
+                        <div class="tit">
+                            <a href="{$value['url']}">{$value['title']}</a>
+                        </div>
+                        <!-- <p>{$value['description']}</p> -->
+                    </div>
+                </li>
+                {/loop}
+                {/pc}
+            </ul>
+            <div class="see_more">
+                <a href="{APP_PATH}tech/1">点击查看更多</a>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="title list_tit">
+            博客
+        </div>
+        <div class="con_wrap">
+            <ul class="con_list clearfix">
+                <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['blog_wap']}"></script>
+            </ul>
+            <div class="see_more">
+                <a href="{$blogurl}/blog.php?mod=space&do=blog&view=all&order=hot">点击查看更多</a>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="title list_tit">
+            论坛
+        </div>
+        <div class="con_wrap">
+            <ul class="con_list clearfix">
+                <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread_wap']}"></script>
+            </ul>
+            <div class="see_more">
+                <a href="{$bbsurl}/forum.php?mod=guide&view=new">点击查看更多</a>
+            </div>
+        </div>
+    </section>
+    {template 'm', 'footer'}
+    <div class="fhdb" id="fhdb">
+        <a href="javascript:;">顶</a>
+    </div>
+</section>
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        autoplay:{
+            disableOnInteraction:false,
+            delay:3000,
+        },
+        loop:true,
+        pagination:{
+            el:'.swiper-pagination',
+            clickable :true,
+        },
+        // navigation:{
+        //     nextEl:'.swiper-button-next',
+        //     prevEl:'.swiper-button-prev',
+        // },
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        $(window).scroll(function(){
+            var scroTop = $(window).scrollTop();
+            if(scroTop>100){
+                $('#fhdb').fadeIn(500);
+            }else{
+                $('#fhdb').fadeOut(500);
+            }
+        });
+
+        $('#fhdb').click(function(){
+            $("html,body").animate({scrollTop:0},"fast");
+        });
+    });
+</script>
+</body>
+</html>

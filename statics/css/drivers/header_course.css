@@ -141,3 +141,8 @@ body{
     font-size: 20px;
     margin-right: 10px;
 }
+
+
+.hd_c_lg img{
+    width: 500px !important;
+}

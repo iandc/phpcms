@@ -5,7 +5,7 @@ body{
     margin-bottom: 10px;
 }
 .fs12{
-    font-size: 12px;
+    font-size: 12.5px;
 }
 .tar{
     text-align: right;
@@ -61,7 +61,7 @@ body{
     margin-left: 10px;
     background-color: #eee;
     color: #000;
-    font-size: 12px;
+    font-size: 12.5px;
     cursor: pointer;
 }
 .sp{
@@ -128,12 +128,13 @@ body{
     width: 470px;
 }
 .informationRight .informationRightL .focus-title,.informationRight .informationRightR .focus-title{
-    height: 20px;
+    height: 14px;
     border-left: 4px solid #F36F60;
     padding-left: 9pt;
     color: #F36F60;
-    font-size: 18px;
-    line-height: 20px;
+    font-size: 15px;
+    line-height: 14px;
+    font-weight: 600;
 }
 .informationRight ul{
     margin-top: 15px;
@@ -142,8 +143,8 @@ body{
 .informationRight .informationRightL ul li{
     overflow: hidden;
     margin-bottom: 20px;
-    width: 440px;
-    height: 62px;
+    width: 450px;
+    height: 70px;
 }
 .informationRight .informationRightL ul li img{
     float: left;
@@ -159,12 +160,12 @@ body{
 }
 .informationRight .informationRightL ul li h2 a{
     font-weight: 600;
-    font-size: 13px;
+    font-size: 13.5px;
 }
 .informationRight .informationRightL ul li p{
     padding-left: 98px;
     color: #888;
-    font-size: 12px;
+    font-size: 12.5px;
 }
 
 .informationRight .informationRightR{
@@ -174,7 +175,7 @@ body{
 .informationRight .informationRightR ul li{
     height: 22px;
     line-height: 22px;
-    margin-bottom: 12px;
+    margin-bottom: 7px;
     padding-left: 15px;
     background: url(../../images/drivers/icon.png) no-repeat -2px -661px;
     font-size: 13px;
@@ -194,7 +195,7 @@ body{
 
 
 .lookBack-item a{
-    font-size: 13px;
+    font-size: 13.5px;
 }
 
 /*资讯*/
@@ -209,21 +210,21 @@ body{
     line-height: 36px;
 }
 .zixun .zixunConLeft .zxLeft_title ul li{
-    font-size: 12px;
+    font-size: 12.5px;
     height: 25px;
     line-height: 25px;
     cursor: pointer;
     padding-right: 15px;
 }
 .zixun .zixunConLeft .zxLeft_title ul li span{
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     line-height: 26px;
 }
 .zixun .zixunConLeft .zxLeft_title ul li span a{
-    color: #0b68a9;
-    font-size: 18px;
+    color: #F36F60;
+    font-size: 15px;
     font-weight: 600;
 }
 .zixun .zixunConLeft .zxLeft_title ul li a{
@@ -269,13 +270,14 @@ body{
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
+    font-size: 13.5px;
 }
 .zxLeft_con ul li .t{
     float: right;
     color: #666;
     padding-right: 15px;
     width: 38px;
-    font-size: 12px;
+    font-size: 12.5px;
 }
 .zixunConRight{
     padding: 12px 6px 0 !important;    
@@ -294,7 +296,7 @@ body{
 }
 .zixunConRight .zxRight_title span{
     display: block;
-    font-size: 18px;
+    font-size: 15px;
     margin-top: -5px;
     color: #F36F60;
     font-weight: 600;
@@ -342,24 +344,24 @@ body{
     color: #C00;
     overflow: hidden;
     max-height: 40px;
-    font-size: 12px;
+    font-size: 12.5px;
 }
 .zxRight_con .right_txt span a{
-    font-size: 13px;
+    font-size: 13.5px;
 }
 .zxRight_con .right_txt span a:hover{
     color: #0b68a9;
 }
 .zxRight_con .right_txt a{
     color: #474747;
-    font-size: 12px;
+    font-size: 12.5px;
     display: inline-block;
 }
 .zxRight_conc{
     height: auto!important;
     min-height: 50px;
     padding: 5px 8px 5px 0;
-    font-size: 12px;
+    font-size: 12.5px;
 }  
 .zxRight_conc .ul1 li{
     border-bottom: #CCC 1px dotted;
@@ -386,16 +388,19 @@ body{
     width: 100%;
     color: #C00;
     overflow: hidden;
-    margin-top: 5px;
-    margin-bottom: -2px;
+    /* margin-top: 5px; */
+    margin-bottom: 5px;
     max-height: 40px;
 }
 .zxRight_conc ul li .rTxt span a{
     font-weight: 600;
-    font-size: 14px;
+    font-size: 13.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .zxRight_conc ul li .rTxt>a{
-    font-size: 12px;
+    font-size: 12.5px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     white-space: normal;
@@ -434,7 +439,7 @@ body{
     white-space: nowrap;
 }
 .zxRight_conc .ul2 li p a{
-    font-size: 12px;
+    font-size: 12.5px;
     overflow: hidden;
 }
 .zxRight_conc .ul2 li a{
@@ -462,7 +467,7 @@ body{
     width: auto;
 }
 .manuConRightB ol li cite{
-    font-size: 12px;
+    font-size: 12.5px;
     float: right;
     color: #999;
     text-align: right;
@@ -476,12 +481,12 @@ body{
     line-height: 25px;
 }
 .curriculumCon .title2 .a1,.title1 .jswz{
-    font-size: 18px;
-    color: #0b68a9;
+    font-size: 15px;
+    color: #F36F60;
     font-weight: 600;
 }
 .curriculumCon .title2 .a2{
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 600;
 }
 .Manufacturer .manuConLeft .xNo .centerCon{
@@ -491,8 +496,17 @@ body{
 .forum .zixunConRight ul li .more{
     position: absolute;
     right: 0;
-    top: -5px;
+    top: -3px;
     margin-right: 5px;
+    border: 1px solid #F36F60;
+    padding: 0 5px 0 25px;
+    border-radius: 5px;
+    background: url(../../images/drivers/timg1.png) no-repeat 7px 8px #fcf7f7;
+    background-size: 15px 15px;
+    line-height: 30px;
+}
+.forum .zixunConRight ul li .more a{
+    color:#F36F60;
     font-size: 12px;
 }
 
@@ -504,12 +518,12 @@ body{
     position: relative;
 }
 .Manufacturer .manuConLeft .title1 .sp1 a{
-    font-size: 18px;
-    color: #0b68a9;
+    font-size: 15px;
+    color: #F36F60;
     font-weight: bold;
 }
 .Manufacturer .manuConLeft .title1 .sp2 a{
-    font-size: 12px;
+    font-size: 12.5px;
     position: absolute;
     right: 15px;
     font-weight: 600;
@@ -528,14 +542,14 @@ body{
     background: url(../../images/drivers/icon.png) no-repeat -2px -658px;
 }
 .Manufacturer .manuConLeft .zxtz ul li a{
-    font-size: 14px;
-    color: #0b68a9;
+    font-size: 13.5px;
+    color: #000;
 }
 .Manufacturer .manuConLeft .zxtz ul li a:hover{
     color: #F36F60;
 }
 .Manufacturer .manuConLeft .zxtz ul li span{
-    font-size: 12px;
+    font-size: 12.5px;
     display: inline-block;
     float: right;
     margin-right: 18px;
@@ -543,7 +557,7 @@ body{
 
 .Manufacturer .manuConLeft .centerCon{
     height: 60px;
-    font-size: 12px;
+    font-size: 12.5px;
     overflow: hidden;
     padding: 20px 10px 20px 0;
     border-bottom: #999 1px dotted;
@@ -559,12 +573,13 @@ body{
     font-weight: bold;
     line-height: 18px;
     padding-bottom: 5px;
+    font-size: 13.5px;
 }
 .Manufacturer .manuConLeft .centerCon .centerCon_txt h3 a:hover{
     color: #0b68a9;
 }
 .Manufacturer .manuConLeft .bottomCon{
-    font-size: 12px;
+    font-size: 12.5px;
     height: auto;
     padding: 10px 0 5px 10px;
 }
@@ -583,7 +598,7 @@ body{
 }
 .article .manuConRight .manuConRightT .title1 a,.Manufacturer .manuConRight .manuConRightT .title1 a{
     color: #F36F60;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bold;
 }
 .article .manuConRight .more,.Manufacturer .manuConRight .more{
@@ -613,7 +628,7 @@ body{
 }*/
 
 .zxLeft_con ol{
-    width: 96%;
+    width: 100%;
 }
 .zxLeft_con ol li{
     width: 50%;
@@ -629,7 +644,7 @@ body{
     border-bottom: 0;
 }
 .zxLeft_con ol li .tjrz_title{
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: bold;
     margin-bottom: 10px;
 }
@@ -637,8 +652,9 @@ body{
     color:#0b68a9;
 }
 .zxLeft_con ol li .tjrz_dec{
-    font-size: 12px;
-    width: 300px;
+    font-size: 12.5px;
+    width: 320px;
+    line-height: 25px;
 }
 .username a:hover{
     color: #0b68a9;
@@ -658,7 +674,7 @@ body{
     border-bottom: 1px solid #e3d5d5;
 }
 .footer .footerTop .ft_txt ul li{
-    font-size: 18px;
+    font-size: 15px;
     height: 33px;
     line-height: 33px;
     cursor: pointer;
@@ -666,7 +682,7 @@ body{
     padding-left: 2px;
 }
 .footer .footerTop .ft_txt ul .links span{
-    color: #0b68a9;
+    color: #F36F60;
     font-weight: bold;
 }
 .footer .footerBottom{
@@ -679,7 +695,7 @@ body{
     width: 110px;
     line-height: 30px;
     height: 30px;
-    font-size: 12px;
+    font-size: 12.5px;
 }
 .footer .footerBottom ul li a{
     text-align: center;
@@ -697,7 +713,7 @@ body{
 .ftNav .links a{
     display: inline-block;
     margin-top: 15px;
-    font-size: 12px;
+    font-size: 12.5px;
     text-decoration: none;
     padding-right: 10px;
     border-right: 1.5px solid #cdcdcd;
@@ -717,7 +733,7 @@ body{
 .copy .copyTxt{
     padding-bottom: 10px;
     text-align: center;
-    font-size: 12px;
+    font-size: 12.5px;
 }
 
 .bxslider li{
@@ -748,13 +764,14 @@ body{
     text-align: center;
     font-weight: 600;
     margin: 10px 0 5px;
-    font-size: 13px;
+    font-size: 13.5px;
 }
 .qiehuan .rq{
     display: block;
     margin-top: 5px;
     width: 85%;
     margin: auto;
+    font-size: 12.5px;
 }
 
 .xs .xs_img{
@@ -767,6 +784,7 @@ body{
     white-space: normal;
     -webkit-box-orient: vertical;
     overflow: hidden;
+    line-height: 25px;
 }
 
 .manuConRightB1 ul li .kjzx_t{
@@ -774,23 +792,33 @@ body{
 }
 
 .manuConRightB1 ul li{
-    width: 275px;
+    width: 100%;
     border-radius: 3px;
-    margin-bottom: 8px;
-    padding: 7px;
-    border: 1px solid #eee;
+    padding: 15px 0 0;
+    /*border: 1px solid #eee;*/
+}
+.manuConRightB1 ul li .tac{
+    text-align: center;
 }
 .manuConRightB1 ul li img{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    /*border-radius: 50%;*/
+    margin-top: 3px;
+}
+.manuConRightB1 ul li p{
+    /*text-align: center;*/
+    font-size: 12.5px;
 }
 .manuConRightB1 ul li .tit_img{
+    widows: 25%;
     margin-right: 10px;
 }
 .manuConRightB1 ul li .user{
+    width: 77%;
     display: inline-block;
-    line-height: 25px;
+    line-height: 20px;
+    font-size: 13.5px;
 }
 .manuConRightB1 ul li .num{
     margin-right: 10px;
@@ -802,4 +830,21 @@ body{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.blog_tit h3{
+    width: auto;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    background-color: #efefef;
+    padding: 3px;
+    line-height: 30px;
+}
+.blog_tit ul li{
+    clear:both;
+}
+
+.username{
+    font-weight: 600;
 }

@@ -118,8 +118,11 @@ class MY_index extends index
             $GLOBALS['URL_ARRAY']['catid'] = $catid;
             $GLOBALS['URL_ARRAY']['typeid'] = $typeid;
             $GLOBALS['URL_ARRAY']['typename'] = $typename;
-
-            include template('content', $template);
+            if (isMobile()) {
+                include template('m', $template);
+            } else {
+                include template('content', $template);
+            }
         } else {
             $this->page_db = pc_base::load_model('page_model');
             $r = $this->page_db->get_one(array('catid' => $catid));
@@ -131,7 +134,11 @@ class MY_index extends index
             array_shift($arrchild_arr);
             $keywords = $keywords ? $keywords : $setting['meta_keywords'];
             $SEO = seo($siteid, 0, $title, $setting['meta_description'], $keywords);
-            include template('content', $template);
+            if (isMobile()) {
+                include template('m', $template);
+            } else {
+                include template('content', $template);
+            }
         }
     }
 
@@ -210,7 +217,11 @@ class MY_index extends index
             $GLOBALS['URL_ARRAY']['categorydir'] = $categorydir;
             $GLOBALS['URL_ARRAY']['catdir'] = $catdir;
             $GLOBALS['URL_ARRAY']['catid'] = $catid;
-            include template('content', $template);
+            if (isMobile()) {
+                include template('m', $template);
+            } else {
+                include template('content', $template);
+            }
         }
     }
 

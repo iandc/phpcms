@@ -1,0 +1,58 @@
+.show_content{
+    padding: 10px;
+    padding-bottom: 0;
+}
+.show_content .show_tit{
+    font-size: 22px;
+}
+.show_content .user_time span{
+    font-size: 12px;
+    color: #999;
+}
+.show_content .tit_img img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.show_content .tit_img .user2{
+    line-height: 45px;
+    margin-left: 10px;
+}
+.show_content .gz{
+    padding: 5px 10px;
+    background-color: #0b68a9;
+    color: #fff;
+    border-radius: 3px;
+    line-height: 45px;
+    font-size: 12px;
+}
+.show_content .cont p{
+    /*text-indent: 2em;*/
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+
+.upbox{
+    margin: 15px 0;
+}
+.pl .pl1 span{
+    font-size: 20px;
+}
+.pl .login a{
+    color: #0b68a9;
+    font-size: 14px;
+}
+.pl .login span{
+    font-size: 14px;
+}
+.lists{
+    
+}
+
+.show_content .cont img{
+    width: 100% !important;
+    margin-top: 10px !important;
+}
+.list_3{
+    margin-bottom: 10px;
+}

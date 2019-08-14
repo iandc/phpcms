@@ -55,7 +55,7 @@
                             {pc:content action="position" posid="$posidList['newActivity']" order="listorder DESC" num="10" cache="3600"}
                             {loop $data $value}
                                 <li>
-                                    <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 50, '')}</a>
+                                    <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 48, '')}</a>
                                 </li>
                             {/loop}
                             {/pc}
@@ -79,7 +79,7 @@
                                 </span>
                             </li>
                             <li class="fr">
-                                <a href="{APP_PATH}news/1" target="_blank">< 更多</a>
+                                <a href="{APP_PATH}news/1" target="_blank">> 更多</a>
                             </li>
                         </ul>
                     </div>
@@ -149,7 +149,7 @@
                                         <a href=""><img src="{thumb($value['thumb'], 100, 80)}" title="{str_cut($value['title'], 38, '')}"></a>
                                     </div>
                                     <div class='rTxt fr'>
-                                        <span><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 32, '')}</a></span>
+                                        <span><a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a></span>
 
                                         <a href="{$value['url']}" target="_blank" class="fs12"><i></i>{$value['description']}</a>
                                     </div>
@@ -185,34 +185,8 @@
             <div class="w1100 curriculumCon bgc_fff clearfix djdzs">
                 <div class="title2">
                     <a href="{APP_PATH}course/1" target="_blank" class="a1 fl"> 创芯大讲堂</a>
-                    <a href="{APP_PATH}course/1" target="_blank" class="a2 fr"> < 更多</a>
+                    <a href="{APP_PATH}course/1" target="_blank" class="a2 fr"> > 更多</a>
                 </div>
-                <!-- <div class="djdzs-b">
-                    <div class="img_4" id="box2">
-                        <div class="img_1" id="box_img1">
-                            <ul class="ul" id="sub_img1">
-                                {php $courseWhere = 'typeid='.$typeidList['course'];}
-                                {pc:content action="lists" catid="$newsid" where="$courseWhere" order="id DESC" num="6" cache="3600"}
-                                {loop $data $value}
-                                <li class="xs">
-                                    <a href="{$value['url']}">
-                                        <img src="{thumb($value['thumb'], 230, 155)}" title="{$value['title']}">
-                                    </a>
-                                    <div>
-                                        <a href="{$value['url']}">
-                                            <p>{str_cut($value['title'], 45, '')}</p>
-                                        </a>
-                                        <a href="{$value['url']}"></a><small class="rq">{str_cut($value['description'], 130, '')}</small>
-
-                                    </div>
-                                </li>
-                                {/loop}
-                                {/pc}
-                            </ul>
-                        </div>
-                        
-                    </div> 
-                </div> -->
 
                 <div class="qiehuan">
                     <ul class="bxslider" >
@@ -220,16 +194,16 @@
                             {loop $data $value}
                             <li class="xs">
                                 <div class="xs_img">
-                                    <a href="{replaceUrl4course($value['url'])}">
+                                    <a href="{replaceUrl4course($value['url'])}" target="_blank">
                                         <img src="{$value['thumb']}" style="margin-left: 20px;" title="{$value['title']}">
                                     </a>
                                 </div>
                                 
                                 <div>
-                                    <a href="{replaceUrl4course($value['url'])}">
+                                    <a href="{replaceUrl4course($value['url'])}" target="_blank">
                                         <p>{str_cut($value['title'], 45, '')}</p>
                                     </a>
-                                    <a href="{replaceUrl4course($value['url'])}" class="p11"><small class="rq p11">{$value['description']}</small></a>
+                                    <a href="{replaceUrl4course($value['url'])}" target="_blank" class="p11"><small class="rq p11">{$value['description']}</small></a>
 
                                 </div>
                             </li>
@@ -246,10 +220,10 @@
             <div class="Manufacturer bgc_fff mt15 clearfix">
                 <div class="ManufacturerCon clearfix">
                     <div class="manuConLeft fl">
-                        <div class="manuConLeftL fl">
+                        <div class="manuConLeftL fl" style="width: 100%;">
                             <div class="title1">
                                 <a class="jswz" href="{APP_PATH}tech/1" target="_blank">技术文章</a>
-                                <a href="{APP_PATH}tech/1" class="fs12 gd" target="_blank"> < 更多</a>
+                                <a href="{APP_PATH}tech/1" class="fs12 gd" target="_blank"> > 更多</a>
                             </div>
                             <ul>
                                 {php $where = 'typeid='.$typeidList['tech'];}
@@ -291,7 +265,7 @@
                                 <a href="{$bbsurl}/forum-97-1.html" target="_blank">最新招聘</a>
                             </div>          
                             <div class="more">
-                                <a href="{$bbsurl}/forum-97-1.html" class="fr" target="_blank"> < 更多 </a>
+                                <a href="{$bbsurl}/forum-97-1.html" class="fr" target="_blank"> > 更多 </a>
                             </div>
                         </div>
                         <div class="zxRight_con clearfix">
@@ -315,7 +289,7 @@
                     <div class="manuConLeftL w100 fl zxtz"> 
                         <div class="title1">
                             <span class="sp1"><a href="{$bbsurl}/forum.php?mod=guide&view=new" target="_blank">最新帖子</a></span>
-                            <span class="sp2"><a href="{$bbsurl}/forum.php?mod=guide&view=new" target="_blank"> < 更多</a></span>
+                            <span class="sp2"><a href="{$bbsurl}/forum.php?mod=guide&view=new" target="_blank"> > 更多</a></span>
                         </div>
                         <ul class="clearfix" style="margin-top: 10px;">
                             <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread']}"></script>
@@ -327,7 +301,7 @@
                     {if $bbsShowStatus['isOpen'] == 1 && $bbsShowStatus['monthHotThread'] == 1}
                     <div class="manuConRightT">
                         <div class="title1">
-                            <a href="{$bbsurl}/forum.php?mod=guide&view=hot" target="_blank">月度热门</a>
+                            <a href="{$bbsurl}/forum.php?mod=guide&view=hot" target="_blank">热门帖子</a>
                         </div>
                     </div>
                     <div class="manuConRightB zxRight_con zxRight_con2 clearfix">
@@ -354,11 +328,11 @@
                                     </span>
                                 </li>
                                 <li class="fr">
-                                    <a href="{$blogurl}/blog.php?mod=space&do=blog&view=all&order=hot" target="_blank"> < 更多</a>
+                                    <a href="{$blogurl}/blog.php?mod=space&do=blog&view=all&order=hot" target="_blank"> > 更多</a>
                                 </li>
                             </ul>
                         </div>
-                        <div class="zxLeft_con clearfix">
+                        <div class="zxLeft_con clearfix" style="padding: 0;">
                             <div class="zxLeft_conL fl clearfix">
                                 <ol>
                                     <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['blog']}"></script>
@@ -370,34 +344,31 @@
                         <div class="zxRight_title">
                             <ul>
                                 <li class="fl">
-                                    <a href="{$bbsurl}/misc.php?mod=ranklist&type=member" target="_blank">
-                                        <span>空间之星</span>
+                                    <a href="javascript:;" target="_blank">
+                                        <span>推荐博客</span>
                                     </a>
                                 </li>
-                                <!-- <li>
+                                <li>
                                     <div class="more fr">
-                                        <a href="{$bbsurl}/misc.php?mod=ranklist&type=member" target="_blank">
-                                            < 更多
+                                        <a href="{$bbsurl}/home.php?mod=spacecp&ac=blog" target="_blank">
+                                            发布博客
                                         </a>
                                     </div>
-                                </li> -->
+                                </li>
                             </ul>
                         </div>
-                        <div class="manuConRight fr">
+                        <div class="manuConRight">
                             <div class="manuConRightB manuConRightB1">
                                 <ul class="clearfix">
-                                    <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['user']}"></script>
+                                    <!-- <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['user']}"></script> -->
+                                    <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['blog_tj']}"></script>
                                     <!-- <li>
-                                        <div class="kjzx_t clearfix">
-                                            <a href="" class="fl tit_img"><img src="../../../../statics/images/drivers/0.jpg" alt=""></a>
-                                            <div class="fl user">
-                                                <a href="">谢邀_</a>
-                                                <p>嵌入式专家</p>
-                                            </div>
-                                            <span class="num fr">425篇</span>
+                                        <div class="tit_img fl">
+                                            <a href="{url}" target="_blank"><img src="http://bbs.eetop.wang/uc_server/avatar.php?uid=1561828&size=middle" alt=""></a>
                                         </div>
-                                        <div class="kjzx_b">
-                                            韦启发，从事十余年嵌入式领域学习与工...
+                                        <div class="fr user">
+                                            <a href="{url}" target="_blank"><span class="username">卢克__</span></a>
+                                            <p>飞机佛文件佛教我放假哦文件佛我就饿哦房价欧文费劲儿偶发</p>
                                         </div>
                                     </li> -->
                                 </ul>
@@ -529,22 +500,6 @@
     setTimeout(window.autoAnimation, 2000); 
 </script>
 
-<script type="text/javascript">
-$(function(){
-  $(".bxslider li ul li").hover(function(){ 
-    $(".x",this).stop().css({'left':'35px'}).animate({'left':"40px"},400).show();
-    $(".y",this).stop().css({'right':'35px'}).animate({'right':"40px"},400).show();
-    $('.fire',this).fadeIn(2000);
-  },function(){
-    $('.x, .y',this).stop().animate({"top":"30px"},1000);
-    $('.fire, .x, .y',this).fadeOut(2000);
-  }); 
-});
-
-
-
-
-</script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -558,6 +513,19 @@ $(function(){
         });
     });
 </script>
+<script type="text/javascript">
+$(function(){
+  $(".bxslider li ul li").hover(function(){ 
+    $(".x",this).stop().css({'left':'35px'}).animate({'left':"40px"},400).show();
+    $(".y",this).stop().css({'right':'35px'}).animate({'right':"40px"},400).show();
+    $('.fire',this).fadeIn(2000);
+  },function(){
+    $('.x, .y',this).stop().animate({"top":"30px"},1000);
+    $('.fire, .x, .y',this).fadeOut(2000);
+  }); 
+});
+</script>
+
 
 
 </body>

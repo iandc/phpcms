@@ -119,7 +119,11 @@ class dev
         $GLOBALS['URL_ARRAY']['catid'] = $catid;
         $GLOBALS['URL_ARRAY']['typeid'] = $typeid;
         $catid = 0;
-        include template('content', $template);
+        if (isMobile()) {
+            include template('m', $template);
+        } else {
+            include template('content', $template);
+        }
     }
 
     public function view() {
@@ -290,7 +294,11 @@ class dev
         if(empty($next_page)) {
             $next_page = array('title'=>L('last_page'), 'thumb'=>IMG_PATH.'nopic_small.gif', 'url'=>'javascript:alert(\''.L('last_page').'\');');
         }
-        include template('content',$template);
+        if (isMobile()) {
+            include template('m', $template);
+        } else {
+            include template('content', $template);
+        }
     }
 
     /**

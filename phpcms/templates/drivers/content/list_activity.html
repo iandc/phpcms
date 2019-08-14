@@ -52,7 +52,11 @@ $sortBy = $sort . ' ' . $by;
                     </div>
                 </div>
                 <ul class="ull1">
+                    {if $_GET['type'] == 'over'}
                     {pc:content action="lists" catid="$catid" where="$timeWhere" order="id DESC" num="10" page="$page" cache="3600" moreinfo="1"}
+                    {else}
+                    {pc:content action="lists" catid="$catid" where="$timeWhere" order="id DESC" page="$page" cache="3600" moreinfo="1"}
+                    {/if}
                     {loop $data $value}
                     <li>
                         <div class="actv_conL_img fl">
@@ -68,21 +72,26 @@ $sortBy = $sort . ' ' . $by;
                     {/loop}
                     {/pc}
                 </ul>
+                {if $_GET['type'] == 'over'}
                 <div class="page_nav">
                     <div class="more">
                         <div id="pages" style="margin-left: 5px;" class="text_c">{$pages}</div>
                     </div>
                 </div>
+                {else}
+
+                {/if}
+
             </div>
             <div class="actv_conR fr">
-                <div class="actv_conRa actv_zixun">
+                <!-- <div class="actv_conRa actv_zixun">
                     <div class="tit">
                         <h3>推荐资讯</h3>
                     </div>
                     <ul class="clearfix">
                         {pc:content action="position" posid="$posidList['right_tj']" order="id DESC" num="10" cache="3600"}
                         {loop $data $value}
-                        <li><a class="p12" href="{$value['url']}" target="_blank">{str_cut($value['title'], 60, '')}</a></li>
+                        <li><a class="p12" href="{$value['url']}" target="_blank">{str_cut($value['title'], 50, '')}</a></li>
                         {/loop}
                         {/pc}
                     </ul>
@@ -107,6 +116,15 @@ $sortBy = $sort . ' ' . $by;
                         {/loop}
                         {/pc}
                     </ul>
+                </div> -->
+                <div class="banners">
+                    <img src="https://gg.eefocus.com/www/delivery/ai.php?filename=300-250_9.png&contenttype=png" alt="">
+                </div>
+                <div class="banners">
+                    <img src="https://upload.semidata.info/www.eefocus.com/activity/activity_image_5d391a661cc3c.jpg" alt="">
+                </div>
+                <div class="banners">
+                    <img src="https://upload.semidata.info/www.eefocus.com/activity/activity_image_5d3025a6bb18a.jpg" alt="">
                 </div>
             </div>
         </div>

@@ -1,0 +1,128 @@
+a{
+    color: #333 !important;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+.swiper-container{
+    background: #fff;
+    border: none !important;
+}
+/*轮播图--------------------------------------*/
+.swiper-container{
+    background-color: #31A3F5;
+    border:1px solid #31A3F5;
+    height: auto;
+    text-align: center;
+    width: 100%;
+    color: white;
+    font-size: 50px;
+}
+.swiper-slide{
+    width: 100%;
+    height: 200px !important;
+    line-height: auto;
+}
+.swiper-button-prev{
+    color: white;
+}
+.swiper-container img{
+    width: 100%;
+    height: 100%;
+}
+
+/*content内容部分-------------------------------------*/
+.content .title{
+    background: #eaedf0;
+    padding: 3% 3% 2% 3%;
+    color: #000 !important;
+}
+.content .con_wrap{
+    background-color: #f8f8f8;
+    padding: 3%;
+    padding-top: 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.content .con_list{
+    margin-top: 3%;
+}
+.content .con_list .list{
+    padding-top: 3%;
+    padding-bottom: 2.5%;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    height: auto;
+}
+.content .con_list .list .img{
+    width: 27%;
+}
+.content .con_list .list .img img{
+    width: 100%;
+    height: 70px;
+    max-height: 102px;
+}
+.content .con_list .list .info{
+    width: 70%;
+}
+.content .con_list .list .info .tit{
+    font-size: 16px;
+    margin: -3px 0 5px;
+    line-height: 22px;
+        -webkit-line-clamp: 2;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.content .con_list .list .info p{
+    font-size: 14px;
+    color: #858080;
+}
+.con_wrap li.list p{
+    /*display: none;*/
+        display: -webkit-box;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.content .con_wrap .see_more{
+    text-align: center;
+    padding-top: 3%;
+}
+
+/*footer部分--------------------------------------*/
+.footer{
+    text-align: center;
+    color: #666;
+    padding-bottom: 40px;
+    padding-top: 3%;
+    background-color: #fff;
+}
+.footer a,.footer p{
+    margin: 0 5px;
+    font-size: 12px;
+}
+.footer .khd{
+    margin-top: 8px;
+}
+.footer .ewm img{
+    width: 100px;
+    height: 100px;
+}
+
+
+
+.fhdb{
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    padding: 10px;
+    border: 1px solid #cdcdcd;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 5px;
+    display: none;
+}
