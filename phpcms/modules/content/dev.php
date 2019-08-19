@@ -34,9 +34,8 @@ class dev
         $sitelist = getcache('sitelist', 'commons');
         $default_style = $sitelist[$siteid]['default_style'];
         $CATEGORYS = getcache('category_content_' . $siteid, 'commons');
-
-        if (substr($_SERVER['HTTP_HOST'], 0, 1) == 'm') {
-            include template('wap', 'index', $default_style);
+        if (isMobile()) {
+            include template('m', 'index', $default_style);
         } else {
             include template('content', 'index', $default_style);
         }

@@ -9,26 +9,30 @@
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/list.css">
     <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
 </head>
+{template "content", "config"}
 <body>
     <section id="wrap">
         {template 'm', 'header'}
-        <div class="small_hd clearfix">
+        <!-- <div class="small_hd clearfix">
             <div class="small_hd_tit">
                 <span class="line"></span>
                 <h3>资讯</h3>
             </div>
-        </div>
+        </div> -->
         <div class="classify">
             <ul id="ull clearfix">
-                <li>
-                    <a href="">全部</a>
-                    <a href="">通信手机</a>
-                    <a href="#" class="classify_tit" id="classify_tit">分类</a>
+                <li style="width: 100%; position: relative; border-bottom: 1px solid #cdcdcd;">
+                    <!-- <a href="">全部</a>&nbsp;&nbsp; -->
+                    {template 'm', 'nav'}
+                    <a href="javascript:;" class="classify_tit" id="classify_tit">分类 ↓</a>
                     <ul class="classify_con" id="classify_con">
                         {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="3600"}
-                        {loop $data $value}
-                        <li><a href="#">{$value['catname']}</a></li>
-                        {/loop}
+                        <!-- {php print_r($data);} -->
+                            {loop $data $value}
+                                <li {if $catid == $value['catid']}class="current"{/if}>
+                                    <a href="{APP_PATH}{$value['catdir']}/{$typeName}/1">{$value['catname']}</a>
+                                </li>
+                            {/loop}
                         {/pc}
                     </ul>
                 </li>
