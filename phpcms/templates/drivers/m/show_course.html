@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/show_course.css">
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+</head>
+{template "content", "config"}
+<body>
+    <header class="hd">
+        <div class="header">
+            <div class="logo fl">
+                <div></div>
+            </div>
+            <div class="search fl">
+                <div class="hd_c_list" id="search">
+                    <div class="search1">
+                        <form action="{$eduurl}/index.php" method="get" target="_blank">
+                            <input type="hidden" name="m" value="search"/>
+                            <input type="hidden" name="c" value="index"/>
+                            <input type="hidden" name="a" value="init"/>
+                            <input type="hidden" name="typeid" value="{$searchtypeid}" id="typeid"/>
+                            <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+                            <input type="text" class="text inp1" placeholder="搜索课程" name="q" id="q"/>
+                            <button type="submit" class="inp2">
+                                <img src="../../../../statics/images/drivers/search.png" alt="">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="login fr">
+                <a href="">登录</a>
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        <div class="img">
+            <img src="{$thumb}" alt="">
+        </div>
+        <div class="tit_name">
+            <p class="tit">{$title}</p>
+            <div class="keshi">
+                <span>共{$class_hour}课时</span>
+                <span>{$user_num}人已学习</span>
+            </div>
+        </div>
+        <div class="price bb10">
+            <div class="{if $value['present_price'] == 0 }small{/if}">
+                <span class="" style="margin-right: 10px; font-size: 14px;">
+                    <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $price == 0 }color: #666;{else}color:red; font-size: 13.5px;{/if}">￥{$present_price}</small>
+                    <del style="{if $price == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $present_price == 0 }￥{$price}{else}{$price}{/if}</del>
+                </span>
+                <!-- <span class="zhekou">8.6折</span> -->
+            </div>
+            <div class="dayi clearfix">
+                <span class="fl">24小时内答疑</span>
+                <span class="fr">专属资料下载</span>
+            </div>
+        </div>
+        <div class="con bb10">
+            {$content}
+        </div>
+        <div class="lecturer bb10 clearfix">
+            <h3>讲师介绍</h3>
+            <div class="lecturer_con clearfix">
+                <div class="fl img">
+                    <a href=""><img src="{$avatar}" alt=""></a>
+                </div>
+                <div class="fl name">
+                    <p>{$teacher}</p>
+                    <p>工程师</p>
+                    <p>2578学员</p>
+                </div>
+            </div>
+            <div class="int">
+                <p class="introduce">{$brief_introduction}</p>
+            </div>
+        </div>
+        <div class="courses bb10">
+            <h3>其他课程</h3>
+            <div class="cl_con clearfix">
+                <ul>
+                    {php $courseWhere = "teacher='$teacher' and id <> $id";}
+                    {pc:content action="lists" catid="$courseid" where="$courseWhere" order="id DESC" num="5" cache="0" moreinfo=1}
+                    {loop $data $value}
+                    <li>
+                        <div class="img fl">
+                            <a href="{replaceUrl4course($value['url'])}"><img src="{$value['thumb']}" alt=""></a>
+                        </div>
+                        <div class="con1 fr">
+                            <p class="tit">{str_cut($value['title'], 100, '')}</p>
+                            <div class="keshi">
+                                <span>共{$value['class_hour']}课时</span>
+                                <span>{$value['user_num']}人学习</span>
+                            </div>
+                            <div class="price1">
+                                <span class="" style="margin-right: 10px; font-size: 14px;">
+                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{else}color:red; font-size: 13.5px;{/if}">￥{$value['present_price']}</small>
+                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                            </span>
+                            </div>
+                        </div>
+                    </li>
+                    {/loop}
+                    {/pc}
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <span class="sc fl"></span>    
+            <span class="pic fl">￥{$value['present_price']}</span> 
+            <a href="javascript:;" class="gm fr">立即购买</a>
+        </div>
+    </footer>
+</body>
+</html>

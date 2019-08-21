@@ -53,6 +53,7 @@ $sortBy = $sort . ' ' . $by;
 
 ?>
 
+
 <body>
     <header class="hd">
         <div class="header">
@@ -105,15 +106,15 @@ $sortBy = $sort . ' ' . $by;
                         <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
                             <li class="mf"><a href="#">免费</a></li> 
                             <li class="sf"><a href="#">收费</a></li>
-                        </ul>
-                    </dd>  -->
+                        </ul> 
+                    </dd> --> 
                     <dd class="wage1 clearfix"> 
                         <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
-                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time">畅销</a></li>
-                            <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot" class="{$active['hot']}">好评</a></li>
-                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price">最新</a></li>
+                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}">畅销</a></li>
+                            <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot&by={$byStr}" class="{$active['hot']}">好评</a></li>
+                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}">最新</a></li>
                         </ul> 
-                    </dd>  
+                    </dd> 
                 </dl> 
             </section>
         </div>
@@ -124,9 +125,22 @@ $sortBy = $sort . ' ' . $by;
     </div>
     <div class="content_list clearfix">
         <div class="cl_con">
-            <ul>
-                {php $courseWhere = 'typeid='.$typeidList['course'];}
-                {pc:content action="lists" catid="$courseid" order="id DESC" num="20" cache="3600" moreinfo="1"}
+            <ul class="clearfix">
+                {php $courseWhere = 'typeid='.$typeid;}
+                {if $catid}
+                    {if $typeid}
+                        {pc:content action="lists" catid="$catid" where="$courseWhere" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {else}
+                        {pc:content action="lists" catid="$catid" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {/if}
+                {else}
+                    {if $typeid}
+                        {pc:get sql="SELECT * FROM phpcms_news where typeid='$typeid' ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {else}
+                        {pc:get sql="SELECT * FROM phpcms_news ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {/if}
+                {/if}
+                {php $i = 0;}
                 {loop $data $value}
                 <li>
                     <div class="img fl">
@@ -140,17 +154,21 @@ $sortBy = $sort . ' ' . $by;
                         </div>
                         <div class="price">
                             <span class="" style="margin-right: 10px; font-size: 14px;">
-                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{else}color:red; font-size: 13.5px;{/if}">
-                                    {if $present_price == 0}<span style="color: #666;">免费</span>{else}￥{$present_price}{/if}
-                                </small>
+                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{else}color:red; font-size: 13.5px;{/if}">￥{$value['present_price']}</small>
                                 <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
                             </span>
                         </div>
                     </div>
                 </li>
+                {php $i++;}
                 {/loop}
                 {/pc}
             </ul>
+                    <div class="page_nav">
+                        <div class="more">
+                            <div id="pages" class="text_c">{$pages}</div>
+                        </div>
+                    </div>
         </div>
     </div>
 

@@ -190,7 +190,7 @@
 
                 <div class="qiehuan">
                     <ul class="bxslider" >
-                        {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="3600"}
+                        {pc:content action="lists" catid="$courseid" num="8" order="id DESC" cache="3600"}
                             {loop $data $value}
                             <li class="xs">
                                 <div class="xs_img">
@@ -198,13 +198,11 @@
                                         <img src="{$value['thumb']}" style="margin-left: 20px;" title="{$value['title']}">
                                     </a>
                                 </div>
-                                
                                 <div>
                                     <a href="{replaceUrl4course($value['url'])}" target="_blank">
                                         <p>{str_cut($value['title'], 45, '')}</p>
                                     </a>
                                     <a href="{replaceUrl4course($value['url'])}" target="_blank" class="p11"><small class="rq p11">{$value['description']}</small></a>
-
                                 </div>
                             </li>
                             {/loop}
