@@ -54,12 +54,16 @@ html,body{
     display: inline-block;
 }
 .classify{
-    padding: 0 10px;
+    padding: 48px 10px 0;
+
 }
 .classify ul li .classify_con{
     display: none;
-    height: auto;
+    height: 250px;
     background-color: #eaeaea;
+    position: absolute;
+    left: 0;
+    top: 45px;
 }
 .classify ul li .classify_con li{
     width: 33.3%;
@@ -67,7 +71,7 @@ html,body{
 }
 .classify .classify_tit{
     display: inline-block;
-    margin: 10px 0 10px 10px;
+    margin: 10px 0 10px 25px;
 }
 
 .info span{
@@ -76,4 +80,11 @@ html,body{
 }
 .info span.time{
     /*margin-left: 20px;*/
+}
+
+#ull{
+    width: 100%;
+}
+.navs .lists li a{
+    line-height: 45px;
 }

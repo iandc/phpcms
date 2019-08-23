@@ -48,19 +48,20 @@
             </div>
         </div>
         <div class="price bb10">
-            <div class="{if $value['present_price'] == 0 }small{/if}">
+            <div class="{if $present_price == 0 }small{/if}">
                 <span class="" style="margin-right: 10px; font-size: 14px;">
-                    <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $price == 0 }color: #666;{else}color:red; font-size: 13.5px;{/if}">￥{$present_price}</small>
-                    <del style="{if $price == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $present_price == 0 }￥{$price}{else}{$price}{/if}</del>
+                    <small class="{if $present_price == 0 }small{/if}" style="{if $price == 0 }color: #666;{else}color:red; font-size: 18px;{/if}">￥{$present_price}</small>
+                    <del style="{if $price == 0 }display:none;{/if} font-size: 16px;" class="{if $present_price == 0}del{/if}">{if $present_price == 0 }￥{$price}{else}{$price}{/if}</del>
                 </span>
                 <!-- <span class="zhekou">8.6折</span> -->
             </div>
-            <div class="dayi clearfix">
+            <!-- <div class="dayi clearfix">
                 <span class="fl">24小时内答疑</span>
                 <span class="fr">专属资料下载</span>
-            </div>
+            </div> -->
         </div>
         <div class="con bb10">
+            <h3>课程介绍</h3>
             {$content}
         </div>
         <div class="lecturer bb10 clearfix">
@@ -114,7 +115,7 @@
     <footer>
         <div class="footer">
             <span class="sc fl"></span>    
-            <span class="pic fl">￥{$value['present_price']}</span> 
+            <span class="pic fl">￥{$present_price}</span> 
             <a href="javascript:;" class="gm fr">立即购买</a>
         </div>
     </footer>

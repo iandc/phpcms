@@ -1,0 +1,238 @@
+*{margin: 0; padding: 0;}
+.fl{float: left;}
+.fr{float: right;}
+.clearfix{ clear: both; content: ""; display: block; overflow: hidden }
+ul li{list-style: none; float: left;}
+a{text-decoration: none; color: #333;}
+.hd{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
+}
+.header{
+    width: 100%;
+    height: 50px;
+    /*background-color: pink;*/
+    border-bottom: 1px solid #cdcdcd;
+}
+.header .logo{
+    width: 30%;
+    height: 100%;
+    /*background-color: red;*/
+}
+.header .logo img{
+    width: 100%;
+    height: 100%;
+    margin-top: 2px;
+}
+.header .search{
+    width: 58%;
+    height: 100%;
+    /*background-color: blue;*/
+    position: relative;
+}
+.header .search .inp1{
+    width: 85%;
+    height: 36px;
+    font-size: 16px;
+    padding: 0 10px;
+    margin-top: 6px;
+    border: 1px solid #dfdfdf;
+}
+.header .search .inp2{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    border: none;
+    background: #fff;
+}
+.header .search .inp2 img{
+    width: 100%;
+    height: 100%;
+}
+.header .login{
+    width: 12%;
+    height: 100%;
+}
+.header .login span{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url(../../../images/drivers/ico.png) no-repeat 0 0; 
+    background-position: 10px 12px;
+}
+
+.class{
+    height: 30px !important;
+}
+.mf,.sf{
+    width: 32%;
+    height: 40px;
+    line-height: 40px;
+    margin: 10px !important;
+    font-size: 13px;
+    border: 1px solid #0b68a9;
+    text-align: center;
+    border-radius: 8px;
+}
+.mf a,.sf a{
+    color: #0b68a9;
+}
+.cx,.hp,.zx{
+    width: 100% !important;
+    height: 40px;
+    border-bottom: 1px solid #eee;
+    line-height: 30px;
+    margin-bottom: 0 !important;
+}
+.price .small{
+    display: none;
+}
+
+.mianfei{
+    border: 1px solid red;
+    padding: 2px;
+    color: red !important;
+    font-size: 10px;
+    border-radius: 2px;
+}
+
+
+.retrie dt{
+    height: 52px;
+    line-height: 52px;
+    border-bottom: 2px solid #ddd;
+}
+.retrie dd{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+}
+.retrie dd ul{
+    padding: 0 20px;
+}
+.retrie dd ul li{
+    width: 32%;
+    margin: 10px 0;
+    font-size: 13px;
+}
+
+.retrie dt a {
+    position: relative;
+    float: left;
+    width: 31%;
+    height: 49px;
+    line-height: 50px;
+    color: #333;
+    font-size: 14px;
+    text-align: center;
+}
+.retrie dt .up1:before{
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #ddd;
+    border-bottom: none;
+    border-right: none;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    bottom: -8px;
+    left: 65%;
+    margin-left: -10px;
+}
+.retrie dt a:after {
+    position: absolute;
+    top: 50%;
+    margin-top: -4px;
+    margin-left: 10px;
+    width: 5px;
+    height: 5px;
+    border: #666 solid;
+    border-width: 1px 1px 0 0;
+    content: ' ';
+    -webkit-transform: rotate(135deg);
+}
+.retrie dt .up:after {
+    margin-top: 0;
+    border: #007ccf solid;
+    border-width: 1px 1px 0 0;
+    -webkit-transform: rotate(-45deg);
+}
+.bt{
+    border-bottom: 2px solid #cdcdcd;
+}
+
+
+.banner{
+    width: 100%;
+    height: 120px;
+    padding-top: 100px;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+
+.content_list{
+    width: 100%;
+    padding-bottom: 50px;
+}
+.content_list .cl_con ul li{
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+.content_list .cl_con .img{
+    width: 35%;
+}
+.content_list .cl_con .img img{
+    width: 100%;
+    height: 85px;
+}
+.content_list .cl_con .con{
+    width: 63%;
+}
+.content_list .cl_con .con p.tit{
+    font-size: 13.5px;
+}
+.content_list .cl_con .con .keshi span{
+    font-size: 12px;
+    color: #666;
+}
+.content_list .cl_con .con .price{
+    margin-top: 4px;
+}
+.content_list .cl_con .con .price .mf{
+    border: 1px solid #0b68a9;
+    font-size: 12px;
+    padding: 0 3px;
+    color: #0b68a9;
+    border-radius: 3px;
+}
+.content_list .cl_con .con .price del{
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+.footer{
+    width: 100%;
+    height: 50px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    text-align: center;
+    line-height: 50px;
+    border-top: 1px solid #eee;
+}
+.footer ul li{
+    width: 33.3%;
+}

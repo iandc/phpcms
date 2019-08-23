@@ -127,6 +127,12 @@ body{
     margin-top: 15px;
     width: 470px;
 }
+.informationRight .informationRightL ul li .tit{
+    width: 10%;
+}
+.informationRight .informationRightL ul li .con{
+    width: 79%;
+}
 .informationRight .informationRightL .focus-title,.informationRight .informationRightR .focus-title{
     height: 14px;
     border-left: 4px solid #F36F60;
@@ -154,7 +160,7 @@ body{
 }
 .informationRight .informationRightL ul li h2{
     overflow: hidden;
-    padding: 0 0 5px 18px;
+    padding: 0 0 5px 0;
     white-space: nowrap;
     font-size: 16px;
 }
@@ -163,7 +169,6 @@ body{
     font-size: 13.5px;
 }
 .informationRight .informationRightL ul li p{
-    padding-left: 98px;
     color: #888;
     font-size: 12.5px;
 }

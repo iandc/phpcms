@@ -57,9 +57,12 @@ $sortBy = $sort . ' ' . $by;
     <header class="hd">
         <div class="header">
             <div class="logo fl">
-                <div></div>
+                <div><img src="http://www.eetop.wang/statics/images/drivers/logo_course.png" alt=""></div>
             </div>
-            <div class="search fl">
+            <div class="login fr">
+                <span></span>
+            </div>
+            <div class="search fr">
                 <div class="hd_c_list" id="search">
                     <div class="search1">
                         <form action="{$eduurl}/index.php" method="get" target="_blank">
@@ -68,16 +71,13 @@ $sortBy = $sort . ' ' . $by;
                             <input type="hidden" name="a" value="init"/>
                             <input type="hidden" name="typeid" value="{$searchtypeid}" id="typeid"/>
                             <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
-                            <input type="text" class="text inp1" placeholder="搜索课程" name="q" id="q"/>
+                            <input type="text" class="text inp1 fr" placeholder="搜索课程" name="q" id="q"/>
                             <button type="submit" class="inp2">
                                 <img src="../../../../statics/images/drivers/search.png" alt="">
                             </button>
                         </form>
                     </div>
                 </div>
-            </div>
-            <div class="login fr">
-                
             </div>
         </div>
 
@@ -109,9 +109,9 @@ $sortBy = $sort . ' ' . $by;
                     </dd>  -->
                     <dd class="wage1 clearfix"> 
                         <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
-                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time">畅销</a></li>
-                            <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot" class="{$active['hot']}">好评</a></li>
-                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price">最新</a></li>
+                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}">畅销</a></li>
+                            <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot&by={$byStr}" class="{$active['hot']}">好评</a></li>
+                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}">最新</a></li>
                         </ul> 
                     </dd>  
                 </dl> 
@@ -140,9 +140,7 @@ $sortBy = $sort . ' ' . $by;
                         </div>
                         <div class="price">
                             <span class="" style="margin-right: 10px; font-size: 14px;">
-                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{else}color:red; font-size: 13.5px;{/if}">
-                                    {if $present_price == 0}<span style="color: #666;">免费</span>{else}￥{$present_price}{/if}
-                                </small>
+                                <small class="{if $value['present_price'] == 0 }mianfei{/if}" style="{if $value['price'] == 0 }color: #666;{else}color:red; font-size: 13.5px;{/if}">{if $value['present_price'] == 0}免费{else}￥{$value['present_price']}{/if}</small>
                                 <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
                             </span>
                         </div>

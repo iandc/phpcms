@@ -37,10 +37,14 @@
                         {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="3600"}
                         {loop $data $value}
                         <li>
-                            <a href="{$value['url']}"><img src="{thumb($value['thumb'], 80, 60)}" title="{$value['title']}"></a>
-                            <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 75, '')}</a></h2>
-                            <p><a class="p11" href="{$value['url']}" target="_blank"><i></i>{$value['description']}</a>
-                            </p>
+                            <a href="{$value['url']}" class="fl tit" style="display: inline-block;"><img src="{thumb($value['thumb'], 80, 60)}" title="{$value['title']}"></a>
+                            <div class="fr con">
+                                <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 75, '')}</a></h2>
+                                <p>
+                                    <a class="p11" href="{$value['url']}" target="_blank"><i></i>{$value['description']}</a>
+                                </p>
+                            </div>
+                            
                         </li>
                         {/loop}
                         {/pc}
