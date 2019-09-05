@@ -1,3 +1,5 @@
+{template "content", "config"}
+
 {if $_GET['a'] == 'lists'} <!-- 列表页 -->
 <div class="crumbs nav_css">
      <ul class="lists">
@@ -41,15 +43,10 @@
 </div>
 {elseif $_GET['a'] == 'category'} <!-- 频道页 -->
 <li class="lis">
-    <a href="{APP_PATH}channel.html" class="hover_list" id="hover_list">频道&nbsp; </a>
-    <ul class="clearfix xl" id="xl">
-        {loop $d $v}
-        <li><a href="{APP_PATH}{$v['catdir']}" target="_blank">{$v['catname']}</a></li>
-        {/loop}
-    </ul>
+    <a href="{APP_PATH}channel.html" class="hover_list" id="hover_list">频道&nbsp;></a>
 </li>
 <li>
-     > <a href="{APP_PATH}{$catdir}">&nbsp;&nbsp;{$catname}</a>
+    <a href="{APP_PATH}{$v['catdir']}" target="_blank">{$catname}</a>
 </li>
 {elseif $_GET['a'] == 'show' || $_GET['a'] == 'view'} <!-- 内容页 -->
 <div class="w1100">
@@ -61,7 +58,7 @@
                 <a href="{APP_PATH}tech/1">技术</a>
              {/if}
             <span> &gt; </span>
-            <a href="{APP_PATH}{$v['catdir']}">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> 
+            <a href="{APP_PATH}{$CATEGORYS[$catid]['catdir']}">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> 
             <span> &gt; </span>
              内容
         </div>

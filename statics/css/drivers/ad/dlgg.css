@@ -1,0 +1,182 @@
+
+        *{
+                margin:0;
+                padding:0;
+        }
+
+     .alert_windows{
+                float:right;
+                display:none;
+                position:absolute;
+                z-index:10;
+                width:120px;
+                height:300px;
+                right: 0 !important;
+        }        
+     
+
+ .alert_windows span{
+               border-top:1px solid #c0dc0c0
+               #margin-top:-10px;
+                 #z-index:20;
+                float:right;
+                width:120px;
+                height:15px;
+                text-align:right;
+                font:11px/15px Microsoft Yahei;
+                cursor:pointer;
+                color:#333;
+                background:#50c0b0;
+        }
+
+        .alert_windows span:hover{
+                color:#EEE;
+                background:red;
+        }
+         
+ .alert_windows10{
+                 float:left;
+                display:none;
+                position:absolute;
+                z-index:10;
+                width:120px;
+                height:300px;
+                left: 0 !important;
+        }
+
+        .alert_windows10 span{
+                border-top:1px solid #c0dc0c0
+               #margin-top:-10px;
+                 #z-index:20;
+                float:left;
+                width:120px;
+                height:15px;
+                text-align:right;
+                font:11px/15px Microsoft Yahei;
+                cursor:pointer;
+                color:#333;
+                background:#50c0b0;
+        }
+
+        .alert_windows10 span:hover{
+                color:#EEE;
+                background:red;
+        }
+        
+          .alert_windows2{
+                float:right;
+                display:none;
+                position:absolute;
+                #z-index:10;
+                width:120px;
+                height:142px;
+                right: 0 !important;
+        }
+
+        .alert_windows2 span{
+                border-top:1px solid #c0dc0c0
+               #margin-top:-10px;
+                 #z-index:20;
+                float:right;
+                width:120px;
+                height:15px;
+                text-align:right;
+                font:11px/15px Microsoft Yahei;
+                cursor:pointer;
+                color:#333;
+                background:#50c0b0;
+        }
+
+        .alert_windows2 span:hover{
+                color:#EEE;
+                background:red;
+        }
+             
+    .alert_windows3{
+                float:left;
+                display:none;
+                #position:absolute;
+                z-index:10;
+                width:120px;
+                height:100px;
+               position: fixed;
+        }
+         
+  
+        .alert_windows3 span{
+            display: inline-block;
+               border-top:1px solid #c0dc0c0
+               #margin-top:-10px;
+                 #z-index:20;
+                width:15px;
+                height:15px;
+                line-height: 10px;
+                font-size: 16px;
+                font-weight: 600;
+                text-align:center;
+                font:11px/15px Microsoft Yahei;
+                cursor:pointer;
+                color:#333;
+                background:#50c0b0;
+        }
+
+        .alert_windows3 span:hover{
+                color:#EEE;
+                background:red;
+        }  
+         .alert_windows4{
+                float:left;
+                display:none;
+                #position:absolute;
+                z-index:10;
+                width:40px;
+                height:600px;
+               
+        }
+        
+         .alert_windows4 span{
+               border-top:1px solid #c0dc0c0
+               #margin-top:-10px;
+                 #z-index:20;
+                float:left;
+                width:40px;
+                height:15px;
+                text-align:left;
+                font:11px/15px Microsoft Yahei;
+                cursor:pointer;
+                color:#333;
+                background:#50c0b0;
+        }
+
+        .alert_windows4 span:hover{
+                color:#EEE;
+                background:red;
+        }  
+        
+ .alert_windows5{
+                display:none;
+                #position:absolute;
+                position:fixed;
+                z-index:10;
+                width:600px;
+                height:400px;
+               
+}
+ .alert_windows5 span{
+                float:right;
+                width:20px;
+                height:20px;
+                text-align:center;
+                font:12px/20px Microsoft Yahei;
+                cursor:pointer;
+                color:#333;
+                background:lightblue;
+                position: absolute;
+                top: 0;
+                right: 0;
+        }
+
+        .alert_windows5 span:hover{
+                color:#EEE;
+                background:red;
+        }
