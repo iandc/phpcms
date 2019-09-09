@@ -88,3 +88,10 @@ html,body{
 .navs .lists li a{
     line-height: 45px;
 }
+
+#pages a{
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid #cdcdcd;
+    margin-bottom: 3px;
+}

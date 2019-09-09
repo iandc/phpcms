@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/index.css">
@@ -73,12 +73,12 @@
                 {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="6" cache="0"}
                 {loop $data $value}
                     <li class="list" style="{if $value['thumb'] == ''} padding: 15px 0;{/if}">
-                        <div class="img fr" style="{if $value['thumb'] == ''}display: none; padding: 10px 0;{/if}">
+                        <div class="img fl" style="{if $value['thumb'] == ''}display: none; padding: 10px 0;{/if}">
                             <a href="{$value['url']}">
                                 <img src="{$value['thumb']}" alt="">
                             </a>
                         </div>
-                        <div class="info fl" style="{if $value['thumb'] == ''}width:100% ;{/if}">
+                        <div class="info fr" style="{if $value['thumb'] == ''}width:100% ;{/if}">
                             <div class="tit">
                                 <a href="{$value['url']}">{$value['title']}</a>
                             </div>
@@ -103,12 +103,12 @@
                 {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="6" cache="3600"}
                 {loop $data $value}
                 <li class="list" style="{if $value['thumb'] == ''} padding: 15px 0;{/if}">
-                    <div class="img fr" style="{if $value['thumb'] == ''}display: none;{/if}">
+                    <div class="img fl" style="{if $value['thumb'] == ''}display: none;{/if}">
                         <a href="{$value['url']}">
                             <img src="{$value['thumb']}" alt="">
                         </a>
                     </div>
-                    <div class="info fl" style="{if $value['thumb'] == ''}width:100% ;{/if}">
+                    <div class="info fr" style="{if $value['thumb'] == ''}width:100% ;{/if}">
                         <div class="tit">
                             <a href="{$value['url']}">{$value['title']}</a>
                         </div>

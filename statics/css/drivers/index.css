@@ -568,11 +568,13 @@ body{
     border-bottom: #999 1px dotted;
 }
 .Manufacturer .manuConLeft .centerCon .centerCon_img{
-    width: 85px;
+    width: 80px;
     text-align: center;
 }
 .Manufacturer .manuConLeft .centerCon .centerCon_img img{
+    width: 100%;
     border-radius: 10px;
+    margin-right: 5px;
 }
 .Manufacturer .manuConLeft .centerCon .centerCon_txt h3{
     font-weight: bold;
