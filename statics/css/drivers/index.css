@@ -855,3 +855,16 @@ body{
 .username{
     font-weight: 600;
 }
+
+h3.as{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.centerCon .ov{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

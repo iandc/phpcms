@@ -73,6 +73,21 @@ html,body{
     display: inline-block;
     margin: 10px 0 10px 25px;
 }
+.classify .spp{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: url(../../../images/drivers/sj.png) no-repeat;
+    background-position: 40px 8px;
+}
+.classify .spp2{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: url(../../../images/drivers/sj2.png) no-repeat;
+    background-position: 0 0;
+    background-position: 40px 8px;
+}
 
 .info span{
     font-size: 13px;
