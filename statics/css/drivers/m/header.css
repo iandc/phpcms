@@ -15,8 +15,12 @@ html{
     padding: 2% 0;
     display: table;
     position: fixed;
-    background-color: #0b68a9;
+    background-color: #eee;
+    border-bottom: 1px solid #0b68a9;
     z-index: 999;
+}
+.nav ul li a{
+    color: #333;
 }
 .header .hd_con{
     padding: 0 10px;

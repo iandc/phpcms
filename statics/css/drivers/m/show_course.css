@@ -22,7 +22,7 @@ a{text-decoration: none; color: #333;}
 .header .logo{
     width: 15%;
     height: 100%;
-    background-color: red;
+    /*background-color: red;*/
 }
 .header .search{
     width: 70%;
@@ -72,6 +72,7 @@ a{text-decoration: none; color: #333;}
 .content{
     width: 100%;
     padding-top: 50px;
+    overflow: hidden;
 }
 .content .img img{
     width: 100%;
@@ -120,6 +121,9 @@ a{text-decoration: none; color: #333;}
     font-size: 12px;
     margin-top: 10px;
     color: #666;
+}
+.content .con img{
+    width: 100% !important;
 }
 
 .content .con{

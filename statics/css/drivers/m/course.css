@@ -103,6 +103,10 @@ a{text-decoration: none; color: #333;}
     border-radius: 2px;
 }
 
+.nav_more a{
+    color: #0b68a9;
+}
+
 
 .retrie dt{
     height: 52px;
@@ -121,6 +125,7 @@ a{text-decoration: none; color: #333;}
     width: 32%;
     margin: 10px 0;
     font-size: 13px;
+    text-align: center;
 }
 
 .retrie dt a {
@@ -235,4 +240,9 @@ a{text-decoration: none; color: #333;}
 }
 .footer ul li{
     width: 33.3%;
+}
+
+.jc{
+    font-weight: 700;
+    color: #0b68a9;
 }

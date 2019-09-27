@@ -14,7 +14,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
 </head>
     {template "content", "config"}
-<body>
+
+<body style="-webkit-overflow-scrolling: touch;">
 <section id="wrap">
     <!-- header头部 --------------------------->
     <header class="header">
@@ -26,9 +27,8 @@
             </h3>
             <ul class="top_icon fr">
                 <li>
-                    <a href="javaScript:;" class="search_link"><img  src="{IMG_PATH}drivers/member_ico.png" alt=""></a>
+                    <a href="{if $_G[uid]}{$bbsurl}/home.php?mod=space&uid=$_G[uid]&do=profile&mycenter=1{else}{$bbsurl}/member.php?mod=logging&action=login{/if}" class="search_link"><img  src="{IMG_PATH}drivers/dl.png" alt=""></a>
                 </li>
-            </ul>
         </div>
     </header>
     <!-- 导航 --------------------------------->
@@ -146,6 +146,41 @@
             </ul>
             <div class="see_more">
                 <a href="{$bbsurl}/forum.php?mod=guide&view=new">点击查看更多</a>
+            </div>
+        </div>
+    </section>
+    <section class="content">
+        <div class="title list_tit">
+            在线培训
+        </div>
+        <div class="con_wrap">
+            <ul class="con_list con_list1 clearfix">
+                {php $courseWhere = 'typeid='.$typeidList['course'];}
+                {pc:content action="lists" catid="$courseid" order="id DESC" num="5" cache="3600" moreinfo="1"}
+                {loop $data $value}
+                <li>
+                    <div class="img fl">
+                        <a href="{replaceUrl4course($value['url'])}"><img src="{$value['thumb']}" alt=""></a>
+                    </div>
+                    <div class="con fr">
+                        <p class="tit"><a href="{replaceUrl4course($value['url'])}">{$value['title']}</a></p>
+                        <div class="keshi">
+                            <span>共{$value['class_hour']}课时</span>
+                            <span>{$value['user_num']}人学习</span>
+                        </div>
+                        <div class="price">
+                            <span class="" style="margin-right: 10px; font-size: 14px;">
+                                <small class="{if $value['present_price'] == 0 }mianfei{/if}" style="{if $value['price'] == 0 }color: #666;{else}color:red; font-size: 13.5px;{/if}">{if $value['present_price'] == 0}免费{else}￥{$value['present_price']}{/if}</small>
+                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                            </span>
+                        </div>
+                    </div>
+                </li>
+                {/loop}
+                {/pc}
+            </ul>
+            <div class="see_more">
+                <a href="{APP_PATH}course/1">点击查看更多</a>
             </div>
         </div>
     </section>

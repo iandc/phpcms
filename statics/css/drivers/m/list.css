@@ -9,7 +9,7 @@ html,body{
     top: 0;
     left: 0;
     z-index: 999;
-    background-color: #0b68a9;
+    background-color: #eee;
 }
 .lists_hd .page_back{
     width: 30px;
@@ -59,7 +59,7 @@ html,body{
 }
 .classify ul li .classify_con{
     display: none;
-    height: 250px;
+    height: auto;
     background-color: #eaeaea;
     position: absolute;
     left: 0;
@@ -67,7 +67,7 @@ html,body{
 }
 .classify ul li .classify_con li{
     width: 33.3%;
-    margin: 0 10px;
+    margin: 3px 10px;
 }
 .classify .classify_tit{
     display: inline-block;
