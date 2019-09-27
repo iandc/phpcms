@@ -1,0 +1,68 @@
+body{
+  overflow: hidden;
+}
+#content{
+  width: 100% !important;
+}
+#usernameTip,#passwordTip{
+  display: block !important;
+  margin-top: 5px;
+  margin-left: 30px;
+}
+.take, .reg {
+    padding: 0 0 0 30px !important;
+}
+form{
+  padding: 0 15px;
+}
+form h2{
+  text-align: center;
+}
+.form-login {
+    width: 100% !important;
+    padding-left: 0 !important;
+}     
+.form-login .input label {
+  font-size: 16px !important;
+}
+.input-text,.input-focus{
+  width: 80%;
+  height: 40px;
+  font-size: 16px;
+  margin-left: 30px;
+}
+.input-text1{
+  width: 20%;
+  height: 25px;
+  margin-left: 0;
+}
+.form-login .input label {
+    margin-left: 30px;
+}
+.take .submit {
+    margin-top: 10px;
+    display: block;
+}
+.submit, .submit input{
+    background-image: none !important;
+}
+.submit1 input{
+    background-image: none !important;
+    width: 280px;
+    height: 35px !important;
+    border: 1px solid #0b68a9 !important;
+    background-color: #0b68a9 !important;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px !important;
+    border-radius: 5px;
+}
+.form-login .input label{
+    width: 64px !important;
+    text-align: left !important;
+}
+.input1 .input-focus{
+    width: 20%;
+    height: 25px;
+    margin-left: 0;
+}
