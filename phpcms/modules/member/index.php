@@ -760,7 +760,11 @@ class index extends foreground {
 			$siteid = isset($_REQUEST['siteid']) && trim($_REQUEST['siteid']) ? intval($_REQUEST['siteid']) : 1;
 			$siteinfo = siteinfo($siteid);
 
-			include template('member', 'login');
+            if (isMobile()) {
+                include template('m', 'login');
+            } else {
+                include template('member', 'login');
+            }
 		}
 	}
   	

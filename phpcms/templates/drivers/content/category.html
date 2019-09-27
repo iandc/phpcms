@@ -197,26 +197,24 @@
                                                         {if $value['thumb'] == ""}
                                                         <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
                                                             <div class="centerCon_txt fl">
-                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
+                                                                <h3 class="as"><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
                                                                     70, '')}</h3>
-                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'],
-                                                                    100, '')}
+                                                                <a class="ov" href="{$value['url']}" target="_blank">{$value['description']}
                                                             </div>
                                                         </div>
                                                         {else}
                                                         <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
-                                                            <div class="centerCon_img fr">
+                                                            <div class="centerCon_img fl">
                                                                 <a href="{$value['url']}" target="_blank">
                                                                     <img src="{thumb($value['thumb'], 75, 55)}"
                                                                          width="75" height="55" style="margin-top: 3px;"
                                                                          title="{str_cut($value['title'], 30, '')}">
                                                                 </a>
                                                             </div>
-                                                            <div class="centerCon_txt fl" style="width: 222px;">
-                                                                <h3><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
+                                                            <div class="centerCon_txt fr" style="width: 222px;">
+                                                                <h3 class="as"><a href="{$value['url']}" target="_blank">{str_cut($value['title'],
                                                                     50, '')}</h3>
-                                                                <a href="{$value['url']}" target="_blank">{str_cut($value['description'],
-                                                                    130, '')}
+                                                                <a class="ov" href="{$value['url']}" target="_blank">{$value['description']}
                                                             </div>
                                                         </div>
                                                         {/if}
@@ -337,8 +335,6 @@
         </div>
     </div>
 </div>
-{show_ad(1, 33)}
-</div>
 {template 'content', 'footer'}
 
 
@@ -393,5 +389,8 @@
         timer = setInterval(active, 2000);
     });
 </script>
+
+{show_ad(1, 33)}
+{show_ad(1, 38)}
 </body>
 </html>

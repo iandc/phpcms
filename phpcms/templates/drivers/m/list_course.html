@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
-    <title>Document</title>
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/course.css">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/list_course.css">
     <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
 </head>
 {template "content", "config"}
@@ -54,11 +56,11 @@ $sortBy = $sort . ' ' . $by;
 ?>
 
 
-<body>
+<body style="-webkit-overflow-scrolling: touch;">
     <header class="hd">
         <div class="header">
             <div class="logo fl">
-                <div></div>
+                <div><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></div>
             </div>
             <div class="search fl">
                 <div class="hd_c_list" id="search">
@@ -78,7 +80,7 @@ $sortBy = $sort . ' ' . $by;
                 </div>
             </div>
             <div class="login fr">
-                
+                <span></span>
             </div>
         </div>
 
@@ -110,9 +112,9 @@ $sortBy = $sort . ' ' . $by;
                     </dd> --> 
                     <dd class="wage1 clearfix"> 
                         <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
-                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}">畅销</a></li>
+                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}" class="{$active['time']}">畅销</a></li>
                             <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot&by={$byStr}" class="{$active['hot']}">好评</a></li>
-                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}">最新</a></li>
+                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}" class="{$active['price']}">最新</a></li>
                         </ul> 
                     </dd> 
                 </dl> 
@@ -172,7 +174,7 @@ $sortBy = $sort . ' ' . $by;
         </div>
     </div>
 
-    <footer>
+   <!--  <footer>
         <div class="footer">
             <ul>
                 <li><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}">精品课程</a></li>
@@ -180,7 +182,7 @@ $sortBy = $sort . ' ' . $by;
                 <li>我的</li>
             </ul>
         </div>
-    </footer>
+    </footer> -->
     <script>
         $(function(){ 
             $('.retrie dt a').click(function(){

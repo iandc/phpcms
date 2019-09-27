@@ -1,7 +1,6 @@
 
 {template 'content', 'header'}
-<body>
-    {show_ad(1, 44)}
+
 <div class="w100">
     <div class="w1100">
         <div class="information mt15">
@@ -72,6 +71,7 @@
         {show_ad(1, 21)} 
             
         
+    {show_ad(1, 44)}
         <div class="zixun mt15 bgc_fff">
             <div class="zixunCon clearfix">
                 <div class="zixunConLeft fl">
@@ -414,13 +414,11 @@
         </div>
         <div  class="sj">@2003-2019 EETOP  </div>
         <div class="copy">
-            <p class="copyTxt"><a href="" target="_blank">京ICP备:10050787号 京公网安备：11010502037710</a></p>
+            <p class="copyTxt"><a href="" target="_blank">{$recordNumber}</a></p>
         </div>
     </div>
-    {show_ad(1, 33)}
+    
 </div>
-
-
 
 <script>
     var timer = setInterval(active,2000);
@@ -516,18 +514,21 @@
     });
 </script>
 <script type="text/javascript">
-$(function(){
-  $(".bxslider li ul li").hover(function(){ 
-    $(".x",this).stop().css({'left':'35px'}).animate({'left':"40px"},400).show();
-    $(".y",this).stop().css({'right':'35px'}).animate({'right':"40px"},400).show();
-    $('.fire',this).fadeIn(2000);
-  },function(){
-    $('.x, .y',this).stop().animate({"top":"30px"},1000);
-    $('.fire, .x, .y',this).fadeOut(2000);
-  }); 
-});
+    $(function(){
+      $(".bxslider li ul li").hover(function(){ 
+        $(".x",this).stop().css({'left':'35px'}).animate({'left':"40px"},400).show();
+        $(".y",this).stop().css({'right':'35px'}).animate({'right':"40px"},400).show();
+        $('.fire',this).fadeIn(2000);
+      },function(){
+        $('.x, .y',this).stop().animate({"top":"30px"},1000);
+        $('.fire, .x, .y',this).fadeOut(2000);
+      }); 
+    });
 </script>
 
+
+{show_ad(1, 33)}
+{show_ad(1, 38)}
 
 
 </body>

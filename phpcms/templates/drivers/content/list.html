@@ -26,9 +26,8 @@
             <div class="cm_four clearfix bg_fff">
                 <div class="cm_four_l fl">
                     <div class="cate_list">
-                        <div class="all_banner">
-                            {show_ad(1, 35)}
-                        </div>
+                        
+                        {show_ad(1, 35)}
                         
                         <ul class="clearfix">
                             {if $catid}
@@ -58,7 +57,7 @@
                                                 75, '')}</a>
                                                 {if $catid}
                                                     <span class="time fr">
-                                                        {date('m-d', $value['inputtime'])}
+                                                        {date('Y-m-d', $value['inputtime'])}
                                                     </span>
                                                     <span class="time_img fr"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
                                                 {/if}
@@ -96,7 +95,7 @@
                                                 75, '')}</a>
                                                 {if $catid}
                                                     <span class="time fr">
-                                                        {date('m-d', $value['inputtime'])}
+                                                        {date('Y-m-d', $value['inputtime'])}
                                                     </span>
                                                     <span class="time_img fr"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
                                                 {/if}
@@ -142,3 +141,7 @@
     {template 'content', 'footer'}
 </div>
 {show_ad(1, 33)}
+{show_ad(1, 38)}
+
+</body>
+</html>

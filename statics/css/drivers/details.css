@@ -1,6 +1,4 @@
-body{
-	font-size: 14px;
-}
+
 .bg_fff{
     background-color: #fff;
 }
@@ -231,7 +229,7 @@ body{
     clear: both;
     height: 100px
 }
-.page_nav .more
+.page_nav .more{
     margin: auto;
     text-align: center;
     padding-top: 20px;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
-    <title>Document</title>
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/course.css">
     <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
 </head>
@@ -53,7 +53,7 @@ $sortBy = $sort . ' ' . $by;
 
 ?>
 
-<body>
+<body style="-webkit-overflow-scrolling: touch;">
     <header class="hd">
         <div class="header">
             <div class="logo fl">
@@ -109,9 +109,9 @@ $sortBy = $sort . ' ' . $by;
                     </dd>  -->
                     <dd class="wage1 clearfix"> 
                         <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
-                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}">畅销</a></li>
+                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}" class="{$active['time']}">畅销</a></li>
                             <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot&by={$byStr}" class="{$active['hot']}">好评</a></li>
-                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}">最新</a></li>
+                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}" class="{$active['price']}">最新</a></li>
                         </ul> 
                     </dd>  
                 </dl> 
@@ -152,7 +152,7 @@ $sortBy = $sort . ' ' . $by;
         </div>
     </div>
 
-    <footer>
+    <!-- <footer>
         <div class="footer">
             <ul>
                 <li>精品课程</li>
@@ -160,7 +160,7 @@ $sortBy = $sort . ' ' . $by;
                 <li>我的</li>
             </ul>
         </div>
-    </footer>
+    </footer> -->
     <script>
         $(function(){ 
             $('.retrie dt a').click(function(){

@@ -2,11 +2,11 @@
 <header class="lists_hd">
     <div class="lists_hd_con">
         <div class="page_back fl">
-            <a style="font-size: 30px; color: #fff !important;" href="javascript:;" onclick="javascript:history.back(-1);"> < </a>
+            <a style="font-size: 30px; color: #fff !important;" href="javascript:;" onclick="javascript:history.back(-1);"><img src="{IMG_PATH}drivers/fh.png" alt=""></a>
         </div>
         <div class="fr">
             <div class="page_login fl">
-                <a href="{if $_G[uid]}{$bbsurl}/home.php?mod=space&uid=$_G[uid]&do=profile&mycenter=1{else}{$bbsurl}/member.php?mod=logging&action=login{/if}"><img  src="{IMG_PATH}drivers/dl.png" alt=""></a>
+                <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
             </div>
         </div>
     </div>

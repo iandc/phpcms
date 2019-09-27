@@ -1,5 +1,7 @@
 body{
     font-size: 14px;
+    height: auto;
+    overflow-x: hidden;
 }
 .mb10{
     margin-bottom: 10px;
@@ -792,7 +794,9 @@ body{
     -webkit-box-orient: vertical;
     overflow: hidden;
     line-height: 25px;
+    text-overflow: ellipsis;
 }
+
 
 .manuConRightB1 ul li .kjzx_t{
     height: auto;

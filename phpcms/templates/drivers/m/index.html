@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/index.css">
     <link rel="stylesheet" href="{CSS_PATH}drivers/global.css">
@@ -16,7 +16,6 @@
     {template "content", "config"}
 
 <body style="-webkit-overflow-scrolling: touch;">
-<section id="wrap">
     <!-- header头部 --------------------------->
     <header class="header">
         <div class="hd_con">
@@ -25,27 +24,36 @@
                     <img src="{IMG_PATH}drivers/logo.png" alt="">
                 </a>
             </h3>
-            <ul class="top_icon fr">
-                <li>
-                    <a href="{if $_G[uid]}{$bbsurl}/home.php?mod=space&uid=$_G[uid]&do=profile&mycenter=1{else}{$bbsurl}/member.php?mod=logging&action=login{/if}" class="search_link"><img  src="{IMG_PATH}drivers/dl.png" alt=""></a>
-                </li>
+            {if $_username}  
+                <span class="fr" style="line-height: 35px;">{getNickName()}</span>
+            {else}
+                <ul class="top_icon fr" style="width: 25px; height: 25px;">
+                    <li>
+                        <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
+                    </li>
+                </ul>
+            {/if}
         </div>
     </header>
+<section id="wrap">
     <!-- 导航 --------------------------------->
     <section class="nav">
-        <ul class="clearfix">
-            {template "m", "menu"}
-            <!-- {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="0"}
-            {loop $data $value}
-                <li>
-                    <a href="{$value['url']}">{$value['catname']}</a>
-                </li>
-            {/loop}
-            {/pc} -->
-            <!-- <li class="more">
-                <a href="nav.html">更多</a>
-            </li>     -->
-        </ul>
+        <div>
+            <ul class="clearfix">
+                {template "m", "menu"}
+                <!-- {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="0"}
+                {loop $data $value}
+                    <li>
+                        <a href="{$value['url']}">{$value['catname']}</a>
+                    </li>
+                {/loop}
+                {/pc} -->
+                <!-- <li class="more">
+                    <a href="nav.html">更多</a>
+                </li>     -->
+            </ul>
+        </div>
+        
     </section>
     <!-- 轮播图-------------------------------->
     <section class="carousel">
