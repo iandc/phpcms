@@ -33,11 +33,21 @@ html,body{
     height: 100%;
 }
 
+.top_icon .users{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url(../../../images/drivers/ico.png) no-repeat 0 0;
+    background-position: 0 -2px;
+}
+
 /*content内容部分-------------------------------------*/
 .content .title{
     background: #eaedf0;
     padding: 3% 3% 2% 3%;
     color: #000 !important;
+    font-weight: 600;
+    font-size: 16px;
 }
 .content .con_wrap{
     background-color: #f8f8f8;

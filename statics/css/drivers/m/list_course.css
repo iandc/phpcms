@@ -1,0 +1,6 @@
+.page_nav #pages a{
+  display: inline-block;
+  border: 1px solid #cdcdcd;
+  padding: 2px 5px;
+  margin-top: 10px;
+}
