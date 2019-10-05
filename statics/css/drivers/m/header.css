@@ -60,13 +60,16 @@ html{
     border-bottom: 1px solid #ddd;
     padding-top: 55px;
     background: #0b68a9;
+    padding-bottom: 5px;
 }
 .nav ul li{
-    width: 18%;
-    margin-left: 7%;
+    width: 20%;
+    /* margin-left: 7%; */
     padding: 2px 0;
     line-height: 1.6em;
     font-size: 16px;
+    text-align: center;
+
 }
 .nav ul li.more a{
     padding-right: 18px;
