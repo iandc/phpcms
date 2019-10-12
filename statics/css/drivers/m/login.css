@@ -10,7 +10,8 @@ body{
   margin-left: 30px;
 }
 .take, .reg {
-    padding: 0 0 0 30px !important;
+    padding: 10px 0 15px 30px !important;
+    width: 81%;
 }
 form{
   padding: 0 15px;
@@ -45,6 +46,7 @@ form h2{
 }
 .submit, .submit input{
     background-image: none !important;
+    margin-left: 13px;
 }
 .submit1 input{
     background-image: none !important;
@@ -65,4 +67,8 @@ form h2{
     width: 20%;
     height: 25px;
     margin-left: 0;
+}
+.zhuce a{
+    color: #333;
+    float: right;
 }

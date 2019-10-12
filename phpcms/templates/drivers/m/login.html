@@ -39,7 +39,7 @@ $(function(){
 #content{width:920px; margin:auto; padding:36px 0 0 0}
 .form-login{ width:440px; padding-left:40px}
 .form-login h2{font-size:25px;color:#494949;border-bottom: 1px dashed #CCC;padding-bottom:3px; margin-bottom:10px}
-.form-login .input{ padding:7px 0}
+.form-login .input{ padding:6px 0}
 .form-login .input label{ width:84px;font-size:14px; color:#888; text-align:right}
 .take,.reg{padding:0 0 0 84px}
 .take .submit{ margin-top:10px}
@@ -78,6 +78,7 @@ $(function(){
 
 </style>
 </head>
+{template "content", "config"}
 <body>
 <div id="content">
 <div class="col-left form-login" id="logindiv">
@@ -93,8 +94,10 @@ $(function(){
         <div class="input input1">
       <label>{L('checkcode')}：</label><input type="text" id="code" name="code" size="8" class="input-text1">{form::checkcode('code_img', '5', '14', 120, 26)}
     </div>
-        <div class="take">
-    <input type="checkbox" name="cookietime" value="2592000" id="cookietime"> {L('remember')}{L('username')}
+    <div class="take">
+        <input type="checkbox" name="cookietime" value="2592000" id="cookietime"> {L('remember')}{L('username')}
+        <span class="zhuce"><a href="{$bbsurl}/member.php?mod=register">没有账号请注册</a></span>
+    </div>
     
     <div class="submit submit1"><input type="submit" name="dosubmit" id="dosubmit" value="登录"></div>
         <div class="hr"><hr /></div>

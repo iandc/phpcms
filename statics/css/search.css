@@ -32,7 +32,7 @@ ol, ul{list-style: none;}
 .sr_footer{font-size:12px; line-height:22px; margin-top:30px; text-align:center; border-top:1px solid #DBE7ED; padding-top:10px;}
 
 .sr_list{background:url(../images/search/sr_list_tbg.jpg) repeat-x;}
-.sr_logo{height:auto!important; height:150px; min-height:150px;}
+.sr_logo{height:auto!important; height:90px; min-height:90px;}
 .sr_list .sr_frm_box{position:relative;}
 .sr_list .sr_frm_box .sr_infoul{position:absolute; top:33px; background:#fff; left:0px!important;}
 
@@ -40,7 +40,7 @@ ol, ul{list-style: none;}
 .sr_list .sr_head{ padding:0px 30px;}
 .sr_list .sr_logo img{ margin-left:0px;}
 .sr_list .sr_logo{position:relative;overflow:visible;}
-.sr_list .sr_logo div.l{ margin-top:80px;position:relative;}
+.sr_list .sr_logo div.l{ margin-top:15px;position:relative;}
 .sr_list .jg{ text-align:left; font-size:12px; margin-top:16px;}
 .brd1s{background:url(../images/search/sr_xbg.jpg) no-repeat; width:946px; height:2px; margin:10px auto 0px;}
 .sr_lists{}

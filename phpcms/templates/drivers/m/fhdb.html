@@ -1,0 +1,17 @@
+<div id="div1"><a href="JavaScript:;">^</a></div>
+<script>
+    $(function () {
+        $("#div1").hide();
+        $(window).scroll(function () {
+            var top = $(this).scrollTop();
+            if(top>=$(this).height()){
+                $("#div1").fadeIn();
+            }else{
+                $("#div1").fadeOut();
+            }
+            $("#div1").click(function () {
+                window.scrollTo(0,0);    //  设置内容滚动到指定的坐标
+            })
+        })
+    })
+</script>

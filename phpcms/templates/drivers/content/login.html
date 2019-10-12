@@ -77,6 +77,7 @@ $(function(){
 
 </style>
 </head>
+{template "content", "config"}
 <body>
 <div id="header">
   <div class="content">
@@ -104,7 +105,7 @@ $(function(){
     <div class="submit"><input type="submit" name="dosubmit" id="dosubmit" value="{L('login')}"></div></div>
         <div class="hr"><hr /></div>
         <div class="reg">{L('no_phpcms_account')}<br />
-          <div class="submit"><input type="button" name="register" value="{L('immediately').L('register')}" onclick="redirect('{APP_PATH}index.php?m=member&c=index&a=register&siteid={$siteid}')"></div></div>
+          <div class="submit"><input type="button" name="register" value="{L('immediately').L('register')}" onclick="redirect('{$bbsurl}/member.php?mod=register')"></div></div>
 </form>
 </div>
     <div class="col-auto">

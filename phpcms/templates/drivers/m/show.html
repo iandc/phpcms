@@ -13,7 +13,7 @@
     <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
 </head>
 
-<body style="-webkit-overflow-scrolling: touch;">
+<body style="overflow: visible;">
     <section id="wrap">
         {template 'm', 'header'}
         
@@ -109,7 +109,17 @@
         </section>
         
         {template 'm', 'footer'}
-
+        <div id="div1"><a href="JavaScript:;">^</a></div>
+        <div id="div2"><a href="{APP_PATH}"><i></i></a></div>
+        <script>
+            $(function () {
+                $(window).scroll(function () {
+                    $("#div1").click(function () {
+                        window.scrollTo(0,0);    //  设置内容滚动到指定的坐标
+                    })
+                })
+            })
+        </script>
     </section>
     <script>
         $(document).ready(function(){

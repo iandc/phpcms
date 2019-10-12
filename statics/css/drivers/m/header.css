@@ -22,8 +22,8 @@ html{
     /*height: 20%;*/
     padding: 2% 0;
     display: table;
-    position: fixed;
-    background-color: #eee;
+    /*position: fixed;*/
+    background-color: #fff;
     border-bottom: 1px solid #0b68a9;
     z-index: 999;
 }
@@ -58,16 +58,17 @@ html{
 /*导航-----------------------------------------*/
 .nav{
     border-bottom: 1px solid #ddd;
-    padding-top: 55px;
     background: #0b68a9;
-    padding-bottom: 5px;
+}
+.navs{
+    padding: 5px 0;
 }
 .nav ul li{
     width: 20%;
     /* margin-left: 7%; */
     padding: 2px 0;
     line-height: 1.6em;
-    font-size: 16px;
+    font-size: 15px;
     text-align: center;
 
 }

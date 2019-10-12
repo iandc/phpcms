@@ -5,7 +5,7 @@
 }
 .show_content .show_tit{
     font-size: 22px;
-    text-align: center;
+    font-weight: 600;
 }
 .show_content .user_time span{
     font-size: 12px;
@@ -57,4 +57,36 @@
 }
 .list_3{
     margin-bottom: 10px;
+}
+
+
+
+#div1{
+     position: fixed;
+    bottom: 86px;
+    right: 10px;
+    font-size: 35px;
+    padding: 0 !important;
+    width: 38px;
+    height: 38px;
+    background-color: #0b68a9;
+    cursor: pointer;
+    text-align: center;
+    line-height: 45px;
+    margin-bottom: 10px;
+}
+#div1 a{
+    color: #fff;
+}
+#div2{
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    background-color: #0b68a9;
+}
+#div2 i{
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    background: url(../../../images/drivers/home.png) no-repeat -28px 3px;
 }

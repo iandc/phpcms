@@ -15,7 +15,7 @@
 </head>
     {template "content", "config"}
 
-<body style="-webkit-overflow-scrolling: touch;">
+<body style="overflow: visible;">
     <!-- header头部 --------------------------->
     <header class="header">
         <div class="hd_con">
@@ -193,9 +193,7 @@
         </div>
     </section>
     {template 'm', 'footer'}
-    <div class="fhdb" id="fhdb">
-        <a href="javascript:;">顶</a>
-    </div>
+    {template 'm', 'fhdb'}
 </section>
 <script>
     var mySwiper = new Swiper('.swiper-container',{
@@ -212,23 +210,6 @@
         //     nextEl:'.swiper-button-next',
         //     prevEl:'.swiper-button-prev',
         // },
-    });
-</script>
-
-<script>
-    $(document).ready(function(){
-        $(window).scroll(function(){
-            var scroTop = $(window).scrollTop();
-            if(scroTop>100){
-                $('#fhdb').fadeIn(500);
-            }else{
-                $('#fhdb').fadeOut(500);
-            }
-        });
-
-        $('#fhdb').click(function(){
-            $("html,body").animate({scrollTop:0},"fast");
-        });
     });
 </script>
 </body>
