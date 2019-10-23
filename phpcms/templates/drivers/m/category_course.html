@@ -6,6 +6,8 @@
     <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/course.css">
     <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
 </head>
 {template "content", "config"}
 
@@ -120,7 +122,20 @@ $sortBy = $sort . ' ' . $by;
     </header>
     
     <div class="banner">
-        <a href=""><img src="http://t.elecfans.com/Public/mobile/img/temp/1.jpg" alt=""></a>
+        <section class="carousel">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    {pc:content action="position" posid="$posidList['course_jdt']" order="listorder DESC" num="4" cache="3600"}
+                            {loop $data $value}
+                    <div class="swiper-slide">
+                        <a href="{$value['url']}"><img src="{$value['thumb']}" alt=""></a>
+                    </div>
+                    {/loop}
+                    {/pc}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
     </div>
     <div class="content_list clearfix">
         <div class="cl_con">
@@ -194,6 +209,24 @@ $sortBy = $sort . ' ' . $by;
             $(".wage1 ul li a:contains('"+$('#wage1').text()+"')").addClass('selected');
         });
     </script>
+
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        autoplay:{
+            disableOnInteraction:false,
+            delay:3000,
+        },
+        loop:true,
+        pagination:{
+            el:'.swiper-pagination',
+            clickable :true,
+        },
+        // navigation:{
+        //     nextEl:'.swiper-button-next',
+        //     prevEl:'.swiper-button-prev',
+        // },
+    });
+</script>
 
 </body>
 </html>

@@ -4,13 +4,19 @@
         <div class="page_back fl">
             <a style="font-size: 30px; color: #fff !important;" href="javascript:;" onclick="javascript:history.back(-1);"><img src="{IMG_PATH}drivers/fh.png" alt=""></a>
         </div>
-        <div class="fl" style="width: 80%; line-height: 46px; color: #fff;">
+        <div class="fl" style="width: 75%; line-height: 46px; color: #fff;">
             <h2 style="text-align: center;"><a href="{APP_PATH}" style=" color: #fff;">EETOP</a></h2>
         </div>
         <div class="fr">
-            <div class="page_login fl">
-                <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
-            </div>
+            {if $_username}  
+                <span class="fr" style="line-height: 45px; color: #fff;">{getNickName()}</span>
+            {else}
+                <ul class="top_icon fr" style="width: 25px; height: 25px; margin-top: 10px;">
+                    <li>
+                        <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
+                    </li>
+                </ul>
+            {/if}
         </div>
     </div>
     

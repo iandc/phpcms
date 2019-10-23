@@ -66,7 +66,7 @@ html{
 .nav ul li{
     width: 20%;
     /* margin-left: 7%; */
-    padding: 2px 0;
+    padding: 8px 0;
     line-height: 1.6em;
     font-size: 15px;
     text-align: center;
@@ -75,4 +75,20 @@ html{
 .nav ul li.more a{
     padding-right: 18px;
     background: url(http://m.elecfans.com/static/images/arrow-ico.png) no-repeat right 6px;
+}
+
+.header .search{
+    width: 65%;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+.header .search .ss{
+    width: 75%;
+    padding: 5px;
+    border: 1px solid #999;
+}
+.header .search .btn1{
+    padding: 5px;
+    border: none;
+    color: #666;
 }

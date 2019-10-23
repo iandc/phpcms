@@ -139,7 +139,7 @@ $sortBy = $sort . ' ' . $by;
                                         <span>讲师：{$value['teacher']}</span>
                                         <span>时长：{$value['duration']}</span> -->
                                         <span class="jg">
-                                            价格：<small style="{if $value['price'] == 0}color: #666;{/if}">{if $value['present_price'] == 0}<span style="color: #666;">免费</span>{else}{$value['present_price']}&nbsp;元{/if}</small>   
+                                            价格：<small style="{if $value['price'] == 0}color: #666;{/if}">{if $value['present_price'] == 0}<span style="color: #666; font-weight: 400;">免费</span>{else}{$value['present_price']}&nbsp;元{/if}</small>   
                                             <del style="{if $value['price'] == 0 ||  $value['present_price'] == 0}display: none;{/if}">{$value['price']}</del>
                                         </span>
                                         <span class="fr">{date('Y-m-d H:i:s', $value['inputtime'])}</span>
@@ -162,7 +162,7 @@ $sortBy = $sort . ' ' . $by;
 </section>
 
 {template 'content', 'footer_course'}
-
+{show_ad(2, 51)}
 
 <script>
     $(".aa1 span").on('click',function() {

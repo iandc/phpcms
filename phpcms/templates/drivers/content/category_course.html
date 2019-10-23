@@ -69,7 +69,7 @@
                 </div> -->
                 <!-- 课程内容部分 -->
                 
-                    {show_ad(2, 45)}
+                <script language="javascript" src="{APP_PATH}caches/poster_js/45.js"></script>
                 <div class="course_content mb10 clearfix">
 
                     <!-- 正在进行的课程 -->
@@ -101,6 +101,7 @@
                                             <span class="fr" style="margin-right: 10px; font-size: 14px;">
                                                 <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{/if}">￥{$value['present_price']}</small>
                                                 <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                                                {if $value['present_price'] == 0}<span style="font-weight: bold;">免费</span>{/if}
                                             </span>
                                         </div>
                                         <!-- <div class="sc">
@@ -153,6 +154,7 @@
                                             <span class="fr" style="margin-right: 10px; font-size: 14px;">
                                                 <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{/if}">￥{$value['present_price']}</small>
                                                 <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                                                {if $value['present_price'] == 0}<span style="font-weight: bold;">免费</span>{/if}
                                             </span>
                                         </div>
                                         <!-- <div class="sc">
@@ -228,6 +230,7 @@
                                             <span class="fr" style="margin-right: 10px; font-size: 14px;">
                                                 <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{/if}">￥{$value['present_price']}</small>
                                                 <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                                                {if $value['present_price'] == 0}<span style="font-weight: bold;">免费</span>{/if}
                                             </span>
                                         </div>
                                         <!-- <div class="sc">
@@ -389,6 +392,7 @@
     </div>
 </section>
 </div>
+{show_ad(2, 51)}
 
 
 {template 'content', 'footer_course'}

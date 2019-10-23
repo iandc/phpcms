@@ -1,11 +1,12 @@
 
 {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="86400"}
 {loop $data $value}
-<!-- {php echo $value['modelid'];} -->
+<!-- {php echo $value['catname'];} -->
 
-{php if($value['type']==1)continue;} 
+{php if($value['type']==1)continue;}
 <li class="{if $value['modelid'] == 1}lis{/if}">
-    <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" href="{if $value['type'] == 2}{$value['url']}{else}{APP_PATH}news/1{/if}">{$value['catname']}</a>
+    <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" href="{if $value['type'] == 2}{$value['url']}{else}{APP_PATH}news/1{/if}" style="{if $value['catname'] == '创芯大讲堂'}display: none;{/if}">{$value['catname']}</a>
+    {if $value['catname'] == "创芯大讲堂"}<a href="{$eduurl}">课程</a>{/if}
 </li>
 {/loop}
 {/pc}

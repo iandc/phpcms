@@ -19,7 +19,7 @@ html,body{
     background-color: #0b68a9;
 }
 .lists_hd .page_back{
-    width: 30px;
+    width: 10%;
     height: 30px;
 }
 .lists_hd .page_back img{
@@ -41,6 +41,7 @@ html,body{
 }
 .lists_hd_con{
     padding: 0 10px;
+    overflow: hidden;
 }
 
 .list_content{

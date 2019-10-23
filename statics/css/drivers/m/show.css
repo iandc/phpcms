@@ -4,7 +4,8 @@
     margin-top: 47px;
 }
 .show_content .show_tit{
-    font-size: 22px;
+    font-size: 20px;
+    line-height: 30px;
     font-weight: 600;
 }
 .show_content .user_time span{

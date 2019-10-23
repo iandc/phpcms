@@ -24,6 +24,19 @@
                     <img src="{IMG_PATH}drivers/logo.png" alt="">
                 </a>
             </h3>
+            <div class="search fl">
+                <div class="hds">
+                    <form action="{APP_PATH}index.php" target="_blank" class="form" method="get" name="a">
+                        <input type="hidden" name="m" value="search" />
+                        <input type="hidden" name="c" value="index" />
+                        <input type="hidden" name="a" value="init" />
+                        <input type="hidden" name="typeid" id="typeid" value="1" />
+                        <input type="hidden" name="siteid" id="siteid" value="{$siteid}" />
+                        <input type="text" name="q" id="q" class="ss" />
+                        <input type="submit" name="sub" value="搜索" class="btn1 c_f"/>
+                    </form>
+                </div>
+            </div>
             {if $_username}  
                 <span class="fr" style="line-height: 35px;">{getNickName()}</span>
             {else}
@@ -80,16 +93,18 @@
                 {php $newsWhere = 'typeid='.$typeidList['news'];}
                 {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="6" cache="0"}
                 {loop $data $value}
-                    <li class="list" style="{if $value['thumb'] == ''} padding: 15px 0;{/if}">
-                        <div class="img fl" style="{if $value['thumb'] == ''}display: none; padding: 10px 0;{/if}">
+                    <li class="list">
+                        <div class="img fl">
                             <a href="{$value['url']}">
-                                <img src="{$value['thumb']}" alt="">
+                                <img src="{thumb($value['thumb'], 108, 78)}" alt="">
                             </a>
                         </div>
-                        <div class="info fr" style="{if $value['thumb'] == ''}width:100% ;{/if}">
+                        <div class="info fr">
                             <div class="tit">
                                 <a href="{$value['url']}">{$value['title']}</a>
                             </div>
+                            <span style="color:#b8b4b4; font-size: 12px;">{getCatNameByCatId($value['catid'], $siteid)}</span>
+                            <span style="color:#b8b4b4; font-size: 12px; margin-left: 10px;">{date('Y-m-d', $value['inputtime'])}</span>
                             <!-- <p>{$value['description']}</p> -->
                         </div>
                     </li>
@@ -110,16 +125,18 @@
                 {php $where = 'typeid='.$typeidList['tech'];}
                 {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="6" cache="3600"}
                 {loop $data $value}
-                <li class="list" style="{if $value['thumb'] == ''} padding: 15px 0;{/if}">
-                    <div class="img fl" style="{if $value['thumb'] == ''}display: none;{/if}">
+                <li class="list">
+                    <div class="img fl">
                         <a href="{$value['url']}">
-                            <img src="{$value['thumb']}" alt="">
+                            <img src="{thumb($value['thumb'], 108, 78)}" alt="">
                         </a>
                     </div>
-                    <div class="info fr" style="{if $value['thumb'] == ''}width:100% ;{/if}">
+                    <div class="info fr">
                         <div class="tit">
                             <a href="{$value['url']}">{$value['title']}</a>
                         </div>
+                        <span style="color:#b8b4b4; font-size: 12px;">{getCatNameByCatId($value['catid'], $siteid)}</span>
+                        <span style="color:#b8b4b4; font-size: 12px; margin-left: 10px;">{date('Y-m-d', $value['inputtime'])}</span>
                         <!-- <p>{$value['description']}</p> -->
                     </div>
                 </li>
