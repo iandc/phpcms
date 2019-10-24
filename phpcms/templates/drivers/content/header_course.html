@@ -38,7 +38,7 @@ foreach($search_model as $v) {
                     </a>
                 </div>
                 <div class="fl hd_c_lg">
-                    <!-- {show_ad(2, 48)} -->
+                    <script language="javascript" src="{APP_PATH}caches/poster_js/48.js"></script>
                 </div>
                 <div class="fr hd_c_list" id="search">
                     <div class="search1">
@@ -57,8 +57,8 @@ foreach($search_model as $v) {
         </div>
 
         <div id="nav_course" class="w100">
-            <div class="nav_course w1100">
-                <ul class="clearfix">
+            <div class="nav_course clearfix w1100">
+                <ul class="clearfix fl">
                     <li class="{if $catid == $courseid}nav_more{/if}"><a href="{$eduurl}">首页</a></li>
                     {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="3600"}
                     <!-- {php echo $courseid;} -->
@@ -69,6 +69,7 @@ foreach($search_model as $v) {
                         {/loop}
                     {/pc}
                 </ul>
+                <span class="fr home1"><img style="height: 15px; height: 15px; position: absolute; top: 8px; right: 60px;" src="../../../../statics/images/drivers/home1.png" alt="" /><a href="{$newsurl}" style="font-weight: 600; line-height: 32px;">返回首页</a></span>
             </div>
         </div>
     </div>

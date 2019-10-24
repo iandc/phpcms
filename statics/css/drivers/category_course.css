@@ -150,7 +150,7 @@
     font-size: 20px;
     font-weight: 600;
     padding: 0 5px 10px;
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
     /*border-bottom: 2px solid #bcbccc;*/
     color: #333;
     position: relative;
@@ -451,4 +451,40 @@ del.del{
     color: #fff;
     border-radius: 5px;
     margin-top: 15px;
+}
+
+.ft_banner{
+    width: 100%;
+    height: 120px;
+    background: rgba(0,0,0,0.6);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+}
+.ft_banner_con .img{
+    width: 728px;
+    height: 90px;
+    margin: 15px auto;
+}
+.ft_banner img{
+    width: 100%;
+    height: 100%;
+}
+.ft_banner_con{
+    position: relative;
+}
+.ft_banner span{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    font-size: 20px;
+    color:#333;
+    text-align: center;
+    line-height: 30px;
+    color: #fff;
+    cursor: pointer;
 }

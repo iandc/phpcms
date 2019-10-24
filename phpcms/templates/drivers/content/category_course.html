@@ -69,56 +69,10 @@
                 </div> -->
                 <!-- 课程内容部分 -->
                 
-                <script language="javascript" src="{APP_PATH}caches/poster_js/45.js"></script>
                 <div class="course_content mb10 clearfix">
 
-                    <!-- 正在进行的课程 -->
-                    <div class="conts">
-                        <h3 class="titles"><i>↓</i><span>最新课程</span> 
-                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
-                        </h3>
-                        <div class="newest_curriculum mb10 clearfix">
-                            <!-- </div> -->
-                            <div class="nc_r">
-                                {php $courseWhere = 'typeid='.$typeidList['course'];}
-                                {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="3600"}
-                                {loop $data $value}
-                                <dl>
-                                    <dt>
-                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{$value['thumb']}" alt=""></a>
-                                    </dt>
-                                    <div>
-                                        <p class="txt1">
-                                            <a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></p>
-                                        <div class="zy">
-                                            <span>{$value['description']}</span>
-                                        </div>
-                                        <div class="userNum clearfix">
-                                            <span class="fl">
-                                                <i></i>
-                                                {$value['user_num']} <span>人已购买</span> 
-                                            </span>
-                                            <span class="fr" style="margin-right: 10px; font-size: 14px;">
-                                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{/if}">￥{$value['present_price']}</small>
-                                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
-                                                {if $value['present_price'] == 0}<span style="font-weight: bold;">免费</span>{/if}
-                                            </span>
-                                        </div>
-                                        <!-- <div class="sc">
-                                            <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
-                                        </div> -->
-                                    </div>
-                                </dl>
-                                {/loop}
-                                {/pc}
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-                    <!-- 马上要开始的课程 -->
+                    <script language="javascript" src="{APP_PATH}caches/poster_js/45.js"></script>
+                    <!-- 热门课程 -->
                     <div class="conts">
                         <h3 class="titles"><i>↓</i><span>热门课程</span> 
                             <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
@@ -169,42 +123,53 @@
                         </div>
                     </div>
 
-                    
-
-                    <!-- 电源设计 -->
-                    <!-- <div class="course_topics clearfix" style="margin-bottom: 40px;">
-                        <div class="ct_l fl">
-                            <h3>
-                                免费公开课
-                            </h3>
-                        </div>
-                        <div class="ct_r fr">
-                            {php $courseWhere = "price=0";}
-                            {pc:content action="lists" catid="$courseid" where="$courseWhere" order="user_num DESC" num="4" cache="3600"}
-                            {loop $data $value}
+                    <script language="javascript" src="{APP_PATH}caches/poster_js/46.js"></script>
+                    <!-- 最新课程 -->
+                    <div class="conts">
+                        <h3 class="titles"><i>↓</i><span>最新课程</span> 
+                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                        </h3>
+                        <div class="newest_curriculum mb10 clearfix">
+                            <!-- </div> -->
+                            <div class="nc_r">
+                                {php $courseWhere = 'typeid='.$typeidList['course'];}
+                                {pc:content action="lists" catid="$courseid" order="id DESC" num="8" cache="3600"}
+                                {loop $data $value}
                                 <dl>
                                     <dt>
-                                        <a href="{replaceUrl4course($value['url'])}">
-                                            <div class="ct_r_tit">
-                                                <div>
-                                                    {$value['title']}
-                                                </div>
-                                            </div>
-                                        </a>
+                                        <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{$value['thumb']}" alt=""></a>
                                     </dt>
-                                    <dd>
-                                        <a href="">{str_cut($value['description'], 100,
-                                        '')}</a>
-                                    </dd>
+                                    <div>
+                                        <p class="txt1">
+                                            <a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></p>
+                                        <div class="zy">
+                                            <span>{$value['description']}</span>
+                                        </div>
+                                        <div class="userNum clearfix">
+                                            <span class="fl">
+                                                <i></i>
+                                                {$value['user_num']} <span>人已购买</span> 
+                                            </span>
+                                            <span class="fr" style="margin-right: 10px; font-size: 14px;">
+                                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{/if}">￥{$value['present_price']}</small>
+                                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                                                {if $value['present_price'] == 0}<span style="font-weight: bold;">免费</span>{/if}
+                                            </span>
+                                        </div>
+                                        <!-- <div class="sc">
+                                            <a href=""><span>收藏</span></a> <i></i> <a href=""><span>加入购物车</span></a>
+                                        </div> -->
+                                    </div>
                                 </dl>
-                            {/loop}
-                            {/pc}
+                                {/loop}
+                                {/pc}
+                            </div>
                         </div>
-                    </div> -->
-
+                    </div>
                     
-                    
-                    <div class="newest_curriculum mb10 clearfix">
+                    <script language="javascript" src="{APP_PATH}caches/poster_js/47.js"></script>
+                    <!-- 收费课程 -->
+                    <div class="newest_curriculum mb10 clearfix" style="margin-top: 10px;">
                         <h3 class="titles"><i>↓</i><span>收费课程</span> 
                             <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
                         </h3>
@@ -243,8 +208,10 @@
                                 {/pc}
                         </div>
                     </div>
-
-                    <div class="newest_curriculum mb10 clearfix">
+                    
+                    <script language="javascript" src="{APP_PATH}caches/poster_js/52.js"></script>
+                    <!-- 免费课程 -->
+                    <div class="newest_curriculum mb10 clearfix" style="margin-top: 10px;">
                         <h3 class="titles"><i>↓</i><span>免费公开课</span> 
                             <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
                         </h3>
@@ -393,9 +360,26 @@
 </section>
 </div>
 {show_ad(2, 51)}
+{show_ad(2, 53)}
 
+<div class="ft_banner" id="ft_banner">
+    <div class="ft_banner_con">
+        <div class="img">
+            <script language="javascript" src="{APP_PATH}caches/poster_js/54.js"></script>
+        </div>
+    </div>
+        
+    <span id="close">×</span>
+    <script>
+        $("#close").click(function(){
+            $("#ft_banner").css("display","none");
+        })
+    </script>
+    
+</div>
 
 {template 'content', 'footer_course'}
+
 
 <script>
     ///轮播
