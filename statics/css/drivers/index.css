@@ -2,6 +2,10 @@ body{
     font-size: 14px;
     height: auto;
     overflow-x: hidden;
+    position: relative;
+}
+html,body{
+    min-width: 1010px;
 }
 .mb10{
     margin-bottom: 10px;
@@ -796,6 +800,14 @@ body{
     line-height: 25px;
     text-overflow: ellipsis;
 }
+.p12{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    white-space: normal;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 
 .manuConRightB1 ul li .kjzx_t{
@@ -828,7 +840,6 @@ body{
 .manuConRightB1 ul li .user{
     width: 77%;
     display: inline-block;
-    line-height: 20px;
     font-size: 13.5px;
 }
 .manuConRightB1 ul li .num{

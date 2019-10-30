@@ -123,7 +123,7 @@
                         </div>
                     </div>
 
-                    <script language="javascript" src="{APP_PATH}caches/poster_js/46.js"></script>
+                    <script language="javascript" src="{APP_PATH}caches/poster_js/55.js"></script>
                     <!-- 最新课程 -->
                     <div class="conts">
                         <h3 class="titles"><i>↓</i><span>最新课程</span> 
@@ -230,8 +230,6 @@
                         </div>
                     </div>
 
-
-                        <!-- {php echo $typeidList['teacher'];} -->
                     <!-- 明星讲师 -->
                     {pc:content action="lists" catid="$teacherid" where="$where" num="5" order="id DESC"}
                     {if $data}
@@ -270,89 +268,6 @@
                     {/pc}
                 </div>
 
-                <!-- 测试 -->
-                <!-- <div class="course_show clearfix">
-                    <ul>
-                        <li>
-                            <div class="bg">
-                                <h3>数据分析师</h3>
-                            </div>
-                            <div class="bgc_fff bg_txt">
-                                <p>
-                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
-                                </p>
-                                <div class="btn">
-                                    <button>立即加入</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bg">
-                                <h3>机器学习工程师</h3>
-                            </div>
-                            <div class="bgc_fff bg_txt">
-                                <p>
-                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
-                                </p>
-                                <div class="btn">
-                                    <button>立即加入</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bg">
-                                <h3>商业数据分析</h3>
-                            </div>
-                            <div class="bgc_fff bg_txt">
-                                <p>
-                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
-                                </p>
-                                <div class="btn">
-                                    <button>立即加入</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bg">
-                                <h3>phthon人工智能入门</h3>
-                            </div>
-                            <div class="bgc_fff bg_txt">
-                                <p>
-                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
-                                </p>
-                                <div class="btn">
-                                    <button>立即加入</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bg">
-                                <h3>无人驾驶入门</h3>
-                            </div>
-                            <div class="bgc_fff bg_txt">
-                                <p>
-                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
-                                </p>
-                                <div class="btn">
-                                    <button>立即加入</button>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="bg">
-                                <h3>AI求职直通班</h3>
-                            </div>
-                            <div class="bgc_fff bg_txt">
-                                <p>
-                                    26 周成为机器学习工程师，系统掌握监督学习、非监督学习、强化学习等技术
-                                </p>
-                                <div class="btn">
-                                    <button>立即加入</button>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div> -->
             </div>
         </div>
     </div>
@@ -361,22 +276,7 @@
 </div>
 {show_ad(2, 51)}
 {show_ad(2, 53)}
-
-<div class="ft_banner" id="ft_banner">
-    <div class="ft_banner_con">
-        <div class="img">
-            <script language="javascript" src="{APP_PATH}caches/poster_js/54.js"></script>
-        </div>
-    </div>
-        
-    <span id="close">×</span>
-    <script>
-        $("#close").click(function(){
-            $("#ft_banner").css("display","none");
-        })
-    </script>
-    
-</div>
+{show_ad(2, 54)}
 
 {template 'content', 'footer_course'}
 

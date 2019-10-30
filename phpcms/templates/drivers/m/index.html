@@ -17,7 +17,7 @@
 
 <body style="overflow: visible;">
     <!-- header头部 --------------------------->
-    <header class="header">
+    <header class="header" id="header">
         <div class="hd_con">
             <h3 class="fl">
                 <a href="" class="logo">
@@ -79,27 +79,27 @@
                 </ul>
             {/if}
         </div>
+        <!-- 导航 --------------------------------->
+        <section class="nav">
+            <div>
+                <ul class="clearfix">
+                    {template "m", "menu"}
+                    <!-- {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="0"}
+                    {loop $data $value}
+                        <li>
+                            <a href="{$value['url']}">{$value['catname']}</a>
+                        </li>
+                    {/loop}
+                    {/pc} -->
+                    <!-- <li class="more">
+                        <a href="nav.html">更多</a>
+                    </li>     -->
+                </ul>
+            </div>
+        </section>
     </header>
 <section id="wrap">
-    <!-- 导航 --------------------------------->
-    <section class="nav">
-        <div>
-            <ul class="clearfix">
-                {template "m", "menu"}
-                <!-- {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="0"}
-                {loop $data $value}
-                    <li>
-                        <a href="{$value['url']}">{$value['catname']}</a>
-                    </li>
-                {/loop}
-                {/pc} -->
-                <!-- <li class="more">
-                    <a href="nav.html">更多</a>
-                </li>     -->
-            </ul>
-        </div>
-        
-    </section>
+    
     <!-- 轮播图-------------------------------->
     <section class="carousel">
         <div class="swiper-container">
@@ -261,5 +261,29 @@
         // },
     });
 </script>
+<script>
+
+         $(function(){
+
+            // var titleTop = $('#header').offset().top;
+
+            $(document).on('scroll',function(){
+              if($(document).scrollTop() > 180){
+                 $('#header').css({
+                     "position":"fixed",
+                     "top":0,
+                     "background":"#fff",
+                     "z-index":999,
+                     "border-bottom":"1px solid #eee"
+             })
+            }else{
+               $('#header').css({
+                   "position":"static",
+                   "border-bottom":"none"
+               })
+            }
+          })
+        })
+    </script>
 </body>
 </html>

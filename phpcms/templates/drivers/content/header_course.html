@@ -57,19 +57,41 @@ foreach($search_model as $v) {
         </div>
 
         <div id="nav_course" class="w100">
-            <div class="nav_course clearfix w1100">
-                <ul class="clearfix fl">
-                    <li class="{if $catid == $courseid}nav_more{/if}"><a href="{$eduurl}">首页</a></li>
-                    {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="3600"}
-                    <!-- {php echo $courseid;} -->
-                        {loop $data $value}
-                            <li class="{if $catid == $value['catid']}nav_more{/if}">
-                                <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}">{$value['catname']}</a><i></i>
-                            </li>
-                        {/loop}
-                    {/pc}
-                </ul>
-                <span class="fr home1"><img style="height: 15px; height: 15px; position: absolute; top: 8px; right: 60px;" src="../../../../statics/images/drivers/home1.png" alt="" /><a href="{$newsurl}" style="font-weight: 600; line-height: 32px;">返回首页</a></span>
+            <div class="nav_course w1100">
+                <div class="fl">
+                    <span class="navs2"><a href="{$eduurl}">首页</a></span>
+                    <div style="display: inline-block;" class="navs1 navs2">
+                        <span class="nav_class">
+                        课程分类<i></i>
+                        </span>
+                        <ul class="xl">
+                            {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="3600"}
+                            <!-- {php echo $courseid;} -->
+                                {loop $data $value}
+                                    <li class="{if $catid == $value['catid']}nav_more{/if} clearfix">
+                                        <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}" target="_blank">{$value['catname']}</a><i></i>
+                                    </li>
+                                {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                <div class="fr">
+                    <span class="ewms">
+                        <img src="../../../statics/images/drivers/gzh.png" class="gzh" alt="" />关注公众号
+                        <img src="../../../statics/images/drivers/cxdjt.jpg" class="cxdjt" alt="" />
+                    </span>
+                    <span class="home1">
+                        <a href="{$newsurl}" style="line-height: 32px;">
+                            <img style="height: 13px; position: relative; top: 1px;" src="../../../../statics/images/drivers/home1.png" alt="" />
+                            返回首页
+                        </a>
+                    </span>
+                </div>
+                
+                
             </div>
         </div>
     </div>

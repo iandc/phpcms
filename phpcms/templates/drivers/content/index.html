@@ -70,8 +70,6 @@
         
         {show_ad(1, 21)} 
             
-        
-    {show_ad(1, 44)}
         <div class="zixun mt15 bgc_fff">
             <div class="zixunCon clearfix">
                 <div class="zixunConLeft fl">
@@ -185,21 +183,21 @@
         </div>
         
 
-        <div class="curriculum mt15">
+        <div class="curriculum mt15 clearfix">
             <div class="w1100 curriculumCon bgc_fff clearfix djdzs">
                 <div class="title2">
                     <a href="{APP_PATH}course/1" target="_blank" class="a1 fl"> 创芯大讲堂</a>
                     <a href="{$eduurl}" target="_blank" class="a2 fr"> > 更多</a>
                 </div>
 
-                <div class="qiehuan">
-                    <ul class="bxslider" >
+                <div class="qiehuan clearfix">
+                    <ul class="bxslider clearfix" >
                         {pc:content action="lists" catid="$courseid" num="8" order="id DESC" cache="3600"}
                             {loop $data $value}
                             <li class="xs">
                                 <div class="xs_img">
                                     <a href="{replaceUrl4course($value['url'])}" target="_blank">
-                                        <img src="{$value['thumb']}" style="margin-left: 20px;" title="{$value['title']}">
+                                        <img src="{$value['thumb']}" title="{$value['title']}">
                                     </a>
                                 </div>
                                 <div>
@@ -420,6 +418,9 @@
     
 </div>
 
+{show_ad(1, 33)}
+{show_ad(1, 38)}
+
 <script>
     var timer = setInterval(active,2000);
     var autoNum = 0;
@@ -502,7 +503,7 @@
 
 
 <script type="text/javascript">
-    $(document).ready(function(){
+    window.onload = function(){
         $('.bxslider').bxSlider({
               minSlides: 4,
               maxSlides: 4,
@@ -511,24 +512,8 @@
               auto: true,
               autoHover: true
         });
-    });
+    };
 </script>
-<script type="text/javascript">
-    $(function(){
-      $(".bxslider li ul li").hover(function(){ 
-        $(".x",this).stop().css({'left':'35px'}).animate({'left':"40px"},400).show();
-        $(".y",this).stop().css({'right':'35px'}).animate({'right':"40px"},400).show();
-        $('.fire',this).fadeIn(2000);
-      },function(){
-        $('.x, .y',this).stop().animate({"top":"30px"},1000);
-        $('.fire, .x, .y',this).fadeOut(2000);
-      }); 
-    });
-</script>
-
-
-{show_ad(1, 33)}
-{show_ad(1, 38)}
 
 
 </body>
