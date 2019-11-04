@@ -86,12 +86,14 @@ body{
     background-color: #fff;
     display: none;
     position: absolute;
-    left: 65px;
-    top: 40px;
+    left: 70px;
+    top: 35px;
     z-index: 99999;
 }
 .navs2{
-    padding: 10px 15px;
+    padding: 7px 15px 10px;
+    font-weight: 600;
+    font-size: 15px;
 }
 .navs1 .xl li:hover{
     background-color: #efefef;
@@ -101,6 +103,7 @@ body{
 }
 .navs1:hover .xl{
     display: block;
+    border: 1px solid #ddd;
 }
 .navs1:hover .nav_class i{
     background: url(../../images/drivers/sjs2.png) no-repeat;
@@ -120,7 +123,8 @@ body{
 }
 
 #nav_course ul li a{
-    font-weight: 600;
+    font-weight: 500;
+    font-size: 14px;
 }
 
 
@@ -133,7 +137,6 @@ body{
     margin-right: 15px;
     height: 30px;
     display: inline-block;
-    font-weight: 600;
 }
 .ewms:hover .cxdjt{
     display: block;
@@ -143,14 +146,14 @@ body{
     height: 120px;
     position: absolute;
     top: 30px;
-    right: 80px;
+    right: 77px;
     z-index: 999;
     display: none;
 }
 .gzh{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     position: relative;
-    top: 5px;
+    top: 3px;
     right: 3px;
 }

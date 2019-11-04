@@ -751,25 +751,21 @@ html,body{
 
 .bxslider li{
     width: 252px !important;
-    height: 250px;
+    height: 240px;
+    padding-top: 10px;
 }
 .bxslider{
     margin-left: 0 !important;
 }
-.bx-wrapper{
-    max-width: 1010px !important;
-    margin: 0 !important;
-    padding: 10px 0 !important;
-}
-.bx-wrapper img{
-    width: 100% !important;
-    height: 100% !important;
+.xs_img img{
+    width: 210px !important;
+    height: 150px !important;
     margin-left: 20px;  
     border: 1px solid #dcdbdb !important;
 }
 .qiehuan{
     width: 1010px !important;
-    height: 255px;
+    height: 250px;
     border: none !important;
     border-top: 1px solid #eee !important;
 }

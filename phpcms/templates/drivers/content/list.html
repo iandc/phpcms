@@ -16,7 +16,7 @@
                 <!-- {php print_r($data);} -->
                     {loop $data $value}
                         <li {if $catid == $value['catid']}class="current"{/if}>
-                            <a href="{APP_PATH}{$value['catdir']}/{$typeName}/1">{$value['catname']}</a>
+                            <a href="{APP_PATH}{$value['catdir']}/{$typeName}">{$value['catname']}</a>
                         </li>
                     {/loop}
                 {/pc}

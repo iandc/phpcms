@@ -69,7 +69,7 @@ foreach($search_model as $v) {
                             <!-- {php echo $courseid;} -->
                                 {loop $data $value}
                                     <li class="{if $catid == $value['catid']}nav_more{/if} clearfix">
-                                        <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}" target="_blank">{$value['catname']}</a><i></i>
+                                        <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}">{$value['catname']}</a><i></i>
                                     </li>
                                 {/loop}
                             {/pc}

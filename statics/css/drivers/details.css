@@ -22,7 +22,7 @@
 .all_banner{
     width: 670px;
     height: auto;
-    padding-bottom: 30px;
+    padding: 10px 0;
     border-bottom: 1px solid #efefef;
 }
 
