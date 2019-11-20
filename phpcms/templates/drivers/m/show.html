@@ -99,6 +99,13 @@
                     </ul>
                 </div>
             </div> -->
+            <span class="{if $keyword == ' '}dpn{/if}">
+                关键词：
+                {loop $keywords $keyword}
+                <a class="blue"
+                   href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($keyword)}">{$keyword}</a>
+                {/loop}
+            </span>
             <div>
                 <ul class="list_3 fl clearfix w100">
                     <li class="fl">上一篇：<a href="{$previous_page['url']}">{str_cut($previous_page['title'], 55, '')}</a></li>

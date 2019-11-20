@@ -27,7 +27,8 @@ html{
     z-index: 999;
 }
 .nav ul li a{
-    color: #fff;
+    color: #585555;
+    font-weight: 600;
 }
 .header .hd_con{
     padding: 0 10px;
@@ -58,13 +59,13 @@ html{
 /*导航-----------------------------------------*/
 .nav{
     border-bottom: 1px solid #ddd;
-    background: #0b68a9;
+    background: #e7eaec;
 }
 .navs{
     padding: 5px 0;
 }
 .nav ul li{
-    width: 20%;
+    width: 25%;
     /* margin-left: 7%; */
     padding: 8px 0;
     line-height: 1.6em;

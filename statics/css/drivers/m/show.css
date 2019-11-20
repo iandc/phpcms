@@ -70,7 +70,7 @@
     padding: 0 !important;
     width: 38px;
     height: 38px;
-    background-color: #0b68a9;
+    background-color: #b4c1cb;
     cursor: pointer;
     text-align: center;
     line-height: 45px;
@@ -83,7 +83,7 @@
     position: fixed;
     bottom: 50px;
     right: 10px;
-    background-color: #0b68a9;
+    background-color: #b4c1cb;
 }
 #div2 i{
     display: inline-block;

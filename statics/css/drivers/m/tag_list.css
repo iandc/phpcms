@@ -1,0 +1,41 @@
+.mains{
+  padding: 60px 0 25px;
+  background: #fff;
+  border-bottom: 1px solid #cddd;
+}
+.main2{
+  padding: 0 10px;
+}
+.crumbs{
+  font-size: 16px;
+  font-weight: 600;
+}
+.list li{
+  margin: 15px 0;
+}
+.list li a{
+  font-size: 16px;
+}
+.rt{
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.title-2{
+  font-size: 16px;
+  font-weight: 600;
+}
+ol.content li{
+  padding: 5px 0;
+}
+ol.content li a{
+  font-size: 16px;
+}
+ol.content li span{
+  font-size: 22px;
+  margin-right: 5px;
+}
+
+ol.list {
+    margin-left: 10px;
+}

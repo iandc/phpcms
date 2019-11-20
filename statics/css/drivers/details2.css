@@ -40,7 +40,7 @@
 }
 .con_three .con_three_l .post_tit .pt_info{
     display: inline-block;
-    padding: 5px 5px 15px 5px;
+    padding: 10px 5px;
     color: #888;
 }
 .con_three .con_three_l .post_tit .pt_info a{
@@ -149,7 +149,12 @@
 .post_con span,.post_con p{
     line-height: 28px;
     padding: 8px 0;
+    margin-bottom: 0 !important;
 }
 .post_con p span{
     line-height: 28px;
+}
+
+.con_three_l ul li{
+    clear: both;
 }

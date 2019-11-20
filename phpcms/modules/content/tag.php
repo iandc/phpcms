@@ -53,7 +53,11 @@ class tag {
 		}
 
 		$SEO = seo($siteid, '', $tag);
-		include template('content','tag_list');
+        if (isMobile()) {
+            include template('m', 'tag_list');
+        } else {
+            include template('content', 'tag_list');
+        }
 	}
 }
 ?>
