@@ -65,6 +65,7 @@ foreach($search_model as $v) {
                         课程分类<i></i>
                         </span>
                         <ul class="xl">
+                            <li><a href="{$eduurl}/course/1">全部</a></li>
                             {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="3600"}
                             <!-- {php echo $courseid;} -->
                                 {loop $data $value}
@@ -119,5 +120,4 @@ foreach($search_model as $v) {
             }
           })
         })
-    </script>
-
+    </script>  

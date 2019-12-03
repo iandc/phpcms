@@ -53,10 +53,28 @@ class dev
                     break;
                 }
             }
+            if(empty($typeid)) {
+                do {
+                    $siteid++;
+                    $typeList = getcache('type_content_'.$siteid, 'commons');
+                    foreach ($typeList as $value) {
+                        if($value['description'] == $_GET['typeid']) {
+                            $typeid = $value['typeid'];
+                            break;
+                        }
+                    }
+                    if($typeid > 0) break;
+                } while($typeid > 0 && $siteid < 10);
+            }
         } else {
             $typeid = 0;
         }
-        $catid = getNewsModelItemId();
+        if($siteid==1) {
+            $catid = getNewsModelItemId($siteid);
+        } else if($siteid==2) {
+            $catid = getCourseModelItemId($siteid);
+        }
+
         $_priv_data = $this->_category_priv($catid);
         if ($_priv_data == '-1') {
             $forward = urlencode(get_url());
@@ -75,6 +93,8 @@ class dev
         if (!isset($CATEGORYS[$catid])) showmessage(L('category_not_exists'), 'blank');
         $CAT = $CATEGORYS[$catid];
         $siteid = $GLOBALS['siteid'] = $CAT['siteid'];
+
+        //echo "<pre>";print_r($CATEGORYS);exit;
 
         extract($CAT);
         $setting = string2array($setting);

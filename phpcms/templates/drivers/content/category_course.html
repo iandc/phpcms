@@ -75,7 +75,7 @@
                     <!-- 热门课程 -->
                     <div class="conts">
                         <h3 class="titles"><i>↓</i><span>热门课程</span> 
-                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                            <a href="{APP_PATH}course/1" target="_blank" class="more">更多 ></a>
                         </h3>
                         <div class="newest_curriculum mb10 clearfix">
                             <div class="nc_r" id="dll">
@@ -127,7 +127,7 @@
                     <!-- 最新课程 -->
                     <div class="conts">
                         <h3 class="titles"><i>↓</i><span>最新课程</span> 
-                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                            <a href="{APP_PATH}course/1" target="_blank" class="more">更多 ></a>
                         </h3>
                         <div class="newest_curriculum mb10 clearfix">
                             <!-- </div> -->
@@ -171,7 +171,7 @@
                     <!-- 收费课程 -->
                     <div class="newest_curriculum mb10 clearfix" style="margin-top: 10px;">
                         <h3 class="titles"><i>↓</i><span>收费课程</span> 
-                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                            <a href="{APP_PATH}course/1" target="_blank" class="more">更多 ></a>
                         </h3>
                         <div class="nc_r">
                             {php $courseWhere = "present_price>0";}
@@ -213,7 +213,7 @@
                     <!-- 免费课程 -->
                     <div class="newest_curriculum mb10 clearfix" style="margin-top: 10px;">
                         <h3 class="titles"><i>↓</i><span>免费公开课</span> 
-                            <!-- <a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=162" class="more">更多 ></a> -->
+                            <a href="{APP_PATH}course/1" target="_blank" class="more">更多 ></a>
                         </h3>
                         <div class="nc_r">
                             {php $courseWhere = "present_price=0";}
@@ -390,6 +390,7 @@
     function() {
         $('#toright,#toleft').show()
         clearInterval(t);
+        clearInterval(t)
 
     },
     ///////鼠标移开
@@ -413,7 +414,6 @@
         }
     })
 </script>
-
 
 </body>
 </html>

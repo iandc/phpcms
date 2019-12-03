@@ -40,9 +40,15 @@ if(in_array($_GET['sort'], ['hot', 'price', 'time'])) {
 
 $sortBy = $sort . ' ' . $by;
 
-//echo "<pre>";print_r($typeList);
+//echo "<pre>";print_r($courseType);exit;
 
 ?>
+
+{if $typeid == $typeidList['course']}
+    {php $typeName = 'course';}
+{else}
+    {php $typeName = 'other';}
+{/if}
 
 <section>
     <div class="list_course w100 clearfix">
@@ -51,22 +57,22 @@ $sortBy = $sort . ' ' . $by;
                 <h4>
                     <a href="{$newsurl}" class="bz"></a>
                     <a href="{$eduurl}">课程首页 &nbsp;&nbsp;> &nbsp;</a>
-                    <a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}">{$catname}</a>
+                    <a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}">列表</a>
                 </h4>
             </div>
             <div class="lcL fl">
                 <dl>
-                    <dt class="lcL_all {if empty($typeid)}jc{/if}"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}">全部</a></dt>
+                    <dt class="lcL_all {if empty($typeid)}jc{/if}"><a href="{$eduurl}/{$typeName}/1">课程分类</a></dt>
                     {loop $courseType $tid}
                         <dd>
-                            <a {if $typeid == $typeList[$tid]['typeid']} class="jc"{/if} href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&typeid={$typeList[$tid]['typeid']}">{$typeList[$tid]['name']}</a>
+                            <a {if $typeid == $typeList[$tid]['typeid']} class="jc"{/if} href="{$eduurl}/{$typeList[$tid]['description']}/1">{$typeList[$tid]['name']}</a>
                         </dd>
                     {/loop}
                 </dl>
             </div>
             <div class="lcR fr">
                 <div class="course_list">
-                    <div class="course_list_name">
+                    <div class="course_list_name" style="display: none;">
                         <h3>
                             <span class="rank_course fr" style="display: inline-block;">
                                 <div class="divw">
@@ -115,9 +121,9 @@ $sortBy = $sort . ' ' . $by;
                             {/if}
                         {else}
                             {if $typeid}
-                                {pc:get sql="SELECT * FROM phpcms_news where typeid='$typeid' ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                                {pc:get sql="SELECT * FROM phpcms_course where typeid='$typeid' ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
                             {else}
-                                {pc:get sql="SELECT * FROM phpcms_news ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                                {pc:get sql="SELECT * FROM phpcms_course ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
                             {/if}
                         {/if}
                         {php $i = 0;}

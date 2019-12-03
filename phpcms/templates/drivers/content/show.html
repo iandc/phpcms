@@ -41,7 +41,7 @@
                         
                         <ul class="list_3 fl clearfix w100">
                             <li class="fl">上一篇：<a href="{$previous_page['url']}">{str_cut($previous_page['title'], 55, '')}</a></li>
-                            <li style="float: right !important;">下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 55, '')}</a></li>
+                            <li>下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 55, '')}</a></li>
                         </ul>
                     </div>
                     {pc:content action="relation" relation="$relation" catid="$catid" id="$id" keywords="$rs['keywords']" num="4" cache="3600"}

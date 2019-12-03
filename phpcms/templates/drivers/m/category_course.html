@@ -55,6 +55,7 @@ $sortBy = $sort . ' ' . $by;
 
 ?>
 
+
 <body style="-webkit-overflow-scrolling: touch;">
     <header class="hd">
         <div class="header">
@@ -62,7 +63,15 @@ $sortBy = $sort . ' ' . $by;
                 <div><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></div>
             </div>
             <div class="login fr">
-                <span></span>
+                {if $_username}  
+                <span class="fr" style="line-height: 35px;">{getNickName()}</span>
+                {else}
+                    <ul class="top_icon fr">
+                        <li>
+                            <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
+                        </li>
+                    </ul>
+                {/if}
             </div>
             <div class="search fr">
                 <div class="hd_c_list" id="search">
@@ -73,7 +82,7 @@ $sortBy = $sort . ' ' . $by;
                             <input type="hidden" name="a" value="init"/>
                             <input type="hidden" name="typeid" value="{$searchtypeid}" id="typeid"/>
                             <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
-                            <input type="text" class="text inp1 fr" placeholder="搜索课程" name="q" id="q"/>
+                            <input type="text" class="text inp1 fl" placeholder="搜索课程" name="q" id="q"/>
                             <button type="submit" class="inp2">
                                 <img src="../../../../statics/images/drivers/search.png" alt="">
                             </button>
@@ -123,7 +132,7 @@ $sortBy = $sort . ' ' . $by;
     
     <div class="banner">
         <section class="carousel">
-            <div class="swiper-container">
+            <div class="swiper-container" style="height: 210px;">
                 <div class="swiper-wrapper">
                     {pc:content action="position" posid="$posidList['course_jdt']" order="listorder DESC" num="4" cache="3600"}
                             {loop $data $value}
@@ -150,7 +159,7 @@ $sortBy = $sort . ' ' . $by;
                     <div class="con fr">
                         <p class="tit"><a href="{replaceUrl4course($value['url'])}">{$value['title']}</a></p>
                         <div class="keshi">
-                            <span>共{$value['class_hour']}课时</span>
+                            <!-- <span>共{$value['class_hour']}课时</span> -->
                             <span>{$value['user_num']}人学习</span>
                         </div>
                         <div class="price">
