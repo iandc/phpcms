@@ -29,13 +29,13 @@ a{text-decoration: none; color: #333;}
     margin-top: 2px;
 }
 .header .search{
-    width: 58%;
+    width: 55%;
     height: 100%;
     /*background-color: blue;*/
     position: relative;
 }
 .header .search .inp1{
-    width: 85%;
+    width: 80%;
     height: 36px;
     font-size: 16px;
     padding: 0 10px;
@@ -47,7 +47,7 @@ a{text-decoration: none; color: #333;}
     width: 20px;
     height: 20px;
     position: absolute;
-    right: 15px;
+    right: 30px;
     top: 15px;
     border: none;
     background: #fff;
@@ -60,12 +60,13 @@ a{text-decoration: none; color: #333;}
     width: 12%;
     height: 100%;
 }
-.header .login span{
+.header .login ul li a{
     display: inline-block;
     width: 40px;
     height: 40px;
     background: url(../../../images/drivers/ico.png) no-repeat 0 0; 
-    background-position: 10px 12px;
+    background-size: 150px 60px;
+    background-position: 9px 10px;
 }
 
 .class{

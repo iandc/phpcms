@@ -54,6 +54,7 @@
 
 .show_content .cont img{
     width: 100% !important;
+    height: auto !important;
     margin-top: 10px !important;
 }
 .list_3{
