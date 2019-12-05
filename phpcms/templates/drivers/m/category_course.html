@@ -120,9 +120,9 @@ $sortBy = $sort . ' ' . $by;
                     </dd>  -->
                     <dd class="wage1 clearfix"> 
                         <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
-                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}" class="{$active['time']}">畅销</a></li>
-                            <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot&by={$byStr}" class="{$active['hot']}">好评</a></li>
-                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}" class="{$active['price']}">最新</a></li>
+                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot&by=desc" class="{$active['hot']}">畅销</a></li>
+                            <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by=desc" class="{$active['price']}">好评</a></li>
+                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by=desc" class="{$active['time']}">最新</a></li>
                         </ul> 
                     </dd>  
                 </dl> 
@@ -150,7 +150,20 @@ $sortBy = $sort . ' ' . $by;
         <div class="cl_con">
             <ul>
                 {php $courseWhere = 'typeid='.$typeidList['course'];}
-                {pc:content action="lists" catid="$courseid" order="id DESC" num="20" cache="3600" moreinfo="1"}
+                {if $catid}
+                    {if $typeid}
+                        {pc:content action="lists" catid="$catid" where="$courseWhere" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {else}
+                        {pc:content action="lists" catid="$catid" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {/if}
+                {else}
+                    {if $typeid}
+                        {pc:get sql="SELECT * FROM phpcms_course where typeid='$typeid' ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {else}
+                        {pc:get sql="SELECT * FROM phpcms_course ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {/if}
+                {/if}
+                {php $i = 0;}
                 {loop $data $value}
                 <li>
                     <div class="img fl">

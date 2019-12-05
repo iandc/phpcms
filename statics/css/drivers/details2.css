@@ -57,6 +57,15 @@
 .con_three .con_three_l .post_con img{
     width: 100%;
 }
+.con_three .con_three_l .post_con ul {
+    /*margin: 15px 0;*/
+    overflow: hidden;
+}
+.con_three .con_three_l .post_con ul li{
+    clear: both;
+    list-style-type: disc;
+    margin-left: 20px !important;
+}
 .con_three .con_three_l .relevant{
     padding-top: 15px;
 }
