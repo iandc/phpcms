@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
-    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
-    <link rel="stylesheet" href="{CSS_PATH}drivers/m/course.css">
-    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js"></script>
-</head>
+{template "m", "header_course"}
 {template "content", "config"}
 
 <?php
@@ -55,15 +45,23 @@ $sortBy = $sort . ' ' . $by;
 
 ?>
 
-
+<?php
+$search_model = getcache('search_model_'.$siteid, 'search');
+foreach($search_model as $v) {
+    if(strpos($v['name'], '课程') !== false) {
+        $searchtypeid = $v['typeid'];
+        break;
+    }
+}
+?>
 <body style="-webkit-overflow-scrolling: touch;">
     <header class="hd">
         <div class="header">
             <div class="logo fl">
-                <div><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></div>
+                <div><a href="{$eduurl}"><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></a></div>
             </div>
             <div class="login fr">
-                {if $_username}  
+                {if $username}  
                 <span class="fr" style="line-height: 35px;">{getNickName()}</span>
                 {else}
                     <ul class="top_icon fr">
@@ -148,13 +146,13 @@ $sortBy = $sort . ' ' . $by;
     </div>
     <div class="content_list clearfix">
         <div class="cl_con">
-            <ul>
+            <ul class="clearfix">
                 {php $courseWhere = 'typeid='.$typeidList['course'];}
                 {if $catid}
                     {if $typeid}
                         {pc:content action="lists" catid="$catid" where="$courseWhere" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
                     {else}
-                        {pc:content action="lists" catid="$catid" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                        {pc:content action="lists" catid="$catid" order="$sortBy" page="$page" num="10" cache="3600" moreinfo="1"}
                     {/if}
                 {else}
                     {if $typeid}
@@ -184,9 +182,15 @@ $sortBy = $sort . ' ' . $by;
                     </div>
                 </li>
                 {/loop}
+                    <!-- <div class="page_nav">
+                        <div class="more">
+                            <div id="pages" class="text_c">{$pages}</div>
+                        </div>
+                    </div> -->
                 {/pc}
             </ul>
         </div>
+            <div class="gd clearfix"><a href="{$eduurl}/course/1">更多>></a></div>
     </div>
 
     <!-- <footer>

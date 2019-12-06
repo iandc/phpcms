@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
-    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
-    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
-    <link rel="stylesheet" href="{CSS_PATH}drivers/m/course.css">
-    <link rel="stylesheet" href="{CSS_PATH}drivers/m/list_course.css">
-    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
-</head>
+
+{template "m", "header_course"}
 {template "content", "config"}
 
 <?php
@@ -50,17 +41,23 @@ if(in_array($_GET['sort'], ['hot', 'price', 'time'])) {
 }
 
 $sortBy = $sort . ' ' . $by;
-
-//echo "<pre>";print_r($typeList);
+  
+//echo "<pre>";print_r($courseType);exit;
 
 ?>
 
+{if $typeid == $typeidList['course']}
+    {php $typeName = 'course';}
+{else}
+    {php $typeName = 'other';}
+{/if}
 
+<link rel="stylesheet" href="{CSS_PATH}drivers/m/list_course.css">
 <body style="-webkit-overflow-scrolling: touch;">
     <header class="hd">
         <div class="header">
             <div class="logo fl">
-                <div><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></div>
+                <div><a href="{$eduurl}"><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></a></div>
             </div>
             <div class="search fl">
                 <div class="hd_c_list" id="search">
@@ -80,7 +77,15 @@ $sortBy = $sort . ' ' . $by;
                 </div>
             </div>
             <div class="login fr">
-                <span></span>
+                {if $username}  
+                <span class="fr" style="line-height: 35px;">{getNickName()}</span>
+                {else}
+                    <ul class="top_icon fr">
+                        <li>
+                            <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
+                        </li>
+                    </ul>
+                {/if}
             </div>
         </div>
 
@@ -123,7 +128,30 @@ $sortBy = $sort . ' ' . $by;
     </header>
     
     <div class="banner">
-        <a href=""><img src="http://t.elecfans.com/Public/mobile/img/temp/1.jpg" alt=""></a>
+        <section class="carousel">
+            <div class="swiper-container" style="height: 210px;">
+                <div class="swiper-wrapper">
+                    {pc:content action="position" posid="$posidList['course_jdt']" order="listorder DESC" num="4" cache="3600"}
+                            {loop $data $value}
+                    <div class="swiper-slide">
+                        <a href="{$value['url']}"><img src="{$value['thumb']}" alt=""></a>
+                    </div>
+                    {/loop}
+                    {/pc}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    </div>
+    <div class="lcL fl">
+        <!-- <dl>
+            <dt class="lcL_all {if empty($typeid)}jc{/if}"><a href="{$eduurl}/{$typeName}/1">课程分类</a></dt>
+            {loop $courseType $tid}
+                <dd>
+                    <a {if $typeid == $typeList[$tid]['typeid']} class="jc"{/if} href="{$eduurl}/{$typeList[$tid]['description']}/1">{$typeList[$tid]['name']}</a>
+                </dd>
+            {/loop}
+        </dl> -->
     </div>
     <div class="content_list clearfix">
         <div class="cl_con">
@@ -137,9 +165,9 @@ $sortBy = $sort . ' ' . $by;
                     {/if}
                 {else}
                     {if $typeid}
-                        {pc:get sql="SELECT * FROM phpcms_news where typeid='$typeid' ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                        {pc:get sql="SELECT * FROM phpcms_course where typeid='$typeid' ORDER BY $sortBy" page="$page" num="16" cache="3600" moreinfo="1"}
                     {else}
-                        {pc:get sql="SELECT * FROM phpcms_news ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                        {pc:get sql="SELECT * FROM phpcms_course ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
                     {/if}
                 {/if}
                 {php $i = 0;}
@@ -166,11 +194,11 @@ $sortBy = $sort . ' ' . $by;
                 {/loop}
                 {/pc}
             </ul>
-                    <div class="page_nav">
-                        <div class="more">
-                            <div id="pages" class="text_c">{$pages}</div>
-                        </div>
-                    </div>
+            <div class="page_nav">
+                <div class="more">
+                    <div id="pages" class="text_c">{$pages}</div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -216,6 +244,24 @@ $sortBy = $sort . ' ' . $by;
             $(".wage1 ul li a:contains('"+$('#wage1').text()+"')").addClass('selected');
         });
     </script>
+
+    <script>
+    var mySwiper = new Swiper('.swiper-container',{
+        autoplay:{
+            disableOnInteraction:false,
+            delay:3000,
+        },
+        loop:true,
+        pagination:{
+            el:'.swiper-pagination',
+            clickable :true,
+        },
+        // navigation:{
+        //     nextEl:'.swiper-button-next',
+        //     prevEl:'.swiper-button-prev',
+        // },
+    });
+</script>
 
 </body>
 </html>
