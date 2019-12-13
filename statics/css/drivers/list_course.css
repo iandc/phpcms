@@ -92,7 +92,7 @@ input{
     margin-bottom: 0;
 }
 .list_course .lcR .course_list .show_list li .show_list_img{
-    width: 28%;
+    width: 25%;
 }
 .list_course .lcR .course_list .show_list li .show_list_img img{
     width: 100%;
@@ -107,7 +107,7 @@ input{
 }
 .list_course .lcR .course_list .show_list li .show_list_main h6{
     font-size: 12px;
-    margin: 15px 0 13px;
+    margin: 5px 0 3px;
 }
 .list_course .lcR .course_list .show_list li .show_list_main h6 span a{
     margin: 0 5px 0 0;
@@ -128,7 +128,6 @@ input{
 .list_course .lcR .course_list .show_list li .show_list_main .time{
     color: #767676;
     font-size: 12px;
-    margin-top: 7px;
 }
 .list_course .lcR .course_list .show_list li .show_list_main .time span{
     padding-right: 20px;

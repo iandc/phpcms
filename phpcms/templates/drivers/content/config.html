@@ -85,11 +85,19 @@ $activityid = getActivityModelItemId(1);
 $mySite = siteinfo(1);
 
 if(strpos($newsurl, 'wang') !== false) {
-    $recordNumber = '京ICP备15035084号  京公网安备：11010502037710';
+    $recordNumber = '京ICP备15035084号';
 } else if(strpos($newsurl, 'cn') !== false) {
-    $recordNumber = '京ICP备10050787号  京公网安备：11010502037710';
+    $recordNumber = '京ICP备10050787号';
 } else {
     $recordNumber = '';
+}
+
+if(strpos($newsurl, 'wang') !== false) {
+    $recordNumber1 = '京公网安备：11010502037710';
+} else if(strpos($newsurl, 'cn') !== false) {
+    $recordNumber1 = '京公网安备：11010502037710';
+} else {
+    $recordNumber1 = '';
 }
 
 ?>
