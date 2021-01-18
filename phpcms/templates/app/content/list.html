@@ -1,0 +1,146 @@
+{template 'content', 'header'}
+
+{if $typeid == $typeidList['news']}
+    {php $typeName = 'news';}
+{else}
+    {php $typeName = 'tech';}
+{/if}
+
+<div class="wrap w100">
+    <div class="w1100 content bg_fff list_right">
+        {template 'content', 'nav'}
+        <div class="whole">
+            <ul>
+                <li class="{if $catid == 0}current{/if}"><a href="{APP_PATH}{$typeName}/1">全部</a></li>
+                {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="0"}
+                <!-- {php print_r($data);} -->
+                    {loop $data $value}
+                        <li {if $catid == $value['catid']}class="current"{/if}>
+                            <a href="{APP_PATH}{$value['catdir']}/{$typeName}">{$value['catname']}</a>
+                        </li>
+                    {/loop}
+                {/pc}
+            </ul>
+        </div>
+        <div class="content_min clearfix bg_fff">
+            <div class="cm_four clearfix bg_fff">
+                <div class="cm_four_l fl">
+                    <div class="cate_list">
+                        
+                        {show_ad(1, 35)}
+                        
+                        <ul class="clearfix">
+                            {if $catid}
+                                {if $typeid}
+                                    {php $where = "catid='$catid' AND typeid='$typeid'";}
+                                    {pc:content action="lists" catid="$catid" where="$where" order="id DESC" page="$page" num="8" cache="3600"}
+                                {else}
+                                    {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="8" cache="3600"}
+                                {/if}
+                            {else}
+                                {if $typeid}
+                                    {pc:get sql="SELECT * FROM phpcms_news where typeid='$typeid' ORDER BY id DESC" page="$page" num="8" cache="3600"}
+                                {else}
+                                    {pc:get sql="SELECT * FROM phpcms_news ORDER BY id DESC" page="$page" num="8" cache="3600"}
+                                {/if}
+                            {/if}
+                            {php $i = 0; $total=count($data);}
+                            {loop $data $value}
+                            <li style="{if $i >= $total-1}border-bottom: 0;{/if}">
+                                <div class="block">
+                                    <div>
+                                        {if $value['thumb'] == ""}
+                                        <div class="box_txt">
+
+                                            <h2 class="clearfix">
+                                                <a href="{$value['url']}" {title_style($value['style'])} class="fl" target="_blank">{str_cut($value['title'],
+                                                75, '')}</a>
+                                                {if $catid}
+                                                    <span class="time fr">
+                                                        {date('Y-m-d', $value['inputtime'])}
+                                                    </span>
+                                                    <span class="time_img fr"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
+                                                {/if}
+                                            </h2>
+
+                                            <div class="txt">
+                                                <p class="p11">{str_cut($value['description'], 2000,'')}</p>
+                                            </div>
+                                            <div class="date">
+                                                {if !$catid}
+                                                    <span class="lb fl">
+                                                        类 别：<a href="" target="_blank">{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                                    </span>
+                                                    <span class="time_img fl"><img style="margin-top: 2px;" src="../../../../statics/images/drivers/time.png" alt=""></span>
+                                                    <span class="time fl">
+                                                        {date('Y-m-d', $value['inputtime'])}
+                                                    </span>
+                                                {/if}
+                                            </div>
+                                        </div>
+                                        {else}
+                                        <div>
+                                            <a href="{$value['url']}" class="img fl" target="_blank">
+                                                {if !$catid}
+                                                    <img src="{$value['thumb']}">
+                                                {else}
+                                                <img src="{$value['thumb']}" style="width: 130px; height: 95px;">
+                                                {/if}
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="box_txt">
+                                            <h2>
+                                                <a href="{$value['url']}" {title_style($value['style'])} target="_blank">{str_cut($value['title'],
+                                                75, '')}</a>
+                                                {if $catid}
+                                                    <span class="time fr">
+                                                        {date('Y-m-d', $value['inputtime'])}
+                                                    </span>
+                                                    <span class="time_img fr"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
+                                                {/if}
+                                            </h2>
+                                            <div class="txt">
+                                                <p class="p11">{str_cut($value['description'], 2000,'')}</p>
+                                                <div class="date clearfix">
+                                                    {if !$catid}
+                                                        <span class="lb fl">
+                                                            类 别：<a href="" target="_blank">{getCatNameByCatId($value['catid'], $siteid)}</a>
+                                                        </span>
+                                                        <div style="margin-top: 3px;">
+                                                            <span class="time_img fl"><img style="margin-top:2px;" src="../../../../statics/images/drivers/time.png" alt=""></span>
+                                                            <span class="time fl">
+                                                                {date('Y-m-d', $value['inputtime'])}
+                                                            </span>
+                                                        </div>
+                                                        
+                                                    {/if}
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {/if}
+                                    </div>
+                                </div>
+                            </li>
+                            {php $i++;}
+                            {/loop}
+                            <div class="page_nav">
+                                <div class="more">
+                                    <div id="pages" class="text_c">{$pages}</div>
+                                </div>
+                            </div>
+                            {/pc}
+                        </ul>
+                    </div>
+                </div>
+                {template 'content', 'right'}
+            </div>
+        </div>
+    </div>
+    {template 'content', 'footer'}
+</div>
+{show_ad(1, 33)}
+{show_ad(1, 38)}
+
+</body>
+</html>

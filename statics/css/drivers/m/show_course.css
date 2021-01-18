@@ -19,15 +19,43 @@ a{text-decoration: none; color: #333;}
     /*background-color: pink;*/
     border-bottom: 1px solid #cdcdcd;
 }
-.header .logo1{
-    width: 30%;
+.header .logo{
+    width: 28%;
     height: 100%;
-    /*background-color: red;*/
 }
-.header .logo1 img{
+.header .logo img{
+    width: 105px;
+    height: auto;
+    margin-top: 4px;
+}
+.header .search{
+    width: 57%;
+    height: 100%;
+    /*background-color: blue;*/
+    position: relative;
+}
+.header .search .inp1{
+    width: 92%;
+    height: 36px;
+    font-size: 16px;
+    padding: 0 10px;
+    margin-top: 6px;
+    margin-left: 25px;
+    border: 1px solid #dfdfdf;
+}
+.header .search .inp2{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: -20px;
+    top: 15px;
+    border: none;
+    background: #fff;
+}
+.header .search .inp2 img{
     width: 100%;
     height: 100%;
-    margin-top: 2px;
 }
 .header .login{
     width: 15%;
@@ -48,7 +76,6 @@ a{text-decoration: none; color: #333;}
 .content{
     width: 100%;
     padding-top: 50px;
-    overflow: hidden;
 }
 .content .img img{
     width: 100%;
@@ -98,12 +125,13 @@ a{text-decoration: none; color: #333;}
     margin-top: 10px;
     color: #666;
 }
-.content .con img{
-    width: 100% !important;
-}
 
 .content .con{
     padding: 15px 10px;
+}
+.content .con img{
+    width: 100% !important;
+    height: auto !important;
 }
 .content .con p{
     line-height: 30px;
@@ -112,32 +140,7 @@ a{text-decoration: none; color: #333;}
     font-size: 13px;
 }
 
-.content .lecturer{
-    padding: 15px 10px;
-}
-.content .lecturer h3,.courses h3,.con h3{
-    font-weight: normal;
-    margin-bottom: 15px;
-}
-.content .lecturer .lecturer_con .img{
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-}
-.content .lecturer .lecturer_con .img img{
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-}
-.content .lecturer .lecturer_con .name p{
-    font-size: 13px;
-    line-height: 20px;
-}
-.content .lecturer .introduce{
-    line-height: 22px;
-    margin-top: 10px;
-    font-size: 13px;
-}
+
 .content .courses{
     padding: 15px 10px;
     padding-bottom: 35px;
@@ -201,17 +204,21 @@ a{text-decoration: none; color: #333;}
     background-size: 73px 25px;
 }
 .footer .pic{
-    font-size: 24px;
+    font-size: 20px;
     line-height: 45px;
-    color: #0b68a9;
+    color: red;
 }
 .footer .gm{
-    width: 130px;
+    width: 100px;
     height: 100%;
     background-color: #0b68a9;
     text-align: center;
     line-height: 45px;
     color: #fff;
+}
+.footer .mfsk{
+    background-color: #fff;
+    color: #000;
 }
 
 .price .small,.price1 .small{

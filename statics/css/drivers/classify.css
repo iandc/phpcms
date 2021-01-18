@@ -1,0 +1,119 @@
+*{margin:0; padding: 0;}
+        a{text-decoration: none; color: #333;}
+        ul li,ol li{list-style: none; float: left;}
+        em, strong, cite, th { font-style: normal; font-weight: 400; }
+        h1, h2, h3, h4, h5, h6, th { font-size: 100%; font-weight: normal; }
+        .fl{float: left;}
+        .fr{float: right;}
+        .clearfix{clear: both; content: ""; display: block; overflow: hidden;}
+        .w{width: 100%;}
+        .w1100{width: 1206px; margin: 0 auto;}
+
+        .cs_bg,.cs_bg2{
+            width: 100%;
+            margin-left: 0;
+        }
+
+        .classify_con{
+            height: auto;
+            background-color: #fafafa;
+        }
+        .classify_con .classify_con_tit{
+            padding: 15px 20px;
+        }
+        .classify_con .classify_con_tit h3{
+            font-size: 45px;
+            font-weight: 600;
+            color: #333;
+            margin-top: 30px;
+        }
+        .classify_con .classify_con_tit .classify_con_tit_fl{
+            width: 60%;
+        }
+        .classify_con .classify_con_tit .classify_con_tit_fl p{
+            line-height: 30px;
+            margin-top: 20px;
+            color: #666;
+        }
+        .classify_con .classify_con_tit .classify_con_tit_fr img{
+            width: 350px;
+            height: 220px;
+        }
+        /*.classify_con .classify_con_tit .classify_con_tit_fr{
+            width: 36%;
+            height: 240px;
+            background: url(../../../../statics/images/drivers/bg1.png) no-repeat;
+            -webkit-background-size: 400px;
+            background-size: 450px;
+        }*/
+        /*.classify_con .classify_con_tit .classify_con_tit_fr{
+            width: 36%;
+            height: 240px;
+            background: url(../../../../statics/images/drivers/bg2.png) no-repeat;
+            -webkit-background-size: 400px 260px;
+            background-size: 400px 260px;
+        }*/
+        
+        .classify_content .classify_con_list{
+            padding: 20px 10px;
+            /*border-top: 20px solid #fff;*/
+            background: #fafafa;
+
+        }
+        .classify_content .classify_con_list ul li{
+            margin: 0 34px 30px 0;
+            width: 270px;
+            height: auto;
+            /* background: #FFF; */
+            overflow: hidden;
+            /* box-shadow: 5px 6px 6px #cdcdcd; */
+            padding-bottom: 10px;
+        }
+        .classify_content .classify_con_list ul li:nth-child(4),.classify_content .classify_con_list ul li:nth-child(8),.classify_content .classify_con_list ul li:nth-child(12),.classify_content .classify_con_list ul li:nth-child(16){
+            margin-right: 0;
+        }
+        .classify_content .classify_con_list ul li .classify_con_list_img{
+            height: 150px;
+        }
+        .classify_content .classify_con_list ul li .classify_con_list_img a img{
+                width: 100%;
+                height: 100%;
+                transition: all 0.4s;
+        }
+        .classify_content .classify_con_list ul li .txt1{
+            padding-left: 5px;
+            margin: 10px 0 5px;
+            /* text-align: center; */
+            font-size: 14px;
+            font-weight: 600;
+            height: 20px;
+        }
+        .classify_content .classify_con_list ul li .txt1 a{
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            color: #666;
+        }
+        .classify_content .classify_con_list ul li .zy{
+            height: 35px;
+            font-size: 12px;
+            padding: 0 5px 5px;
+            line-height: 20px;
+        }
+        .classify_content .classify_con_list ul li .zy span{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        .classify_content .classify_con_list ul li .userNum span{
+            font-size: 13px;
+            line-height: 28px;
+            font-weight: 600;
+        }
+        .classify_content .classify_con_list ul li .userNum small{
+            color: red;
+            font-size: 14px;
+        }

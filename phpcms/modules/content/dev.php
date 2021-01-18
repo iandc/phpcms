@@ -138,6 +138,11 @@ class dev
         $GLOBALS['URL_ARRAY']['catid'] = $catid;
         $GLOBALS['URL_ARRAY']['typeid'] = $typeid;
         $catid = 0;
+
+        if(isset($_GET['from'])) {
+            include template(trim($_GET['from']), $template);
+        }
+
         if (isMobile()) {
             include template('m', $template);
         } else {

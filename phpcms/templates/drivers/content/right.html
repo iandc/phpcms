@@ -8,7 +8,7 @@
         <div class="" style="height: 500px; background: #fff;">
             <div class="cm_four_r fr">
                 <div class="tabs" id="tab">
-                   <ul class="tab">
+                    <ul class="tab">
                         <li class="tab-item active fl">最新资讯</li>
                         <li class="tab-item fr">最热资讯</li>
                     </ul>
@@ -29,7 +29,7 @@
                         <div class="main">
                             <span class="a list">
                                 <ul>
-                                    {pc:content action="lists" catid="$newCatid" where="`status`=99" order="updatetime DESC" num="20" cache="3600"}
+                                    {pc:content action="lists" catid="$newCatid" where="`status`=99" order="updatetime DESC" num="23" cache="3600"}
                                         {php $i=0;}
                                         {loop $data $key $value}
                                         {if $i > 10}

@@ -1,6 +1,21 @@
 {template "content","header"}
+<style>
+  .as a{
+    display: inline-block;
+    margin: 3px 10px;
+    width: 100px;
+  }
+</style>
+<div class="w100">
+  <div class="w1100 as">
+    {loop $infos $info}
+      {if !empty($info['keyword'])}
+      <a href="{APP_PATH}tags/{urlencode($info['keyword'])}">{$info['keyword']}</a>
+      {/if}
+    {/loop}
+  </div>
+  <div id="pages" class="text-c">{$pages}</div>
 
-{loop $infos $info}
-	<a href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($info['keyword'])}">{$info['keyword']}</a>({$info['videonum']}) 
-{/loop}
+</div>
+
 {template 'content', 'footer'}

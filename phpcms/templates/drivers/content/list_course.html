@@ -12,7 +12,7 @@ if($_GET['sort'] == 'hot') {
 } else if($_GET['sort'] == 'time') {
     $sort = 'id';
 } else {
-    $sort = 'id';
+    $sort = 'user_num';
 }
 
 if($_GET['by'] == 'desc') {
@@ -62,12 +62,19 @@ $sortBy = $sort . ' ' . $by;
             </div>
             <div class="lcL fl">
                 <dl>
-                    <dt class="lcL_all {if empty($typeid)}jc{/if}"><a href="{$eduurl}/{$typeName}/1">课程分类</a></dt>
-                    {loop $courseType $tid}
+                    <dt class="lcL_all {if empty($typeid)}jc{/if}"><a href="{$eduurl}/{$typeName}/1" style="color: rgb(47, 115, 163);">课程分类</a></dt>
+                    <!-- {loop $courseType $tid}
                         <dd>
                             <a {if $typeid == $typeList[$tid]['typeid']} class="jc"{/if} href="{$eduurl}/{$typeList[$tid]['description']}/1">{$typeList[$tid]['name']}</a>
                         </dd>
+                    {/loop} -->
+                    {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="3600"}
+                    {loop $data $value}
+                        <dd>
+                            <a class="{if $catid == $value['catid']}jc{/if}" href="{replaceUrl4course($value['url'])}">{$value['catname']}</a>
+                        </dd>
                     {/loop}
+                    {/pc}
                 </dl>
             </div>
             <div class="lcR fr">
@@ -141,13 +148,11 @@ $sortBy = $sort . ' ' . $by;
                                     {$value['description']}
                                 </p>
                                 <p class="time clearfix">
-                                        <!-- <span>课时：{$value['class_hour']}</span>
-                                        <span>讲师：{$value['teacher']}</span>
-                                        <span>时长：{$value['duration']}</span> -->
                                         <span class="jg">
-                                            价格：<small style="{if $value['price'] == 0}color: #666;{/if}">{if $value['present_price'] == 0}<span style="color: #666; font-weight: 400;">免费</span>{else}{$value['present_price']}&nbsp;元{/if}</small>   
-                                            <del style="{if $value['price'] == 0 ||  $value['present_price'] == 0}display: none;{/if}">{$value['price']}</del>
+                                            价格：<small style="{if $value['price'] == 0}color: #666;{/if} {if $value['price'] == $value['present_price']}color: #666;{/if}">{if $value['present_price'] == 0}<span style="color: #666; font-weight: 400;">免费</span>{else}{$value['present_price']}&nbsp;元{/if}</small>   
+                                            <del style="{if $value['price'] == 0 ||  $value['present_price'] == 0}display: none;{/if} {if $value['price'] == $value['present_price']}display: none;{/if}">{$value['price']}</del>
                                         </span>
+                                        <span style="font-size: 12px;">购买人数：{$value['user_num']}</span>
                                         <span class="fr">{date('Y-m-d H:i:s', $value['inputtime'])}</span>
                                 </p>
                             </div>

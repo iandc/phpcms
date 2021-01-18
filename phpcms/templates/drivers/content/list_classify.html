@@ -1,0 +1,61 @@
+{template 'content', 'header_course'}
+
+
+    <div class="w classify">
+        <div class="w1100 classify_con">
+            <div class="classify_con_tit clearfix">
+                <div class="classify_con_tit_fl fl">
+                    <h3>{$catname}</h3>
+                    <p>
+                        本课程基于讲师多年的实战经验，详细介绍了信号完整性（SI）、电源完整性（PI）较完整的知识体系，特别是最近DDRx技术领域，以及xGH高速信号领域的一些研究成果。
+                    </p>
+                </div>
+                <div class="classify_con_tit_fr fr">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="w classify_content">
+        <div class="w1100">
+            <div class="classify_con_list clearfix">
+                <ul>
+                    {pc:special action="lists" siteid="$siteid" elite="1"listorder="3"}
+                    {loop $data $value}
+                    <li>
+                        <div class="classify_con_list_img">
+                            <a href=""><img src="{$value['thumb']}" alt=""></a>
+                        </div>
+                        <div>
+                            <p class="txt1">
+                                <a href="">{$value['title']}</a>
+                            </p>
+                            <div class="zy">
+                                <span>
+                                    {$value['description']}
+                                </span>
+                            </div>
+                            <div class="userNum clearfix">
+                                <span class="fl">
+                                    <i></i>
+                                    {$value['user_num']} <span>人已购买</span> 
+                                </span>
+                                <span class="fr" style="margin-right: 10px; font-size: 14px;">
+                                    <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{/if} {if $value['price'] == $value['present_price']}color: #666;{/if}">￥{$value['present_price']}</small>
+                                                            <del style="{if $value['price'] == 0 }display:none;{/if} {if $value['price'] == $value['present_price']}display: none;{/if}" class="{if $value['present_price'] == 0}del{/if}">￥{$value['price']}</del>
+                                                            {if $value['present_price'] == 0}<span style="font-weight: bold;">免费</span>{/if}
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    {/loop}
+                    {/pc}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {template 'content', 'footer_course'}
+</body>
+</html>

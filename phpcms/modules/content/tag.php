@@ -15,11 +15,19 @@ class tag {
 	public function init() {
 
 		$page = max($_GET['page'], 1);
-		$pagesize = 20;
+		$pagesize = 240;
 		$where = '`siteid`='.$this->siteid;
 		$infos = $this->keyword_db->listinfo($where, '`searchnums` DESC, `videonum` DESC', $page, $pagesize);
 		$pages = $this->keyword_db->pages;
-		include template('content', 'tag');
+        $pages = preg_replace('/(\d+?)\?/','?', $pages); // 去掉多余的
+        $pages = preg_replace('/\?page=(\d+?)/','/$1', $pages); // 换为伪静态
+        $pages = preg_replace('/\/\/(\d+?)/','/$1', $pages); // 换为伪静态
+        //var_dump($pages);
+        if (isMobile()) {
+            include template('m', 'tag');
+        } else {
+            include template('content', 'tag');
+        }
 	}
 
 	/**
@@ -53,7 +61,7 @@ class tag {
 		}
 
 		$SEO = seo($siteid, '', $tag);
-        if (isMobile()) {
+		if (isMobile()) {
             include template('m', 'tag_list');
         } else {
             include template('content', 'tag_list');

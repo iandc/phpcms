@@ -160,7 +160,7 @@
 }
 .post_con span,.post_con p{
     line-height: 28px;
-    padding: 8px 0;
+    padding: 8px 0 !important;
     margin-bottom: 0 !important;
 }
 .post_con p span{

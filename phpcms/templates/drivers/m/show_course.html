@@ -1,12 +1,22 @@
-
-{template "m", "header_course"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
+    <title>课程 - 创芯大讲堂</title>
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/show_course.css">
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+</head>
 {template "content", "config"}
-<link rel="stylesheet" href="{CSS_PATH}drivers/m/show_course.css">
-<body style="-webkit-overflow-scrolling: touch;">
+<body>
     <header class="hd">
         <div class="header">
-            <div class="logo1 fl">
-                <div><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></div>
+            <div class="logo fl">
+                <div>
+                    <a href="/">
+                        <img src="{APP_PATH}statics/images/drivers/logo_course.png" alt="">
+                    </a>
+                </div>
             </div>
             <div class="search fl">
                 <div class="hd_c_list" id="search">
@@ -25,17 +35,9 @@
                     </div>
                 </div>
             </div>
-            <div class="login fr">
-                {if $username}  
-                <span class="fr" style="line-height: 35px;">{getNickName()}</span>
-                {else}
-                    <ul class="top_icon fr">
-                        <li>
-                            <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
-                        </li>
-                    </ul>
-                {/if}
-            </div>
+            <!-- <div class="login fr">
+                <a href="">登录</a>
+            </div> -->
         </div>
     </header>
     <div class="content">
@@ -66,22 +68,7 @@
             <h3>课程介绍</h3>
             {$content}
         </div>
-        <div class="lecturer bb10 clearfix">
-            <h3>讲师介绍</h3>
-            <div class="lecturer_con clearfix">
-                <div class="fl img">
-                    <a href=""><img src="{$avatar}" alt=""></a>
-                </div>
-                <div class="fl name">
-                    <p>{$teacher}</p>
-                    <p>工程师</p>
-                    <p>2578学员</p>
-                </div>
-            </div>
-            <div class="int">
-                <p class="introduce">{$brief_introduction}</p>
-            </div>
-        </div>
+
         <div class="courses bb10">
             <h3>其他课程</h3>
             <div class="cl_con clearfix">
@@ -109,16 +96,16 @@
                     </li>
                     {/loop}
                     {/pc}
-                    
                 </ul>
             </div>
         </div>
     </div>
     <footer>
         <div class="footer">
-            <span class="sc fl"></span>    
-            <span class="pic fl">￥{$present_price}</span> 
-            <a href="javascript:;" class="gm fr">立即购买</a>
+            <span class="sc fl"></span>
+            <span class="pic fl">￥{$present_price}</span>
+            <a href="{$wy_link}" class="gm fr mfsk">免费试看</a>
+            <a href="{$wy_link}" class="gm fr">立即购买</a>
         </div>
     </footer>
 </body>

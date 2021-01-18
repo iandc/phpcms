@@ -1,0 +1,112 @@
+
+{template "content", "config"}
+
+<?php
+$courseType = array_filter(explode(',', $CAT['usable_type']));
+
+$typeList = getcache('type_content_'.$siteid, 'commons');
+
+if($_GET['sort'] == 'hot') {
+    $sort = 'user_num';
+} else if($_GET['sort'] == 'price') {
+    $sort = 'present_price';
+} else if($_GET['sort'] == 'time') {
+    $sort = 'id';
+} else {
+    $sort = 'id';
+}
+
+if($_GET['by'] == 'desc') {
+    $by = 'desc';
+    $byStr = 'asc';
+} else if($_GET['by'] == 'asc') {
+    $by = 'asc';
+    $byStr = 'desc';
+} else {
+    $by = 'desc';
+    $byStr = 'asc';
+}
+
+if(in_array($_GET['sort'], ['hot', 'price', 'time'])) {
+    $active[$_GET['sort']] = 'jc';
+    if(in_array($by, ['desc', 'asc'])) {
+        $active[$_GET['sort'].'_'.$by] = 'ons';
+    } else {
+        $active['time_desc'] = 'ons';
+    }
+} else {
+    $active['time'] = 'jc';
+    $active['time_desc'] = 'ons';
+}
+
+$sortBy = $sort . ' ' . $by;
+
+//echo "<pre>";print_r($typeList);
+
+?>
+
+{pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="0" moreinfo="1" return="categoryList"}
+{/pc}
+
+{pc:content action="position" posid="$posidList['index_jp']" order="listorder DESC" num="80" cache="0" moreinfo="1" return="positionList"}
+{/pc}
+
+{pc:get sql="SELECT c.*,cd.class_hour,cd.score FROM v9_course c LEFT JOIN v9_course_data cd ON c.id=cd.id ORDER BY c.user_num DESC" num="8" cache="0" moreinfo="1" return="hotList"}
+{/pc}
+
+<?php
+$listNew = array_values($categoryList);
+$categoryList = [];;
+foreach($listNew as $value) {
+    $value['url'] = replaceUrl4course($value['url']);
+    $categoryList[] = [
+        'catid' => $value['catid'],
+        'catname' => $value['catname'],
+        'image' => $value['image'],
+        'url' => $value['url'],
+    ];
+}
+
+$listNew = array_values($positionList);
+$positionList = $listNew;
+foreach($positionList as &$value) {
+    $value['url'] = replaceUrl4course($value['url']);
+    $value['thumb'] = replaceUrl4course($value['thumb']);
+}
+
+$listNew = array_values($hotList);
+$hotList = [];
+foreach($listNew as $value) {
+    $hotList[$value['id']] = [
+        'id' => intval($value['id']),
+        'catid' => intval($value['catid']),
+        'title' => $value['title'],
+        'thumb' => replaceUrl4course($value['thumb']),
+        'url' => replaceUrl4course($value['url']),
+        'title' => $value['title'],
+        'keywords' => $value['keywords'],
+        'description' => $value['description'],
+        'inputtime' => date('Y-m-d H:i:s', $value['inputtime']),
+        'price' => floatval($value['price']),
+        'present_price' => floatval($value['present_price']),
+        'teacher' => $value['teacher'],
+        'user_num' => intval($value['user_num']),
+        'wy_link' => $value['wy_link'],
+        'class_hour' => intval($value['class_hour']),
+        'score' => floatval($value['score']),
+    ];
+}
+
+$ret = [
+    'error' => '',
+    'data' => [
+        'categoryList' => $categoryList,
+        //'positionList' => $positionList,
+        'hotList' => $hotList,
+    ]
+];
+
+ob_end_clean();
+header('Content-Type:application/json; charset=utf-8');
+echo json_encode($ret);exit;
+?>

@@ -123,9 +123,8 @@
 
 
 .hd{
-    height: 42px;
+    height: 82px;
     background-color: #0b68a9 !important;
-    margin-bottom: 10px;
 }
 .hd .nav{
     position: relative;
@@ -349,4 +348,23 @@ li{
     border: 1px solid #c4c4c4;
     border-bottom: none;
     border-radius: 2px 2px 0 0;
+}
+
+.nav2s{
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    box-shadow:0px 15px 10px -15px #ddd;
+}
+.nav2{
+    padding: 10px 0;
+    background: #fff;
+    z-index: 999;
+}
+.nav2 .nav2_con{
+    padding: 0 15px;
+}
+.nav2 .nav2_con a,.nav2 .nav2_con span{
+    display: inline-block;
+    padding: 0 5px;
+    color: #0b68a9;
 }

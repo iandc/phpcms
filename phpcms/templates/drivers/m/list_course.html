@@ -1,5 +1,12 @@
-
-{template "m", "header_course"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
+    <title>课程 - 创芯大讲堂</title>
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/course.css">
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+</head>
 {template "content", "config"}
 
 <?php
@@ -8,13 +15,13 @@ $courseType = array_filter(explode(',', $CAT['usable_type']));
 $typeList = getcache('type_content_'.$siteid, 'commons');
 
 if($_GET['sort'] == 'hot') {
-    $sort = 'user_num';
+    $sort = 'c.user_num';
 } else if($_GET['sort'] == 'price') {
-    $sort = 'present_price';
+    $sort = 'c.present_price';
 } else if($_GET['sort'] == 'time') {
-    $sort = 'id';
+    $sort = 'c.id';
 } else {
-    $sort = 'id';
+    $sort = 'c.user_num';
 }
 
 if($_GET['by'] == 'desc') {
@@ -41,41 +48,19 @@ if(in_array($_GET['sort'], ['hot', 'price', 'time'])) {
 }
 
 $sortBy = $sort . ' ' . $by;
-  
-//echo "<pre>";print_r($courseType);exit;
+
+//echo "<pre>";print_r($typeList);
 
 ?>
 
-{if $typeid == $typeidList['course']}
-    {php $typeName = 'course';}
-{else}
-    {php $typeName = 'other';}
-{/if}
 
-<link rel="stylesheet" href="{CSS_PATH}drivers/m/list_course.css">
-<body style="-webkit-overflow-scrolling: touch;">
+<body>
     <header class="hd">
         <div class="header">
             <div class="logo fl">
-                <div><a href="{$eduurl}"><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></a></div>
+                <div><a href="/"><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></a></div>
             </div>
-            <div class="login fr">
-                {if $username}  
-                <!-- <span class="fr" style="line-height: 35px;">{getNickName()}</span> -->
-                <ul class="top_icon fr">
-                        <li>
-                            <a class="users1" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
-                        </li>
-                    </ul>
-                {else}
-                    <ul class="top_icon fr">
-                        <li>
-                            <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
-                        </li>
-                    </ul>
-                {/if}
-            </div>
-            <div class="search fr">
+            <div class="search fl">
                 <div class="hd_c_list" id="search">
                     <div class="search1">
                         <form action="{$eduurl}/index.php" method="get" target="_blank">
@@ -84,7 +69,7 @@ $sortBy = $sort . ' ' . $by;
                             <input type="hidden" name="a" value="init"/>
                             <input type="hidden" name="typeid" value="{$searchtypeid}" id="typeid"/>
                             <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
-                            <input type="text" class="text inp1 fl" placeholder="搜索课程" name="q" id="q"/>
+                            <input type="text" class="text inp1" placeholder="搜索课程" name="q" id="q"/>
                             <button type="submit" class="inp2">
                                 <img src="../../../../statics/images/drivers/search.png" alt="">
                             </button>
@@ -92,15 +77,18 @@ $sortBy = $sort . ' ' . $by;
                     </div>
                 </div>
             </div>
+            <div class="login fr">
+                <span></span>
+            </div>
         </div>
-        
+
         <div class="nav">
             <section class="job-module"> 
                 <dl class="retrie"> 
                     <dt>
                         <a id="area" href="javascript:;" class="">课程分类</a>
                         <!-- <a id="wage" href="javascript:;" class="">筛选</a> -->
-                        <!-- <a id="wage1" href="javascript:;" class="">综合排序</a> -->
+                        <a id="wage1" href="javascript:;" class="">综合排序</a>
                     </dt> 
                     <dd class="area clearfix"> 
                         <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
@@ -120,80 +108,72 @@ $sortBy = $sort . ' ' . $by;
                             <li class="sf"><a href="#">收费</a></li>
                         </ul> 
                     </dd> --> 
-                    <!-- <dd class="wage1 clearfix"> 
+                    <dd class="wage1 clearfix"> 
                         <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
-                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}" class="{$active['time']}">畅销</a></li>
+                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}">畅销</a></li>
                             <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot&by={$byStr}" class="{$active['hot']}">好评</a></li>
-                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}" class="{$active['price']}">最新</a></li>
+                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}">最新</a></li>
                         </ul> 
-                    </dd>  -->
+                    </dd> 
                 </dl> 
             </section>
         </div>
     </header>
     
-    <!-- <div class="banner">
-        <section class="carousel">
-            <div class="swiper-container" style="height: 210px;">
-                <div class="swiper-wrapper">
-                    {pc:content action="position" posid="$posidList['course_jdt']" order="listorder DESC" num="4" cache="3600"}
-                            {loop $data $value}
-                    <div class="swiper-slide">
-                        <a href="{$value['url']}"><img src="{$value['thumb']}" alt=""></a>
-                    </div>
-                    {/loop}
-                    {/pc}
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-    </div> -->
-    <div class="lcL fl">
-        <!-- <dl>
-            <dt class="lcL_all {if empty($typeid)}jc{/if}"><a href="{$eduurl}/{$typeName}/1">课程分类</a></dt>
-            {loop $courseType $tid}
-                <dd>
-                    <a {if $typeid == $typeList[$tid]['typeid']} class="jc"{/if} href="{$eduurl}/{$typeList[$tid]['description']}/1">{$typeList[$tid]['name']}</a>
-                </dd>
-            {/loop}
-        </dl> -->
+    <div class="banner">
+        <a href="">
+            <script language="javascript" src="{APP_PATH}caches/poster_js/56.js"></script>
+        </a>
     </div>
-    <div class="content_list clearfix" style="padding-top: 110px;">
+    <div class="content_list clearfix">
         <div class="cl_con">
             <ul class="clearfix">
                 {php $courseWhere = 'typeid='.$typeid;}
                 {if $catid}
                     {if $typeid}
-                        {pc:content action="lists" catid="$catid" where="$courseWhere" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                        {pc:get sql="SELECT c.*,cd.class_hour,cd.score FROM v9_course c LEFT JOIN v9_course_data cd ON c.id=cd.id where c.catid='$catid' AND c.typeid='$typeid' ORDER BY $sortBy" page="$page" num="12" cache="3600" moreinfo="1"}
                     {else}
-                        {pc:content action="lists" catid="$catid" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                        {pc:get sql="SELECT c.*,cd.class_hour,cd.score FROM v9_course c LEFT JOIN v9_course_data cd ON c.id=cd.id where c.catid='$catid' ORDER BY $sortBy" page="$page" num="12" cache="3600" moreinfo="1"}
                     {/if}
                 {else}
                     {if $typeid}
-                        {pc:get sql="SELECT * FROM phpcms_course where typeid='$typeid' ORDER BY $sortBy" page="$page" num="16" cache="3600" moreinfo="1"}
+                        {pc:get sql="SELECT c.*,cd.class_hour,cd.score FROM v9_course c LEFT JOIN v9_course_data cd ON c.id=cd.id where c.typeid='$typeid' ORDER BY $sortBy" page="$page" num="12" cache="3600" moreinfo="1"}
                     {else}
-                        {pc:get sql="SELECT * FROM phpcms_course ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                        {pc:get sql="SELECT c.*,cd.class_hour,cd.score FROM v9_course c LEFT JOIN v9_course_data cd ON c.id=cd.id ORDER BY $sortBy" page="$page" num="12" cache="3600" moreinfo="1"}
                     {/if}
                 {/if}
                 {php $i = 0;}
                 {loop $data $value}
                 <li>
+                    <div class="title">
+                        <a href="{replaceUrl4course($value['url'])}">{str_cut($value['title'], 40, '')}</a>
+                    </div>
                     <div class="img fl">
                         <a href="{replaceUrl4course($value['url'])}"><img src="{$value['thumb']}" alt=""></a>
                     </div>
                     <div class="con fr">
-                        <p class="tit"><a href="{replaceUrl4course($value['url'])}">{$value['title']}</a></p>
-                        <div class="keshi">
-                            <!-- <span>共{$value['class_hour']}课时</span> -->
-                            <!-- <span>{$value['user_num']}人学习</span> -->
+                        <p class="tit"><a href="{replaceUrl4course($value['url'])}">{str_cut($value['title'], 40, '')}</a></p>
+                        <!-- <p class="des">
+                            {$value['description']}
+                        </p> -->
+                        <div class="icons clearfix">
+                            <div class="fl keshi">
+                                <p>共{$value['class_hour']}课时</p>
+                                <span class="pingfen" style="{if $value['score'] == 0}display: none;{/if}">{$value['score']}星</span>
+                                <span>{$value['user_num']}人学过</span>
+                            </div>
+                            <div class="fr jq">
+                                <p class="yj"><del style="{if $value['price'] == 0 }display:none;{/if} {if $value['price'] == $value['present_price']}display: none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}￥{$value['price']}{/if}</del></p>
+                                <p class="xj" style="{if $value['price'] == 0 }color: #666;{else}color:red;{/if} {if $value['price'] == $value['present_price']}color: red;{/if}">{if $value['present_price'] == 0}<span class="{if $value['present_price'] == 0 }mianfei{/if}">免费</span>{else}￥{$value['present_price']}{/if}</p>
+                            </div>
                         </div>
-                        <div class="price">
+                       <!--  <div class="keshi">
+                            <span style="margin-right: 10px;">{$value['user_num']}人学习</span>
                             <span class="" style="margin-right: 10px; font-size: 14px;">
-                                <small class="{if $value['present_price'] == 0 }mianfei{/if}" style="{if $value['price'] == 0 }color: #666;{else}color:red; font-size: 15px;{/if}">{if $value['present_price'] == 0}免费{else}￥{$value['present_price']}{/if}</small>
+                                <small class="{if $value['present_price'] == 0 }small{/if}" style="{if $value['price'] == 0 }color: #666;{else}color:red; font-size: 13.5px;{/if}">￥{$value['present_price']}</small>
                                 <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
                             </span>
-                            <span class="num fr">{$value['user_num']}人学习</span>
-                        </div>
+                        </div> -->
                     </div>
                 </li>
                 {php $i++;}
@@ -208,15 +188,15 @@ $sortBy = $sort . ' ' . $by;
         </div>
     </div>
 
-   <!--  <footer>
+    <footer>
         <div class="footer">
             <ul>
-                <li><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}">精品课程</a></li>
-                <li>全部课程</li>
-                <li>我的</li>
+                <li><a href="/">精品课程</a></li>
+                <li><a href="{$eduurl}/course/1"></a>全部课程</li>
+                <!-- <li>我的</li> -->
             </ul>
         </div>
-    </footer> -->
+    </footer>
     <script>
         $(function(){ 
             $('.retrie dt a').click(function(){
@@ -250,24 +230,6 @@ $sortBy = $sort . ' ' . $by;
             $(".wage1 ul li a:contains('"+$('#wage1').text()+"')").addClass('selected');
         });
     </script>
-
-    <script>
-    var mySwiper = new Swiper('.swiper-container',{
-        autoplay:{
-            disableOnInteraction:false,
-            delay:3000,
-        },
-        loop:true,
-        pagination:{
-            el:'.swiper-pagination',
-            clickable :true,
-        },
-        // navigation:{
-        //     nextEl:'.swiper-button-next',
-        //     prevEl:'.swiper-button-prev',
-        // },
-    });
-</script>
 
 </body>
 </html>

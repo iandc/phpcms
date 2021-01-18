@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
-    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
+    <title>Document</title>
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
     <link rel="stylesheet" href="{CSS_PATH}drivers/global.css">
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/index.css">
@@ -12,14 +11,13 @@
 </head>
 {template "content", "config"}
 {if $typeid == $typeidList['news']}
-        {php $typeName = 'news';}
-    {else}
-        {php $typeName = 'tech';}
-    {/if}
-<body style="-webkit-overflow-scrolling: touch;">
-    {template 'm', 'header_course'}
+    {php $typeName = 'news';}
+{else}
+    {php $typeName = 'tech';}
+{/if}
+<body>
     <section id="wrap">
-        
+        {template 'm', 'header'}
         <!-- <div class="small_hd clearfix">
             <div class="small_hd_tit">
                 <span class="line"></span>
@@ -28,7 +26,7 @@
         </div> -->
         <div class="classify">
             <ul id="ull clearfix">
-                <li style="width: 100%; position: relative; border-bottom: 1px solid #cdcdcd; padding-top: 5px;">
+                <li style="width: 100%; position: relative; border-bottom: 1px solid #cdcdcd;">
                     <!-- <a href="">全部</a>&nbsp;&nbsp; -->
                     {template 'm', 'nav'}
                     <a href="javascript:;" class="classify_tit fr spp" id="classify_tit">分类
@@ -36,9 +34,9 @@
                     </a>
                     <ul class="classify_con" id="classify_con">
                         {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="3600"}
-                        <!-- {php print_r($data);} -->
+                        {php print_r($value['url']);}
                             {loop $data $value}
-                                <li {if $catid == $value['catid']}class="current"{/if}>
+                                <li class="{if $catid == $value['catid']}current{/if}">
                                     <a href="{APP_PATH}{$value['catdir']}/{$typeName}/1">{$value['catname']}</a>
                                 </li>
                             {/loop}
@@ -80,7 +78,7 @@
                             </div>
                             <div>
                                 <!-- <span class="read">{$value['num']}</span> -->
-                                <span class="time">{date('Y-m-d H:i:s', $value['inputtime'])}</span>
+                                <span class="time">{date('Y-m-d', $value['inputtime'])}</span>
                             </div>
                         </div>
                     </li>

@@ -1,0 +1,63 @@
+{template 'content', 'header_course'}
+
+    <div class="w classify">
+        <div class="w1100 classify_con">
+            <div class="classify_con_tit clearfix">
+                <div class="classify_con_tit_fl fl">
+                    <h3>{$title}</h3>
+                    <p>
+                        {$description}
+                    </p>
+                </div>
+                <div class="classify_con_tit_fr fr">
+                    <img src="{$banner}" alt="">
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="w classify_content">
+        <div class="w1100">
+            <div class="classify_con_list clearfix">
+                <ul>
+                    {pc:special action="content_list" siteid="$siteid" specialid="$id" elite="1" listorder="3" moreinfo="1"}
+					{php //echo "<pre>";print_r($data);}
+					{loop $data $value}
+                    {php $curlArr = explode('|', $value['curl']);$course = getCourseById($curlArr[0]);}
+                    {php //echo "<pre>";print_r($course);}
+                    <li>
+                        <div class="classify_con_list_img">
+                            <a href="{replaceUrl4course($value['url'])}"><img src="{$value['thumb']}" alt=""></a>
+                        </div>
+                        <div>
+                            <p class="txt1">
+                                <a href="{replaceUrl4course($value['url'])}">{$value['title']}</a>
+                            </p>
+                            <div class="zy">
+                                <span>
+                                    {$value['description']}
+                                </span>
+                            </div>
+                            <div class="userNum clearfix">
+                                <span class="fl">
+                                    <i></i>
+                                    {$course['user_num']} <span>人已购买</span>
+                                </span>
+                                <span class="fr" style="margin-right: 10px; font-size: 14px;">
+                                    <small class="{if $course['present_price'] == 0 }small{/if}" style="{if $course['price'] == 0 }color: #666;{/if} {if $course['price'] == $course['present_price']}color: #666;{/if}">￥{$course['present_price']}</small>
+                                                            <del style="{if $course['price'] == 0 }display:none;{/if} {if $course['price'] == $course['present_price']}display: none;{/if}" class="{if $course['present_price'] == 0}del{/if}">￥{$course['price']}</del>
+                                                            {if $course['present_price'] == 0}<span style="font-weight: bold;">免费</span>{/if}
+                                </span>
+                            </div>
+                        </div>
+                    </li>
+                    {/loop}
+                    {/pc}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    {template 'content', 'footer_course'}
+</body>
+</html>

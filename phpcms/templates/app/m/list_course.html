@@ -1,0 +1,273 @@
+
+{template "m", "header_course"}
+{template "content", "config"}
+
+<?php
+$courseType = array_filter(explode(',', $CAT['usable_type']));
+
+$typeList = getcache('type_content_'.$siteid, 'commons');
+
+if($_GET['sort'] == 'hot') {
+    $sort = 'user_num';
+} else if($_GET['sort'] == 'price') {
+    $sort = 'present_price';
+} else if($_GET['sort'] == 'time') {
+    $sort = 'id';
+} else {
+    $sort = 'id';
+}
+
+if($_GET['by'] == 'desc') {
+    $by = 'desc';
+    $byStr = 'asc';
+} else if($_GET['by'] == 'asc') {
+    $by = 'asc';
+    $byStr = 'desc';
+} else {
+    $by = 'desc';
+    $byStr = 'asc';
+}
+
+if(in_array($_GET['sort'], ['hot', 'price', 'time'])) {
+    $active[$_GET['sort']] = 'jc';
+    if(in_array($by, ['desc', 'asc'])) {
+        $active[$_GET['sort'].'_'.$by] = 'ons';
+    } else {
+        $active['time_desc'] = 'ons';
+    }
+} else {
+    $active['time'] = 'jc';
+    $active['time_desc'] = 'ons';
+}
+
+$sortBy = $sort . ' ' . $by;
+  
+//echo "<pre>";print_r($courseType);exit;
+
+?>
+
+{if $typeid == $typeidList['course']}
+    {php $typeName = 'course';}
+{else}
+    {php $typeName = 'other';}
+{/if}
+
+<link rel="stylesheet" href="{CSS_PATH}drivers/m/list_course.css">
+<body style="-webkit-overflow-scrolling: touch;">
+    <header class="hd">
+        <div class="header">
+            <div class="logo fl">
+                <div><a href="{$eduurl}"><img src="{APP_PATH}statics/images/drivers/logo_course.png" alt=""></a></div>
+            </div>
+            <div class="login fr">
+                {if $_username}  
+                <!-- <span class="fr" style="line-height: 35px;">{getNickName()}</span> -->
+                <ul class="top_icon fr">
+                        <li>
+                            <a class="users1" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
+                        </li>
+                    </ul>
+                {else}
+                    <ul class="top_icon fr">
+                        <li>
+                            <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" class="search_link"></a>
+                        </li>
+                    </ul>
+                {/if}
+            </div>
+            <div class="search fr">
+                <div class="hd_c_list" id="search">
+                    <div class="search1">
+                        <form action="{$eduurl}/index.php" method="get" target="_blank">
+                            <input type="hidden" name="m" value="search"/>
+                            <input type="hidden" name="c" value="index"/>
+                            <input type="hidden" name="a" value="init"/>
+                            <input type="hidden" name="typeid" value="{$searchtypeid}" id="typeid"/>
+                            <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+                            <input type="text" class="text inp1 fl" placeholder="搜索课程" name="q" id="q"/>
+                            <button type="submit" class="inp2">
+                                <img src="../../../../statics/images/drivers/search.png" alt="">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="nav">
+            <section class="job-module"> 
+                <dl class="retrie"> 
+                    <dt>
+                        <a id="area" href="javascript:;" class="">课程分类</a>
+                        <!-- <a id="wage" href="javascript:;" class="">筛选</a> -->
+                        <!-- <a id="wage1" href="javascript:;" class="">综合排序</a> -->
+                    </dt> 
+                    <dd class="area clearfix"> 
+                        <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
+                            {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="3600"}
+                            <!-- {php echo $courseid;} -->
+                                {loop $data $value}
+                                    <li class="{if $catid == $value['catid']}nav_more{/if}" class="class">
+                                        <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}">{$value['catname']}</a><i></i>
+                                    </li>
+                                {/loop}
+                            {/pc}
+                        </ul> 
+                    </dd> 
+                    <!-- <dd class="wage clearfix"> 
+                        <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
+                            <li class="mf"><a href="#">免费</a></li> 
+                            <li class="sf"><a href="#">收费</a></li>
+                        </ul> 
+                    </dd> --> 
+                    <!-- <dd class="wage1 clearfix"> 
+                        <ul class="slide downlist clearfix" style="display: none; border-bottom: 2px solid #ddd;"> 
+                            <li class="cx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}" class="{$active['time']}">畅销</a></li>
+                            <li class="hp"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot&by={$byStr}" class="{$active['hot']}">好评</a></li>
+                            <li class="zx"><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}" class="{$active['price']}">最新</a></li>
+                        </ul> 
+                    </dd>  -->
+                </dl> 
+            </section>
+        </div>
+    </header>
+    
+    <!-- <div class="banner">
+        <section class="carousel">
+            <div class="swiper-container" style="height: 210px;">
+                <div class="swiper-wrapper">
+                    {pc:content action="position" posid="$posidList['course_jdt']" order="listorder DESC" num="4" cache="3600"}
+                            {loop $data $value}
+                    <div class="swiper-slide">
+                        <a href="{$value['url']}"><img src="{$value['thumb']}" alt=""></a>
+                    </div>
+                    {/loop}
+                    {/pc}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    </div> -->
+    <div class="lcL fl">
+        <!-- <dl>
+            <dt class="lcL_all {if empty($typeid)}jc{/if}"><a href="{$eduurl}/{$typeName}/1">课程分类</a></dt>
+            {loop $courseType $tid}
+                <dd>
+                    <a {if $typeid == $typeList[$tid]['typeid']} class="jc"{/if} href="{$eduurl}/{$typeList[$tid]['description']}/1">{$typeList[$tid]['name']}</a>
+                </dd>
+            {/loop}
+        </dl> -->
+    </div>
+    <div class="content_list clearfix" style="padding-top: 110px;">
+        <div class="cl_con">
+            <ul class="clearfix">
+                {php $courseWhere = 'typeid='.$typeid;}
+                {if $catid}
+                    {if $typeid}
+                        {pc:content action="lists" catid="$catid" where="$courseWhere" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {else}
+                        {pc:content action="lists" catid="$catid" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {/if}
+                {else}
+                    {if $typeid}
+                        {pc:get sql="SELECT * FROM phpcms_course where typeid='$typeid' ORDER BY $sortBy" page="$page" num="16" cache="3600" moreinfo="1"}
+                    {else}
+                        {pc:get sql="SELECT * FROM phpcms_course ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                    {/if}
+                {/if}
+                {php $i = 0;}
+                {loop $data $value}
+                <li>
+                    <div class="img fl">
+                        <a href="{replaceUrl4course($value['url'])}"><img src="{$value['thumb']}" alt=""></a>
+                    </div>
+                    <div class="con fr">
+                        <p class="tit"><a href="{replaceUrl4course($value['url'])}">{$value['title']}</a></p>
+                        <div class="keshi">
+                            <!-- <span>共{$value['class_hour']}课时</span> -->
+                            <!-- <span>{$value['user_num']}人学习</span> -->
+                        </div>
+                        <div class="price">
+                            <span class="" style="margin-right: 10px; font-size: 14px;">
+                                <small class="{if $value['present_price'] == 0 }mianfei{/if}" style="{if $value['price'] == 0 }color: #666;{else}color:red; font-size: 15px;{/if}">{if $value['present_price'] == 0}免费{else}￥{$value['present_price']}{/if}</small>
+                                <del style="{if $value['price'] == 0 }display:none;{/if}" class="{if $value['present_price'] == 0}del{/if}">{if $value['present_price'] == 0 }￥{$value['price']}{else}{$value['price']}{/if}</del>
+                            </span>
+                            <span class="num fr">{$value['user_num']}人学习</span>
+                        </div>
+                    </div>
+                </li>
+                {php $i++;}
+                {/loop}
+                {/pc}
+            </ul>
+            <div class="page_nav">
+                <div class="more">
+                    <div id="pages" class="text_c">{$pages}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <!--  <footer>
+        <div class="footer">
+            <ul>
+                <li><a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}">精品课程</a></li>
+                <li>全部课程</li>
+                <li>我的</li>
+            </ul>
+        </div>
+    </footer> -->
+    <script>
+        $(function(){ 
+            $('.retrie dt a').click(function(){
+                var $t=$(this);
+                if($t.hasClass('up')){
+                    $(".retrie dt a").removeClass('up');
+                    $('.downlist').hide();
+                    $('.mask').hide();
+                }else{
+                    $(".retrie dt a").removeClass('up');
+                    $('.downlist').hide();
+                    $t.addClass('up');
+                    $('.downlist').eq($(".retrie dt a").index($(this)[0])).show();
+                    $('.mask').show();
+                }
+
+                if($t.hasClass('up1')){
+                    $(".retrie dt a").removeClass('up1');
+                    $('.downlist').hide();
+                    $('.mask').hide();
+                }else{
+                    $(".retrie dt a").removeClass('up1');
+                    $('.downlist').hide();
+                    $t.addClass('up1');
+                    $('.downlist').eq($(".retrie dt a").index($(this)[0])).show();
+                    $('.mask').show();
+                }
+            });
+            $(".area ul li a:contains('"+$('#area').text()+"')").addClass('selected');
+            // $(".wage ul li a:contains('"+$('#wage').text()+"')").addClass('selected');
+            $(".wage1 ul li a:contains('"+$('#wage1').text()+"')").addClass('selected');
+        });
+    </script>
+
+    <script>
+    var mySwiper = new Swiper('.swiper-container',{
+        autoplay:{
+            disableOnInteraction:false,
+            delay:3000,
+        },
+        loop:true,
+        pagination:{
+            el:'.swiper-pagination',
+            clickable :true,
+        },
+        // navigation:{
+        //     nextEl:'.swiper-button-next',
+        //     prevEl:'.swiper-button-prev',
+        // },
+    });
+</script>
+
+</body>
+</html>

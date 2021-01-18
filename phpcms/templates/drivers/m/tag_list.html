@@ -2,33 +2,64 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
     <link rel="stylesheet" href="{CSS_PATH}drivers/global.css">
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/index.css">
-    <link rel="stylesheet" href="{CSS_PATH}drivers/m/tag_list.css">
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/header.css">
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/show.css">
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/list.css">
     <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
-</head>
-<body>
-    {template 'm', 'header'}
+    <script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+    <style>
+        ol li,ul li{
+            list-style: none;
+        }
+        .rt{
+            float: right;
+        }
+        .main1{
+            padding-top: 50px;
+        }
+        .lists li{
+            margin-bottom: 5px;
+        }
+        .lists li a{
+            float: left;
+        }
+        .lists li span{
+            font-size: 12px;
+            display: block;
+            float: right;
+        }
 
-<div class="mains clearfix main1">
-    <div class="main2">
+        .title-2{
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .content li{
+            margin: 3px 0;
+        }
+    </style>
+</head>
+
+<body style="overflow: visible;">
+        {template 'm', 'header'}
+        <div class="mains clearfix main1">
+    <div class="main2" style="padding: 10px;">
         <div class="col-left">
             <div class="crumbs">
                 <a href="{siteurl($siteid)}">首页</a>
                 <span> > </span>{catpos($catid)} 标签：
                 {$tag} 总共有 {$total} 条记录
             </div>
-            <ol class="list lh24 f14 clearfix">
+            <ol class="lists lh24 f14 clearfix" style="padding: 0;">
                 {loop $tagList $value}
                 <li class="clearfix">
                     <a href="{$value['url']}" target="_blank" {title_style($value['style'])}>{str_cut($value['title'], 120, '')}</a>
-                    <p class="rt">{date('Y-m-d H:i:s',$value['inputtime'])}</p>
-
+                    <span class="rt">{date('Y-m-d H:i:s',$value['inputtime'])}</span>
                 </li>
                 {if $n%5==0}
                 <li class="bk20 hr clearfix"></li>
@@ -54,6 +85,5 @@
     </div>
 </div>
 
-{template 'm', 'footer'}
 </body>
 </html>

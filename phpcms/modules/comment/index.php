@@ -53,6 +53,47 @@ class index {
 			include template('comment', 'list');
 		}
 	}
+
+    public function init2() {
+        $hot = isset($_GET['hot']) && intval($_GET['hot']) ? intval($_GET['hot']) : 0;
+
+        pc_base::load_sys_class('form');
+        $commentid =& $this->commentid;
+        $modules =& $this->modules;
+        $contentid =& $this->contentid;
+        $siteid =& $this->siteid;
+        $username = param::get_cookie('_username',L('phpcms_friends'));
+        $userid = param::get_cookie('_userid');
+
+        $comment_setting_db = pc_base::load_model('comment_setting_model');
+        $setting = $comment_setting_db->get_one(array('siteid'=>$this->siteid));
+        //SEO
+        $SEO = seo($siteid, '', $title);
+
+        //通过API接口调用数据的标题、URL地址
+        if (!$data = get_comment_api($commentid)) {
+            $this->_show_msg(L('illegal_parameters'));
+        } else {
+            $title = $data['title'];
+            $url = $data['url'];
+            if (isset($data['allow_comment']) && empty($data['allow_comment'])) {
+                showmessage(L('canot_allow_comment'));
+            }
+            unset($data);
+        }
+
+        if (isset($_GET['iframe'])) {
+            if (strpos($url,APP_PATH) === 0) {
+                $domain = APP_PATH;
+            } else {
+                $urls = parse_url($url);
+                $domain = $urls['scheme'].'://'.$urls['host'].(isset($urls['port']) && !empty($urls['port']) ? ":".$urls['port'] : '').'/';
+            }
+            include template('comment', 'show_list2');
+        } else {
+            include template('comment', 'list2');
+        }
+    }
 	
 	public function post() {
 		$comment = pc_base::load_app_class('comment');

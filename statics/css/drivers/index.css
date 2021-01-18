@@ -367,6 +367,7 @@ html,body{
     color: #474747;
     font-size: 12.5px;
     display: inline-block;
+    height: 20px;
 }
 .zxRight_conc{
     height: auto!important;

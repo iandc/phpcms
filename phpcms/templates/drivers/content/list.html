@@ -18,7 +18,7 @@
                         <li {if $catid == $value['catid']}class="current"{/if}>
                             <a href="{APP_PATH}{$value['catdir']}/{$typeName}">{$value['catname']}</a>
                         </li>
-                    {/loop}
+                    {/loop} 
                 {/pc}
             </ul>
         </div>
@@ -28,7 +28,6 @@
                     <div class="cate_list">
                         
                         {show_ad(1, 35)}
-                        
                         <ul class="clearfix">
                             {if $catid}
                                 {if $typeid}
@@ -99,7 +98,6 @@
                                                     </span>
                                                     <span class="time_img fr"><img src="../../../../statics/images/drivers/time.png" alt=""></span>
                                                 {/if}
-                                                <!-- <span class="time_img fr"><img style="margin-top: 2px;" src="../../../../statics/images/drivers/time.png" alt=""></span> -->
                                             </h2>
                                             <div class="txt">
                                                 <p class="p11">{str_cut($value['description'], 2000,'')}</p>

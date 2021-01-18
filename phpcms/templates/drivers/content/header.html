@@ -2,16 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
+<meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">
 <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
-<meta name="keywords" content="{$SEO['keywords']}">
+{if !$catid}
+<meta name="keywords" content="{$SEO['keyword']}">
+{elseif $catname}
+<meta name="keywords" content="列表页">
+{elseif $id}
+{loop $keywords $keyword}
+{php $metaKeyWord .= $keyword . ',';}
+{/loop}
+{php $metaKeyWord = trim($metaKeyWord, ',');}
+<meta name="keywords" content="{$metaKeyWord}">
+{/if}
 <meta name="description" content="{$SEO['description']}">
 <meta name=”renderer” content=”webkit|ie-comp|ie-stand”>
 <meta name="baidu_ssp_verify" content="3a075c1183ad948bc14d443f14aac93a">
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/global.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/index.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/header.css" />
-
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/details.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/details2.css"/>
 <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/details3.css"/>
@@ -53,7 +62,7 @@
                     <div id="wrap">
                         <div id="tit">
                             <span class="select more" style="">文章</span>
-                            <span>DataSheet</span>
+                            <!-- <span>DataSheet</span> -->
                         </div>
                         <a href="{$bbsurl}/search.php?mod=blog" class="link" target="_blank"><span>日志</span></a>
                         <a href="{$bbsurl}/search.php?mod=forum" class="link" style="margin-left: 1px;" target="_blank"><span>帖子</span></a>
@@ -96,25 +105,12 @@
                     </ul>
                     <div class="fr landr">
                         <div class="tb_item">
-                            <!-- <script type="text/javascript">document.write('<div id="iframe" style="position: relative; z-index: 1;"><iframe src="{APP_PATH}index.php?m=member&c=index&a=mini&from=other&forward=' + encodeURIComponent(location.href) + '&siteid={get_siteid()}" allowTransparency="true" width="205" height="150" frameborder="0" scrolling="no"></iframe></div>')</script> -->
                             <div class="usern">
                                 {if $_username}
                                     <ul class="clearfix ull">
                                         <li class="login lr">
                                             <span class="yhm" style="line-height: 40px; text-align: center;">{getNickName()}</span>
                                             <ul class="xlk clearfix" id="xlk">
-                                                <!-- <li class="h50">
-                                                    <a href=" {APP_PATH}index.php?m=member&siteid={$siteid}" class="h50" target="_blank">个人资料</a>
-                                                </li>
-                                                <li class="h50">
-                                                    <a href=" {APP_PATH}index.php?m=member&c=index&a=account_manage_avatar&t=1" class="h50" target="_blank">修改头像</a>
-                                                </li>
-                                                <li class="h50">
-                                                    <a href="{APP_PATH}index.php?m=member&c=content&a=published" class="h50" target="_blank">我的投稿</a>
-                                                </li>
-                                                <li class="h50">
-                                                    <a href="{APP_PATH}index.php?m=pay&c=deposit&a=pay" class="h50" target="_blank">我的资产</a>
-                                                </li> -->
                                                 <li class="h50">
                                                     <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">退出</a>
                                                 </li>
@@ -136,8 +132,27 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="w1100 nav2 clearfix">
+                <div class="nav2_con">
+                    <a href="">创芯云服务</a>
+                    <a href="">创芯投融资</a>
+                    <a href="">创芯大讲堂</a>
+                    <a href="">静待更多...</a>
+                </div>
+            </div> -->
+            <div class="w100 nav2s">
+                <div class="w1100 nav2 clearfix">
+                        <div class="nav2_con">
+                            <span style="color:#F36F60; font-weight: 600;">创芯云服务&nbsp;&nbsp;:</span>
+                            <a href="{APP_PATH}investment/index.html" target="_blank">创芯投融资&nbsp;&nbsp;&nbsp;|</a>
+                            <a href="{$eduurl}" target="_blank">创芯大讲堂</a>&nbsp;&nbsp;|&nbsp;
+                            <span>静待更多...</span>
+                        </div>
+                    </div>
+            </div>
         </div>
     </div>
+    
     <script>
         $(function () {
             $("#tit span").click(function () {

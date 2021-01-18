@@ -1,0 +1,194 @@
+header, section, footer, aside, nav, main, article, figure {display: block;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td ,textarea,input { margin:0; padding:0;  }
+address,cite,dfn,em,var, i {font-style:normal;}
+body {padding:0 0 15px; font-size: 14px;height: 100%; font-family:'Microsoft Yahei','simsun','arial','tahoma';  color: #666;}
+table { border-collapse:collapse; border-spacing:0; }
+h1, h2, h3, h4, h5, h6, th { font-weight: normal; }
+button,select,textarea{font-size:100%;}
+fieldset,img{border:0;}
+a { text-decoration: none; color: #666; background: none }
+ul, ol { list-style: none; }
+:focus{ outline:none;}
+.clearfix{ clear: both; content: ""; display: block; overflow: hidden }
+.clearfix1{ clear: both; content: ""; display: block;}
+.clear{clear: both;}
+.fl{ float: left; }
+.fr{float: right;}
+.w100{width: 100%;}
+.h100{height:100%;}
+.w1010{width: 1010px; margin: 0 auto;}
+.mt15{margin-top: 15px;}
+
+.header{
+    padding: 12px 0;
+}
+.header .logo{
+    padding-right: 10px;
+    border-right: 1px solid #ddd;
+}
+.header img{
+    width: 120px;
+}
+.header span{
+    line-height: 48px;
+    margin-left: 10px;
+}
+
+.contents{
+    height: 360px;
+    background: url(../../images/drivers/rz/bg.png) no-repeat;
+    background-size: 100% 100%;
+}
+.con_text{
+    height: auto;
+    /*background: #0b68a9;*/
+}
+.con_txt{
+    padding: 15px;
+}
+.con_txt h3{
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 90px;
+    /*width: 100%;
+    height: 200px;
+    background: url(../../images/drivers/rz/txt1.png) no-repeat;*/
+}
+.con_txt p{
+    color: #fff;
+    font-size: 18px;
+    line-height: 45px;
+    margin-top: 20px;
+}
+.num5 h3{
+    font-size: 26px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.num5_con{
+    /*width: 560px;*/
+    width: 100%;
+    height: 395px;
+    margin: 10px 0 15px 180px;
+}
+.num5_con .num5_con_bg{
+    width: 100%;
+    height: 100%;
+    background:url(../../images/drivers/rz/num.png) no-repeat;
+    background-size: 60% 100%;
+    position: relative;
+}
+.num5_con p{
+    width: 465px;
+    position: absolute;
+    left: 125px;
+    top: 25px;
+    font-size: 18px;
+    color: #cd2232;
+}
+.num5_con p.p2{
+    top: 105px;
+    color: #de5d24;
+}
+.num5_con p.p3{
+    top: 185px;
+    color: #f0942f;
+}
+.num5_con p.p4{
+    top: 255px;
+    color: #a1b321;
+}
+.num5_con p.p5{
+    top: 335px;
+    color: #5f7ca4;
+}
+
+.right5{
+    font-size: 20px;
+    width: 400px;
+}
+
+.zd{
+    font-size: 18px;
+    background-color: #eee;
+    padding: 10px 20px;
+}
+.zd p{
+    /*margin-left: 40px;*/
+    line-height: 40px;
+}
+/*.zd span{
+    color: #000;
+}*/
+
+.lc{
+    height: 430px;
+    margin-top: 30px;
+}
+.lc h3{
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.lc .lc_con{
+    width: 130px;
+    height: 360px;
+    margin: 0 auto;
+    background: url(../../images/drivers/rz/num2.png) no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+}
+.lc .lc_con p{
+    width: 428px;
+    font-size: 20px;
+    color: #000;
+    position: absolute;
+}
+.lc .lc_con p.p1{
+    left: 150px;
+    top: 35px;
+    color: #f41743;
+}
+.lc .lc_con p.p2{
+    left: -365px;
+    top: 102px;
+    color: #a32a93;
+}
+.lc .lc_con p.p3{
+    top: 170px;
+    left: 150px;
+    color: #faa81e;
+}
+.lc .lc_con p.p4{
+    top: 240px;
+    left: -345px;
+    color: #1aa6b7;
+}
+.lc .lc_con p.p5{
+    top: 310px;
+    left: 150px;
+    color: #1c97c3;
+}
+
+.tj{
+    text-align: center;
+}
+.tj a{
+    color: #0b68a9;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: underline;
+}
+.tj a:hover{
+    text-decoration: underline;
+}
+.ft{
+    background: #eee;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+}

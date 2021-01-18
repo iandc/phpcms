@@ -1,16 +1,19 @@
 <?php
 defined('IN_PHPCMS') or exit('No permission resources.');
-//ģ�ͻ���·��
 define('CACHE_MODEL_PATH', CACHE_PATH . 'caches_model' . DIRECTORY_SEPARATOR . 'caches_data' . DIRECTORY_SEPARATOR);
 pc_base::load_app_func('util', 'content');
 
 class MY_index extends index
 {
     private $db;
+    public $_userid,$_username,$_groupid;
 
     function __construct()
     {
         parent::__construct();
+        $this->_userid = param::get_cookie('_userid');
+        $this->_username = param::get_cookie('_username');
+        $this->_groupid = param::get_cookie('_groupid');
     }
 
     public function test() {
@@ -118,6 +121,11 @@ class MY_index extends index
             $GLOBALS['URL_ARRAY']['catid'] = $catid;
             $GLOBALS['URL_ARRAY']['typeid'] = $typeid;
             $GLOBALS['URL_ARRAY']['typename'] = $typename;
+
+            if(isset($_GET['from'])) {
+                include template(trim($_GET['from']), $template);
+            }
+
             if (isMobile()) {
                 include template('m', $template);
             } else {
@@ -134,6 +142,9 @@ class MY_index extends index
             array_shift($arrchild_arr);
             $keywords = $keywords ? $keywords : $setting['meta_keywords'];
             $SEO = seo($siteid, 0, $title, $setting['meta_description'], $keywords);
+            if(isset($_GET['from'])) {
+                include template(trim($_GET['from']), $template);
+            }
             if (isMobile()) {
                 include template('m', $template);
             } else {
@@ -219,6 +230,8 @@ class MY_index extends index
             $GLOBALS['URL_ARRAY']['catid'] = $catid;
             if (isMobile()) {
                 include template('m', $template);
+            } else if(isset($_GET['from'])) {
+                include template(trim($_GET['from']), $template);
             } else {
                 include template('content', $template);
             }

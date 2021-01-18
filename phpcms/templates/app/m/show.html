@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/global.css">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/index.css">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/header.css">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/show.css">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/list.css">
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+    <script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+</head>
+
+<body style="overflow: visible;">
+    <section id="wrap">
+        {template 'm', 'header'}
+        
+        <section class="show_content" style="background: #fff;">
+            <h3 class="show_tit">
+                {$title}
+                <div class="pt_info fs12" style="margin: 5px 0;">
+                    <span class="date">{$inputtime}</span>
+                    来源：<span>{if $copyfrom}{$copyfrom}{else}未知{/if}</span>
+                </div>
+            </h3>
+            <!-- <div class="user_time">
+                <span class="user1">{$username}</span>
+                <span>发表于 {$inputtime}   </span>
+            </div>
+            <div class="tit_img clearfix">
+                <div class="fl">
+                    <a href="" class="fl"><img src="{$thumb}" alt=""></a>
+                    <a href="" class="fr user2">{$username}</a>
+                </div>
+                <div class="fr"> -->
+                    <!-- <a href="" class="gz">+关注</a> -->
+                <!-- </div>
+            </div> -->
+            <div class="cont">
+                {$content}
+            </div>
+            <div class="upbox">
+                
+            </div>
+            <div class="pl">
+                <!-- <p class="pl1"><span>评论(0)</span></p>
+                <p class="login"><a href="">登录</a><span>后参与评论</span></p> -->
+                {if $allow_comment && module_exists('comment')}
+                <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid", $id, $siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0"
+                scrolling="no"></iframe>
+                {else}
+                <p align="center" class="p_img">评论功能关闭</p>
+                {/if}
+            </div>
+            <!-- <div class="lists">
+                <div class="con_wrap content list_content">
+                    <ul class="con_list clearfix">
+                        <li class="list">
+                            <div class="img fl">
+                                <a href="">
+                                    <img src="http://file.elecfans.com/web1/M00/7E/47/o4YBAFwYqBWAayP6AAAWSw2Ugx0866.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="info fr">
+                                <div class="tit">
+                                    <a href="">蚂蚁金服在上海举办支付宝开放日，并推出刷脸支付新品“蜻蜓”</a>
+                                </div>
+                                <p>所谓的“刷脸支付”，是一款基于脸部识别系统的支付平台。随着人脸识别技术的进步，“刷脸支付”的使用越来越广泛。根据支付宝“双十一”数据显示，指纹和刷脸自付首次成为了“双十一”的支付主流，通过生物信息识别...</p>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <div class="img fl">
+                                <a href="">
+                                    <img src="http://file.elecfans.com/web1/M00/7E/47/o4YBAFwYqBWAayP6AAAWSw2Ugx0866.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="info fr">
+                                <div class="tit">
+                                    <a href="">蚂蚁金服在上海举办支付宝开放日，并推出刷脸支付新品“蜻蜓”</a>
+                                </div>
+                                <p>所谓的“刷脸支付”，是一款基于脸部识别系统的支付平台。随着人脸识别技术的进步，“刷脸支付”的使用越来越广泛。根据支付宝“双十一”数据显示，指纹和刷脸自付首次成为了“双十一”的支付主流，通过生物信息识别...</p>
+                            </div>
+                        </li>
+                        <li class="list">
+                            <div class="img fl">
+                                <a href="">
+                                    <img src="http://file.elecfans.com/web1/M00/7E/47/o4YBAFwYqBWAayP6AAAWSw2Ugx0866.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="info fr">
+                                <div class="tit">
+                                    <a href="">蚂蚁金服在上海举办支付宝开放日，并推出刷脸支付新品“蜻蜓”</a>
+                                </div>
+                                <p>所谓的“刷脸支付”，是一款基于脸部识别系统的支付平台。随着人脸识别技术的进步，“刷脸支付”的使用越来越广泛。根据支付宝“双十一”数据显示，指纹和刷脸自付首次成为了“双十一”的支付主流，通过生物信息识别...</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div> -->
+            <span class="{if $keyword == ' '}dpn{/if}">
+                关键词：
+                {loop $keywords $keyword}
+                <a class="blue"
+                   href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($keyword)}">{$keyword}</a>
+                {/loop}
+            </span>
+            <div>
+                <ul class="list_3 fl clearfix w100">
+                    <li class="fl">上一篇：<a href="{$previous_page['url']}">{str_cut($previous_page['title'], 55, '')}</a></li>
+                    <li class="fl">下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 55, '')}</a></li>
+                </ul>
+            </div>
+            
+        </section>
+        
+        {template 'm', 'footer'}
+        <div id="div1"><a href="JavaScript:;">^</a></div>
+        <div id="div2"><a href="{APP_PATH}"><i></i></a></div>
+        <script>
+            $(function () {
+                $(window).scroll(function () {
+                    $("#div1").click(function () {
+                        window.scrollTo(0,0);    //  设置内容滚动到指定的坐标
+                    })
+                })
+            })
+        </script>
+    </section>
+    <script>
+        $(document).ready(function(){
+            $("#classify_tit").click(function () {
+               $("#classify_con").slideToggle();
+           });
+        })
+    </script>
+</body>
+</html>

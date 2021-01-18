@@ -1,0 +1,103 @@
+<?php
+
+$posid = 18;
+
+$posidList = [
+    'slide' => 1,
+    'focus' => 2,
+    'newActivity' => 19,
+    'course_focus' => 20,
+    'present_price' => 25,
+    'right_tj' => 23,
+    'highliht' => 24,
+    'course_jdt' => 26
+];
+
+$typeidList = [
+    'tech' => 54,
+    'news' => 55,
+    'activity' => 56,
+    'wait' => 57,
+    'other' => 58,
+    'course' => 67,
+    'courseOne' => 68,
+];
+
+$bbsShowStatus = [
+    'isOpen' => 1,
+    'newThread' => 1,
+    'newJobThread' => 1,
+    'monthHotThread' => 1,
+    'channelThread' => 1
+];
+
+$indexBidList = [
+    'user' => 88,
+    'blog' => 109,
+    'thread' => 3,
+    'hot' => 43,
+    'job' => 5,
+    'thread_hot' => 44,
+    'blog_tj' => 110,
+    'blog_wap' => 111,
+    'thread_wap' => 4
+];
+
+$catid2fidList = [
+    98 => [207, 7, 271, 151, 152, 6, 48],
+    100 => [3, 75],
+    103 => [38],
+    104 => [326, 69, 5, 295, 208, 41, 77, 78, 58, 154, 320, 321, 110, 111, 218, 219, 165, 166, 202, 201, 210, 211, 186, 185, 245, 244, 262, 270, 296],
+    105 => [333, 139, 36, 221, 257, 284],
+    106 => [116, 117],
+    107 => [69, 5, 295, 208],
+    110 => [10, 83, 239, 240, 18, 188, 71, 14, 141, 79, 143, 162, 163, 55, 35, 175, 177, 12],
+    144 => [124],
+    146 => [259],
+    147 => [37, 156],
+    148 => [283],
+    152 => [282],
+    153 => [280, 281],
+    154 => [],
+    156 => [218, 219],
+    157 => [106, 107, 215, 216, 199, 198, 291, 290, 289, 288, 287],
+    158 => [318]
+];
+
+$bbsurl = str_replace('www', 'bbs', siteurl(1));
+
+$blogurl = str_replace('www', 'blog', siteurl(1));
+
+$newsurl = siteurl(1);
+
+$eduurl = siteurl(2);
+
+$bbsJsUrl = $bbsurl. '/api.php?mod=js&bid=';
+
+$newsid = getNewsModelItemId(1);
+
+$courseid = getCourseModelItemId(2);
+
+$teacherid = getTeacherModelItemId(2);
+
+$activityid = getActivityModelItemId(1);
+
+$mySite = siteinfo(1);
+
+if(strpos($newsurl, 'wang') !== false) {
+    $recordNumber = '京ICP备15035084号';
+} else if(strpos($newsurl, 'cn') !== false) {
+    $recordNumber = '京ICP备10050787号';
+} else {
+    $recordNumber = '';
+}
+
+if(strpos($newsurl, 'wang') !== false) {
+    $recordNumber1 = '京公网安备：11010502037710';
+} else if(strpos($newsurl, 'cn') !== false) {
+    $recordNumber1 = '京公网安备：11010502037710';
+} else {
+    $recordNumber1 = '';
+}
+
+?>

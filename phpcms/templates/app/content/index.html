@@ -1,0 +1,513 @@
+
+{template 'content', 'header'}
+<div class="w100">
+    <div class="w1100">
+        <div class="information mt15">
+            <div class="fl informationLeft h100">
+                <div id="box1">
+                    <div id="box_img">
+                        <ul id="sub_img">
+                            {pc:content action="position" posid="$posidList['slide']" order="listorder DESC" num="4" cache="3600"}
+                            {loop $data $value}
+                            <li>
+                                <a href="{$value['url']}" target="_blank"><img src="{thumb($value['thumb'], 300, 222)}" title="{$value['title']}"></a>
+                            </li>
+                            {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                    <ul id="uls">
+                        <li class="select">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                    </ul>
+                    <span id="shang" class="sp"> < </span>
+                    <span id="xia" class="sp"> > </span>
+                </div>
+            </div>
+            <div class="fr informationRight bgc_fff h100">
+                <div class="informationRightL fl">
+                    <div class="focus-title">
+                        焦点关注
+                    </div>
+                    <ul class="clearfix">
+                        {pc:content action="position" posid="$posidList['focus']" order="listorder DESC" num="2" cache="3600"}
+                        {loop $data $value}
+                        <li>
+                            <a href="{$value['url']}" class="fl tit" style="display: inline-block;"><img src="{thumb($value['thumb'], 80, 60)}" title="{$value['title']}"></a>
+                            <div class="fr con">
+                                <h2 class="dib"><a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 75, '')}</a></h2>
+                                <p>
+                                    <a class="p11" href="{$value['url']}" target="_blank"><i></i>{$value['description']}</a>
+                                </p>
+                            </div>
+                            
+                        </li>
+                        {/loop}
+                        {/pc}
+                    </ul>
+                </div>
+                <div class="informationRightR fl">
+                    <div class="focus-title">
+                        最新活动
+                    </div>
+                    <div  id="callboard">
+                        <ul class="clearfix">
+                            {pc:content action="position" posid="$posidList['newActivity']" order="listorder DESC" num="10" cache="3600"}
+                            {loop $data $value}
+                                <li>
+                                    <a href="{$value['url']}" target="_blank"><i></i>{str_cut($value['title'], 48, '')}</a>
+                                </li>
+                            {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {show_ad(1, 21)} 
+            
+        <div class="zixun mt15 bgc_fff">
+            <div class="zixunCon clearfix">
+                <div class="zixunConLeft fl">
+                    <div class="zxLeft_title">
+                        <ul class="clearfix">
+                            <li class="fl">
+                                <span class="dib">
+                                    <a href="{APP_PATH}news/1" target="_blank">最新资讯</a>
+                                </span>
+                            </li>
+                            <li class="fr">
+                                <a href="{APP_PATH}news/1" target="_blank">> 更多</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="zxLeft_con zxLeft_con2 clearfix">
+                        <div class="zxLeft_conL fl w50">
+                            <ul class="mb10">
+                                {php $newsWhere = 'typeid='.$typeidList['news'];}
+                                {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="16" cache="3600"}
+                                {php $i = 0;} 
+                                {loop $data $value}
+                                {if $i < 16}
+                                <li class="{if $i == 8}mt15{/if}">
+                                    <div class="lis fl">
+                                        <span class="tit">
+                                            <a href="{$value['url']}" {title_style($value['style'])} target="_blank"><i></i>{$value['title']}</a>
+                                        </span>
+                                    </div>
+                                     
+                                    <span class="t fr">{date('m-d', $value['inputtime'])}</span>
+                                </li>
+                                {/if}
+                                {php $i++;}
+                                {/loop}
+                                {/pc}
+                            </ul>
+                        </div>
+                        <div class="zxLeft_conR fr" style="width: 48%;">
+                            <ul class="mb10">
+                                {pc:content action="lists" catid="$newsid" where="$newsWhere" order="id DESC" num="32" cache="3600"}
+                                {php $i = 0;}
+                                {loop $data $value}
+                                {if $i >= 16}
+                                <li class="{if $i == 24}mt15{/if}">
+                                    <div class="lis fl">
+                                        <span class="tit">
+                                            <a href="{$value['url']}" {title_style($value['style'])} target="_blank"><i></i>{$value['title']}</a>
+                                        </span>
+                                    </div>
+                                            
+                                    <span class="t">{date('m-d', $value['inputtime'])}</span>
+                                </li>
+                                {/if}
+                                {php $i++;}
+                                {/loop}
+                                {/pc}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="zixunConRight fr">
+                    <div class="zxRight_title">
+                        <ul>
+                            <li class="fl">
+                                <a href="{APP_PATH}/news/1"><span>推荐资讯</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="zxRight_con clearfix zxRight_conc">
+                       
+                        <ul class="ul2 ul1 clearfix">
+                            {pc:content action="position" posid="$posidList['right_tj']" order="id DESC" num="6" cache="3600"}
+                            {php $i = 0; $total=count($data);}
+                            {loop $data $value}
+                            {if $i == 0}
+                                <li class="liis" style="padding-bottom: 0;">
+                                    <div class="lImg fl">
+                                        <a href=""><img src="{thumb($value['thumb'], 100, 80)}" title="{str_cut($value['title'], 38, '')}"></a>
+                                    </div>
+                                    <div class='rTxt fr'>
+                                        <span><a href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a></span>
+
+                                        <a href="{$value['url']}" target="_blank" class="fs12"><i></i>{$value['description']}</a>
+                                    </div>
+                                </li>
+                            {else}
+                                <li>
+                                    <div class="ls">
+                                        <a class="as" style="font-size: 13px; font-weight: 600;" href="{$value['url']}" target="_blank"><i></i>{$value['title']}</a>
+                                        <p class="p11">
+                                            <a href="{$value['url']}">{$value['description']}</a>
+                                        </p>
+                                    </div>
+                                </li>
+                            {/if}
+
+                            {php $i++;}
+                            {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- banner1-->
+        <div class="index_banner1 clearfix">
+            {show_ad(1, 40)}
+            
+        </div>
+        
+
+        <div class="curriculum mt15 clearfix">
+            <div class="w1100 curriculumCon bgc_fff clearfix djdzs">
+                <div class="title2">
+                    <a href="{APP_PATH}course/1" target="_blank" class="a1 fl"> 创芯大讲堂</a>
+                    <a href="{$eduurl}" target="_blank" class="a2 fr"> > 更多</a>
+                </div>
+
+                <div class="qiehuan clearfix">
+                    <ul class="bxslider clearfix" >
+                        {pc:content action="lists" catid="$courseid" num="8" order="id DESC" cache="3600"}
+                            {loop $data $value}
+                            <li class="xs">
+                                <div class="xs_img">
+                                    <a href="{replaceUrl4course($value['url'])}" target="_blank">
+                                        <img src="{$value['thumb']}" title="{$value['title']}">
+                                    </a>
+                                </div>
+                                <div>
+                                    <a href="{replaceUrl4course($value['url'])}" target="_blank">
+                                        <p>{str_cut($value['title'], 45, '')}</p>
+                                    </a>
+                                    <a href="{replaceUrl4course($value['url'])}" target="_blank" class="p11"><small class="rq p11">{$value['description']}</small></a>
+                                </div>
+                            </li>
+                            {/loop}
+                        {/pc}
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- 技术文章-->
+        <div class="article mt15">
+            <div class="Manufacturer bgc_fff mt15 clearfix">
+                <div class="ManufacturerCon clearfix">
+                    <div class="manuConLeft fl">
+                        <div class="manuConLeftL fl" style="width: 100%;">
+                            <div class="title1">
+                                <a class="jswz" href="{APP_PATH}tech/1" target="_blank">技术文章</a>
+                                <a href="{APP_PATH}tech/1" class="fs12 gd" target="_blank"> > 更多</a>
+                            </div>
+                            <ul>
+                                {php $where = 'typeid='.$typeidList['tech'];}
+                                {pc:content action="lists" catid="$newsid" thumb="1" where="$where" order="id DESC" num="8" cache="3600"}
+                                {php $i = 0; $total=count($data);}
+                                {loop $data $value}
+                                <li class="w49">
+                                    {if $value['thumb'] == ""}
+                                    <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
+                                        <div class="centerCon_txt fl">
+                                            <h3><a href="{$value['url']}" {title_style($value['style'])} target="_blank">{str_cut($value['title'], 45, '')}</h3>
+                                            <a class="p11" href="{$value['url']}" target="_blank">{$value['description']}
+                                        </div>
+                                    </div>
+                                    {else}
+                                    <div style="{if $i >= $total-2}border-bottom: 0;{/if}" class="centerCon">
+                                        <div class="centerCon_img fl">
+                                            <a href="{$value['url']}" target="_blank">
+                                                <img src="{thumb($value['thumb'], 75, 60)}" width="90" height="70" title="{str_cut($value['title'], 37, '')}">
+                                            </a>
+                                        </div>
+                                        <div class="centerCon_txt fr" style="width: 228px;">
+                                            <h3><a href="{$value['url']}" {title_style($value['style'])} target="_blank">{str_cut($value['title'], 45, '')}</h3>
+                                            <a class="p11" href="{$value['url']}" target="_blank">{$value['description']}
+                                        </div>
+                                    </div>
+                                    {/if}
+                                </li>
+                                {php $i++;}
+                                {/loop}
+                                {/pc}
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="manuConRight fr">
+                        {if $bbsShowStatus['isOpen'] == 1 && $bbsShowStatus['newJobThread'] == 1}
+                        <div class="manuConRightT"> 
+                            <div class="title1" class="fl">
+                                <a href="{$bbsurl}/forum-97-1.html" target="_blank">最新招聘</a>
+                            </div>          
+                            <div class="more">
+                                <a href="{$bbsurl}/forum-97-1.html" class="fr" target="_blank"> > 更多 </a>
+                            </div>
+                        </div>
+                        <div class="zxRight_con clearfix">
+                            <ul class="clearfix">
+                                <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['job']}"></script>
+                            </ul>
+                        </div>
+                        {/if}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- banner3-->
+        {show_ad(1, 23)}
+        
+        <!-- 最新帖子-->
+        <div class="Manufacturer bgc_fff mt15 clearfix">
+            <div class="ManufacturerCon clearfix">
+                <div class="manuConLeft fl">
+                    {if $bbsShowStatus['isOpen'] == 1 && $bbsShowStatus['newThread'] == 1}
+                    <div class="manuConLeftL w100 fl zxtz"> 
+                        <div class="title1">
+                            <span class="sp1"><a href="{$bbsurl}/forum.php?mod=guide&view=new" target="_blank">最新帖子</a></span>
+                            <span class="sp2"><a href="{$bbsurl}/forum.php?mod=guide&view=new" target="_blank"> > 更多</a></span>
+                        </div>
+                        <ul class="clearfix" style="margin-top: 10px;">
+                            <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['thread']}"></script>
+                        </ul>
+                    </div>
+                    {/if}
+                </div>
+                <div class="manuConRight fr">
+                    {if $bbsShowStatus['isOpen'] == 1 && $bbsShowStatus['monthHotThread'] == 1}
+                    <div class="manuConRightT">
+                        <div class="title1">
+                            <a href="{$bbsurl}/forum.php?mod=guide&view=hot" target="_blank">热门帖子</a>
+                        </div>
+                    </div>
+                    <div class="manuConRightB zxRight_con zxRight_con2 clearfix">
+                        <ul class="clearfix">
+                            <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['hot']}"></script>
+                        </ul>
+                    </div>
+                    {/if}
+                </div>
+            </div>
+        </div>
+        <!-- banner4-->
+        {show_ad(1, 24)}
+        <!-- 推荐日志 -->
+        <div class="forum clearfix">
+            <div class="zixun bgc_fff mt15">
+                <div class="zixunCon clearfix">
+                    <div class="zixunConLeft fl">
+                        <div class="zxLeft_title">
+                            <ul>
+                                <li class="fl">
+                                    <span>
+                                        <a href="{$blogurl}/blog.php?mod=space&do=blog&view=all&order=hot" target="_blank">推荐日志</a>
+                                    </span>
+                                </li>
+                                <li class="fr">
+                                    <a href="{$blogurl}/blog.php?mod=space&do=blog&view=all&order=hot" target="_blank"> > 更多</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="zxLeft_con clearfix" style="padding: 0;">
+                            <div class="zxLeft_conL fl clearfix">
+                                <ol>
+                                    <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['blog']}"></script>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="zixunConRight fr">
+                        <div class="zxRight_title">
+                            <ul>
+                                <li class="fl">
+                                    <a href="javascript:;" target="_blank">
+                                        <span>推荐博客</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="more fr">
+                                        <a href="{$bbsurl}/home.php?mod=spacecp&ac=blog" target="_blank">
+                                            发布博客
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="manuConRight">
+                            <div class="manuConRightB manuConRightB1">
+                                <ul class="clearfix">
+                                    <script type="text/javascript" src="{$bbsJsUrl}{$indexBidList['blog_tj']}"></script>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w100 mt15">
+    <div class="w1100 footer bgc_fff">
+        <div class="footerTop">
+            <div class="ft_txt">
+                <ul>
+                    <li class="fl links"><span>友情链接</span></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerBottom clearfix">
+            <ul class="clearfix">
+                {pc:link action="lists" typeid="0" siteid="$siteid" linktype="0" num="100" order="desc" cache="86400"}
+                {loop $data $value}
+                <li class="fl"><a href="{$value['url']}" title="{$value['name']}" target="_blank">{$value['name']}</a></li>
+                {/loop}
+                {/pc}
+            </ul>
+        </div>
+    </div>
+    <div class="w1100 ftNav bgc_fff mt15">
+        <div class="links">
+            <a href="{APP_PATH}">ET创芯网(EETOP)-电子设计论坛、博客、超人气的电子工程师资料分享平台 </a>&nbsp;&nbsp;
+            {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="86400"}
+                {loop $data $value}
+                    {php if($value['type']== 0)continue;} 
+                    <a href="{$value['url']}" target="_blank">{$value['catname']}</a>&nbsp;&nbsp;
+                {/loop}
+            {/pc}
+        </div>
+        <div  class="sj">@2003-2019 EETOP  </div>
+        <div class="copy">
+            <p class="copyTxt">
+                <a href="http://beian.miit.gov.cn/" target="_blank">{$recordNumber}</a>&nbsp;&nbsp;
+                <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502037710" target="_blank">{$recordNumber1}</a>
+            </p>
+        </div>
+    </div>
+    
+</div>
+
+
+<script>
+    var timer = setInterval(active,2000);
+    var autoNum = 0;
+    function active(){
+        //进来先将动画清掉
+        $("#box_img").stop(true);
+        autoNum++;
+        autoNum%=4;
+        $("#box_img").animate({
+            "scrollLeft": 300*autoNum
+        },500);
+        changFn();
+    };
+    //点击下一张
+    $("#xia").on("click",active);
+    //点击上一张
+    $("#shang").on("click",function(){
+        $("#box_img").stop(true);
+        autoNum--;
+        if(autoNum<0){
+            autoNum=3;
+        }
+        $("#box_img").animate({
+            "scrollLeft": 300*autoNum
+        },200);
+        changFn();
+    });
+    
+    //修改4个li样式
+    function changFn(){
+        $("#uls li").eq(autoNum).addClass("select").siblings().removeClass("select");
+    }
+    //4个小按钮事件
+    $("#uls li").on("click",function(){
+        autoNum = $(this).index();
+        $("#box_img").animate({
+            "scrollLeft": 300*autoNum
+        },200);
+        changFn();
+    })
+    //鼠标移入
+    $("#box1").on("mouseenter",function(){
+        clearInterval(timer);
+    });
+    //鼠标离开
+    $("#box1").on("mouseleave",function(){
+        timer = setInterval(active,2000);
+    });
+</script>
+
+<script type="text/javascript">
+    (function (win){ 
+        var callboarTimer; 
+        var callboard = $('#callboard'); 
+        var callboardUl = callboard.find('ul'); 
+        var callboardLi = callboard.find('li'); 
+        var liLen = callboard.find('li').length; 
+        var initHeight = callboardLi.first().outerHeight(true); 
+        win.autoAnimation = function (){ 
+            if (liLen <= 1) return; 
+            var self = arguments.callee; 
+            var callboardLiFirst = callboard.find('li').first(); 
+            callboardLiFirst.animate({ 
+                marginTop:-initHeight 
+            }, 500, function (){ 
+                clearTimeout(callboarTimer); 
+                callboardLiFirst.appendTo(callboardUl).css({marginTop:0}); 
+                callboarTimer = setTimeout(self, 2000); 
+            }); 
+        } 
+        callboard.mouseenter( 
+            function (){ 
+                clearTimeout(callboarTimer); 
+            }).mouseleave(function (){ 
+                callboarTimer = setTimeout(win.autoAnimation, 5000); 
+            }); 
+    }(window)); 
+    setTimeout(window.autoAnimation, 2000); 
+</script>
+
+
+<script type="text/javascript">
+    window.onload = function(){
+        $('.bxslider').bxSlider({
+              minSlides: 4,
+              maxSlides: 4,
+            slideWidth: 250,
+        slideMargin:0,
+              auto: true,
+              autoHover: true
+        });
+    };
+</script>
+
+</body>
+
+{show_ad(1, 33)}
+{show_ad(1, 38)}
+<script type="text/javascript" src="//js.users.51.la/20488961.js"></script>
+</html>

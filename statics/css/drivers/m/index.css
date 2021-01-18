@@ -1,4 +1,6 @@
-
+a{
+    color: #333 !important;
+}
 html,body{
     width: 100%;
     height: 100%;
@@ -31,39 +33,18 @@ html,body{
     height: 100%;
 }
 
-.top_icon .users{
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    background: url(../../../images/drivers/ico.jpg) no-repeat 0 0;
-    background-position: 0 -2px;
-}
-.top_icon .search{
-    display: inline-block;
-    width: 30px;
-    height: 28px;
-    background: url(../../../images/drivers/search.jpg) no-repeat 0 0;
-    background-position: 0 -2px;
-    position: absolute;
-    right: 45px;
-}
-
 /*content内容部分-------------------------------------*/
 .content .title{
     background: #eaedf0;
     padding: 3% 3% 2% 3%;
     color: #000 !important;
-    font-weight: 600;
-    font-size: 16px;
 }
 .content .con_wrap{
-    background-color: #fff;
-    padding: 2%;
+    background-color: #f8f8f8;
+    padding: 3%;
     padding-top: 0;
     border-top: 1px solid #ddd;
-}
-.content .con_list{
-    margin-top: 3%;
+    border-bottom: 1px solid #ddd;
 }
 .content .con_list .list{
     padding-top: 3%;
@@ -73,34 +54,24 @@ html,body{
     height: auto;
 }
 .content .con_list .list .img{
-    width: 30%;
+    width: 27%;
 }
 .content .con_list .list .img img{
     width: 100%;
-    height: 72px;
+    height: 70px;
     max-height: 102px;
 }
 .content .con_list .list .info{
-    width: 68%;
+    width: 70%;
 }
 .content .con_list .list .info .tit{
-    font-size: 15px;
+    font-size: 16px;
     margin: -3px 0 5px;
     line-height: 22px;
         -webkit-line-clamp: 2;
     white-space: normal;
     -webkit-box-orient: vertical;
     overflow: hidden;
-}
-.content .con_list .list .info .tit a{
-    color: #333;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    white-space: normal;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    line-height: 25px;
-    text-overflow: ellipsis;
 }
 .content .con_list .list .info p{
     font-size: 14px;
@@ -116,9 +87,7 @@ html,body{
 }
 .content .con_wrap .see_more{
     text-align: center;
-    padding: 3%;
-    font-size: 15px;
-    font-weight: 600;
+    padding-top: 3%;
 }
 
 /*footer部分--------------------------------------*/
@@ -126,7 +95,7 @@ html,body{
     text-align: center;
     color: #666;
     padding-bottom: 40px;
-    padding-top: 6%;
+    padding-top: 3%;
     background-color: #fff;
 }
 .footer a,.footer p{
@@ -143,78 +112,14 @@ html,body{
 
 
 
-#div1{
+.fhdb{
     position: fixed;
-    bottom: 55px;
+    bottom: 20px;
     right: 10px;
-    font-size: 25px;
-    padding: 5px 10px;
-    background-color: #b4c1cb;
-    cursor: pointer;
-}
-#div1 a{
-    color: #fff;
-}
-
-.con_list1 li{
-    margin: 0 0 7px;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-}
-.con_list1 li .img{
-    width: 30%;
-    height: 78px;
-    margin-top: 5px;
-}
-.con_list1 li .img img{
-    width: 100%;
-    height: 100%;
-}
-.con_list1 li .con{
-    width: 68%;
-}
-#classify_con .current a{
-    font-weight: 600;
-    color: #0b68a9 !important;
-}
-
-.con .tit{
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    white-space: normal;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    line-height: 25px;
-    text-overflow: ellipsis;
-    font-size: 16px;
-}
-.banners{
-    width: 100%;
-    height: 200px;
-}
-.banners img{
-    width: 100%;
-    height: 100%;
-}
-
-.site{
-    position: relative;
-    width: 50%;
-    margin-left: 10px;
-}
-.site .tb-text{
-    width: 100%;
-    border: 1px solid #cbc0c0;
-    padding: 8px 5px;
-    font-size: 14px;
-}
-.coment1{
-    position: absolute;
-    top: 8px;
-    right: 0;
-}
-.coment1 img{
-    width: 20px;
-    height: 20px;
-
+    padding: 10px;
+    border: 1px solid #cdcdcd;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 5px;
+    display: none;
 }

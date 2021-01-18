@@ -1,0 +1,42 @@
+
+header, section, footer, aside, nav, main, article, figure {
+    display: block; 
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike,
+strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td ,textarea,input { margin:0; padding:0;  }
+address,cite,dfn,em,var, i {font-style:normal;}
+body {font-size: 14px;height: 100%; font-family:'Microsoft Yahei','simsun','arial','tahoma';  color: #666; background: #eee; }
+table { border-collapse:collapse; border-spacing:0; }
+h1, h2, h3, h4, h5, h6, th { font-weight: normal; }
+button,select,textarea{font-size:100%;}
+fieldset,img{border:0;}
+a { text-decoration: none; color: #666; background: none }
+ul, ol { list-style: none; }
+:focus{ outline:none;}
+.clearfix{ clear: both; content: ""; display: block; overflow: hidden }
+.clearfix1{ clear: both; content: ""; display: block;}
+.clear{clear: both;}
+.fl{ float: left; }
+.fr{float: right;}
+.w100{width: 100%;}
+.h100{height:100%;}
+.w1100{width: 1206px; margin: 0 auto;}
+ul li{float: left;}
+.c_f{color: #fff;}
+.mt15{margin-top: 10px;}
+.fs12{font-size: 12px;}
+.w50{width:50%;}
+.w49{width: 48%; padding: 0 6px;}
+.por{position: relative;}
+.poa{position: absolute;}
+.mb10{margin-bottom: 10px;}
+.bz{
+    display: inline-block;
+    width: 16px;
+    height: 21px;
+    background: url(../../images/drivers/search1.png) no-repeat 0 0;
+    position: relative;
+    top: 1px;
+    margin-right: 5px;
+}

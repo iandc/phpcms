@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=7" />
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+    <meta name="keywords" content="{$SEO['keyword']}">
+    <meta name="description" content="{$SEO['description']}">
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/global.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/category_course.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/header_course.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/footer_course.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/list_course.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/show_course.css"/>
+    <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+    <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+</head>
+
+{template "content", "config"}
+
+<?php
+$search_model = getcache('search_model_'.$siteid, 'search');
+foreach($search_model as $v) {
+    if(strpos($v['name'], '课程') !== false) {
+        $searchtypeid = $v['typeid'];
+        break;
+    }
+}
+?>
+
+<body>
+    <div class="w100" style="border-bottom: 1px solid #eee; padding-bottom: 10px; background: #fff;">
+        <div class="w100">
+            <div class="hd_course w1100 clearfix">
+                <div class="fl hd_c_logo">
+                    <a title="{$mySite['name']}" href="{$eduurl}">
+                        <img style="margin-top: 10px; margin-left: -6px;" src="{IMG_PATH}drivers/logo_course.png" width="175" height="70" alt="" title="{$mySite['name']}" >
+                    </a>
+                </div>
+                <div class="fl hd_c_lg">
+                    <script language="javascript" src="{APP_PATH}caches/poster_js/48.js"></script>
+                </div>
+                <div class="fr hd_c_list" id="search">
+                    <div class="search1">
+                        <form action="{$eduurl}/index.php" method="get" target="_blank">
+                            <input type="hidden" name="m" value="search"/>
+                            <input type="hidden" name="c" value="index"/>
+                            <input type="hidden" name="a" value="init"/>
+                            <input type="hidden" name="typeid" value="{$searchtypeid}" id="typeid"/>
+                            <input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+                            <input type="text" class="text inp1" placeholder="请输入要搜索的课程" name="q" id="q"/>
+                            <input type="submit" value="搜 索" class="button inp2" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="nav_course" class="w100">
+            <div class="nav_course w1100">
+                <div class="fl">
+                    <span class="navs2"><a href="{$eduurl}">首页</a></span>
+                    <div style="display: inline-block;" class="navs1 navs2">
+                        <span class="nav_class">
+                        课程分类<i></i>
+                        </span>
+                        <ul class="xl">
+                            <li><a href="{$eduurl}/course/1">全部</a></li>
+                            {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="3600"}
+                            <!-- {php echo $courseid;} -->
+                                {loop $data $value}
+                                    <li class="{if $catid == $value['catid']}nav_more{/if} clearfix">
+                                        <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}">{$value['catname']}</a><i></i>
+                                    </li>
+                                {/loop}
+                            {/pc}
+                        </ul>
+                    </div>
+                    
+                    
+                </div>
+                <div class="fr">
+                    <span class="ewms">
+                        <img src="../../../statics/images/drivers/gzh.png" class="gzh" alt="" />关注公众号
+                        <img src="../../../statics/images/drivers/cxdjt.jpg" class="cxdjt" alt="" />
+                    </span>
+                    <span class="home1">
+                        <a href="{$newsurl}" style="line-height: 32px;">
+                            <img style="height: 13px; position: relative; top: 1px;" src="../../../../statics/images/drivers/home1.png" alt="" />
+                            返回首页
+                        </a>
+                    </span>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+         $(function(){
+
+            // var titleTop = $('#nav_course').offset().top;
+
+            $(document).on('scroll',function(){
+              if($(document).scrollTop() > 180){
+                 $('#nav_course').css({
+                     "position":"fixed",
+                     "top":0,
+                     "background":"#fff",
+                     "z-index":999,
+                     "border-bottom":"1px solid #eee"
+             })
+            }else{
+               $('#nav_course').css({
+                   "position":"static",
+                   "border-bottom":"none"
+               })
+            }
+          })
+        })
+    </script>  

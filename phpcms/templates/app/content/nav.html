@@ -1,0 +1,67 @@
+{template "content", "config"}
+
+{if $_GET['a'] == 'lists'} <!-- 列表页 -->
+<div class="crumbs nav_css">
+     <ul class="lists">
+         <li>
+             {if $typeid == $typeidList['news']}
+                <a href="{APP_PATH}news/1">资讯</a> >&nbsp;
+             {elseif $typeid == $typeidList['tech']}
+                <a href="{APP_PATH}tech/1">技术</a>&nbsp;>&nbsp;
+             {/if}
+         </li>
+         <li>
+             {if $typeid == $typeidList['news']}
+             <a href="{APP_PATH}{$catdir}/news/1">{$catname}</a> >&nbsp;
+             {elseif $typeid == $typeidList['tech']}
+<div class="crumbs nav_css nav_css_no">
+             <a href="{APP_PATH}{$catdir}/tech/1">{$catname}</a>&nbsp; >&nbsp;
+             {/if}
+         </li>
+         <li>
+             列表
+         </li>
+     </ul>
+</div>
+{elseif $_GET['a'] == 'type'}
+<div class="crumbs nav_css">
+    <ul class="lists">
+        <li>
+            {if $typeid == $typeidList['news']}
+                <a href="{APP_PATH}news/1">资讯 &nbsp; >  </a>
+            {elseif $typeid == $typeidList['tech']}
+                <a href="{APP_PATH}tech/1">技术 &nbsp; >  </a>
+            {/if}
+        </li>
+        <li>
+            &nbsp;&nbsp;全部&nbsp;&nbsp;>&nbsp;
+        </li>
+        <li>
+            &nbsp;列表
+        </li>
+    </ul>
+</div>
+{elseif $_GET['a'] == 'category'} <!-- 频道页 -->
+<li class="lis">
+    <a href="{APP_PATH}channel.html" class="hover_list" id="hover_list">频道&nbsp;></a>
+</li>
+<li>
+    <a href="{APP_PATH}{$v['catdir']}" target="_blank">{$catname}</a>
+</li>
+{elseif $_GET['a'] == 'show' || $_GET['a'] == 'view'} <!-- 内容页 -->
+<div class="w1100">
+    <div class="crumbs nav_css2">
+        <div class="current_nav">
+            {if $typeid == $typeidList['news']}
+                <a href="{APP_PATH}news/1">资讯</a>&nbsp;
+             {elseif $typeid == $typeidList['tech']}
+                <a href="{APP_PATH}tech/1">技术</a>
+             {/if}
+            <span> &gt; </span>
+            <a href="{APP_PATH}{$CATEGORYS[$catid]['catdir']}">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> 
+            <span> &gt; </span>
+             内容
+        </div>
+    </div>    
+</div>
+{/if}

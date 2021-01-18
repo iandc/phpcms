@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
+    <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/global.css">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/index.css">
+    <link rel="stylesheet" href="{CSS_PATH}drivers/m/list.css">
+    <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
+</head>
+{template "content", "config"}
+{if $typeid == $typeidList['news']}
+        {php $typeName = 'news';}
+    {else}
+        {php $typeName = 'tech';}
+    {/if}
+<body style="-webkit-overflow-scrolling: touch;">
+    {template 'm', 'header_course'}
+    {php echo 'this is app tpl';}
+    <section id="wrap">
+        
+        <!-- <div class="small_hd clearfix">
+            <div class="small_hd_tit">
+                <span class="line"></span>
+                <h3>资讯</h3>
+            </div>
+        </div> -->
+        <div class="classify">
+            <ul id="ull clearfix">
+                <li style="width: 100%; position: relative; border-bottom: 1px solid #cdcdcd; padding-top: 5px;">
+                    <!-- <a href="">全部</a>&nbsp;&nbsp; -->
+                    {template 'm', 'nav'}
+                    <a href="javascript:;" class="classify_tit fr spp" id="classify_tit">分类
+                        <!-- <span class="spp"></span> -->
+                    </a>
+                    <ul class="classify_con" id="classify_con">
+                        {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="3600"}
+                        <!-- {php print_r($data);} -->
+                            {loop $data $value}
+                                <li {if $catid == $value['catid']}class="current"{/if}>
+                                    <a href="{APP_PATH}{$value['catdir']}/{$typeName}/1">{$value['catname']}</a>
+                                </li>
+                            {/loop}
+                        {/pc}
+                    </ul>
+                </li>
+            </ul>    
+        </div>
+        <!-- list内容 -->
+        <section>
+            <div class="con_wrap content list_content">
+                <ul class="con_list clearfix">
+                    {if $catid}
+                        {if $typeid}
+                            {php $where = "catid='$catid' AND typeid='$typeid'";}
+                            {pc:content action="lists" catid="$catid" where="$where" order="id DESC" page="$page" num="20" cache="3600"}
+                        {else}
+                            {pc:content action="lists" catid="$catid" order="id DESC" page="$page" num="20" cache="3600"}
+                        {/if}
+                    {else}
+                        {if $typeid}
+                            {pc:get sql="SELECT * FROM phpcms_news where typeid='$typeid' ORDER BY id DESC" page="$page" num="20" cache="3600"}
+                        {else}
+                            {pc:get sql="SELECT * FROM phpcms_news ORDER BY id DESC" page="$page" num="20" cache="3600"}
+                        {/if}
+                    {/if}
+                    {php $i = 0; $total=count($data);}
+                    {loop $data $value}
+                    <li class="list" style="{if $value['thumb'] == ''} padding: 15px 0;{/if}">
+                        <div class="img fl" style="{if $value['thumb'] == ''}display: none;{/if}" >
+                            <a href="{$value['url']}">
+                                <img src="{$value['thumb']}" alt="">
+                            </a>
+                        </div>
+                        <div class="info fr" style="{if $value['thumb'] == ''}width:100% ;{/if}">
+                            <div class="tit">
+                                <a href="{$value['url']}">{$value['title']}</a>
+                                <!-- <p>{$value['description']}</p> -->
+                            </div>
+                            <div>
+                                <!-- <span class="read">{$value['num']}</span> -->
+                                <span class="time">{date('Y-m-d H:i:s', $value['inputtime'])}</span>
+                            </div>
+                        </div>
+                    </li>
+                    {php $i++;}
+                    {/loop}
+                    <div class="page_nav">
+                                <div class="more">
+                                    <div id="pages" class="text_c">{$pages}</div>
+                                </div>
+                            </div>
+                    {/pc}
+                </ul>
+            </div>
+        </section>
+        {template 'm', 'footer'}
+    </section>
+    <script>
+        jQuery (function ($){
+            $("#classify_tit").click(function (){
+            
+                $ (this).toggleClass ("spp2");
+                $ ("#classify_con").slideToggle (300);
+            });
+        });
+    </script>
+</body>
+</html>

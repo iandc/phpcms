@@ -1,24 +1,17 @@
-{template "content", "config"}
 <header class="lists_hd">
     <div class="lists_hd_con">
         <div class="page_back fl">
-            <a style="font-size: 30px; color: #333 !important;" href="javascript:;" onclick="javascript:history.back(-1);"><img src="{IMG_PATH}drivers/fh.jpg" alt=""></a>
+            <a class="zjt" style="font-size: 30px; position: relative; top: -3px;" onclick="javascript:history.back(-1);">
+                <img style="vertical-align: middle;" src="{IMG_PATH}drivers/m/zjt.png" alt="">
+            </a>
         </div>
-        <div class="fl" style="width: 70%; line-height: 46px; color: #333;">
-            <h2 style="text-align: center;"><a href="{APP_PATH}" style=" color: #333; font-size: 20px;">EETOP-创芯网</a></h2>
+        <div class="eetop">
+            EETOP
         </div>
         <div class="fr">
-            {if $_username}  
-                <span class="fr" style="line-height: 45px; color: #333;">{getNickName()}</span>
-            {else}
-                <ul class="top_icon fr" style="width: 25px; height: 25px; margin-top: 10px;">
-                    <li>
-                        <!-- <a href="" class="search"></a> -->
-                        <a class="users" href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}"></a>
-                    </li>
-                </ul>
-            {/if}
+            <div class="page_login fl">
+                <a href=""><img  src="{IMG_PATH}drivers/member_ico.png" alt=""></a>
+            </div>
         </div>
     </div>
-    
 </header>

@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
     <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
     <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" id="viewport">
     <link rel="stylesheet" href="{CSS_PATH}drivers/global.css">
@@ -11,26 +10,25 @@
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/show.css">
     <link rel="stylesheet" href="{CSS_PATH}drivers/m/list.css">
     <script src="https://cdn.bootcss.com/jquery/1.8.3/jquery.min.js"></script>
-    <script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
-</head>
 
-<body style="overflow: visible;">
+    <link href="{CSS_PATH}reset.css" rel="stylesheet" type="text/css" />
+    <link href="{CSS_PATH}default_blue.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+    <script language="javascript" type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+</head>
+{template "content", "config"}
+<body onload="iframe_height()">
     <section id="wrap">
         {template 'm', 'header'}
-        
-        <section class="show_content" style="background: #fff;">
+        <section class="show_content" id="show_content">
             <h3 class="show_tit">
                 {$title}
-                <div class="pt_info fs12" style="margin: 5px 0;">
-                    <span class="date">{$inputtime}</span>
-                    来源：<span>{if $copyfrom}{$copyfrom}{else}未知{/if}</span>
-                </div>
             </h3>
-            <!-- <div class="user_time">
-                <span class="user1">{$username}</span>
-                <span>发表于 {$inputtime}   </span>
+            <div class="icos">
+                <span>时间：{date('Y-m-d',strtotime($inputtime))}</span>
+                <span>来源：{if $copyfrom}{$copyfrom}{else}未知{/if}</span>
             </div>
-            <div class="tit_img clearfix">
+            <!-- <div class="tit_img clearfix">
                 <div class="fl">
                     <a href="" class="fl"><img src="{$thumb}" alt=""></a>
                     <a href="" class="fr user2">{$username}</a>
@@ -39,102 +37,141 @@
                     <!-- <a href="" class="gz">+关注</a> -->
                 <!-- </div>
             </div> -->
-            <div class="cont">
+            <div class="cont" id="cont">
                 {$content}
+
+                <script>
+                  $("#cont a").attr("href","javascript:;");
+                  $("#cont a").attr("target","");
+                </script>
+                <style>
+                  #cont a{
+                    text-decoration: none;
+                    border: none;
+                  }
+                </style>
             </div>
-            <div class="upbox">
-                
-            </div>
-            <div class="pl">
+            
+            <div class="pl" id="pl">
                 <!-- <p class="pl1"><span>评论(0)</span></p>
                 <p class="login"><a href="">登录</a><span>后参与评论</span></p> -->
                 {if $allow_comment && module_exists('comment')}
-                <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init&commentid={id_encode("content_$catid", $id, $siteid)}&iframe=1" width="100%" height="100%" id="comment_iframe" frameborder="0"
+                <iframe src="{APP_PATH}index.php?m=comment&c=index&a=init2&commentid={id_encode("content_$catid", $id, $siteid)}&iframe=1" width="100%" height="auto" id="comment_iframe" frameborder="0"
                 scrolling="no"></iframe>
                 {else}
                 <p align="center" class="p_img">评论功能关闭</p>
                 {/if}
             </div>
-            <!-- <div class="lists">
-                <div class="con_wrap content list_content">
-                    <ul class="con_list clearfix">
-                        <li class="list">
-                            <div class="img fl">
-                                <a href="">
-                                    <img src="http://file.elecfans.com/web1/M00/7E/47/o4YBAFwYqBWAayP6AAAWSw2Ugx0866.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="info fr">
-                                <div class="tit">
-                                    <a href="">蚂蚁金服在上海举办支付宝开放日，并推出刷脸支付新品“蜻蜓”</a>
-                                </div>
-                                <p>所谓的“刷脸支付”，是一款基于脸部识别系统的支付平台。随着人脸识别技术的进步，“刷脸支付”的使用越来越广泛。根据支付宝“双十一”数据显示，指纹和刷脸自付首次成为了“双十一”的支付主流，通过生物信息识别...</p>
-                            </div>
-                        </li>
-                        <li class="list">
-                            <div class="img fl">
-                                <a href="">
-                                    <img src="http://file.elecfans.com/web1/M00/7E/47/o4YBAFwYqBWAayP6AAAWSw2Ugx0866.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="info fr">
-                                <div class="tit">
-                                    <a href="">蚂蚁金服在上海举办支付宝开放日，并推出刷脸支付新品“蜻蜓”</a>
-                                </div>
-                                <p>所谓的“刷脸支付”，是一款基于脸部识别系统的支付平台。随着人脸识别技术的进步，“刷脸支付”的使用越来越广泛。根据支付宝“双十一”数据显示，指纹和刷脸自付首次成为了“双十一”的支付主流，通过生物信息识别...</p>
-                            </div>
-                        </li>
-                        <li class="list">
-                            <div class="img fl">
-                                <a href="">
-                                    <img src="http://file.elecfans.com/web1/M00/7E/47/o4YBAFwYqBWAayP6AAAWSw2Ugx0866.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="info fr">
-                                <div class="tit">
-                                    <a href="">蚂蚁金服在上海举办支付宝开放日，并推出刷脸支付新品“蜻蜓”</a>
-                                </div>
-                                <p>所谓的“刷脸支付”，是一款基于脸部识别系统的支付平台。随着人脸识别技术的进步，“刷脸支付”的使用越来越广泛。根据支付宝“双十一”数据显示，指纹和刷脸自付首次成为了“双十一”的支付主流，通过生物信息识别...</p>
-                            </div>
-                        </li>
-                    </ul>
+
+            <div class="ewm clearfix">
+                <div class="fl ewm_s1 ewm_s">
+                  <img class="br1" src="../../../statics/images/drivers/m/eetop_gzh.png" alt="">
+                  <p>EETOP公众号</p>
                 </div>
-            </div> -->
-            <span class="{if $keyword == ' '}dpn{/if}">
-                关键词：
-                {loop $keywords $keyword}
-                <a class="blue"
-                   href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($keyword)}">{$keyword}</a>
-                {/loop}
-            </span>
+                <div class="fr ewm_s1">
+                  <img src="../../../statics/images/drivers/m/cxdjt.png" alt="">
+                  <p>创芯大讲堂</p>
+                </div>
+            </div>
             <div>
                 <ul class="list_3 fl clearfix w100">
                     <li class="fl">上一篇：<a href="{$previous_page['url']}">{str_cut($previous_page['title'], 55, '')}</a></li>
                     <li class="fl">下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 55, '')}</a></li>
                 </ul>
             </div>
-            
+
         </section>
-        
+        <div class="hddb" id="hddb" style="width:35px; 
+                 height:35px; background-color: blue; position:fixed; right:0; bottom:100px; 
+                 background:url('../../../../statics/images/drivers/m/top.png') no-repeat; background-size: 35px;">
+        </div>
+        <a href="/" id="btn" title="返回首页">
+        <div class="hddb" style="width:35px; 
+                 height:35px; background-color: blue; position:fixed; right:0; bottom:60px; 
+                 background:url('../../../../statics/images/drivers/m/index.png') no-repeat; background-size: 35px;">
+        </div>
+        </a>
+
         {template 'm', 'footer'}
-        <div id="div1"><a href="JavaScript:;">^</a></div>
-        <div id="div2"><a href="{APP_PATH}"><i></i></a></div>
-        <script>
-            $(function () {
-                $(window).scroll(function () {
-                    $("#div1").click(function () {
-                        window.scrollTo(0,0);    //  设置内容滚动到指定的坐标
-                    })
-                })
-            })
-        </script>
-    </section>
-    <script>
-        $(document).ready(function(){
-            $("#classify_tit").click(function () {
-               $("#classify_con").slideToggle();
-           });
-        })
-    </script>
+        {template 'm', 'db'}
+
+        <div class="plk" id="bodyheight">
+          <form action="{APP_PATH}index.php?m=comment&c=index&a=post&commentid={$commentid}" method="post" onsubmit="return on_submit()">
+          <input type="hidden" name="title" value="{urlencode(($comment[title] ? $comment[title] : $title))}">
+          <input type="hidden" name="url" value="{urlencode(($comment[url] ? $comment[url] : $url))}">
+                <div class="comment-form">
+                  <h5><strong>我来说两句</strong><span class="fn rt blue">已有<font color="#FF0000">{if $comment[total]}{$comment[total]}{else}0{/if}</font>条评论</span></h5>
+                  <div class="posn">我的态度：<input type="radio" name="direction" value="1" /> <img src="{IMG_PATH}icon/zheng.png" /> <input type="radio" name="direction" value="2" /> <img src="{IMG_PATH}icon/fan.png" /> <input type="radio" name="direction" value="3"  /> <img src="{IMG_PATH}icon/zhong.png" />
+          </div>
+                  <textarea rows="8" cols="80" name="content"></textarea><br>
+              {if $setting[code]}
+              
+                <label>验证码：<input type="text" name="code"  class="input-text" id="yzmText" onfocus="var offset = $(this).offset();$('#yzm').css({'left': +offset.left-8, 'top': +offset.top-$('#yzm').height()});$('#yzm').show();$('#yzmText').data('hide', 1)" onblur='$("#yzmText").data("hide", 0);setTimeout("hide_code()", 3000)' /></label>
+                <div id="yzm" class="yzm">{form::checkcode()}<br />点击图片更换</a></div>
+                  
+              {/if}
+                  <div class="btn"><input type="submit" value="发表评论" /></div>&nbsp;&nbsp;&nbsp;&nbsp;{if $userid}{get_nickname()} <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode(($comment[url] ? $comment[url] : $url))}"  target="_top">退出</a>{else}<a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode(($comment[url] ? $comment[url] : $url))}" target="_top" class="blue">登录</a><span> | </span><a href="{APP_PATH}index.php?m=member&c=index&a=register" class="blue"  target="_top">注册</a> {if !$setting[guest]}<span style="color:red">需要登陆才可发布评论</span>{/if}{/if}
+                </div>  
+          </form>  
+        </div>
+
+        
+        <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+        
+        <script type="text/javascript" src="../../../../statics/js/drivers/m/show.js"></script>
+        </section>
+
+        <script language="JavaScript" src="{APP_PATH}api.php?op=count&id={$id}&modelid={$modelid}"></script>
+
+
+<script type="text/javascript">
+  function support(id, commentid) {
+    $.getJSON('{APP_PATH}index.php?m=comment&c=index&a=support&format=jsonp&commentid='+commentid+'&id='+id+'&callback=?', function(data){
+      if(data.status == 1) {
+        $('#support_'+id).html(parseInt($('#support_'+id).html())+1);
+      } else {
+        alert(data.msg);
+      }
+    });
+  }
+
+  function reply(id,commentid) {
+    var str = '<form action="{APP_PATH}index.php?m=comment&c=index&a=post&commentid='+commentid+'&id='+id+'" method="post" onsubmit="return on_submit()"><textarea rows="10" style="width:100%" name="content"></textarea>{if $setting['code']}<label>验证码：<input type="text" name="code" id="yzmreplay" class="input-text" onfocus="var offset = $(this).offset();$(\'#yzm\').css({\'left\': +offset.left-8, \'top\': +offset.top-$(\'#yzm\').height()});$(\'#yzm\').show();$(\'#yzmText\').data(\'hide\', 1)" onblur=\'$("#yzmText").data("hide", 0);setTimeout("hide_code()", 3000)\' /></label>{/if}  <div class="btn"><input type="submit" value="发表评论" /></div>&nbsp;&nbsp;&nbsp;&nbsp;{if $userid}{get_nickname()} <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode(($comment['url'] ? $comment['url'] : $url))}" target="_top">退出</a>{else}<a href="{APP_PATH}index.php?m=member&c=index&a=login&forward={urlencode(($comment['url'] ? $comment['url'] : $url))}" class="blue" target="_top">登录</a> | <a href="{$bbsurl}/member.php?mod=register" class="blue" target="_top">注册</a>  {if !$setting['guest']}<span style="color:red">需要登陆才可发布评论</span>{/if}{/if}</form>';
+    $('#reply_'+id).html(str).toggle();
+    iframe_height();
+  }
+
+  function hide_code() {
+    if ($('#yzmText').data('hide')==0) {
+      $('#yzm').hide();
+    }
+  }
+  function on_submit() {
+    {if $setting['code']}
+      var checkcode = $("#yzmText").val() == '' ? $("#yzmreplay").val() : $("#yzmText").val();
+      var res = $.ajax({
+        url: "{APP_PATH}index.php?m=pay&c=deposit&a=public_checkcode&code="+checkcode,
+        async: false
+      }).responseText;
+    {else}
+      var res = 1;
+    {/if}
+    if(res != 1) {
+      alert('验证码错误');
+      return false;
+    } else {
+      iframe_height(200);
+      $('#bodyheight').hide();
+      $('#loading').show();
+      return true;
+    }
+  }
+  function iframe_height(height) {
+    if (!height) {
+      var height = document.getElementById('bodyheight').scrollHeight;
+    }
+    $('#top_src').attr('src', "{$domain}js.html?"+height+'|'+{if $comment['total']}{$comment['total']}{else}0{/if});
+  }
+</script>
 </body>
 </html>

@@ -24,7 +24,7 @@ body{
 }
 .course_all .bigImg{
     width: 43%;
-    height: 270px;
+    height: 275px;
 }
 .course_all .bigImg img{
     width: 100%;
@@ -34,11 +34,19 @@ body{
     width: 54%;
 }
 .course_all .all_list .gy{
+    display: inline-block;
     font-size: 18px;
     height: 35px;
     overflow: hidden;
     line-height: 35px;
     color: #333;
+    font-weight: 600;
+}
+.course_all .all_list .gy span{
+    color: red;
+    font-size: 14px;
+    margin-left: 5px;
+    display: inline-block;
 }
 .course_all .all_list .view_line{
     overflow: hidden;
@@ -65,10 +73,9 @@ body{
 }
 .course_all .all_list .gk{
     display: inline-block;
-    /*width: 60px;*/
     line-height: 20px;
     text-align: center;
-    padding: 3px 5px;
+    padding: 5px 15px;
     background-color: #0b68a9;
     border-radius: 5px;
 }
@@ -76,10 +83,16 @@ body{
     color: #fff;
     font-size: 14px;
 }
-
-.show_course .show_main{
-
+.course_all .all_list .mfsk{
+    display: inline-block;
+    line-height: 20px;
+    text-align: center;
+    padding: 9px 29px;
+    border-radius: 5px;
+    border: 1px solid #0b68a9;
+    margin-left: 10px;
 }
+
 .show_course .show_main .smL{
     width: 100%;
     height: auto;
@@ -185,6 +198,11 @@ body{
 }
 .lecturer_con_bot ul li .txt a{
     font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 #nav{
@@ -216,6 +234,7 @@ body{
 .content2 .div_show{
     display: block;
     margin-top: 15px;
+    line-height: 35px;
 }
 
 .show_course .maybelike{

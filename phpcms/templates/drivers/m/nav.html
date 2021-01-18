@@ -3,9 +3,9 @@
      <ul class="lists">
          <li>
              {if $typeid == $typeidList['news']}
-                <a href="{APP_PATH}news/1">资讯 >  </a> &nbsp;
+                <a href="{APP_PATH}news/1">资讯</a> &nbsp;>
              {elseif $typeid == $typeidList['tech']}
-                <a href="{APP_PATH}tech/1">技术 >  </a>&nbsp;
+                <a href="{APP_PATH}tech/1">技术</a>&nbsp;&nbsp;
              {/if}
          </li>
          <li>
@@ -56,9 +56,9 @@
     <div class="crumbs nav_css2 navs">
         <div class="current_nav">
             {if $typeid == $typeidList['news']}
-                <a href="{APP_PATH}news/1">资讯 &nbsp; >  </a>&nbsp;
+                <a href="{APP_PATH}news/1">资讯</a>&nbsp;
              {elseif $typeid == $typeidList['tech']}
-                <a href="{APP_PATH}tech/1">技术 &nbsp; >  </a>
+                <a href="{APP_PATH}tech/1">技术</a>
              {/if}
             <span> &gt; </span>
             <a href="{APP_PATH}{$v['catdir']}">&nbsp;&nbsp;{$CATEGORYS[$catid]['catname']}</a> 

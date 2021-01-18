@@ -1,0 +1,46 @@
+<div class="footer_course w100">
+    <div class="ft_c w100">
+        <div class="w1100">
+            <div class="ft_t clearfix">
+                <div class="fl ft_c_l">
+                    <ul class="clearfix">
+                        <li><a href="{$newsurl}" target="_blank">网站首页</a></li>
+                        <li><a href="{$bbsurl}" target="_blank">论坛</a></li>
+                        <li><a href="{$blogurl}" target="_blank">博客</a></li>
+                        {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="86400"}
+                            {loop $data $value}
+                                {php if($value['type']== 0)continue;} 
+                                <li><a href="{$value['url']}" target="_blank">{$value['catname']}</a>&nbsp;&nbsp;</li>
+                            {/loop}
+                        {/pc}
+                    </ul>
+                    <div class="ft_b">
+                        
+                        <p><span>@2003-2019 EETOP</span>&nbsp;&nbsp;&nbsp;&nbsp;{$recordNumber}</p>
+                    </div>
+                </div>
+                <div class="fr ewm">
+                    <span>
+                        <img src="../../../statics/images/drivers/cxdjt.jpg" alt="">
+                        <span class="ewm_txt">创芯大讲堂</span>
+                    </span>
+                    <span>
+                        <img src="../../../statics/images/drivers/cxlzh.jpg" alt="">
+                        <span class="ewm_txt">创新老字号</span>
+                    </span>
+                    <span>
+                        <img src="../../../statics/images/drivers/eetop_gzh.jpg" alt="">
+                        <span class="ewm_txt">eetop公众号</span>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

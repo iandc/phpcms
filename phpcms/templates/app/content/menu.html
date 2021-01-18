@@ -1,0 +1,38 @@
+{pc:content action="category" siteid="$siteid" catid="0" num="20" cache="86400"}
+{loop $data $value}
+<!-- {php echo $value['modelid'];} -->
+
+{php if($value['type']==1)continue;} 
+<li class="{if $value['modelid'] == 1}lis{/if}">
+    <a class="hover_a lis_a nav_l c_f {if $value['modelid'] == 1}nav_q {/if}" target="_blank" href="{if $value['type'] == 2}{$value['url']}{else}{APP_PATH}news/1{/if}">{$value['catname']}</a>
+    {if $value['catid'] == $newsid}
+    <ul class="sub_mune_ul">
+            <li><a href="{APP_PATH}news/1" target="_blank">全部</a></li>
+        
+        {pc:content action="category" siteid="$siteid" catid="$newsid" order="listorder ASC" num="20" cache="86400" return="d"}
+        {loop $d $v}
+        <li><a href="{APP_PATH}{$v['catdir']}/news/1" target="_blank">{$v['catname']}</a></li>
+        {/loop}
+        {/pc}
+    </ul>
+    {/if}
+</li>
+{/loop}
+{/pc}
+<li class="lis">
+    <a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}tech/1" target="_blank">技术文章</a>
+    <ul class="sub_mune_ul clearfix">
+        <li><a href="{APP_PATH}tech/1" target="_blank">全部</a></li>
+        {loop $d $v}
+        <li><a href="{APP_PATH}{$v['catdir']}/tech/1" target="_blank">{$v['catname']}</a>
+        </li>
+        {/loop}
+    </ul>
+</li>
+<li class="lis"><a class="hover_a lis_a nav_l c_f nav_q" href="{APP_PATH}channel.html" target="_blank">频道</a> 
+    <ul class="sub_mune_ul clearfix">
+        {loop $d $v}
+        <li><a href="{APP_PATH}{$v['catdir']}" target="_blank">{$v['catname']}</a></li>
+        {/loop}
+    </ul>
+</li>

@@ -108,6 +108,20 @@ function replaceUrl4activity($url) {
     return $courseUrl;
 }
 
+function getCourseById($id, $siteid = 2) {
+    if(!$id) return [];
+
+    $MODEL = getcache('model','commons');
+    $modelid = getCourseModelItemId($siteid);
+
+    $db = pc_base::load_model('content_model');
+
+    $r = $db->get_one(array('id'=>$id));
+    if(!$r || $r['status'] != 99) return [];
+
+    return $r;
+}
+
 function isMobile()
 {
     // 如果有HTTP_X_WAP_PROFILE则一定是移动设备

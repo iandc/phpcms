@@ -1,0 +1,123 @@
+{template "content", "config"}
+
+<?php
+
+$pagesize = intval($_GET['pagesize']);
+if(empty($pagesize)) $pagesize = 8;
+
+$courseType = array_filter(explode(',', $CAT['usable_type']));
+
+$typeList = getcache('type_content_'.$siteid, 'commons');
+
+if($_GET['sort'] == 'hot') {
+    $sort = 'user_num';
+} else if($_GET['sort'] == 'price') {
+    $sort = 'present_price';
+} else if($_GET['sort'] == 'time') {
+    $sort = 'id';
+} else {
+    $sort = 'id';
+}
+
+if($_GET['by'] == 'desc') {
+    $by = 'desc';
+    $byStr = 'asc';
+} else if($_GET['by'] == 'asc') {
+    $by = 'asc';
+    $byStr = 'desc';
+} else {
+    $by = 'desc';
+    $byStr = 'asc';
+}
+
+if(in_array($_GET['sort'], ['hot', 'price', 'time'])) {
+    $active[$_GET['sort']] = 'jc';
+    if(in_array($by, ['desc', 'asc'])) {
+        $active[$_GET['sort'].'_'.$by] = 'ons';
+    } else {
+        $active['time_desc'] = 'ons';
+    }
+} else {
+    $active['time'] = 'jc';
+    $active['time_desc'] = 'ons';
+}
+
+$sortBy = $sort . ' ' . $by;
+
+if($typeid == $typeidList['course']) {
+    $typeName = 'course';
+} else {
+    $typeName = 'other';
+}
+
+?>
+
+{pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="20" cache="0" return="categoryList"}
+{/pc}
+
+{pc:get sql="SELECT c.*,cd.class_hour,cd.score FROM v9_course c LEFT JOIN v9_course_data cd ON c.id=cd.id ORDER BY $sortBy" page="$page" num="4" cache="0" moreinfo="1" return="courseList"}
+
+{loop array_keys($categoryList) $v}
+    {pc:get sql="SELECT c.*,cd.class_hour,cd.score FROM v9_course c LEFT JOIN v9_course_data cd ON c.id=cd.id WHERE c.catid='$v' ORDER BY $sortBy" page="$page" num="4" cache="0" moreinfo="1" return="courseCategoryList[$v]"}
+{/loop}
+
+<?php
+
+//echo "<pre>";print_r(($courseCategoryList));exit;
+
+$ListNew = array_values($courseList);
+$courseList = [];
+foreach($ListNew as $value) {
+    $courseList[] = [
+        'id' => intval($value['id']),
+        'catid' => intval($value['catid']),
+        'title' => $value['title'],
+        'thumb' => replaceUrl4course($value['thumb']),
+        'keywords' => $value['keywords'],
+        'description' => $value['description'],
+        'url' => replaceUrl4course($value['url']),
+        'price' => floatval($value['price']),
+        'present_price' => floatval($value['present_price']),
+        'teacher' => $value['teacher'],
+        'user_num' => intval($value['user_num']),
+        'wy_link' => $value['wy_link'],
+        'class_hour' => intval($value['class_hour']),
+        'score' => floatval($value['score']),
+    ];
+}
+
+$ListNew = array_values($categoryList);
+$categoryList = [];
+$courseTypeList[0] = $courseList;
+$categoryList[] = [
+    'catid' => 0,
+    'catname' => 'all',
+    'image' => '',
+    'url' => '',
+];
+foreach($ListNew as $value) {
+    $categoryList[] = [
+        'catid' => $value['catid'],
+        'catname' => $value['catname'],
+        'image' => $value['image'],
+        'url' => replaceUrl4course($value['url']),
+    ];
+    $courseTypeList[$value['catid']] = $courseCategoryList[$value['catid']] ?? [];
+}
+
+$ret = [
+    'error' => '',
+    'data' => [
+        //'courseType' => $courseType,
+        //'typeList' => array_values($typeList),
+        'categoryList' => $categoryList,
+        //'courseList' => $courseList,
+        'courseTypeList' => $courseTypeList,
+    ]
+];
+
+ob_end_clean();
+header('Content-Type:application/json; charset=utf-8');
+echo json_encode($ret);exit;
+?>
+

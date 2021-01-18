@@ -1,0 +1,112 @@
+html,body{
+    color: #333;
+}
+.lists_hd{
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #0b68a9;
+}
+.lists_hd .page_back{
+    width: 30px;
+    height: 30px;
+}
+.lists_hd .page_back img{
+    margin-top: 10px;
+}
+.lists_hd .page_login{
+    width: 20px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.lists_hd .page_login img{
+    margin-top: 10px;
+    width: 20px;
+}
+.lists_hd .page_more img{
+    margin-top: 8px;
+}
+.lists_hd_con{
+    padding: 0 10px;
+}
+
+.list_content{
+    background-color: #fff;
+    border-top: none;
+}
+.list_content .con_list{
+    padding: 0 10px;
+}
+.small_hd{
+    padding: 20px 10px;
+    border: 1px solid #e4e4e4;
+    padding-top: 60px;
+}
+.small_hd .small_hd_tit h3{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    display: inline-block;
+}
+.classify{
+    padding: 48px 10px 0;
+
+}
+.classify ul li .classify_con{
+    display: none;
+    height: 250px;
+    background-color: #eaeaea;
+    position: absolute;
+    left: 0;
+    top: 45px;
+}
+.classify ul li .classify_con li{
+    width: 33.3%;
+    margin: 0 10px;
+}
+.classify .classify_tit{
+    display: inline-block;
+    margin: 10px 0 10px 25px;
+}
+.classify .spp{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: url(../../../images/drivers/sj.png) no-repeat;
+    background-position: 40px 8px;
+}
+.classify .spp2{
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background: url(../../../images/drivers/sj2.png) no-repeat;
+    background-position: 0 0;
+    background-position: 40px 8px;
+}
+
+.info span{
+    font-size: 13px;
+    color: #999;
+}
+.info span.time{
+    /*margin-left: 20px;*/
+}
+
+#ull{
+    width: 100%;
+}
+.navs .lists li a{
+    line-height: 45px;
+}
+
+#pages a{
+    display: inline-block;
+    padding: 3px 10px;
+    border: 1px solid #cdcdcd;
+    margin-bottom: 3px;
+}

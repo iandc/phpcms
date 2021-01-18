@@ -1,0 +1,239 @@
+*{margin: 0; padding: 0;}
+.fl{float: left;}
+.fr{float: right;}
+.clearfix{ clear: both; content: ""; display: block; overflow: hidden }
+ul li{list-style: none; float: left;}
+a{text-decoration: none; color: #333;}
+
+.hd{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #fff;
+}
+.header{
+    width: 100%;
+    height: 50px;
+    /*background-color: pink;*/
+    border-bottom: 1px solid #cdcdcd;
+}
+.header .logo{
+    width: 15%;
+    height: 100%;
+    background-color: red;
+}
+.header .search{
+    width: 70%;
+    height: 100%;
+    /*background-color: blue;*/
+    position: relative;
+}
+.header .search .inp1{
+    width: 83%;
+    height: 36px;
+    font-size: 16px;
+    padding: 0 10px;
+    margin-top: 6px;
+    margin-left: 10px;
+    border: 1px solid #dfdfdf;
+}
+.header .search .inp2{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    border: none;
+    background: #fff;
+}
+.header .search .inp2 img{
+    width: 100%;
+    height: 100%;
+}
+.header .login{
+    width: 15%;
+    height: 100%;
+    /*background-color: green;*/
+}
+.header .login a{
+    display: inline-block;
+    border: 1px solid #0b68a9;
+    font-size: 13px;
+    padding: 5px 7px;
+    margin-top: 12px;
+    text-align: center;
+    border-radius: 5px;
+    color: #0b68a9;
+}
+
+.content{
+    width: 100%;
+    padding-top: 50px;
+}
+.content .img img{
+    width: 100%;
+}
+.content .tit_name{
+    padding: 12px 10px;
+    background-color: #312e2e;
+}
+.content .tit_name .tit{
+    font-size: 22px;
+    color: #fff;
+}
+.content .tit_name .keshi{
+    margin-top: 10px;
+    font-size: 13px;
+    color: #999;
+}
+.content .tit_name .keshi span{
+    margin-right: 15px;
+}
+.bb10{
+    border-bottom: 10px solid #eee;
+}
+.content .price{
+    height: auto;
+    padding: 15px 10px;
+}
+.content .price .xianjia{
+    font-size: 20px;
+    color: #0b68a9;
+}
+.content .price .yuanjia{
+    font-size: 13px;
+    margin: 0 5px;
+    color: #666;
+}
+.content .price .zhekou{
+    display: inline-block;
+    border: 1px solid #0b68a9;
+    padding: 2px 5px;
+    color: #0b68a9;
+    border-radius: 3px;
+    font-size: 12px;
+}
+.content .price .dayi span{
+    font-size: 12px;
+    margin-top: 10px;
+    color: #666;
+}
+
+.content .con{
+    padding: 15px 10px;
+}
+.content .con p{
+    line-height: 30px;
+    text-indent: 2em;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.content .lecturer{
+    padding: 15px 10px;
+}
+.content .lecturer h3,.courses h3,.con h3{
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.content .lecturer .lecturer_con .img{
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+.content .lecturer .lecturer_con .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.content .lecturer .lecturer_con .name p{
+    font-size: 13px;
+    line-height: 20px;
+}
+.content .lecturer .introduce{
+    line-height: 22px;
+    margin-top: 10px;
+    font-size: 13px;
+}
+.content .courses{
+    padding: 15px 10px;
+    padding-bottom: 35px;
+}
+
+
+
+
+.content .courses .cl_con ul li{
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+.content .courses .cl_con .img{
+    width: 35%;
+}
+.content .courses .cl_con .img img{
+    width: 100%;
+    height: 85px;
+}
+.content .courses .cl_con .con1{
+    width: 63%;
+}
+.content .courses .cl_con .con1 p.tit{
+    font-size: 13px;
+}
+.content .courses .cl_con .con1 .keshi span{
+    font-size: 12px;
+    color: #666;
+}
+.content .courses .cl_con .con1 .price1{
+    margin-top: 4px;
+}
+.content .courses .cl_con .con1 .price1 .mf{
+    border: 1px solid #0b68a9;
+    font-size: 12px;
+    padding: 0 3px;
+    color: #0b68a9;
+    border-radius: 3px;
+}
+.content .courses .cl_con .con1 .price1 del{
+    font-size: 13px;
+}
+
+.footer{
+    width: 100%;
+    height: 45px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+}
+.footer .sc{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: url(../../../images/drivers/u1.png) no-repeat ;
+    background-position: 0px 10px;
+    -webkit-background-size: 90px 30px;
+    background-size: 73px 25px;
+}
+.footer .pic{
+    font-size: 24px;
+    line-height: 45px;
+    color: #0b68a9;
+}
+.footer .gm{
+    width: 130px;
+    height: 100%;
+    background-color: #0b68a9;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+}
+
+.price .small,.price1 .small{
+    display: none;
+}

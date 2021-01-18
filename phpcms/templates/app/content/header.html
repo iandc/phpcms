@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge chrome=1">  
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}-{/if}{$SEO['site_title']}</title>
+<meta name="keywords" content="{$SEO['keywords']}">
+<meta name="description" content="{$SEO['description']}">
+<meta name=”renderer” content=”webkit|ie-comp|ie-stand”>
+<meta name="baidu_ssp_verify" content="3a075c1183ad948bc14d443f14aac93a">
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/global.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/index.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/header.css" />
+
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/details.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/details2.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/details3.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/right.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/footer.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/nav.css"/>
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/tag_list.css" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/category_course.css" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/list_course.css" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/show_course.css" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/page.css" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/page_job.css" />
+<link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/activity.css" />
+<script src="{JS_PATH}drivers/jquery-1.8.2.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
+<script type="text/javascript" src="{JS_PATH}jquery.cookie.js"></script>
+<script src="{JS_PATH}drivers/jquery.bxslider.min.js"></script>
+<script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
+</head>
+<body onload="init();">
+    {show_ad(1, 44)}
+    {template "content", "config"}
+    <div class="Header w100">
+        <div class="hdTop clearfix" style="width: 1010px; margin: 0 auto;">
+            <div class="hdTopCon w1100 clearfix">
+                <div class="fl hdTxt">
+                    <div class="hdBottom">
+                        <div class="hdBottomCon clearfix">
+                            <div class="logo clearfix fl">
+                                <a title="{$mySite['name']}" href="{siteurl($siteid)}/">
+                                    <img style="margin-top: -5px;" src="{IMG_PATH}drivers/logo.gif" width="175" height="70" alt="" title="{$mySite['name']}" >
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="search fr">
+                    <div id="wrap">
+                        <div id="tit">
+                            <span class="select more" style="">文章</span>
+                            <span>DataSheet</span>
+                        </div>
+                        <a href="{$bbsurl}/search.php?mod=blog" class="link" target="_blank"><span>日志</span></a>
+                        <a href="{$bbsurl}/search.php?mod=forum" class="link" style="margin-left: 1px;" target="_blank"><span>帖子</span></a>
+                        <ul id="con" class="clearfix">
+                            <li class="show">
+                                <div class="hds">
+                                    <form action="{APP_PATH}index.php" target="_blank" class="form" method="get" name="a">
+                                        <input type="hidden" name="m" value="search" />
+                                        <input type="hidden" name="c" value="index" />
+                                        <input type="hidden" name="a" value="init" />
+                                        <input type="hidden" name="typeid" id="typeid" value="1" />
+                                        <input type="hidden" name="siteid" id="siteid" value="{$siteid}" />
+                                        <input type="text" name="q" id="q" class="ss" />
+                                        <input type="submit" name="sub" value="搜索" class="btn1 c_f"/>
+                                    </form>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="hds">
+                                    <form action="http://ic.eetop.cn/index/default_list" target="_blank" class="form2" method="get" name="b">
+                                        <input name="title" class="ss" />
+                                        <input type="submit" name="sub" value="搜索" class="btn1 c_f"/>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hd w100" id="hd">
+            <div class="w1100" style="height:40px;">
+                <div class="nav">
+                    <div class="name fl">
+                        <a href="{siteurl($siteid)}" class="nav_item1 icon_home sel c_f name" title="电子，微电子，芯片">首页</a>
+                    </div>
+                    <ul class=" nav_list fl">
+                        {template "content", "menu"}
+                    </ul>
+                    <div class="fr landr">
+                        <div class="tb_item">
+                            <div class="usern">
+                                {if $_username}
+                                    <ul class="clearfix ull">
+                                        <li class="login lr">
+                                            <span class="yhm" style="line-height: 40px; text-align: center;">{getNickName()}</span>
+                                            <ul class="xlk clearfix" id="xlk">
+                                                <li class="h50">
+                                                    <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top">退出</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                {else}
+                                    <ul class="clearfix">
+                                        <li class="login lr">
+                                            <a href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">登录</a>
+                                        </li>
+                                        <li class="register lr">
+                                            <a href="{$bbsurl}/member.php?mod=register" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">注册</a>
+                                        </li>
+                                    </ul>
+                                {/if}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("#tit span").click(function () {
+                $(this).addClass("select").siblings().removeClass("select");
+                $("#con li").eq($(this).index()).show().siblings().hide();
+            })
+        })
+    </script>
+
+    <script>
+        $(function(){
+ 
+            var titleTop = $('#hd').offset().top;
+            var scroH = $(document).scrollTop();
+            $(document).on('scroll',function(){
+              if($(document).scrollTop() > 180){
+                 $('#hd').css({
+                     "position":"fixed",
+                     "top":0,
+                     "background":"#fff",
+                     "z-index":999,
+                     "border-bottom":"1px solid #eee"
+             })
+            }else{
+         
+               $('#hd').css({
+                   "position":"static",
+                   "border-bottom":"none"
+               })
+            }
+          })
+
+
+            if (scroH <= top) {
+                $("#alert_windows").css("top","50px");
+                $("#alert_windows4").css("top","50px");
+            }else{
+                $("#alert_windows").css("top","150px");
+                $("#alert_windows4").css("top","150px");
+            }
+        })
+        
+        
+    </script>

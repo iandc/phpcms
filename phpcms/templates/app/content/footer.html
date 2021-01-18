@@ -1,0 +1,22 @@
+<div class="w1100 footers mt15 clearfix">
+    <div class="ft_nav bgc_fff" style="margin-bottom: 15px;"> 
+        <div class="w1100 ftnav">
+            <div class="links">
+                <a href="{APP_PATH}">ET创芯网(EETOP)-电子设计论坛、博客、超人气的电子工程师资料分享平台 </a>&nbsp;&nbsp;
+                {pc:content action="category" siteid="$siteid" catid="0" num="20" cache="86400"}
+                    {loop $data $value}
+                        {php if($value['type']== 0)continue;} 
+                        <a href="{$value['url']}" target="_blank">{$value['catname']}</a>&nbsp;&nbsp;
+                    {/loop}
+                {/pc}
+            </div>
+            <div style="color: red; padding: 10px 0;">@2003-2019 EETOP </div>
+            <div class="copy" style="margin-bottom: 10px;">
+                <p class="copyTxt">
+                    <a href="http://beian.miit.gov.cn/" target="_blank">{$recordNumber}</a>&nbsp;&nbsp;
+                    <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502037710" target="_blank">{$recordNumber1}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -7,7 +7,7 @@ body{
 }
 .hd_c_lg {
     width: 500px;
-    margin-top: 20px;
+    margin-top: 5px;
     margin-left: 20px;
 }
 .hd_c_lg .GoogleActiveViewClass a img{
@@ -16,7 +16,7 @@ body{
 }
 
 .hd_course .hd_c_list .search1{
-    margin-top: 43px;
+    margin-top: 35px;
     /*margin-right: 15px;*/
 }
 .hd_course .hd_c_list .search1 .inp1{
@@ -65,16 +65,17 @@ body{
     position: relative;
 }
 #nav_course{
-    padding: 10px 0 0;
     margin: 0 auto;
-    height: 30px;
+    height: 100px;
+    line-height: 50px;
+    background-color: #0b68a9;
 }
 #nav_course ul li{
     width: 100%;
-    height: 30px;
-    border-bottom: 2px solid #fff;
-    line-height: 30px;
-    padding: 5px 0;
+    height: 50px;
+    /*border-bottom: 2px solid #fff;*/
+    /*line-height: 30px;*/
+
 }
 #nav_course ul li a{
     padding: 0 10px;
@@ -83,27 +84,37 @@ body{
     position: relative;
 }
 .nav_course .xl{
-    background-color: #fff;
+    width: 200px;
+    height: 425px;
+     background-color:rgba(0,0,0,0.6);
     display: none;
     position: absolute;
     left: 70px;
-    top: 35px;
+    top: 50px;
     z-index: 99999;
 }
+.navs1{
+    width: 164px;
+    background: #0b68a9;
+    color: #fff;
+}
+.navs2 a{
+    color: #fff;
+}
 .navs2{
-    padding: 7px 15px 10px;
+    padding: 0 18px;
     font-weight: 600;
     font-size: 15px;
+    
 }
 .navs1 .xl li:hover{
     background-color: #efefef;
 }
 .navs1 .xl li:hover a{
-    color: #0b68a9;
+    color: #000 !important;
 }
 .navs1:hover .xl{
     display: block;
-    border: 1px solid #ddd;
 }
 .navs1:hover .nav_class i{
     background: url(../../images/drivers/sjs2.png) no-repeat;
@@ -117,7 +128,7 @@ body{
     margin-left: 10px;
     width: 15px;
     height: 8px;
-    background: url(../../images/drivers/sjs1.png) no-repeat;
+    background: url(../../images/drivers/sjs4.png) no-repeat;
     -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
 }
@@ -125,18 +136,24 @@ body{
 #nav_course ul li a{
     font-weight: 500;
     font-size: 14px;
+    color: #fff;
 }
 
 
 
 .hd_c_lg img{
-    width: 500px !important;
+    width: 690px !important;
+    height: 70px;
 }
 
 .ewms{
     margin-right: 15px;
-    height: 30px;
+    height: 50px;
     display: inline-block;
+    color: #fff;
+}
+.home1 a{
+    color: #fff;
 }
 .ewms:hover .cxdjt{
     display: block;
@@ -145,7 +162,7 @@ body{
     width: 120px;
     height: 120px;
     position: absolute;
-    top: 30px;
+    top: 50px;
     right: 77px;
     z-index: 999;
     display: none;
@@ -156,4 +173,23 @@ body{
     position: relative;
     top: 3px;
     right: 3px;
+}
+
+.nav2s{
+    background: #fff;
+    /*border-bottom: 1px solid #ddd;*/
+    box-shadow:0px 15px 10px -15px #ddd;
+}
+.nav2{
+    /*padding: 10px 0;*/
+    background: #fff;
+    z-index: 999;
+}
+.nav2 .nav2_con{
+    padding: 0 15px;
+}
+.nav2 .nav2_con a,.nav2 .nav2_con span{
+    display: inline-block;
+    padding: 0 5px;
+    color: #0b68a9;
 }

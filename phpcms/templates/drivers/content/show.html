@@ -11,11 +11,11 @@
                             <span class="date">{$inputtime}</span>
                             来源：<span>{if $copyfrom}{$copyfrom}{else}未知{/if}</span>
                         </span>
-                        {show_ad(1, 39)}
-                        
-                    {show_ad(1, 35)}
+                        <!-- 分享代码 -->
+                        {show_ad(1, 26)}
+                        <!-- 广告代码 -->
+                        {show_ad(1, 35)}
                     </div>
-                    {show_ad(1, 26)}
                     <div class="post_con">
                         {if $allow_visitor == 1}
                         {$content}
@@ -29,19 +29,33 @@
                         <div class="tit clearfix">
                             <div class="mb10">
                                 <span class="{if $keyword == ' '}dpn{/if}">
-                                    关键词：
+                                    <a href="{APP_PATH}tags">关键词：</a>
                                     {loop $keywords $keyword}
-                                    <a class="blue"
-                                       href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($keyword)}">{$keyword}</a>
+                                        <a style="{if empty($keyword)}display: none;{/if}" class="blue" href="{APP_PATH}tags/{urlencode($keyword)}">{$keyword}</a>
                                     {/loop}
                                 </span>
                             </div>
+                            <div class="ewm clearfix">
+                                <ol>
+                                    <li>
+                                        <img src="../../../statics/images/drivers/eetop_gzh.jpg" alt="">
+                                        <p class="p1">EETOP 官方微信</p>
+                                    </li>
+                                    <li>
+                                        <img src="../../../statics/images/drivers/cxdjt.jpg" alt="">
+                                        <p class="p1">创芯大讲堂 在线教育</p>
+                                    </li>
+                                    <li>
+                                        <img src="../../../statics/images/drivers/cxlzh.jpg" alt="">
+                                        <p class="p1">创芯老字号 半导体快讯</p>
+                                    </li>
+                                </ol>
+                            </div>
                             <h2 class="mb10">相关文章</h2>
                         </div>
-                        
                         <ul class="list_3 fl clearfix w100">
                             <li class="fl">上一篇：<a href="{$previous_page['url']}">{str_cut($previous_page['title'], 55, '')}</a></li>
-                            <li>下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 55, '')}</a></li>
+                            <li style="float: right !important;">下一篇：<a href="{$next_page['url']}">{str_cut($next_page['title'], 55, '')}</a></li>
                         </ul>
                     </div>
                     {pc:content action="relation" relation="$relation" catid="$catid" id="$id" keywords="$rs['keywords']" num="4" cache="3600"}
@@ -141,6 +155,8 @@
 {template 'content', 'footer'}
 {show_ad(1, 33)}
 {show_ad(1, 38)}
+<!-- show页统计代码 -->
+{show_ad(1, 25)}
 
 </body>
 </html>

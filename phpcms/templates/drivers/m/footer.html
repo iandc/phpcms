@@ -1,15 +1,17 @@
-<footer class="footer">
-    <div class="ewm">
-        <!-- <img src="{APP_PATH}statics/images/drivers/eetop_gzh.jpg" alt=""> -->
+{template "content", "config"}
+<footer class="footer" style="padding-bottom: 80px; width: auto;">
+    <!-- <div class="ewm">
+        <img src="{APP_PATH}statics/images/drivers/eetop_gzh.jpg" alt="">
     </div>
-    <!-- <div class="khd">
+    <div class="khd">
         <a href="">客户端</a>
     </div> -->
     <div class="copy">
-
-        <p>@2003-2019 EETOP</p>
+        {show_ad(1, 39)}
+        <p>@2003-2020 EETOP</p>
         <p>
-            <a href="">{$recordNumber}</a>
+            <a href="http://beian.miit.gov.cn/" target="_blank">{$recordNumber}</a>&nbsp;&nbsp;
+            <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11010502037710" target="_blank">{$recordNumber1}</a>
         </p>
     </div>
 </footer>

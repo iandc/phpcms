@@ -1,0 +1,181 @@
+{template 'content', 'header_course'}
+
+<?php
+$courseType = array_filter(explode(',', $CAT['usable_type']));
+
+$typeList = getcache('type_content_'.$siteid, 'commons');
+
+if($_GET['sort'] == 'hot') {
+    $sort = 'user_num';
+} else if($_GET['sort'] == 'price') {
+    $sort = 'present_price';
+} else if($_GET['sort'] == 'time') {
+    $sort = 'id';
+} else {
+    $sort = 'id';
+}
+
+if($_GET['by'] == 'desc') {
+    $by = 'desc';
+    $byStr = 'asc';
+} else if($_GET['by'] == 'asc') {
+    $by = 'asc';
+    $byStr = 'desc';
+} else {
+    $by = 'desc';
+    $byStr = 'asc';
+}
+
+if(in_array($_GET['sort'], ['hot', 'price', 'time'])) {
+    $active[$_GET['sort']] = 'jc';
+    if(in_array($by, ['desc', 'asc'])) {
+        $active[$_GET['sort'].'_'.$by] = 'ons';
+    } else {
+        $active['time_desc'] = 'ons';
+    }
+} else {
+    $active['time'] = 'jc';
+    $active['time_desc'] = 'ons';
+}
+
+$sortBy = $sort . ' ' . $by;
+
+//echo "<pre>";print_r($courseType);exit;
+
+?>
+
+{if $typeid == $typeidList['course']}
+    {php $typeName = 'course';}
+{else}
+    {php $typeName = 'other';}
+{/if}
+
+<section>
+    <div class="list_course w100 clearfix">
+        <div class="w1100">
+            <div class="show_course_tit" style="margin-top: 10px; margin-bottom: 0;">
+                <h4>
+                    <a href="{$newsurl}" class="bz"></a>
+                    <a href="{$eduurl}">课程首页 &nbsp;&nbsp;> &nbsp;</a>
+                    <a href="{$eduurl}/course/1">列表</a>
+                </h4>
+            </div>
+            <div class="lcL fl">
+                <dl>
+                    <dt class="lcL_all {if empty($typeid)}jc{/if}"><a href="{$eduurl}/{$typeName}/1">课程分类</a></dt>
+                    {loop $courseType $tid}
+                        <dd>
+                            <a {if $typeid == $typeList[$tid]['typeid']} class="jc"{/if} href="{$eduurl}/{$typeList[$tid]['description']}/1">{$typeList[$tid]['name']}</a>
+                        </dd>
+                    {/loop}
+                </dl>
+            </div>
+            <div class="lcR fr">
+                <div class="course_list">
+                    <div class="course_list_name" style="display: none;">
+                        <h3>
+                            <span class="rank_course fr" style="display: inline-block;">
+                                <div class="divw">
+                                    <a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=time&by={$byStr}" class="{$active['time']}">
+                                    按时间排序
+                                    </a>
+                                    <span class="aa1 aa2">
+                                        <span class="sjx_x sjx {$active['time_asc']}"></span>
+                                        <span class="sjx_s sjx {$active['time_desc']}"></span>
+                                    </span>
+                                </div>
+                                
+                                |&nbsp;
+                                <div class="divw">
+                                    <a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=hot&by={$byStr}" class="{$active['hot']}">
+                                    按热度排序
+                                    </a>
+                                    <span class="aa1 aa2">
+                                        <span class="sjx_x sjx {$active['hot_asc']}"></span>
+                                        <span class="sjx_s sjx {$active['hot_desc']}"></span>
+                                    </span>
+                                </div>
+                                
+                                 |&nbsp;
+                                 <div class="divw">
+                                     <a href="{$eduurl}/index.php?m=content&c=index&a=lists&catid={$catid}&sort=price&by={$byStr}" class="{$active['price']}">
+                                    按价格排序
+                                    </a>
+                                    <span class="aa2">
+                                        <span class="sjx_x sjx {$active['price_asc']}"></span>
+                                       <span class="sjx_s sjx {$active['price_desc']}"></span>
+                                    </span>
+                                 </div>
+                                
+                            </span>
+                            <a href="{$eduurl}" class="name" style="color: #f9f9f9;">1</a>
+                        </h3>
+                    </div>
+                    <ul class="show_list clearfix">
+                        {php $courseWhere = 'typeid='.$typeid;}
+                        {if $catid}
+                            {if $typeid}
+                                {pc:content action="lists" catid="$catid" where="$courseWhere" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                            {else}
+                                {pc:content action="lists" catid="$catid" order="$sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                            {/if}
+                        {else}
+                            {if $typeid}
+                                {pc:get sql="SELECT * FROM phpcms_course where typeid='$typeid' ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                            {else}
+                                {pc:get sql="SELECT * FROM phpcms_course ORDER BY $sortBy" page="$page" num="8" cache="3600" moreinfo="1"}
+                            {/if}
+                        {/if}
+                        {php $i = 0;}
+                        {loop $data $value}
+                        <li>
+                            <div class="show_list_img fl">
+                                <a href="{replaceUrl4course($value['url'])}" target="_blank"><img src="{$value['thumb']}" alt=""></a>
+                            </div>
+                            <div class="show_list_main fr">
+                                <h2><a href="{replaceUrl4course($value['url'])}" target="_blank">{$value['title']}</a></h2>
+                                <h6>
+                                    关键词：<span style="{if $value['keywords'] == ""}display: none;{/if}"><a href="{$eduurl}/index.php?m=content&c=tag&a=lists&tag={$value['keywords']}" target="_blank">{$value['keywords']}</a></span>
+                                </h6>
+                                <p class="desc">
+                                    {$value['description']}
+                                </p>
+                                <p class="time clearfix">
+                                        <span class="jg">
+                                            价格：<small style="{if $value['price'] == 0}color: #666;{/if}">{if $value['present_price'] == 0}<span style="color: #666; font-weight: 400;">免费</span>{else}{$value['present_price']}&nbsp;元{/if}</small>   
+                                            <del style="{if $value['price'] == 0 ||  $value['present_price'] == 0}display: none;{/if}">{$value['price']}</del>
+                                        </span>
+                                        <span class="fr">{date('Y-m-d H:i:s', $value['inputtime'])}</span>
+                                </p>
+                            </div>
+                        </li>
+                        {php $i++;}
+                        {/loop}
+                            <div class="page_nav">
+                                <div class="more">
+                                    <div id="pages" class="text_c">{$pages}</div>
+                                </div>
+                            </div>
+                        {/pc}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{template 'content', 'footer_course'}
+{show_ad(2, 51)}
+
+<script>
+    $(".aa1 span").on('click',function() {
+        $(this).addClass('ons').siblings().removeClass('ons');
+    })
+    $(".aa2 span").on('click',function() {
+        $(this).addClass('ons').siblings().removeClass('ons');
+    })
+</script>
+
+
+</body>
+</html>

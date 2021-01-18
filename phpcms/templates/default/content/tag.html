@@ -3,4 +3,7 @@
 {loop $infos $info}
 	<a href="{APP_PATH}index.php?m=content&c=tag&a=lists&tag={urlencode($info['keyword'])}">{$info['keyword']}</a>({$info['videonum']}) 
 {/loop}
+
+<div id="pages" class="text-c">{$pages}</div>
+
 {template 'content', 'footer'}

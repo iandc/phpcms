@@ -73,9 +73,9 @@
                             {pc:content action="lists" catid="$key" order="id DESC" num="5" cache="3600" return="d"}
                             {loop $d $k $v}
                             <li>
-                                        <span class="title">
-                                            <a href="{$v['url']}">{str_cut($v['title'], 55, '')}</a>
-                                        </span>
+                                <span class="title">
+                                    <a href="{$v['url']}">{str_cut($v['title'], 55, '')}</a>
+                                </span>
                                 <span class="date">{date('m-d', $v['inputtime'])}</span>
                             </li>
                             {/loop}

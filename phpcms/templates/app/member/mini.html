@@ -1,0 +1,41 @@
+{php $from = $_GET['from'];}
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/mini.css"/>
+    <div>
+        {if $_username}
+            <ul class="clearfix">
+                <!-- <li class="register lr">
+                    <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top" class="{if $from == 'index'}c_hhh{else}c_fff{/if}">{L('logout')}</a>
+                </li> -->
+                <li class="login lr">
+                    <a href="{APP_PATH}index.php?m=member&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if} nav_item" style="line-height: 40px;">{getNickName()}</a> &nbsp;&nbsp;
+                    <ul class="xlk clearfix" id="xlk">
+                        <li class="h50">
+                            <a href=" {APP_PATH}index.php?m=member&siteid={$siteid}" class="c_fff h50" target="_blank">个人资料</a>
+                        </li>
+                        <li class="h50">
+                            <a href=" {APP_PATH}index.php?m=member&c=index&a=account_manage_avatar&t=1" class="c_fff h50" target="_blank">修改头像</a>
+                        </li>
+                        <li class="h50">
+                            <a href="{APP_PATH}index.php?m=member&c=content&a=published" class="c_fff h50" target="_blank">我的投稿</a>
+                        </li>
+                        <li class="h50">
+                            <a href="{APP_PATH}index.php?m=pay&c=deposit&a=pay" class="c_fff h50" target="_blank">我的资产</a>
+                        </li>
+                        <li class="h50">
+                            <a href="{APP_PATH}index.php?m=member&c=index&a=logout&forward={urlencode($_GET['forward'])}&siteid={$siteid}" target="_top" class="{if $from == 'index'}c_hhh{else}c_fff{/if}">{L('logout')}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        {else}
+            <ul class="clearfix">
+                <li class="login lr">
+                    <a href="{APP_PATH}index.php?m=member&c=index&a=login&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">{L('login')}</a>
+                </li>
+                <li class="register lr">
+                    <a href="{APP_PATH}index.php?m=member&c=index&a=register&siteid={$siteid}" target="_blank" class="{if $from == 'index'}c_hhh{else}c_fff{/if}" style="line-height: 40px;">{L('register')}</a>
+                </li>
+            </ul>
+        {/if}
+    </div>
+

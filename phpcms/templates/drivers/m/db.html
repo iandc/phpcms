@@ -1,0 +1,22 @@
+
+
+<div class="bot_hf">
+
+            <div class="huifu" id="huifu">
+                <div class="huifucon">
+                    <input type="text" placeholder="写评论..." class="but_txt" id="but_txt">
+                    <div class="fx" id="fx">
+                            <img style="margin-right: 10px;" src="../../../../../statics/images/drivers/m/huifu.png" alt="">
+                            {php $commentid = 'content_' . $catid . '-' . $id . '-' . $siteid;}
+                            {php //echo 'commentid='.$commentid;}
+                            {pc:get sql="SELECT sum(total) as total FROM v9_comment WHERE commentid='$commentid'" num="1" cache="3600"}
+                                <span class="num">{$data[0]['total']}</span>
+                            {/pc}
+                            {php //echo "<pre>";print_r($data);} 
+                        
+                        <!-- <img src="../../../../../statics/images/drivers/m/fx.png" alt=""> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+

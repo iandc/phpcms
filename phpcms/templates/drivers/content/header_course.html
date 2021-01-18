@@ -6,12 +6,13 @@
     <title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
     <meta name="keywords" content="{$SEO['keyword']}">
     <meta name="description" content="{$SEO['description']}">
-    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/global.css"/>
+    <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/global1.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/category_course.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/header_course.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/footer_course.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/list_course.css"/>
     <link rel="stylesheet" type="text/css" href="{CSS_PATH}drivers/show_course.css"/>
+    <link rel="stylesheet" href="../../../../statics/css/drivers/classify.css">
     <script type="text/javascript" src="{JS_PATH}jquery.min.js"></script>
     <script type="text/javascript" src="{JS_PATH}jquery.sgallery.js"></script>
 </head>
@@ -29,12 +30,12 @@ foreach($search_model as $v) {
 ?>
 
 <body>
-    <div class="w100" style="border-bottom: 1px solid #eee; padding-bottom: 10px; background: #fff;">
+    <div class="w100" style=" background: #fff;">
         <div class="w100">
             <div class="hd_course w1100 clearfix">
                 <div class="fl hd_c_logo">
                     <a title="{$mySite['name']}" href="{$eduurl}">
-                        <img style="margin-top: 10px; margin-left: -6px;" src="{IMG_PATH}drivers/logo_course.png" width="175" height="70" alt="" title="{$mySite['name']}" >
+                        <img style="margin-top: 5px; margin-left: -6px;" src="{IMG_PATH}drivers/logo_course.png" width="175" height="70" alt="" title="{$mySite['name']}" >
                     </a>
                 </div>
                 <div class="fl hd_c_lg">
@@ -57,27 +58,27 @@ foreach($search_model as $v) {
         </div>
 
         <div id="nav_course" class="w100">
-            <div class="nav_course w1100">
+            <div class="nav_course w1100" style="height: 50px;">
                 <div class="fl">
                     <span class="navs2"><a href="{$eduurl}">首页</a></span>
                     <div style="display: inline-block;" class="navs1 navs2">
                         <span class="nav_class">
                         课程分类<i></i>
                         </span>
-                        <ul class="xl">
-                            <li><a href="{$eduurl}/course/1">全部</a></li>
-                            {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="3600"}
-                            <!-- {php echo $courseid;} -->
-                                {loop $data $value}
-                                    <li class="{if $catid == $value['catid']}nav_more{/if} clearfix">
-                                        <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}">{$value['catname']}</a><i></i>
-                                    </li>
-                                {/loop}
-                            {/pc}
-                        </ul>
+                        <div>
+                            <ul class="xl">
+                                <li><a href="{$eduurl}/course/1">全部</a></li>
+                                {pc:content action="category" siteid="$siteid" catid="$courseid" order="listorder ASC" num="10" cache="300"}
+                                    {loop $data $value}
+                                        <li class="{if $catid == $value['catid']}nav_more{/if} clearfix">
+                                            <a class="xl_con_tit" href="{replaceUrl4course($value['url'])}" target="_blank">{$value['catname']}</a><i></i>
+
+                                        </li>
+                                    {/loop}
+                                {/pc}
+                            </ul>
+                        </div>
                     </div>
-                    
-                    
                 </div>
                 <div class="fr">
                     <span class="ewms">
@@ -86,29 +87,35 @@ foreach($search_model as $v) {
                     </span>
                     <span class="home1">
                         <a href="{$newsurl}" style="line-height: 32px;">
-                            <img style="height: 13px; position: relative; top: 1px;" src="../../../../statics/images/drivers/home1.png" alt="" />
-                            返回首页
+                            <img style="height: 13px; position: relative; top: 1px;" src="../../../../statics/images/drivers/home2.png" alt="" />
+                            返回资讯
                         </a>
                     </span>
                 </div>
-                
-                
+            </div>
+            <div class="w100 nav2s">
+                <div class="w1100 nav2 clearfix">
+                        <div class="nav2_con">
+                            <span style="color:#F36F60; font-weight: 600;">创芯云服务&nbsp;&nbsp;:</span>
+                            <a href="{APP_PATH}investment/index.html" target="_blank">创芯投融资&nbsp;&nbsp;&nbsp;|</a>
+                            <a href="{$eduurl}" target="_blank">创芯大讲堂&nbsp;&nbsp;&nbsp;|</a>
+                            <span>静待更多...</span>
+                        </div>
+                    </div>
             </div>
         </div>
+        
+            
     </div>
 
     <script>
-
          $(function(){
-
-            // var titleTop = $('#nav_course').offset().top;
-
             $(document).on('scroll',function(){
               if($(document).scrollTop() > 180){
                  $('#nav_course').css({
                      "position":"fixed",
                      "top":0,
-                     "background":"#fff",
+                     "background":"#0b68a9",
                      "z-index":999,
                      "border-bottom":"1px solid #eee"
              })
